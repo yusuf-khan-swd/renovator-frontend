@@ -3,7 +3,6 @@
 import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
 import { Input } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
-
 interface IInput {
   name: string;
   type?: string;

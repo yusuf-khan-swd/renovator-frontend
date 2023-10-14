@@ -54,7 +54,7 @@ const LoginPage = () => {
             margin: "15px 0px",
           }}
         >
-          Login
+          First login your account
         </h1>
         <div>
           <Form submitHandler={onSubmit} resolver={yupResolver(loginSchema)}>
@@ -63,7 +63,7 @@ const LoginPage = () => {
                 name="id"
                 type="text"
                 size="large"
-                label="Email"
+                label="User Id"
                 required
               />
             </div>
@@ -76,7 +76,7 @@ const LoginPage = () => {
                 name="password"
                 type="password"
                 size="large"
-                label="Password"
+                label="User Password"
                 required
               />
             </div>

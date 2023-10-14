@@ -16,14 +16,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 
-interface ISearchProps {
-  searchParams: {
-    studentId: string;
-    courseId: string;
-    offeredCourseSectionId: string;
-  };
-}
-
 const StudentResultPage = ({ searchParams }: any) => {
   const [updateFinalMarks] = useUpdateFinalMarksMutation();
   const [academicSemesterId, setAcademicSemesterId] = useState<string>();

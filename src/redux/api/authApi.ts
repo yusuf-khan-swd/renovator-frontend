@@ -1,6 +1,5 @@
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
-
 const AUTH_URL = "/auth";
 
 export const authApi = baseApi.injectEndpoints({

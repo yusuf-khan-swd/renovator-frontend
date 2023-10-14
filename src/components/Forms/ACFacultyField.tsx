@@ -11,7 +11,6 @@ const ACFacultyField = ({ name, label }: ACFacultyFieldProps) => {
     limit: 100,
     page: 1,
   });
-
   const academicFaculties = data?.academicFaculties;
   const acFacultyOptions = academicFaculties?.map((acFaculty) => {
     return {

@@ -10,7 +10,6 @@ import {
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import { USER_ROLE } from "./role";
-
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
     {

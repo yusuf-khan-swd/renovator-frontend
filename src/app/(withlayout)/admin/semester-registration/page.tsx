@@ -133,9 +133,6 @@ const SemesterRegistrationPage = () => {
               <Tooltip title="Start Semester" placement="bottom">
                 <Button
                   type="primary"
-                  disabled={
-                    data?.academicSemester.isCurrent === true ? true : false
-                  }
                   onClick={() => handleStartSemester(data?.id)}
                   style={{
                     margin: "0px 5px",
