@@ -3,17 +3,23 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useProfileQuery } from "@/redux/api/profileApi";
+import {
+  useProfileQuery,
+  useUpdateProfileMutation,
+} from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, Row, message } from "antd";
-import Link from "next/link";
 
-const ProfilePage = () => {
+const EditProfilePage = () => {
   const { data, isLoading } = useProfileQuery(undefined);
+  const [updateProfile] = useUpdateProfileMutation();
 
   const onSubmit = async (data: any) => {
     try {
-      console.log(data);
+      message.loading("Updating.....");
+      // console.log(data);
+      await updateProfile(data);
+      message.success("Profile updated successfully");
     } catch (error: any) {
       console.error(error);
       message.error(error.message);
@@ -52,44 +58,38 @@ const ProfilePage = () => {
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput readOnly={true} name="name" label="Name" />
+              <FormInput name="name" label="Name" />
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput readOnly={true} name="email" label="Email" />
+              <FormInput name="email" label="Email" />
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput
-                readOnly={true}
-                type="password"
-                name="password"
-                label="Password"
-              />
+              <FormInput type="password" name="password" label="Password" />
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput readOnly={true} name="role" label="User Role" />
+              <FormInput name="role" label="User Role" />
             </Col>
           </Row>
-        </Form>
-        <Link href={`/profile/edit/${data?.id}`}>
           <Button
+            htmlType="submit"
             style={{
               margin: "0px 5px",
             }}
             onClick={() => console.log(data)}
             type="primary"
           >
-            Edit
+            Update
           </Button>
-        </Link>
+        </Form>
       </div>
     </div>
   );
 };
 
-export default ProfilePage;
+export default EditProfilePage;
