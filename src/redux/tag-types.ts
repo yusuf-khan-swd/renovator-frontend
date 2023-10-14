@@ -19,6 +19,7 @@ export enum tagTypes {
 }
 
 export const tagTypesList = [
+  tagTypes.profile,
   tagTypes.user,
   tagTypes.department,
   tagTypes.faculty,
