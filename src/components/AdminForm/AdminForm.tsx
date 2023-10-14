@@ -15,7 +15,7 @@ type FormValues = {
   password: string;
 };
 
-const AdminFormPage = () => {
+const AdminForm = () => {
   const [createAdmin] = useCreateAdminMutation();
 
   // console.log(isLoggedIn());
@@ -48,7 +48,7 @@ const AdminFormPage = () => {
             margin: "15px 0px",
           }}
         >
-          Create an account
+          Create an admin account
         </h1>
         <div>
           <Form submitHandler={onSubmit} resolver={yupResolver(userSchema)}>
@@ -102,4 +102,4 @@ const AdminFormPage = () => {
   );
 };
 
-export default AdminFormPage;
+export default AdminForm;
