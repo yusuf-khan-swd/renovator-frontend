@@ -25,8 +25,7 @@ const SignupPage = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
-      const res = await userSignup({ ...data });
-      console.log(res);
+      await userSignup({ ...data });
 
       message.success("User created successfully!");
       router.push("/login");
