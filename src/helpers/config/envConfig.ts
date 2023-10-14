@@ -1,7 +1,5 @@
 export const getBaseUrl = (): string => {
-  return (
-    (process.env.NODE_ENV === "production" &&
-      process.env.NEXT_PUBLIC_API_BASE_URL) ||
-    "http://localhost:5000/api/v1"
-  );
+  return process.env.NODE_ENV === "development"
+    ? "http://localhost:5000/api/v1"
+    : "https://renovator-backend.vercel.app/api/v1";
 };
