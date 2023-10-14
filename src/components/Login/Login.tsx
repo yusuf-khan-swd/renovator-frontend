@@ -59,7 +59,7 @@ const LoginPage = () => {
           <Form submitHandler={onSubmit} resolver={yupResolver(loginSchema)}>
             <div>
               <FormInput
-                name="id"
+                name="email"
                 type="text"
                 size="large"
                 label="Email"
