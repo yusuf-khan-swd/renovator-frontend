@@ -1,4 +1,5 @@
 export enum tagTypes {
+  profile = "profile",
   user = "user",
   department = "department",
   faculty = "faculty",
