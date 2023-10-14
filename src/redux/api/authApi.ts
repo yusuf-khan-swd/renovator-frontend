@@ -22,7 +22,20 @@ export const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.user],
     }),
+
+    createAdmin: build.mutation({
+      query: (adminData) => ({
+        url: `${AUTH_URL}/create-admin`,
+        method: "POST",
+        data: adminData,
+      }),
+      invalidatesTags: [tagTypes.user],
+    }),
   }),
 });
 
-export const { useUserLoginMutation, useUserSignupMutation } = authApi;
+export const {
+  useUserLoginMutation,
+  useUserSignupMutation,
+  useCreateAdminMutation,
+} = authApi;
