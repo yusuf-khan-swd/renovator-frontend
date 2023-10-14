@@ -2,7 +2,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { useUserSignupMutation } from "@/redux/api/authApi";
-import { signupSchema } from "@/schemas/signup";
+import { userSchema } from "@/schemas/user";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 import Image from "next/image";
@@ -54,7 +54,7 @@ const SignupPage = () => {
           Create an account
         </h1>
         <div>
-          <Form submitHandler={onSubmit} resolver={yupResolver(signupSchema)}>
+          <Form submitHandler={onSubmit} resolver={yupResolver(userSchema)}>
             <div>
               <FormInput
                 name="name"
