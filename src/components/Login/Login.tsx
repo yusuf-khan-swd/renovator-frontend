@@ -63,7 +63,7 @@ const LoginPage = () => {
                 name="id"
                 type="text"
                 size="large"
-                label="User Id"
+                label="Email"
                 required
               />
             </div>
@@ -76,7 +76,7 @@ const LoginPage = () => {
                 name="password"
                 type="password"
                 size="large"
-                label="User Password"
+                label="Password"
                 required
               />
             </div>
