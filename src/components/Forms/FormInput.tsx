@@ -13,6 +13,7 @@ interface IInput {
   validation?: object;
   label?: string;
   required?: boolean;
+  readOnly?: boolean;
 }
 
 const FormInput = ({
@@ -25,6 +26,7 @@ const FormInput = ({
   validation,
   label,
   required,
+  readOnly = false,
 }: IInput) => {
   const {
     control,
@@ -60,6 +62,7 @@ const FormInput = ({
           ) : (
             <Input
               type={type}
+              readOnly={readOnly}
               size={size}
               placeholder={placeholder}
               {...field}
