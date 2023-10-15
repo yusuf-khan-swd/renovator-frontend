@@ -18,8 +18,6 @@ type FormValues = {
 const AdminForm = () => {
   const [createAdmin] = useCreateAdminMutation();
 
-  // console.log(isLoggedIn());
-
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
