@@ -1,5 +1,10 @@
-export const roleOptions = [
+export const roleOptionsForSuperAdmin = [
   { label: "SUPER_ADMIN", value: "super_admin" },
+  { label: "ADMIN", value: "admin" },
+  { label: "User", value: "user" },
+];
+
+export const roleOptionsForAdmin = [
   { label: "ADMIN", value: "admin" },
   { label: "User", value: "user" },
 ];
