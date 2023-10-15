@@ -162,7 +162,7 @@ const AdminPage = () => {
         columns={columns}
         dataSource={data}
         pageSize={size}
-        totalPages={100}
+        totalPages={0}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
