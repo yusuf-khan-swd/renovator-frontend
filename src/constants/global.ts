@@ -1,3 +1,9 @@
+export const roleOptions = [
+  { label: "SUPER_ADMIN", value: "super_admin" },
+  { label: "ADMIN", value: "admin" },
+  { label: "User", value: "user" },
+];
+
 export const genderOptions = [
   {
     label: "Male",
