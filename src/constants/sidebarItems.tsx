@@ -31,14 +31,9 @@ export const sidebarItems = (role: string) => {
 
   const commonAdminSidebarItems: MenuProps["items"] = [
     {
-      label: <Link href={`/${role}/manage-student`}>Manage Students</Link>,
+      label: <Link href={`/${role}/manage-users`}>Manage Users</Link>,
       icon: <TableOutlined />,
-      key: `/${role}/manage-student`,
-    },
-    {
-      label: <Link href={`/${role}/manage-faculty`}>Manage Faculty</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/manage-faculty`,
+      key: `/${role}/manage-users`,
     },
   ];
 
@@ -46,16 +41,16 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
     {
-      label: "Manage academic",
+      label: "Manage Content",
       key: "manage-academic",
       icon: <TableOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/academic/faculty`}>Faculties</Link>,
+          label: <Link href={`/${role}/academic/faculty`}>Blog</Link>,
           key: `/${role}/academic/faculty`,
         },
         {
-          label: <Link href={`/${role}/academic/department`}>Departments</Link>,
+          label: <Link href={`/${role}/academic/department`}>Faq</Link>,
           key: `/${role}/academic/department`,
         },
         {
