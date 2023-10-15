@@ -3,9 +3,9 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import {
-  useDeleteDepartmentMutation,
-  useDepartmentsQuery,
-} from "@/redux/api/departmentApi";
+  useDeleteServiceMutation,
+  useServicesQuery,
+} from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import {
   DeleteOutlined,
@@ -25,7 +25,8 @@ const ManageDepartmentPage = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [deleteDepartment] = useDeleteDepartmentMutation();
+
+  const [deleteService] = useDeleteServiceMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -41,17 +42,18 @@ const ManageDepartmentPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useDepartmentsQuery({ ...query });
+  const { data, isLoading } = useServicesQuery({ ...query });
 
-  const departments = data?.departments;
+  const services = data?.services;
+  console.log(services);
   const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      await deleteDepartment(id);
-      message.success("Department Deleted successfully");
+      await deleteService(id);
+      message.success("Service Delete successfully");
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
@@ -160,7 +162,7 @@ const ManageDepartmentPage = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={departments}
+        dataSource={services}
         pageSize={size}
         totalPages={meta?.total}
         showSizeChanger={true}
