@@ -3,10 +3,9 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMModal from "@/components/ui/UMModal";
 import UMTable from "@/components/ui/UMTable";
-import { useAdminsQuery, useDeleteAdminMutation } from "@/redux/api/adminApi";
-import { useDebounced } from "@/redux/hooks";
+import { useDeleteAdminMutation } from "@/redux/api/adminApi";
+import { useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
-import { IDepartment } from "@/types";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -14,7 +13,6 @@ import {
   ReloadOutlined,
 } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
-import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,80 +26,42 @@ const AdminPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
-  const [adminId, setAdminId] = useState<string>("");
+  const [adminId, setUserId] = useState<string>("");
 
   query["limit"] = size;
   query["page"] = page;
   query["sortBy"] = sortBy;
   query["sortOrder"] = sortOrder;
 
-  const debouncedSearchTerm = useDebounced({
-    searchQuery: searchTerm,
-    delay: 600,
-  });
-
-  if (!!debouncedSearchTerm) {
-    query["searchTerm"] = debouncedSearchTerm;
-  }
-  const { data, isLoading } = useAdminsQuery({ ...query });
-
-  const admins = data?.admins;
-  const meta = data?.meta;
+  const { data, isLoading } = useUsersQuery(undefined);
 
   const columns = [
     {
-      title: "Id",
-      dataIndex: "id",
-      sorter: true,
-    },
-    {
       title: "Name",
       dataIndex: "name",
-      render: function (data: Record<string, string>) {
-        const fullName = `${data?.firstName} ${data?.middleName} ${data?.lastName}`;
-        return <>{fullName}</>;
-      },
     },
     {
       title: "Email",
       dataIndex: "email",
     },
+
     {
-      title: "Department",
-      dataIndex: "managementDepartment",
-      render: function (data: IDepartment) {
-        return <>{data?.title}</>;
-      },
+      title: "Role",
+      dataIndex: "role",
     },
-    {
-      title: "Designation",
-      dataIndex: "designation",
-    },
-    {
-      title: "Created at",
-      dataIndex: "createdAt",
-      render: function (data: any) {
-        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
-      },
-      sorter: true,
-    },
-    {
-      title: "Contact no.",
-      dataIndex: "contactNo",
-    },
+
     {
       title: "Action",
       dataIndex: "id",
       render: function (data: any) {
-        // console.log(data);
         return (
           <>
-            <Link href={`/${base}/admin/details/${data}`}>
+            <Link href={`/${base}/manage-user/details/${data}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${base}/admin/edit/${data}`}>
+            <Link href={`/${base}/manage-user/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -116,7 +76,7 @@ const AdminPage = () => {
               type="primary"
               onClick={() => {
                 setOpen(true);
-                setAdminId(data);
+                setUserId(data);
               }}
               danger
               style={{ marginLeft: "3px" }}
@@ -200,9 +160,9 @@ const AdminPage = () => {
       <UMTable
         loading={isLoading}
         columns={columns}
-        dataSource={admins}
+        dataSource={data}
         pageSize={size}
-        totalPages={meta?.total}
+        totalPages={100}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
