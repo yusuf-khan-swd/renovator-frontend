@@ -5,6 +5,7 @@ import UMModal from "@/components/ui/UMModal";
 import UMTable from "@/components/ui/UMTable";
 import { useAdminsQuery, useDeleteAdminMutation } from "@/redux/api/adminApi";
 import { useDebounced } from "@/redux/hooks";
+import { getUserInfo } from "@/services/auth.service";
 import { IDepartment } from "@/types";
 import {
   DeleteOutlined,
@@ -95,12 +96,12 @@ const AdminPage = () => {
         // console.log(data);
         return (
           <>
-            <Link href={`/super_admin/admin/details/${data}`}>
+            <Link href={`/${base}/admin/details/${data}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/super_admin/admin/edit/${data}`}>
+            <Link href={`/${base}/admin/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -158,17 +159,20 @@ const AdminPage = () => {
     }
   };
 
+  const { role } = getUserInfo() as any;
+  const base = role;
+
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: "super_admin",
-            link: "/super_admin",
+            label: `${base}`,
+            link: `/${base}`,
           },
         ]}
       />
-      <ActionBar title="Admin List">
+      <ActionBar title="User List">
         <Input
           size="large"
           placeholder="Search"
@@ -178,7 +182,7 @@ const AdminPage = () => {
           }}
         />
         <div>
-          <Link href="/super_admin/admin/create">
+          <Link href={`/${base}/manage-users/create`}>
             <Button type="primary">Create Admin</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
@@ -206,12 +210,12 @@ const AdminPage = () => {
       />
 
       <UMModal
-        title="Remove admin"
+        title="Remove this user"
         isOpen={open}
         closeModal={() => setOpen(false)}
         handleOk={() => deleteAdminHandler(adminId)}
       >
-        <p className="my-5">Do you want to remove this admin?</p>
+        <p className="my-5">Do you want to remove this user?</p>
       </UMModal>
     </div>
   );

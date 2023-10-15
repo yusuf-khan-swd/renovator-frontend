@@ -2,19 +2,23 @@
 
 import AdminForm from "@/components/AdminForm/AdminForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import { getUserInfo } from "@/services/auth.service";
 
 const CreateAdminPage = () => {
+  const { role } = getUserInfo() as any;
+  const base = role;
+
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: "super_admin",
-            link: "/super_admin",
+            label: `${base}`,
+            link: `/${base}`,
           },
           {
-            label: "admin",
-            link: "/super_admin/admin",
+            label: "manage-users",
+            link: `/${base}/manage-users`,
           },
         ]}
       />
