@@ -6,14 +6,21 @@ const { confirm } = Modal;
 interface IConfirmModelProps {
   id: string;
   handleDelete: (id: string) => void;
+  title?: string;
+  content?: string;
 }
 
-const UMConfirmModal = ({ id, handleDelete }: IConfirmModelProps) => {
+const UMConfirmModal = ({
+  id,
+  handleDelete,
+  title,
+  content,
+}: IConfirmModelProps) => {
   const showConfirm = () => {
     confirm({
-      title: "Do you Want to delete these items?",
+      title: title || "Do you Want to delete these items?",
       icon: <ExclamationCircleFilled />,
-      content: "Some descriptions",
+      content: content || "Some descriptions",
       async onOk() {
         handleDelete(id);
       },

@@ -1,16 +1,11 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import UMModal from "@/components/ui/UMModal";
+import UMConfirmModal from "@/components/ui/ConfirmModal";
 import UMTable from "@/components/ui/UMTable";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  EyeOutlined,
-  ReloadOutlined,
-} from "@ant-design/icons";
+import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import Link from "next/link";
 import { useState } from "react";
@@ -24,8 +19,6 @@ const AdminPage = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [open, setOpen] = useState<boolean>(false);
-  const [adminId, setUserId] = useState<string>("");
 
   query["limit"] = size;
   query["page"] = page;
@@ -33,6 +26,18 @@ const AdminPage = () => {
   query["sortOrder"] = sortOrder;
 
   const { data, isLoading } = useUsersQuery(undefined);
+
+  const deleteUserHandler = async (id: string) => {
+    // console.log(id);
+    try {
+      const res = await deleteUser(id);
+      if (res) {
+        message.success("User Successfully Deleted!");
+      }
+    } catch (error: any) {
+      message.error(error.message);
+    }
+  };
 
   const columns = [
     {
@@ -71,17 +76,13 @@ const AdminPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
-            <Button
-              type="primary"
-              onClick={() => {
-                setOpen(true);
-                setUserId(data);
-              }}
-              danger
-              style={{ marginLeft: "3px" }}
-            >
-              <DeleteOutlined />
-            </Button>
+
+            <UMConfirmModal
+              id={data}
+              handleDelete={deleteUserHandler}
+              title="Do you want to remove this user?"
+              content={`Remove this user id: ${data}`}
+            />
           </>
         );
       },
@@ -105,19 +106,6 @@ const AdminPage = () => {
     setSearchTerm("");
   };
 
-  const deleteUserHandler = async (id: string) => {
-    // console.log(id);
-    try {
-      const res = await deleteUser(id);
-      if (res) {
-        message.success("User Successfully Deleted!");
-        setOpen(false);
-      }
-    } catch (error: any) {
-      message.error(error.message);
-    }
-  };
-
   const { role } = getUserInfo() as any;
   const base = role;
 
@@ -128,6 +116,10 @@ const AdminPage = () => {
           {
             label: `${base}`,
             link: `/${base}`,
+          },
+          {
+            label: `manage-users`,
+            link: `/${base}/manage-users`,
           },
         ]}
       />
@@ -167,15 +159,6 @@ const AdminPage = () => {
         onTableChange={onTableChange}
         showPagination={true}
       />
-
-      <UMModal
-        title="Remove this user"
-        isOpen={open}
-        closeModal={() => setOpen(false)}
-        handleOk={() => deleteUserHandler(adminId)}
-      >
-        <p className="my-5">Do you want to remove this user?</p>
-      </UMModal>
     </div>
   );
 };
