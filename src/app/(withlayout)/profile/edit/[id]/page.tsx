@@ -2,7 +2,11 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
+import FormSelectField, {
+  SelectOptions,
+} from "@/components/Forms/FormSelectField";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import { roleOptions } from "@/constants/global";
 import {
   useProfileQuery,
   useUpdateProfileMutation,
@@ -73,7 +77,11 @@ const EditProfilePage = () => {
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="role" label="User Role" />
+              <FormSelectField
+                name="role"
+                label="User Role"
+                options={roleOptions as SelectOptions[]}
+              />
             </Col>
           </Row>
           <Button
