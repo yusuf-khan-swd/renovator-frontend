@@ -54,15 +54,15 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: "Manage Content",
-      key: "manage-academic",
+      key: `/${role}/manage-contents`,
       icon: <TableOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/blog`}>Blog</Link>,
+          label: <Link href={`/${role}/manage-contents/blog`}>Blog</Link>,
           key: `/${role}/blog`,
         },
         {
-          label: <Link href={`/${role}/faq`}>Faq</Link>,
+          label: <Link href={`/${role}/manage-contents/faq`}>Faq</Link>,
           key: `/${role}/faq`,
         },
       ],
