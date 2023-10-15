@@ -1,7 +1,7 @@
 "use client";
 
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { useMyAcademicInfosQuery } from "@/redux/api/studentApi";
 import { Card, Col, Row, Tag } from "antd";
@@ -72,7 +72,7 @@ const AcademicReport = () => {
 
   return (
     <>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `student`, link: `/student` },
           { label: `courses`, link: `/student/courses` },

@@ -1,6 +1,6 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMModal from "@/components/ui/UMModal";
 import UMTable from "@/components/ui/UMTable";
 import { useAdminsQuery, useDeleteAdminMutation } from "@/redux/api/adminApi";
@@ -160,7 +160,7 @@ const AdminPage = () => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

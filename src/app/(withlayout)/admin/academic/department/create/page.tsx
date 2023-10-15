@@ -5,7 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 import { useAddAcademicDepartmentMutation } from "@/redux/api/academic/departmentApi";
 import { useAcademicFacultiesQuery } from "@/redux/api/academic/facultyApi";
@@ -43,7 +43,7 @@ const CreateACDepartmentPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "academic", link: `/${base}/academic` },

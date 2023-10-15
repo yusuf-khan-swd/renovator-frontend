@@ -3,7 +3,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import {
   useDepartmentQuery,
   useUpdateDepartmentMutation,
@@ -39,7 +39,7 @@ const EditDepartmentPage = ({ params }: IDProps) => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

@@ -3,7 +3,7 @@
 import Form from "@/components/Forms/Form";
 import FormSelectField from "@/components/Forms/FormSelectField";
 import FormYearPicker from "@/components/Forms/FormYearPicker";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { monthOptions } from "@/constants/global";
 import { useAddAcademicSemesterMutation } from "@/redux/api/academic/semesterApi";
 
@@ -50,7 +50,7 @@ const CreateACSemesterPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "academic", link: `/${base}/academic` },

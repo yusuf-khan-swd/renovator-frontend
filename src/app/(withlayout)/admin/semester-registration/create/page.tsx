@@ -4,7 +4,7 @@ import ACSemesterField from "@/components/Forms/ACSemesterField";
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useAddSemesterRegistrationsMutation } from "@/redux/api/semesterRegistrationApi";
 import { Button, Col, Row, message } from "antd";
 
@@ -29,7 +29,7 @@ const CreateSemesterRegistrationPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           {

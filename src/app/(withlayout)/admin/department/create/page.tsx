@@ -2,7 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useAddDepartmentMutation } from "@/redux/api/departmentApi";
 import { Button, Col, Row, message } from "antd";
 
@@ -23,7 +23,7 @@ const CreateDepartmentPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "department", link: `/${base}/department` },

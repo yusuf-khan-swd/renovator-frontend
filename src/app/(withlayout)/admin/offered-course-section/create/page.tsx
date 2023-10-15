@@ -6,8 +6,8 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import SemesterRegistrationField from "@/components/Forms/SemesterRegistrationField";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import FormDynamicFields from "@/components/ui/FormDynamicFields";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { useOfferedCoursesQuery } from "@/redux/api/offeredCourseApi";
 import { useAddOfferedCourseSectionMutation } from "@/redux/api/offeredCourseSectionApi";
 import { Button, Col, Row, message } from "antd";
@@ -59,7 +59,7 @@ const CreateOfferedCourseSectionPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           {

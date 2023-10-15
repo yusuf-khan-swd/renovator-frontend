@@ -2,7 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import {
   useProfileQuery,
   useUpdateProfileMutation,
@@ -39,7 +39,7 @@ const EditProfilePage = () => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: `${base}`,

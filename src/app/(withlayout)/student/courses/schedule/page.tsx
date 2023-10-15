@@ -1,7 +1,7 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
 import ClassSchedule from "@/components/ui/ClassSchedule";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { useMyCourseSchedulesQuery } from "@/redux/api/studentApi";
 import { IOfferedCourseSchedule } from "@/types";
@@ -51,7 +51,7 @@ const MyCourseSchedulePage = () => {
 
   return (
     <>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `student`, link: `/student` },
           { label: `courses`, link: `/student/courses` },

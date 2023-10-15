@@ -1,19 +1,19 @@
 "use client";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import UMTable from "@/components/ui/UMTable";
 import {
   DeleteOutlined,
   EditOutlined,
   ReloadOutlined,
 } from "@ant-design/icons";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import UMTable from "@/components/ui/UMTable";
 
+import ActionBar from "@/components/ui/ActionBar";
+import { useDeleteRoomMutation, useRoomsQuery } from "@/redux/api/roomApi";
+import { useDebounced } from "@/redux/hooks";
 import { Button, Input, message } from "antd";
+import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import ActionBar from "@/components/ui/ActionBar";
-import { useDebounced } from "@/redux/hooks";
-import dayjs from "dayjs";
-import { useDeleteRoomMutation, useRoomsQuery } from "@/redux/api/roomApi";
 
 const RoomPage = () => {
   const query: Record<string, any> = {};
@@ -133,7 +133,7 @@ const RoomPage = () => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "admin",

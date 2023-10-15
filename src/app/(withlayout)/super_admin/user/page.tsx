@@ -1,9 +1,9 @@
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 const ManageUsersPage = () => {
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

@@ -2,7 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useProfileQuery } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, Row, message } from "antd";
@@ -33,7 +33,7 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: `${base}`,

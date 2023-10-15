@@ -1,12 +1,12 @@
 "use client";
 
 import AdminForm from "@/components/AdminForm/AdminForm";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 const CreateAdminPage = () => {
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

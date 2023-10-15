@@ -6,7 +6,7 @@ import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
 import FormSelectField from "@/components/Forms/FormSelectField";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { semesterRegistrationStatus } from "@/constants/global";
 import {
   useSemesterRegistrationQuery,
@@ -79,7 +79,7 @@ const EditSemesterRegistration = ({ params }: { params: any }) => {
 
   return (
     <>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: "admin", link: "/admin" },
           {

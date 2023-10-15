@@ -2,7 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useAddAcademicFacultyMutation } from "@/redux/api/academic/facultyApi";
 
 import { Button, Col, Row, message } from "antd";
@@ -26,7 +26,7 @@ const CreateACFacultyPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "academic-faculty", link: `/${base}/academic/faculty` },

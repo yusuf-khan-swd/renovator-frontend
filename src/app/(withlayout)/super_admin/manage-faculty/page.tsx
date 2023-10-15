@@ -1,6 +1,6 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { useFacultiesQuery } from "@/redux/api/facultyApi";
 import { useDebounced } from "@/redux/hooks";
@@ -133,7 +133,7 @@ const FacultyPage = () => {
   };
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

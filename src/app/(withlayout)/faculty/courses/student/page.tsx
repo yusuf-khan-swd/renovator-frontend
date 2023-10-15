@@ -1,6 +1,6 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { useFacultyCourseStudentsQuery } from "@/redux/api/facultyApi";
 import { useDebounced } from "@/redux/hooks";
@@ -115,7 +115,7 @@ const FacultyCoursesStudentsPage = ({ searchParams }: ISearchProps) => {
   };
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "faculty",

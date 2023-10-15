@@ -1,7 +1,7 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
 import BaseRow from "@/components/ui/BaseRow";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMTable from "@/components/ui/UMTable";
 import { ExamType } from "@/constants/global";
 import {
@@ -155,7 +155,7 @@ const StudentResultPage = ({ searchParams }: any) => {
   };
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "faculty",

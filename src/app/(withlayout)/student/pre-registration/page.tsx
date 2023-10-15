@@ -1,7 +1,7 @@
 "use client";
 
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMCollapse, { ItemProps } from "@/components/ui/UMCollapse";
 import {
   useConfirmMyRegistrationMutation,
@@ -185,7 +185,7 @@ const ViewPreregistrationPage = () => {
   const base = "student";
   return (
     <>
-      <UMBreadCrumb items={[{ label: `${base}`, link: `/${base}` }]} />
+      <CommonBreadCrumb items={[{ label: `${base}`, link: `/${base}` }]} />
       <ActionBar title="Course Pre-registration" />
       <UMCollapse
         items={availableCourses}

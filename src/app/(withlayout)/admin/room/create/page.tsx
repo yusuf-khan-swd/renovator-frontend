@@ -5,7 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useBuildingsQuery } from "@/redux/api/buildingApi";
 import { useAddRoomMutation } from "@/redux/api/roomApi";
 import { Button, Col, Row, message } from "antd";
@@ -40,7 +40,7 @@ const CreateRoomPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "room", link: `/${base}/room` },

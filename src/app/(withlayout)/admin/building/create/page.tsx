@@ -1,7 +1,7 @@
 "use client";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useAddBuildingMutation } from "@/redux/api/buildingApi";
 import { Button, Col, Row, message } from "antd";
 
@@ -23,7 +23,7 @@ const CreateBuildPage = () => {
   const base = "admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "building", link: `/${base}/building` },

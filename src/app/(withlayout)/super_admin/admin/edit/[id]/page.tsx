@@ -5,7 +5,7 @@ import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
 import FormSelectField from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { bloodGroupOptions, genderOptions } from "@/constants/global";
 import { useAdminQuery, useUpdateAdminMutation } from "@/redux/api/adminApi";
 import { useDepartmentsQuery } from "@/redux/api/departmentApi";
@@ -63,7 +63,7 @@ const EditAdminPage = ({ params }: any) => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "super_admin",

@@ -2,7 +2,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useUpdateMarksMutation } from "@/redux/api/studentEnrollCourseMarkApi";
 import { Button, Col, Row, message } from "antd";
 
@@ -41,7 +41,7 @@ const UpdateMarksPage = ({ searchParams }: any) => {
 
   return (
     <>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: "faculty", link: "/faculty" },
           { label: "courses", link: "/faculty/courses" },

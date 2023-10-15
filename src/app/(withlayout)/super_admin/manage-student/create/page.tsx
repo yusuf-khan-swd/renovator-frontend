@@ -4,7 +4,7 @@ import GuardianInfo from "@/components/StudentForms/GuardianInfo";
 import LocalGuardianInfo from "@/components/StudentForms/LocalGuardianInfo";
 import StudentBasicInfo from "@/components/StudentForms/StudentBasicInfo";
 import StudentInfo from "@/components/StudentForms/StudentInfo";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useAddStudentWithFormDataMutation } from "@/redux/api/studentApi";
 import { message } from "antd";
 
@@ -51,7 +51,7 @@ const CreateStudentPage = () => {
   const base = "super_admin";
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           { label: `${base}`, link: `/${base}` },
           { label: "manage-student", link: `/${base}/manage-student` },

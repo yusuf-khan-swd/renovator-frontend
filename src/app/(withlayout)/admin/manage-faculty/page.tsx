@@ -1,20 +1,20 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { Button, Input } from "antd";
-import Link from "next/link";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import UMTable from "@/components/ui/UMTable";
+import { useFacultiesQuery } from "@/redux/api/facultyApi";
+import { useDebounced } from "@/redux/hooks";
+import { IDepartment } from "@/types";
 import {
   DeleteOutlined,
   EditOutlined,
-  ReloadOutlined,
   EyeOutlined,
+  ReloadOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
-import { useDebounced } from "@/redux/hooks";
-import UMTable from "@/components/ui/UMTable";
-import { IDepartment } from "@/types";
+import { Button, Input } from "antd";
 import dayjs from "dayjs";
-import { useFacultiesQuery } from "@/redux/api/facultyApi";
+import Link from "next/link";
+import { useState } from "react";
 
 const FacultyPage = () => {
   const query: Record<string, any> = {};
@@ -133,7 +133,7 @@ const FacultyPage = () => {
   };
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "admin",

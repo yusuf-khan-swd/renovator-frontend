@@ -1,6 +1,6 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 import UMTable from "@/components/ui/UMTable";
 import { useMyCoursesQuery } from "@/redux/api/studentApi";
@@ -80,7 +80,7 @@ const StudentCoursesPage = () => {
 
   return (
     <div>
-      <UMBreadCrumb
+      <CommonBreadCrumb
         items={[
           {
             label: "student",
