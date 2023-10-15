@@ -20,6 +20,17 @@ export type IGenericErrorMessage = {
   message: string;
 };
 
+export interface IService {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  status: string;
+  location: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface IDepartment {
   id: string;
   title: string;
