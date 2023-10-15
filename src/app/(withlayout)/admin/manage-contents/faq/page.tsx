@@ -1,7 +1,7 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import UMTable from "@/components/ui/UMTable";
+import CommonTable from "@/components/ui/CommonTable";
 import {
   useAcademicFacultiesQuery,
   useDeleteAcademicFacultyMutation,
@@ -159,7 +159,7 @@ const ACFacultyPage = () => {
         </div>
       </ActionBar>
 
-      <UMTable
+      <CommonTable
         loading={isLoading}
         columns={columns}
         dataSource={academicFaculties}

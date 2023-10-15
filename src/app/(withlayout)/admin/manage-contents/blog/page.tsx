@@ -1,6 +1,6 @@
 "use client";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import UMTable from "@/components/ui/UMTable";
+import CommonTable from "@/components/ui/CommonTable";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -167,7 +167,7 @@ const ACDepartmentPage = () => {
         </div>
       </ActionBar>
 
-      <UMTable
+      <CommonTable
         loading={isLoading}
         columns={columns}
         dataSource={academicDepartments}

@@ -14,7 +14,7 @@ type UMTableProps = {
   showPagination?: boolean;
 };
 
-const UMTable = ({
+const CommonTable = ({
   loading = false,
   columns,
   dataSource,
@@ -46,4 +46,4 @@ const UMTable = ({
   );
 };
 
-export default UMTable;
+export default CommonTable;

@@ -1,8 +1,8 @@
 "use client";
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import CommonTable from "@/components/ui/CommonTable";
 import UMConfirmModal from "@/components/ui/ConfirmModal";
-import UMTable from "@/components/ui/UMTable";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -145,7 +145,7 @@ const AdminPage = () => {
         </div>
       </ActionBar>
 
-      <UMTable
+      <CommonTable
         loading={isLoading}
         columns={columns}
         dataSource={data}
