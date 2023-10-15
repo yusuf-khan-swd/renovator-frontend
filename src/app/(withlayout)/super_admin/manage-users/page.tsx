@@ -56,12 +56,12 @@ const AdminPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${base}/manage-user/details/${data}`}>
+            <Link href={`/${base}/manage-users/details/${data}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${base}/manage-user/edit/${data}`}>
+            <Link href={`/${base}/manage-users/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
