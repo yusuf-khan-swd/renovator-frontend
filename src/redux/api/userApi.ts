@@ -3,7 +3,7 @@ import { baseApi } from "./baseApi";
 
 const USERS_URL = "/users";
 
-export const adminApi = baseApi.injectEndpoints({
+export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     users: build.query({
       query: () => {
@@ -47,4 +47,4 @@ export const {
   useUserQuery,
   useUpdateUserMutation,
   useDeleteUserMutation,
-} = adminApi;
+} = userApi;
