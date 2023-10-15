@@ -3,8 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import UMModal from "@/components/ui/UMModal";
 import UMTable from "@/components/ui/UMTable";
-import { useDeleteAdminMutation } from "@/redux/api/adminApi";
-import { useUsersQuery } from "@/redux/api/userApi";
+import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import {
   DeleteOutlined,
@@ -18,7 +17,7 @@ import { useState } from "react";
 
 const AdminPage = () => {
   const query: Record<string, any> = {};
-  const [deleteAdmin] = useDeleteAdminMutation();
+  const [deleteUser] = useDeleteUserMutation();
 
   const [page, setPage] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
@@ -106,12 +105,12 @@ const AdminPage = () => {
     setSearchTerm("");
   };
 
-  const deleteAdminHandler = async (id: string) => {
+  const deleteUserHandler = async (id: string) => {
     // console.log(id);
     try {
-      const res = await deleteAdmin(id);
+      const res = await deleteUser(id);
       if (res) {
-        message.success("Admin Successfully Deleted!");
+        message.success("User Successfully Deleted!");
         setOpen(false);
       }
     } catch (error: any) {
@@ -173,7 +172,7 @@ const AdminPage = () => {
         title="Remove this user"
         isOpen={open}
         closeModal={() => setOpen(false)}
-        handleOk={() => deleteAdminHandler(adminId)}
+        handleOk={() => deleteUserHandler(adminId)}
       >
         <p className="my-5">Do you want to remove this user?</p>
       </UMModal>
