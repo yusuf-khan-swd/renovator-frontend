@@ -6,7 +6,7 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { roleOptions } from "@/constants/global";
+import { roleOptionsForSuperAdmin } from "@/constants/global";
 import {
   useProfileQuery,
   useUpdateProfileMutation,
@@ -80,7 +80,7 @@ const EditProfilePage = () => {
               <FormSelectField
                 name="role"
                 label="User Role"
-                options={roleOptions as SelectOptions[]}
+                options={roleOptionsForSuperAdmin as SelectOptions[]}
               />
             </Col>
           </Row>
