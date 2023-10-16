@@ -2,17 +2,14 @@
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
+import ConfirmModal from "@/components/ui/ConfirmModal";
 import {
   useDeleteServiceMutation,
   useServicesQuery,
 } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  ReloadOutlined,
-} from "@ant-design/icons";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
@@ -106,13 +103,12 @@ const ManageDepartmentPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
-            <Button
-              onClick={() => deleteHandler(data?.id)}
-              type="primary"
-              danger
-            >
-              <DeleteOutlined />
-            </Button>
+            <ConfirmModal
+              id={data?.id}
+              handleDelete={deleteHandler}
+              title="Do you want to delete this service?"
+              content={`Delete ${data?.title} service!`}
+            />
           </>
         );
       },

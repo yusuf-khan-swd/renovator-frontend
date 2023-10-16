@@ -10,7 +10,7 @@ interface IConfirmModelProps {
   content?: string;
 }
 
-const UMConfirmModal = ({
+const ConfirmModal = ({
   id,
   handleDelete,
   title,
@@ -37,4 +37,4 @@ const UMConfirmModal = ({
   );
 };
 
-export default UMConfirmModal;
+export default ConfirmModal;
