@@ -5,13 +5,12 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
-import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { serviceStatusOptions } from "@/constants/global";
+import { bookingStatusOptions } from "@/constants/global";
 import {
-  useServiceQuery,
-  useUpdateServiceMutation,
-} from "@/redux/api/serviceApi";
+  useBookingQuery,
+  useUpdateBookingMutation,
+} from "@/redux/api/bookingApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,15 +18,15 @@ import { Button, Col, Row, message } from "antd";
 
 const EditServicePage = ({ params }: any) => {
   const id = params?.id;
-  const { data, isLoading } = useServiceQuery(id);
+  const { data, isLoading } = useBookingQuery(id);
 
-  const [updateService] = useUpdateServiceMutation();
+  const [updateBooking] = useUpdateBookingMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
       console.log(data);
-      await updateService(data);
+      await updateBooking(data);
       message.success("Service updated successfully");
     } catch (err: any) {
       console.error(err.message);
@@ -37,11 +36,8 @@ const EditServicePage = ({ params }: any) => {
 
   const defaultValues = {
     id: data?.id,
-    title: data?.title || "",
-    description: data?.description || "",
-    price: data?.price || "",
+    date: data?.date || "",
     status: data?.status || "",
-    location: data?.location || "",
   };
 
   const { role } = getUserInfo() as any;
@@ -57,7 +53,7 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Update service</h1>
+      <h1>Update Booking</h1>
       <Form
         submitHandler={onSubmit}
         resolver={yupResolver(serviceSchema)}
@@ -65,35 +61,16 @@ const EditServicePage = ({ params }: any) => {
       >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="title" label="Title" required />
+            <FormInput name="date" label="Date" required />
           </Col>
         </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="price" label="Price" required />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="location" label="Location" required />
-          </Col>
-        </Row>
+
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormSelectField
               name="status"
               label="Status"
-              options={serviceStatusOptions as SelectOptions[]}
-            />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormTextArea
-              name="description"
-              label="Description"
-              rows={5}
-              required
+              options={bookingStatusOptions as SelectOptions[]}
             />
           </Col>
         </Row>
