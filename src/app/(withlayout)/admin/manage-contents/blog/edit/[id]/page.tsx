@@ -8,22 +8,27 @@ import FormSelectField, {
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { serviceStatusOptions } from "@/constants/global";
-import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
-import { useCreateServiceMutation } from "@/redux/api/serviceApi";
+import {
+  useServiceQuery,
+  useUpdateServiceMutation,
+} from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 
-const CreateServicePage = () => {
-  const [createService] = useCreateServiceMutation();
+const EditServicePage = ({ params }: any) => {
+  const id = params?.id;
+  const { data, isLoading } = useServiceQuery(id);
+
+  const [updateService] = useUpdateServiceMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      // console.log(data);
-      await createService(data);
-      message.success("Service added successfully");
+      console.log(data);
+      await updateService(data);
+      message.success("Service updated successfully");
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
@@ -31,12 +36,17 @@ const CreateServicePage = () => {
   };
 
   const defaultValues = {
-    status: ENUM_SERVICE_STATUS.AVAILABLE,
+    id: data?.id,
+    title: data?.title || "",
+    description: data?.description || "",
+    price: data?.price || "",
+    status: data?.status || "",
+    location: data?.location || "",
   };
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
-  const endRoute = "create";
+  const endRoute = "edit";
 
   return (
     <div>
@@ -47,7 +57,7 @@ const CreateServicePage = () => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Add new service</h1>
+      <h1>Update service</h1>
       <Form
         submitHandler={onSubmit}
         resolver={yupResolver(serviceSchema)}
@@ -88,11 +98,11 @@ const CreateServicePage = () => {
           </Col>
         </Row>
         <Button type="primary" htmlType="submit">
-          add
+          Update
         </Button>
       </Form>
     </div>
   );
 };
 
-export default CreateServicePage;
+export default EditServicePage;

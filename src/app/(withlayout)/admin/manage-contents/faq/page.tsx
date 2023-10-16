@@ -1,23 +1,25 @@
 "use client";
-import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+
+import ActionBar from "@/components/ui/ActionBar";
+import ConfirmModal from "@/components/ui/ConfirmModal";
 import {
-  useAcademicFacultiesQuery,
-  useDeleteAcademicFacultyMutation,
-} from "@/redux/api/academic/facultyApi";
+  useBlogsQuery,
+  useDeleteBlogMutation,
+} from "@/redux/api/content/blogApi";
 import { useDebounced } from "@/redux/hooks";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  ReloadOutlined,
-} from "@ant-design/icons";
+import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ACFacultyPage = () => {
+const ACDepartmentPage = () => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-contents/blog";
+
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -25,7 +27,8 @@ const ACFacultyPage = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [deleteAcademicFaculty] = useDeleteAcademicFacultyMutation();
+
+  const [deleteBlog] = useDeleteBlogMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -41,18 +44,15 @@ const ACFacultyPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useAcademicFacultiesQuery({ ...query });
-
-  const academicFaculties = data?.academicFaculties;
-  const meta = data?.meta;
+  const { data, isLoading } = useBlogsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      const res = await deleteAcademicFaculty(id);
+      const res = await deleteBlog(id);
       if (res) {
-        message.success("Faculty Deleted successfully");
+        message.success("Blog Deleted successfully");
       }
     } catch (err: any) {
       //   console.error(err.message);
@@ -64,6 +64,13 @@ const ACFacultyPage = () => {
     {
       title: "Title",
       dataIndex: "title",
+    },
+    {
+      title: "Faculty",
+      dataIndex: "academicFaculty",
+      render: function (data: any) {
+        return <>{data?.title}</>;
+      },
     },
     {
       title: "CreatedAt",
@@ -78,7 +85,7 @@ const ACFacultyPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/academic/faculty/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -89,13 +96,12 @@ const ACFacultyPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
-            <Button
-              onClick={() => deleteHandler(data?.id)}
-              type="primary"
-              danger
-            >
-              <DeleteOutlined />
-            </Button>
+            <ConfirmModal
+              id={data?.id}
+              handleDelete={deleteHandler}
+              title="Do you want to delete this blog?"
+              content={`Delete ${data?.title} blog!`}
+            />
           </>
         );
       },
@@ -124,14 +130,12 @@ const ACFacultyPage = () => {
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: "admin",
-            link: "/admin",
-          },
+          { label: role, link: `/${role}` },
+          { label: routeName, link: `/${role}/${routeName}` },
         ]}
       />
 
-      <ActionBar title="Academic Faculty List">
+      <ActionBar title="Academic Department List">
         <Input
           type="text"
           size="large"
@@ -144,7 +148,7 @@ const ACFacultyPage = () => {
           }}
         />
         <div>
-          <Link href="/admin/academic/faculty/create">
+          <Link href={`/${role}/${routeName}/create`}>
             <Button type="primary">Create</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
@@ -162,9 +166,9 @@ const ACFacultyPage = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={academicFaculties}
+        dataSource={data}
         pageSize={size}
-        totalPages={meta?.total}
+        totalPages={0}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
@@ -174,4 +178,4 @@ const ACFacultyPage = () => {
   );
 };
 
-export default ACFacultyPage;
+export default ACDepartmentPage;
