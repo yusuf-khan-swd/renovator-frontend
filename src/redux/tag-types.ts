@@ -2,6 +2,7 @@ export enum tagTypes {
   profile = "profile",
   user = "user",
   service = "service",
+  booking = "booking",
   admin = "admin",
 }
 
