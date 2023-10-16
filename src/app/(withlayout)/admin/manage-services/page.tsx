@@ -65,6 +65,7 @@ const ManageServicePage = () => {
     {
       title: "Title",
       dataIndex: "title",
+      sorter: true,
     },
     {
       title: "Description",
@@ -73,14 +74,17 @@ const ManageServicePage = () => {
     {
       title: "Price",
       dataIndex: "price",
+      sorter: true,
     },
     {
       title: "Status",
       dataIndex: "status",
+      sorter: true,
     },
     {
       title: "Location",
       dataIndex: "location",
+      sorter: true,
     },
     {
       title: "CreatedAt",
