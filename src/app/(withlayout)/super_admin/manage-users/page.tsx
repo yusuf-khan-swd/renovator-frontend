@@ -60,12 +60,12 @@ const AdminPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${base}/manage-users/details/${data}`}>
+            <Link href={`/${role}/manage-users/details/${data}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${base}/manage-users/edit/${data}`}>
+            <Link href={`/${role}/manage-users/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -107,19 +107,18 @@ const AdminPage = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const base = role;
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: `${base}`,
-            link: `/${base}`,
+            label: `${role}`,
+            link: `/${role}`,
           },
           {
             label: `manage-users`,
-            link: `/${base}/manage-users`,
+            link: `/${role}/manage-users`,
           },
         ]}
       />
@@ -133,7 +132,7 @@ const AdminPage = () => {
           }}
         />
         <div>
-          <Link href={`/${base}/manage-users/create`}>
+          <Link href={`/${role}/manage-users/create`}>
             <Button type="primary">Create Admin</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (

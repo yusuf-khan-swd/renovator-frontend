@@ -39,23 +39,22 @@ const EditUserPage = ({ params }: any) => {
   };
 
   const { role } = getUserInfo() as any;
-  const base = role as string;
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: `${base}`,
-            link: `/${base}`,
+            label: `${role}`,
+            link: `/${role}`,
           },
           {
             label: `manage-users`,
-            link: `/${base}/manage-users`,
+            link: `/${role}/manage-users`,
           },
           {
             label: "edit",
-            link: `/${base}/manage-users/edit`,
+            link: `/${role}/manage-users/edit`,
           },
         ]}
       />
