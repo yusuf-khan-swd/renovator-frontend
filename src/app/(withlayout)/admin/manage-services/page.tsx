@@ -44,7 +44,7 @@ const ManageDepartmentPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useServicesQuery({ ...query });
-  console.log(data);
+  // console.log(data);
 
   const services = data?.services;
   const meta = data?.meta;
@@ -138,16 +138,14 @@ const ManageDepartmentPage = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "/manage-services";
+  const routeName = "manage-services";
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: role,
-            link: `/${role}/${routeName}`,
-          },
+          { label: role, link: `/${role}` },
+          { label: routeName, link: `/${role}/${routeName}` },
         ]}
       />
 
