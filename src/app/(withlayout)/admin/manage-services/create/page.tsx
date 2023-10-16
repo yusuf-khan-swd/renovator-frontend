@@ -15,7 +15,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 
-const CreateDepartmentPage = () => {
+const CreateServicePage = () => {
   const [createService] = useCreateServiceMutation();
 
   const onSubmit = async (data: any) => {
@@ -95,4 +95,4 @@ const CreateDepartmentPage = () => {
   );
 };
 
-export default CreateDepartmentPage;
+export default CreateServicePage;
