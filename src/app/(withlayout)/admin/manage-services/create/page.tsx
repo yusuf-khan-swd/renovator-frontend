@@ -25,6 +25,10 @@ const CreateDepartmentPage = () => {
     }
   };
 
+  const defaultValues = {
+    status: 
+  }
+
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
   const endRoute = "create";
