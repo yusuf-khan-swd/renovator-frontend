@@ -4,9 +4,9 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import {
-  useDeleteServiceMutation,
-  useServicesQuery,
-} from "@/redux/api/serviceApi";
+  useBookingsQuery,
+  useDeleteBookingMutation,
+} from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -27,7 +27,7 @@ const ManageBookingPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteService] = useDeleteServiceMutation();
+  const [deleteBooking] = useDeleteBookingMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -43,18 +43,15 @@ const ManageBookingPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useServicesQuery({ ...query });
+  const { data, isLoading } = useBookingsQuery(undefined);
   // console.log(data);
-
-  const services = data?.services;
-  const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      await deleteService(id);
-      message.success("Service Delete successfully");
+      await deleteBooking(id);
+      message.success("Booking Delete successfully");
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
@@ -63,27 +60,22 @@ const ManageBookingPage = () => {
 
   const columns = [
     {
-      title: "Title",
-      dataIndex: "title",
-      sorter: true,
-    },
-    {
-      title: "Description",
-      dataIndex: "description",
-    },
-    {
-      title: "Price",
-      dataIndex: "price",
+      title: "Date",
+      dataIndex: "date",
       sorter: true,
     },
     {
       title: "Status",
       dataIndex: "status",
+    },
+    {
+      title: "Price",
+      dataIndex: "service.price",
       sorter: true,
     },
     {
-      title: "Location",
-      dataIndex: "location",
+      title: "User Email",
+      dataIndex: "user.email",
       sorter: true,
     },
     {
@@ -162,9 +154,6 @@ const ManageBookingPage = () => {
           }}
         />
         <div>
-          <Link href={`/${role}/${routeName}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
@@ -180,9 +169,9 @@ const ManageBookingPage = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={services}
+        dataSource={data}
         pageSize={size}
-        totalPages={meta?.total}
+        totalPages={0}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
