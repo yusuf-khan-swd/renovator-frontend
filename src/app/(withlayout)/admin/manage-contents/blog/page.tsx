@@ -1,24 +1,25 @@
 "use client";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  ReloadOutlined,
-} from "@ant-design/icons";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
+import ConfirmModal from "@/components/ui/ConfirmModal";
 import {
-  useAcademicDepartmentsQuery,
-  useDeleteAcademicDepartmentMutation,
-} from "@/redux/api/academic/departmentApi";
+  useBlogsQuery,
+  useDeleteBlogMutation,
+} from "@/redux/api/content/blogApi";
 import { useDebounced } from "@/redux/hooks";
+import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
 const ACDepartmentPage = () => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-contents/blog";
+
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -26,7 +27,8 @@ const ACDepartmentPage = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [deleteAcademicDepartment] = useDeleteAcademicDepartmentMutation();
+
+  const [deleteBlog] = useDeleteBlogMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -42,18 +44,15 @@ const ACDepartmentPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useAcademicDepartmentsQuery({ ...query });
-
-  const academicDepartments = data?.academicDepartments;
-  const meta = data?.meta;
+  const { data, isLoading } = useBlogsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      const res = await deleteAcademicDepartment(id);
+      const res = await deleteBlog(id);
       if (res) {
-        message.success("Department Deleted successfully");
+        message.success("Blog Deleted successfully");
       }
     } catch (err: any) {
       //   console.error(err.message);
@@ -86,7 +85,7 @@ const ACDepartmentPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/academic/department/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -97,13 +96,12 @@ const ACDepartmentPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
-            <Button
-              onClick={() => deleteHandler(data?.id)}
-              type="primary"
-              danger
-            >
-              <DeleteOutlined />
-            </Button>
+            <ConfirmModal
+              id={data?.id}
+              handleDelete={deleteHandler}
+              title="Do you want to delete this blog?"
+              content={`Delete ${data?.title} blog!`}
+            />
           </>
         );
       },
@@ -132,10 +130,8 @@ const ACDepartmentPage = () => {
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: "admin",
-            link: "/admin",
-          },
+          { label: role, link: `/${role}` },
+          { label: routeName, link: `/${role}/${routeName}` },
         ]}
       />
 
@@ -152,7 +148,7 @@ const ACDepartmentPage = () => {
           }}
         />
         <div>
-          <Link href="/admin/academic/department/create">
+          <Link href={`/${role}/${routeName}/create`}>
             <Button type="primary">Create</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
@@ -170,9 +166,9 @@ const ACDepartmentPage = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={academicDepartments}
+        dataSource={data}
         pageSize={size}
-        totalPages={meta?.total}
+        totalPages={0}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
