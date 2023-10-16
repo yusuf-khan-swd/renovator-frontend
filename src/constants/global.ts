@@ -1,7 +1,7 @@
 export const serviceStatusOptions = [
   { label: "Available", value: "available" },
-  { label: "Booked", value: "booked" },
   { label: "Upcoming", value: "upcoming" },
+  { label: "Booked", value: "booked" },
 ];
 
 export const roleOptionsForSuperAdmin = [
