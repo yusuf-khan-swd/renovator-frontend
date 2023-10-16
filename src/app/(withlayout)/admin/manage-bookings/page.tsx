@@ -141,7 +141,7 @@ const ManageBookingPage = () => {
         ]}
       />
 
-      <ActionBar title="Service List">
+      <ActionBar title="Booking List">
         <Input
           type="text"
           size="large"
