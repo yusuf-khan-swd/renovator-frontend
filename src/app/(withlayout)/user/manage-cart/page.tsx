@@ -17,7 +17,7 @@ import { useState } from "react";
 
 const ManageBookingPage = () => {
   const { role } = getUserInfo() as any;
-  const routeName = "manage-bookings";
+  const routeName = "manage-cart";
 
   const query: Record<string, any> = {};
 
