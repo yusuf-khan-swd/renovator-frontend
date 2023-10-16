@@ -29,10 +29,6 @@ const CreateDepartmentPage = () => {
   const routeName = "manage-services";
   const endRoute = "create";
 
-  const defaultValues = {
-    // status: "available",
-  };
-
   return (
     <div>
       <CommonBreadCrumb
@@ -43,11 +39,7 @@ const CreateDepartmentPage = () => {
         ]}
       />
       <h1>Add new service</h1>
-      <Form
-        submitHandler={onSubmit}
-        defaultValues={defaultValues}
-        resolver={yupResolver(serviceSchema)}
-      >
+      <Form submitHandler={onSubmit} resolver={yupResolver(serviceSchema)}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormInput name="title" label="Title" required />
