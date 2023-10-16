@@ -27,7 +27,7 @@ const EditServicePage = ({ params }: any) => {
       message.loading("Creating.....");
       console.log(data);
       await updateBooking(data);
-      message.success("Service updated successfully");
+      message.success("Booking updated successfully");
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
