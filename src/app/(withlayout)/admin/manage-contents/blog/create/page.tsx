@@ -38,7 +38,7 @@ const CreateServicePage = () => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Add new service</h1>
+      <h1>Add new faq</h1>
       <Form submitHandler={onSubmit} resolver={yupResolver(contentSchema)}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>

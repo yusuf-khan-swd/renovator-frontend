@@ -5,10 +5,7 @@ import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import {
-  useBlogsQuery,
-  useDeleteBlogMutation,
-} from "@/redux/api/content/blogApi";
+import { useDeleteFaqMutation, useFaqsQuery } from "@/redux/api/content/faqApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
@@ -18,7 +15,7 @@ import { useState } from "react";
 
 const ACDepartmentPage = () => {
   const { role } = getUserInfo() as any;
-  const routeName = "manage-contents/blog";
+  const routeName = "manage-contents/faq";
 
   const query: Record<string, any> = {};
 
@@ -28,7 +25,7 @@ const ACDepartmentPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteBlog] = useDeleteBlogMutation();
+  const [deleteFaq] = useDeleteFaqMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -44,15 +41,15 @@ const ACDepartmentPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useBlogsQuery(undefined);
+  const { data, isLoading } = useFaqsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      const res = await deleteBlog(id);
+      const res = await deleteFaq(id);
       if (res) {
-        message.success("Blog Deleted successfully");
+        message.success("Faq Deleted successfully");
       }
     } catch (err: any) {
       //   console.error(err.message);
@@ -66,11 +63,8 @@ const ACDepartmentPage = () => {
       dataIndex: "title",
     },
     {
-      title: "Faculty",
-      dataIndex: "academicFaculty",
-      render: function (data: any) {
-        return <>{data?.title}</>;
-      },
+      title: "Description",
+      dataIndex: "description",
     },
     {
       title: "CreatedAt",
@@ -99,8 +93,8 @@ const ACDepartmentPage = () => {
             <ConfirmModal
               id={data?.id}
               handleDelete={deleteHandler}
-              title="Do you want to delete this blog?"
-              content={`Delete ${data?.title} blog!`}
+              title="Do you want to delete this faq?"
+              content={`Delete the ${data?.title} faq!`}
             />
           </>
         );
@@ -135,7 +129,7 @@ const ACDepartmentPage = () => {
         ]}
       />
 
-      <ActionBar title="Academic Department List">
+      <ActionBar title="Faq List">
         <Input
           type="text"
           size="large"
