@@ -71,10 +71,6 @@ const ManageDepartmentPage = () => {
       dataIndex: "description",
     },
     {
-      title: "Description",
-      dataIndex: "description",
-    },
-    {
       title: "Price",
       dataIndex: "price",
     },
