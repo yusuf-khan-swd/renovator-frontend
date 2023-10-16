@@ -2,61 +2,99 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import ActionBar from "@/components/ui/ActionBar";
+import FormSelectField, {
+  SelectOptions,
+} from "@/components/Forms/FormSelectField";
+import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import { serviceStatusOptions } from "@/constants/global";
 import {
-  useDepartmentQuery,
-  useUpdateDepartmentMutation,
-} from "@/redux/api/departmentApi";
+  useServiceQuery,
+  useUpdateServiceMutation,
+} from "@/redux/api/serviceApi";
+import { serviceSchema } from "@/schemas/service";
+import { getUserInfo } from "@/services/auth.service";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 
-type IDProps = {
-  params: any;
-};
+const EditServicePage = ({ params }: any) => {
+  const id = params?.id;
+  const { data, isLoading } = useServiceQuery(id);
 
-const EditDepartmentPage = ({ params }: IDProps) => {
-  const { id } = params;
+  const [updateService] = useUpdateServiceMutation();
 
-  const { data, isLoading } = useDepartmentQuery(id);
-  const [updateDepartment] = useUpdateDepartmentMutation();
-
-  const onSubmit = async (values: { title: string }) => {
-    message.loading("Updating.....");
+  const onSubmit = async (data: any) => {
     try {
-      //   console.log(data);
-      await updateDepartment({ id, body: values });
-      message.success("Department updated successfully");
+      message.loading("Creating.....");
+      console.log(data);
+      await updateService(data);
+      message.success("Service updated successfully");
     } catch (err: any) {
-      //   console.error(err.message);
+      console.error(err.message);
       message.error(err.message);
     }
   };
 
-  // @ts-ignore
   const defaultValues = {
+    id: data?.id,
     title: data?.title || "",
+    description: data?.description || "",
+    price: data?.price || "",
+    status: data?.status || "",
+    location: data?.location || "",
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-services";
+  const endRoute = "edit";
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: "super_admin",
-            link: "/super_admin",
-          },
-          {
-            label: "department",
-            link: "/super_admin/department",
-          },
+          { label: `${role}`, link: `/${role}` },
+          { label: routeName, link: `/${role}/${routeName}` },
+          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-
-      <ActionBar title="Update Department"> </ActionBar>
-      <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+      <h1>Update service</h1>
+      <Form
+        submitHandler={onSubmit}
+        resolver={yupResolver(serviceSchema)}
+        defaultValues={defaultValues}
+      >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="title" label="Title" />
+            <FormInput name="title" label="Title" required />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormInput name="price" label="Price" required />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormInput name="location" label="Location" required />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormSelectField
+              name="status"
+              label="Status"
+              options={serviceStatusOptions as SelectOptions[]}
+            />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormTextArea
+              name="description"
+              label="Description"
+              rows={5}
+              required
+            />
           </Col>
         </Row>
         <Button type="primary" htmlType="submit">
@@ -67,4 +105,4 @@ const EditDepartmentPage = ({ params }: IDProps) => {
   );
 };
 
-export default EditDepartmentPage;
+export default EditServicePage;
