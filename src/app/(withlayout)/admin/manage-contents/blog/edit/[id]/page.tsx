@@ -8,7 +8,7 @@ import {
   useBlogQuery,
   useUpdateBlogMutation,
 } from "@/redux/api/content/blogApi";
-import { serviceSchema } from "@/schemas/service";
+import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
@@ -53,7 +53,7 @@ const EditServicePage = ({ params }: any) => {
       <h1>Update service</h1>
       <Form
         submitHandler={onSubmit}
-        resolver={yupResolver(serviceSchema)}
+        resolver={yupResolver(contentSchema)}
         defaultValues={defaultValues}
       >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
