@@ -16,6 +16,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const ManageDepartmentPage = () => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-services";
+
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -92,7 +95,7 @@ const ManageDepartmentPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/department/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -132,9 +135,6 @@ const ManageDepartmentPage = () => {
     setSortOrder("");
     setSearchTerm("");
   };
-
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-services";
 
   return (
     <div>
