@@ -1,3 +1,10 @@
+export const bookingStatusOptions = [
+  { label: "Pending", value: "pending" },
+  { label: "Cancel", value: "canceled" },
+  { label: "Accept", value: "accepted" },
+  { label: "Reject", value: "rejected" },
+];
+
 export const serviceStatusOptions = [
   { label: "Available", value: "available" },
   { label: "Upcoming", value: "upcoming" },
