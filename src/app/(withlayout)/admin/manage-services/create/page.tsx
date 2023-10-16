@@ -2,8 +2,13 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
+import FormSelectField, {
+  SelectOptions,
+} from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import { serviceStatusOptions } from "@/constants/global";
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useCreateServiceMutation } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
@@ -26,8 +31,8 @@ const CreateDepartmentPage = () => {
   };
 
   const defaultValues = {
-    status: 
-  }
+    status: ENUM_SERVICE_STATUS.AVAILABLE,
+  };
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
@@ -43,7 +48,11 @@ const CreateDepartmentPage = () => {
         ]}
       />
       <h1>Add new service</h1>
-      <Form submitHandler={onSubmit} resolver={yupResolver(serviceSchema)}>
+      <Form
+        submitHandler={onSubmit}
+        resolver={yupResolver(serviceSchema)}
+        defaultValues={defaultValues}
+      >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormInput name="title" label="Title" required />
@@ -59,7 +68,15 @@ const CreateDepartmentPage = () => {
             <FormInput name="location" label="Location" required />
           </Col>
         </Row>
-
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormSelectField
+              name="status"
+              label="Status"
+              options={serviceStatusOptions as SelectOptions[]}
+            />
+          </Col>
+        </Row>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormTextArea
