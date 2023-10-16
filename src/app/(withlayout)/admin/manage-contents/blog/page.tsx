@@ -66,11 +66,8 @@ const ACDepartmentPage = () => {
       dataIndex: "title",
     },
     {
-      title: "Faculty",
-      dataIndex: "academicFaculty",
-      render: function (data: any) {
-        return <>{data?.title}</>;
-      },
+      title: "Description",
+      dataIndex: "description",
     },
     {
       title: "CreatedAt",
@@ -135,7 +132,7 @@ const ACDepartmentPage = () => {
         ]}
       />
 
-      <ActionBar title="Academic Department List">
+      <ActionBar title="Blog List">
         <Input
           type="text"
           size="large"
