@@ -7,6 +7,7 @@ import {
   useServicesQuery,
 } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
+import { getUserInfo } from "@/services/auth.service";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -43,9 +44,9 @@ const ManageDepartmentPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useServicesQuery({ ...query });
+  console.log(data);
 
   const services = data?.services;
-  console.log(services);
   const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
@@ -64,6 +65,26 @@ const ManageDepartmentPage = () => {
     {
       title: "Title",
       dataIndex: "title",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+    },
+    {
+      title: "Location",
+      dataIndex: "location",
     },
     {
       title: "CreatedAt",
@@ -120,18 +141,21 @@ const ManageDepartmentPage = () => {
     setSearchTerm("");
   };
 
+  const { role } = getUserInfo() as any;
+  const routeName = "/manage-services";
+
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: "admin",
-            link: "/admin",
+            label: role,
+            link: `/${role}/${routeName}`,
           },
         ]}
       />
 
-      <ActionBar title="Department List">
+      <ActionBar title="Service List">
         <Input
           type="text"
           size="large"
@@ -144,7 +168,7 @@ const ManageDepartmentPage = () => {
           }}
         />
         <div>
-          <Link href="/admin/department/create">
+          <Link href={`/${role}/${routeName}/create`}>
             <Button type="primary">Create</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
