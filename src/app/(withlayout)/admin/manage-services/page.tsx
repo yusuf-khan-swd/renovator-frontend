@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageDepartmentPage = () => {
+const ManageServicePage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
 
@@ -188,4 +188,4 @@ const ManageDepartmentPage = () => {
   );
 };
 
-export default ManageDepartmentPage;
+export default ManageServicePage;
