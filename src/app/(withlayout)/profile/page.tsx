@@ -29,15 +29,14 @@ const ProfilePage = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const base = role as string;
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: `${base}`,
-            link: `/${base}`,
+            label: `${role}`,
+            link: `/${role}`,
           },
           {
             label: "profile",
@@ -47,7 +46,7 @@ const ProfilePage = () => {
       />
 
       <div style={{ padding: "20px" }}>
-        <h3>{base.toUpperCase()} Profile</h3>
+        <h3>{role} Profile</h3>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>

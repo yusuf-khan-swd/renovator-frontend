@@ -57,7 +57,7 @@ const EditProfilePage = () => {
       />
 
       <div style={{ padding: "20px" }}>
-        <h3>{base.toUpperCase()} Profile</h3>
+        <h3>{base} Profile</h3>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
