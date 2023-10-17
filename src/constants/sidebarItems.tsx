@@ -1,9 +1,18 @@
-import { ProfileOutlined, TableOutlined } from "@ant-design/icons";
+import {
+  HomeOutlined,
+  ProfileOutlined,
+  TableOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import { ENUM_USER_ROLE } from "./role";
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
+    {
+      label: <Link href="/home">Go Back to Home</Link>,
+      icon: <HomeOutlined />,
+      key: `/${role}/home`,
+    },
     {
       label: "Profile",
       key: "profile",

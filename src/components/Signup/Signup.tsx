@@ -3,6 +3,7 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { useUserSignupMutation } from "@/redux/api/authApi";
 import { userSchema } from "@/schemas/user";
+import { HomeOutlined } from "@ant-design/icons";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 import Image from "next/image";
@@ -25,10 +26,15 @@ const SignupPage = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
-      await userSignup({ ...data });
+      const result: any = await userSignup({ ...data });
+      // console.log(result?.data);
 
-      message.success("User created successfully!");
-      router.push("/login");
+      if (result?.data) {
+        message.success("User created successfully!");
+        router.push("/login");
+      } else {
+        message.error("User create Failed!");
+      }
     } catch (err: any) {
       console.error(err.message);
     }
@@ -46,6 +52,12 @@ const SignupPage = () => {
         <Image src={loginImage} width={500} alt="login image" />
       </Col>
       <Col sm={12} md={8} lg={8}>
+        <Link href="/home">
+          <Button type="primary">
+            <HomeOutlined />
+            Go Back
+          </Button>
+        </Link>
         <h1
           style={{
             margin: "15px 0px",

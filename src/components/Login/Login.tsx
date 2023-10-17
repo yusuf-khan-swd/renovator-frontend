@@ -4,6 +4,7 @@ import FormInput from "@/components/Forms/FormInput";
 import { useUserLoginMutation } from "@/redux/api/authApi";
 import { loginSchema } from "@/schemas/login";
 import { storeUserInfo } from "@/services/auth.service";
+import { HomeOutlined } from "@ant-design/icons";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 import Image from "next/image";
@@ -25,12 +26,15 @@ const LoginPage = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
+      message.loading("Login trying...");
       const res = await userLogin({ ...data }).unwrap();
       // console.log(res);
       if (res?.accessToken) {
         storeUserInfo({ accessToken: res?.accessToken });
         router.push("/profile");
         message.success("User logged in successfully!");
+      } else {
+        message.error("Logged in Failed!");
       }
     } catch (err: any) {
       console.error(err.message);
@@ -49,6 +53,12 @@ const LoginPage = () => {
         <Image src={loginImage} width={500} alt="login image" />
       </Col>
       <Col sm={12} md={8} lg={8}>
+        <Link href="/home">
+          <Button type="primary">
+            <HomeOutlined />
+            Go Back
+          </Button>
+        </Link>
         <h1
           style={{
             margin: "15px 0px",

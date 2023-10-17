@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { sidebarItems } from "@/constants/sidebarItems";
 import { getUserInfo } from "@/services/auth.service";
+import Link from "next/link";
 
 const { Sider } = Layout;
 
@@ -33,14 +34,16 @@ const SideBar = () => {
       <div
         style={{
           color: "white",
-          fontSize: "2rem",
+          fontSize: `${collapsed ? "16px" : "25px"}`,
           textAlign: "center",
           fontWeight: "bold",
           marginBottom: ".5rem",
           padding: "10px 0px",
         }}
       >
-        UMS
+        <Link href="/home" style={{ color: "white" }}>
+          Renovator
+        </Link>
       </div>
       <Menu
         theme="dark"

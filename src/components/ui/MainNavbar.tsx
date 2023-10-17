@@ -65,11 +65,11 @@ const MainNavbar = () => {
         </p>
         {role ? (
           <Dropdown menu={{ items }}>
-            <a>
+            <Link href="/profile">
               <Space wrap size={16}>
                 <Avatar icon={<UserOutlined />} />
               </Space>
-            </a>
+            </Link>
           </Dropdown>
         ) : (
           <div>
