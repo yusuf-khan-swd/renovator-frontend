@@ -5,7 +5,7 @@ import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
 
-const Header = () => {
+const DashboardHeader = () => {
   const router = useRouter();
 
   const logOut = () => {
@@ -56,4 +56,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default DashboardHeader;
