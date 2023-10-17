@@ -1,5 +1,6 @@
 "use client";
 
+import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
@@ -41,6 +42,7 @@ const EditServicePage = ({ params }: any) => {
     description: data?.description || "",
     price: data?.price || "",
     status: data?.status || "",
+    categoryId: data?.categoryId || "",
     location: data?.location || "",
   };
 
@@ -85,6 +87,11 @@ const EditServicePage = ({ params }: any) => {
               label="Status"
               options={serviceStatusOptions as SelectOptions[]}
             />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <CategoryField name="category" label="Category" />
           </Col>
         </Row>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
