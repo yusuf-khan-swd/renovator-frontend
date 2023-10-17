@@ -102,6 +102,8 @@ const ManageBookingPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
+            <Button>Cancel</Button>
+            <Button>Confirm</Button>
             <ConfirmModal
               id={data?.id}
               handleDelete={deleteHandler}
