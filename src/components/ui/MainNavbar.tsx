@@ -5,11 +5,15 @@ import { getUserInfo, removeUserInfo } from "@/services/auth.service";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
 
 const MainNavbar = () => {
+  const router = useRouter();
+
   const logOut = () => {
     removeUserInfo(authKey);
+    router.refresh();
   };
 
   const items: MenuProps["items"] = [
@@ -56,13 +60,7 @@ const MainNavbar = () => {
             <Button type="link">About Us</Button>
           </Link>
         </div>
-        <p
-          style={{
-            margin: "0px 5px",
-          }}
-        >
-          {role}
-        </p>
+
         {role ? (
           <Dropdown menu={{ items }}>
             <Link href="/profile">
