@@ -1,12 +1,12 @@
 import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import FormSelectField, { SelectOptions } from "./FormSelectField";
 
-type ACDepartmentFieldProps = {
+type CategoryField = {
   name: string;
   label?: string;
 };
 
-const ACDepartmentField = ({ name, label }: ACDepartmentFieldProps) => {
+const CategoryField = ({ name, label }: CategoryField) => {
   const { data, isLoading } = useCategoriesQuery(undefined);
   const categoryOptions = data?.map((category: any) => {
     console.log(category?.id);
@@ -25,4 +25,4 @@ const ACDepartmentField = ({ name, label }: ACDepartmentFieldProps) => {
   );
 };
 
-export default ACDepartmentField;
+export default CategoryField;
