@@ -1,4 +1,4 @@
-import { ProfileOutlined, TableOutlined } from "@ant-design/icons";
+import { TableOutlined, UserOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import { ENUM_USER_ROLE } from "./role";
@@ -7,7 +7,7 @@ export const sidebarItems = (role: string) => {
     {
       label: "Profile",
       key: "profile",
-      icon: <ProfileOutlined />,
+      icon: <UserOutlined />,
       children: [
         {
           label: <Link href={`/${role}`}>Account Profile</Link>,
