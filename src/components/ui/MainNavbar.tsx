@@ -56,7 +56,7 @@ const MainNavbar = () => {
           <Link href="/faq">
             <Button type="link">FAQ</Button>
           </Link>
-          <Link href="/services">
+          <Link href="/about">
             <Button type="link">About Us</Button>
           </Link>
         </div>
