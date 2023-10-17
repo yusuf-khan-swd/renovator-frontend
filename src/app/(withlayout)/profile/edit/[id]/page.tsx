@@ -6,7 +6,12 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { roleOptionsForSuperAdmin } from "@/constants/global";
+import {
+  roleOptionsForAdmin,
+  roleOptionsForSuperAdmin,
+  roleOptionsForUser,
+} from "@/constants/global";
+import { ENUM_USER_ROLE } from "@/constants/role";
 import {
   useProfileQuery,
   useUpdateProfileMutation,
@@ -79,7 +84,13 @@ const EditProfilePage = () => {
               <FormSelectField
                 name="role"
                 label="User Role"
-                options={roleOptionsForSuperAdmin as SelectOptions[]}
+                options={
+                  role === ENUM_USER_ROLE.SUPER_ADMIN
+                    ? roleOptionsForSuperAdmin
+                    : role === ENUM_USER_ROLE.ADMIN
+                    ? roleOptionsForAdmin
+                    : (roleOptionsForUser as SelectOptions[])
+                }
               />
             </Col>
           </Row>

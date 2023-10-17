@@ -22,6 +22,8 @@ export const roleOptionsForAdmin = [
   { label: "User", value: "user" },
 ];
 
+export const roleOptionsForUser = [{ label: "User", value: "user" }];
+
 export const genderOptions = [
   {
     label: "Male",

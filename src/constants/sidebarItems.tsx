@@ -1,7 +1,7 @@
 import { ProfileOutlined, TableOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Link from "next/link";
-import { USER_ROLE } from "./role";
+import { ENUM_USER_ROLE } from "./role";
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
     {
@@ -74,9 +74,9 @@ export const sidebarItems = (role: string) => {
     ...commonAdminSidebarItems,
   ];
 
-  if (role === USER_ROLE.SUPER_ADMIN) return superAdminSidebarItems;
-  else if (role === USER_ROLE.ADMIN) return adminSidebarItems;
-  else if (role === USER_ROLE.USER) return userSidebarItems;
+  if (role === ENUM_USER_ROLE.SUPER_ADMIN) return superAdminSidebarItems;
+  else if (role === ENUM_USER_ROLE.ADMIN) return adminSidebarItems;
+  else if (role === ENUM_USER_ROLE.USER) return userSidebarItems;
   else {
     return defaultSidebarItems;
   }
