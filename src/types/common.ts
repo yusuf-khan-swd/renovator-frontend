@@ -20,6 +20,13 @@ export type IGenericErrorMessage = {
   message: string;
 };
 
+export interface ICategory {
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface IService {
   id: string;
   title: string;
@@ -27,6 +34,7 @@ export interface IService {
   price: number;
   status: string;
   location: string;
+  category?: ICategory;
   createdAt: string;
   updatedAt: string;
 }

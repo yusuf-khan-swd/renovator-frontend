@@ -63,13 +63,16 @@ const ManageServicePage = () => {
 
   const columns = [
     {
-      title: "Title",
+      title: "Name",
       dataIndex: "title",
       sorter: true,
     },
     {
       title: "Description",
       dataIndex: "description",
+      render: function (data: string) {
+        return data.slice(0, 20);
+      },
     },
     {
       title: "Price",
@@ -85,6 +88,13 @@ const ManageServicePage = () => {
       title: "Location",
       dataIndex: "location",
       sorter: true,
+    },
+    {
+      title: "Category",
+      dataIndex: "category",
+      render: function (data: any) {
+        return data.title;
+      },
     },
     {
       title: "CreatedAt",
