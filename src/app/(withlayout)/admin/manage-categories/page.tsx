@@ -44,10 +44,6 @@ const ManageCategoryPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useCategoriesQuery({ ...query });
-  // console.log(data);
-
-  const categories = data?.categories;
-  const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
@@ -161,9 +157,9 @@ const ManageCategoryPage = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={categories}
+        dataSource={data}
         pageSize={size}
-        totalPages={meta?.total}
+        totalPages={0}
         showSizeChanger={true}
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
