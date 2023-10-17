@@ -107,6 +107,7 @@ const AdminPage = () => {
   };
 
   const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
 
   return (
     <div>
@@ -117,8 +118,8 @@ const AdminPage = () => {
             link: `/${role}`,
           },
           {
-            label: `manage-users`,
-            link: `/${role}/manage-users`,
+            label: routeName,
+            link: `/${role}/${routeName}`,
           },
         ]}
       />
@@ -132,6 +133,9 @@ const AdminPage = () => {
           }}
         />
         <div>
+          <Link href={`/${role}/${routeName}/create`}>
+            <Button type="primary">Create User</Button>
+          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               style={{ margin: "0px 5px" }}
