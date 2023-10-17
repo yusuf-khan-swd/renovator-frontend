@@ -3,10 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import {
-  useBookingsQuery,
-  useDeleteBookingMutation,
-} from "@/redux/api/bookingApi";
+import { useCartsQuery, useDeleteCartMutation } from "@/redux/api/cartApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -15,7 +12,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageBookingPage = () => {
+const ManageCartPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-cart";
 
@@ -27,7 +24,7 @@ const ManageBookingPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteBooking] = useDeleteBookingMutation();
+  const [deleteCart] = useDeleteCartMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -43,15 +40,15 @@ const ManageBookingPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useBookingsQuery(undefined);
+  const { data, isLoading } = useCartsQuery(undefined);
   // console.log(data);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      await deleteBooking(id);
-      message.success("Booking Delete successfully");
+      await deleteCart(id);
+      message.success("Cart Delete successfully");
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
@@ -60,22 +57,17 @@ const ManageBookingPage = () => {
 
   const columns = [
     {
-      title: "Date",
-      dataIndex: "date",
+      title: "Service Name",
+      dataIndex: "service.title",
       sorter: true,
     },
     {
-      title: "Status",
-      dataIndex: "status",
+      title: "Service Status",
+      dataIndex: "service.status",
     },
     {
-      title: "Price",
+      title: "Service Price",
       dataIndex: "service.price",
-      sorter: true,
-    },
-    {
-      title: "User Email",
-      dataIndex: "user.email",
       sorter: true,
     },
     {
@@ -105,8 +97,8 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handleDelete={deleteHandler}
-              title="Do you want to delete this service?"
-              content={`Delete ${data?.title} service!`}
+              title="Do you want to delete this cart?"
+              content={`Delete this cart!`}
             />
           </>
         );
@@ -141,7 +133,7 @@ const ManageBookingPage = () => {
         ]}
       />
 
-      <ActionBar title="Booking List">
+      <ActionBar title="Cart List">
         <Input
           type="text"
           size="large"
@@ -181,4 +173,4 @@ const ManageBookingPage = () => {
   );
 };
 
-export default ManageBookingPage;
+export default ManageCartPage;
