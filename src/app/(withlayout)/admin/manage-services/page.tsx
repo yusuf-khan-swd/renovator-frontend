@@ -66,12 +66,15 @@ const ManageServicePage = () => {
       title: "Name",
       dataIndex: "title",
       sorter: true,
+      render: function (data: string) {
+        return data.slice(0, 25) + "...";
+      },
     },
     {
       title: "Description",
       dataIndex: "description",
       render: function (data: string) {
-        return data.slice(0, 20);
+        return data.slice(0, 30) + "...";
       },
     },
     {
