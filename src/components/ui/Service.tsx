@@ -1,5 +1,7 @@
+import { useCreateBookingMutation } from "@/redux/api/bookingApi";
+import { useCreateCartMutation } from "@/redux/api/cartApi";
 import { IService } from "@/types";
-import { Button, Card, Col, Row } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
 interface IServiceProps {
@@ -7,12 +9,33 @@ interface IServiceProps {
 }
 
 const Service = ({ services }: IServiceProps) => {
-  const handleAddToCart = (data: any) => {
-    console.log(data);
+  const [createCart] = useCreateCartMutation();
+  const [createBooking] = useCreateBookingMutation();
+
+  const handleAddToCart = async (data: any) => {
+    try {
+      console.log(data);
+      message.loading("Adding to cart");
+      const result = await createCart(data);
+      console.log(result);
+      message.success("Service added to cart!");
+    } catch (error: any) {
+      console.log(error);
+      message.error(error.message);
+    }
   };
 
-  const handleBooking = (data: any) => {
-    console.log(data);
+  const handleBooking = async (data: any) => {
+    try {
+      console.log(data);
+      message.loading("Adding to cart");
+      const result = await createBooking(data);
+      console.log(result);
+      message.success("Service added to cart!");
+    } catch (error: any) {
+      console.log(error);
+      message.error(error.message);
+    }
   };
 
   return (
