@@ -1,6 +1,6 @@
 "use client";
 
-import FullScreenLoading from "@/components/Loading/Loading";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { isLoggedIn } from "@/services/auth.service";
 import { Layout } from "antd";
 import { useRouter } from "next/navigation";

@@ -1,4 +1,4 @@
-import FullScreenLoading from "@/components/Loading/Loading";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 
 const LoadingPage = () => {
   return <FullScreenLoading />;
