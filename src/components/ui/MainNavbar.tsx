@@ -3,7 +3,7 @@
 import { authKey } from "@/constants/storageKey";
 import { getUserInfo, removeUserInfo } from "@/services/auth.service";
 import { UserOutlined } from "@ant-design/icons";
-import { Avatar, Button, Dropdown, Layout, MenuProps, Row } from "antd";
+import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
@@ -71,7 +71,9 @@ const MainNavbar = () => {
 
         {role ? (
           <Dropdown menu={{ items }}>
-            <Avatar icon={<UserOutlined />} />
+            <Space wrap size={16}>
+              <Avatar icon={<UserOutlined />} />
+            </Space>
           </Dropdown>
         ) : (
           <div>
