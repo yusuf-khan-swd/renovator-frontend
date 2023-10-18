@@ -6,7 +6,8 @@ import ConfirmModal from "@/components/ui/ConfirmModal";
 import { useCartsQuery, useDeleteCartMutation } from "@/redux/api/cartApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { IService } from "@/types";
+import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
@@ -58,16 +59,24 @@ const ManageCartPage = () => {
   const columns = [
     {
       title: "Service Name",
-      dataIndex: "service.title",
-      sorter: true,
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service.title.slice(0, 25);
+      },
     },
     {
       title: "Service Status",
-      dataIndex: "service.status",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service.status;
+      },
     },
     {
       title: "Service Price",
-      dataIndex: "service.price",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return "$" + service.price;
+      },
       sorter: true,
     },
     {
@@ -91,14 +100,14 @@ const ManageCartPage = () => {
                 onClick={() => console.log(data)}
                 type="primary"
               >
-                <EditOutlined />
+                Booked
               </Button>
             </Link>
             <ConfirmModal
               id={data?.id}
               handleDelete={deleteHandler}
-              title="Do you want to delete this cart?"
-              content={`Delete this cart!`}
+              title="Do you want to delete this item from cart?"
+              content={`Delete this item from cart!`}
             />
           </>
         );
