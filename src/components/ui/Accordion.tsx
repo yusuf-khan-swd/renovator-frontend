@@ -2,7 +2,7 @@ import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 
 interface IAccordion {
-  data: any;
+  data: any[];
 }
 
 const Accordion = ({ data }: IAccordion) => {
