@@ -20,6 +20,14 @@ const MainNavbar = () => {
     {
       key: "0",
       label: (
+        <Link href="/profile">
+          <Button type="link">Profile</Button>
+        </Link>
+      ),
+    },
+    {
+      key: "1",
+      label: (
         <Button onClick={logOut} type="text" danger>
           Logout
         </Button>
@@ -63,11 +71,9 @@ const MainNavbar = () => {
 
         {role ? (
           <Dropdown menu={{ items }}>
-            <Link href="/profile">
-              <Space wrap size={16}>
-                <Avatar icon={<UserOutlined />} />
-              </Space>
-            </Link>
+            <Space wrap size={16}>
+              <Avatar icon={<UserOutlined />} />
+            </Space>
           </Dropdown>
         ) : (
           <div>
