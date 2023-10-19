@@ -23,8 +23,6 @@ const HomePage = () => {
   const { data, isLoading } = useServicesQuery({ ...query });
   const services = data?.services;
 
-  console.log(services);
-
   return (
     <div>
       <h1>Home Page</h1>

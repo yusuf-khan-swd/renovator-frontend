@@ -1,6 +1,7 @@
 "use client";
 
 import MainNavbar from "@/components/ui/MainNavbar";
+import { Footer } from "antd/es/layout/layout";
 import React from "react";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -8,6 +9,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <div>
       <MainNavbar />
       <div style={{ padding: "20px 80px" }}>{children}</div>
+      <Footer style={{ textAlign: "center" }}>
+        Renovator ©2023 Created by yusuf
+      </Footer>
     </div>
   );
 };
