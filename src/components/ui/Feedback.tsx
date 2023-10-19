@@ -16,7 +16,7 @@ const Feedback = () => {
       const result: any = await createFeedback(data);
       // console.log(result);
       if (result?.data) {
-        message.success("Feedback added successfully");
+        message.success("Thank you for your feedback");
       } else {
         message.error("Feedback failed to add!");
       }
