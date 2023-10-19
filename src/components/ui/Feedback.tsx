@@ -4,10 +4,14 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import { useCreateFeedbackMutation } from "@/redux/api/feedbackApi";
+import { feedbackSchema } from "@/schemas/feedback";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
+import { useForm } from "react-hook-form";
 
 const Feedback = () => {
   const [createFeedback] = useCreateFeedbackMutation();
+  const { reset } = useForm();
 
   const onSubmit = async (data: any) => {
     try {
@@ -26,6 +30,10 @@ const Feedback = () => {
     }
   };
 
+  const handleClearForm = () => {
+    reset();
+  };
+
   return (
     <div
       style={{
@@ -34,7 +42,7 @@ const Feedback = () => {
     >
       <h1>Please give your feedback</h1>
 
-      <Form submitHandler={onSubmit}>
+      <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormInput name="name" label="Your Name" required />
@@ -56,8 +64,11 @@ const Feedback = () => {
             <FormTextArea name="review" label="Comment" rows={5} required />
           </Col>
         </Row>
-        <Button type="primary" htmlType="submit">
-          Submit a Feedback
+        <Button type="primary" htmlType="submit" style={{ marginRight: "5px" }}>
+          Submit Feedback
+        </Button>
+        <Button type="default" onClick={handleClearForm}>
+          Clear Form
         </Button>
       </Form>
     </div>
