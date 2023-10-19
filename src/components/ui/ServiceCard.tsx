@@ -8,9 +8,10 @@ import ConfirmBookingModal from "./ConfirmBookingModal";
 
 interface IServiceProps {
   service: IService;
+  detailsButton?: Boolean;
 }
 
-const ServiceCard = ({ service }: IServiceProps) => {
+const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
   const { role } = getUserInfo() as any;
 
   const [createCart] = useCreateCartMutation();
@@ -51,27 +52,31 @@ const ServiceCard = ({ service }: IServiceProps) => {
       <Card hoverable title={service?.title}>
         <div style={{ paddingBottom: "15px" }}>
           <p>Category: {service?.category?.title}</p>
-          <p>Price: ${service.price}</p>
+          <p>Price: ${service?.price}</p>
           <p>
-            Status: <span style={{ color: "green" }}>{service.status}</span>
+            Status: <span style={{ color: "green" }}>{service?.status}</span>
           </p>
-          <p>Location: {service.location}</p>
+          <p>Location: {service?.location}</p>
           <p>Description: {service?.description}</p>
         </div>
         <Row justify="space-between">
-          <Link href={`/service/${service.id}`}>
-            <Button>Details</Button>
-          </Link>
+          {detailsButton ? (
+            <Link href={`/service/${service?.id}`}>
+              <Button>Details</Button>
+            </Link>
+          ) : (
+            <div></div>
+          )}
           {role && (
             <div>
               <Button
-                onClick={() => handleAddToCart({ serviceId: service.id })}
+                onClick={() => handleAddToCart({ serviceId: service?.id })}
                 style={{ marginRight: "5px" }}
               >
                 Add to Cart
               </Button>
               <ConfirmBookingModal
-                id={service.id}
+                id={service?.id}
                 handleBooking={handleBooking}
               />
             </div>
