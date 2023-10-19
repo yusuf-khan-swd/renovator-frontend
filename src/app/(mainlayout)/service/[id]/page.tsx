@@ -5,7 +5,10 @@ import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ServiceCard from "@/components/ui/ServiceCard";
-import { useCreateReviewMutation } from "@/redux/api/reviewApi";
+import {
+  useCreateReviewMutation,
+  useServiceReviewsQuery,
+} from "@/redux/api/reviewApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, Row, message } from "antd";
@@ -14,7 +17,9 @@ const ServiceDetailsPage = ({ params }: any) => {
   const { role } = getUserInfo() as any;
 
   const id = params?.id;
-  const { data, isLoading } = useServiceQuery(id);
+  const { data: service, isLoading: isServiceLoading } = useServiceQuery(id);
+  const { data: reviews, isLoading: isReviewLoading } =
+    useServiceReviewsQuery(id);
 
   const [createReview] = useCreateReviewMutation();
 
@@ -39,10 +44,10 @@ const ServiceDetailsPage = ({ params }: any) => {
   return (
     <div>
       <h1>Service Details Page of id: {id}</h1>
-      {isLoading ? (
+      {isServiceLoading ? (
         <FullScreenLoading />
       ) : (
-        <ServiceCard service={data} detailsButton={false} />
+        <ServiceCard service={service} detailsButton={false} />
       )}
 
       <h2>Review Ratings</h2>
@@ -67,6 +72,14 @@ const ServiceDetailsPage = ({ params }: any) => {
           Submit
         </Button>
       </Form>
+      <div>
+        {reviews?.map((review: any) => (
+          <div key={review?.id}>
+            <p>{review?.rating}</p>
+            <p>{review?.review}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
