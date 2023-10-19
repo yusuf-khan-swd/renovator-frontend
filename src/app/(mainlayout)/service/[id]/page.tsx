@@ -39,7 +39,7 @@ const ServiceDetailsPage = ({ params }: any) => {
 
   return (
     <div>
-      <h1>Service Details Page of id: {id}</h1>
+      <h1 style={{ padding: "15px 0" }}>Service Details Page</h1>
       {isServiceLoading ? (
         <FullScreenLoading />
       ) : (
