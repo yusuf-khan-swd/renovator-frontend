@@ -105,7 +105,7 @@ const ManageCartPage = () => {
             </Link>
             <ConfirmModal
               id={data?.id}
-              handleDelete={deleteHandler}
+              handler={deleteHandler}
               title="Do you want to delete this item from cart?"
               content={`Delete this item from cart!`}
             />

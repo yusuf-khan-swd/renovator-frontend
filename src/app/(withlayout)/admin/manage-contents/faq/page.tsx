@@ -92,7 +92,7 @@ const ACDepartmentPage = () => {
             </Link>
             <ConfirmModal
               id={data?.id}
-              handleDelete={deleteHandler}
+              handler={deleteHandler}
               title="Do you want to delete this faq?"
               content={`Delete the ${data?.title} faq!`}
             />

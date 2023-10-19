@@ -104,7 +104,7 @@ const ManageBookingPage = () => {
             </Link>
             <ConfirmModal
               id={data?.id}
-              handleDelete={deleteHandler}
+              handler={deleteHandler}
               title="Do you want to delete this service?"
               content={`Delete ${data?.title} service!`}
             />

@@ -89,7 +89,7 @@ const ManageCategoryPage = () => {
             </Link>
             <ConfirmModal
               id={data?.id}
-              handleDelete={deleteHandler}
+              handler={deleteHandler}
               title="Do you want to delete this category?"
               content={`Delete ${data?.title}!`}
             />

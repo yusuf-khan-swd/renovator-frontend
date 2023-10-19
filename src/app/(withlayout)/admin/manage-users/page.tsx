@@ -79,7 +79,7 @@ const AdminPage = () => {
 
             <ConfirmModal
               id={data}
-              handleDelete={deleteUserHandler}
+              handler={deleteUserHandler}
               title="Do you want to remove this user?"
               content={`Remove this user id: ${data}`}
             />

@@ -1,28 +1,35 @@
 import { DeleteOutlined, ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Modal } from "antd";
+import { ButtonType } from "antd/es/button";
 
 const { confirm } = Modal;
 
 interface IConfirmModelProps {
   id: string;
-  handleDelete: (id: string) => void;
+  handler: (id: string) => void;
   title?: string;
   content?: string;
+  button?: boolean;
+  buttonName?: string;
+  buttonType?: ButtonType;
 }
 
 const ConfirmModal = ({
   id,
-  handleDelete,
+  handler,
   title,
   content,
+  button = false,
+  buttonName,
+  buttonType,
 }: IConfirmModelProps) => {
   const showConfirm = () => {
     confirm({
-      title: title || "Do you Want to delete these items?",
+      title: title || "Do you Want to remove this item?",
       icon: <ExclamationCircleFilled />,
       content: content || "Some descriptions",
       async onOk() {
-        handleDelete(id);
+        handler(id);
       },
       onCancel() {
         console.log("Cancel");
@@ -31,9 +38,26 @@ const ConfirmModal = ({
   };
 
   return (
-    <Button onClick={showConfirm} type="primary" danger>
-      <DeleteOutlined />
-    </Button>
+    <>
+      {!button ? (
+        <Button
+          onClick={showConfirm}
+          type="primary"
+          danger
+          style={{ margin: "0 5px" }}
+        >
+          <DeleteOutlined />
+        </Button>
+      ) : (
+        <Button
+          onClick={showConfirm}
+          style={{ margin: "0 5px" }}
+          type={`${buttonType || "default"}`}
+        >
+          {buttonName || "Cancel"}
+        </Button>
+      )}
+    </>
   );
 };
 
