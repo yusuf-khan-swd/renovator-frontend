@@ -1,6 +1,6 @@
 "use client";
 
-import CenterLoading from "@/components/Loading/CenterLoading";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import Feedback from "@/components/ui/Feedback";
 import Service from "@/components/ui/Service";
 import { useServicesQuery } from "@/redux/api/serviceApi";
@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      {isLoading ? <CenterLoading /> : <Service services={services} />}
+      {isLoading ? <FullScreenLoading /> : <Service services={services} />}
       <Feedback />
     </div>
   );
