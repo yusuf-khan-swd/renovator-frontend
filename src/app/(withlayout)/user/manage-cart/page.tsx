@@ -2,7 +2,9 @@
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
+import ConfirmBookingModal from "@/components/ui/ConfirmBookingModal";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useCartsQuery, useDeleteCartMutation } from "@/redux/api/cartApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
@@ -10,7 +12,6 @@ import { IService } from "@/types";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 
 const ManageCartPage = () => {
@@ -26,6 +27,7 @@ const ManageCartPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [deleteCart] = useDeleteCartMutation();
+  const [createBooking] = useCreateBookingMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -53,6 +55,21 @@ const ManageCartPage = () => {
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
+    }
+  };
+
+  const handleBooking = async (data: any) => {
+    try {
+      message.loading("Service Booking...");
+      const result: any = await createBooking(data);
+      if (result?.data) {
+        message.success("Service booked successfully!!");
+      } else {
+        message.error("Service booking failed!");
+      }
+    } catch (error: any) {
+      console.log(error);
+      message.error(error.message);
     }
   };
 
@@ -92,17 +109,10 @@ const ManageCartPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "0px 5px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                Booked
-              </Button>
-            </Link>
+            <ConfirmBookingModal
+              id={data.service.id}
+              handleBooking={handleBooking}
+            />
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
