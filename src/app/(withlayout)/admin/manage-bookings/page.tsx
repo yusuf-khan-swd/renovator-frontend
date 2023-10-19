@@ -11,9 +11,10 @@ import {
 } from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import { ReloadOutlined } from "@ant-design/icons";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
+import Link from "next/link";
 import { useState } from "react";
 
 const ManageBookingPage = () => {
@@ -139,6 +140,18 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return (
           <>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "0px 5px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
+              </Button>
+            </Link>
+
             <ConfirmModal
               id={data?.id}
               handler={handleRejectBooking}

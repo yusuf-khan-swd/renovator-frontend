@@ -1,7 +1,6 @@
 "use client";
 
 import Form from "@/components/Forms/Form";
-import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
@@ -11,31 +10,35 @@ import {
   useBookingQuery,
   useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
-import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
+import { useState } from "react";
 
 const EditServicePage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useBookingQuery(id);
+  const [date, setDate] = useState<string>();
 
   const [updateBooking] = useUpdateBookingMutation();
 
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Creating.....");
-      console.log(data);
-      await updateBooking(data);
-      message.success("Booking updated successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      message.loading("Updating.....");
+      data.id = id;
+      data.date = date;
+      const result: any = await updateBooking(data);
+      if (result?.data) {
+        message.success("Booking updated successfully");
+      } else {
+        message.error("Booking updated failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
   const defaultValues = {
-    id: data?.id,
     date: data?.date || "",
     status: data?.status || "",
   };
@@ -54,14 +57,17 @@ const EditServicePage = ({ params }: any) => {
         ]}
       />
       <h1>Update Booking</h1>
-      <Form
-        submitHandler={onSubmit}
-        resolver={yupResolver(serviceSchema)}
-        defaultValues={defaultValues}
-      >
+      <Form submitHandler={onSubmit} defaultValues={defaultValues}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="date" label="Date" required />
+            <label>*Select Date</label>
+            <input
+              name="date"
+              type="date"
+              onChange={(e) => setDate(e.target.value)}
+              style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
+              defaultValue={defaultValues?.date}
+            />
           </Col>
         </Row>
 
