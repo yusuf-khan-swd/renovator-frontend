@@ -2,7 +2,7 @@ import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useCreateCartMutation } from "@/redux/api/cartApi";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
-import { Button, Card, Col, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import ConfirmBookingModal from "./ConfirmBookingModal";
 
@@ -58,12 +58,15 @@ const ServiceCard = ({ service }: IServiceProps) => {
           <p>Location: {service.location}</p>
           <p>Description: {service?.description}</p>
         </div>
-        <div>
-          <Link href={`/service/${service.id}`}>Details</Link>
+        <Row justify="space-between">
+          <Link href={`/service/${service.id}`}>
+            <Button>Details</Button>
+          </Link>
           {role && (
-            <>
+            <div>
               <Button
                 onClick={() => handleAddToCart({ serviceId: service.id })}
+                style={{ marginRight: "5px" }}
               >
                 Add to Cart
               </Button>
@@ -71,9 +74,9 @@ const ServiceCard = ({ service }: IServiceProps) => {
                 id={service.id}
                 handleBooking={handleBooking}
               />
-            </>
+            </div>
           )}
-        </div>
+        </Row>
       </Card>
     </Col>
   );
