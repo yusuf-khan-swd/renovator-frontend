@@ -72,7 +72,7 @@ const ConfirmBookingModal = ({
       ),
       async onOk() {
         const data = {
-          date: date,
+          date: date ? date : new Date().toDateString(),
           serviceId: id,
         };
         handleBooking(data);
