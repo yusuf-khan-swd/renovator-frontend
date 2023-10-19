@@ -67,9 +67,6 @@ const ServiceCard = ({ service }: IServiceProps) => {
               >
                 Add to Cart
               </Button>
-              <Button onClick={() => handleBooking({ serviceId: service.id })}>
-                Booking
-              </Button>
               <ConfirmBookingModal
                 id={service.id}
                 handleBooking={handleBooking}

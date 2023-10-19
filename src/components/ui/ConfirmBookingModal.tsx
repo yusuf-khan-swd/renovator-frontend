@@ -1,11 +1,15 @@
+import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
-import { Button, Modal } from "antd";
+import { Button, Col, Modal, Row, message } from "antd";
+import { useState } from "react";
+import Form from "../Forms/Form";
+import FormInput from "../Forms/FormInput";
 
 const { confirm } = Modal;
 
 interface IConfirmModelProps {
   id: string;
-  handleBooking: (id: string) => void;
+  handleBooking: (data: any) => void;
   title?: string;
 }
 
@@ -14,13 +18,64 @@ const ConfirmBookingModal = ({
   handleBooking,
   title,
 }: IConfirmModelProps) => {
+  const [date, setDate] = useState<string>();
+  const { data, isLoading } = useServiceQuery(id);
+
+  const onSubmit = async (data: any) => {
+    try {
+      // message.loading("Creating.....");
+      console.log(data);
+      // await updateService(data);
+      // message.success("Service updated successfully");
+    } catch (err: any) {
+      console.error(err.message);
+      message.error(err.message);
+    }
+  };
+
+  const defaultValues = {
+    id: data?.id,
+    title: data?.title || "",
+    description: data?.description || "",
+    price: data?.price || "",
+    status: data?.status || "",
+    categoryId: data?.categoryId || "",
+    location: data?.location || "",
+  };
+
   const showConfirm = () => {
     confirm({
       title: title || "Do you Want to booked this item?",
       icon: <ExclamationCircleFilled />,
-      content: <input type="datetime-local" />,
+      content: (
+        <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={24} style={{ margin: "10px 0" }}>
+              <FormInput name="title" label="Title" readOnly />
+            </Col>
+            <Col span={24} style={{ margin: "10px 0" }}>
+              <FormInput name="price" label="Price" readOnly />
+            </Col>
+            <Col span={24} style={{ margin: "10px 0" }}>
+              <FormInput name="location" label="Location" readOnly />
+            </Col>
+            <Col span={24} style={{ margin: "10px 0" }}>
+              <label>*Please select a date</label>
+              <input
+                type="date"
+                onChange={(e) => setDate(e.target.value)}
+                style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
+              />
+            </Col>
+          </Row>
+        </Form>
+      ),
       async onOk() {
-        handleBooking(id);
+        const data = {
+          date: date,
+          serviceId: id,
+        };
+        handleBooking(data);
       },
       onCancel() {
         console.log("Cancel");
