@@ -96,7 +96,7 @@ const ServicePage = () => {
           )}
         </div>
       </ActionBar>
-      <div>
+      <div style={{ marginBottom: "15px" }}>
         <Input
           type="text"
           size="large"
