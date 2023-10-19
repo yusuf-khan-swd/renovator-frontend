@@ -77,14 +77,13 @@ const ManageBookingPage = () => {
 
   const columns = [
     {
-      title: "Date",
+      title: "Booking Date",
       dataIndex: "date",
       sorter: true,
     },
     {
       title: "Status",
       dataIndex: "status",
-      sorter: true,
     },
     {
       title: "Price",
@@ -115,16 +114,16 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Button
-              onClick={() => handleCancelBooking(data?.id)}
-              type="primary"
-              style={{ marginRight: "5px" }}
-            >
-              Cancel
-            </Button>
             <ConfirmModal
               id={data?.id}
-              handleDelete={deleteHandler}
+              handler={handleCancelBooking}
+              title="Do you want to cancel this booking"
+              button
+              buttonType="primary"
+            />
+            <ConfirmModal
+              id={data?.id}
+              handler={deleteHandler}
               title="Do you want to delete this booking?"
               content={`Delete this booking!`}
             />
