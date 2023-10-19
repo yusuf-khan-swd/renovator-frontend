@@ -120,6 +120,11 @@ const ManageBookingPage = () => {
               title="Do you want to cancel this booking"
               button
               buttonType="primary"
+              disabled={
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
+                  ? true
+                  : false
+              }
             />
             <ConfirmModal
               id={data?.id}
