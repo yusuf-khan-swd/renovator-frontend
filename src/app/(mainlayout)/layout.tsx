@@ -8,7 +8,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <MainNavbar />
-      <div style={{ padding: "20px 80px" }}>{children}</div>
+      <div style={{ padding: "20px 80px", minHeight: "100vh" }}>{children}</div>
       <Footer style={{ textAlign: "center" }}>
         Renovator ©2023 Created by yusuf
       </Footer>
