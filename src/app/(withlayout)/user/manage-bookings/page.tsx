@@ -77,13 +77,12 @@ const ManageBookingPage = () => {
 
   const columns = [
     {
-      title: "Booking Date",
-      dataIndex: "date",
+      title: "Service Name",
+      dataIndex: "service",
+      render: function (data: any) {
+        return data.title;
+      },
       sorter: true,
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
     },
     {
       title: "Price",
@@ -93,6 +92,16 @@ const ManageBookingPage = () => {
       },
       sorter: true,
     },
+    {
+      title: "Booking Date",
+      dataIndex: "date",
+      sorter: true,
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+    },
+
     {
       title: "User Email",
       dataIndex: "user",
