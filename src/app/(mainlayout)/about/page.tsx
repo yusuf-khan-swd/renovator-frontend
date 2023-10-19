@@ -1,8 +1,13 @@
 const AboutUsPage = () => {
   return (
-    <div>
-      <h1>Who We Are</h1>
-      <h1>We Won The ‘Best Landscape Company’ Award</h1>
+    <div style={{ maxWidth: "750px", margin: "0 auto" }}>
+      <h1 style={{ margin: "20px 0" }}>Welcome to Renovator</h1>
+      <p>
+        We provide the best experience for home renovation and design,
+        connecting homeowners and home professionals with the best tools,
+        resources and vendors.
+      </p>
+      <h2 style={{ margin: "20px 0" }}>Who We Are</h2>
       <p>
         At House Beautiful, we are dedicated to bringing you the best in home
         inspiration and design education. Founded in 1896, we are the oldest
