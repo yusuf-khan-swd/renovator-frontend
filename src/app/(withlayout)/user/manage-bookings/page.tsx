@@ -3,16 +3,17 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { ENUM_BOOKING_STATUS_FOR_USER } from "@/constants/bookingStatus";
 import {
   useBookingsQuery,
   useDeleteBookingMutation,
+  useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 
 const ManageBookingPage = () => {
@@ -28,6 +29,7 @@ const ManageBookingPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [deleteBooking] = useDeleteBookingMutation();
+  const [updateBooking] = useUpdateBookingMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -44,11 +46,26 @@ const ManageBookingPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useBookingsQuery(undefined);
-  // console.log(data);
+
+  const handleCancelBooking = async (id: any) => {
+    const data = {
+      id: id,
+      status: ENUM_BOOKING_STATUS_FOR_USER.CANCEL,
+    };
+    try {
+      message.loading("Cancelling.....");
+      console.log(data);
+      await updateBooking(data);
+      message.success("Booking Cancelled successfully");
+    } catch (err: any) {
+      //   console.error(err.message);
+      message.error(err.message);
+    }
+  };
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
+      message.loading("Deleting.....");
       //   console.log(data);
       await deleteBooking(id);
       message.success("Booking Delete successfully");
@@ -67,15 +84,22 @@ const ManageBookingPage = () => {
     {
       title: "Status",
       dataIndex: "status",
+      sorter: true,
     },
     {
       title: "Price",
-      dataIndex: "service.price",
+      dataIndex: "service",
+      render: function (data: any) {
+        return data.price;
+      },
       sorter: true,
     },
     {
       title: "User Email",
-      dataIndex: "user.email",
+      dataIndex: "user",
+      render: function (data: any) {
+        return data.email;
+      },
       sorter: true,
     },
     {
@@ -91,24 +115,18 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "0px 5px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
-            <Button>Cancel</Button>
-            <Button>Confirm</Button>
+            <Button
+              onClick={() => handleCancelBooking(data?.id)}
+              type="primary"
+              style={{ marginRight: "5px" }}
+            >
+              Cancel
+            </Button>
             <ConfirmModal
               id={data?.id}
               handleDelete={deleteHandler}
-              title="Do you want to delete this service?"
-              content={`Delete ${data?.title} service!`}
+              title="Do you want to delete this booking?"
+              content={`Delete this booking!`}
             />
           </>
         );
