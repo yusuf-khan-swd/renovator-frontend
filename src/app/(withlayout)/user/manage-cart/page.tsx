@@ -36,7 +36,7 @@ const ManageCartPage = () => {
   // query["searchTerm"] = searchTerm;
 
   const debouncedTerm = useDebounced({
-    searchQuery: searchTerm,
+    query: searchTerm,
     delay: 600,
   });
 

@@ -48,27 +48,34 @@ const ServiceDetailsPage = ({ params }: any) => {
 
       <div style={{ margin: "25px 0" }}>
         <h2 style={{ textAlign: "center" }}>Review Ratings</h2>
-        <Form submitHandler={onSubmit}>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput type="number" name="rating" label="Rating" required />
-            </Col>
-          </Row>
+        {role && (
+          <Form submitHandler={onSubmit}>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput
+                  type="number"
+                  name="rating"
+                  label="Rating"
+                  required
+                />
+              </Col>
+            </Row>
 
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={16} style={{ margin: "10px 0" }}>
-              <FormTextArea
-                name="review"
-                label="Review Description"
-                rows={5}
-                required
-              />
-            </Col>
-          </Row>
-          <Button type="primary" htmlType="submit">
-            Submit a Review
-          </Button>
-        </Form>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={16} style={{ margin: "10px 0" }}>
+                <FormTextArea
+                  name="review"
+                  label="Review Description"
+                  rows={5}
+                  required
+                />
+              </Col>
+            </Row>
+            <Button type="primary" htmlType="submit">
+              Submit a Review
+            </Button>
+          </Form>
+        )}
         <div>
           <Reviews serviceId={id} />
         </div>

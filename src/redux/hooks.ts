@@ -7,22 +7,22 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 interface IDebounced {
-  searchQuery: string;
+  query: string;
   delay: number;
 }
 
-export const useDebounced = ({ searchQuery, delay }: IDebounced) => {
-  const [debouncedValue, setDebouncedValue] = useState<string>(searchQuery);
+export const useDebounced = ({ query, delay }: IDebounced) => {
+  const [debouncedValue, setDebouncedValue] = useState<string>(query);
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebouncedValue(searchQuery);
+      setDebouncedValue(query);
     }, delay);
 
     return () => {
       clearTimeout(handler);
     };
-  }, [searchQuery, delay]);
+  }, [query, delay]);
 
   return debouncedValue;
 };
