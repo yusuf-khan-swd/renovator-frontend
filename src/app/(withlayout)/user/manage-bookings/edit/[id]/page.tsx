@@ -16,7 +16,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 
-const EditServicePage = ({ params }: any) => {
+const EditBookingPage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useBookingQuery(id);
 
@@ -82,4 +82,4 @@ const EditServicePage = ({ params }: any) => {
   );
 };
 
-export default EditServicePage;
+export default EditBookingPage;
