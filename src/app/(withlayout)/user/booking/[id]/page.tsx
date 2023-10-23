@@ -1,5 +1,6 @@
 import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
+import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
@@ -23,8 +24,13 @@ const BookingPage = ({ params }: any) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      await updateService(data);
-      message.success("Service updated successfully");
+      console.log(data);
+      // const result:any =  await updateService(data);
+      // if(result?.data) {
+      // message.success("Service booking successfully");
+      // } else {
+      // message.error("Service booking failed");
+      // }
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
@@ -59,6 +65,11 @@ const BookingPage = ({ params }: any) => {
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <CategoryField name="categoryId" label="Category" />
+          </Col>
+        </Row>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={8} style={{ margin: "10px 0" }}>
+            <FormDatePicker name="date" label="Select Booking Date" />
           </Col>
         </Row>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
