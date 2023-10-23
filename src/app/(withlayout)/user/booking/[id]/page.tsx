@@ -26,6 +26,7 @@ const BookingPage = ({ params }: any) => {
       message.loading("Creating.....");
       console.log(data);
       // const result:any =  await updateService(data);
+      // console.log(result)
       // if(result?.data) {
       // message.success("Service booking successfully");
       // } else {
