@@ -75,6 +75,9 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
               >
                 Add to Cart
               </Button>
+              <Link href={`/user/booking/${service?.id}`}>
+                <Button>Booking</Button>
+              </Link>
               <ConfirmBookingModal
                 id={service?.id}
                 handleBooking={handleBooking}
