@@ -40,6 +40,14 @@ export const serviceApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.service],
     }),
 
+    ongoingService: build.query({
+      query: () => ({
+        url: `${SERVICE_URL}/ongoing`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.service],
+    }),
+
     service: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `${SERVICE_URL}/${id}`,
@@ -71,6 +79,7 @@ export const {
   useServicesQuery,
   useServiceQuery,
   useUpcomingServiceQuery,
+  useOngoingServiceQuery,
   useCreateServiceMutation,
   useUpdateServiceMutation,
   useDeleteServiceMutation,
