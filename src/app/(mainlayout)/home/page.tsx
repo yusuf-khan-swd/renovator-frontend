@@ -5,6 +5,7 @@ import Banner from "@/components/ui/Banner";
 import Feedback from "@/components/ui/Feedback";
 import Service from "@/components/ui/Service";
 import {
+  useOngoingServiceQuery,
   useServicesQuery,
   useUpcomingServiceQuery,
 } from "@/redux/api/serviceApi";
@@ -30,7 +31,12 @@ const HomePage = () => {
   const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
     useUpcomingServiceQuery({ limit: 2 });
 
-  console.log(upcomingServices);
+  // console.log(upcomingServices);
+
+  const { data: ongoingServices, isLoading: isOngoingServicesLoading } =
+    useOngoingServiceQuery({ limit: 2 });
+
+  // console.log(ongoingServices);
 
   return (
     <div>
