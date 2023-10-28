@@ -4,7 +4,10 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import Banner from "@/components/ui/Banner";
 import Feedback from "@/components/ui/Feedback";
 import Service from "@/components/ui/Service";
-import { useServicesQuery } from "@/redux/api/serviceApi";
+import {
+  useServicesQuery,
+  useUpcomingServiceQuery,
+} from "@/redux/api/serviceApi";
 import { useState } from "react";
 
 const HomePage = () => {
@@ -23,6 +26,11 @@ const HomePage = () => {
 
   const { data, isLoading } = useServicesQuery({ ...query });
   const services = data?.services;
+
+  const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
+    useUpcomingServiceQuery({ limit: 2 });
+
+  console.log(upcomingServices);
 
   return (
     <div>
