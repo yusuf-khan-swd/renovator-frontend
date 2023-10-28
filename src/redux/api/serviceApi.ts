@@ -33,17 +33,19 @@ export const serviceApi = baseApi.injectEndpoints({
     }),
 
     upcomingService: build.query({
-      query: () => ({
+      query: (arg: Record<string, any>) => ({
         url: `${SERVICE_URL}/upcoming`,
         method: "GET",
+        params: arg,
       }),
       providesTags: [tagTypes.service],
     }),
 
     ongoingService: build.query({
-      query: () => ({
+      query: (arg: Record<string, any>) => ({
         url: `${SERVICE_URL}/ongoing`,
         method: "GET",
+        params: arg,
       }),
       providesTags: [tagTypes.service],
     }),
