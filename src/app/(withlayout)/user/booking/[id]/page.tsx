@@ -19,7 +19,7 @@ import { Button, Col, Row, message } from "antd";
 
 const BookingPage = ({ params }: any) => {
   const id = params?.id;
-  const { data, isLoading } = useServiceQuery(id);
+  const { data: service, isLoading } = useServiceQuery(id);
 
   const [updateService] = useUpdateServiceMutation();
 
@@ -41,13 +41,13 @@ const BookingPage = ({ params }: any) => {
   };
 
   const defaultValues = {
-    id: data?.id,
-    title: data?.title || "",
-    description: data?.description || "",
-    price: data?.price || "",
-    status: data?.status || "",
-    categoryId: data?.categoryId || "",
-    location: data?.location || "",
+    id: service?.id,
+    title: service?.title || "",
+    description: service?.description || "",
+    price: service?.price || "",
+    status: service?.status || "",
+    categoryId: service?.categoryId || "",
+    location: service?.location || "",
   };
 
   return (
