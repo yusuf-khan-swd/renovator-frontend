@@ -1,3 +1,5 @@
+"use client";
+
 import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
