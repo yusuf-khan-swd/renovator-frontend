@@ -21,7 +21,7 @@ const BookingPage = ({ params }: any) => {
       data.userId = userId;
       data.date = new Date();
       console.log(data);
-      const result: any = await createBooking(data);
+      // const result: any = await createBooking(data);
       // console.log(result)
       // if(result?.data) {
       // message.success("Service booking successfully");
