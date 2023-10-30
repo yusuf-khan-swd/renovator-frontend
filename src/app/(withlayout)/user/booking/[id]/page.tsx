@@ -2,10 +2,8 @@
 
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
-import {
-  useServiceQuery,
-  useUpdateServiceMutation,
-} from "@/redux/api/serviceApi";
+import { useCreateBookingMutation } from "@/redux/api/bookingApi";
+import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -14,7 +12,7 @@ const BookingPage = ({ params }: any) => {
   const { userId } = getUserInfo() as any;
   const { data: service, isLoading } = useServiceQuery(id);
 
-  const [updateService] = useUpdateServiceMutation();
+  const [createBooking] = useCreateBookingMutation();
 
   const onSubmit = async (data: any) => {
     try {
@@ -23,7 +21,7 @@ const BookingPage = ({ params }: any) => {
       data.userId = userId;
       data.date = new Date();
       console.log(data);
-      // const result:any =  await updateService(data);
+      const result: any = await createBooking(data);
       // console.log(result)
       // if(result?.data) {
       // message.success("Service booking successfully");
