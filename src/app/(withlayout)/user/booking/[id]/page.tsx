@@ -34,10 +34,6 @@ const BookingPage = ({ params }: any) => {
     }
   };
 
-  const defaultValues = {
-    date: service?.date,
-  };
-
   return (
     <div>
       <Card title={service?.title}>
@@ -51,7 +47,7 @@ const BookingPage = ({ params }: any) => {
           <p>Description: {service?.description}</p>
         </div>
       </Card>
-      <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+      <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
             <FormDatePicker name="date" label="Select Booking Date" />
