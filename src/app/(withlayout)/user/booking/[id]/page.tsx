@@ -6,6 +6,7 @@ import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
+import { useForm } from "react-hook-form";
 
 const BookingPage = ({ params }: any) => {
   const id = params?.id;
@@ -31,6 +32,12 @@ const BookingPage = ({ params }: any) => {
     }
   };
 
+  const { handleSubmit, register } = useForm();
+
+  const dateSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div>
       <Card title={service?.title}>
@@ -44,6 +51,10 @@ const BookingPage = ({ params }: any) => {
           <p>Description: {service?.description}</p>
         </div>
       </Card>
+      <form onSubmit={handleSubmit(dateSubmit)}>
+        <input type="date" {...register("date")} />
+        <Button htmlType="submit">Submit</Button>
+      </form>
       <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
