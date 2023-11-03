@@ -6,7 +6,8 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Card, Col, Row, message } from "antd";
+import type { DatePickerProps } from "antd";
+import { Button, Card, Col, DatePicker, Row, message } from "antd";
 import { useForm } from "react-hook-form";
 
 const BookingPage = ({ params }: any) => {
@@ -33,10 +34,15 @@ const BookingPage = ({ params }: any) => {
     }
   };
 
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, setValue } = useForm();
 
   const dateSubmit = (data: any) => {
     console.log(data);
+  };
+
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+    setValue("date2", date);
   };
 
   return (
@@ -59,6 +65,8 @@ const BookingPage = ({ params }: any) => {
           </Card>
           <form onSubmit={handleSubmit(dateSubmit)}>
             <input type="date" {...register("date")} />
+
+            <DatePicker onChange={onChange} />
             <Button htmlType="submit">Submit</Button>
           </form>
           <Form submitHandler={onSubmit}>
