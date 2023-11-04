@@ -30,7 +30,7 @@ const HomePage = () => {
         <Service services={ongoingServices} />
       )}
       <h2 style={{ padding: "15px 0" }}>Upcoming Services</h2>
-      {isOngoingServicesLoading ? (
+      {isUpcomingServicesLoading ? (
         <FullScreenLoading />
       ) : (
         <Service services={upcomingServices} />
