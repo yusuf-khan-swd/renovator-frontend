@@ -64,8 +64,6 @@ const BookingPage = ({ params }: any) => {
             </div>
           </Card>
           <form onSubmit={handleSubmit(dateSubmit)}>
-            <input type="date" {...register("date")} />
-
             <DatePicker onChange={onChange} />
             <Button htmlType="submit">Submit</Button>
           </form>
@@ -75,7 +73,6 @@ const BookingPage = ({ params }: any) => {
                 <FormDatePicker name="date" label="Select Booking Date" />
               </Col>
             </Row>
-            <input type="date" />
             <Button type="primary" htmlType="submit">
               Book Service
             </Button>
