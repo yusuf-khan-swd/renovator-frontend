@@ -8,6 +8,7 @@ import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import type { DatePickerProps } from "antd";
 import { Button, Card, Col, DatePicker, Row, message } from "antd";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const BookingPage = ({ params }: any) => {
@@ -34,15 +35,18 @@ const BookingPage = ({ params }: any) => {
     }
   };
 
-  const { handleSubmit, register, setValue } = useForm();
+  const { handleSubmit, setValue } = useForm();
+  const [dateSelected, setDateSelected] = useState<boolean>(false);
 
   const dateSubmit = (data: any) => {
     console.log(data);
+    setDateSelected(false);
   };
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
     setValue("date2", date);
+    setDateSelected(true);
   };
 
   return (
@@ -65,7 +69,9 @@ const BookingPage = ({ params }: any) => {
           </Card>
           <form onSubmit={handleSubmit(dateSubmit)}>
             <DatePicker onChange={onChange} />
-            <Button htmlType="submit">Submit</Button>
+            <Button htmlType="submit" disabled={dateSelected ? false : true}>
+              Submit
+            </Button>
           </form>
           <Form submitHandler={onSubmit}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
