@@ -56,7 +56,7 @@ const BookingPage = ({ params }: any) => {
       ) : (
         <div>
           <Card title={service?.title}>
-            <div style={{ paddingBottom: "15px", fontSize: "16px" }}>
+            <div style={{ paddingBottom: "15px" }}>
               <p>Category: {service?.category?.title}</p>
               <p>Price: ${service?.price}</p>
               <p>
