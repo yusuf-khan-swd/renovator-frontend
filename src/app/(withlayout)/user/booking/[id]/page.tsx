@@ -69,7 +69,11 @@ const BookingPage = ({ params }: any) => {
           </Card>
           <form onSubmit={handleSubmit(dateSubmit)}>
             <DatePicker onChange={onChange} />
-            <Button htmlType="submit" disabled={dateSelected ? false : true}>
+            <Button
+              type="primary"
+              htmlType="submit"
+              disabled={dateSelected ? false : true}
+            >
               Submit
             </Button>
           </form>
