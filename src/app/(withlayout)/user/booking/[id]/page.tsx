@@ -38,14 +38,30 @@ const BookingPage = ({ params }: any) => {
   const { handleSubmit, setValue } = useForm();
   const [dateSelected, setDateSelected] = useState<boolean>(false);
 
-  const dateSubmit = (data: any) => {
+  const dateSubmit = async (data: any) => {
     console.log(data);
-    setDateSelected(false);
+
+    try {
+      message.loading("Creating.....");
+      data.serviceId = id;
+      data.userId = userId;
+      const result: any = await createBooking(data);
+      if (result?.data) {
+        message.success("Service booking successfully");
+      } else {
+        message.error("Service booking failed");
+      }
+      setDateSelected(false);
+    } catch (err: any) {
+      setDateSelected(false);
+      console.error(err.message);
+      message.error(err.message);
+    }
   };
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
-    setValue("date2", date);
+    setValue("date", date);
     setDateSelected(true);
   };
 
