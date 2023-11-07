@@ -39,22 +39,21 @@ const BookingPage = ({ params }: any) => {
   const [dateSelected, setDateSelected] = useState<boolean>(false);
 
   const dateSubmit = async (data: any) => {
-    // console.log(data);
-    //   date: M {
-    //     '$L': 'en',
-    //     '$u': undefined,
-    //     '$d': new Date('2025-02-13T06:04:30.000Z'),
-    //     '$y': 2025,
-    //     '$M': 1,
-    //     '$D': 13,
-    //     '$W': 4,
-    //     '$H': 12,
-    //     '$m': 4,
-    //     '$s': 30,
-    //     '$ms': 597,
-    //     '$x': {},
-    //     '$isDayjsObject': true
-    //   }
+    console.log(data);
+    // date: M {
+    //   '$L': 'en',
+    //   '$u': undefined,
+    //   '$d': new Date('2025-02-13T06:04:30.000Z'),
+    //   '$y': 2025,
+    //   '$M': 1,
+    //   '$D': 13,
+    //   '$W': 4,
+    //   '$H': 12,
+    //   '$m': 4,
+    //   '$s': 30,
+    //   '$ms': 597,
+    //   '$x': {},
+    //   '$isDayjsObject': true
     // }
 
     try {
