@@ -1,7 +1,5 @@
 "use client";
 
-import Form from "@/components/Forms/Form";
-import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
@@ -17,23 +15,6 @@ const BookingPage = ({ params }: any) => {
   const { data: service, isLoading } = useServiceQuery(id);
 
   const [createBooking] = useCreateBookingMutation();
-
-  const onSubmit = async (data: any) => {
-    try {
-      message.loading("Creating.....");
-      data.serviceId = id;
-      data.userId = userId;
-      const result: any = await createBooking(data);
-      if (result?.data) {
-        message.success("Service booking successfully");
-      } else {
-        message.error("Service booking failed");
-      }
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
-    }
-  };
 
   const { handleSubmit, setValue } = useForm();
   const [dateSelected, setDateSelected] = useState<boolean>(false);
@@ -116,25 +97,25 @@ const BookingPage = ({ params }: any) => {
             </div>
           </Card>
           <form onSubmit={handleSubmit(dateSubmit)}>
-            <DatePicker onChange={onChange} />
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <p style={{ marginBottom: "5px" }}>Select Booking Date</p>
+                <DatePicker
+                  size="large"
+                  onChange={onChange}
+                  style={{ width: "100%" }}
+                />
+              </Col>
+            </Row>
+
             <Button
               type="primary"
               htmlType="submit"
               disabled={dateSelected ? false : true}
             >
-              Submit
+              Book the Service
             </Button>
           </form>
-          <Form submitHandler={onSubmit}>
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormDatePicker name="date" label="Select Booking Date" />
-              </Col>
-            </Row>
-            <Button type="primary" htmlType="submit">
-              Book Service
-            </Button>
-          </Form>
         </div>
       )}
     </div>
