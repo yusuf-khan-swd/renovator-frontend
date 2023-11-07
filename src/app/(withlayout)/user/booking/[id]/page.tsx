@@ -40,7 +40,7 @@ const BookingPage = ({ params }: any) => {
 
   const dateSubmit = async (data: any) => {
     console.log(data);
-    // date: M {
+    // TODO:  date: M {
     //   '$L': 'en',
     //   '$u': undefined,
     //   '$d': new Date('2025-02-13T06:04:30.000Z'),
@@ -76,7 +76,7 @@ const BookingPage = ({ params }: any) => {
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
-    // date = M {
+    //TODO:  date = M {
     //   '$L': 'en',
     //   '$u': undefined,
     //   '$d': new Date('2023-12-21T06:04:30.000Z'),
