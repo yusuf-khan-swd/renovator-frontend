@@ -39,7 +39,23 @@ const BookingPage = ({ params }: any) => {
   const [dateSelected, setDateSelected] = useState<boolean>(false);
 
   const dateSubmit = async (data: any) => {
-    console.log(data);
+    // console.log(data);
+    //   date: M {
+    //     '$L': 'en',
+    //     '$u': undefined,
+    //     '$d': new Date('2025-02-13T06:04:30.000Z'),
+    //     '$y': 2025,
+    //     '$M': 1,
+    //     '$D': 13,
+    //     '$W': 4,
+    //     '$H': 12,
+    //     '$m': 4,
+    //     '$s': 30,
+    //     '$ms': 597,
+    //     '$x': {},
+    //     '$isDayjsObject': true
+    //   }
+    // }
 
     try {
       message.loading("Creating.....");
@@ -61,6 +77,21 @@ const BookingPage = ({ params }: any) => {
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
+    // date = M {
+    //   '$L': 'en',
+    //   '$u': undefined,
+    //   '$d': new Date('2023-12-21T06:04:30.000Z'),
+    //   '$y': 2023,
+    //   '$M': 11,
+    //   '$D': 21,
+    //   '$W': 4,
+    //   '$H': 12,
+    //   '$m': 4,
+    //   '$s': 30,
+    //   '$ms': 597,
+    //   '$x': {},
+    //   '$isDayjsObject': true
+    // }
     setValue("date", date);
     setDateSelected(true);
   };
