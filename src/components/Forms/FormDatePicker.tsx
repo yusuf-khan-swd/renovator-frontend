@@ -8,6 +8,7 @@ type DatePikerProps = {
   label?: string;
   value?: Dayjs;
   size?: "large" | "small";
+  required?: boolean;
 };
 
 const FormDatePicker = ({
@@ -15,6 +16,7 @@ const FormDatePicker = ({
   label,
   onChange,
   size = "large",
+  required,
 }: DatePikerProps) => {
   const { control, setValue } = useFormContext();
 
@@ -25,8 +27,19 @@ const FormDatePicker = ({
 
   return (
     <div>
-      {label ? label : null}
-      <br />
+      <p style={{ marginBottom: "4px" }}>
+        {required ? (
+          <span
+            style={{
+              color: "red",
+              paddingRight: "2px",
+            }}
+          >
+            *
+          </span>
+        ) : null}
+        {label ? label : null}
+      </p>
       <Controller
         name={name}
         control={control}
