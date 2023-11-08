@@ -28,17 +28,21 @@ const FormTextArea = ({
 
   return (
     <div className={`flex flex-col  w-full`}>
-      {required ? (
-        <span
-          style={{
-            color: "red",
-          }}
-        >
-          *
-        </span>
-      ) : null}
+      <p style={{ marginBottom: "4px" }}>
+        {required ? (
+          <span
+            style={{
+              color: "red",
+              paddingRight: "2px",
+            }}
+          >
+            *
+          </span>
+        ) : null}
 
-      {label ? label : null}
+        {label ? label : null}
+      </p>
+
       <Controller
         name={name}
         control={control}
