@@ -25,6 +25,7 @@ const ConfirmBookingModal = ({
     // Update the ref when data changes
     dateRef.current = undefined;
   }, [data]);
+
   const onSubmit = async (data: any) => {
     try {
       // message.loading("Creating.....");
@@ -46,8 +47,6 @@ const ConfirmBookingModal = ({
     categoryId: data?.categoryId || "",
     location: data?.location || "",
   };
-
-  console.log(dateRef.current);
 
   const showConfirm = () => {
     confirm({
@@ -84,7 +83,7 @@ const ConfirmBookingModal = ({
           serviceId: id,
         };
         console.log(data);
-        // handleBooking(data);
+        handleBooking(data);
       },
       onCancel() {
         console.log("Cancel");

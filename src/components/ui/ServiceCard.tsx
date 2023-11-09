@@ -4,7 +4,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
-import { useState } from "react";
 import ConfirmBookingModal from "./ConfirmBookingModal";
 
 interface IServiceProps {
@@ -14,7 +13,6 @@ interface IServiceProps {
 
 const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
   const { role } = getUserInfo() as any;
-  const [date, setDate] = useState<string>();
 
   const [createCart] = useCreateCartMutation();
   const [createBooking] = useCreateBookingMutation();
@@ -35,22 +33,19 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
   };
 
   const handleBooking = async (data: any) => {
-    console.log(date);
-    // try {
-    //   message.loading("Service Booking...");
-    //   const result: any = await createBooking(data);
-    //   if (result?.data) {
-    //     message.success("Service booked successfully!!");
-    //   } else {
-    //     message.error("Service booking failed!");
-    //   }
-    // } catch (error: any) {
-    //   console.log(error);
-    //   message.error(error.message);
-    // }
+    try {
+      message.loading("Service Booking...");
+      const result: any = await createBooking(data);
+      if (result?.data) {
+        message.success("Service booked successfully!!");
+      } else {
+        message.error("Service booking failed!");
+      }
+    } catch (error: any) {
+      console.log(error);
+      message.error(error.message);
+    }
   };
-
-  console.log(date);
 
   return (
     <Col span={24} style={{ margin: "10px 0" }}>
@@ -86,7 +81,6 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
               <ConfirmBookingModal
                 id={service?.id}
                 handleBooking={handleBooking}
-                setDate={setDate}
               />
             </div>
           )}
