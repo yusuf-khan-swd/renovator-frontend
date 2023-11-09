@@ -1,7 +1,7 @@
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Col, Modal, Row, message } from "antd";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
 
@@ -10,15 +10,17 @@ const { confirm } = Modal;
 interface IConfirmModelProps {
   id: string;
   handleBooking: (data: any) => void;
+  setDate: Dispatch<SetStateAction<string | undefined>>;
   title?: string;
 }
 
 const ConfirmBookingModal = ({
   id,
   handleBooking,
+  setDate,
   title,
 }: IConfirmModelProps) => {
-  const [date, setDate] = useState<string>();
+  // const [date, setDate] = useState<string>();
   const { data, isLoading } = useServiceQuery(id);
 
   const onSubmit = async (data: any) => {
@@ -63,7 +65,7 @@ const ConfirmBookingModal = ({
               <label>*Please select a date</label>
               <input
                 type="date"
-                onChange={(e) => setDate(e.target.value)}
+                onChange={(e) => setDate((prev) => e.target.value)}
                 style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
               />
             </Col>
@@ -72,7 +74,7 @@ const ConfirmBookingModal = ({
       ),
       async onOk() {
         const data = {
-          date: date ? date : new Date().toDateString(),
+          // date: date ? date : new Date().toDateString(),
           serviceId: id,
         };
         handleBooking(data);
