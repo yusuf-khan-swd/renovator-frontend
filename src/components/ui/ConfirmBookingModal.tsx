@@ -1,7 +1,7 @@
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Col, Modal, Row, message } from "antd";
-import { Dispatch, SetStateAction } from "react";
+import { useEffect, useRef } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
 
@@ -10,19 +10,21 @@ const { confirm } = Modal;
 interface IConfirmModelProps {
   id: string;
   handleBooking: (data: any) => void;
-  setDate: Dispatch<SetStateAction<string | undefined>>;
   title?: string;
 }
 
 const ConfirmBookingModal = ({
   id,
   handleBooking,
-  setDate,
   title,
 }: IConfirmModelProps) => {
-  // const [date, setDate] = useState<string>();
+  const dateRef = useRef<string>();
   const { data, isLoading } = useServiceQuery(id);
 
+  useEffect(() => {
+    // Update the ref when data changes
+    dateRef.current = undefined;
+  }, [data]);
   const onSubmit = async (data: any) => {
     try {
       // message.loading("Creating.....");
@@ -45,6 +47,8 @@ const ConfirmBookingModal = ({
     location: data?.location || "",
   };
 
+  console.log(dateRef.current);
+
   const showConfirm = () => {
     confirm({
       title: title || "Do you Want to booked this item?",
@@ -65,7 +69,9 @@ const ConfirmBookingModal = ({
               <label>*Please select a date</label>
               <input
                 type="date"
-                onChange={(e) => setDate((prev) => e.target.value)}
+                onChange={(e) => {
+                  dateRef.current = e.target.value;
+                }}
                 style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
               />
             </Col>
@@ -74,10 +80,11 @@ const ConfirmBookingModal = ({
       ),
       async onOk() {
         const data = {
-          // date: date ? date : new Date().toDateString(),
+          date: dateRef.current,
           serviceId: id,
         };
-        handleBooking(data);
+        console.log(data);
+        // handleBooking(data);
       },
       onCancel() {
         console.log("Cancel");
