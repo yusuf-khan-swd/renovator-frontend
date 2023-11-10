@@ -3,7 +3,7 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 import type { DatePickerProps } from "antd";
 import { Button, Col, DatePicker, Modal, Row, message } from "antd";
 import { Dayjs } from "dayjs";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
 
@@ -20,8 +20,12 @@ const ConfirmBookingModal = ({
   handleBooking,
   title,
 }: IConfirmModelProps) => {
-  const dateRef = useRef<string | Dayjs | null>();
   const { data, isLoading } = useServiceQuery(id);
+  const dateRef = useRef<string | Dayjs | null>();
+  const [dateSelected, setDateSelected] = useState<boolean>(false);
+  const [confirmInstance, setConfirmInstance] = useState<ReturnType<
+    typeof Modal.confirm
+  > | null>(null);
 
   useEffect(() => {
     // Update the ref when data changes
@@ -43,6 +47,7 @@ const ConfirmBookingModal = ({
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
     dateRef.current = date;
+    setDateSelected(true);
   };
 
   const defaultValues = {
@@ -56,7 +61,9 @@ const ConfirmBookingModal = ({
   };
 
   const showConfirm = () => {
-    confirm({
+    const confirmInstance = Modal.confirm({
+      okButtonProps: { disabled: true },
+      okText: "Confirm",
       title: title || "Do you Want to booked this item?",
       icon: <ExclamationCircleFilled />,
       content: (
@@ -71,19 +78,14 @@ const ConfirmBookingModal = ({
             <Col span={24} style={{ margin: "10px 0" }}>
               <FormInput name="location" label="Location" readOnly />
             </Col>
+
             <Col span={24} style={{ margin: "10px 0" }}>
               <label>*Please select a date</label>
-              <input
-                type="date"
-                onChange={(e) => {
-                  dateRef.current = e.target.value;
-                }}
-                style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
+              <DatePicker
+                onChange={onChange}
+                style={{ width: "100%" }}
+                size="large"
               />
-            </Col>
-            <Col span={24} style={{ margin: "10px 0" }}>
-              <label>*Please select a date</label>
-              <DatePicker onChange={onChange} style={{ width: "100%" }} />
             </Col>
           </Row>
         </Form>
@@ -93,14 +95,33 @@ const ConfirmBookingModal = ({
           date: dateRef.current,
           serviceId: id,
         };
+
         console.log(data);
-        handleBooking(data);
+        // handleBooking(data);
+
+        if (dateSelected) {
+          console.log(data);
+          // handleBooking(data);
+        } else {
+          console.log("Date not selected");
+        }
       },
       onCancel() {
         console.log("Cancel");
       },
     });
+
+    setConfirmInstance(confirmInstance);
   };
+
+  useEffect(() => {
+    // Update the disabled property in the modal based on the latest state
+    if (confirmInstance) {
+      confirmInstance.update({
+        okButtonProps: { disabled: !dateSelected },
+      });
+    }
+  }, [dateSelected, confirmInstance]);
 
   return (
     <Button onClick={showConfirm} type="primary">
