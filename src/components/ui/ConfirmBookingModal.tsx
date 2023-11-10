@@ -1,6 +1,8 @@
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
-import { Button, Col, Modal, Row, message } from "antd";
+import type { DatePickerProps } from "antd";
+import { Button, Col, DatePicker, Modal, Row, message } from "antd";
+import { Dayjs } from "dayjs";
 import { useEffect, useRef } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
@@ -18,7 +20,7 @@ const ConfirmBookingModal = ({
   handleBooking,
   title,
 }: IConfirmModelProps) => {
-  const dateRef = useRef<string>();
+  const dateRef = useRef<string | Dayjs | null>();
   const { data, isLoading } = useServiceQuery(id);
 
   useEffect(() => {
@@ -36,6 +38,11 @@ const ConfirmBookingModal = ({
       console.error(err.message);
       message.error(err.message);
     }
+  };
+
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+    dateRef.current = date;
   };
 
   const defaultValues = {
@@ -73,6 +80,10 @@ const ConfirmBookingModal = ({
                 }}
                 style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
               />
+            </Col>
+            <Col span={24} style={{ margin: "10px 0" }}>
+              <label>*Please select a date</label>
+              <DatePicker onChange={onChange} style={{ width: "100%" }} />
             </Col>
           </Row>
         </Form>
