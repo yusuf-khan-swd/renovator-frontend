@@ -3,7 +3,7 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 import type { DatePickerProps } from "antd";
 import { Button, Col, DatePicker, Modal, Row, message } from "antd";
 import { Dayjs } from "dayjs";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
 
@@ -22,10 +22,6 @@ const ConfirmBookingModal = ({
 }: IConfirmModelProps) => {
   const { data, isLoading } = useServiceQuery(id);
   const dateRef = useRef<string | Dayjs | null>();
-  const [dateSelected, setDateSelected] = useState<boolean>(false);
-  const [confirmInstance, setConfirmInstance] = useState<ReturnType<
-    typeof Modal.confirm
-  > | null>(null);
 
   useEffect(() => {
     // Update the ref when data changes
@@ -47,7 +43,6 @@ const ConfirmBookingModal = ({
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
     dateRef.current = date;
-    setDateSelected(true);
   };
 
   const defaultValues = {
@@ -61,8 +56,7 @@ const ConfirmBookingModal = ({
   };
 
   const showConfirm = () => {
-    const confirmInstance = Modal.confirm({
-      okButtonProps: { disabled: true },
+    confirm({
       okText: "Confirm",
       title: title || "Do you Want to booked this item?",
       icon: <ExclamationCircleFilled />,
@@ -97,31 +91,13 @@ const ConfirmBookingModal = ({
         };
 
         console.log(data);
-        // handleBooking(data);
-
-        if (dateSelected) {
-          console.log(data);
-          // handleBooking(data);
-        } else {
-          console.log("Date not selected");
-        }
+        handleBooking(data);
       },
       onCancel() {
         console.log("Cancel");
       },
     });
-
-    setConfirmInstance(confirmInstance);
   };
-
-  useEffect(() => {
-    // Update the disabled property in the modal based on the latest state
-    if (confirmInstance) {
-      confirmInstance.update({
-        okButtonProps: { disabled: !dateSelected },
-      });
-    }
-  }, [dateSelected, confirmInstance]);
 
   return (
     <Button onClick={showConfirm} type="primary">
