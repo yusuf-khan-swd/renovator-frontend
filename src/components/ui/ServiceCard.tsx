@@ -49,7 +49,10 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
 
   return (
     <Col span={24} style={{ margin: "10px 0" }}>
-      <Card hoverable title={service?.title}>
+      <Card
+        hoverable
+        title={<p style={{ fontSize: "20px" }}>{service?.title}</p>}
+      >
         <div style={{ paddingBottom: "15px" }}>
           <p>Category: {service?.category?.title}</p>
           <p>Price: ${service?.price}</p>
