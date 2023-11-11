@@ -43,7 +43,7 @@ const ServiceDetailsPage = ({ params }: any) => {
       {isServiceLoading ? (
         <FullScreenLoading />
       ) : (
-        <ServiceCard service={service} detailsButton={false} />
+        <ServiceCard service={service} detailsPage={true} />
       )}
 
       <div style={{ margin: "25px 0" }}>

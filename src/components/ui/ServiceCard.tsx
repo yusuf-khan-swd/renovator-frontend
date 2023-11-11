@@ -8,10 +8,10 @@ import ConfirmBookingModal from "./ConfirmBookingModal";
 
 interface IServiceProps {
   service: IService;
-  detailsButton?: Boolean;
+  detailsPage?: Boolean;
 }
 
-const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
+const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
   const { role } = getUserInfo() as any;
 
   const [createCart] = useCreateCartMutation();
@@ -75,11 +75,15 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
           <p>Location: {service?.location}</p>
           <p style={{ padding: "5px 0" }}>
             <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-            {service?.description}
+            {detailsPage ? (
+              <span>{service?.description}</span>
+            ) : (
+              <span>{service?.description.slice(0, 150) + "..."}</span>
+            )}
           </p>
         </div>
         <Row justify="space-between">
-          {detailsButton ? (
+          {!detailsPage ? (
             <Link href={`/service/${service?.id}`}>
               <Button>Details</Button>
             </Link>
