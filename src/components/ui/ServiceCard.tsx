@@ -78,7 +78,11 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
             {detailsPage ? (
               <span>{service?.description}</span>
             ) : (
-              <span>{service?.description.slice(0, 150) + "..."}</span>
+              <span>
+                {service?.description.length <= 150
+                  ? service?.description
+                  : service?.description.slice(0, 150) + "..."}
+              </span>
             )}
           </p>
         </div>
