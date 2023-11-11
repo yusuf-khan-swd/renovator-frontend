@@ -53,7 +53,14 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
         hoverable
         title={<p style={{ fontSize: "20px" }}>{service?.title}</p>}
       >
-        <div style={{ paddingBottom: "15px", fontSize: "17px" }}>
+        <div
+          style={{
+            paddingBottom: "15px",
+            fontSize: "17px",
+            display: "grid",
+            gap: "4px",
+          }}
+        >
           <p>Category: {service?.category?.title}</p>
           <p>
             Price: <span style={{ fontWeight: "bold" }}>${service?.price}</span>
@@ -66,7 +73,10 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
             </span>
           </p>
           <p>Location: {service?.location}</p>
-          <p>Description: {service?.description}</p>
+          <p style={{ padding: "5px 0" }}>
+            <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
+            {service?.description}
+          </p>
         </div>
         <Row justify="space-between">
           {detailsButton ? (
