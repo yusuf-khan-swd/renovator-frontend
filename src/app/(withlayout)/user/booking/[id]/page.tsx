@@ -22,7 +22,7 @@ const BookingPage = ({ params }: any) => {
   const dateSubmit = async (data: any) => {
     console.log(data);
     // TODO: need answer how it get from this date object to 2023-11-15T06:00:28.426Z like this in server
-    // date: M {
+    // M {
     //   '$L': 'en',
     //   '$u': undefined,
     //   '$d': new Date('2025-02-13T06:04:30.000Z'),
@@ -58,22 +58,6 @@ const BookingPage = ({ params }: any) => {
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
-    // TODO: need answer how it get from this date object to 2023-11-15T06:00:28.426Z like this in server
-    // date = M {
-    //   '$L': 'en',
-    //   '$u': undefined,
-    //   '$d': new Date('2023-12-21T06:04:30.000Z'),
-    //   '$y': 2023,
-    //   '$M': 11,
-    //   '$D': 21,
-    //   '$W': 4,
-    //   '$H': 12,
-    //   '$m': 4,
-    //   '$s': 30,
-    //   '$ms': 597,
-    //   '$x': {},
-    //   '$isDayjsObject': true
-    // }
     setValue("date", date);
     setDateSelected(true);
   };
