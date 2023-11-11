@@ -58,7 +58,7 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
             paddingBottom: "15px",
             fontSize: "17px",
             display: "grid",
-            gap: "4px",
+            gap: "2px",
           }}
         >
           <p>Category: {service?.category?.title}</p>
