@@ -53,11 +53,17 @@ const ServiceCard = ({ service, detailsButton = true }: IServiceProps) => {
         hoverable
         title={<p style={{ fontSize: "20px" }}>{service?.title}</p>}
       >
-        <div style={{ paddingBottom: "15px" }}>
+        <div style={{ paddingBottom: "15px", fontSize: "17px" }}>
           <p>Category: {service?.category?.title}</p>
-          <p>Price: ${service?.price}</p>
           <p>
-            Status: <span style={{ color: "green" }}>{service?.status}</span>
+            Price: <span style={{ fontWeight: "bold" }}>${service?.price}</span>
+          </p>
+          <p>
+            Status:{" "}
+            <span style={{ color: "green" }}>
+              {service?.status.charAt(0).toUpperCase() +
+                service?.status.slice(1)}
+            </span>
           </p>
           <p>Location: {service?.location}</p>
           <p>Description: {service?.description}</p>
