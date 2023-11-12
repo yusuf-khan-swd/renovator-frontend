@@ -64,6 +64,7 @@ const ServiceDetailsPage = ({ params }: any) => {
                   name="rating"
                   label="Rating"
                   options={ratingOptions as SelectOptions[]}
+                  required
                 />
               </Col>
             </Row>
