@@ -56,7 +56,6 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
         <div
           style={{
             paddingBottom: "15px",
-            fontSize: "17px",
             display: "grid",
             gap: "2px",
           }}
