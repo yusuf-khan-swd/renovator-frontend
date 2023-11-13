@@ -2,7 +2,7 @@ import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import type { DatePickerProps } from "antd";
 import { Button, Col, DatePicker, Modal, Row, message } from "antd";
-import dayjs, { Dayjs } from "dayjs";
+import { Dayjs } from "dayjs";
 import { useEffect, useRef } from "react";
 import Form from "../Forms/Form";
 import FormInput from "../Forms/FormInput";
@@ -79,7 +79,6 @@ const ConfirmBookingModal = ({
                 onChange={onChange}
                 style={{ width: "100%" }}
                 size="large"
-                defaultValue={dayjs(Date.now())}
               />
             </Col>
           </Row>
