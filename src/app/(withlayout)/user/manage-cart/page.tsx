@@ -78,7 +78,7 @@ const ManageCartPage = () => {
       title: "Service Name",
       dataIndex: "service",
       render: function (service: IService) {
-        return service.title.slice(0, 25);
+        return service.title.slice(0, 25) + "...";
       },
     },
     {
