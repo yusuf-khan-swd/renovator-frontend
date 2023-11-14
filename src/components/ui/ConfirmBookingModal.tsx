@@ -49,7 +49,7 @@ const ConfirmBookingModal = ({
     id: data?.id,
     title: data?.title || "",
     description: data?.description || "",
-    price: data?.price || "",
+    price: "$" + data?.price || "",
     status: data?.status || "",
     categoryId: data?.categoryId || "",
     location: data?.location || "",
