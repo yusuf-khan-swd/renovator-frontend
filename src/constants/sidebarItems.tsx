@@ -29,6 +29,11 @@ export const sidebarItems = (role: string) => {
       icon: <TableOutlined />,
       key: `/${role}/manage-bookings`,
     },
+    {
+      label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
+      icon: <TableOutlined />,
+      key: `/${role}/manage-reviews`,
+    },
   ];
 
   const commonAdminSidebarItems: MenuProps["items"] = [
