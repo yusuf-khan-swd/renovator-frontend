@@ -15,7 +15,10 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
       {isReviewLoading ? (
         <CenterLoading />
       ) : (
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+        <Row
+          gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
+          style={{ maxWidth: "450px", margin: "10px auto" }}
+        >
           {reviews?.map((review: any) => (
             <ReviewCard review={review} key={review?.id} />
           ))}
