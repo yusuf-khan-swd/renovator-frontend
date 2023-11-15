@@ -22,10 +22,13 @@ const ServiceDetailsPage = ({ params }: any) => {
         <ServiceCard service={service} detailsPage={true} />
       )}
 
-      <div style={{ margin: "25px 0" }}>
-        <h2 style={{ textAlign: "center" }}>Review Ratings</h2>
-        {role && <ReviewAndRatingForm serviceId={id} />}
+      <div>
+        <div style={{ margin: "25px 0" }}>
+          <h2 style={{ margin: "8px 0" }}>Give a review and rating</h2>
+          {role && <ReviewAndRatingForm serviceId={id} />}
+        </div>
         <div>
+          <h2 style={{ margin: "12px 0" }}>Users reviews and ratings</h2>
           <Reviews serviceId={id} />
         </div>
       </div>
