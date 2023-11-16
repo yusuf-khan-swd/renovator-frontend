@@ -3,11 +3,13 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
+import { ratingOptions } from "@/constants/global";
 import { useCreateFeedbackMutation } from "@/redux/api/feedbackApi";
 import { feedbackSchema } from "@/schemas/feedback";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 import { useForm } from "react-hook-form";
+import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
 
 const Feedback = () => {
   const [createFeedback] = useCreateFeedbackMutation();
@@ -55,7 +57,12 @@ const Feedback = () => {
         </Row>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput type="number" name="rating" label="Rating" required />
+            <FormSelectField
+              name="rating"
+              label="Rating"
+              options={ratingOptions as SelectOptions[]}
+              required
+            />
           </Col>
         </Row>
 
