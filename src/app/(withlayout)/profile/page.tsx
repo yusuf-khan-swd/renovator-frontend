@@ -21,7 +21,6 @@ const ProfilePage = () => {
     }
   };
 
-  // @ts-ignore
   const defaultValues = {
     name: data?.name || "",
     email: data?.email || "",
