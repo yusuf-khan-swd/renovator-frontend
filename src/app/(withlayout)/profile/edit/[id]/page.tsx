@@ -43,7 +43,7 @@ const EditProfilePage = () => {
     role: data?.role || "",
   };
 
-  const { role } = getUserInfo() as any;
+  const { role }: { role: string } = getUserInfo() as any;
 
   return (
     <div>
@@ -61,7 +61,7 @@ const EditProfilePage = () => {
       />
 
       <div style={{ padding: "20px" }}>
-        <h3>{role} Profile</h3>
+        <h3>Update {role.charAt(0).toUpperCase() + role.slice(1)} Profile</h3>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
