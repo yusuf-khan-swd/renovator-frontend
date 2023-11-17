@@ -26,17 +26,6 @@ export const reviewApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.review],
     }),
 
-    serviceReviews: build.query({
-      query: (id: string | string[] | undefined) => {
-        return {
-          url: `${REVIEW_URL}/service/${id}`,
-          method: "GET",
-        };
-      },
-
-      providesTags: [tagTypes.review],
-    }),
-
     review: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `${REVIEW_URL}/${id}`,
@@ -60,6 +49,17 @@ export const reviewApi = baseApi.injectEndpoints({
         method: "DELETE",
       }),
       invalidatesTags: [tagTypes.review],
+    }),
+
+    serviceReviews: build.query({
+      query: (id: string | string[] | undefined) => {
+        return {
+          url: `${REVIEW_URL}/service/${id}`,
+          method: "GET",
+        };
+      },
+
+      providesTags: [tagTypes.review],
     }),
   }),
 });
