@@ -75,7 +75,9 @@ const ManageReviewPage = () => {
       title: "Service Name",
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.title.slice(0, 25) + "...";
+        return service?.title.length <= 25
+          ? service?.title
+          : service?.title.slice(0, 25) + "...";
       },
     },
     {
