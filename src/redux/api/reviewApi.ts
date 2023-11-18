@@ -58,7 +58,16 @@ export const reviewApi = baseApi.injectEndpoints({
           method: "GET",
         };
       },
+      providesTags: [tagTypes.review],
+    }),
 
+    userReviews: build.query({
+      query: (id: string | string[] | undefined) => {
+        return {
+          url: `${REVIEW_URL}/user/${id}`,
+          method: "GET",
+        };
+      },
       providesTags: [tagTypes.review],
     }),
   }),
@@ -71,4 +80,5 @@ export const {
   useUpdateReviewMutation,
   useDeleteReviewMutation,
   useServiceReviewsQuery,
+  useUserReviewsQuery,
 } = reviewApi;
