@@ -78,21 +78,23 @@ const ManageCartPage = () => {
       title: "Service Name",
       dataIndex: "service",
       render: function (service: IService) {
-        return service.title.slice(0, 25) + "...";
+        return service?.title.length <= 25
+          ? service?.title
+          : service?.title.slice(0, 25) + "...";
       },
     },
     {
       title: "Service Status",
       dataIndex: "service",
       render: function (service: IService) {
-        return service.status;
+        return service?.status;
       },
     },
     {
       title: "Service Price",
       dataIndex: "service",
       render: function (service: IService) {
-        return "$" + service.price;
+        return "$" + service?.price;
       },
       sorter: true,
     },
@@ -110,7 +112,7 @@ const ManageCartPage = () => {
         return (
           <>
             <ConfirmBookingModal
-              id={data.service.id}
+              id={data?.service?.id}
               handleBooking={handleBooking}
             />
             <ConfirmModal
