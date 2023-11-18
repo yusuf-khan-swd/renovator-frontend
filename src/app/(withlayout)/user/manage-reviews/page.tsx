@@ -4,9 +4,9 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import {
-  useCategoriesQuery,
-  useDeleteCategoryMutation,
-} from "@/redux/api/categoryApi";
+  useDeleteReviewMutation,
+  useUserReviewsQuery,
+} from "@/redux/api/reviewApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -15,9 +15,9 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageCategoryPage = () => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-categories";
+const ManageReviewPage = () => {
+  const { role, userId } = getUserInfo() as any;
+  const routeName = "manage-reviews";
 
   const query: Record<string, any> = {};
 
@@ -27,7 +27,7 @@ const ManageCategoryPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteCategory] = useDeleteCategoryMutation();
+  const [deleteReview] = useDeleteReviewMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -43,14 +43,16 @@ const ManageCategoryPage = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useCategoriesQuery({ ...query });
+  const { data, isLoading } = useUserReviewsQuery(userId);
+
+  console.log(data);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
       //   console.log(data);
-      await deleteCategory(id);
-      message.success("Category Delete successfully");
+      await deleteReview(id);
+      message.success("Review Delete successfully");
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
@@ -90,7 +92,7 @@ const ManageCategoryPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this category?"
+              title="Do you want to delete this review?"
               content={`Delete ${data?.title}!`}
             />
           </>
@@ -126,7 +128,7 @@ const ManageCategoryPage = () => {
         ]}
       />
 
-      <ActionBar title="Category List">
+      <ActionBar title="Review List">
         <Input
           type="text"
           size="large"
@@ -169,4 +171,4 @@ const ManageCategoryPage = () => {
   );
 };
 
-export default ManageCategoryPage;
+export default ManageReviewPage;
