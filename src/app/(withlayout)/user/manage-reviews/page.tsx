@@ -58,6 +58,15 @@ const ManageReviewPage = () => {
 
   const columns = [
     {
+      title: "Service Name",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service?.title.length <= 25
+          ? service?.title
+          : service?.title.slice(0, 25) + "...";
+      },
+    },
+    {
       title: "Rating",
       dataIndex: "rating",
     },
@@ -66,15 +75,6 @@ const ManageReviewPage = () => {
       dataIndex: "review",
       render: function (data: string) {
         return data.length <= 25 ? data : data.slice(0, 25) + "...";
-      },
-    },
-    {
-      title: "Service Name",
-      dataIndex: "service",
-      render: function (service: IService) {
-        return service?.title.length <= 25
-          ? service?.title
-          : service?.title.slice(0, 25) + "...";
       },
     },
     {
