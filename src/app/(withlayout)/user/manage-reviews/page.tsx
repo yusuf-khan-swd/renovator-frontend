@@ -34,7 +34,6 @@ const ManageReviewPage = () => {
   query["page"] = page;
   query["sortBy"] = sortBy;
   query["sortOrder"] = sortOrder;
-  // query["searchTerm"] = searchTerm;
 
   const debouncedTerm = useDebounced({
     query: searchTerm,
@@ -45,16 +44,14 @@ const ManageReviewPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useUserReviewsQuery(userId);
-  console.log(data);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
-      //   console.log(data);
       await deleteReview(id);
       message.success("Review Delete successfully");
     } catch (err: any) {
-      //   console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };
