@@ -9,6 +9,7 @@ import {
 } from "@/redux/api/reviewApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
+import { IService } from "@/types";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
@@ -44,7 +45,6 @@ const ManageReviewPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useUserReviewsQuery(userId);
-
   console.log(data);
 
   const deleteHandler = async (id: string) => {
@@ -61,8 +61,36 @@ const ManageReviewPage = () => {
 
   const columns = [
     {
-      title: "Title",
-      dataIndex: "title",
+      title: "Rating",
+      dataIndex: "rating",
+    },
+    {
+      title: "Review",
+      dataIndex: "review",
+      render: function (data: string) {
+        return data.length <= 25 ? data : data.slice(0, 25) + "...";
+      },
+    },
+    {
+      title: "Service Name",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service?.title.slice(0, 25) + "...";
+      },
+    },
+    {
+      title: "Service Status",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service?.status;
+      },
+    },
+    {
+      title: "Service Price",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return "$" + service?.price;
+      },
       sorter: true,
     },
     {
@@ -78,7 +106,7 @@ const ManageReviewPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+            <Link href={`/${role}/manage-reviews/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -89,11 +117,12 @@ const ManageReviewPage = () => {
                 <EditOutlined />
               </Button>
             </Link>
+
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this review?"
-              content={`Delete ${data?.title}!`}
+              title="Do you want to delete this item from review?"
+              content={`Delete this item from review!`}
             />
           </>
         );
@@ -141,9 +170,6 @@ const ManageReviewPage = () => {
           }}
         />
         <div>
-          <Link href={`/${role}/${routeName}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
