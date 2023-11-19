@@ -1,8 +1,12 @@
 "use client";
 
 import Form from "@/components/Forms/Form";
-import FormInput from "@/components/Forms/FormInput";
+import FormSelectField, {
+  SelectOptions,
+} from "@/components/Forms/FormSelectField";
+import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import { ratingOptions } from "@/constants/global";
 import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
@@ -12,6 +16,7 @@ import { Button, Col, Row, message } from "antd";
 const EditReviewPage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useReviewQuery(id);
+  console.log(data);
 
   const [updateReview] = useUpdateReviewMutation();
 
@@ -28,8 +33,8 @@ const EditReviewPage = ({ params }: any) => {
   };
 
   const defaultValues = {
-    id: data?.id,
-    title: data?.title || "",
+    rating: data?.rating || "",
+    review: data?.review || "",
   };
 
   const { role } = getUserInfo() as any;
@@ -53,11 +58,27 @@ const EditReviewPage = ({ params }: any) => {
       >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="title" label="Title" required />
+            <FormSelectField
+              name="rating"
+              label="Rating"
+              options={ratingOptions as SelectOptions[]}
+              required
+            />
+          </Col>
+        </Row>
+
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col span={16} style={{ margin: "10px 0" }}>
+            <FormTextArea
+              name="review"
+              label="Review Description"
+              rows={5}
+              required
+            />
           </Col>
         </Row>
         <Button type="primary" htmlType="submit">
-          Update
+          Submit a Review
         </Button>
       </Form>
     </div>
