@@ -22,10 +22,15 @@ const EditReviewPage = ({ params }: any) => {
 
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Creating.....");
-      console.log(data);
-      await updateReview(data);
-      message.success("Review updated successfully");
+      message.loading("Updating.....");
+      data.rating = parseInt(data.rating);
+
+      const result: any = await updateReview(data);
+      if (result?.data) {
+        message.success("Review and Rating updated successfully");
+      } else {
+        message.error("Review and rating update failed!");
+      }
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
@@ -33,6 +38,8 @@ const EditReviewPage = ({ params }: any) => {
   };
 
   const defaultValues = {
+    id: data?.id || "",
+    serviceId: data?.serviceId,
     rating: data?.rating || "",
     review: data?.review || "",
   };
@@ -78,7 +85,7 @@ const EditReviewPage = ({ params }: any) => {
           </Col>
         </Row>
         <Button type="primary" htmlType="submit">
-          Submit a Review
+          Update Review
         </Button>
       </Form>
     </div>
