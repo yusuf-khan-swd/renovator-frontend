@@ -3,27 +3,24 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import {
-  useCategoryQuery,
-  useUpdateCategoryMutation,
-} from "@/redux/api/categoryApi";
-import { categorySchema } from "@/schemas/category";
+import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
+import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Col, Row, message } from "antd";
 
-const EditCategoryPage = ({ params }: any) => {
+const EditReviewPage = ({ params }: any) => {
   const id = params?.id;
-  const { data, isLoading } = useCategoryQuery(id);
+  const { data, isLoading } = useReviewQuery(id);
 
-  const [updateCategory] = useUpdateCategoryMutation();
+  const [updateReview] = useUpdateReviewMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
       console.log(data);
-      await updateCategory(data);
-      message.success("Category updated successfully");
+      await updateReview(data);
+      message.success("Review updated successfully");
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
@@ -36,7 +33,7 @@ const EditCategoryPage = ({ params }: any) => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-categories";
+  const routeName = "manage-reviews";
   const endRoute = "edit";
 
   return (
@@ -48,10 +45,10 @@ const EditCategoryPage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Update category</h1>
+      <h1>Update review</h1>
       <Form
         submitHandler={onSubmit}
-        resolver={yupResolver(categorySchema)}
+        resolver={yupResolver(reviewAndRatingSchema)}
         defaultValues={defaultValues}
       >
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -67,4 +64,4 @@ const EditCategoryPage = ({ params }: any) => {
   );
 };
 
-export default EditCategoryPage;
+export default EditReviewPage;
