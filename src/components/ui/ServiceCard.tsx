@@ -51,7 +51,11 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
     <Col span={24} style={{ margin: "10px 0" }}>
       <Card
         hoverable
-        title={<p style={{ fontSize: "20px" }}>{service?.title}</p>}
+        title={
+          <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
+            <p style={{ fontSize: "20px" }}>{service?.title}</p>
+          </Link>
+        }
       >
         {detailsPage ? (
           <div
