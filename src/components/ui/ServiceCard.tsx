@@ -52,9 +52,13 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
       <Card
         hoverable
         title={
-          <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
+          detailsPage ? (
             <p style={{ fontSize: "20px" }}>{service?.title}</p>
-          </Link>
+          ) : (
+            <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
+              <p style={{ fontSize: "20px" }}>{service?.title}</p>
+            </Link>
+          )
         }
       >
         {detailsPage ? (
