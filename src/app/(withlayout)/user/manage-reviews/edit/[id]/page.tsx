@@ -5,6 +5,7 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { ratingOptions } from "@/constants/global";
 import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
@@ -58,51 +59,56 @@ const EditReviewPage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <div style={{ padding: "15px 5px" }}>
-        <Card title={service?.title} style={{ margin: "20px 0" }}>
-          <div style={{ paddingBottom: "15px" }}>
-            <p>Category: {service?.category?.title}</p>
-            <p>Price: ${service?.price}</p>
-            <p>
-              Status: <span style={{ color: "green" }}>{service?.status}</span>
-            </p>
-            <p>Location: {service?.location}</p>
-            <p>Description: {service?.description}</p>
-          </div>
-        </Card>
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : (
+        <div style={{ padding: "15px 5px" }}>
+          <Card title={service?.title} style={{ margin: "20px 0" }}>
+            <div style={{ paddingBottom: "15px" }}>
+              <p>Category: {service?.category?.title}</p>
+              <p>Price: ${service?.price}</p>
+              <p>
+                Status:{" "}
+                <span style={{ color: "green" }}>{service?.status}</span>
+              </p>
+              <p>Location: {service?.location}</p>
+              <p>Description: {service?.description}</p>
+            </div>
+          </Card>
 
-        <h1>Update your review</h1>
-        <Form
-          submitHandler={onSubmit}
-          resolver={yupResolver(reviewAndRatingSchema)}
-          defaultValues={defaultValues}
-        >
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
-                name="rating"
-                label="Rating"
-                options={ratingOptions as SelectOptions[]}
-                required
-              />
-            </Col>
-          </Row>
+          <h1>Update your review</h1>
+          <Form
+            submitHandler={onSubmit}
+            resolver={yupResolver(reviewAndRatingSchema)}
+            defaultValues={defaultValues}
+          >
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormSelectField
+                  name="rating"
+                  label="Rating"
+                  options={ratingOptions as SelectOptions[]}
+                  required
+                />
+              </Col>
+            </Row>
 
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={16} style={{ margin: "10px 0" }}>
-              <FormTextArea
-                name="review"
-                label="Review Description"
-                rows={5}
-                required
-              />
-            </Col>
-          </Row>
-          <Button type="primary" htmlType="submit">
-            Update Review
-          </Button>
-        </Form>
-      </div>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={16} style={{ margin: "10px 0" }}>
+                <FormTextArea
+                  name="review"
+                  label="Review Description"
+                  rows={5}
+                  required
+                />
+              </Col>
+            </Row>
+            <Button type="primary" htmlType="submit">
+              Update Review
+            </Button>
+          </Form>
+        </div>
+      )}
     </div>
   );
 };
