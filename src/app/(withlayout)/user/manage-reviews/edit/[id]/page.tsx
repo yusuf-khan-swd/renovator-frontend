@@ -13,14 +13,15 @@ import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import { useRouter } from "next/navigation";
 
 const EditReviewPage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
-  console.log(data);
 
   const [updateReview] = useUpdateReviewMutation();
+  const router = useRouter();
 
   const onSubmit = async (data: any) => {
     try {
@@ -30,6 +31,7 @@ const EditReviewPage = ({ params }: any) => {
       const result: any = await updateReview(data);
       if (result?.data) {
         message.success("Review and Rating updated successfully");
+        router.push(`/${role}/${routeName}`);
       } else {
         message.error("Review and rating update failed!");
       }
