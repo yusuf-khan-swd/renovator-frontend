@@ -84,15 +84,7 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
             <p>Location: {service?.location}</p>
             <p style={{ padding: "5px 0" }}>
               <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-              {detailsPage ? (
-                <span>{service?.description}</span>
-              ) : (
-                <span>
-                  {service?.description.length <= 150
-                    ? service?.description
-                    : service?.description.slice(0, 150) + "..."}
-                </span>
-              )}
+              <span>{service?.description}</span>
             </p>
           </div>
         ) : (
@@ -119,15 +111,11 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
               <p>Location: {service?.location}</p>
               <p style={{ padding: "5px 0" }}>
                 <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-                {detailsPage ? (
-                  <span>{service?.description}</span>
-                ) : (
-                  <span>
-                    {service?.description.length <= 150
-                      ? service?.description
-                      : service?.description.slice(0, 150) + "..."}
-                  </span>
-                )}
+                <span>
+                  {service?.description.length <= 150
+                    ? service?.description
+                    : service?.description.slice(0, 150) + "..."}
+                </span>
               </p>
             </div>
           </Link>
