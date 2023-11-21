@@ -19,6 +19,7 @@ type SelectFieldProps = {
   defaultValue?: SelectOptions;
   handleChange?: (el: string) => void;
   required?: boolean;
+  disabled?: boolean;
 };
 
 const FormSelectField = ({
@@ -31,6 +32,7 @@ const FormSelectField = ({
   defaultValue,
   handleChange,
   required,
+  disabled = false,
 }: SelectFieldProps) => {
   const {
     control,
@@ -66,6 +68,7 @@ const FormSelectField = ({
             value={value}
             style={{ width: "100%" }}
             placeholder={placeholder}
+            disabled={disabled}
           />
         )}
       />
