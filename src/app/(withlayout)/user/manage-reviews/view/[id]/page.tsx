@@ -98,6 +98,7 @@ const EditReviewPage = ({ params }: any) => {
                   label="Rating"
                   options={ratingOptions as SelectOptions[]}
                   required
+                  disabled
                 />
               </Col>
             </Row>
