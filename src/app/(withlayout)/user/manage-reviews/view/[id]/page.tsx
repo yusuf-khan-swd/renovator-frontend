@@ -39,12 +39,12 @@ const EditReviewPage = ({ params }: any) => {
     try {
       const result: any = await deleteReview(id);
 
+      router.push(`/${role}/${routeName}`);
+
       if (result?.data) {
         message.success("Review Delete successfully");
-        router.push(`/${role}/${routeName}`);
       } else {
         message.error("Review Delete failed!!");
-        router.push(`/${role}/${routeName}`);
       }
     } catch (err: any) {
       console.error(err);
