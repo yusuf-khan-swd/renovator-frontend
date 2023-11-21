@@ -10,7 +10,7 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
@@ -114,6 +114,17 @@ const ManageReviewPage = () => {
                 type="primary"
               >
                 <EditOutlined />
+              </Button>
+            </Link>
+            <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "0px 5px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EyeOutlined />
               </Button>
             </Link>
 
