@@ -13,6 +13,7 @@ import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const EditReviewPage = ({ params }: any) => {
@@ -50,7 +51,7 @@ const EditReviewPage = ({ params }: any) => {
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
-  const endRoute = "edit";
+  const endRoute = "view";
 
   return (
     <div>
@@ -105,9 +106,9 @@ const EditReviewPage = ({ params }: any) => {
                 />
               </Col>
             </Row>
-            <Button type="primary" htmlType="submit">
-              Update Review
-            </Button>
+            <Link href={`/${role}/manage-reviews/edit/${id}`}>
+              <Button type="primary">Edit Review</Button>
+            </Link>
           </Form>
         </div>
       )}
