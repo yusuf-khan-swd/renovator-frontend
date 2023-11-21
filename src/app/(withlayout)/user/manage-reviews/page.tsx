@@ -105,17 +105,6 @@ const ManageReviewPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/manage-reviews/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "0px 5px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
             <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
               <Button
                 style={{
@@ -125,6 +114,18 @@ const ManageReviewPage = () => {
                 type="primary"
               >
                 <EyeOutlined />
+              </Button>
+            </Link>
+
+            <Link href={`/${role}/manage-reviews/edit/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "0px 5px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
               </Button>
             </Link>
 
