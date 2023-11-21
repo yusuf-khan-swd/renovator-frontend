@@ -7,8 +7,9 @@ import FormSelectField, {
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import ConfirmModal from "@/components/ui/ConfirmModal";
 import { ratingOptions } from "@/constants/global";
-import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
+import { useDeleteReviewMutation, useReviewQuery } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,27 +18,36 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const EditReviewPage = ({ params }: any) => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-reviews";
+  const endRoute = "view";
+
   const id = params?.id;
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
 
-  const [updateReview] = useUpdateReviewMutation();
   const router = useRouter();
 
-  const onSubmit = async (data: any) => {
-    try {
-      message.loading("Updating.....");
-      data.rating = parseInt(data.rating);
+  const [deleteReview] = useDeleteReviewMutation();
 
-      const result: any = await updateReview(data);
+  const onSubmit = async (data: any) => {
+    console.log(data);
+  };
+
+  const deleteHandler = async (id: string) => {
+    message.loading("Deleting.....");
+    try {
+      const result: any = await deleteReview(id);
+
       if (result?.data) {
-        message.success("Review and Rating updated successfully");
+        message.success("Review Delete successfully");
         router.push(`/${role}/${routeName}`);
       } else {
-        message.error("Review and rating update failed!");
+        message.error("Review Delete failed!!");
+        router.push(`/${role}/${routeName}`);
       }
     } catch (err: any) {
-      console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };
@@ -48,10 +58,6 @@ const EditReviewPage = ({ params }: any) => {
     rating: data?.rating || "",
     review: data?.review || "",
   };
-
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-reviews";
-  const endRoute = "view";
 
   return (
     <div>
@@ -109,6 +115,12 @@ const EditReviewPage = ({ params }: any) => {
             <Link href={`/${role}/manage-reviews/edit/${id}`}>
               <Button type="primary">Edit Review</Button>
             </Link>
+            <ConfirmModal
+              id={id}
+              handler={deleteHandler}
+              title="Do you want to delete this review?"
+              content={`Delete this review!`}
+            />
           </Form>
         </div>
       )}
