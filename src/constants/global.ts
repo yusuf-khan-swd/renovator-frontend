@@ -22,15 +22,15 @@ export const serviceStatusOptions = [
 export const roleOptionsForSuperAdmin = [
   { label: "SUPER_ADMIN", value: "super_admin" },
   { label: "ADMIN", value: "admin" },
-  { label: "User", value: "user" },
+  { label: "USER", value: "user" },
 ];
 
 export const roleOptionsForAdmin = [
   { label: "ADMIN", value: "admin" },
-  { label: "User", value: "user" },
+  { label: "USER", value: "user" },
 ];
 
-export const roleOptionsForUser = [{ label: "User", value: "user" }];
+export const roleOptionsForUser = [{ label: "USER", value: "user" }];
 
 export const genderOptions = [
   {
