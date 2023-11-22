@@ -5,7 +5,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
-import ConfirmBookingModal from "./ConfirmBookingModal";
 
 interface IServiceProps {
   service: IService;
@@ -136,14 +135,10 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
               Add to Cart
             </Button>
             <Link href={`/user/booking/${service?.id}`}>
-              <Button disabled={!(role === ENUM_USER_ROLE.USER)}>
+              <Button disabled={!(role === ENUM_USER_ROLE.USER)} type="primary">
                 Booking
               </Button>
             </Link>
-            <ConfirmBookingModal
-              id={service?.id}
-              handleBooking={handleBooking}
-            />
           </div>
         </Row>
       </Card>
