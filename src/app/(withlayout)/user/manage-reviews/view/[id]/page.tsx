@@ -110,6 +110,7 @@ const EditReviewPage = ({ params }: any) => {
                   label="Review Description"
                   rows={5}
                   required
+                  readOnly
                 />
               </Col>
             </Row>
