@@ -9,6 +9,7 @@ type TextAreaProps = {
   value?: string;
   placeholder?: string;
   required?: boolean;
+  readOnly?: boolean;
 };
 
 const FormTextArea = ({
@@ -18,6 +19,7 @@ const FormTextArea = ({
   value,
   placeholder,
   required,
+  readOnly = false,
 }: TextAreaProps) => {
   const {
     control,
@@ -51,6 +53,7 @@ const FormTextArea = ({
             placeholder={placeholder}
             {...field}
             defaultValue={value}
+            readOnly={readOnly}
           />
         )}
       />
