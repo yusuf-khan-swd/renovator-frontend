@@ -127,26 +127,24 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
             <Button disabled={detailsPage}>Details</Button>
           </Link>
 
-          {role && (
-            <div>
-              <Button
-                onClick={() => handleAddToCart({ serviceId: service?.id })}
-                style={{ marginRight: "5px" }}
-                disabled={!(role === ENUM_USER_ROLE.USER)}
-              >
-                Add to Cart
+          <div>
+            <Button
+              onClick={() => handleAddToCart({ serviceId: service?.id })}
+              style={{ marginRight: "5px" }}
+              disabled={!(role === ENUM_USER_ROLE.USER)}
+            >
+              Add to Cart
+            </Button>
+            <Link href={`/user/booking/${service?.id}`}>
+              <Button disabled={!(role === ENUM_USER_ROLE.USER)}>
+                Booking
               </Button>
-              <Link href={`/user/booking/${service?.id}`}>
-                <Button disabled={!(role === ENUM_USER_ROLE.USER)}>
-                  Booking
-                </Button>
-              </Link>
-              <ConfirmBookingModal
-                id={service?.id}
-                handleBooking={handleBooking}
-              />
-            </div>
-          )}
+            </Link>
+            <ConfirmBookingModal
+              id={service?.id}
+              handleBooking={handleBooking}
+            />
+          </div>
         </Row>
       </Card>
     </Col>
