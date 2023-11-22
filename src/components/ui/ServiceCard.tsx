@@ -9,7 +9,7 @@ import ConfirmBookingModal from "./ConfirmBookingModal";
 
 interface IServiceProps {
   service: IService;
-  detailsPage?: Boolean;
+  detailsPage?: boolean;
 }
 
 const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
@@ -123,13 +123,10 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
         )}
 
         <Row justify="space-between">
-          {!detailsPage ? (
-            <Link href={`/service/${service?.id}`}>
-              <Button>Details</Button>
-            </Link>
-          ) : (
-            <div></div>
-          )}
+          <Link href={`/service/${service?.id}`}>
+            <Button disabled={detailsPage}>Details</Button>
+          </Link>
+
           {role && (
             <div>
               <Button
