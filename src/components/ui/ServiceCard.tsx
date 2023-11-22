@@ -1,3 +1,4 @@
+import { ENUM_USER_ROLE } from "@/constants/role";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useCreateCartMutation } from "@/redux/api/cartApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -134,11 +135,14 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
               <Button
                 onClick={() => handleAddToCart({ serviceId: service?.id })}
                 style={{ marginRight: "5px" }}
+                disabled={!(role === ENUM_USER_ROLE.USER)}
               >
                 Add to Cart
               </Button>
               <Link href={`/user/booking/${service?.id}`}>
-                <Button>Booking</Button>
+                <Button disabled={!(role === ENUM_USER_ROLE.USER)}>
+                  Booking
+                </Button>
               </Link>
               <ConfirmBookingModal
                 id={service?.id}
