@@ -4,6 +4,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import ServiceCardBody from "../Service/ServiceCardBody";
 
 interface IServiceProps {
   service: IService;
@@ -45,62 +46,10 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
         }
       >
         {detailsPage ? (
-          <div
-            style={{
-              paddingBottom: "15px",
-              display: "grid",
-              gap: "2px",
-            }}
-          >
-            <p>Category: {service?.category?.title}</p>
-            <p>
-              Price:{" "}
-              <span style={{ fontWeight: "bold" }}>${service?.price}</span>
-            </p>
-            <p>
-              Status:{" "}
-              <span style={{ color: "green" }}>
-                {service?.status.charAt(0).toUpperCase() +
-                  service?.status.slice(1)}
-              </span>
-            </p>
-            <p>Location: {service?.location}</p>
-            <p style={{ padding: "5px 0" }}>
-              <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-              <span>{service?.description}</span>
-            </p>
-          </div>
+          <ServiceCardBody service={service} detailsPage />
         ) : (
           <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
-            <div
-              style={{
-                paddingBottom: "15px",
-                display: "grid",
-                gap: "2px",
-              }}
-            >
-              <p>Category: {service?.category?.title}</p>
-              <p>
-                Price:{" "}
-                <span style={{ fontWeight: "bold" }}>${service?.price}</span>
-              </p>
-              <p>
-                Status:{" "}
-                <span style={{ color: "green" }}>
-                  {service?.status.charAt(0).toUpperCase() +
-                    service?.status.slice(1)}
-                </span>
-              </p>
-              <p>Location: {service?.location}</p>
-              <p style={{ padding: "5px 0" }}>
-                <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-                <span>
-                  {service?.description.length <= 150
-                    ? service?.description
-                    : service?.description.slice(0, 150) + "..."}
-                </span>
-              </p>
-            </div>
+            <ServiceCardBody service={service} />
           </Link>
         )}
 
