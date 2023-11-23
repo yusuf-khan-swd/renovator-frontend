@@ -39,10 +39,10 @@ const Feedback = () => {
   return (
     <div
       style={{
-        margin: "20px 0",
+        margin: "40px 0",
       }}
     >
-      <h1>Please give your feedback</h1>
+      <h1 style={{ margin: "15px 0" }}>Please leave a comment</h1>
 
       <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
