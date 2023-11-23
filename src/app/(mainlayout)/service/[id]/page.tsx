@@ -6,6 +6,7 @@ import Reviews from "@/components/ui/Reviews";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
+import Link from "next/link";
 
 const ServiceDetailsPage = ({ params }: any) => {
   const { role } = getUserInfo() as any;
@@ -23,11 +24,17 @@ const ServiceDetailsPage = ({ params }: any) => {
       )}
 
       <div>
-        <div style={{ margin: "25px 0" }}>
+        <div style={{ margin: "25px 0", minHeight: "120px" }}>
           <h2 style={{ margin: "8px 0" }}>Give a review and rating</h2>
-          {role && <ReviewAndRatingForm serviceId={id} />}
+          {role ? (
+            <ReviewAndRatingForm serviceId={id} />
+          ) : (
+            <div>
+              Please <Link href="/login">Login</Link> to give review
+            </div>
+          )}
         </div>
-        <div>
+        <div style={{ minHeight: "120px" }}>
           <h2 style={{ margin: "12px 0" }}>Users reviews and ratings</h2>
           <Reviews serviceId={id} />
         </div>
