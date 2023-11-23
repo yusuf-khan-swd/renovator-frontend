@@ -1,11 +1,12 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import type { DatePickerProps } from "antd";
-import { Button, Card, Col, DatePicker, Row, message } from "antd";
+import { Button, Col, DatePicker, Row, message } from "antd";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -68,18 +69,7 @@ const BookingPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div>
-          <Card title={service?.title}>
-            <div style={{ paddingBottom: "15px" }}>
-              <p>Category: {service?.category?.title}</p>
-              <p>Price: ${service?.price}</p>
-              <p>
-                Status:{" "}
-                <span style={{ color: "green" }}>{service?.status}</span>
-              </p>
-              <p>Location: {service?.location}</p>
-              <p>Description: {service?.description}</p>
-            </div>
-          </Card>
+          <ServiceDetailsCard service={service} />
           <form onSubmit={handleSubmit(dateSubmit)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
