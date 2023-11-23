@@ -5,6 +5,7 @@ import { IService } from "@/types";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import ServiceCardBody from "../Service/ServiceCardBody";
+import ServiceCardTitle from "../Service/ServiceCardTitle";
 
 interface IServiceProps {
   service: IService;
@@ -37,10 +38,10 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
         hoverable
         title={
           detailsPage ? (
-            <p style={{ fontSize: "20px" }}>{service?.title}</p>
+            <ServiceCardTitle title={service?.title} />
           ) : (
             <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
-              <p style={{ fontSize: "20px" }}>{service?.title}</p>
+              <ServiceCardTitle title={service?.title} />
             </Link>
           )
         }
