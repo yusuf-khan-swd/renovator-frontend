@@ -14,6 +14,8 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
     <div>
       {isReviewLoading ? (
         <CenterLoading />
+      ) : reviews?.length < 1 ? (
+        <p>No review available</p>
       ) : (
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           {reviews?.map((review: any) => (
