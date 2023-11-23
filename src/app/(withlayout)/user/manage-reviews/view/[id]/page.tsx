@@ -6,6 +6,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { ratingOptions } from "@/constants/global";
@@ -13,7 +14,7 @@ import { useDeleteReviewMutation, useReviewQuery } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Card, Col, Row, message } from "antd";
+import { Button, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -72,18 +73,7 @@ const EditReviewPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div style={{ padding: "15px 5px" }}>
-          <Card title={service?.title} style={{ margin: "20px 0" }}>
-            <div style={{ paddingBottom: "15px" }}>
-              <p>Category: {service?.category?.title}</p>
-              <p>Price: ${service?.price}</p>
-              <p>
-                Status:{" "}
-                <span style={{ color: "green" }}>{service?.status}</span>
-              </p>
-              <p>Location: {service?.location}</p>
-              <p>Description: {service?.description}</p>
-            </div>
-          </Card>
+          <ServiceDetailsCard service={service} />
 
           <h1>Update your review</h1>
           <Form
