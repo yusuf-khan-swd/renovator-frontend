@@ -1,5 +1,4 @@
 import { ENUM_USER_ROLE } from "@/constants/role";
-import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useCreateCartMutation } from "@/redux/api/cartApi";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
@@ -15,7 +14,6 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
   const { role } = getUserInfo() as any;
 
   const [createCart] = useCreateCartMutation();
-  const [createBooking] = useCreateBookingMutation();
 
   const handleAddToCart = async (data: any) => {
     try {
@@ -25,21 +23,6 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
         message.success("Service added to cart!");
       } else {
         message.error("Service adding to cart failed!");
-      }
-    } catch (error: any) {
-      console.log(error);
-      message.error(error.message);
-    }
-  };
-
-  const handleBooking = async (data: any) => {
-    try {
-      message.loading("Service Booking...");
-      const result: any = await createBooking(data);
-      if (result?.data) {
-        message.success("Service booked successfully!!");
-      } else {
-        message.error("Service booking failed!");
       }
     } catch (error: any) {
       console.log(error);
