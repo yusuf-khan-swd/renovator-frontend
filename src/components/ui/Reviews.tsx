@@ -1,6 +1,7 @@
 import { useServiceReviewsQuery } from "@/redux/api/reviewApi";
-import { Row } from "antd";
-import CenterLoading from "../Loading/CenterLoading";
+import { Card, Row } from "antd";
+import FullScreenLoading from "../Loading/FullScreenLoading";
+import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
 import ReviewCard from "./ReviewCard";
 
 interface IReviewsProps {
@@ -13,15 +14,19 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
   return (
     <div>
       {isReviewLoading ? (
-        <CenterLoading />
+        <FullScreenLoading />
       ) : reviews?.length < 1 ? (
         <p>No review available</p>
       ) : (
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          {reviews?.map((review: any) => (
-            <ReviewCard review={review} key={review?.id} />
-          ))}
-        </Row>
+        <Card bordered={false}>
+          <ReviewAndRatingHeading heading="Users reviews and ratings" />
+
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            {reviews?.map((review: any) => (
+              <ReviewCard review={review} key={review?.id} />
+            ))}
+          </Row>
+        </Card>
       )}
     </div>
   );
