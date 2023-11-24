@@ -73,47 +73,50 @@ const EditReviewPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div style={{ padding: "15px 5px" }}>
-          <ServiceDetailsCard service={service} />
+          <div>
+            <ServiceDetailsCard service={service} />
+          </div>
 
-          <h1>Update your review</h1>
-          <Form
-            submitHandler={onSubmit}
-            resolver={yupResolver(reviewAndRatingSchema)}
-            defaultValues={defaultValues}
-          >
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormSelectField
-                  name="rating"
-                  label="Rating"
-                  options={ratingOptions as SelectOptions[]}
-                  required
-                  disabled
-                />
-              </Col>
-            </Row>
-
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={16} style={{ margin: "10px 0" }}>
-                <FormTextArea
-                  name="review"
-                  label="Review Description"
-                  rows={5}
-                  required
-                  readOnly
-                />
-              </Col>
-            </Row>
-            <Link href={`/${role}/manage-reviews/edit/${id}`}>
-              <Button type="primary">Edit Review</Button>
-            </Link>
-            <ConfirmModal
-              id={id}
-              handler={deleteHandler}
-              title="Do you want to delete this review?"
-              content={`Delete this review!`}
-            />
-          </Form>
+          <div>
+            <h1>Your Review</h1>
+            <Form
+              submitHandler={onSubmit}
+              resolver={yupResolver(reviewAndRatingSchema)}
+              defaultValues={defaultValues}
+            >
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormSelectField
+                    name="rating"
+                    label="Rating"
+                    options={ratingOptions as SelectOptions[]}
+                    required
+                    disabled
+                  />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={16} style={{ margin: "10px 0" }}>
+                  <FormTextArea
+                    name="review"
+                    label="Review Description"
+                    rows={5}
+                    required
+                    readOnly
+                  />
+                </Col>
+              </Row>
+              <Link href={`/${role}/manage-reviews/edit/${id}`}>
+                <Button type="primary">Edit Review</Button>
+              </Link>
+              <ConfirmModal
+                id={id}
+                handler={deleteHandler}
+                title="Do you want to delete this review?"
+                content={`Delete this review!`}
+              />
+            </Form>
+          </div>
         </div>
       )}
     </div>
