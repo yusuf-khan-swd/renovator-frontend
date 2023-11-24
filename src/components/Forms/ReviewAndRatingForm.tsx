@@ -7,7 +7,8 @@ import { ratingOptions } from "@/constants/global";
 import { useCreateReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
+import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
 
 interface IReviewAndRatingProps {
   serviceId: string;
@@ -35,7 +36,8 @@ const ReviewAndRatingForm = ({ serviceId }: IReviewAndRatingProps) => {
   };
 
   return (
-    <div>
+    <Card>
+      <ReviewAndRatingHeading heading="Give a review and rating" />
       <Form
         submitHandler={onSubmit}
         resolver={yupResolver(reviewAndRatingSchema)}
@@ -65,7 +67,7 @@ const ReviewAndRatingForm = ({ serviceId }: IReviewAndRatingProps) => {
           Submit a Review
         </Button>
       </Form>
-    </div>
+    </Card>
   );
 };
 
