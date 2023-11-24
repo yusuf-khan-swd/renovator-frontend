@@ -41,6 +41,11 @@ const LoginPage = () => {
     }
   };
 
+  const defaultValues = {
+    email: "yusuf3@gmail.com",
+    password: "123456",
+  };
+
   return (
     <Row
       justify="center"
@@ -67,7 +72,11 @@ const LoginPage = () => {
           First login your account
         </h1>
         <div>
-          <Form submitHandler={onSubmit} resolver={yupResolver(loginSchema)}>
+          <Form
+            submitHandler={onSubmit}
+            resolver={yupResolver(loginSchema)}
+            defaultValues={defaultValues}
+          >
             <div>
               <FormInput
                 name="email"
