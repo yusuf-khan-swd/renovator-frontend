@@ -13,7 +13,7 @@ import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 
 const EditReviewPage = ({ params }: any) => {
   const id = params?.id;
@@ -62,40 +62,44 @@ const EditReviewPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "15px 5px" }}>
-          <ServiceDetailsCard service={service} />
+        <div style={{ padding: "24px 5px" }}>
+          <div style={{ marginBottom: "10px" }}>
+            <ServiceDetailsCard service={service} />
+          </div>
 
-          <h1>Update your review</h1>
-          <Form
-            submitHandler={onSubmit}
-            resolver={yupResolver(reviewAndRatingSchema)}
-            defaultValues={defaultValues}
-          >
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormSelectField
-                  name="rating"
-                  label="Rating"
-                  options={ratingOptions as SelectOptions[]}
-                  required
-                />
-              </Col>
-            </Row>
+          <Card>
+            <h1>Update Your Review</h1>
+            <Form
+              submitHandler={onSubmit}
+              resolver={yupResolver(reviewAndRatingSchema)}
+              defaultValues={defaultValues}
+            >
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormSelectField
+                    name="rating"
+                    label="Rating"
+                    options={ratingOptions as SelectOptions[]}
+                    required
+                  />
+                </Col>
+              </Row>
 
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={16} style={{ margin: "10px 0" }}>
-                <FormTextArea
-                  name="review"
-                  label="Review Description"
-                  rows={5}
-                  required
-                />
-              </Col>
-            </Row>
-            <Button type="primary" htmlType="submit">
-              Update Review
-            </Button>
-          </Form>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={16} style={{ margin: "10px 0" }}>
+                  <FormTextArea
+                    name="review"
+                    label="Review Description"
+                    rows={5}
+                    required
+                  />
+                </Col>
+              </Row>
+              <Button type="primary" htmlType="submit">
+                Update Review
+              </Button>
+            </Form>
+          </Card>
         </div>
       )}
     </div>
