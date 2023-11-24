@@ -26,7 +26,6 @@ const ServiceDetailsPage = ({ params }: any) => {
 
       <div>
         <div style={{ margin: "40px 0", minHeight: "80px" }}>
-          <h2 style={{ margin: "8px 0" }}>Give a review and rating</h2>
           {role ? (
             <ReviewAndRatingForm serviceId={id} />
           ) : (
