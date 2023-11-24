@@ -14,7 +14,7 @@ import { useDeleteReviewMutation, useReviewQuery } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -72,12 +72,12 @@ const EditReviewPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "15px 5px" }}>
-          <div>
+        <div style={{ padding: "24px 5px" }}>
+          <div style={{ marginBottom: "10px" }}>
             <ServiceDetailsCard service={service} />
           </div>
 
-          <div>
+          <Card>
             <h1>Your Review</h1>
             <Form
               submitHandler={onSubmit}
@@ -116,7 +116,7 @@ const EditReviewPage = ({ params }: any) => {
                 content={`Delete this review!`}
               />
             </Form>
-          </div>
+          </Card>
         </div>
       )}
     </div>
