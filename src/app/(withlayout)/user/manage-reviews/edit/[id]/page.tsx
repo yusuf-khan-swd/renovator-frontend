@@ -6,6 +6,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRatingHeading";
 import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { ratingOptions } from "@/constants/global";
@@ -69,7 +70,7 @@ const EditReviewPage = ({ params }: any) => {
           </div>
 
           <Card>
-            <h1>Update Your Review</h1>
+            <ReviewAndRatingHeading heading="Update Your Review" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(reviewAndRatingSchema)}
