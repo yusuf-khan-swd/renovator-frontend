@@ -41,7 +41,6 @@ const ServiceDetailsPage = ({ params }: any) => {
           )}
         </div>
         <div style={{ minHeight: "120px" }}>
-          <h2 style={{ margin: "12px 0" }}>Users reviews and ratings</h2>
           <Reviews serviceId={id} />
         </div>
       </div>
