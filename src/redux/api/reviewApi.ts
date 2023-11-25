@@ -70,6 +70,16 @@ export const reviewApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.review],
     }),
+
+    adminReviews: build.query({
+      query: () => {
+        return {
+          url: `${REVIEW_URL}/admin-reviews`,
+          method: "GET",
+        };
+      },
+      providesTags: [tagTypes.review],
+    }),
   }),
 });
 
@@ -81,4 +91,5 @@ export const {
   useDeleteReviewMutation,
   useServiceReviewsQuery,
   useUserReviewsQuery,
+  useAdminReviewsQuery,
 } = reviewApi;
