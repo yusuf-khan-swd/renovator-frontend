@@ -42,42 +42,46 @@ const Feedback = () => {
         margin: "40px 0",
       }}
     >
-      <h1 style={{ margin: "15px 0" }}>Please leave a comment</h1>
-
-      <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="name" label="Your Name" required />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="email" type="email" label="Email" required />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="rating"
-              label="Rating"
-              options={ratingOptions as SelectOptions[]}
-              required
-            />
-          </Col>
-        </Row>
-
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={16} style={{ margin: "10px 0" }}>
-            <FormTextArea name="review" label="Comment" rows={5} required />
-          </Col>
-        </Row>
-        <Button type="primary" htmlType="submit" style={{ marginRight: "5px" }}>
-          Submit Feedback
-        </Button>
-        <Button type="default" onClick={handleClearForm}>
-          Clear Form
-        </Button>
-      </Form>
+      <div>
+        <h1 style={{ margin: "15px 0" }}>Please leave a comment</h1>
+        <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormInput name="name" label="Your Name" required />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormInput name="email" type="email" label="Email" required />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormSelectField
+                name="rating"
+                label="Rating"
+                options={ratingOptions as SelectOptions[]}
+                required
+              />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={16} style={{ margin: "10px 0" }}>
+              <FormTextArea name="review" label="Comment" rows={5} required />
+            </Col>
+          </Row>
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{ marginRight: "5px" }}
+          >
+            Submit Feedback
+          </Button>
+          <Button type="default" onClick={handleClearForm}>
+            Clear Form
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };
