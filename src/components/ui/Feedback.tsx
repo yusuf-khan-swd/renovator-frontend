@@ -7,9 +7,10 @@ import { ratingOptions } from "@/constants/global";
 import { useCreateFeedbackMutation } from "@/redux/api/feedbackApi";
 import { feedbackSchema } from "@/schemas/feedback";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import { useForm } from "react-hook-form";
 import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
+import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
 
 const Feedback = () => {
   const [createFeedback] = useCreateFeedbackMutation();
@@ -42,8 +43,8 @@ const Feedback = () => {
         margin: "40px 0",
       }}
     >
-      <div>
-        <h1 style={{ margin: "15px 0" }}>Please leave a comment</h1>
+      <Card>
+        <ReviewAndRatingHeading heading="Please leave a comment" />
         <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={8} style={{ margin: "10px 0" }}>
@@ -81,7 +82,7 @@ const Feedback = () => {
             Clear Form
           </Button>
         </Form>
-      </div>
+      </Card>
     </div>
   );
 };
