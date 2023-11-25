@@ -46,13 +46,7 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
           )
         }
       >
-        {detailsPage ? (
-          <ServiceCardBody service={service} detailsPage />
-        ) : (
-          <Link style={{ color: "inherit" }} href={`/service/${service?.id}`}>
-            <ServiceCardBody service={service} />
-          </Link>
-        )}
+        <ServiceCardBody service={service} />
 
         <Row justify="space-between">
           <Link href={`/service/${service?.id}`}>
