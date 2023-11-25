@@ -93,6 +93,14 @@ const ManageReviewPage = () => {
       sorter: true,
     },
     {
+      title: "User",
+      dataIndex: "user",
+      render: function (user: any) {
+        return user?.email;
+      },
+      sorter: true,
+    },
+    {
       title: "CreatedAt",
       dataIndex: "createdAt",
       render: function (data: any) {
