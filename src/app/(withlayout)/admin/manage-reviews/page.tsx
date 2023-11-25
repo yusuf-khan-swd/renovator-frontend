@@ -78,14 +78,14 @@ const ManageReviewPage = () => {
       },
     },
     {
-      title: "Service Status",
+      title: "Status",
       dataIndex: "service",
       render: function (service: IService) {
         return service?.status;
       },
     },
     {
-      title: "Service Price",
+      title: "Price",
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
