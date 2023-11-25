@@ -36,38 +36,39 @@ const ReviewAndRatingForm = ({ serviceId }: IReviewAndRatingProps) => {
   };
 
   return (
-    <Card>
-      <ReviewAndRatingHeading heading="Give a review and rating" />
-      <Form
-        submitHandler={onSubmit}
-        resolver={yupResolver(reviewAndRatingSchema)}
-      >
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="rating"
-              label="Rating"
-              options={ratingOptions as SelectOptions[]}
-              required
-            />
-          </Col>
-        </Row>
-
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={16} style={{ margin: "10px 0" }}>
-            <FormTextArea
-              name="review"
-              label="Review Description"
-              rows={5}
-              required
-            />
-          </Col>
-        </Row>
-        <Button type="primary" htmlType="submit">
-          Submit a Review
-        </Button>
-      </Form>
-    </Card>
+    <div>
+      <Card>
+        <ReviewAndRatingHeading heading="Give a review and rating" />
+        <Form
+          submitHandler={onSubmit}
+          resolver={yupResolver(reviewAndRatingSchema)}
+        >
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormSelectField
+                name="rating"
+                label="Rating"
+                options={ratingOptions as SelectOptions[]}
+                required
+              />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={16} style={{ margin: "10px 0" }}>
+              <FormTextArea
+                name="review"
+                label="Review Description"
+                rows={5}
+                required
+              />
+            </Col>
+          </Row>
+          <Button type="primary" htmlType="submit">
+            Submit a Review
+          </Button>
+        </Form>
+      </Card>
+    </div>
   );
 };
 
