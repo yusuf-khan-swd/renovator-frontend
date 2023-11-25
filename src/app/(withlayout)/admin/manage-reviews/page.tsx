@@ -74,7 +74,7 @@ const ManageReviewPage = () => {
       title: "Review",
       dataIndex: "review",
       render: function (data: string) {
-        return data.length <= 25 ? data : data.slice(0, 25) + "...";
+        return data.length <= 15 ? data : data.slice(0, 15) + "...";
       },
     },
     {
