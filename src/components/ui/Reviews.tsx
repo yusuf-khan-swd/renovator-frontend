@@ -18,7 +18,7 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
       ) : reviews?.length < 1 ? (
         <p>No review available</p>
       ) : (
-        <Card bordered={false}>
+        <Card>
           <ReviewAndRatingHeading heading="Users reviews and ratings" />
 
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
