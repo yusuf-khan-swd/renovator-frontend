@@ -17,7 +17,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const ManageReviewPage = () => {
-  const { role, userId } = getUserInfo() as any;
+  const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
 
   const query: Record<string, any> = {};
