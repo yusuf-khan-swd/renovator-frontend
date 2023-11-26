@@ -109,7 +109,6 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return data.price;
       },
-      sorter: true,
     },
     {
       title: "Booking Date",
