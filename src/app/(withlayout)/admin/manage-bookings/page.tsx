@@ -142,31 +142,6 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "2px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
-
-            <ConfirmModal
-              id={data?.id}
-              handler={handleRejectBooking}
-              title="Do you want to reject this booking"
-              button
-              buttonName="Reject"
-              buttonType="default"
-              disabled={
-                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT
-                  ? true
-                  : false
-              }
-            />
             <ConfirmModal
               id={data?.id}
               handler={handleConfirmBooking}
@@ -180,6 +155,32 @@ const ManageBookingPage = () => {
                   : false
               }
             />
+            <ConfirmModal
+              id={data?.id}
+              handler={handleRejectBooking}
+              title="Do you want to reject this booking"
+              button
+              buttonName="Reject"
+              buttonType="default"
+              disabled={
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT
+                  ? true
+                  : false
+              }
+            />
+
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "2px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
+              </Button>
+            </Link>
+
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
