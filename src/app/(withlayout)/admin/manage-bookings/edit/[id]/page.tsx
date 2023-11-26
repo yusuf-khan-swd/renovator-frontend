@@ -1,6 +1,7 @@
 "use client";
 
 import Form from "@/components/Forms/Form";
+import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
@@ -14,8 +15,8 @@ import {
 } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Card, Col, DatePicker, DatePickerProps, Row } from "antd";
-import dayjs from "dayjs";
+import { Button, Card, Col, DatePickerProps, Row } from "antd";
+// import dayjs from "dayjs";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -79,7 +80,7 @@ const EditServicePage = ({ params }: any) => {
       />
       <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
         <div>
-          {isServiceDataLoading ? (
+          {isBookingDataLoading || isServiceDataLoading ? (
             <FullScreenLoading />
           ) : (
             <ServiceDetailsCard service={service} />
@@ -94,7 +95,7 @@ const EditServicePage = ({ params }: any) => {
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <label>*Select Date</label>
+                  {/* <label>*Select Date</label>
                   <input
                     name="date"
                     type="date"
@@ -105,14 +106,15 @@ const EditServicePage = ({ params }: any) => {
                       padding: "8px",
                     }}
                     defaultValue={defaultValues?.date}
-                  />
-                  <DatePicker
+                  /> */}
+                  {/* <DatePicker
                     name="date"
                     size="large"
                     onChange={onChange}
                     style={{ width: "100%" }}
                     defaultValue={dayjs(booking?.date)}
-                  />
+                  /> */}
+                  <FormDatePicker name="date" />
                 </Col>
               </Row>
 
