@@ -14,7 +14,15 @@ import {
 } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Col, DatePicker, DatePickerProps, Row, message } from "antd";
+import {
+  Button,
+  Card,
+  Col,
+  DatePicker,
+  DatePickerProps,
+  Row,
+  message,
+} from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -76,49 +84,53 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <div>
-        {serviceIsLoading ? (
-          <FullScreenLoading />
-        ) : (
-          <ServiceDetailsCard service={service} />
-        )}
+      <div style={{ margin: "20px 8px", display: "grid", gap: "20px" }}>
+        <div>
+          {serviceIsLoading ? (
+            <FullScreenLoading />
+          ) : (
+            <ServiceDetailsCard service={service} />
+          )}
+        </div>
+
+        <Card>
+          <h1>Update Booking</h1>
+          <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <label>*Select Date</label>
+                <input
+                  name="date"
+                  type="date"
+                  onChange={(e) => setDate(e.target.value)}
+                  style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
+                  defaultValue={defaultValues?.date}
+                />
+                <DatePicker
+                  name="date"
+                  size="large"
+                  onChange={onChange}
+                  style={{ width: "100%" }}
+                  defaultValue={dayjs(data?.date)}
+                />
+              </Col>
+            </Row>
+
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormSelectField
+                  name="status"
+                  label="Status"
+                  options={bookingStatusOptions as SelectOptions[]}
+                />
+              </Col>
+            </Row>
+            <Button type="primary" htmlType="submit">
+              Update
+            </Button>
+          </Form>
+        </Card>
       </div>
-
-      <h1>Update Booking</h1>
-      <Form submitHandler={onSubmit} defaultValues={defaultValues}>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <label>*Select Date</label>
-            <input
-              name="date"
-              type="date"
-              onChange={(e) => setDate(e.target.value)}
-              style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
-              defaultValue={defaultValues?.date}
-            />
-            <DatePicker
-              name="date"
-              size="large"
-              onChange={onChange}
-              style={{ width: "100%" }}
-              defaultValue={dayjs(data?.date)}
-            />
-          </Col>
-        </Row>
-
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="status"
-              label="Status"
-              options={bookingStatusOptions as SelectOptions[]}
-            />
-          </Col>
-        </Row>
-        <Button type="primary" htmlType="submit">
-          Update
-        </Button>
-      </Form>
     </div>
   );
 };
