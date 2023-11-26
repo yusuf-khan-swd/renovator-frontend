@@ -84,7 +84,7 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <div style={{ margin: "20px 8px", display: "grid", gap: "20px" }}>
+      <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
         <div>
           {serviceIsLoading ? (
             <FullScreenLoading />
