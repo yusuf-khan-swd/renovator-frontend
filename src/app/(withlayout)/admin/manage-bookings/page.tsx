@@ -145,7 +145,7 @@ const ManageBookingPage = () => {
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
-                  margin: "4px",
+                  margin: "2px",
                 }}
                 onClick={() => console.log(data)}
                 type="primary"
