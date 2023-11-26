@@ -112,7 +112,9 @@ const ManageBookingPage = () => {
     {
       title: "Booking Date",
       dataIndex: "date",
-      sorter: true,
+      render: function (data: any) {
+        return data && dayjs(data).format("MMM D, YYYY");
+      },
     },
     {
       title: "Status",
