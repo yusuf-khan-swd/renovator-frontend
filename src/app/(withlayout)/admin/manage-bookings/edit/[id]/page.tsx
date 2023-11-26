@@ -4,12 +4,15 @@ import Form from "@/components/Forms/Form";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { bookingStatusOptions } from "@/constants/global";
 import {
   useBookingQuery,
   useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
+import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, DatePicker, DatePickerProps, Row, message } from "antd";
 import dayjs from "dayjs";
@@ -21,6 +24,11 @@ const EditServicePage = ({ params }: any) => {
   const { data, isLoading } = useBookingQuery(id);
   console.log(data);
   const [date, setDate] = useState<string>();
+
+  const { data: service, isLoading: serviceIsLoading } = useServiceQuery(
+    data?.serviceId
+  );
+  console.log(service);
 
   const { handleSubmit, setValue } = useForm();
   const [dateSelected, setDateSelected] = useState<boolean>(false);
@@ -68,6 +76,14 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
+      <div>
+        {serviceIsLoading ? (
+          <FullScreenLoading />
+        ) : (
+          <ServiceDetailsCard service={service} />
+        )}
+      </div>
+
       <h1>Update Booking</h1>
       <Form submitHandler={onSubmit} defaultValues={defaultValues}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
