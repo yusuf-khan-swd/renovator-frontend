@@ -128,7 +128,6 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return data.email;
       },
-      sorter: true,
     },
     {
       title: "CreatedAt",
