@@ -11,13 +11,19 @@ import {
   useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Col, Row, message } from "antd";
+import { Button, Col, DatePicker, DatePickerProps, Row, message } from "antd";
+import dayjs from "dayjs";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const EditServicePage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useBookingQuery(id);
+  console.log(data);
   const [date, setDate] = useState<string>();
+
+  const { handleSubmit, setValue } = useForm();
+  const [dateSelected, setDateSelected] = useState<boolean>(false);
 
   const [updateBooking] = useUpdateBookingMutation();
 
@@ -41,6 +47,12 @@ const EditServicePage = ({ params }: any) => {
   const defaultValues = {
     date: data?.date || "",
     status: data?.status || "",
+  };
+
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+    setValue("date", date);
+    setDateSelected(true);
   };
 
   const { role } = getUserInfo() as any;
@@ -67,6 +79,13 @@ const EditServicePage = ({ params }: any) => {
               onChange={(e) => setDate(e.target.value)}
               style={{ width: "100%", borderRadius: "8px", padding: "8px" }}
               defaultValue={defaultValues?.date}
+            />
+            <DatePicker
+              name="date"
+              size="large"
+              onChange={onChange}
+              style={{ width: "100%" }}
+              defaultValue={dayjs(data?.date)}
             />
           </Col>
         </Row>
