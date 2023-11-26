@@ -11,6 +11,7 @@ import {
 } from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
+import { IService } from "@/types";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
@@ -79,10 +80,11 @@ const ManageBookingPage = () => {
     {
       title: "Service Name",
       dataIndex: "service",
-      render: function (data: any) {
-        return data.title;
+      render: function (service: IService) {
+        return service?.title.length <= 25
+          ? service?.title
+          : service?.title.slice(0, 25) + "...";
       },
-      sorter: true,
     },
     {
       title: "Price",
