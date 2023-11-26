@@ -46,14 +46,14 @@ const ConfirmModal = ({
           onClick={showConfirm}
           type="primary"
           danger
-          style={{ margin: "0 5px" }}
+          style={{ margin: "4px" }}
         >
           <DeleteOutlined />
         </Button>
       ) : (
         <Button
           onClick={showConfirm}
-          style={{ margin: "0 5px" }}
+          style={{ margin: "4px" }}
           type={`${buttonType || "default"}`}
           disabled={disabled}
         >
