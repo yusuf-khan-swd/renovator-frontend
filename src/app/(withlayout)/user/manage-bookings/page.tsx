@@ -89,10 +89,9 @@ const ManageBookingPage = () => {
     {
       title: "Price",
       dataIndex: "service",
-      render: function (data: any) {
-        return data.price;
+      render: function (service: IService) {
+        return "$" + service?.price;
       },
-      sorter: true,
     },
     {
       title: "Booking Date",
