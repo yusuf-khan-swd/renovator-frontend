@@ -2,6 +2,7 @@ import {
   CheckSquareOutlined,
   TableOutlined,
   UserOutlined,
+  UsergroupAddOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Link from "next/link";
@@ -43,7 +44,7 @@ export const sidebarItems = (role: string) => {
   const commonAdminSidebarItems: MenuProps["items"] = [
     {
       label: <Link href={`/${role}/manage-users`}>Manage Users</Link>,
-      icon: <TableOutlined />,
+      icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-users`,
     },
   ];
