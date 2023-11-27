@@ -1,5 +1,6 @@
 import {
   CheckSquareOutlined,
+  ControlOutlined,
   TableOutlined,
   UserOutlined,
   UsergroupAddOutlined,
@@ -54,12 +55,12 @@ export const sidebarItems = (role: string) => {
     ...commonAdminSidebarItems,
     {
       label: <Link href={`/${role}/manage-categories`}>Manage Categories</Link>,
-      icon: <TableOutlined />,
+      icon: <ControlOutlined />,
       key: `/${role}/manage-categories`,
     },
     {
       label: <Link href={`/${role}/manage-services`}>Manage Services</Link>,
-      icon: <TableOutlined />,
+      icon: <ControlOutlined />,
       key: `/${role}/manage-services`,
     },
     {
