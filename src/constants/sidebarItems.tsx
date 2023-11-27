@@ -1,6 +1,7 @@
 import {
   CheckSquareOutlined,
   ControlOutlined,
+  FontSizeOutlined,
   TableOutlined,
   UserOutlined,
   UsergroupAddOutlined,
@@ -37,7 +38,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
-      icon: <TableOutlined />,
+      icon: <FontSizeOutlined />,
       key: `/${role}/manage-reviews`,
     },
   ];
@@ -70,7 +71,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
-      icon: <TableOutlined />,
+      icon: <FontSizeOutlined />,
       key: `/${role}/manage-reviews`,
     },
     {
