@@ -15,10 +15,7 @@ import {
 } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Card, Col, DatePickerProps, Row } from "antd";
-// import dayjs from "dayjs";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Button, Card, Col, Row } from "antd";
 
 const EditServicePage = ({ params }: any) => {
   const id = params?.id;
@@ -28,11 +25,6 @@ const EditServicePage = ({ params }: any) => {
   const { data: service, isLoading: isServiceDataLoading } = useServiceQuery(
     booking?.serviceId
   );
-
-  const [date, setDate] = useState<string>();
-
-  const { handleSubmit, setValue } = useForm();
-  const [dateSelected, setDateSelected] = useState<boolean>(false);
 
   const [updateBooking] = useUpdateBookingMutation();
 
@@ -57,12 +49,6 @@ const EditServicePage = ({ params }: any) => {
   const defaultValues = {
     date: booking?.date || "",
     status: booking?.status || "",
-  };
-
-  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
-    setValue("date", date);
-    setDateSelected(true);
   };
 
   const { role } = getUserInfo() as any;
@@ -95,25 +81,6 @@ const EditServicePage = ({ params }: any) => {
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  {/* <label>*Select Date</label>
-                  <input
-                    name="date"
-                    type="date"
-                    onChange={(e) => setDate(e.target.value)}
-                    style={{
-                      width: "100%",
-                      borderRadius: "8px",
-                      padding: "8px",
-                    }}
-                    defaultValue={defaultValues?.date}
-                  /> */}
-                  {/* <DatePicker
-                    name="date"
-                    size="large"
-                    onChange={onChange}
-                    style={{ width: "100%" }}
-                    defaultValue={dayjs(booking?.date)}
-                  /> */}
                   <FormDatePicker name="date" />
                 </Col>
               </Row>
