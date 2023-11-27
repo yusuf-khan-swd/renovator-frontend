@@ -3,6 +3,7 @@ import {
   ControlOutlined,
   FontSizeOutlined,
   TableOutlined,
+  UnorderedListOutlined,
   UserOutlined,
   UsergroupAddOutlined,
 } from "@ant-design/icons";
@@ -77,7 +78,7 @@ export const sidebarItems = (role: string) => {
     {
       label: "Manage Content",
       key: `/${role}/manage-contents`,
-      icon: <TableOutlined />,
+      icon: <UnorderedListOutlined />,
       children: [
         {
           label: <Link href={`/${role}/manage-contents/blog`}>Blog</Link>,
