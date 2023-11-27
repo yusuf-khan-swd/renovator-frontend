@@ -58,14 +58,14 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-services`,
     },
     {
-      label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/manage-reviews`,
-    },
-    {
       label: <Link href={`/${role}/manage-bookings`}>Manage Bookings</Link>,
       icon: <TableOutlined />,
       key: `/${role}/manage-bookings`,
+    },
+    {
+      label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
+      icon: <TableOutlined />,
+      key: `/${role}/manage-reviews`,
     },
     {
       label: "Manage Content",
