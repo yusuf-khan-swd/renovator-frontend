@@ -15,7 +15,7 @@ import {
 } from "@/redux/api/bookingApi";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Card, Col, Row } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 
 const EditServicePage = ({ params }: any) => {
   const id = params?.id;
@@ -29,21 +29,19 @@ const EditServicePage = ({ params }: any) => {
   const [updateBooking] = useUpdateBookingMutation();
 
   const onSubmit = async (data: any) => {
-    console.log(data);
-    // try {
-    //   message.loading("Updating.....");
-    //   data.id = id;
-    //   data.date = date;
-    //   const result: any = await updateBooking(data);
-    //   if (result?.data) {
-    //     message.success("Booking updated successfully");
-    //   } else {
-    //     message.error("Booking updated failed");
-    //   }
-    // } catch (error: any) {
-    //   console.error(error);
-    //   message.error(error.message);
-    // }
+    try {
+      message.loading("Updating.....");
+      data.id = id;
+      const result: any = await updateBooking(data);
+      if (result?.data) {
+        message.success("Booking updated successfully");
+      } else {
+        message.error("Booking updated failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
+    }
   };
 
   const defaultValues = {
