@@ -8,7 +8,7 @@ import FormSelectField, {
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { bookingStatusOptions } from "@/constants/global";
+import { bookingStatusOptionsForAdmin } from "@/constants/global";
 import {
   useBookingQuery,
   useUpdateBookingMutation,
@@ -88,7 +88,7 @@ const EditServicePage = ({ params }: any) => {
                   <FormSelectField
                     name="status"
                     label="Status"
-                    options={bookingStatusOptions as SelectOptions[]}
+                    options={bookingStatusOptionsForAdmin as SelectOptions[]}
                   />
                 </Col>
               </Row>

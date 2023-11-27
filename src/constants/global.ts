@@ -6,9 +6,8 @@ export const ratingOptions = [
   { label: "5", value: "5" },
 ];
 
-export const bookingStatusOptions = [
+export const bookingStatusOptionsForAdmin = [
   { label: "Pending", value: "pending" },
-  { label: "Cancel", value: "canceled" },
   { label: "Accept", value: "accepted" },
   { label: "Reject", value: "rejected" },
 ];
