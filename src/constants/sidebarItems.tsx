@@ -1,4 +1,8 @@
-import { TableOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  CheckSquareOutlined,
+  TableOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import { ENUM_USER_ROLE } from "./role";
@@ -26,7 +30,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-bookings`}>Manage Bookings</Link>,
-      icon: <TableOutlined />,
+      icon: <CheckSquareOutlined />,
       key: `/${role}/manage-bookings`,
     },
     {
@@ -59,7 +63,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-bookings`}>Manage Bookings</Link>,
-      icon: <TableOutlined />,
+      icon: <CheckSquareOutlined />,
       key: `/${role}/manage-bookings`,
     },
     {
