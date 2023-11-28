@@ -67,6 +67,25 @@ const ManageBookingPage = () => {
     }
   };
 
+  const handleRequestBooking = async (id: any) => {
+    const data = {
+      id: id,
+      status: ENUM_BOOKING_STATUS_FOR_USER.PENDING,
+    };
+    try {
+      message.loading("Requesting.....");
+      const result: any = await updateBooking(data);
+      if (result?.data) {
+        message.success("Booking Requested Successful!");
+      } else {
+        message.error("Booking Requested Failed!");
+      }
+    } catch (err: any) {
+      //   console.error(err.message);
+      message.error(err.message);
+    }
+  };
+
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
@@ -131,7 +150,7 @@ const ManageBookingPage = () => {
           <>
             <ConfirmModal
               id={data?.id}
-              handler={handleCancelBooking}
+              handler={handleRequestBooking}
               title="Do you want to request this booking"
               button
               buttonName="Request"
