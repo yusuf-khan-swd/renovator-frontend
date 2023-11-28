@@ -3,7 +3,10 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { ENUM_BOOKING_STATUS_FOR_USER } from "@/constants/bookingStatus";
+import {
+  ENUM_BOOKING_STATUS_FOR_ADMIN,
+  ENUM_BOOKING_STATUS_FOR_USER,
+} from "@/constants/bookingStatus";
 import {
   useBookingsQuery,
   useDeleteBookingMutation,
@@ -154,9 +157,11 @@ const ManageBookingPage = () => {
               title="Do you want to request this booking"
               button
               buttonName="Request"
-              buttonType="default"
+              buttonType="primary"
               disabled={
-                data?.status === ENUM_BOOKING_STATUS_FOR_USER.PENDING
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.PENDING ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT
                   ? true
                   : false
               }
@@ -166,7 +171,7 @@ const ManageBookingPage = () => {
               handler={handleCancelBooking}
               title="Do you want to cancel this booking"
               button
-              buttonType="primary"
+              buttonType="default"
               disabled={
                 data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
                   ? true
