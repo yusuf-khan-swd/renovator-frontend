@@ -173,7 +173,9 @@ const ManageBookingPage = () => {
               button
               buttonType="default"
               disabled={
-                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT
                   ? true
                   : false
               }
