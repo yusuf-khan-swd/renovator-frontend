@@ -3,7 +3,10 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { ENUM_BOOKING_STATUS_FOR_ADMIN } from "@/constants/bookingStatus";
+import {
+  ENUM_BOOKING_STATUS_FOR_ADMIN,
+  ENUM_BOOKING_STATUS_FOR_USER,
+} from "@/constants/bookingStatus";
 import {
   useBookingsQuery,
   useDeleteBookingMutation,
@@ -150,7 +153,8 @@ const ManageBookingPage = () => {
               buttonName="Accept"
               buttonType="primary"
               disabled={
-                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
                   ? true
                   : false
               }
@@ -163,7 +167,8 @@ const ManageBookingPage = () => {
               buttonName="Reject"
               buttonType="default"
               disabled={
-                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
                   ? true
                   : false
               }
