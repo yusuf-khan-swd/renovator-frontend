@@ -56,7 +56,7 @@ const ManageBookingPage = () => {
     try {
       message.loading("Cancelling.....");
       console.log(data);
-      await updateBooking(data);
+      // await updateBooking(data);
       message.success("Booking Cancelled successfully");
     } catch (err: any) {
       //   console.error(err.message);
@@ -129,6 +129,19 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleCancelBooking}
+              title="Do you want to request this booking"
+              button
+              buttonName="Request"
+              buttonType="default"
+              disabled={
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.PENDING
+                  ? true
+                  : false
+              }
+            />
+            <ConfirmModal
+              id={data?.id}
+              handler={handleCancelBooking}
               title="Do you want to cancel this booking"
               button
               buttonType="primary"
@@ -138,6 +151,7 @@ const ManageBookingPage = () => {
                   : false
               }
             />
+
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
