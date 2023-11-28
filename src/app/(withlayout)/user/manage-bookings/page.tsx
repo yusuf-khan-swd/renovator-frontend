@@ -55,9 +55,12 @@ const ManageBookingPage = () => {
     };
     try {
       message.loading("Cancelling.....");
-      console.log(data);
-      // await updateBooking(data);
-      message.success("Booking Cancelled successfully");
+      const result: any = await updateBooking(data);
+      if (result?.data) {
+        message.success("Booking Cancelled Successful!");
+      } else {
+        message.error("Booking Cancelled Failed!");
+      }
     } catch (err: any) {
       //   console.error(err.message);
       message.error(err.message);
