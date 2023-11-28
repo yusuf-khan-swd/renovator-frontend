@@ -13,6 +13,7 @@ interface IConfirmModelProps {
   buttonName?: string;
   buttonType?: ButtonType;
   disabled?: boolean;
+  danger?: boolean;
 }
 
 const ConfirmModal = ({
@@ -24,6 +25,7 @@ const ConfirmModal = ({
   buttonName,
   buttonType,
   disabled = false,
+  danger = false,
 }: IConfirmModelProps) => {
   const showConfirm = () => {
     confirm({
@@ -56,6 +58,7 @@ const ConfirmModal = ({
           style={{ margin: "2px" }}
           type={`${buttonType || "default"}`}
           disabled={disabled}
+          danger={danger}
         >
           {buttonName || "Cancel"}
         </Button>
