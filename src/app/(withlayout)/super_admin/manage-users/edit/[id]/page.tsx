@@ -5,6 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { roleOptionsForSuperAdmin } from "@/constants/global";
 import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
@@ -60,49 +61,53 @@ const EditUserPage = ({ params }: any) => {
         ]}
       />
 
-      <div style={{ padding: "20px" }}>
-        <h1>Update User Information</h1>
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : (
+        <div style={{ padding: "20px" }}>
+          <h1>Update User Information</h1>
 
-        <Form submitHandler={onSubmit} defaultValues={defaultValues}>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="name" label="Name" />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="email" label="Email" />
-            </Col>
-          </Row>
+          <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="name" label="Name" />
+              </Col>
+            </Row>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="email" label="Email" />
+              </Col>
+            </Row>
 
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
-                name="role"
-                label="User Role"
-                options={roleOptionsForSuperAdmin as SelectOptions[]}
-              />
-            </Col>
-          </Row>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormSelectField
+                  name="role"
+                  label="User Role"
+                  options={roleOptionsForSuperAdmin as SelectOptions[]}
+                />
+              </Col>
+            </Row>
 
-          <Button
-            htmlType="submit"
-            style={{
-              margin: "2px",
-            }}
-            onClick={() => console.log(data)}
-            type="primary"
-          >
-            Update
-          </Button>
-
-          <Link href={`/${role}/manage-users/details/${id}`}>
-            <Button style={{ margin: "2px" }} type="default">
-              View User Info
+            <Button
+              htmlType="submit"
+              style={{
+                margin: "2px",
+              }}
+              onClick={() => console.log(data)}
+              type="primary"
+            >
+              Update
             </Button>
-          </Link>
-        </Form>
-      </div>
+
+            <Link href={`/${role}/manage-users/details/${id}`}>
+              <Button style={{ margin: "2px" }} type="default">
+                View User Info
+              </Button>
+            </Link>
+          </Form>
+        </div>
+      )}
     </div>
   );
 };
