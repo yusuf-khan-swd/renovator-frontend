@@ -56,7 +56,7 @@ const EditUserPage = ({ params }: any) => {
           },
           {
             label: "edit",
-            link: `/${role}/manage-users/edit`,
+            link: `/${role}/manage-users/details`,
           },
         ]}
       />
