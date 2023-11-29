@@ -60,8 +60,8 @@ const EditUserPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "20px" }}>
-          <h3>Update User</h3>
+        <div>
+          <h1>Details User Information</h1>
 
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>

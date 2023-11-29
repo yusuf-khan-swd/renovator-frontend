@@ -60,7 +60,7 @@ const EditUserPage = ({ params }: any) => {
       />
 
       <div style={{ padding: "20px" }}>
-        <h3>Update User</h3>
+        <h1>Update User Information</h1>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
