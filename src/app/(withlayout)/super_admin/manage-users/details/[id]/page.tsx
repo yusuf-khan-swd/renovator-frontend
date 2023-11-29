@@ -66,12 +66,12 @@ const EditUserPage = ({ params }: any) => {
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="name" label="Name" />
+                <FormInput name="name" label="Name" readOnly />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="email" label="Email" />
+                <FormInput name="email" label="Email" readOnly />
               </Col>
             </Row>
 
@@ -81,6 +81,7 @@ const EditUserPage = ({ params }: any) => {
                   name="role"
                   label="User Role"
                   options={roleOptionsForSuperAdmin as SelectOptions[]}
+                  disabled
                 />
               </Col>
             </Row>
