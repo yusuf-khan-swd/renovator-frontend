@@ -21,11 +21,7 @@ const EditUserPage = ({ params }: any) => {
 
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Updating.....");
-      // console.log(data);
-      await updateUser(data);
-
-      message.success("User updated successfully");
+      console.log(data);
     } catch (error: any) {
       console.error(error);
       message.error(error.message);
@@ -55,7 +51,7 @@ const EditUserPage = ({ params }: any) => {
             link: `/${role}/manage-users`,
           },
           {
-            label: "edit",
+            label: "details",
             link: `/${role}/manage-users/details`,
           },
         ]}
