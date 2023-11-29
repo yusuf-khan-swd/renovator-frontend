@@ -87,7 +87,7 @@ const EditUserPage = ({ params }: any) => {
 
             <Link href={`/${role}/manage-users/edit/${id}`}>
               <Button style={{ margin: "2px" }} type="primary">
-                Edit
+                Edit User Info
               </Button>
             </Link>
           </Form>
