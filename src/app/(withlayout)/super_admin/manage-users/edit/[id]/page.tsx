@@ -11,6 +11,7 @@ import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 
 import { Button, Col, Row, message } from "antd";
+import Link from "next/link";
 
 const EditUserPage = ({ params }: any) => {
   const id = params?.id;
@@ -87,13 +88,19 @@ const EditUserPage = ({ params }: any) => {
           <Button
             htmlType="submit"
             style={{
-              margin: "0px 5px",
+              margin: "2px",
             }}
             onClick={() => console.log(data)}
             type="primary"
           >
             Update
           </Button>
+
+          <Link href={`/${role}/manage-users/details/${id}`}>
+            <Button style={{ margin: "2px" }} type="default">
+              Details
+            </Button>
+          </Link>
         </Form>
       </div>
     </div>
