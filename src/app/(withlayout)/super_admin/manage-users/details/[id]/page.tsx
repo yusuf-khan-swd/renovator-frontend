@@ -11,7 +11,7 @@ import { roleOptionsForSuperAdmin } from "@/constants/global";
 import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
 const EditUserPage = ({ params }: any) => {
@@ -60,7 +60,7 @@ const EditUserPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div>
+        <Card style={{ margin: "20px 8px" }}>
           <h1>Details User Information</h1>
 
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
@@ -91,7 +91,7 @@ const EditUserPage = ({ params }: any) => {
               </Button>
             </Link>
           </Form>
-        </div>
+        </Card>
       )}
     </div>
   );
