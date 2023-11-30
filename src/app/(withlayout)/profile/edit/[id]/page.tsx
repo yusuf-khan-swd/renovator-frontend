@@ -18,6 +18,7 @@ import {
 } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, Row, message } from "antd";
+import Link from "next/link";
 
 const EditProfilePage = () => {
   const { data, isLoading } = useProfileQuery(undefined);
@@ -97,6 +98,11 @@ const EditProfilePage = () => {
           <Button htmlType="submit" style={{ margin: "2px" }} type="primary">
             Update
           </Button>
+          <Link href="/profile">
+            <Button style={{ margin: "2px" }} type="default">
+              View Profile
+            </Button>
+          </Link>
         </Form>
       </div>
     </div>
