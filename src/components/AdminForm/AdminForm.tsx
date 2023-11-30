@@ -21,9 +21,12 @@ const AdminForm = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
-      await createAdmin({ ...data });
-
-      message.success("Admin created successfully!");
+      const result: any = await createAdmin({ ...data });
+      if (result?.data) {
+        message.success("Admin created successfully!");
+      } else {
+        message.error("Admin create failed!");
+      }
     } catch (err: any) {
       console.error(err.message);
     }
