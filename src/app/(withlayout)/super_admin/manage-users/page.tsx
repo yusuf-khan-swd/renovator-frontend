@@ -28,11 +28,12 @@ const AdminPage = () => {
   const { data, isLoading } = useUsersQuery(undefined);
 
   const deleteUserHandler = async (id: string) => {
-    // console.log(id);
     try {
-      const res = await deleteUser(id);
-      if (res) {
+      const result: any = await deleteUser(id);
+      if (result?.data) {
         message.success("User Successfully Deleted!");
+      } else {
+        message.error("User Delete Failed!");
       }
     } catch (error: any) {
       message.error(error.message);
