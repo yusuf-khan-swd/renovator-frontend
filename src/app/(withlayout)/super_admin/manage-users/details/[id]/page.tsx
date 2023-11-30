@@ -52,7 +52,6 @@ const EditUserPage = ({ params }: any) => {
     }
   };
 
-  // @ts-ignore
   const defaultValues = {
     id: data?.id,
     name: data?.name || "",
