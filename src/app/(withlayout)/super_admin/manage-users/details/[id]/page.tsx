@@ -7,21 +7,45 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import ConfirmModal from "@/components/ui/ConfirmModal";
 import { roleOptionsForSuperAdmin } from "@/constants/global";
-import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
+import { useDeleteUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
-
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const EditUserPage = ({ params }: any) => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
+  const endRoute = "details";
+
   const id = params?.id;
   const { data, isLoading } = useUserQuery(id);
-  const [updateUser] = useUpdateUserMutation();
+  const [deleteUser] = useDeleteUserMutation();
+  const router = useRouter();
 
   const onSubmit = async (data: any) => {
     try {
       console.log(data);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
+    }
+  };
+
+  const deleteUserHandler = async (id: string) => {
+    try {
+      message.loading("Deleting...");
+      const result: any = await deleteUser(id);
+
+      router.push(`/${role}/${routeName}`);
+
+      if (result?.data) {
+        message.success("User Successfully Deleted!");
+      } else {
+        message.error("User Delete Failed!");
+      }
     } catch (error: any) {
       console.error(error);
       message.error(error.message);
@@ -36,24 +60,13 @@ const EditUserPage = ({ params }: any) => {
     role: data?.role || "",
   };
 
-  const { role } = getUserInfo() as any;
-
   return (
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: `${role}`,
-            link: `/${role}`,
-          },
-          {
-            label: `manage-users`,
-            link: `/${role}/manage-users`,
-          },
-          {
-            label: "details",
-            link: `/${role}/manage-users/details`,
-          },
+          { label: `${role}`, link: `/${role}` },
+          { label: routeName, link: `/${role}/${routeName}` },
+          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
 
@@ -91,6 +104,12 @@ const EditUserPage = ({ params }: any) => {
                 Edit User Info
               </Button>
             </Link>
+            <ConfirmModal
+              id={id}
+              handler={deleteUserHandler}
+              title="Do you want to remove this user?"
+              content={`Remove this user id: ${id}`}
+            />
           </Form>
         </Card>
       )}
