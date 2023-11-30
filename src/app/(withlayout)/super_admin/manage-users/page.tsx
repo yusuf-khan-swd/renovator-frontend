@@ -36,6 +36,7 @@ const AdminPage = () => {
         message.error("User Delete Failed!");
       }
     } catch (error: any) {
+      console.error(error);
       message.error(error.message);
     }
   };
