@@ -10,6 +10,8 @@ import { Button, Input, message } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 
+// todo:: show createdAt updatedAt column
+
 const AdminPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();

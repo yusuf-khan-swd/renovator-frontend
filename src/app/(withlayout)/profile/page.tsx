@@ -9,6 +9,8 @@ import { getUserInfo } from "@/services/auth.service";
 import { Button, Col, Row, message } from "antd";
 import Link from "next/link";
 
+// todo:: create a component for profile page that going to be use in all user home page
+
 const ProfilePage = () => {
   const { data, isLoading } = useProfileQuery(undefined);
 
