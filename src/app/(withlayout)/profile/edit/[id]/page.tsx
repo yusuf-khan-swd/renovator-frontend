@@ -94,14 +94,7 @@ const EditProfilePage = () => {
               />
             </Col>
           </Row>
-          <Button
-            htmlType="submit"
-            style={{
-              margin: "0px 5px",
-            }}
-            onClick={() => console.log(data)}
-            type="primary"
-          >
+          <Button htmlType="submit" style={{ margin: "2px" }} type="primary">
             Update
           </Button>
         </Form>
