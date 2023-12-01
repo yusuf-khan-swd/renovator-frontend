@@ -9,3 +9,6 @@ Admin Password: 123456
 
 User Email: yusuf3@gmail.com \
 User Password: 123456
+
+Super Admin Email: yusuf@gmail.com \
+Super Admin Password: 123456
