@@ -1,6 +1,6 @@
 "use client";
 
-import SignupPage from "@/components/Signup/Signup";
+import UserForm from "@/components/UserForm/UserForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { getUserInfo } from "@/services/auth.service";
 
@@ -28,7 +28,7 @@ const page = () => {
         ]}
       />
       <div>
-        <SignupPage />
+        <UserForm />
       </div>
     </div>
   );
