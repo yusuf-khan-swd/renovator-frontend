@@ -7,6 +7,7 @@ import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
+import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -52,6 +53,22 @@ const AdminPage = () => {
     {
       title: "Role",
       dataIndex: "role",
+    },
+    {
+      title: "CreatedAt",
+      dataIndex: "createdAt",
+      render: function (data: any) {
+        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
+      },
+      sorter: true,
+    },
+    {
+      title: "UpdatedAt",
+      dataIndex: "updatedAt",
+      render: function (data: any) {
+        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
+      },
+      sorter: true,
     },
 
     {
