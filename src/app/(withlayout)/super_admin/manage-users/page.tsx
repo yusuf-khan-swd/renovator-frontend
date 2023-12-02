@@ -11,8 +11,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-// todo:: show createdAt updatedAt column
-
 const AdminPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
@@ -154,7 +152,14 @@ const AdminPage = () => {
         />
         <div>
           <Link href={`/${role}/manage-users/create-admin`}>
-            <Button type="primary">Create Admin</Button>
+            <Button type="primary" style={{ margin: "2px" }}>
+              Create Admin
+            </Button>
+          </Link>
+          <Link href={`/${role}/manage-users/create-user`}>
+            <Button type="default" style={{ margin: "2px" }}>
+              Create User
+            </Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
