@@ -7,7 +7,7 @@ import { getUserInfo } from "@/services/auth.service";
 const page = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-users";
-  const endName = "create";
+  const endName = "create-user";
 
   return (
     <div>
