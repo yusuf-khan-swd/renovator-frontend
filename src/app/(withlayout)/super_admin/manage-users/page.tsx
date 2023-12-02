@@ -68,6 +68,14 @@ const AdminPage = () => {
       sorter: true,
     },
     {
+      title: "UpdatedAt",
+      dataIndex: "updatedAt",
+      render: function (data: any) {
+        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
+      },
+      sorter: true,
+    },
+    {
       title: "Action",
       dataIndex: "id",
       render: function (data: any) {
