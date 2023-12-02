@@ -150,7 +150,7 @@ const AdminPage = () => {
           }}
         />
         <div>
-          <Link href={`/${role}/${routeName}/create`}>
+          <Link href={`/${role}/${routeName}/create-user`}>
             <Button type="primary">Create User</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
