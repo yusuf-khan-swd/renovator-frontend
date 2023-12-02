@@ -95,7 +95,8 @@ const AdminForm = () => {
             </Button>
           </Form>
           <p style={{ margin: "8px 4px" }}>
-            Create user account? <Link href="/signup">signup</Link>
+            Create user account?{" "}
+            <Link href={`/super_admin/manage-users/create-user`}>Link </Link>
           </p>
         </div>
       </Col>
