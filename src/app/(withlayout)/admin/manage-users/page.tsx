@@ -11,6 +11,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// todo:: Add details page from super admin and update edit page
+
 const AdminPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
