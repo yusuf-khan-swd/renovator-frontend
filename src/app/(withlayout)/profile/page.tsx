@@ -44,7 +44,7 @@ const ProfilePage = () => {
         ]}
       />
 
-      <UserProfile />
+      <UserProfile readonly={true} />
     </div>
   );
 };
