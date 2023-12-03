@@ -3,6 +3,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import UserProfile from "@/components/UserProfile/UserProfile";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useProfileQuery } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -46,6 +47,8 @@ const ProfilePage = () => {
           },
         ]}
       />
+
+      <UserProfile />
 
       <div style={{ padding: "20px" }}>
         <h3>{role.charAt(0).toUpperCase() + role.slice(1)} Profile</h3>
