@@ -5,7 +5,7 @@ import { useProfileQuery } from "@/redux/api/profileApi";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-const UserProfile = ({ readonly = true }: { readonly?: boolean }) => {
+const UserProfile = ({ readonly = true }: { readonly: boolean }) => {
   const { data, isLoading } = useProfileQuery(undefined);
 
   const onSubmit = async (data: any) => {
@@ -34,12 +34,12 @@ const UserProfile = ({ readonly = true }: { readonly?: boolean }) => {
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="name" label="Name" readOnly />
+                <FormInput name="name" label="Name" readOnly={readonly} />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="email" label="Email" readOnly />
+                <FormInput name="email" label="Email" readOnly={readonly} />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -48,13 +48,13 @@ const UserProfile = ({ readonly = true }: { readonly?: boolean }) => {
                   type="password"
                   name="password"
                   label="Password"
-                  readOnly
+                  readOnly={readonly}
                 />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="role" label="User Role" readOnly />
+                <FormInput name="role" label="User Role" readOnly={readonly} />
               </Col>
             </Row>
           </Form>
