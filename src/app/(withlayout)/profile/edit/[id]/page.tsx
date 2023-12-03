@@ -17,7 +17,7 @@ import {
   useUpdateProfileMutation,
 } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
 const EditProfilePage = () => {
@@ -27,16 +27,18 @@ const EditProfilePage = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
-      // console.log(data);
-      await updateProfile(data);
-      message.success("Profile updated successfully");
+      const result: any = await updateProfile(data);
+      if (result?.data) {
+        message.success("Profile updated successfully");
+      } else {
+        message.error("Profile update failed!");
+      }
     } catch (error: any) {
       console.error(error);
       message.error(error.message);
     }
   };
 
-  // @ts-ignore
   const defaultValues = {
     name: data?.name || "",
     email: data?.email || "",
@@ -61,7 +63,7 @@ const EditProfilePage = () => {
         ]}
       />
 
-      <div style={{ margin: "20px 8px" }}>
+      <Card style={{ margin: "20px 8px" }}>
         <h3 style={{ fontSize: "26px" }}>Update User Profile</h3>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
@@ -104,7 +106,7 @@ const EditProfilePage = () => {
             </Button>
           </Link>
         </Form>
-      </div>
+      </Card>
     </div>
   );
 };
