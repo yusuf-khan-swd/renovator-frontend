@@ -61,8 +61,8 @@ const EditProfilePage = () => {
         ]}
       />
 
-      <div style={{ padding: "20px" }}>
-        <h3>Update {role.charAt(0).toUpperCase() + role.slice(1)} Profile</h3>
+      <div style={{ margin: "20px 8px" }}>
+        <h3 style={{ fontSize: "26px" }}>Update User Profile</h3>
 
         <Form submitHandler={onSubmit} defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
