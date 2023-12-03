@@ -73,7 +73,7 @@ const EditUserPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <Card style={{ margin: "20px 8px" }}>
-          <h1>Details User Information</h1>
+          <h3 style={{ fontSize: "26px" }}>Details User Information</h3>
 
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
