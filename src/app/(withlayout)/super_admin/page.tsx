@@ -3,6 +3,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import UserProfile from "@/components/UserProfile/UserProfile";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useProfileQuery } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -43,6 +44,8 @@ const SuperAdminPage = () => {
           },
         ]}
       />
+
+      <UserProfile readonly={true} />
 
       {isLoading ? (
         <FullScreenLoading />
