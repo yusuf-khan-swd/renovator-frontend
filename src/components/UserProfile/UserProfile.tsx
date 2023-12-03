@@ -25,12 +25,12 @@ const UserProfile = ({ readonly = true }: { readonly?: boolean }) => {
   };
 
   return (
-    <Card style={{ margin: "20px 8px" }}>
-      <h3 style={{ fontSize: "26px" }}>User Profile</h3>
+    <>
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div>
+        <Card style={{ margin: "20px 8px" }}>
+          <h3 style={{ fontSize: "26px" }}>User Profile</h3>
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
@@ -69,9 +69,9 @@ const UserProfile = ({ readonly = true }: { readonly?: boolean }) => {
               Edit
             </Button>
           </Link>
-        </div>
+        </Card>
       )}
-    </Card>
+    </>
   );
 };
 
