@@ -5,8 +5,6 @@ import { useProfileQuery } from "@/redux/api/profileApi";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-// todo:: call UserProfile component to admin and user page
-
 const UserProfile = () => {
   const { data, isLoading } = useProfileQuery(undefined);
 
