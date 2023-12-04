@@ -18,7 +18,7 @@ const SuperAdminPage = () => {
         ]}
       />
 
-      <UserProfile readonly={true} />
+      <UserProfile />
     </div>
   );
 };

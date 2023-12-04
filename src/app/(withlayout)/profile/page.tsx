@@ -22,7 +22,7 @@ const ProfilePage = () => {
         ]}
       />
 
-      <UserProfile readonly={true} />
+      <UserProfile />
     </div>
   );
 };
