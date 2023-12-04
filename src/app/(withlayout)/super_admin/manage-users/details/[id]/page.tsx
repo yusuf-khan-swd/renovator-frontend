@@ -15,6 +15,8 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+//todo:: Remove form select field for showing data use form input field with readonly. Find other details page or view page
+
 const EditUserPage = ({ params }: any) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-users";
