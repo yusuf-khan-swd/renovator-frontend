@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // todo:: call UserProfile component to admin and user page
 
-const UserProfile = ({ readonly = true }: { readonly: boolean }) => {
+const UserProfile = () => {
   const { data, isLoading } = useProfileQuery(undefined);
 
   const onSubmit = async (data: any) => {
@@ -36,12 +36,12 @@ const UserProfile = ({ readonly = true }: { readonly: boolean }) => {
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="name" label="Name" readOnly={readonly} />
+                <FormInput name="name" label="Name" readOnly />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="email" label="Email" readOnly={readonly} />
+                <FormInput name="email" label="Email" readOnly />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -50,13 +50,13 @@ const UserProfile = ({ readonly = true }: { readonly: boolean }) => {
                   type="password"
                   name="password"
                   label="Password"
-                  readOnly={readonly}
+                  readOnly
                 />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="role" label="User Role" readOnly={readonly} />
+                <FormInput name="role" label="User Role" readOnly />
               </Col>
             </Row>
           </Form>
