@@ -2,6 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
+import UserProfile from "@/components/UserProfile/UserProfile";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { useProfileQuery } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -40,6 +41,8 @@ const UserPage = () => {
           },
         ]}
       />
+
+      <UserProfile />
 
       <div style={{ padding: "20px" }}>
         <h3>{role} Profile</h3>
