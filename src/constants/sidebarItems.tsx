@@ -2,7 +2,7 @@ import {
   CheckSquareOutlined,
   ControlOutlined,
   FontSizeOutlined,
-  TableOutlined,
+  ShoppingCartOutlined,
   UnorderedListOutlined,
   UserOutlined,
   UsergroupAddOutlined,
@@ -29,7 +29,7 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
     {
       label: <Link href={`/${role}/manage-cart`}>Manage Cart</Link>,
-      icon: <TableOutlined />,
+      icon: <ShoppingCartOutlined />,
       key: `/${role}/manage-cart`,
     },
     {
