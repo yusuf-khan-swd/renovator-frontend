@@ -93,7 +93,6 @@ const ViewReviewPage = ({ params }: any) => {
                     name="review"
                     label="Review Description"
                     rows={5}
-                    required
                     readOnly
                   />
                 </Col>
