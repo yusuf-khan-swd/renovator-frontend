@@ -3,6 +3,8 @@ import { Button } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 
+// TODO:: Try using row xl, sm and col span for see responsive working or not
+
 const Banner = () => {
   return (
     <div style={{ display: "flex" }}>
