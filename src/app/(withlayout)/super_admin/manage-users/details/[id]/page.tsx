@@ -2,13 +2,9 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import FormSelectField, {
-  SelectOptions,
-} from "@/components/Forms/FormSelectField";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { roleOptionsForSuperAdmin } from "@/constants/global";
 import { useDeleteUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
@@ -91,12 +87,7 @@ const EditUserPage = ({ params }: any) => {
 
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormSelectField
-                  name="role"
-                  label="User Role"
-                  options={roleOptionsForSuperAdmin as SelectOptions[]}
-                  disabled
-                />
+                <FormInput name="role" label="User Role" readOnly />
               </Col>
             </Row>
 
