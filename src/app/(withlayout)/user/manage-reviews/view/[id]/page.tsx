@@ -16,7 +16,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const EditReviewPage = ({ params }: any) => {
+const ViewReviewPage = ({ params }: any) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
   const endRoute = "view";
@@ -114,4 +114,4 @@ const EditReviewPage = ({ params }: any) => {
   );
 };
 
-export default EditReviewPage;
+export default ViewReviewPage;
