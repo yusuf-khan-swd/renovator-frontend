@@ -1,16 +1,13 @@
 "use client";
 
 import Form from "@/components/Forms/Form";
-import FormSelectField, {
-  SelectOptions,
-} from "@/components/Forms/FormSelectField";
+import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRatingHeading";
 import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { ratingOptions } from "@/constants/global";
 import { useDeleteReviewMutation, useReviewQuery } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
@@ -87,13 +84,7 @@ const EditReviewPage = ({ params }: any) => {
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormSelectField
-                    name="rating"
-                    label="Rating"
-                    options={ratingOptions as SelectOptions[]}
-                    required
-                    disabled
-                  />
+                  <FormInput name="rating" label="Rating" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -102,7 +93,6 @@ const EditReviewPage = ({ params }: any) => {
                     name="review"
                     label="Review Description"
                     rows={5}
-                    required
                     readOnly
                   />
                 </Col>
