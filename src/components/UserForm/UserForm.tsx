@@ -14,8 +14,6 @@ type FormValues = {
   password: string;
 };
 
-// TODO:: Why is there defaults on create user and admin form
-
 const UserForm = () => {
   const [userSignup] = useUserSignupMutation();
 
