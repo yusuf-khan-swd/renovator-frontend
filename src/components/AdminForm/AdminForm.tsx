@@ -34,6 +34,11 @@ const AdminForm = () => {
     }
   };
 
+  const defaultValues = {
+    email: "",
+    password: "",
+  };
+
   return (
     <Row
       justify="center"
@@ -54,7 +59,11 @@ const AdminForm = () => {
           Create an admin account
         </h1>
         <div>
-          <Form submitHandler={onSubmit} resolver={yupResolver(userSchema)}>
+          <Form
+            submitHandler={onSubmit}
+            resolver={yupResolver(userSchema)}
+            defaultValues={defaultValues}
+          >
             <div>
               <FormInput
                 name="name"
