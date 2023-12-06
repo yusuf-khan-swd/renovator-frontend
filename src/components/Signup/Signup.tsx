@@ -40,6 +40,11 @@ const SignupPage = () => {
     }
   };
 
+  const defaultValues = {
+    email: "",
+    password: "",
+  };
+
   return (
     <Row
       justify="center"
@@ -66,7 +71,11 @@ const SignupPage = () => {
           Create an account
         </h1>
         <div>
-          <Form submitHandler={onSubmit} resolver={yupResolver(userSchema)}>
+          <Form
+            submitHandler={onSubmit}
+            resolver={yupResolver(userSchema)}
+            defaultValues={defaultValues}
+          >
             <div>
               <FormInput
                 name="name"
