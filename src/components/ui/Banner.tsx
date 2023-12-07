@@ -15,6 +15,7 @@ const Banner = () => {
         style={{
           display: "grid",
           alignItems: "center",
+          margin: "18px 0",
         }}
       >
         <div
@@ -23,8 +24,8 @@ const Banner = () => {
           }}
         >
           <h2>Welcome to</h2>
-          <h1 style={{ fontSize: "80px", fontWeight: "bold" }}>Renovator</h1>
-          <p style={{ padding: "15px 0" }}>
+          <h1 style={{ fontSize: "70px", fontWeight: "bold" }}>Renovator</h1>
+          <p style={{ padding: "15px 0", fontSize: "17px" }}>
             A modern theme geared towards all repairmen, contractors and
             renovation companies.
           </p>
