@@ -8,11 +8,12 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <Row>
-      <Col md={12}>
+      <Col order={2} md={{ span: 12, order: 1 }}>
         <Image src={bannerImage} alt="banner Image" style={{ width: "100%" }} />
       </Col>
       <Col
-        md={12}
+        order={1}
+        md={{ span: 12, order: 2 }}
         style={{
           display: "grid",
           alignItems: "center",
