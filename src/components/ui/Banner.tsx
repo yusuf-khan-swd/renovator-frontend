@@ -9,24 +9,18 @@ const Banner = () => {
   return (
     <Row
       style={{ border: "1px solid blue" }}
-      gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
+      align={"middle"}
+      justify={"center"}
     >
       <Col style={{ border: "1px solid orange" }}>
         <Image src={bannerImage} alt="banner Image" style={{ width: "100%" }} />
       </Col>
       <Col
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
           border: "1px solid orange",
         }}
       >
-        <div
-          style={{
-            border: "1px solid orange",
-          }}
-        >
+        <div>
           <h2>Welcome to</h2>
           <h1 style={{ fontSize: "80px", fontWeight: "bold" }}>Renovator</h1>
           <p style={{ padding: "15px 0" }}>
