@@ -7,20 +7,22 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <Row
-      style={{ border: "1px solid blue" }}
-      align={"middle"}
-      justify={"center"}
-    >
-      <Col style={{ border: "1px solid orange" }}>
+    <Row>
+      <Col md={12}>
         <Image src={bannerImage} alt="banner Image" style={{ width: "100%" }} />
       </Col>
       <Col
+        md={12}
         style={{
-          border: "1px solid orange",
+          display: "grid",
+          alignItems: "center",
         }}
       >
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <h2>Welcome to</h2>
           <h1 style={{ fontSize: "80px", fontWeight: "bold" }}>Renovator</h1>
           <p style={{ padding: "15px 0" }}>
