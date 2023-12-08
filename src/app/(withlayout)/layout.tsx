@@ -25,7 +25,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout
+      style={{ minHeight: "100vh", maxWidth: "1600px", margin: "0 auto" }}
+    >
       <SideBar />
       <Contents>{children}</Contents>
     </Layout>
