@@ -94,7 +94,7 @@ const AdminPage = () => {
             </Link>
 
             <ConfirmModal
-              id={user}
+              id={user?.id}
               handler={deleteUserHandler}
               title="Do you want to remove this user?"
               content={
