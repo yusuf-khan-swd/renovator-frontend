@@ -73,20 +73,20 @@ const AdminPage = () => {
 
     {
       title: "Action",
-      render: function (user: any) {
+      render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/manage-users/details/${user?.id}`}>
-              <Button onClick={() => console.log(user)} type="primary">
+            <Link href={`/${role}/manage-users/details/${data?.id}`}>
+              <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${role}/manage-users/edit/${user?.id}`}>
+            <Link href={`/${role}/manage-users/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
                 }}
-                onClick={() => console.log(user?.id)}
+                onClick={() => console.log(data?.id)}
                 type="primary"
               >
                 <EditOutlined />
@@ -94,18 +94,18 @@ const AdminPage = () => {
             </Link>
 
             <ConfirmModal
-              id={user?.id}
+              id={data?.id}
               handler={deleteUserHandler}
               title="Do you want to remove this user?"
               content={
                 <div>
                   <p>
                     Name:{" "}
-                    <span style={{ fontWeight: "bold" }}>{user?.name}</span>
+                    <span style={{ fontWeight: "bold" }}>{data?.name}</span>
                   </p>
                   <p>
                     Email:{" "}
-                    <span style={{ fontWeight: "bold" }}>{user?.email}</span>
+                    <span style={{ fontWeight: "bold" }}>{data?.email}</span>
                   </p>
                 </div>
               }
