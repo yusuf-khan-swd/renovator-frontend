@@ -1,6 +1,7 @@
 import { DeleteOutlined, ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Modal } from "antd";
 import { ButtonType } from "antd/es/button";
+import React from "react";
 
 const { confirm } = Modal;
 
@@ -8,7 +9,7 @@ interface IConfirmModelProps {
   id: string;
   handler: (id: string) => void;
   title?: string;
-  content?: string;
+  content?: React.ReactNode;
   button?: boolean;
   buttonName?: string;
   buttonType?: ButtonType;
