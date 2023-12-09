@@ -7,7 +7,7 @@ import { useCreateCategoryMutation } from "@/redux/api/categoryApi";
 import { categorySchema } from "@/schemas/category";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 
 const CreateCategoryPage = () => {
   const [createCategory] = useCreateCategoryMutation();
@@ -37,17 +37,21 @@ const CreateCategoryPage = () => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Add new category</h1>
-      <Form submitHandler={onSubmit} resolver={yupResolver(categorySchema)}>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="title" label="Title" required />
-          </Col>
-        </Row>
-        <Button type="primary" htmlType="submit">
-          add
-        </Button>
-      </Form>
+      <div style={{ margin: "24px 5px" }}>
+        <Card>
+          <h1>Add new category</h1>
+          <Form submitHandler={onSubmit} resolver={yupResolver(categorySchema)}>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="title" label="Title" required />
+              </Col>
+            </Row>
+            <Button type="primary" htmlType="submit">
+              add
+            </Button>
+          </Form>
+        </Card>
+      </div>
     </div>
   );
 };
