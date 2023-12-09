@@ -7,7 +7,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { roleOptionsForSuperAdmin } from "@/constants/global";
+import { roleOptionsForAdmin } from "@/constants/global";
 import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 
@@ -84,7 +84,7 @@ const EditUserPage = ({ params }: any) => {
                 <FormSelectField
                   name="role"
                   label="User Role"
-                  options={roleOptionsForSuperAdmin as SelectOptions[]}
+                  options={roleOptionsForAdmin as SelectOptions[]}
                 />
               </Col>
             </Row>
