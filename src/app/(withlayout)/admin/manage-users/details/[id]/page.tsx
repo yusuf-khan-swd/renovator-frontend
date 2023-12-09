@@ -98,7 +98,18 @@ const EditUserPage = ({ params }: any) => {
               id={id}
               handler={deleteUserHandler}
               title="Do you want to remove this user?"
-              content={`Remove this user id: ${id}`}
+              content={
+                <div>
+                  <p>
+                    Name:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.name}</span>
+                  </p>
+                  <p>
+                    Email:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.email}</span>
+                  </p>
+                </div>
+              }
             />
           </Form>
         </Card>
