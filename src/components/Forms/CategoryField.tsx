@@ -1,4 +1,5 @@
 import { useCategoriesQuery } from "@/redux/api/categoryApi";
+import CenterLoading from "../Loading/CenterLoading";
 import FormSelectField, { SelectOptions } from "./FormSelectField";
 
 type CategoryField = {
@@ -18,12 +19,18 @@ const CategoryField = ({ name, label, required }: CategoryField) => {
   });
 
   return (
-    <FormSelectField
-      name={name}
-      label={label}
-      options={categoryOptions as SelectOptions[]}
-      required={required}
-    />
+    <>
+      {isLoading ? (
+        <CenterLoading />
+      ) : (
+        <FormSelectField
+          name={name}
+          label={label}
+          options={categoryOptions as SelectOptions[]}
+          required={required}
+        />
+      )}
+    </>
   );
 };
 
