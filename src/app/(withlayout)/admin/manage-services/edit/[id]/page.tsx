@@ -102,9 +102,13 @@ const EditServicePage = ({ params }: any) => {
                 />
               </Col>
             </Row>
-            <Button type="primary" htmlType="submit">
-              Update
-            </Button>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <Button type="primary" htmlType="submit">
+                  Update
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </Card>
       </div>
