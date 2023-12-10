@@ -58,51 +58,53 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <h1>Update service</h1>
-      <Form
-        submitHandler={onSubmit}
-        resolver={yupResolver(serviceSchema)}
-        defaultValues={defaultValues}
-      >
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="title" label="Title" required />
-          </Col>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="price" label="Price" required />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <CategoryField name="categoryId" label="Category" />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormInput name="location" label="Location" required />
-          </Col>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="status"
-              label="Status"
-              options={serviceStatusOptions as SelectOptions[]}
-            />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: "10px 0" }}>
-            <FormTextArea
-              name="description"
-              label="Description"
-              rows={5}
-              required
-            />
-          </Col>
-        </Row>
-        <Button type="primary" htmlType="submit">
-          Update
-        </Button>
-      </Form>
+      <div style={{ margin: "24px 5px" }}>
+        <h1>Update service</h1>
+        <Form
+          submitHandler={onSubmit}
+          resolver={yupResolver(serviceSchema)}
+          defaultValues={defaultValues}
+        >
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormInput name="title" label="Title" required />
+            </Col>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormInput name="price" label="Price" required />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <CategoryField name="categoryId" label="Category" />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormInput name="location" label="Location" required />
+            </Col>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormSelectField
+                name="status"
+                label="Status"
+                options={serviceStatusOptions as SelectOptions[]}
+              />
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8} style={{ margin: "10px 0" }}>
+              <FormTextArea
+                name="description"
+                label="Description"
+                rows={5}
+                required
+              />
+            </Col>
+          </Row>
+          <Button type="primary" htmlType="submit">
+            Update
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };
