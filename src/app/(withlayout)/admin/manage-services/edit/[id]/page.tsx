@@ -88,6 +88,7 @@ const EditServicePage = ({ params }: any) => {
                   name="status"
                   label="Status"
                   options={serviceStatusOptions as SelectOptions[]}
+                  required
                 />
               </Col>
             </Row>
