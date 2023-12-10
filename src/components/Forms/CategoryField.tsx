@@ -4,9 +4,10 @@ import FormSelectField, { SelectOptions } from "./FormSelectField";
 type CategoryField = {
   name: string;
   label?: string;
+  required?: boolean;
 };
 
-const CategoryField = ({ name, label }: CategoryField) => {
+const CategoryField = ({ name, label, required }: CategoryField) => {
   const { data, isLoading } = useCategoriesQuery(undefined);
   const categoryOptions = data?.map((category: any) => {
     console.log(category?.id);
@@ -21,6 +22,7 @@ const CategoryField = ({ name, label }: CategoryField) => {
       name={name}
       label={label}
       options={categoryOptions as SelectOptions[]}
+      required={required}
     />
   );
 };
