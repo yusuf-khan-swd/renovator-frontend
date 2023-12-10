@@ -80,7 +80,7 @@ const EditServicePage = ({ params }: any) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <CategoryField name="categoryId" label="Category" />
+                  <CategoryField name="categoryId" label="Category" required />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
