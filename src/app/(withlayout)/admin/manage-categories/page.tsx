@@ -99,7 +99,15 @@ const ManageCategoryPage = () => {
               id={data?.id}
               handler={deleteHandler}
               title="Do you want to delete this category?"
-              content={`Delete ${data?.title}!`}
+              content={
+                <p>
+                  Delete{" "}
+                  <span style={{ fontWeight: "bold", margin: "0 0px" }}>
+                    {data?.title}
+                  </span>{" "}
+                  category!
+                </p>
+              }
             />
           </>
         );
