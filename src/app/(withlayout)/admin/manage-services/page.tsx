@@ -15,6 +15,10 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO: Change character for service name, description and createdAt.
+// TODO: add card for edit, create
+//todo: Add view or details page
+
 const ManageServicePage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
