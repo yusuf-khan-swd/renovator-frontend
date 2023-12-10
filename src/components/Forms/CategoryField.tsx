@@ -8,6 +8,8 @@ type CategoryField = {
   required?: boolean;
 };
 
+// FIXME: Check center loading
+
 const CategoryField = ({ name, label, required }: CategoryField) => {
   const { data, isLoading } = useCategoriesQuery(undefined);
   const categoryOptions = data?.map((category: any) => {
