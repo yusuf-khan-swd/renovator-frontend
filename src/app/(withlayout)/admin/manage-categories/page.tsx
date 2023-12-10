@@ -102,9 +102,7 @@ const ManageCategoryPage = () => {
               content={
                 <p>
                   Delete{" "}
-                  <span style={{ fontWeight: "bold", margin: "0 0px" }}>
-                    {data?.title}
-                  </span>{" "}
+                  <span style={{ fontWeight: "bold" }}>{data?.title}</span>{" "}
                   category!
                 </p>
               }
