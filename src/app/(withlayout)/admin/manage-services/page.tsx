@@ -71,14 +71,14 @@ const ManageServicePage = () => {
       dataIndex: "title",
       sorter: true,
       render: function (data: string) {
-        return data.slice(0, 20) + "...";
+        return data.length <= 20 ? data : data.slice(0, 20) + "...";
       },
     },
     {
       title: "Description",
       dataIndex: "description",
       render: function (data: string) {
-        return data.slice(0, 20) + "...";
+        return data.length <= 20 ? data : data.slice(0, 20) + "...";
       },
     },
     {
@@ -100,7 +100,9 @@ const ManageServicePage = () => {
       title: "Category",
       dataIndex: "category",
       render: function (data: any) {
-        return data.title.slice(0, 20) + "...";
+        return data?.title.length <= 20
+          ? data?.title
+          : data?.title.slice(0, 20) + "...";
       },
     },
     {
