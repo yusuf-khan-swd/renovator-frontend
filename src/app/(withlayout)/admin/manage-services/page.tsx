@@ -83,6 +83,9 @@ const ManageServicePage = () => {
     {
       title: "Price",
       dataIndex: "price",
+      render: function (data: number) {
+        return "$" + data;
+      },
       sorter: true,
     },
     {
