@@ -14,7 +14,7 @@ import { useCreateServiceMutation } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 
 const CreateServicePage = () => {
   const [createService] = useCreateServiceMutation();
@@ -49,51 +49,53 @@ const CreateServicePage = () => {
         ]}
       />
       <div style={{ margin: "24px 5px" }}>
-        <h1>Add new service</h1>
-        <Form
-          submitHandler={onSubmit}
-          resolver={yupResolver(serviceSchema)}
-          defaultValues={defaultValues}
-        >
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="title" label="Title" required />
-            </Col>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="price" label="Price" required />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <CategoryField name="categoryId" label="Category" />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="location" label="Location" required />
-            </Col>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
-                name="status"
-                label="Status"
-                options={serviceStatusOptions as SelectOptions[]}
-              />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormTextArea
-                name="description"
-                label="Description"
-                rows={5}
-                required
-              />
-            </Col>
-          </Row>
-          <Button type="primary" htmlType="submit">
-            add
-          </Button>
-        </Form>
+        <Card>
+          <h1>Add new service</h1>
+          <Form
+            submitHandler={onSubmit}
+            resolver={yupResolver(serviceSchema)}
+            defaultValues={defaultValues}
+          >
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="title" label="Title" required />
+              </Col>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="price" label="Price" required />
+              </Col>
+            </Row>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <CategoryField name="categoryId" label="Category" />
+              </Col>
+            </Row>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormInput name="location" label="Location" required />
+              </Col>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormSelectField
+                  name="status"
+                  label="Status"
+                  options={serviceStatusOptions as SelectOptions[]}
+                />
+              </Col>
+            </Row>
+            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+              <Col span={8} style={{ margin: "10px 0" }}>
+                <FormTextArea
+                  name="description"
+                  label="Description"
+                  rows={5}
+                  required
+                />
+              </Col>
+            </Row>
+            <Button type="primary" htmlType="submit">
+              add
+            </Button>
+          </Form>
+        </Card>
       </div>
     </div>
   );
