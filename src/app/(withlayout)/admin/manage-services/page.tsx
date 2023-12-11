@@ -9,7 +9,7 @@ import {
 } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
@@ -120,6 +120,15 @@ const ManageServicePage = () => {
       render: function (data: any) {
         return (
           <>
+            <Link href={`/${role}/manage-reviews/details/${data?.id}`}>
+              <Button
+                style={{ margin: "2px" }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EyeOutlined />
+              </Button>
+            </Link>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
