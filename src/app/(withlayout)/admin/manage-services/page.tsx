@@ -15,7 +15,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-// TODO: add card for create
 //TODO: Add view or details page
 
 const ManageServicePage = () => {
