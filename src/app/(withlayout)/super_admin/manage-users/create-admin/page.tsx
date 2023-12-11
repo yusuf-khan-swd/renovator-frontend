@@ -6,6 +6,8 @@ import { getUserInfo } from "@/services/auth.service";
 
 const CreateAdminPage = () => {
   const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
+  const endName = "create-admin";
 
   return (
     <div>
@@ -16,8 +18,12 @@ const CreateAdminPage = () => {
             link: `/${role}`,
           },
           {
-            label: "manage-users",
-            link: `/${role}/manage-users`,
+            label: routeName,
+            link: `/${role}/${routeName}`,
+          },
+          {
+            label: endName,
+            link: `/${role}/${routeName}/${endName}`,
           },
         ]}
       />
