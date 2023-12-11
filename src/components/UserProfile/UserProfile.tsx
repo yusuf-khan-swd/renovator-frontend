@@ -21,7 +21,7 @@ const UserProfile = () => {
     name: data?.name || "",
     email: data?.email || "",
     password: data?.password || "",
-    role: data?.role || "",
+    role: data?.role.toUpperCase() || "",
   };
 
   return (
