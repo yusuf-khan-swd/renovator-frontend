@@ -31,7 +31,7 @@ const DetailsServicePage = ({ params }: any) => {
     title: data?.title || "",
     description: data?.description || "",
     price: data?.price || "",
-    status: data?.status || "",
+    status: data?.status.toUpperCase() || "",
     categoryTitle: data?.category?.title,
     location: data?.location || "",
   };
