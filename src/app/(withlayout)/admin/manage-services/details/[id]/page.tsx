@@ -1,6 +1,5 @@
 "use client";
 
-import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
@@ -16,6 +15,7 @@ import Link from "next/link";
 const DetailsServicePage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useServiceQuery(id);
+  console.log(data);
 
   const onSubmit = async (data: any) => {
     try {
@@ -34,6 +34,7 @@ const DetailsServicePage = ({ params }: any) => {
     status: data?.status || "",
     categoryId: data?.categoryId || "",
     location: data?.location || "",
+    categoryTitle: data?.category?.title,
   };
 
   const { role } = getUserInfo() as any;
@@ -70,7 +71,12 @@ const DetailsServicePage = ({ params }: any) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <CategoryField name="categoryId" label="Category" required />
+                  <FormInput
+                    name="categoryTitle"
+                    label="Category"
+                    required
+                    readOnly
+                  />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
