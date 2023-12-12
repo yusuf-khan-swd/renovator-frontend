@@ -52,13 +52,16 @@ const ManageServicePage = () => {
   const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      //   console.log(data);
-      await deleteService(id);
-      message.success("Service Delete successfully");
+      message.loading("Deleting.....");
+      const result: any = await deleteService(id);
+      if (result?.data) {
+        message.success("Service Delete successfully");
+      } else {
+        message.error("Service Delete failed!");
+      }
     } catch (err: any) {
-      //   console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };
