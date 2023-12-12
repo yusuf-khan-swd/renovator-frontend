@@ -122,7 +122,7 @@ const ManageServicePage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/manage-reviews/details/${data?.id}`}>
+            <Link href={`/${role}/manage-services/details/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
