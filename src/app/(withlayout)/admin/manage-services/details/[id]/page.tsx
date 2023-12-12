@@ -66,10 +66,10 @@ const DetailsServicePage = ({ params }: any) => {
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormInput name="title" label="Title" required />
+                  <FormInput name="title" label="Title" required readOnly />
                 </Col>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormInput name="price" label="Price" required />
+                  <FormInput name="price" label="Price" required readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -79,7 +79,12 @@ const DetailsServicePage = ({ params }: any) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormInput name="location" label="Location" required />
+                  <FormInput
+                    name="location"
+                    label="Location"
+                    required
+                    readOnly
+                  />
                 </Col>
                 <Col span={8} style={{ margin: "10px 0" }}>
                   <FormSelectField
@@ -97,6 +102,7 @@ const DetailsServicePage = ({ params }: any) => {
                     label="Description"
                     rows={5}
                     required
+                    readOnly
                   />
                 </Col>
               </Row>
