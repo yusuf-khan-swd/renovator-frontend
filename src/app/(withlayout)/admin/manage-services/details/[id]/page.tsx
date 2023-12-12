@@ -3,13 +3,9 @@
 import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import FormSelectField, {
-  SelectOptions,
-} from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { serviceStatusOptions } from "@/constants/global";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
@@ -87,12 +83,7 @@ const DetailsServicePage = ({ params }: any) => {
                   />
                 </Col>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormSelectField
-                    name="status"
-                    label="Status"
-                    options={serviceStatusOptions as SelectOptions[]}
-                    required
-                  />
+                  <FormInput name="status" label="Status" required readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
