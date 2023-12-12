@@ -18,6 +18,7 @@ import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import Link from "next/link";
 
 const DetailsServicePage = ({ params }: any) => {
   const id = params?.id;
@@ -108,9 +109,11 @@ const DetailsServicePage = ({ params }: any) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <Button type="primary" htmlType="submit">
-                    Update
-                  </Button>
+                  <Link href={`/${role}/manage-services/edit/${id}`}>
+                    <Button style={{ margin: "2px" }} type="primary">
+                      Edit Service Info
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             </Form>
