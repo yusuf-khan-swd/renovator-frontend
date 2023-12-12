@@ -12,6 +12,8 @@ interface IServiceProps {
   detailsPage?: boolean;
 }
 
+// TODO: Try remove cursor pointer from card
+
 const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
   const { role } = getUserInfo() as any;
 
