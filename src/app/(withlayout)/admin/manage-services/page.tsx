@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-//TODO: Add view or details page
+//TODO: Show services by desc order
 
 const ManageServicePage = () => {
   const { role } = getUserInfo() as any;
