@@ -5,16 +5,24 @@ import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { useServiceQuery } from "@/redux/api/serviceApi";
+import ConfirmModal from "@/components/ui/ConfirmModal";
+import {
+  useDeleteServiceMutation,
+  useServiceQuery,
+} from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const DetailsServicePage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useServiceQuery(id);
+  const [deleteService] = useDeleteServiceMutation();
+  const router = useRouter();
+
   console.log(data);
 
   const onSubmit = async (data: any) => {
@@ -22,6 +30,24 @@ const DetailsServicePage = ({ params }: any) => {
       console.log(data);
     } catch (err: any) {
       console.error(err.message);
+      message.error(err.message);
+    }
+  };
+
+  const deleteHandler = async (id: string) => {
+    try {
+      message.loading("Deleting.....");
+      const result: any = await deleteService(id);
+
+      router.push(`/${role}/${routeName}`);
+
+      if (result?.data) {
+        message.success("Service Delete successfully");
+      } else {
+        message.error("Service Delete failed!");
+      }
+    } catch (err: any) {
+      console.error(err);
       message.error(err.message);
     }
   };
@@ -109,6 +135,12 @@ const DetailsServicePage = ({ params }: any) => {
                       Edit Service Info
                     </Button>
                   </Link>
+                  <ConfirmModal
+                    id={id}
+                    handler={deleteHandler}
+                    title="Do you want to delete this service?"
+                    content={`Delete ${data?.title} service!`}
+                  />
                 </Col>
               </Row>
             </Form>
