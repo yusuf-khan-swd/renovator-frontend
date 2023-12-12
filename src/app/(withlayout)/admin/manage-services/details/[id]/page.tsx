@@ -32,9 +32,8 @@ const DetailsServicePage = ({ params }: any) => {
     description: data?.description || "",
     price: data?.price || "",
     status: data?.status || "",
-    categoryId: data?.categoryId || "",
-    location: data?.location || "",
     categoryTitle: data?.category?.title,
+    location: data?.location || "",
   };
 
   const { role } = getUserInfo() as any;
