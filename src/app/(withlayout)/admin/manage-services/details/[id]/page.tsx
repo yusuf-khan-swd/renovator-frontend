@@ -10,10 +10,7 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { serviceStatusOptions } from "@/constants/global";
-import {
-  useServiceQuery,
-  useUpdateServiceMutation,
-} from "@/redux/api/serviceApi";
+import { useServiceQuery } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,13 +21,9 @@ const DetailsServicePage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useServiceQuery(id);
 
-  const [updateService] = useUpdateServiceMutation();
-
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Creating.....");
-      await updateService(data);
-      message.success("Service updated successfully");
+      console.log(data);
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
