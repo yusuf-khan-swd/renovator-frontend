@@ -23,8 +23,6 @@ const DetailsServicePage = ({ params }: any) => {
   const [deleteService] = useDeleteServiceMutation();
   const router = useRouter();
 
-  console.log(data);
-
   const onSubmit = async (data: any) => {
     try {
       console.log(data);
