@@ -15,8 +15,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-//TODO: Show services by desc order
-
 const ManageServicePage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
