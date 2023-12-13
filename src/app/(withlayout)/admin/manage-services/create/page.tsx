@@ -56,7 +56,7 @@ const CreateServicePage = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add new service</h1>
+          <h1>Add a New Service</h1>
           <Form
             submitHandler={onSubmit}
             resolver={yupResolver(serviceSchema)}
