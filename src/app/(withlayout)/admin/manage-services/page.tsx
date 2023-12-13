@@ -74,13 +74,6 @@ const ManageServicePage = () => {
       },
     },
     {
-      title: "Description",
-      dataIndex: "description",
-      render: function (data: string) {
-        return data.length <= 20 ? data : data.slice(0, 20) + "...";
-      },
-    },
-    {
       title: "Price",
       dataIndex: "price",
       render: function (data: number) {
