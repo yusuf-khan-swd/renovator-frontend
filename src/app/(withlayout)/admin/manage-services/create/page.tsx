@@ -16,7 +16,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-// TODO: Update onSubmit and heading
+// TODO: Update heading
 
 const CreateServicePage = () => {
   const [createService] = useCreateServiceMutation();
@@ -32,7 +32,7 @@ const CreateServicePage = () => {
         message.error("Service create failed!");
       }
     } catch (err: any) {
-      console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };

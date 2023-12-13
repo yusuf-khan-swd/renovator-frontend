@@ -37,7 +37,7 @@ const EditServicePage = ({ params }: any) => {
         message.error("Service updated failed!");
       }
     } catch (err: any) {
-      console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };
