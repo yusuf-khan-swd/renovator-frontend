@@ -44,7 +44,6 @@ const ManageServicePage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useServicesQuery({ ...query });
-  // console.log(data);
 
   const services = data?.services;
   const meta = data?.meta;
