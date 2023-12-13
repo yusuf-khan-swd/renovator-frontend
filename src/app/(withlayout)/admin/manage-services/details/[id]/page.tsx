@@ -18,6 +18,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const DetailsServicePage = ({ params }: any) => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-services";
+  const endRoute = "details";
+
   const id = params?.id;
   const { data, isLoading } = useServiceQuery(id);
   const [deleteService] = useDeleteServiceMutation();
@@ -59,10 +63,6 @@ const DetailsServicePage = ({ params }: any) => {
     categoryTitle: data?.category?.title,
     location: data?.location || "",
   };
-
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-services";
-  const endRoute = "edit";
 
   return (
     <div>
