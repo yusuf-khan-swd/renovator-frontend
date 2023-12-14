@@ -15,6 +15,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO: Update confirm modal content in service table and in details page
+
 const ManageServicePage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-services";
@@ -44,7 +46,6 @@ const ManageServicePage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useServicesQuery({ ...query });
-  console.log(data);
 
   const services = data?.services;
   const meta = data?.meta;
