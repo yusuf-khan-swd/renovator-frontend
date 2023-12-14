@@ -74,6 +74,15 @@ const ManageServicePage = () => {
       },
     },
     {
+      title: "Category",
+      dataIndex: "category",
+      render: function (data: any) {
+        return data?.title.length <= 25
+          ? data?.title
+          : data?.title.slice(0, 22) + "...";
+      },
+    },
+    {
       title: "Price",
       dataIndex: "price",
       render: function (data: number) {
@@ -94,15 +103,7 @@ const ManageServicePage = () => {
       dataIndex: "location",
       sorter: true,
     },
-    {
-      title: "Category",
-      dataIndex: "category",
-      render: function (data: any) {
-        return data?.title.length <= 25
-          ? data?.title
-          : data?.title.slice(0, 22) + "...";
-      },
-    },
+    ,
     {
       title: "CreatedAt",
       dataIndex: "createdAt",
