@@ -142,7 +142,7 @@ const ManageServicePage = () => {
               id={data?.id}
               handler={deleteHandler}
               title="Do you want to delete this service?"
-              content={`Delete ${data?.title} service!`}
+              content={`Delete the ${data?.title} service!`}
             />
           </>
         );
