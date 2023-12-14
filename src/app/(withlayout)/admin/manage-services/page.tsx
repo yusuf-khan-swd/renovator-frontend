@@ -44,6 +44,7 @@ const ManageServicePage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useServicesQuery({ ...query });
+  console.log(data);
 
   const services = data?.services;
   const meta = data?.meta;
@@ -69,7 +70,7 @@ const ManageServicePage = () => {
       dataIndex: "title",
       sorter: true,
       render: function (data: string) {
-        return data.length <= 20 ? data : data.slice(0, 20) + "...";
+        return data.length <= 30 ? data : data.slice(0, 30) + "...";
       },
     },
     {
@@ -97,9 +98,9 @@ const ManageServicePage = () => {
       title: "Category",
       dataIndex: "category",
       render: function (data: any) {
-        return data?.title.length <= 20
+        return data?.title.length <= 25
           ? data?.title
-          : data?.title.slice(0, 20) + "...";
+          : data?.title.slice(0, 22) + "...";
       },
     },
     {
