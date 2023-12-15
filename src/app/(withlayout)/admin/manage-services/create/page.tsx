@@ -8,7 +8,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { serviceStatusOptions } from "@/constants/global";
+import { serviceCreateStatusOptions } from "@/constants/global";
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useCreateServiceMutation } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
@@ -83,7 +83,7 @@ const CreateServicePage = () => {
                 <FormSelectField
                   name="status"
                   label="Status"
-                  options={serviceStatusOptions as SelectOptions[]}
+                  options={serviceCreateStatusOptions as SelectOptions[]}
                 />
               </Col>
             </Row>
