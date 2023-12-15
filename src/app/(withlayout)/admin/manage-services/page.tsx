@@ -155,11 +155,17 @@ const ManageServicePage = () => {
                   </p>
                   <p>
                     Location:{" "}
-                    <span style={{ fontWeight: "bold" }}>{data?.location}</span>
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.location.charAt(0).toUpperCase() +
+                        data?.location.slice(1)}
+                    </span>
                   </p>
                   <p>
                     Status:{" "}
-                    <span style={{ fontWeight: "bold" }}>{data?.status}</span>
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.status.charAt(0).toUpperCase() +
+                        data?.status.slice(1)}
+                    </span>
                   </p>
                   <p>
                     Category:{" "}
