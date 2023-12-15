@@ -143,7 +143,32 @@ const ManageServicePage = () => {
               id={data?.id}
               handler={deleteHandler}
               title="Do you want to delete this service?"
-              content={`Delete the ${data?.title} service!`}
+              content={
+                <div>
+                  <p>
+                    Service Name:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.title}</span>
+                  </p>
+                  <p>
+                    Price:{" "}
+                    <span style={{ fontWeight: "bold" }}>${data?.price}</span>
+                  </p>
+                  <p>
+                    Location:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.location}</span>
+                  </p>
+                  <p>
+                    Status:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.status}</span>
+                  </p>
+                  <p>
+                    Category:{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.category?.title}
+                    </span>
+                  </p>
+                </div>
+              }
             />
           </>
         );
