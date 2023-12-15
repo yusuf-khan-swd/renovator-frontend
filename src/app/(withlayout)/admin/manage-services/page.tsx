@@ -144,7 +144,7 @@ const ManageServicePage = () => {
               handler={deleteHandler}
               title="Do you want to delete this service?"
               content={
-                <div>
+                <div style={{ display: "grid", gap: "2px" }}>
                   <p>
                     Service Name:{" "}
                     <span style={{ fontWeight: "bold" }}>{data?.title}</span>
