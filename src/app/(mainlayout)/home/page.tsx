@@ -13,12 +13,8 @@ const HomePage = () => {
   const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
     useUpcomingServiceQuery({ limit: 3 });
 
-  // console.log(upcomingServices);
-
   const { data: ongoingServices, isLoading: isOngoingServicesLoading } =
     useOngoingServiceQuery({ limit: 3 });
-
-  // console.log(ongoingServices);
 
   return (
     <div>
