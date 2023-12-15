@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalServiceContent from "@/components/ui/ConfirmModalServiceContent";
 import {
   useDeleteServiceMutation,
   useServicesQuery,
@@ -143,38 +144,7 @@ const ManageServicePage = () => {
               id={data?.id}
               handler={deleteHandler}
               title="Do you want to delete this service?"
-              content={
-                <div style={{ display: "grid", gap: "2px" }}>
-                  <p>
-                    Service Name:{" "}
-                    <span style={{ fontWeight: "bold" }}>{data?.title}</span>
-                  </p>
-                  <p>
-                    Price:{" "}
-                    <span style={{ fontWeight: "bold" }}>${data?.price}</span>
-                  </p>
-                  <p>
-                    Location:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.location.charAt(0).toUpperCase() +
-                        data?.location.slice(1)}
-                    </span>
-                  </p>
-                  <p>
-                    Status:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.status.charAt(0).toUpperCase() +
-                        data?.status.slice(1)}
-                    </span>
-                  </p>
-                  <p>
-                    Category:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.category?.title}
-                    </span>
-                  </p>
-                </div>
-              }
+              content={<ConfirmModalServiceContent data={data} />}
             />
           </>
         );
