@@ -46,14 +46,18 @@ const ManageCategoryPage = () => {
   const { data, isLoading } = useCategoriesQuery({ ...query });
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      //   console.log(data);
-      await deleteCategory(id);
-      message.success("Category Delete successfully");
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+      message.loading("Deleting.....");
+      const result: any = await deleteCategory(id);
+
+      if (result?.data) {
+        message.success("Category Delete successfully");
+      } else {
+        message.error("Category Delete failed!");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
