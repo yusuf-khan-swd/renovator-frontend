@@ -37,6 +37,7 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
   return (
     <Col span={24} style={{ margin: "10px 0" }}>
       <Card
+        style={{ cursor: "default" }}
         hoverable
         title={
           detailsPage ? (
