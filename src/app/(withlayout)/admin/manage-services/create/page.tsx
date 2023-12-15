@@ -16,8 +16,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-// TODO: Update heading
-
 const CreateServicePage = () => {
   const [createService] = useCreateServiceMutation();
 
