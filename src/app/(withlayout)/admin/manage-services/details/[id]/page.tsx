@@ -6,6 +6,7 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalServiceContent from "@/components/ui/ConfirmModalServiceContent";
 import {
   useDeleteServiceMutation,
   useServiceQuery,
@@ -137,7 +138,7 @@ const DetailsServicePage = ({ params }: any) => {
                     id={id}
                     handler={deleteHandler}
                     title="Do you want to delete this service?"
-                    content={`Delete ${data?.title} service!`}
+                    content={<ConfirmModalServiceContent data={data} />}
                   />
                 </Col>
               </Row>
