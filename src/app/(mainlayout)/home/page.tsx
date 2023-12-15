@@ -11,12 +11,12 @@ import {
 
 const HomePage = () => {
   const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
-    useUpcomingServiceQuery({ limit: 2 });
+    useUpcomingServiceQuery({ limit: 3 });
 
   // console.log(upcomingServices);
 
   const { data: ongoingServices, isLoading: isOngoingServicesLoading } =
-    useOngoingServiceQuery({ limit: 2 });
+    useOngoingServiceQuery({ limit: 3 });
 
   // console.log(ongoingServices);
 
