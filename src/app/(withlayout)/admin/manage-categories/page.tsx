@@ -53,7 +53,23 @@ const ManageCategoryPage = () => {
       if (result?.data) {
         message.success("Category Delete successfully");
       } else {
-        message.error("Category Delete failed!");
+        message.error(
+          <div>
+            <p>Category Delete failed!</p>
+            <p>Step1: Try again after reloading</p>
+            <p>Step2: Check server is running</p>
+            <p>
+              Step3: Check any service is in this category. If then first delete
+              the services. Then try again
+            </p>
+            <div style={{ margin: "5px" }}>
+              <Button onClick={() => message.destroy()} danger>
+                Close Message
+              </Button>
+            </div>
+          </div>,
+          5
+        );
       }
     } catch (error: any) {
       console.error(error);
