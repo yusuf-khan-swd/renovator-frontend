@@ -20,26 +20,28 @@ const HomePage = () => {
   return (
     <div>
       <Banner />
-      <Card>
-        <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
-        {isOngoingServicesLoading ? (
-          <FullScreenLoading />
-        ) : ongoingServices?.length > 0 ? (
-          <Service services={ongoingServices} />
-        ) : (
-          <h3>No ongoing service available</h3>
-        )}
-      </Card>
-      <Card>
-        <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
-        {isUpcomingServicesLoading ? (
-          <FullScreenLoading />
-        ) : upcomingServices?.length > 0 ? (
-          <Service services={upcomingServices} />
-        ) : (
-          <h3>No upcoming service available</h3>
-        )}
-      </Card>
+      <div style={{ display: "grid", gap: "40px" }}>
+        <Card>
+          <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
+          {isOngoingServicesLoading ? (
+            <FullScreenLoading />
+          ) : ongoingServices?.length > 0 ? (
+            <Service services={ongoingServices} />
+          ) : (
+            <h3>No ongoing service available</h3>
+          )}
+        </Card>
+        <Card>
+          <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
+          {isUpcomingServicesLoading ? (
+            <FullScreenLoading />
+          ) : upcomingServices?.length > 0 ? (
+            <Service services={upcomingServices} />
+          ) : (
+            <h3>No upcoming service available</h3>
+          )}
+        </Card>
+      </div>
       <Feedback />
     </div>
   );
