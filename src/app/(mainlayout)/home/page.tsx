@@ -11,11 +11,11 @@ import {
 import { Card } from "antd";
 
 const HomePage = () => {
-  const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
-    useUpcomingServiceQuery({ limit: 2 });
-
   const { data: ongoingServices, isLoading: isOngoingServicesLoading } =
     useOngoingServiceQuery({ limit: 2 });
+
+  const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
+    useUpcomingServiceQuery({ limit: 2 });
 
   return (
     <div>
