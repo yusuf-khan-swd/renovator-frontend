@@ -1,5 +1,3 @@
-"use client";
-
 import { Button, Layout, Row } from "antd";
 import Link from "next/link";
 import MainNavbarItems from "./MainNavbarItems";
