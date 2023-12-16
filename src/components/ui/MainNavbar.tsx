@@ -34,7 +34,9 @@ const MainNavbar = () => {
       ),
     },
   ];
+
   const { role } = getUserInfo() as any;
+
   return (
     <AntHeader
       style={{
