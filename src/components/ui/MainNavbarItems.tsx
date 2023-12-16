@@ -5,7 +5,7 @@ import { Avatar, Button, Dropdown, MenuProps, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const MainSidebarItems = () => {
+const MainNavbarItems = () => {
   const router = useRouter();
 
   const logOut = () => {
@@ -56,4 +56,4 @@ const MainSidebarItems = () => {
   );
 };
 
-export default MainSidebarItems;
+export default MainNavbarItems;

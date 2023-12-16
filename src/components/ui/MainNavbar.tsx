@@ -2,7 +2,7 @@
 
 import { Button, Layout, Row } from "antd";
 import Link from "next/link";
-import MainSidebarItems from "./MainSidebarItems";
+import MainNavbarItems from "./MainNavbarItems";
 const { Header: AntHeader } = Layout;
 
 const MainNavbar = () => {
@@ -43,7 +43,7 @@ const MainNavbar = () => {
           </Link>
         </div>
 
-        <MainSidebarItems />
+        <MainNavbarItems />
       </Row>
     </AntHeader>
   );
