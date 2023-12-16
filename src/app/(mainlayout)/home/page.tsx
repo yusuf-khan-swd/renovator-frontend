@@ -8,6 +8,7 @@ import {
   useOngoingServiceQuery,
   useUpcomingServiceQuery,
 } from "@/redux/api/serviceApi";
+import { Card } from "antd";
 
 const HomePage = () => {
   const { data: upcomingServices, isLoading: isUpcomingServicesLoading } =
@@ -19,22 +20,26 @@ const HomePage = () => {
   return (
     <div>
       <Banner />
-      <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
-      {isOngoingServicesLoading ? (
-        <FullScreenLoading />
-      ) : ongoingServices?.length > 0 ? (
-        <Service services={ongoingServices} />
-      ) : (
-        <h3>No ongoing service available</h3>
-      )}
-      <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
-      {isUpcomingServicesLoading ? (
-        <FullScreenLoading />
-      ) : upcomingServices?.length > 0 ? (
-        <Service services={upcomingServices} />
-      ) : (
-        <h3>No upcoming service available</h3>
-      )}
+      <Card>
+        <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
+        {isOngoingServicesLoading ? (
+          <FullScreenLoading />
+        ) : ongoingServices?.length > 0 ? (
+          <Service services={ongoingServices} />
+        ) : (
+          <h3>No ongoing service available</h3>
+        )}
+      </Card>
+      <Card>
+        <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
+        {isUpcomingServicesLoading ? (
+          <FullScreenLoading />
+        ) : upcomingServices?.length > 0 ? (
+          <Service services={upcomingServices} />
+        ) : (
+          <h3>No upcoming service available</h3>
+        )}
+      </Card>
       <Feedback />
     </div>
   );
