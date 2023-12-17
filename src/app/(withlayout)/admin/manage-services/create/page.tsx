@@ -65,7 +65,7 @@ const CreateServicePage = () => {
                 <FormInput name="title" label="Title" required />
               </Col>
               <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="price" label="Price" required />
+                <FormInput name="price" label="Price $" required />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
