@@ -97,16 +97,18 @@ const EditReviewPage = ({ params }: any) => {
                   />
                 </Col>
               </Row>
-              <div>
-                <Button type="primary" htmlType="submit">
-                  Update Review
-                </Button>
-                <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
-                  <Button type="link" style={{ margin: "0 5px" }}>
-                    View Review
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <Button type="primary" htmlType="submit">
+                    Update Review
                   </Button>
-                </Link>
-              </div>
+                  <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
+                    <Button type="default" style={{ margin: "0 5px" }}>
+                      View Review
+                    </Button>
+                  </Link>
+                </Col>
+              </Row>
             </Form>
           </Card>
         </div>
