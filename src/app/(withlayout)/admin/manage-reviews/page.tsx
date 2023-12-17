@@ -81,7 +81,9 @@ const ManageReviewPage = () => {
       title: "Status",
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.status;
+        return (
+          service?.status.charAt(0).toUpperCase() + service?.status.slice(1)
+        );
       },
     },
     {
