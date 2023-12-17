@@ -59,7 +59,7 @@ const DetailsServicePage = ({ params }: any) => {
     id: data?.id,
     title: data?.title || "",
     description: data?.description || "",
-    price: data?.price || "",
+    price: "$" + data?.price || "",
     status: data?.status.toUpperCase() || "",
     categoryTitle: data?.category?.title,
     location: data?.location || "",
