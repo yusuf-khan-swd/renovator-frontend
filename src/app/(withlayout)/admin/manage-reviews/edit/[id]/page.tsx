@@ -70,7 +70,7 @@ const EditReviewPage = ({ params }: any) => {
           </div>
 
           <Card>
-            <ReviewAndRatingHeading heading="Update Your Review" />
+            <ReviewAndRatingHeading heading="Update Review" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(reviewAndRatingSchema)}
