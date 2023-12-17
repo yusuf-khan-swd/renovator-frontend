@@ -81,6 +81,9 @@ const ManageCategoryPage = () => {
     {
       title: "Title",
       dataIndex: "title",
+      render: function (data: string) {
+        return data?.length <= 75 ? data : data.slice(0, 75) + "...";
+      },
       sorter: true,
     },
     {
