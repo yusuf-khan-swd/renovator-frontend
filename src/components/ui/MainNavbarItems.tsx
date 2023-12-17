@@ -18,7 +18,7 @@ const MainNavbarItems = () => {
       key: "0",
       label: (
         <Link href="/profile">
-          <Button type="link">Profile</Button>
+          <Button type="link">Dashboard</Button>
         </Link>
       ),
     },
