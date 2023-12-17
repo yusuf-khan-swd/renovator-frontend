@@ -124,7 +124,7 @@ const ManageCategoryPage = () => {
               title="Do you want to delete this category?"
               content={
                 <p>
-                  Delete{" "}
+                  Delete the{" "}
                   <span style={{ fontWeight: "bold" }}>{data?.title}</span>{" "}
                   category!
                 </p>
