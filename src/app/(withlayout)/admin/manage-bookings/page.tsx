@@ -123,6 +123,9 @@ const ManageBookingPage = () => {
     {
       title: "Status",
       dataIndex: "status",
+      render: function (data: string) {
+        return data.charAt(0).toUpperCase() + data.slice(1);
+      },
     },
 
     {
