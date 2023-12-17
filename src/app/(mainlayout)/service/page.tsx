@@ -9,6 +9,8 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import { useState } from "react";
 
+// TODO: Show service by category select field
+
 const ServicePage = () => {
   const query: Record<string, any> = {};
 
