@@ -82,6 +82,7 @@ const CreateServicePage = () => {
                   name="status"
                   label="Status"
                   options={serviceCreateStatusOptions as SelectOptions[]}
+                  required
                 />
               </Col>
             </Row>
