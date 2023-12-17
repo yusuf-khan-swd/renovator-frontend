@@ -97,15 +97,19 @@ const ViewReviewPage = ({ params }: any) => {
                   />
                 </Col>
               </Row>
-              <Link href={`/${role}/manage-reviews/edit/${id}`}>
-                <Button type="primary">Edit Review</Button>
-              </Link>
-              <ConfirmModal
-                id={id}
-                handler={deleteHandler}
-                title="Do you want to delete this review?"
-                content={`Delete this review!`}
-              />
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <Link href={`/${role}/manage-reviews/edit/${id}`}>
+                    <Button type="primary">Edit Review</Button>
+                  </Link>
+                  <ConfirmModal
+                    id={id}
+                    handler={deleteHandler}
+                    title="Do you want to delete this review?"
+                    content={`Delete this review!`}
+                  />
+                </Col>
+              </Row>
             </Form>
           </Card>
         </div>
