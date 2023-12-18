@@ -9,7 +9,7 @@ const ConfirmModalBookingContent = ({ data }: { data: any }) => {
       </p>
       <p>
         Service Price:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.service?.price}</span>
+        <span style={{ fontWeight: "bold" }}>${data?.service?.price}</span>
       </p>
       <p>
         Booking Date:{" "}
@@ -19,7 +19,9 @@ const ConfirmModalBookingContent = ({ data }: { data: any }) => {
       </p>
       <p>
         Current Status:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.status}</span>
+        <span style={{ fontWeight: "bold" }}>
+          {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
+        </span>
       </p>
       <p>
         User Email:{" "}
