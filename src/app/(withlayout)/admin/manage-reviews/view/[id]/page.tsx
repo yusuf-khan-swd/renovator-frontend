@@ -71,12 +71,8 @@ const ViewReviewPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div style={{ padding: "24px 5px" }}>
-          <div style={{ marginBottom: "10px" }}>
-            <ServiceDetailsCard service={service} />
-          </div>
-
           <Card>
-            <ReviewAndRatingHeading heading="Your Review" />
+            <ReviewAndRatingHeading heading="Review Details" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(reviewAndRatingSchema)}
@@ -112,6 +108,10 @@ const ViewReviewPage = ({ params }: any) => {
               </Row>
             </Form>
           </Card>
+
+          <div style={{ marginBottom: "10px" }}>
+            <ServiceDetailsCard service={service} />
+          </div>
         </div>
       )}
     </div>
