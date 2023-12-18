@@ -154,7 +154,7 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleConfirmBooking}
-              title="Do you want to confirm this booking"
+              title="Do you want to accept this booking"
               button
               buttonName="Accept"
               buttonType="primary"
@@ -163,6 +163,38 @@ const ManageBookingPage = () => {
                 data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
                   ? true
                   : false
+              }
+              content={
+                <div>
+                  <p>
+                    Service Name:{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.service?.title}
+                    </span>
+                  </p>
+                  <p>
+                    Service Price:{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.service?.price}
+                    </span>
+                  </p>
+                  <p>
+                    Booking Date:{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {dayjs(data?.date).format("MMM D, YYYY")}
+                    </span>
+                  </p>
+                  <p>
+                    Current Status:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.status}</span>
+                  </p>
+                  <p>
+                    User Email:{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {data?.user?.email}
+                    </span>
+                  </p>
+                </div>
               }
             />
             <ConfirmModal
