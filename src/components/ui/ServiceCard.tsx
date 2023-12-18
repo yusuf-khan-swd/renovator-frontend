@@ -34,6 +34,10 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
     }
   };
 
+  const handleViewCount = async (serviceId: string, count: number) => {
+    console.log(serviceId, count);
+  };
+
   return (
     <Col span={24} style={{ margin: "10px 0" }}>
       <Card
@@ -57,7 +61,12 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
 
         <Row justify="space-between">
           <Link href={`/service/${service?.id}`}>
-            <Button disabled={detailsPage}>Details</Button>
+            <Button
+              disabled={detailsPage}
+              onClick={() => handleViewCount(service?.id, 1)}
+            >
+              Details
+            </Button>
           </Link>
 
           <div>
