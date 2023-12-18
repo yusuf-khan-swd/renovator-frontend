@@ -70,7 +70,7 @@ const ViewReviewPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "24px 5px" }}>
+        <div style={{ padding: "24px 5px", display: "grid", gap: "24px" }}>
           <Card>
             <ReviewAndRatingHeading heading="Review Details" />
             <Form
