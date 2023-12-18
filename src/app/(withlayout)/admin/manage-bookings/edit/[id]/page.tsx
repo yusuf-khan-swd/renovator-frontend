@@ -63,14 +63,6 @@ const EditServicePage = ({ params }: any) => {
         ]}
       />
       <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
-        <div>
-          {isBookingDataLoading || isServiceDataLoading ? (
-            <FullScreenLoading />
-          ) : (
-            <ServiceDetailsCard service={service} />
-          )}
-        </div>
-
         {isBookingDataLoading ? (
           <FullScreenLoading />
         ) : (
@@ -98,6 +90,14 @@ const EditServicePage = ({ params }: any) => {
             </Form>
           </Card>
         )}
+
+        <div>
+          {isBookingDataLoading || isServiceDataLoading ? (
+            <FullScreenLoading />
+          ) : (
+            <ServiceDetailsCard service={service} />
+          )}
+        </div>
       </div>
     </div>
   );
