@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalBookingContent from "@/components/ui/ConfirmModalBookingContent";
 import {
   ENUM_BOOKING_STATUS_FOR_ADMIN,
   ENUM_BOOKING_STATUS_FOR_USER,
@@ -164,38 +165,7 @@ const ManageBookingPage = () => {
                   ? true
                   : false
               }
-              content={
-                <div>
-                  <p>
-                    Service Name:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.service?.title}
-                    </span>
-                  </p>
-                  <p>
-                    Service Price:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.service?.price}
-                    </span>
-                  </p>
-                  <p>
-                    Booking Date:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {dayjs(data?.date).format("MMM D, YYYY")}
-                    </span>
-                  </p>
-                  <p>
-                    Current Status:{" "}
-                    <span style={{ fontWeight: "bold" }}>{data?.status}</span>
-                  </p>
-                  <p>
-                    User Email:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {data?.user?.email}
-                    </span>
-                  </p>
-                </div>
-              }
+              content={<ConfirmModalBookingContent data={data} />}
             />
             <ConfirmModal
               id={data?.id}
