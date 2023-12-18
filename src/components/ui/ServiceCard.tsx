@@ -12,6 +12,8 @@ interface IServiceProps {
   detailsPage?: boolean;
 }
 
+// TODO: When details button click try to add a view count for service
+
 const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
   const { role } = getUserInfo() as any;
 
