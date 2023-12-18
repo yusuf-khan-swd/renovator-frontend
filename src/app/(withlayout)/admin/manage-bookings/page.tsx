@@ -21,6 +21,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO: Update accept and reject modal
 // TODO: Update confirm delete modal content in admin and user
 
 const ManageBookingPage = () => {
