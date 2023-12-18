@@ -65,10 +65,6 @@ const EditReviewPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div style={{ padding: "24px 5px" }}>
-          <div style={{ marginBottom: "10px" }}>
-            <ServiceDetailsCard service={service} />
-          </div>
-
           <Card>
             <ReviewAndRatingHeading heading="Update Review" />
             <Form
@@ -111,6 +107,10 @@ const EditReviewPage = ({ params }: any) => {
               </Row>
             </Form>
           </Card>
+
+          <div>
+            <ServiceDetailsCard service={service} />
+          </div>
         </div>
       )}
     </div>
