@@ -71,6 +71,10 @@ const ViewReviewPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <div style={{ padding: "24px 5px", display: "grid", gap: "24px" }}>
+          <div style={{ marginBottom: "10px" }}>
+            <ServiceDetailsCard service={service} />
+          </div>
+
           <Card>
             <ReviewAndRatingHeading heading="Review Details" />
             <Form
@@ -108,10 +112,6 @@ const ViewReviewPage = ({ params }: any) => {
               </Row>
             </Form>
           </Card>
-
-          <div style={{ marginBottom: "10px" }}>
-            <ServiceDetailsCard service={service} />
-          </div>
         </div>
       )}
     </div>
