@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 
 const ConfirmModalBookingContent = ({ data }: { data: any }) => {
   return (
-    <div>
+    <div style={{ display: "grid", gap: "2px" }}>
       <p>
         User Email:{" "}
         <span style={{ fontWeight: "bold" }}>{data?.user?.email}</span>
