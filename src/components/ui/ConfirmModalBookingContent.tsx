@@ -18,18 +18,23 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
         </span>
       </p>
       <p>
+        Current Status:{" "}
+        <span
+          style={{
+            fontWeight: "bold",
+            color: `${data?.status === "accepted" ? "green" : "red"}`,
+          }}
+        >
+          {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
+        </span>
+      </p>
+      <p>
         Service Name:{" "}
         <span style={{ fontWeight: "bold" }}>{data?.service?.title}</span>
       </p>
       <p>
         Service Price:{" "}
         <span style={{ fontWeight: "bold" }}>${data?.service?.price}</span>
-      </p>
-      <p>
-        Current Status:{" "}
-        <span style={{ fontWeight: "bold" }}>
-          {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
-        </span>
       </p>
     </div>
   );
