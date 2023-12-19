@@ -102,12 +102,17 @@ const ManageBookingPage = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
-      //   console.log(data);
-      await deleteBooking(id);
-      message.success("Booking Delete successfully");
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+
+      const result: any = await deleteBooking(id);
+
+      if (result?.data) {
+        message.success("Booking Delete successfully!");
+      } else {
+        message.error("Booking Delete failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
