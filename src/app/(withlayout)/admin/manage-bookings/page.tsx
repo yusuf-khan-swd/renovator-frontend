@@ -161,6 +161,7 @@ const ManageBookingPage = () => {
                   this booking
                 </p>
               }
+              content={<ConfirmModalBookingContent data={data} />}
               button
               buttonName="Accept"
               buttonType="primary"
@@ -170,7 +171,6 @@ const ManageBookingPage = () => {
                   ? true
                   : false
               }
-              content={<ConfirmModalBookingContent data={data} />}
             />
             <ConfirmModal
               id={data?.id}
