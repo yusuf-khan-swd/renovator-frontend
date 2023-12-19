@@ -31,8 +31,11 @@ const EditServicePage = ({ params }: any) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
+
       data.id = id;
+
       const result: any = await updateBooking(data);
+
       if (result?.data) {
         message.success("Booking updated successfully");
       } else {
