@@ -39,6 +39,8 @@ const EditServicePage = ({ params }: any) => {
 
       data.id = id;
 
+      delete data?.userEmail;
+
       const result: any = await updateBooking(data);
 
       if (result?.data) {
