@@ -22,12 +22,6 @@ const EditServicePage = ({ params }: any) => {
   const { data: booking, isLoading: isBookingDataLoading } =
     useBookingQuery(id);
 
-  // const { data: service, isLoading: isServiceDataLoading } = useServiceQuery(
-  //   booking?.serviceId
-  // );
-
-  console.log(booking);
-
   const service = booking?.service;
   const user = booking?.user;
 
@@ -107,13 +101,7 @@ const EditServicePage = ({ params }: any) => {
           </Card>
         )}
 
-        <div>
-          {isBookingDataLoading ? (
-            <FullScreenLoading />
-          ) : (
-            <ServiceDetailsCard service={service} />
-          )}
-        </div>
+        <ServiceDetailsCard service={service} />
       </div>
     </div>
   );
