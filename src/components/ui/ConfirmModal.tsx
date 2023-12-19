@@ -31,6 +31,7 @@ const ConfirmModal = ({
       title: title || "Do you Want to remove this item?",
       icon: <ExclamationCircleFilled />,
       content: content || "Some descriptions",
+      okText: "Confirm",
       async onOk() {
         handler(id);
       },
