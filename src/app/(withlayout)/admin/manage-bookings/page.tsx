@@ -57,18 +57,23 @@ const ManageBookingPage = () => {
   const { data, isLoading } = useBookingsQuery(undefined);
 
   const handleRejectBooking = async (id: any) => {
-    const data = {
-      id: id,
-      status: ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT,
-    };
     try {
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT,
+      };
       message.loading("Rejecting.....");
-      console.log(data);
-      await updateBooking(data);
-      message.success("Booking rejected successfully");
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+
+      const result: any = await updateBooking(data);
+
+      if (result?.data) {
+        message.success("Booking rejected successfully");
+      } else {
+        message.error("Booking rejected failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
