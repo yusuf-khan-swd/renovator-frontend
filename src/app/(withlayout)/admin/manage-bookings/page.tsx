@@ -78,18 +78,24 @@ const ManageBookingPage = () => {
   };
 
   const handleConfirmBooking = async (id: any) => {
-    const data = {
-      id: id,
-      status: ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT,
-    };
     try {
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT,
+      };
+
       message.loading("Confirming.....");
-      console.log(data);
-      await updateBooking(data);
-      message.success("Booking confirmed successfully");
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+
+      const result: any = await updateBooking(data);
+
+      if (result?.data) {
+        message.success("Booking confirmed successfully!");
+      } else {
+        message.error("Booking confirmed failed!");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
