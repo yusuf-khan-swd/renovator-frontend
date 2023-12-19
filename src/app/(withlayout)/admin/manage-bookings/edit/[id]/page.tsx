@@ -14,7 +14,6 @@ import {
   useBookingQuery,
   useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
-import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -23,12 +22,13 @@ const EditServicePage = ({ params }: any) => {
   const { data: booking, isLoading: isBookingDataLoading } =
     useBookingQuery(id);
 
-  const { data: service, isLoading: isServiceDataLoading } = useServiceQuery(
-    booking?.serviceId
-  );
+  // const { data: service, isLoading: isServiceDataLoading } = useServiceQuery(
+  //   booking?.serviceId
+  // );
 
   console.log(booking);
 
+  const service = booking?.service;
   const user = booking?.user;
 
   const [updateBooking] = useUpdateBookingMutation();
@@ -108,7 +108,7 @@ const EditServicePage = ({ params }: any) => {
         )}
 
         <div>
-          {isBookingDataLoading || isServiceDataLoading ? (
+          {isBookingDataLoading ? (
             <FullScreenLoading />
           ) : (
             <ServiceDetailsCard service={service} />
