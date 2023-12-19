@@ -70,11 +70,11 @@ const EditServicePage = ({ params }: any) => {
           <FullScreenLoading />
         ) : (
           <Card>
-            <h1>Update Booking</h1>
+            <h2>Update Booking Information</h2>
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormDatePicker name="date" />
+                  <FormDatePicker name="date" label="Booking Date" />
                 </Col>
               </Row>
 
