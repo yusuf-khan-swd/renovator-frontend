@@ -67,10 +67,10 @@ const EditServicePage = ({ params }: any) => {
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
-      <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
-        {isBookingDataLoading ? (
-          <FullScreenLoading />
-        ) : (
+      {isBookingDataLoading ? (
+        <FullScreenLoading />
+      ) : (
+        <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
           <Card>
             <h2>Update Booking Information</h2>
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
@@ -99,10 +99,10 @@ const EditServicePage = ({ params }: any) => {
               </Button>
             </Form>
           </Card>
-        )}
 
-        <ServiceDetailsCard service={service} />
-      </div>
+          <ServiceDetailsCard service={service} />
+        </div>
+      )}
     </div>
   );
 };
