@@ -8,7 +8,7 @@ const { confirm } = Modal;
 interface IConfirmModelProps {
   id: string;
   handler: (id: string) => void;
-  title?: string;
+  title?: React.ReactNode;
   content?: React.ReactNode;
   button?: boolean;
   buttonName?: string;
