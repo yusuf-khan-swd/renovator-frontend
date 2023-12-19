@@ -1,6 +1,10 @@
 import dayjs from "dayjs";
 
-const ConfirmModalBookingContent = ({ data }: { data: any }) => {
+interface IBookingProps {
+  data: any;
+}
+
+const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
