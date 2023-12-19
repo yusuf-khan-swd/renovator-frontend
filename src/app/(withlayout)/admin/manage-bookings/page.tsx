@@ -155,7 +155,12 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleConfirmBooking}
-              title="Do you want to accept this booking"
+              title={
+                <p>
+                  Do you want to <span style={{ color: "green" }}>ACCEPT</span>{" "}
+                  this booking
+                </p>
+              }
               button
               buttonName="Accept"
               buttonType="primary"
