@@ -2,6 +2,7 @@
 
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
+import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
@@ -25,6 +26,10 @@ const EditServicePage = ({ params }: any) => {
   const { data: service, isLoading: isServiceDataLoading } = useServiceQuery(
     booking?.serviceId
   );
+
+  console.log(booking);
+
+  const user = booking?.user;
 
   const [updateBooking] = useUpdateBookingMutation();
 
@@ -50,6 +55,7 @@ const EditServicePage = ({ params }: any) => {
   const defaultValues = {
     date: booking?.date || "",
     status: booking?.status || "",
+    userEmail: user?.email || "",
   };
 
   const { role } = getUserInfo() as any;
@@ -72,6 +78,11 @@ const EditServicePage = ({ params }: any) => {
           <Card>
             <h2>Update Booking Information</h2>
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormInput name="userEmail" label="User Email" readOnly />
+                </Col>
+              </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
                   <FormDatePicker name="date" label="Booking Date" />
