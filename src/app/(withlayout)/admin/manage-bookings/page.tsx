@@ -175,7 +175,13 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleRejectBooking}
-              title="Do you want to reject this booking"
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>REJECT</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
               button
               buttonName="Reject"
               buttonType="default"
