@@ -5,6 +5,14 @@ interface IBookingProps {
 }
 
 const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
+  const statusColor = `${
+    data?.status === "accepted"
+      ? "green"
+      : data?.status === "pending"
+      ? "blue"
+      : "red"
+  }`;
+
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
@@ -19,12 +27,7 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
       </p>
       <p>
         Current Status:{" "}
-        <span
-          style={{
-            fontWeight: "bold",
-            color: `${data?.status === "accepted" ? "green" : "red"}`,
-          }}
-        >
+        <span style={{ fontWeight: "bold", color: statusColor }}>
           {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
         </span>
       </p>
