@@ -1,7 +1,7 @@
 export enum ENUM_BOOKING_STATUS {
+  ACCEPT = "accepted",
   PENDING = "pending",
   CANCEL = "canceled",
-  ACCEPT = "accepted",
   REJECT = "rejected",
 }
 
