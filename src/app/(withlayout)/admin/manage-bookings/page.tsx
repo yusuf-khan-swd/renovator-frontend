@@ -144,7 +144,15 @@ const ManageBookingPage = () => {
       title: "Status",
       dataIndex: "status",
       render: function (data: string) {
-        return data.charAt(0).toUpperCase() + data.slice(1);
+        const statusColor = `${
+          data === "accepted" ? "green" : data === "pending" ? "blue" : "red"
+        }`;
+
+        return (
+          <p style={{ color: statusColor }}>
+            {data.charAt(0).toUpperCase() + data.slice(1)}
+          </p>
+        );
       },
     },
 
