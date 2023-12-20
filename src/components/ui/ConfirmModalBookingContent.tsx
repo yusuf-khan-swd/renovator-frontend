@@ -1,3 +1,4 @@
+import { ENUM_BOOKING_STATUS } from "@/constants/bookingStatus";
 import dayjs from "dayjs";
 
 interface IBookingProps {
@@ -6,9 +7,9 @@ interface IBookingProps {
 
 const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
   const statusColor = `${
-    data?.status === "accepted"
+    data === ENUM_BOOKING_STATUS.ACCEPT
       ? "green"
-      : data?.status === "pending"
+      : data === ENUM_BOOKING_STATUS.PENDING
       ? "blue"
       : "red"
   }`;

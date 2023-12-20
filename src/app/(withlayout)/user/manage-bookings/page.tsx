@@ -5,6 +5,7 @@ import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalBookingContent from "@/components/ui/ConfirmModalBookingContent";
 import {
+  ENUM_BOOKING_STATUS,
   ENUM_BOOKING_STATUS_FOR_ADMIN,
   ENUM_BOOKING_STATUS_FOR_USER,
 } from "@/constants/bookingStatus";
@@ -142,7 +143,11 @@ const ManageBookingPage = () => {
       dataIndex: "status",
       render: function (data: string) {
         const statusColor = `${
-          data === "accepted" ? "green" : data === "pending" ? "blue" : "red"
+          data === ENUM_BOOKING_STATUS.ACCEPT
+            ? "green"
+            : data === ENUM_BOOKING_STATUS.PENDING
+            ? "blue"
+            : "red"
         }`;
 
         return (
