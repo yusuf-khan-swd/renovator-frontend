@@ -70,7 +70,7 @@ const ManageBookingPage = () => {
       }
     } catch (err: any) {
       console.error(err);
-      message.error(err.message);
+      message.error(err?.message);
     }
   };
 
@@ -92,7 +92,7 @@ const ManageBookingPage = () => {
       }
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
