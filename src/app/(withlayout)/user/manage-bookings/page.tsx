@@ -176,7 +176,13 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleCancelBooking}
-              title="Do you want to cancel this booking"
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Cancel</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
               button
               buttonType="default"
               disabled={
