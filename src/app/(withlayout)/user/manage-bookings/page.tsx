@@ -53,40 +53,46 @@ const ManageBookingPage = () => {
   const { data, isLoading } = useBookingsQuery(undefined);
 
   const handleCancelBooking = async (id: any) => {
-    const data = {
-      id: id,
-      status: ENUM_BOOKING_STATUS_FOR_USER.CANCEL,
-    };
     try {
       message.loading("Cancelling.....");
+
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_USER.CANCEL,
+      };
+
       const result: any = await updateBooking(data);
+
       if (result?.data) {
         message.success("Booking Cancelled Successful!");
       } else {
         message.error("Booking Cancelled Failed!");
       }
     } catch (err: any) {
-      //   console.error(err.message);
+      console.error(err);
       message.error(err.message);
     }
   };
 
   const handleRequestBooking = async (id: any) => {
-    const data = {
-      id: id,
-      status: ENUM_BOOKING_STATUS_FOR_USER.PENDING,
-    };
     try {
       message.loading("Requesting.....");
+
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_USER.PENDING,
+      };
+
       const result: any = await updateBooking(data);
+
       if (result?.data) {
         message.success("Booking Requested Successful!");
       } else {
         message.error("Booking Requested Failed!");
       }
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
