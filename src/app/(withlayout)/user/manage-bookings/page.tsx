@@ -137,7 +137,6 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return data.email;
       },
-      sorter: true,
     },
     {
       title: "CreatedAt",
@@ -145,7 +144,6 @@ const ManageBookingPage = () => {
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
       },
-      sorter: true,
     },
     {
       title: "Action",
