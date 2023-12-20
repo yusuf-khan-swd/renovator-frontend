@@ -197,8 +197,13 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this booking?"
-              content={`Delete this booking!`}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
             />
           </>
         );
