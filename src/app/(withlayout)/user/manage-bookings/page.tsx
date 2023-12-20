@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalBookingContent from "@/components/ui/ConfirmModalBookingContent";
 import {
   ENUM_BOOKING_STATUS_FOR_ADMIN,
   ENUM_BOOKING_STATUS_FOR_USER,
@@ -154,7 +155,13 @@ const ManageBookingPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={handleRequestBooking}
-              title="Do you want to request this booking"
+              title={
+                <p>
+                  Do you want to <span style={{ color: "green" }}>Request</span>{" "}
+                  again this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
               button
               buttonName="Request"
               buttonType="primary"
