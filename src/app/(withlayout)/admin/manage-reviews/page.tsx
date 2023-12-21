@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalReviewContent from "@/components/ui/ConfirmModalReviewContent";
 import {
   useAdminReviewsQuery,
   useDeleteReviewMutation,
@@ -144,8 +145,13 @@ const ManageReviewPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this item from review?"
-              content={`Delete this item from review!`}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this review.
+                </p>
+              }
+              content={<ConfirmModalReviewContent data={data} />}
             />
           </>
         );
