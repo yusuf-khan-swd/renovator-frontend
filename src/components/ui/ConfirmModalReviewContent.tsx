@@ -4,6 +4,8 @@ interface IReviewProps {
   data: any;
 }
 
+// TODO: In user data remove password, only send user name, email and id,
+
 const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
   console.log(data);
 

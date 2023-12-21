@@ -23,6 +23,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO: In user data remove password, only send user name, email and id. Also check content component
+
 const ManageBookingPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
@@ -53,6 +55,8 @@ const ManageBookingPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useBookingsQuery(undefined);
+
+  console.log(data);
 
   const handleRejectBooking = async (id: any) => {
     try {
