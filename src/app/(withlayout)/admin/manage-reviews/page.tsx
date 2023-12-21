@@ -17,7 +17,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-// TODO: In user data remove password, only send user name, email and id,
 // TODO: Update confirm delete modal content in admin and user
 
 const ManageReviewPage = () => {
@@ -48,8 +47,6 @@ const ManageReviewPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useAdminReviewsQuery(undefined);
-
-  console.log(data);
 
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
