@@ -150,10 +150,18 @@ const ManageBookingPage = () => {
             : "red"
         }`;
 
+        const style = {
+          backgroundColor: statusColor,
+          color: "white",
+          padding: "2px 4px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "4px",
+        };
+
         return (
-          <p style={{ color: statusColor }}>
-            {data.charAt(0).toUpperCase() + data.slice(1)}
-          </p>
+          <p style={style}>{data.charAt(0).toUpperCase() + data.slice(1)}</p>
         );
       },
     },
