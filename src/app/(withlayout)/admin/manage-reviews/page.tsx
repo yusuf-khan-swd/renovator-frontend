@@ -120,9 +120,7 @@ const ManageReviewPage = () => {
           <>
             <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
               <Button
-                style={{
-                  margin: "0px 5px",
-                }}
+                style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
                 type="primary"
               >
@@ -132,9 +130,7 @@ const ManageReviewPage = () => {
 
             <Link href={`/${role}/manage-reviews/edit/${data?.id}`}>
               <Button
-                style={{
-                  margin: "0px 5px",
-                }}
+                style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
                 type="primary"
               >
