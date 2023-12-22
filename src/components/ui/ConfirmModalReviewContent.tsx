@@ -18,11 +18,13 @@ const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        User Email:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.user?.email}</span>
+        Name: <span style={{ fontWeight: "bold" }}>{data?.user?.name}</span>
       </p>
       <p>
-        Current Status:{" "}
+        Email: <span style={{ fontWeight: "bold" }}>{data?.user?.email}</span>
+      </p>
+      <p>
+        Service Status:{" "}
         <span style={{ fontWeight: "bold", color: statusColor }}>
           {data?.service?.status?.charAt(0)?.toUpperCase() +
             data?.service?.status?.slice(1)}
