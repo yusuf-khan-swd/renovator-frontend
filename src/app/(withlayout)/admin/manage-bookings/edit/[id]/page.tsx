@@ -33,6 +33,7 @@ const EditServicePage = ({ params }: any) => {
 
       data.id = id;
 
+      delete data?.userName;
       delete data?.userEmail;
 
       const result: any = await updateBooking(data);
@@ -51,6 +52,7 @@ const EditServicePage = ({ params }: any) => {
   const defaultValues = {
     date: booking?.date || "",
     status: booking?.status || "",
+    userName: user?.name || "",
     userEmail: user?.email || "",
   };
 
@@ -74,6 +76,11 @@ const EditServicePage = ({ params }: any) => {
           <Card>
             <h2>Update Booking Information</h2>
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormInput name="userName" label="User Name" readOnly />
+                </Col>
+              </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
                   <FormInput name="userEmail" label="User Email" readOnly />
