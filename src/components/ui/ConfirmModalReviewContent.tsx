@@ -4,8 +4,6 @@ interface IReviewProps {
   data: any;
 }
 
-// TODO: Update content
-
 const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
   const statusColor = `${
     data?.service?.status === ENUM_SERVICE_STATUS.AVAILABLE
