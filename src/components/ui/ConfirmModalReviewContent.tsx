@@ -36,6 +36,12 @@ const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
         Service Price:{" "}
         <span style={{ fontWeight: "bold" }}>${data?.service?.price}</span>
       </p>
+      <p>
+        Rating: <span style={{ fontWeight: "bold" }}>{data?.rating}</span>
+      </p>
+      <p>
+        Review: <span style={{ fontWeight: "bold" }}>{data?.review}</span>
+      </p>
     </div>
   );
 };
