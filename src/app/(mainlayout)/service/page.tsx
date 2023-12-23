@@ -15,7 +15,6 @@ import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Select } from "antd";
 import { useState } from "react";
-import { Controller } from "react-hook-form";
 
 // TODO: Show service by category select field
 // TODO: Use raw form on onChange to get category id
@@ -32,6 +31,8 @@ const ServicePage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
+
+  const [category, setCategory] = useState<any>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -89,6 +90,8 @@ const ServicePage = () => {
   const onSubmit = (data: any) => {
     console.log(data);
   };
+
+  console.log(category);
 
   return isLoading ? (
     <FullScreenLoading />
@@ -148,25 +151,17 @@ const ServicePage = () => {
         />
       </div>
 
-      <Form submitHandler={onSubmit}>
-        {categoryIsLoading ? (
-          <CenterLoading />
-        ) : (
-          <Controller
-            name={"category"}
-            render={({ field: { value, onChange } }) => (
-              <Select
-                onChange={onChange}
-                size={"large"}
-                options={categoryOptions as SelectOptions[]}
-                value={value}
-                style={{ width: "100%" }}
-                placeholder={"Select"}
-              />
-            )}
-          />
-        )}
-      </Form>
+      {categoryIsLoading ? (
+        <CenterLoading />
+      ) : (
+        <Select
+          onChange={setCategory}
+          size={"large"}
+          options={categoryOptions as SelectOptions[]}
+          style={{ width: "100%" }}
+          placeholder={"Select"}
+        />
+      )}
 
       <Form submitHandler={onSubmit}>
         {categoryIsLoading ? (
