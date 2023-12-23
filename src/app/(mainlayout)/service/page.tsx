@@ -76,7 +76,6 @@ const ServicePage = () => {
   const { data: categories, isLoading: categoryIsLoading } =
     useCategoriesQuery(undefined);
   const categoryOptions = categories?.map((category: any) => {
-    console.log(category?.id);
     return {
       label: category?.title,
       value: category?.id,
