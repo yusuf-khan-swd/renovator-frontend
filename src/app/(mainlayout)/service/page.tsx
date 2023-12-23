@@ -1,10 +1,6 @@
 "use client";
 
-import CategoryField from "@/components/Forms/CategoryField";
-import Form from "@/components/Forms/Form";
-import FormSelectField, {
-  SelectOptions,
-} from "@/components/Forms/FormSelectField";
+import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
@@ -87,10 +83,6 @@ const ServicePage = () => {
     };
   });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
-
   console.log(category);
 
   return isLoading ? (
@@ -162,23 +154,6 @@ const ServicePage = () => {
           placeholder={"Select"}
         />
       )}
-
-      <Form submitHandler={onSubmit}>
-        {categoryIsLoading ? (
-          <CenterLoading />
-        ) : (
-          <FormSelectField
-            name="category"
-            label="Category"
-            options={categoryOptions as SelectOptions[]}
-          />
-        )}
-      </Form>
-
-      <Form submitHandler={onSubmit}>
-        <CategoryField name="category" />
-        <Button htmlType="submit">Submit</Button>
-      </Form>
 
       <Service services={services} />
     </div>
