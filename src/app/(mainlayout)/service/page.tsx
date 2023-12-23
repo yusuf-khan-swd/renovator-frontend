@@ -2,9 +2,14 @@
 
 import CategoryField from "@/components/Forms/CategoryField";
 import Form from "@/components/Forms/Form";
+import FormSelectField, {
+  SelectOptions,
+} from "@/components/Forms/FormSelectField";
+import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
 import Service from "@/components/ui/Service";
+import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
@@ -68,6 +73,16 @@ const ServicePage = () => {
     setMaxPrice("");
   };
 
+  const { data: categories, isLoading: categoryIsLoading } =
+    useCategoriesQuery(undefined);
+  const categoryOptions = categories?.map((category: any) => {
+    console.log(category?.id);
+    return {
+      label: category?.title,
+      value: category?.id,
+    };
+  });
+
   const onSubmit = (data: any) => {
     console.log(data);
   };
@@ -129,6 +144,18 @@ const ServicePage = () => {
           }}
         />
       </div>
+
+      <Form submitHandler={onSubmit}>
+        {categoryIsLoading ? (
+          <CenterLoading />
+        ) : (
+          <FormSelectField
+            name="category"
+            label="Category"
+            options={categoryOptions as SelectOptions[]}
+          />
+        )}
+      </Form>
 
       <Form submitHandler={onSubmit}>
         <CategoryField name="category" />
