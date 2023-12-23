@@ -17,6 +17,7 @@ import { Button, Input } from "antd";
 import { useState } from "react";
 
 // TODO: Show service by category select field
+// TODO: Use raw form on onChange to get category id
 
 const ServicePage = () => {
   const query: Record<string, any> = {};
