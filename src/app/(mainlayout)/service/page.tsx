@@ -5,7 +5,7 @@ import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
 import Service from "@/components/ui/Service";
-import { useCategoriesQuery } from "@/redux/api/categoryApi";
+import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
@@ -84,6 +84,11 @@ const ServicePage = () => {
   });
 
   console.log(category);
+
+  const { data: categoryServices, isLoading: categoryServiceIsLoading } =
+    useCategoryQuery(category);
+
+  console.log(categoryServices);
 
   return isLoading ? (
     <FullScreenLoading />
