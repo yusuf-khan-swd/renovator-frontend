@@ -1,5 +1,7 @@
 "use client";
 
+import CategoryField from "@/components/Forms/CategoryField";
+import Form from "@/components/Forms/Form";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
 import Service from "@/components/ui/Service";
@@ -66,6 +68,10 @@ const ServicePage = () => {
     setMaxPrice("");
   };
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return isLoading ? (
     <FullScreenLoading />
   ) : (
@@ -123,6 +129,11 @@ const ServicePage = () => {
           }}
         />
       </div>
+
+      <Form submitHandler={onSubmit}>
+        <CategoryField name="category" />
+        <Button htmlType="submit">Submit</Button>
+      </Form>
 
       <Service services={services} />
     </div>
