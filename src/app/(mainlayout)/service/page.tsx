@@ -13,8 +13,9 @@ import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Input, Select } from "antd";
 import { useState } from "react";
+import { Controller } from "react-hook-form";
 
 // TODO: Show service by category select field
 // TODO: Use raw form on onChange to get category id
@@ -146,6 +147,26 @@ const ServicePage = () => {
           }}
         />
       </div>
+
+      <Form submitHandler={onSubmit}>
+        {categoryIsLoading ? (
+          <CenterLoading />
+        ) : (
+          <Controller
+            name={"category"}
+            render={({ field: { value, onChange } }) => (
+              <Select
+                onChange={onChange}
+                size={"large"}
+                options={categoryOptions as SelectOptions[]}
+                value={value}
+                style={{ width: "100%" }}
+                placeholder={"Select"}
+              />
+            )}
+          />
+        )}
+      </Form>
 
       <Form submitHandler={onSubmit}>
         {categoryIsLoading ? (
