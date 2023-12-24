@@ -83,6 +83,8 @@ const ServicePage = () => {
     };
   });
 
+  categoryOptions?.unshift({ label: "All", value: "all" });
+
   console.log(category);
 
   const { data: categoryServices, isLoading: categoryServiceIsLoading } =
