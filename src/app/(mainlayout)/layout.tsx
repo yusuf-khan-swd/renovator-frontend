@@ -17,6 +17,12 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <Footer style={{ textAlign: "center" }}>
         Renovator ©{year} Created by yusuf
         <div style={{ height: "160px" }}>
+          <a
+            href="https://github.com/yusuf-khan-swd/renovator-frontend"
+            target="_blank"
+          >
+            Link
+          </a>
           <Button></Button>
           <GithubOutlined title="Click to view Github Code" />
         </div>
