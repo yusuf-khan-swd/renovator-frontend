@@ -92,6 +92,8 @@ const ServicePage = () => {
 
   console.log(categoryServices);
 
+  const filterServices = categoryServices?.services;
+
   return isLoading ? (
     <FullScreenLoading />
   ) : (
@@ -163,6 +165,11 @@ const ServicePage = () => {
       )}
 
       {!categoryServices && <Service services={services} />}
+      {filterServices?.length > 0 ? (
+        <Service services={filterServices} />
+      ) : (
+        <h2>No Services available of this category</h2>
+      )}
     </div>
   );
 };
