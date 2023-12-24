@@ -166,7 +166,9 @@ const ServicePage = () => {
       {filterServices?.length > 0 ? (
         <Service services={filterServices} />
       ) : (
-        <h2>No Services available of this category</h2>
+        <h3 style={{ margin: "2px", textAlign: "center" }}>
+          No Services available on this category
+        </h3>
       )}
     </div>
   );
