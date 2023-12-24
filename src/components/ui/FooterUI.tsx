@@ -5,6 +5,10 @@ import { Footer } from "antd/es/layout/layout";
 const FooterUI = () => {
   const year = new Date().getFullYear();
 
+  const iconStyle = {
+    fontSize: "24px",
+  };
+
   return (
     <div>
       <Footer style={{ textAlign: "center" }}>
@@ -17,7 +21,7 @@ const FooterUI = () => {
             <Button size="large" type="link" style={{ color: "initial" }}>
               <GithubOutlined
                 title="Click to view Github Code"
-                style={{ fontSize: "24px" }}
+                style={iconStyle}
               />
             </Button>
           </a>
