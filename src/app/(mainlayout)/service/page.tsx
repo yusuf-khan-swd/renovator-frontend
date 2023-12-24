@@ -85,12 +85,8 @@ const ServicePage = () => {
 
   categoryOptions?.unshift({ label: "All", value: "all" });
 
-  console.log(categoryId);
-
   const { data: categoryServices, isLoading: categoryServiceIsLoading } =
     useCategoryQuery(categoryId);
-
-  console.log(categoryServices);
 
   const filterServices = categoryServices?.services;
 
@@ -152,17 +148,19 @@ const ServicePage = () => {
         />
       </div>
 
-      {categoryIsLoading ? (
-        <CenterLoading />
-      ) : (
-        <Select
-          onChange={setCategoryId}
-          size={"large"}
-          options={categoryOptions as SelectOptions[]}
-          style={{ width: "100%" }}
-          placeholder={"Select"}
-        />
-      )}
+      <div style={{ margin: "10px 0", minHeight: "40px" }}>
+        {categoryIsLoading ? (
+          <CenterLoading />
+        ) : (
+          <Select
+            onChange={setCategoryId}
+            size={"large"}
+            options={categoryOptions as SelectOptions[]}
+            style={{ width: "100%" }}
+            placeholder={"Select"}
+          />
+        )}
+      </div>
 
       {!categoryServices && <Service services={services} />}
       {filterServices?.length > 0 ? (
