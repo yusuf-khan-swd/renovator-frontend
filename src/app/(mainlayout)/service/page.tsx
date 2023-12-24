@@ -162,7 +162,7 @@ const ServicePage = () => {
         />
       )}
 
-      <Service services={services} />
+      {!categoryServices && <Service services={services} />}
     </div>
   );
 };
