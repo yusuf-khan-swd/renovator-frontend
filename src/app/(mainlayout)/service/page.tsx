@@ -28,7 +28,7 @@ const ServicePage = () => {
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
 
-  const [category, setCategory] = useState<any>();
+  const [categoryId, setCategoryId] = useState<any>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -85,10 +85,10 @@ const ServicePage = () => {
 
   categoryOptions?.unshift({ label: "All", value: "all" });
 
-  console.log(category);
+  console.log(categoryId);
 
   const { data: categoryServices, isLoading: categoryServiceIsLoading } =
-    useCategoryQuery(category);
+    useCategoryQuery(categoryId);
 
   console.log(categoryServices);
 
@@ -154,7 +154,7 @@ const ServicePage = () => {
         <CenterLoading />
       ) : (
         <Select
-          onChange={setCategory}
+          onChange={setCategoryId}
           size={"large"}
           options={categoryOptions as SelectOptions[]}
           style={{ width: "100%" }}
