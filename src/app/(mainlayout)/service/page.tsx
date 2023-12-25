@@ -9,7 +9,7 @@ import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, Select } from "antd";
+import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
 
 // TODO: Show service by category select field
@@ -121,30 +121,29 @@ const ServicePage = () => {
             )}
           </div>
         </ActionBar>
-        <div style={{ marginBottom: "15px" }}>
-          <Input
-            type="text"
-            size="large"
-            placeholder="Minimum Price"
-            onChange={(e) => {
-              setMinPrice(e.target.value);
-            }}
-            style={{
-              width: "20%",
-              marginRight: "5px",
-            }}
-          />
-          <Input
-            type="text"
-            size="large"
-            placeholder="Maximum price"
-            onChange={(e) => {
-              setMaxPrice(e.target.value);
-            }}
-            style={{
-              width: "20%",
-            }}
-          />
+        <div style={{ margin: "10px 0" }}>
+          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+            <Col span={8}>
+              <Input
+                type="text"
+                size="large"
+                placeholder="Minimum Price"
+                onChange={(e) => {
+                  setMinPrice(e.target.value);
+                }}
+              />
+            </Col>
+            <Col span={8}>
+              <Input
+                type="text"
+                size="large"
+                placeholder="Maximum price"
+                onChange={(e) => {
+                  setMaxPrice(e.target.value);
+                }}
+              />
+            </Col>
+          </Row>
         </div>
         <div style={{ margin: "10px 0", minHeight: "40px" }}>
           {categoryIsLoading ? (
