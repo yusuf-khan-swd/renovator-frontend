@@ -177,9 +177,11 @@ const ServicePage = () => {
             )}
           </>
         ) : (
-          <h3 style={{ margin: "2px", textAlign: "center" }}>
-            No Services available on this category
-          </h3>
+          filterServices?.length <= 0 && (
+            <h3 style={{ margin: "2px", textAlign: "center" }}>
+              No Services available on this category
+            </h3>
+          )
         )}
       </div>
     </div>
