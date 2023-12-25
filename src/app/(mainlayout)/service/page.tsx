@@ -90,85 +90,87 @@ const ServicePage = () => {
 
   const filterServices = categoryServices?.services;
 
-  return isLoading ? (
-    <FullScreenLoading />
-  ) : (
+  return (
     <div>
-      <ActionBar title="Service List">
-        <Input
-          type="text"
-          size="large"
-          placeholder="Service name..."
-          style={{
-            width: "20%",
-          }}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-          }}
-        />
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : (
         <div>
-          {(!!sortBy ||
-            !!sortOrder ||
-            !!searchTerm ||
-            !!minPrice ||
-            !!maxPrice) && (
-            <Button
-              onClick={resetFilters}
-              type="primary"
-              style={{ margin: "0px 5px" }}
-            >
-              <ReloadOutlined />
-            </Button>
+          <ActionBar title="Service List">
+            <Input
+              type="text"
+              size="large"
+              placeholder="Service name..."
+              style={{
+                width: "20%",
+              }}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
+            <div>
+              {(!!sortBy ||
+                !!sortOrder ||
+                !!searchTerm ||
+                !!minPrice ||
+                !!maxPrice) && (
+                <Button
+                  onClick={resetFilters}
+                  type="primary"
+                  style={{ margin: "0px 5px" }}
+                >
+                  <ReloadOutlined />
+                </Button>
+              )}
+            </div>
+          </ActionBar>
+          <div style={{ marginBottom: "15px" }}>
+            <Input
+              type="text"
+              size="large"
+              placeholder="Minimum Price"
+              onChange={(e) => {
+                setMinPrice(e.target.value);
+              }}
+              style={{
+                width: "20%",
+                marginRight: "5px",
+              }}
+            />
+            <Input
+              type="text"
+              size="large"
+              placeholder="Maximum price"
+              onChange={(e) => {
+                setMaxPrice(e.target.value);
+              }}
+              style={{
+                width: "20%",
+              }}
+            />
+          </div>
+          <div style={{ margin: "10px 0", minHeight: "40px" }}>
+            {categoryIsLoading ? (
+              <CenterLoading />
+            ) : (
+              <Select
+                onChange={setCategoryId}
+                size={"large"}
+                options={categoryOptions as SelectOptions[]}
+                style={{ width: "100%" }}
+                placeholder={"Select"}
+              />
+            )}
+          </div>
+          {!categoryServices && <Service services={services} />}
+          {filterServices?.length > 0 ? (
+            <Service services={filterServices} />
+          ) : (
+            <h3 style={{ margin: "2px", textAlign: "center" }}>
+              No Services available on this category
+            </h3>
           )}
         </div>
-      </ActionBar>
-      <div style={{ marginBottom: "15px" }}>
-        <Input
-          type="text"
-          size="large"
-          placeholder="Minimum Price"
-          onChange={(e) => {
-            setMinPrice(e.target.value);
-          }}
-          style={{
-            width: "20%",
-            marginRight: "5px",
-          }}
-        />
-        <Input
-          type="text"
-          size="large"
-          placeholder="Maximum price"
-          onChange={(e) => {
-            setMaxPrice(e.target.value);
-          }}
-          style={{
-            width: "20%",
-          }}
-        />
-      </div>
-
-      <div style={{ margin: "10px 0", minHeight: "40px" }}>
-        {categoryIsLoading ? (
-          <CenterLoading />
-        ) : (
-          <Select
-            onChange={setCategoryId}
-            size={"large"}
-            options={categoryOptions as SelectOptions[]}
-            style={{ width: "100%" }}
-            placeholder={"Select"}
-          />
-        )}
-      </div>
-
-      {!categoryServices && <Service services={services} />}
-      {filterServices?.length > 0 ? (
-        <Service services={filterServices} />
-      ) : (
-        <h3 style={{ margin: "2px", textAlign: "center" }}>
-          No Services available on this category
-        </h3>
       )}
     </div>
   );
