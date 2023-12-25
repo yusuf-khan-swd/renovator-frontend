@@ -97,6 +97,7 @@ const ServicePage = () => {
             type="text"
             size="large"
             placeholder="Service name..."
+            value={searchTerm}
             style={{
               width: "20%",
             }}
@@ -127,6 +128,7 @@ const ServicePage = () => {
                 type="text"
                 size="large"
                 placeholder="Minimum Price"
+                value={minPrice}
                 onChange={(e) => {
                   setMinPrice(e.target.value);
                 }}
@@ -137,6 +139,7 @@ const ServicePage = () => {
                 type="text"
                 size="large"
                 placeholder="Maximum price"
+                value={maxPrice}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
                 }}
