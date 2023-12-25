@@ -12,8 +12,6 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
 
-// TODO: Show service by category select field
-// TODO: Use raw form on onChange to get category id
 // TODO: Add sorting by price, name, location, status
 // TODO: Implement search by price, location, status and category name
 
