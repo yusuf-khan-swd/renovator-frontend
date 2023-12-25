@@ -182,6 +182,7 @@ const ManageServicePage = () => {
           type="text"
           size="large"
           placeholder="Service name..."
+          value={searchTerm}
           style={{
             width: "20%",
           }}
