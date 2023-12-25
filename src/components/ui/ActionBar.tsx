@@ -1,3 +1,5 @@
+import { Row } from "antd";
+
 type ActionBarProps = {
   title?: string;
   children?: React.ReactElement | React.ReactNode;
@@ -17,7 +19,9 @@ const ActionBar = ({ title, children, style }: ActionBarProps) => {
   return (
     <div>
       <h1 style={{ margin: "8px 0" }}>{title}</h1>
-      <div style={childrenStyle}>{children}</div>
+      <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }} style={childrenStyle}>
+        {children}
+      </Row>
     </div>
   );
 };
