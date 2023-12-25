@@ -27,7 +27,7 @@ const ServicePage = () => {
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
 
-  const [categoryId, setCategoryId] = useState<any>();
+  const [categoryId, setCategoryId] = useState<string>("");
 
   query["limit"] = size;
   query["page"] = page;
@@ -108,6 +108,7 @@ const ServicePage = () => {
           <div>
             {(!!sortBy ||
               !!sortOrder ||
+              !!categoryId ||
               !!searchTerm ||
               !!minPrice ||
               !!maxPrice) && (
@@ -147,7 +148,11 @@ const ServicePage = () => {
             </Col>
           </Row>
         </div>
-        <div style={{ margin: "10px 0", minHeight: "40px" }}>
+        <Row
+          align={"middle"}
+          justify={"center"}
+          style={{ margin: "10px 0", minHeight: "50px" }}
+        >
           {categoryIsLoading ? (
             <CenterLoading />
           ) : (
@@ -159,7 +164,7 @@ const ServicePage = () => {
               placeholder={"Select"}
             />
           )}
-        </div>
+        </Row>
         {!categoryServices && (
           <>
             {isLoading ? (
