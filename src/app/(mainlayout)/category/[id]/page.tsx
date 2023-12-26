@@ -1,6 +1,8 @@
+"use client";
+
 import { useCategoryQuery } from "@/redux/api/categoryApi";
 
-const CategoryServicesPage = ({ params }: { params: any }) => {
+const CategoryServicesPage = ({ params }: any) => {
   const id = params?.id;
 
   const { data, isLoading } = useCategoryQuery(id);
@@ -11,7 +13,7 @@ const CategoryServicesPage = ({ params }: { params: any }) => {
 
   console.log(services);
 
-  return <div>{id}</div>;
+  return <div>Category: {data?.title}</div>;
 };
 
 export default CategoryServicesPage;
