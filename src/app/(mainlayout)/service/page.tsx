@@ -90,8 +90,6 @@ const ServicePage = () => {
 
   const filterServices = categoryServices?.services;
 
-  console.log(categoryServices);
-
   return (
     <div>
       <div>
