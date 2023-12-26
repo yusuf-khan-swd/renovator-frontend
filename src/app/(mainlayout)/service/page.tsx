@@ -165,7 +165,7 @@ const ServicePage = () => {
               size={"large"}
               options={categoryOptions as SelectOptions[]}
               style={{ width: "100%" }}
-              placeholder={"Select"}
+              placeholder={"Select category"}
             />
           )}
         </Row>
