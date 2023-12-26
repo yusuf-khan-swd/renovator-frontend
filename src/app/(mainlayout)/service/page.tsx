@@ -14,7 +14,6 @@ import { useState } from "react";
 
 // TODO: Add sorting by price, name, location, status
 // TODO: Implement search by price, location, status and category name
-// TODO: When reload icon click try to remove value from input of search and prices
 
 const ServicePage = () => {
   const query: Record<string, any> = {};
