@@ -148,11 +148,7 @@ const ServicePage = () => {
             </Col>
           </Row>
         </div>
-        <Row
-          align={"middle"}
-          justify={"center"}
-          style={{ margin: "10px 0", minHeight: "50px" }}
-        >
+        <div style={{ margin: "10px 0" }}>
           {categoryIsLoading ? (
             <CenterLoading />
           ) : (
@@ -165,7 +161,7 @@ const ServicePage = () => {
               placeholder={"Select category"}
             />
           )}
-        </Row>
+        </div>
         {!categoryServices && (
           <>
             {isLoading ? (
