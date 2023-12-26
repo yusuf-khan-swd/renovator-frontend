@@ -27,7 +27,7 @@ const ServicePage = () => {
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
 
-  const [categoryId, setCategoryId] = useState<string>("");
+  const [categoryId, setCategoryId] = useState<string>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -71,6 +71,7 @@ const ServicePage = () => {
     setSearchTerm("");
     setMinPrice("");
     setMaxPrice("");
+    setCategoryId(undefined);
   };
 
   const { data: categories, isLoading: categoryIsLoading } =
@@ -88,6 +89,8 @@ const ServicePage = () => {
     useCategoryQuery(categoryId);
 
   const filterServices = categoryServices?.services;
+
+  console.log(categoryServices);
 
   return (
     <div>
@@ -158,6 +161,7 @@ const ServicePage = () => {
           ) : (
             <Select
               onChange={setCategoryId}
+              value={categoryId}
               size={"large"}
               options={categoryOptions as SelectOptions[]}
               style={{ width: "100%" }}
