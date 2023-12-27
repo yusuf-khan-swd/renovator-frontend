@@ -27,7 +27,7 @@ const HomePage = () => {
     <div>
       <Banner />
 
-      <div>
+      <div style={{ margin: "20px 0" }}>
         {categoryIsLoading ? (
           <CenterLoading />
         ) : (
