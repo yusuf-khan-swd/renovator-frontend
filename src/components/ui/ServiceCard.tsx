@@ -64,6 +64,7 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
             <Button
               disabled={detailsPage}
               onClick={() => handleViewCount(service?.id, 1)}
+              style={{ margin: "2px" }}
             >
               Details
             </Button>
@@ -72,13 +73,17 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
           <div>
             <Button
               onClick={() => handleAddToCart({ serviceId: service?.id })}
-              style={{ marginRight: "5px" }}
+              style={{ margin: "2px" }}
               disabled={!(role === ENUM_USER_ROLE.USER)}
             >
               Add to Cart
             </Button>
             <Link href={`/user/booking/${service?.id}`}>
-              <Button disabled={!(role === ENUM_USER_ROLE.USER)} type="primary">
+              <Button
+                disabled={!(role === ENUM_USER_ROLE.USER)}
+                type="primary"
+                style={{ margin: "2px" }}
+              >
                 Booking
               </Button>
             </Link>
