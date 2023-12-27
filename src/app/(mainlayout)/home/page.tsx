@@ -1,5 +1,6 @@
 "use client";
 
+import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import Banner from "@/components/ui/Banner";
 import Feedback from "@/components/ui/Feedback";
@@ -26,11 +27,17 @@ const HomePage = () => {
     <div>
       <Banner />
 
-      {categories?.map((category: any) => (
-        <Link key={category?.id} href={`/category/${category?.id}`}>
-          <Button>{category?.title}</Button>
-        </Link>
-      ))}
+      <div>
+        {categoryIsLoading ? (
+          <CenterLoading />
+        ) : (
+          categories?.map((category: any) => (
+            <Link key={category?.id} href={`/category/${category?.id}`}>
+              <Button>{category?.title}</Button>
+            </Link>
+          ))
+        )}
+      </div>
 
       <div style={{ display: "grid", gap: "40px" }}>
         <Card>
