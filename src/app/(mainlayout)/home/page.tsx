@@ -45,8 +45,8 @@ const HomePage = () => {
         )}
       </div>
 
-      <div style={{ display: "grid", gap: "40px" }}>
-        <Card>
+      <div>
+        <Card style={{ margin: "40px 0" }}>
           <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
           {isOngoingServicesLoading ? (
             <FullScreenLoading />
