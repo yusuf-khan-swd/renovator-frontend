@@ -10,7 +10,7 @@ import {
   useOngoingServiceQuery,
   useUpcomingServiceQuery,
 } from "@/redux/api/serviceApi";
-import { Button, Card } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import Link from "next/link";
 
 const HomePage = () => {
@@ -31,11 +31,17 @@ const HomePage = () => {
         {categoryIsLoading ? (
           <CenterLoading />
         ) : (
-          categories?.map((category: any) => (
-            <Link key={category?.id} href={`/category/${category?.id}`}>
-              <Button style={{ margin: "4px" }}>{category?.title}</Button>
-            </Link>
-          ))
+          <Row gutter={{ lg: 24 }} justify={"center"} align={"middle"}>
+            {categories?.map((category: any) => (
+              <Col xs={24} lg={8} key={category?.id}>
+                <Link href={`/category/${category?.id}`}>
+                  <Button style={{ margin: "4px", width: "100%" }}>
+                    {category?.title}
+                  </Button>
+                </Link>
+              </Col>
+            ))}
+          </Row>
         )}
       </div>
 
