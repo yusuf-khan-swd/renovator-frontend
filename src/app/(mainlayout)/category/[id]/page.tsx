@@ -18,8 +18,14 @@ const CategoryServicesPage = ({ params }: any) => {
         <FullScreenLoading />
       ) : (
         <Card>
-          <h3>Category: {data?.title}</h3>
-          <Service services={services} />
+          <h3 style={{ margin: "10px 0" }}>Category: {data?.title}</h3>
+          {services?.length > 0 ? (
+            <Service services={services} />
+          ) : (
+            <h3 style={{ margin: "2px", textAlign: "center" }}>
+              No Services available on this category
+            </h3>
+          )}
         </Card>
       )}
     </div>
