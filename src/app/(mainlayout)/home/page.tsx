@@ -33,7 +33,7 @@ const HomePage = () => {
         ) : (
           categories?.map((category: any) => (
             <Link key={category?.id} href={`/category/${category?.id}`}>
-              <Button>{category?.title}</Button>
+              <Button style={{ margin: "4px" }}>{category?.title}</Button>
             </Link>
           ))
         )}
