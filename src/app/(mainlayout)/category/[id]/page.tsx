@@ -13,7 +13,7 @@ const CategoryServicesPage = ({ params }: any) => {
   const services = data?.services;
 
   return (
-    <div>
+    <div style={{ margin: "10px 0" }}>
       {isLoading ? (
         <FullScreenLoading />
       ) : (
