@@ -31,7 +31,7 @@ const HomePage = () => {
         {categoryIsLoading ? (
           <CenterLoading />
         ) : (
-          <Row gutter={{ lg: 24 }} justify={"center"} align={"middle"}>
+          <Row gutter={{ lg: 24 }}>
             {categories?.map((category: any) => (
               <Col xs={24} lg={8} key={category?.id}>
                 <Link href={`/category/${category?.id}`}>
