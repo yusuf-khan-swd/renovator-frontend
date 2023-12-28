@@ -23,7 +23,7 @@ const MainNavbar = () => {
       >
         <Link href="/home">
           <Button type="link" style={{ fontSize: "25px", fontWeight: "bold" }}>
-            {websiteName}
+            {websiteName.toUpperCase()}
           </Button>
         </Link>
         <div className="navbar-items">
