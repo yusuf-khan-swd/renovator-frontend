@@ -23,7 +23,13 @@ const CategoryServicesPage = ({ params }: any) => {
     useCategoriesQuery(undefined);
   const categoryOptions = categories?.map((category: any) => {
     return {
-      label: <Link href={`/category/${category?.id}`}>{category?.title}</Link>,
+      label: (
+        <div style={{}}>
+          <Link style={{}} href={`/category/${category?.id}`}>
+            {category?.title}
+          </Link>
+        </div>
+      ),
       value: category?.id,
     };
   });
@@ -47,8 +53,11 @@ const CategoryServicesPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <Card>
-          <h3 style={{ margin: "10px 0" }}>Category: {data?.title}</h3>
+        <Card style={{ margin: "10px 0" }}>
+          <h3 style={{ margin: "10px 0", textAlign: "center" }}>
+            Category: {data?.title}
+          </h3>
+
           {services?.length > 0 ? (
             <Service services={services} />
           ) : (
