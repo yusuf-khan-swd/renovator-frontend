@@ -1,5 +1,6 @@
 import { Button, Layout, Row } from "antd";
 import Link from "next/link";
+import "./MainNavbar.css";
 import MainNavbarItems from "./MainNavbarItems";
 const { Header: AntHeader } = Layout;
 
@@ -23,7 +24,7 @@ const MainNavbar = () => {
             RENOVATOR
           </Button>
         </Link>
-        <div style={{}}>
+        <div className="navbar-items">
           <Link href="/home">
             <Button type="link">Home</Button>
           </Link>
