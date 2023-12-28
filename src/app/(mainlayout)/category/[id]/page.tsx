@@ -64,6 +64,22 @@ const CategoryServicesPage = ({ params }: any) => {
           )}
         </Card>
       )}
+      {filterServices?.length > 0 ? (
+        <>
+          {categoryServiceIsLoading ? (
+            <FullScreenLoading />
+          ) : (
+            <Service services={filterServices} />
+          )}
+        </>
+      ) : (
+        !services &&
+        filterServices?.length <= 0 && (
+          <h3 style={{ margin: "2px", textAlign: "center" }}>
+            No Services available on this category
+          </h3>
+        )
+      )}
     </div>
   );
 };
