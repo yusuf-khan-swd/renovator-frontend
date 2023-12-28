@@ -5,6 +5,8 @@ import MainNavbarItems from "./MainNavbarItems";
 const { Header: AntHeader } = Layout;
 
 const MainNavbar = () => {
+  const websiteName = "Renovator";
+
   return (
     <AntHeader
       style={{
@@ -21,7 +23,7 @@ const MainNavbar = () => {
       >
         <Link href="/home">
           <Button type="link" style={{ fontSize: "25px", fontWeight: "bold" }}>
-            RENOVATOR
+            {websiteName}
           </Button>
         </Link>
         <div className="navbar-items">
