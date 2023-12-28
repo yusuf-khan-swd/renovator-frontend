@@ -9,6 +9,8 @@ import { Card, Select } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO:
+
 const CategoryServicesPage = ({ params }: any) => {
   const id = params?.id;
   const [categoryId, setCategoryId] = useState<string>(id);
@@ -28,7 +30,7 @@ const CategoryServicesPage = ({ params }: any) => {
 
   return (
     <div style={{ margin: "10px 0" }}>
-      <div style={{ margin: "10px 0" }}>
+      <div style={{ margin: "10px 0 20px 0" }}>
         {categoryIsLoading ? (
           <CenterLoading />
         ) : (
