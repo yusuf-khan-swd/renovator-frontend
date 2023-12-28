@@ -9,6 +9,7 @@ const MainNavbar = () => {
 
   return (
     <AntHeader
+      id="ant-header"
       style={{
         background: "#fff",
       }}
