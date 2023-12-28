@@ -6,6 +6,7 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import Service from "@/components/ui/Service";
 import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { Card, Select } from "antd";
+import Link from "next/link";
 import { useState } from "react";
 
 const CategoryServicesPage = ({ params }: any) => {
@@ -20,19 +21,10 @@ const CategoryServicesPage = ({ params }: any) => {
     useCategoriesQuery(undefined);
   const categoryOptions = categories?.map((category: any) => {
     return {
-      label: category?.title,
+      label: <Link href={`/category/${category?.id}`}>{category?.title}</Link>,
       value: category?.id,
     };
   });
-
-  categoryOptions?.unshift({ label: "All", value: "all" });
-
-  const { data: categoryServices, isLoading: categoryServiceIsLoading } =
-    useCategoryQuery(categoryId);
-
-  console.log(categoryServices);
-
-  const filterServices = categoryServices?.services;
 
   return (
     <div style={{ margin: "10px 0" }}>
@@ -63,22 +55,6 @@ const CategoryServicesPage = ({ params }: any) => {
             </h3>
           )}
         </Card>
-      )}
-      {filterServices?.length > 0 ? (
-        <>
-          {categoryServiceIsLoading ? (
-            <FullScreenLoading />
-          ) : (
-            <Service services={filterServices} />
-          )}
-        </>
-      ) : (
-        !services &&
-        filterServices?.length <= 0 && (
-          <h3 style={{ margin: "2px", textAlign: "center" }}>
-            No Services available on this category
-          </h3>
-        )
       )}
     </div>
   );
