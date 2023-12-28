@@ -1,4 +1,5 @@
-import { Button, Layout, Row } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
 import "./MainNavbar.css";
 import MainNavbarItems from "./MainNavbarItems";
@@ -27,6 +28,25 @@ const MainNavbar = () => {
     </>
   );
 
+  const items: MenuProps["items"] = [
+    {
+      key: "0",
+      label: (
+        <Link href="/profile">
+          <Button type="link">Dashboard</Button>
+        </Link>
+      ),
+    },
+    {
+      key: "1",
+      label: (
+        <Button type="text" danger>
+          Logout
+        </Button>
+      ),
+    },
+  ];
+
   return (
     <AntHeader
       id="ant-header"
@@ -42,11 +62,31 @@ const MainNavbar = () => {
           width: "100%",
         }}
       >
-        <Link href="/home">
-          <Button type="link">
-            <span className="website-name">{websiteName.toUpperCase()}</span>
-          </Button>
-        </Link>
+        <Row justify="center" align="middle">
+          <div>
+            <Dropdown menu={{ items }}>
+              <Space wrap size={16}>
+                <Avatar icon={<UserOutlined />} />
+              </Space>
+            </Dropdown>
+          </div>
+
+          <div>
+            <Link href="/home">
+              <Button
+                type="link"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span className="website-name">
+                  {websiteName.toUpperCase()}
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </Row>
         <div className="navbar-items">{navbarItems}</div>
 
         <MainNavbarItems />
