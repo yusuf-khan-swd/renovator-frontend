@@ -7,6 +7,26 @@ const { Header: AntHeader } = Layout;
 const MainNavbar = () => {
   const websiteName = "Renovator";
 
+  const navbarItems = (
+    <>
+      <Link href="/home">
+        <Button type="link">Home</Button>
+      </Link>
+      <Link href="/service">
+        <Button type="link">Service</Button>
+      </Link>
+      <Link href="/blog">
+        <Button type="link">Blog</Button>
+      </Link>
+      <Link href="/faq">
+        <Button type="link">FAQ</Button>
+      </Link>
+      <Link href="/about">
+        <Button type="link">About Us</Button>
+      </Link>
+    </>
+  );
+
   return (
     <AntHeader
       id="ant-header"
@@ -27,23 +47,7 @@ const MainNavbar = () => {
             <span className="website-name">{websiteName.toUpperCase()}</span>
           </Button>
         </Link>
-        <div className="navbar-items">
-          <Link href="/home">
-            <Button type="link">Home</Button>
-          </Link>
-          <Link href="/service">
-            <Button type="link">Service</Button>
-          </Link>
-          <Link href="/blog">
-            <Button type="link">Blog</Button>
-          </Link>
-          <Link href="/faq">
-            <Button type="link">FAQ</Button>
-          </Link>
-          <Link href="/about">
-            <Button type="link">About Us</Button>
-          </Link>
-        </div>
+        <div className="navbar-items">{navbarItems}</div>
 
         <MainNavbarItems />
       </Row>
