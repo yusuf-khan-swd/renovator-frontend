@@ -87,7 +87,7 @@ const MainNavbar = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <div style={{ marginRight: "5px" }}>
+          <div className="drop-down" style={{ marginRight: "5px" }}>
             <Dropdown menu={{ items }}>
               <Space wrap size={16}>
                 <Avatar icon={<MenuOutlined />} />
