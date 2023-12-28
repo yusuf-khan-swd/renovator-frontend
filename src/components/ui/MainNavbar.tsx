@@ -1,4 +1,4 @@
-import { UserOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
 import "./MainNavbar.css";
@@ -32,8 +32,8 @@ const MainNavbar = () => {
     {
       key: "0",
       label: (
-        <Link href="/profile">
-          <Button type="link">Dashboard</Button>
+        <Link href="/home">
+          <Button type="link">Home</Button>
         </Link>
       ),
     },
@@ -66,7 +66,7 @@ const MainNavbar = () => {
           <div>
             <Dropdown menu={{ items }}>
               <Space wrap size={16}>
-                <Avatar icon={<UserOutlined />} />
+                <Avatar icon={<MenuOutlined />} />
               </Space>
             </Dropdown>
           </div>
