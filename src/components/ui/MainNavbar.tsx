@@ -40,9 +40,33 @@ const MainNavbar = () => {
     {
       key: "1",
       label: (
-        <Button type="text" danger>
-          Logout
-        </Button>
+        <Link href="/service">
+          <Button type="link">Service</Button>
+        </Link>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <Link href="/blog">
+          <Button type="link">Blog</Button>
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link href="/faq">
+          <Button type="link">FAQ</Button>
+        </Link>
+      ),
+    },
+    {
+      key: "4",
+      label: (
+        <Link href="/about">
+          <Button type="link">About Us</Button>
+        </Link>
       ),
     },
   ];
@@ -63,7 +87,7 @@ const MainNavbar = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <div>
+          <div style={{ marginRight: "5px" }}>
             <Dropdown menu={{ items }}>
               <Space wrap size={16}>
                 <Avatar icon={<MenuOutlined />} />
