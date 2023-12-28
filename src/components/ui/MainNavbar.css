@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+@media screen and (max-width: 575px) {
+  .website-name {
+    font-size: 19px;
+  }
+}
+
 @media screen and (max-width: 975px) {
   .navbar-items {
     display: none;
