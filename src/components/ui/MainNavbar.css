@@ -1,0 +1,5 @@
+@media screen and (max-width: 975px) {
+  .navbar-items {
+    display: none;
+  }
+}
