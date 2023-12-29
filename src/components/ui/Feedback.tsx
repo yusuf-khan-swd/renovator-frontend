@@ -36,6 +36,13 @@ const Feedback = () => {
     reset();
   };
 
+  const defaultValues = {
+    name: "",
+    email: "",
+    rating: "",
+    review: "",
+  };
+
   return (
     <div
       style={{
@@ -44,7 +51,11 @@ const Feedback = () => {
     >
       <Card>
         <ReviewAndRatingHeading heading="Please leave a comment" />
-        <Form submitHandler={onSubmit} resolver={yupResolver(feedbackSchema)}>
+        <Form
+          submitHandler={onSubmit}
+          resolver={yupResolver(feedbackSchema)}
+          defaultValues={defaultValues}
+        >
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col xs={24} md={16} lg={8} style={{ margin: "10px 0" }}>
               <FormInput name="name" label="Your Name" required />
