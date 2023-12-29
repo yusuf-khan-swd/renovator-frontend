@@ -70,14 +70,14 @@ const Feedback = () => {
               <FormTextArea name="review" label="Comment" rows={5} required />
             </Col>
           </Row>
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{ marginRight: "5px" }}
-          >
+          <Button type="primary" htmlType="submit" style={{ margin: "4px" }}>
             Submit Feedback
           </Button>
-          <Button type="default" onClick={handleClearForm}>
+          <Button
+            type="default"
+            onClick={handleClearForm}
+            style={{ margin: "4px" }}
+          >
             Clear Form
           </Button>
         </Form>
