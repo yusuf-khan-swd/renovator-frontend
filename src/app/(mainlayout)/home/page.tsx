@@ -67,7 +67,6 @@ const HomePage = () => {
           )}
         </Card>
       </div>
-      {/* TODO: Make feedback form input responsive */}
       <Feedback />
     </div>
   );
