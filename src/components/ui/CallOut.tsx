@@ -1,12 +1,8 @@
+import "./CallOut.css";
+
 const CallOut = () => {
   return (
-    <div
-      style={{
-        backgroundColor: "#3ca94e",
-        padding: "120px",
-        textAlign: "center",
-      }}
-    >
+    <div className="call-out">
       <h1 style={{ fontSize: "55px", color: "white", marginBottom: "10px" }}>
         Call: 1-888-000-8881
       </h1>
