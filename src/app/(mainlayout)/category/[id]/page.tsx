@@ -9,8 +9,6 @@ import { Card, Select } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 
-// TODO: Make category link full width
-
 const CategoryServicesPage = ({ params }: any) => {
   const id = params?.id;
   const [categoryId, setCategoryId] = useState<string>(id);
