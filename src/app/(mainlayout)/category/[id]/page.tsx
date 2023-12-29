@@ -24,8 +24,8 @@ const CategoryServicesPage = ({ params }: any) => {
   const categoryOptions = categories?.map((category: any) => {
     return {
       label: (
-        <div style={{}}>
-          <Link style={{}} href={`/category/${category?.id}`}>
+        <div style={{ display: "flex" }}>
+          <Link href={`/category/${category?.id}`} style={{ width: "100%" }}>
             {category?.title}
           </Link>
         </div>
