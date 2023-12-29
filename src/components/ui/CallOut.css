@@ -3,3 +3,9 @@
   padding: 120px;
   text-align: center;
 }
+
+@media screen and (max-width: 920px) {
+  .call-out {
+    padding: 80px;
+  }
+}
