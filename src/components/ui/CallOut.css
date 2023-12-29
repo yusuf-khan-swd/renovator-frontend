@@ -4,8 +4,18 @@
   text-align: center;
 }
 
+.call-out-heading {
+  font-size: 55px;
+  color: white;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 920px) {
   .call-out {
     padding: 80px;
+  }
+
+  .call-out-heading {
+    font-size: 28px;
   }
 }
