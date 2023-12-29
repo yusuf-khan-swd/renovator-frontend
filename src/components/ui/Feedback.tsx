@@ -21,7 +21,6 @@ const Feedback = () => {
       message.loading("Adding.....");
       data.rating = parseInt(data.rating);
       const result: any = await createFeedback(data);
-      // console.log(result);
       if (result?.data) {
         message.success("Thank you for your feedback");
       } else {
