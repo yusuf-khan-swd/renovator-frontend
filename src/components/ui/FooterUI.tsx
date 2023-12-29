@@ -12,7 +12,10 @@ const FooterUI = () => {
   return (
     <div>
       <Footer style={{ textAlign: "center" }}>
-        Renovator ©{year} Created by yusuf
+        Renovator ©{year} Develop by{" "}
+        <a href="https://github.com/yusuf-khan-swd" target="_blank">
+          Yusuf
+        </a>
         <div style={{ margin: "16px 0" }}>
           <a
             href="https://github.com/yusuf-khan-swd/renovator-frontend"
