@@ -157,7 +157,12 @@ const ServicePage = () => {
             <CenterLoading />
           ) : (
             <Select
-              onChange={setCategoryId}
+              onChange={(value) => {
+                setCategoryId(value);
+                setSearchTerm("");
+                setMinPrice("");
+                setMaxPrice("");
+              }}
               value={categoryId}
               size={"large"}
               options={categoryOptions as SelectOptions[]}
