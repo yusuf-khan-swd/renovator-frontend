@@ -6,6 +6,8 @@ type ActionBarProps = {
   style?: React.CSSProperties;
 };
 
+// TODO: If margin of 10px 4px are remove there is -12px -12px margin are added inline style
+
 const ActionBar = ({ title, children, style }: ActionBarProps) => {
   const baseChildrenStyle = {
     display: "flex",
