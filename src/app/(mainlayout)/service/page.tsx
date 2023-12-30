@@ -103,6 +103,7 @@ const ServicePage = () => {
             }}
             onChange={(e) => {
               setSearchTerm(e.target.value);
+              setCategoryId("all");
               setMinPrice("");
               setMaxPrice("");
             }}
@@ -135,6 +136,7 @@ const ServicePage = () => {
                 onChange={(e) => {
                   setMinPrice(e.target.value);
                   setSearchTerm("");
+                  setCategoryId("all");
                 }}
               />
             </Col>
@@ -147,6 +149,7 @@ const ServicePage = () => {
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
                   setSearchTerm("");
+                  setCategoryId("all");
                 }}
               />
             </Col>
