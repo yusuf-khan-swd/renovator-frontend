@@ -10,7 +10,7 @@ import {
   useOngoingServiceQuery,
   useUpcomingServiceQuery,
 } from "@/redux/api/serviceApi";
-import { Button, Card, Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import Link from "next/link";
 
 const HomePage = () => {
@@ -46,7 +46,7 @@ const HomePage = () => {
       </div>
 
       <div>
-        <Card style={{ margin: "40px 0" }}>
+        <div style={{ margin: "40px 0" }}>
           <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
           {isOngoingServicesLoading ? (
             <FullScreenLoading />
@@ -55,8 +55,8 @@ const HomePage = () => {
           ) : (
             <h3>No ongoing service available</h3>
           )}
-        </Card>
-        <Card>
+        </div>
+        <div>
           <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
           {isUpcomingServicesLoading ? (
             <FullScreenLoading />
@@ -65,7 +65,7 @@ const HomePage = () => {
           ) : (
             <h3>No upcoming service available</h3>
           )}
-        </Card>
+        </div>
       </div>
       <Feedback />
     </div>
