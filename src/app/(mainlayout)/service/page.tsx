@@ -103,6 +103,8 @@ const ServicePage = () => {
             }}
             onChange={(e) => {
               setSearchTerm(e.target.value);
+              setMinPrice("");
+              setMaxPrice("");
             }}
           />
           <div>
@@ -132,6 +134,7 @@ const ServicePage = () => {
                 value={minPrice}
                 onChange={(e) => {
                   setMinPrice(e.target.value);
+                  setSearchTerm("");
                 }}
               />
             </Col>
@@ -143,6 +146,7 @@ const ServicePage = () => {
                 value={maxPrice}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
+                  setSearchTerm("");
                 }}
               />
             </Col>
