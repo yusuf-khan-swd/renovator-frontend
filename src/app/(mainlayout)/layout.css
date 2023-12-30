@@ -1,8 +1,6 @@
-@media screen and (min-width: 575px) {
-  .main-layout {
-    padding: 20px 50px;
-    min-height: 100vh;
-  }
+.main-layout {
+  padding: 20px 50px;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 575px) {
