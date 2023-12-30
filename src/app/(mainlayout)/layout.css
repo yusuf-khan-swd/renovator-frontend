@@ -1,6 +1,6 @@
 .main-layout {
   padding: 20px 50px;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 @media screen and (max-width: 575px) {
