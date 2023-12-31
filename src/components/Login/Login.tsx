@@ -111,7 +111,14 @@ const LoginPage = () => {
           </div>
         </Col>
       </Row>
-      <div>
+      <div
+        style={{
+          margin: "20px 0",
+          display: "grid",
+          gap: "10px",
+          justifyContent: "center",
+        }}
+      >
         <div>
           <p>Admin Email: yusuf2@gmail.com</p>
           <p>Admin Password: 123456</p>
