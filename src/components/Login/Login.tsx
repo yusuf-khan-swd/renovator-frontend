@@ -47,69 +47,71 @@ const LoginPage = () => {
   };
 
   return (
-    <Row
-      justify="center"
-      align="middle"
-      style={{
-        minHeight: "100vh",
-        margin: "4px",
-      }}
-    >
-      <Col className="login-image" xl={10}>
-        <Image src={loginImage} width={500} alt="login image" />
-      </Col>
-      <Col xl={8}>
-        <Link href="/home">
-          <Button type="primary">
-            <HomeOutlined />
-            Go Back
-          </Button>
-        </Link>
-        <h1
-          style={{
-            margin: "15px 0px",
-          }}
-        >
-          First login your account
-        </h1>
-        <div>
-          <Form
-            submitHandler={onSubmit}
-            resolver={yupResolver(loginSchema)}
-            defaultValues={defaultValues}
-          >
-            <div>
-              <FormInput
-                name="email"
-                type="text"
-                size="large"
-                label="Email"
-                required
-              />
-            </div>
-            <div
-              style={{
-                margin: "15px 0px",
-              }}
-            >
-              <FormInput
-                name="password"
-                type="password"
-                size="large"
-                label="Password"
-                required
-              />
-            </div>
-            <Button type="primary" htmlType="submit">
-              Login
+    <div>
+      <Row
+        justify="center"
+        align="middle"
+        style={{
+          minHeight: "100vh",
+          margin: "4px",
+        }}
+      >
+        <Col className="login-image" xl={10}>
+          <Image src={loginImage} width={500} alt="login image" />
+        </Col>
+        <Col xl={8}>
+          <Link href="/home">
+            <Button type="primary">
+              <HomeOutlined />
+              Go Back
             </Button>
-          </Form>
-          <p style={{ margin: "8px 4px" }}>
-            New to website? <Link href="/signup">Signup</Link>
-          </p>
-        </div>
-      </Col>
-    </Row>
+          </Link>
+          <h1
+            style={{
+              margin: "15px 0px",
+            }}
+          >
+            First login your account
+          </h1>
+          <div>
+            <Form
+              submitHandler={onSubmit}
+              resolver={yupResolver(loginSchema)}
+              defaultValues={defaultValues}
+            >
+              <div>
+                <FormInput
+                  name="email"
+                  type="text"
+                  size="large"
+                  label="Email"
+                  required
+                />
+              </div>
+              <div
+                style={{
+                  margin: "15px 0px",
+                }}
+              >
+                <FormInput
+                  name="password"
+                  type="password"
+                  size="large"
+                  label="Password"
+                  required
+                />
+              </div>
+              <Button type="primary" htmlType="submit">
+                Login
+              </Button>
+            </Form>
+            <p style={{ margin: "8px 4px" }}>
+              New to website? <Link href="/signup">Signup</Link>
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
