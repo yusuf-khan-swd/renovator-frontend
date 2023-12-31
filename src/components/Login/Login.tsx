@@ -51,6 +51,8 @@ const LoginPage = () => {
       style={{
         minHeight: "100vh",
         margin: "4px",
+        display: "grid",
+        alignContent: "center",
       }}
     >
       <Row justify="center" align="middle">
