@@ -113,7 +113,7 @@ const LoginPage = () => {
 
         <div
           style={{
-            margin: "20px 0",
+            margin: "8px",
             display: "grid",
             gap: "10px",
             justifyContent: "center",
