@@ -10,6 +10,7 @@ import { Button, Col, Row, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 import loginImage from "../../assets/login-image.png";
 import "./login.css";
@@ -22,6 +23,8 @@ type FormValues = {
 const LoginPage = () => {
   const [userLogin] = useUserLoginMutation();
   const router = useRouter();
+  const [userEmail, setUserEmail] = useState("yusuf3@gmail.com");
+  const [userPassword, setUserPassword] = useState("123456");
 
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
@@ -122,6 +125,9 @@ const LoginPage = () => {
           <div>
             <p>Admin Email: yusuf2@gmail.com</p>
             <p>Admin Password: 123456</p>
+            <Button size="small" onClick={() => {}}>
+              click{" "}
+            </Button>
           </div>
           <div>
             <p>User Email: yusuf3@gmail.com</p>
