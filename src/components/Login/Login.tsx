@@ -54,10 +54,10 @@ const LoginPage = () => {
         minHeight: "100vh",
       }}
     >
-      <Col sm={12} md={16} lg={10}>
+      <Col md={12} lg={10}>
         <Image src={loginImage} width={500} alt="login image" />
       </Col>
-      <Col sm={12} md={8} lg={8}>
+      <Col md={12} lg={8}>
         <Link href="/home">
           <Button type="primary">
             <HomeOutlined />
