@@ -114,69 +114,71 @@ const LoginPage = () => {
           </div>
         </Col>
 
-        <div
-          style={{
-            margin: "8px",
-            display: "grid",
-            gap: "15px",
-            justifyContent: "center",
-          }}
-        >
-          <div>
-            <p>
-              User Email:{" "}
-              <span style={{ fontWeight: "bold" }}>yusuf3@gmail.com</span>
-            </p>
-            <p>
-              Password: <span style={{ fontWeight: "bold" }}>123456</span>
-            </p>
-            <Button
-              size="small"
-              onClick={() => {
-                setUserEmail("yusuf3@gmail.com");
-                setUserPassword("123456");
-              }}
-            >
-              click{" "}
-            </Button>
+        <Col sm={12} lg={4}>
+          <div
+            style={{
+              margin: "8px",
+              display: "grid",
+              gap: "15px",
+              justifyContent: "center",
+            }}
+          >
+            <div>
+              <p>
+                User Email:{" "}
+                <span style={{ fontWeight: "bold" }}>yusuf3@gmail.com</span>
+              </p>
+              <p>
+                Password: <span style={{ fontWeight: "bold" }}>123456</span>
+              </p>
+              <Button
+                size="small"
+                onClick={() => {
+                  setUserEmail("yusuf3@gmail.com");
+                  setUserPassword("123456");
+                }}
+              >
+                click{" "}
+              </Button>
+            </div>
+            <div>
+              <p>
+                Admin Email:{" "}
+                <span style={{ fontWeight: "bold" }}>yusuf2@gmail.com</span>
+              </p>
+              <p>
+                Password: <span style={{ fontWeight: "bold" }}>123456</span>
+              </p>
+              <Button
+                size="small"
+                onClick={() => {
+                  setUserEmail("yusuf2@gmail.com");
+                  setUserPassword("123456");
+                }}
+              >
+                click{" "}
+              </Button>
+            </div>
+            <div>
+              <p>
+                Super Admin Email:{" "}
+                <span style={{ fontWeight: "bold" }}>yusuf@gmail.com </span>
+              </p>
+              <p>
+                Password: <span style={{ fontWeight: "bold" }}>123456</span>
+              </p>
+              <Button
+                size="small"
+                onClick={() => {
+                  setUserEmail("yusuf@gmail.com");
+                  setUserPassword("123456");
+                }}
+              >
+                click{" "}
+              </Button>
+            </div>
           </div>
-          <div>
-            <p>
-              Admin Email:{" "}
-              <span style={{ fontWeight: "bold" }}>yusuf2@gmail.com</span>
-            </p>
-            <p>
-              Password: <span style={{ fontWeight: "bold" }}>123456</span>
-            </p>
-            <Button
-              size="small"
-              onClick={() => {
-                setUserEmail("yusuf2@gmail.com");
-                setUserPassword("123456");
-              }}
-            >
-              click{" "}
-            </Button>
-          </div>
-          <div>
-            <p>
-              Super Admin Email:{" "}
-              <span style={{ fontWeight: "bold" }}>yusuf@gmail.com </span>
-            </p>
-            <p>
-              Password: <span style={{ fontWeight: "bold" }}>123456</span>
-            </p>
-            <Button
-              size="small"
-              onClick={() => {
-                setUserEmail("yusuf@gmail.com");
-                setUserPassword("123456");
-              }}
-            >
-              click{" "}
-            </Button>
-          </div>
-        </div>
+        </Col>
       </Row>
     </div>
   );
