@@ -45,8 +45,8 @@ const LoginPage = () => {
   };
 
   const defaultValues = {
-    email: "yusuf3@gmail.com",
-    password: "123456",
+    email: userEmail,
+    password: userPassword,
   };
 
   return (
@@ -130,7 +130,13 @@ const LoginPage = () => {
             <p>
               Admin Password: <span style={{ fontWeight: "bold" }}>123456</span>
             </p>
-            <Button size="small" onClick={() => {}}>
+            <Button
+              size="small"
+              onClick={() => {
+                setUserEmail("yusuf2@gmail.com");
+                setUserPassword("123456");
+              }}
+            >
               click{" "}
             </Button>
           </div>
