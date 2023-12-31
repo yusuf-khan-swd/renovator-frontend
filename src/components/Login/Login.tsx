@@ -118,7 +118,7 @@ const LoginPage = () => {
           style={{
             margin: "8px",
             display: "grid",
-            gap: "10px",
+            gap: "15px",
             justifyContent: "center",
           }}
         >
@@ -128,7 +128,7 @@ const LoginPage = () => {
               <span style={{ fontWeight: "bold" }}>yusuf3@gmail.com</span>
             </p>
             <p>
-              User Password: <span style={{ fontWeight: "bold" }}>123456</span>
+              Password: <span style={{ fontWeight: "bold" }}>123456</span>
             </p>
             <Button
               size="small"
@@ -146,7 +146,7 @@ const LoginPage = () => {
               <span style={{ fontWeight: "bold" }}>yusuf2@gmail.com</span>
             </p>
             <p>
-              Admin Password: <span style={{ fontWeight: "bold" }}>123456</span>
+              Password: <span style={{ fontWeight: "bold" }}>123456</span>
             </p>
             <Button
               size="small"
@@ -164,8 +164,7 @@ const LoginPage = () => {
               <span style={{ fontWeight: "bold" }}>yusuf@gmail.com </span>
             </p>
             <p>
-              Super Admin Password:{" "}
-              <span style={{ fontWeight: "bold" }}>123456</span>
+              Password: <span style={{ fontWeight: "bold" }}>123456</span>
             </p>
             <Button
               size="small"
