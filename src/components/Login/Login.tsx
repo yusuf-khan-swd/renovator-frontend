@@ -111,9 +111,20 @@ const LoginPage = () => {
           </div>
         </Col>
       </Row>
-      Admin Email: yusuf2@gmail.com \ Admin Password: 123456 User Email:
-      yusuf3@gmail.com \ User Password: 123456 Super Admin Email:
-      yusuf@gmail.com \ Super Admin Password: 123456
+      <div>
+        <div>
+          <p>Admin Email: yusuf2@gmail.com</p>
+          <p>Admin Password: 123456</p>
+        </div>
+        <div>
+          <p>User Email: yusuf3@gmail.com</p>
+          <p>User Password: 123456</p>
+        </div>
+        <div>
+          <p>Super Admin Email: yusuf@gmail.com </p>
+          <p>Super Admin Password: 123456</p>
+        </div>
+      </div>
     </div>
   );
 };
