@@ -24,6 +24,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return <FullScreenLoading />;
   }
 
+  // TODO: Check Dashboard all of the input field responsive
+  // TODO: Table responsive with horizontal scroll
+
   return (
     <Layout
       style={{ minHeight: "100vh", maxWidth: "1600px", margin: "0 auto" }}
