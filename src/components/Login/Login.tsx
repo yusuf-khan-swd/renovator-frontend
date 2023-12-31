@@ -114,7 +114,7 @@ const LoginPage = () => {
           </div>
         </Col>
 
-        <Col sm={12} lg={4}>
+        <Col sm={12} lg={4} xl={6}>
           <div
             style={{
               margin: "8px",
