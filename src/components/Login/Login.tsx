@@ -35,8 +35,9 @@ const LoginPage = () => {
       } else {
         message.error("Logged in Failed!");
       }
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
