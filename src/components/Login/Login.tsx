@@ -123,19 +123,35 @@ const LoginPage = () => {
           }}
         >
           <div>
-            <p>Admin Email: yusuf2@gmail.com</p>
-            <p>Admin Password: 123456</p>
+            <p>
+              Admin Email:{" "}
+              <span style={{ fontWeight: "bold" }}>yusuf2@gmail.com</span>
+            </p>
+            <p>
+              Admin Password: <span style={{ fontWeight: "bold" }}>123456</span>
+            </p>
             <Button size="small" onClick={() => {}}>
               click{" "}
             </Button>
           </div>
           <div>
-            <p>User Email: yusuf3@gmail.com</p>
-            <p>User Password: 123456</p>
+            <p>
+              User Email:{" "}
+              <span style={{ fontWeight: "bold" }}>yusuf3@gmail.com</span>
+            </p>
+            <p>
+              User Password: <span style={{ fontWeight: "bold" }}>123456</span>
+            </p>
           </div>
           <div>
-            <p>Super Admin Email: yusuf@gmail.com </p>
-            <p>Super Admin Password: 123456</p>
+            <p>
+              Super Admin Email:{" "}
+              <span style={{ fontWeight: "bold" }}>yusuf@gmail.com </span>
+            </p>
+            <p>
+              Super Admin Password:{" "}
+              <span style={{ fontWeight: "bold" }}>123456</span>
+            </p>
           </div>
         </div>
       </Row>
