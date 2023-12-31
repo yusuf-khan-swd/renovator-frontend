@@ -50,7 +50,7 @@ const LoginPage = () => {
     <div
       style={{
         minHeight: "100vh",
-        margin: "4px",
+        margin: "8px",
         display: "grid",
         alignContent: "center",
       }}
