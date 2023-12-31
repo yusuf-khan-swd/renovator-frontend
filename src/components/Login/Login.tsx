@@ -47,15 +47,13 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <Row
-        justify="center"
-        align="middle"
-        style={{
-          minHeight: "100vh",
-          margin: "4px",
-        }}
-      >
+    <div
+      style={{
+        minHeight: "100vh",
+        margin: "4px",
+      }}
+    >
+      <Row justify="center" align="middle">
         <Col className="login-image" xl={10}>
           <Image src={loginImage} width={500} alt="login image" />
         </Col>
