@@ -57,11 +57,7 @@ const LoginPage = () => {
       }}
     >
       <Col className="login-image" lg={10}>
-        <Image
-          src={loginImage}
-          alt="login image"
-          style={{ objectFit: "contain", maxWidth: "100%" }}
-        />
+        <Image src={loginImage} width={500} alt="login image" />
       </Col>
       <Col lg={8}>
         <Link href="/home">
