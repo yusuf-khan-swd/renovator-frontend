@@ -110,28 +110,29 @@ const LoginPage = () => {
             </p>
           </div>
         </Col>
+
+        <div
+          style={{
+            margin: "20px 0",
+            display: "grid",
+            gap: "10px",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <p>Admin Email: yusuf2@gmail.com</p>
+            <p>Admin Password: 123456</p>
+          </div>
+          <div>
+            <p>User Email: yusuf3@gmail.com</p>
+            <p>User Password: 123456</p>
+          </div>
+          <div>
+            <p>Super Admin Email: yusuf@gmail.com </p>
+            <p>Super Admin Password: 123456</p>
+          </div>
+        </div>
       </Row>
-      <div
-        style={{
-          margin: "20px 0",
-          display: "grid",
-          gap: "10px",
-          justifyContent: "center",
-        }}
-      >
-        <div>
-          <p>Admin Email: yusuf2@gmail.com</p>
-          <p>Admin Password: 123456</p>
-        </div>
-        <div>
-          <p>User Email: yusuf3@gmail.com</p>
-          <p>User Password: 123456</p>
-        </div>
-        <div>
-          <p>Super Admin Email: yusuf@gmail.com </p>
-          <p>Super Admin Password: 123456</p>
-        </div>
-      </div>
     </div>
   );
 };
