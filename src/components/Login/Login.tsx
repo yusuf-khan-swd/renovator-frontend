@@ -55,10 +55,10 @@ const LoginPage = () => {
         margin: "4px",
       }}
     >
-      <Col className="login-image" lg={10}>
+      <Col className="login-image" xl={10}>
         <Image src={loginImage} width={500} alt="login image" />
       </Col>
-      <Col lg={8}>
+      <Col xl={8}>
         <Link href="/home">
           <Button type="primary">
             <HomeOutlined />
