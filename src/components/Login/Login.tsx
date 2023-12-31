@@ -56,14 +56,14 @@ const LoginPage = () => {
         margin: "4px",
       }}
     >
-      <Col className="login-image" sm={12} md={12} lg={10}>
+      <Col className="login-image" lg={10}>
         <Image
           src={loginImage}
           alt="login image"
           style={{ objectFit: "contain", maxWidth: "100%" }}
         />
       </Col>
-      <Col sm={12} md={12} lg={8}>
+      <Col lg={8}>
         <Link href="/home">
           <Button type="primary">
             <HomeOutlined />
