@@ -27,6 +27,7 @@ const ServicePage = () => {
   const [maxPrice, setMaxPrice] = useState<string>("");
 
   const [categoryId, setCategoryId] = useState<string>();
+  const [sorting, setSorting] = useState<string>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -88,6 +89,15 @@ const ServicePage = () => {
     useCategoryQuery(categoryId);
 
   const filterServices = categoryServices?.services;
+
+  const sortByOptions = [
+    { label: "Min - Max Price", value: "min_max" },
+    { label: "Max - Min Price", value: "max_min" },
+    { label: "Service Name Asc", value: "service_name_asc" },
+    { label: "Service Name Desc", value: "service_name_desc" },
+  ];
+
+  console.log(sorting);
 
   return (
     <div>
@@ -173,6 +183,22 @@ const ServicePage = () => {
               placeholder={"Select category"}
             />
           )}
+        </div>
+        <div style={{ margin: "10px 0" }}>
+          <Select
+            onChange={(value) => {
+              setSorting(value);
+              setCategoryId("all");
+              setSearchTerm("");
+              setMinPrice("");
+              setMaxPrice("");
+            }}
+            value={sorting}
+            size={"large"}
+            options={sortByOptions as SelectOptions[]}
+            style={{ width: "100%" }}
+            placeholder={"Select Sorting Order"}
+          />
         </div>
         {!categoryServices && (
           <>
