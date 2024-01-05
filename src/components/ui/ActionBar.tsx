@@ -13,7 +13,7 @@ const ActionBar = ({ title, children, style }: ActionBarProps) => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "10px 4px",
+    margin: "0px",
   };
 
   const childrenStyle = { ...baseChildrenStyle, ...style };
