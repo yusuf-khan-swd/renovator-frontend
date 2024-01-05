@@ -139,7 +139,7 @@ const ServicePage = () => {
         </ActionBar>
         <div style={{ margin: "10px 0" }}>
           <Row>
-            <Col xs={24} md={8} style={{ margin: "10px 0" }}>
+            <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
               <Input
                 type="text"
                 size="large"
