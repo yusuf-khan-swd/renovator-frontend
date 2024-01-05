@@ -107,7 +107,7 @@ const ServicePage = () => {
             <Input
               type="text"
               size="large"
-              placeholder="Service name..."
+              placeholder="Search..."
               value={searchTerm}
               style={{
                 width: "100%",
