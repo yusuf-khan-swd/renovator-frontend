@@ -103,21 +103,23 @@ const ServicePage = () => {
     <div>
       <div>
         <ActionBar title="Service List">
-          <Input
-            type="text"
-            size="large"
-            placeholder="Service name..."
-            value={searchTerm}
-            style={{
-              width: "20%",
-            }}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-              setCategoryId("all");
-              setMinPrice("");
-              setMaxPrice("");
-            }}
-          />
+          <Col span={8}>
+            <Input
+              type="text"
+              size="large"
+              placeholder="Service name..."
+              value={searchTerm}
+              style={{
+                width: "100%",
+              }}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCategoryId("all");
+                setMinPrice("");
+                setMaxPrice("");
+              }}
+            />
+          </Col>
           <div>
             {(!!sortBy ||
               !!sortOrder ||
