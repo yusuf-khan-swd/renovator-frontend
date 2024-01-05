@@ -138,7 +138,7 @@ const ServicePage = () => {
           </div>
         </ActionBar>
         <div style={{ margin: "10px 0" }}>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Row>
             <Col xs={24} md={8} style={{ margin: "10px 0" }}>
               <Input
                 type="text"
