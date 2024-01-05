@@ -103,7 +103,7 @@ const ServicePage = () => {
     <div>
       <div>
         <ActionBar title="Service List">
-          <Col span={8}>
+          <Col xs={16} md={8}>
             <Input
               type="text"
               size="large"
@@ -130,7 +130,7 @@ const ServicePage = () => {
               <Button
                 onClick={resetFilters}
                 type="primary"
-                style={{ margin: "0px 5px" }}
+                style={{ margin: "0", maxWidth: "100%" }}
               >
                 <ReloadOutlined />
               </Button>
@@ -139,7 +139,7 @@ const ServicePage = () => {
         </ActionBar>
         <div style={{ margin: "10px 0" }}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8}>
+            <Col xs={24} md={8} style={{ margin: "10px 0" }}>
               <Input
                 type="text"
                 size="large"
@@ -152,7 +152,7 @@ const ServicePage = () => {
                 }}
               />
             </Col>
-            <Col span={8}>
+            <Col xs={24} md={8} style={{ margin: "10px 0" }}>
               <Input
                 type="text"
                 size="large"
