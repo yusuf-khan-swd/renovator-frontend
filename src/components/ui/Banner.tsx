@@ -6,8 +6,26 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <Row>
-      <Col order={2} md={{ span: 12, order: 1 }}>
-        <Image src={bannerImage} alt="banner Image" style={{ width: "100%" }} />
+      <Col
+        order={2}
+        md={{ span: 12, order: 1 }}
+        style={{
+          maxWidth: "550px",
+          maxHeight: "550px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          src={bannerImage}
+          alt="banner Image"
+          style={{
+            objectFit: "contain",
+            width: "100%",
+            height: "100%",
+          }}
+        />
       </Col>
       <Col
         order={1}
