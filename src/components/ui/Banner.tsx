@@ -13,7 +13,6 @@ const Banner = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          border: "1px solid blue",
         }}
       >
         <Image
