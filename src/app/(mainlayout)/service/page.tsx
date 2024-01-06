@@ -90,18 +90,23 @@ const ServicePage = () => {
 
   const filterServices = categoryServices?.services;
 
+  const MIN_MAX_PRICE = "min_max";
+  const MAX_MIN_PRICE = "max_min";
+  const SERVICE_NAME_ASC = "service_name_asc";
+  const SERVICE_NAME_DESC = "service_name_desc";
+
   const sortByOptions = [
-    { label: "Min - Max Price", value: "min_max" },
-    { label: "Max - Min Price", value: "max_min" },
-    { label: "Service Name Asc", value: "service_name_asc" },
-    { label: "Service Name Desc", value: "service_name_desc" },
+    { label: "Min - Max Price", value: MIN_MAX_PRICE },
+    { label: "Max - Min Price", value: MAX_MIN_PRICE },
+    { label: "Service Name Asc", value: SERVICE_NAME_ASC },
+    { label: "Service Name Desc", value: SERVICE_NAME_DESC },
   ];
 
   const handleSorting = (value: string) => {
-    if (value === "min_max") {
+    if (value === MIN_MAX_PRICE) {
       setSortBy("price");
       setSortOrder("asc");
-    } else if (value === "max_min") {
+    } else if (value === MAX_MIN_PRICE) {
       setSortBy("price");
       setSortOrder("desc");
     } else {
