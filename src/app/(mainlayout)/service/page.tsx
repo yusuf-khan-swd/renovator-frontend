@@ -97,6 +97,17 @@ const ServicePage = () => {
     { label: "Service Name Desc", value: "service_name_desc" },
   ];
 
+  const handleSorting = (value: string) => {
+    if (value === "min_max") {
+      setSortBy("price");
+      setSortOrder("asc");
+    } else if (value === "max_min") {
+      setSortBy("price");
+      setSortOrder("desc");
+    } else {
+    }
+  };
+
   console.log(sorting);
 
   return (
@@ -190,6 +201,7 @@ const ServicePage = () => {
           <Select
             onChange={(value) => {
               setSorting(value);
+              handleSorting(value);
               setCategoryId("all");
               setSearchTerm("");
               setMinPrice("");
