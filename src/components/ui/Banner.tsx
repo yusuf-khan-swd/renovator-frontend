@@ -10,11 +10,10 @@ const Banner = () => {
         order={2}
         md={{ span: 12, order: 1 }}
         style={{
-          maxWidth: "550px",
-          maxHeight: "550px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          border: "1px solid blue",
         }}
       >
         <Image
