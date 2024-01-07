@@ -22,6 +22,8 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
+// TODO: Create a component to show booking information of both user and admin
+
 const ManageBookingPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
