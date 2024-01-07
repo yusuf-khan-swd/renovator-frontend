@@ -141,6 +141,7 @@ const ManageBookingPage = () => {
     },
     {
       title: "Status",
+      width: 90,
       dataIndex: "status",
       render: function (data: string) {
         const statusColor = `${
