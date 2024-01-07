@@ -126,6 +126,7 @@ const ManageBookingPage = () => {
     },
     {
       title: "Price",
+      width: 80,
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
