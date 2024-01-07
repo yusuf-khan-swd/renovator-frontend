@@ -42,7 +42,7 @@ const CommonTable = ({
       dataSource={dataSource}
       pagination={paginationConfig}
       onChange={onTableChange}
-      scroll={{ y: 340 }}
+      scroll={{ y: 350 }}
     />
   );
 };
