@@ -25,7 +25,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   // TODO: Check Dashboard all of the input field responsive
-  // TODO: Table responsive with horizontal scroll
+  // TODO: Table responsive with horizontal and vertical scroll
+  // TODO: Update every table of user, admin, super_admin column with width
 
   return (
     <Layout
