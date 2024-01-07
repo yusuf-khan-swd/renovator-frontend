@@ -16,6 +16,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// TODO: Create a component to show review information of both user and admin
+
 const ManageReviewPage = () => {
   const { role, userId } = getUserInfo() as any;
   const routeName = "manage-reviews";
