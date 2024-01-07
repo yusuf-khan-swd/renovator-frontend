@@ -134,6 +134,7 @@ const ManageBookingPage = () => {
     },
     {
       title: "Booking Date",
+      width: 110,
       dataIndex: "date",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY");
