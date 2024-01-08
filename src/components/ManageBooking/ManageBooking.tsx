@@ -119,6 +119,7 @@ const ManageBooking = () => {
   const columns = [
     {
       title: "Service Name",
+      width: 180,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
@@ -163,14 +164,18 @@ const ManageBooking = () => {
     },
     {
       title: "User Email",
+      width: 170,
       dataIndex: "user",
       render: function (user: any) {
-        const email = user?.email;
-        return email?.length <= 22 ? email : email?.slice(0, 20) + "...";
+        let email = user?.email;
+        email = email + "1234567";
+        email = "yusufkhan.swd@gmail.com";
+        return email?.length <= 22 ? email : email?.slice(0, 17) + "...";
       },
     },
     {
       title: "CreatedAt",
+      width: 160,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -178,6 +183,7 @@ const ManageBooking = () => {
     },
     {
       title: "Action",
+      width: 240,
       render: function (data: any) {
         return (
           <>
