@@ -70,6 +70,7 @@ const ManageReview = () => {
     },
     {
       title: "Price",
+      width: 80,
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
@@ -78,6 +79,7 @@ const ManageReview = () => {
     },
     {
       title: "Status",
+      width: 90,
       dataIndex: "service",
       render: function (service: IService) {
         return service?.status;
