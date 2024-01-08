@@ -26,7 +26,7 @@ import { useState } from "react";
 // TODO: Create a component to show booking information of both user and admin
 
 const ManageBooking = () => {
-  let { role } = getUserInfo() as any;
+  const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
 
   const query: Record<string, any> = {};
@@ -226,8 +226,6 @@ const ManageBooking = () => {
       },
     },
   ];
-
-  role = "admin";
 
   if (role === "user") {
     columns.splice(4, 1);
