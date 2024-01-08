@@ -69,6 +69,21 @@ const ManageReview = () => {
       },
     },
     {
+      title: "Price",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return "$" + service?.price;
+      },
+      sorter: true,
+    },
+    {
+      title: "Status",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service?.status;
+      },
+    },
+    {
       title: "Rating",
       width: 70,
       dataIndex: "rating",
@@ -79,21 +94,6 @@ const ManageReview = () => {
       render: function (data: string) {
         return data.length <= 25 ? data : data.slice(0, 25) + "...";
       },
-    },
-    {
-      title: "Service Status",
-      dataIndex: "service",
-      render: function (service: IService) {
-        return service?.status;
-      },
-    },
-    {
-      title: "Service Price",
-      dataIndex: "service",
-      render: function (service: IService) {
-        return "$" + service?.price;
-      },
-      sorter: true,
     },
     {
       title: "CreatedAt",
