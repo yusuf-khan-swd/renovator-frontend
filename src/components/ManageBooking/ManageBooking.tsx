@@ -122,7 +122,7 @@ const ManageBooking = () => {
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
-        return title.length <= 25 ? title : title.slice(0, 25) + "...";
+        return title.length <= 25 ? title : title.slice(0, 22) + "...";
       },
     },
     {
