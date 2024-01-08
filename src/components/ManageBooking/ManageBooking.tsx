@@ -163,6 +163,13 @@ const ManageBooking = () => {
       },
     },
     {
+      title: "User Email",
+      dataIndex: "user",
+      render: function (data: any) {
+        return data.email;
+      },
+    },
+    {
       title: "CreatedAt",
       dataIndex: "createdAt",
       render: function (data: any) {
