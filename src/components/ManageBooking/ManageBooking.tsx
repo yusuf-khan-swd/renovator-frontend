@@ -181,8 +181,14 @@ const ManageBooking = () => {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
       },
     },
-    {
+  ];
+
+  if (role === "user") {
+    columns.splice(4, 1);
+
+    columns.push({
       title: "Action",
+      dataIndex: "",
       width: 240,
       render: function (data: any) {
         return (
@@ -243,11 +249,7 @@ const ManageBooking = () => {
           </>
         );
       },
-    },
-  ];
-
-  if (role === "user") {
-    columns.splice(4, 1);
+    });
   }
 
   const onPaginationChange = (page: number, pageSize: number) => {
