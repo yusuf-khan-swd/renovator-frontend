@@ -121,9 +121,8 @@ const ManageBooking = () => {
       title: "Service Name",
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.title.length <= 25
-          ? service?.title
-          : service?.title.slice(0, 25) + "...";
+        const title = service?.title;
+        return title.length <= 25 ? title : title.slice(0, 25) + "...";
       },
     },
     {
