@@ -163,7 +163,7 @@ const ManageBooking = () => {
   const columns = [
     {
       title: "Service Name",
-      width: 180,
+      width: 175,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
