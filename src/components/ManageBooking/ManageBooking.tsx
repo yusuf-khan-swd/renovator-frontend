@@ -17,15 +17,16 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
-import { ReloadOutlined } from "@ant-design/icons";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
+import Link from "next/link";
 import { useState } from "react";
 
 // TODO: Create a component to show booking information of both user and admin
 
 const ManageBooking = () => {
-  const { role } = getUserInfo() as any;
+  let { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
 
   const query: Record<string, any> = {};
@@ -54,6 +55,49 @@ const ManageBooking = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useBookingsQuery(undefined);
+
+  const handleRejectBooking = async (id: any) => {
+    try {
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT,
+      };
+      message.loading("Rejecting.....");
+
+      const result: any = await updateBooking(data);
+
+      if (result?.data) {
+        message.success("Booking rejected successfully");
+      } else {
+        message.error("Booking rejected failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
+    }
+  };
+
+  const handleConfirmBooking = async (id: any) => {
+    try {
+      const data = {
+        id: id,
+        status: ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT,
+      };
+
+      message.loading("Confirming.....");
+
+      const result: any = await updateBooking(data);
+
+      if (result?.data) {
+        message.success("Booking confirmed successfully!");
+      } else {
+        message.error("Booking confirmed failed!");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
+    }
+  };
 
   const handleCancelBooking = async (id: any) => {
     try {
@@ -183,6 +227,8 @@ const ManageBooking = () => {
     },
   ];
 
+  role = "admin";
+
   if (role === "user") {
     columns.splice(4, 1);
 
@@ -234,6 +280,82 @@ const ManageBooking = () => {
                   : false
               }
             />
+
+            <ConfirmModal
+              id={data?.id}
+              handler={deleteHandler}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
+            />
+          </>
+        );
+      },
+    });
+  } else if ((role = "admin")) {
+    columns.push({
+      title: "Action",
+      dataIndex: "",
+      width: 280,
+      render: function (data: any) {
+        return (
+          <>
+            <ConfirmModal
+              id={data?.id}
+              handler={handleConfirmBooking}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "green" }}>ACCEPT</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
+              button
+              buttonName="Accept"
+              buttonType="primary"
+              disabled={
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.ACCEPT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
+                  ? true
+                  : false
+              }
+            />
+            <ConfirmModal
+              id={data?.id}
+              handler={handleRejectBooking}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>REJECT</span>{" "}
+                  this booking
+                </p>
+              }
+              content={<ConfirmModalBookingContent data={data} />}
+              button
+              buttonName="Reject"
+              buttonType="default"
+              disabled={
+                data?.status === ENUM_BOOKING_STATUS_FOR_ADMIN.REJECT ||
+                data?.status === ENUM_BOOKING_STATUS_FOR_USER.CANCEL
+                  ? true
+                  : false
+              }
+            />
+
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "2px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
+              </Button>
+            </Link>
 
             <ConfirmModal
               id={data?.id}
