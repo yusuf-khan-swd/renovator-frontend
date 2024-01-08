@@ -166,8 +166,8 @@ const ManageBooking = () => {
       title: "User Email",
       dataIndex: "user",
       render: function (user: any) {
-        let email = user?.email;
-        return email?.length <= 25 ? email : email?.slice(0, 25) + "...";
+        const email = user?.email;
+        return email?.length <= 22 ? email : email?.slice(0, 20) + "...";
       },
     },
     {
