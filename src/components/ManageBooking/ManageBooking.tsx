@@ -294,7 +294,7 @@ const ManageBooking = () => {
         );
       },
     });
-  } else if ((role = "admin")) {
+  } else if (role === "admin") {
     columns.push({
       title: "Action",
       dataIndex: "",
