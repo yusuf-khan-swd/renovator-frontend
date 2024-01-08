@@ -246,6 +246,10 @@ const ManageBooking = () => {
     },
   ];
 
+  if (role === "user") {
+    columns.splice(4, 1);
+  }
+
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
