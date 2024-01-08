@@ -23,8 +23,6 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-// TODO: Create a component to show booking information of both user and admin
-
 const ManageBooking = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
