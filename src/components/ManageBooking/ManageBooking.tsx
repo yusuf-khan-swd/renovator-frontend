@@ -163,7 +163,7 @@ const ManageBooking = () => {
   const columns = [
     {
       title: "Service Name",
-      width: 175,
+      width: 140,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
@@ -208,7 +208,7 @@ const ManageBooking = () => {
     },
     {
       title: "User Email",
-      width: 170,
+      width: 160,
       dataIndex: "user",
       render: function (user: any) {
         let email = user?.email;
