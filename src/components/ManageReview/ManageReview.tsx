@@ -70,6 +70,7 @@ const ManageReview = () => {
     },
     {
       title: "Rating",
+      width: 70,
       dataIndex: "rating",
     },
     {
