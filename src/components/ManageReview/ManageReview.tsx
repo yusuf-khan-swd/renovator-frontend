@@ -66,9 +66,8 @@ const ManageReview = () => {
       width: 170,
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.title.length <= 25
-          ? service?.title
-          : service?.title.slice(0, 22) + "...";
+        const title = service?.title;
+        return title.length <= 25 ? title : title.slice(0, 22) + "...";
       },
     },
     {
