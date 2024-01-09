@@ -188,18 +188,18 @@ const ManageBooking = () => {
       title: "Status",
       width: 90,
       dataIndex: "status",
-      render: function (data: string) {
+      render: function (status: string) {
         const statusColor = `${
-          data === ENUM_BOOKING_STATUS.ACCEPT
+          status === ENUM_BOOKING_STATUS.ACCEPT
             ? "green"
-            : data === ENUM_BOOKING_STATUS.PENDING
+            : status === ENUM_BOOKING_STATUS.PENDING
             ? "blue"
             : "red"
         }`;
 
         return (
           <p style={{ color: statusColor }}>
-            {data.charAt(0).toUpperCase() + data.slice(1)}
+            {status.charAt(0).toUpperCase() + status.slice(1)}
           </p>
         );
       },
