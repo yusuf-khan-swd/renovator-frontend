@@ -1,3 +1,4 @@
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { IService } from "@/types";
 
 interface IServiceCardBodyProps {
@@ -15,6 +16,9 @@ const ServiceCardBody = ({
   const location = service?.location;
   const description = service?.description;
 
+  const serviceStatusColor =
+    status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
+
   return (
     <div
       style={{
@@ -29,7 +33,7 @@ const ServiceCardBody = ({
       </p>
       <p>
         Status:{" "}
-        <span style={{ color: "green" }}>
+        <span style={{ color: serviceStatusColor }}>
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </span>
       </p>
