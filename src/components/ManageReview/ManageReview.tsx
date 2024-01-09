@@ -93,6 +93,7 @@ const ManageReview = () => {
     },
     {
       title: "Status",
+      width: 100,
       dataIndex: "service",
       render: function (service: IService) {
         const status = service?.status;
@@ -103,7 +104,7 @@ const ManageReview = () => {
     },
     {
       title: "Rating",
-      width: 70,
+      width: 80,
       dataIndex: "rating",
     },
     {
@@ -116,6 +117,7 @@ const ManageReview = () => {
     },
     {
       title: "User Email",
+      width: 160,
       dataIndex: "user",
       render: function (user: any) {
         const email = user?.email;
@@ -124,6 +126,7 @@ const ManageReview = () => {
     },
     {
       title: "CreatedAt",
+      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -132,6 +135,7 @@ const ManageReview = () => {
     },
     {
       title: "Action",
+      width: 240,
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
