@@ -13,7 +13,7 @@ import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -100,9 +100,9 @@ const ManageReview = () => {
         const color =
           status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
         return (
-          <p style={{ color: color }}>
+          <Tag style={{ color: color }}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
-          </p>
+          </Tag>
         );
       },
     },
