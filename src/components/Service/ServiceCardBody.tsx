@@ -9,6 +9,12 @@ const ServiceCardBody = ({
   service,
   detailsPage = false,
 }: IServiceCardBodyProps) => {
+  const category = service?.category?.title;
+  const price = service?.price;
+  const status = service?.status;
+  const location = service?.location;
+  const description = service?.description;
+
   return (
     <div
       style={{
@@ -17,26 +23,26 @@ const ServiceCardBody = ({
         gap: "2px",
       }}
     >
-      <p>Category: {service?.category?.title}</p>
+      <p>Category: {category}</p>
       <p>
-        Price: <span style={{ fontWeight: "bold" }}>${service?.price}</span>
+        Price: <span style={{ fontWeight: "bold" }}>${price}</span>
       </p>
       <p>
         Status:{" "}
         <span style={{ color: "green" }}>
-          {service?.status.charAt(0).toUpperCase() + service?.status.slice(1)}
+          {status.charAt(0).toUpperCase() + status.slice(1)}
         </span>
       </p>
-      <p>Location: {service?.location}</p>
+      <p>Location: {location}</p>
       <p style={{ padding: "5px 0" }}>
         <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
         {detailsPage ? (
-          <span>{service?.description}</span>
+          <span>{description}</span>
         ) : (
           <span>
-            {service?.description.length <= 150
-              ? service?.description
-              : service?.description.slice(0, 150) + "..."}
+            {description.length <= 150
+              ? description
+              : description.slice(0, 150) + "..."}
           </span>
         )}
       </p>
