@@ -14,13 +14,15 @@ import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // TODO: Create a component to show review information of both user and admin
 
 const ManageReview = () => {
   const { role, userId } = getUserInfo() as any;
   const routeName = "manage-reviews";
+
+  const [roleBaseReviews, setRoleBaseReviews] = useState();
 
   const query: Record<string, any> = {};
 
@@ -166,6 +168,14 @@ const ManageReview = () => {
     setSearchTerm("");
   };
 
+  useEffect(() => {
+    if (role === "user") {
+      setRoleBaseReviews(data);
+    }
+  }, [data, isLoading, role]);
+
+  console.log(roleBaseReviews);
+
   return (
     <div>
       <CommonBreadCrumb
@@ -203,7 +213,7 @@ const ManageReview = () => {
       <CommonTable
         loading={isLoading}
         columns={columns}
-        dataSource={data}
+        dataSource={roleBaseReviews}
         pageSize={size}
         totalPages={0}
         showSizeChanger={true}
