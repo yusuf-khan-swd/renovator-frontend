@@ -130,6 +130,7 @@ const ManageReview = () => {
     },
     {
       title: "CreatedAt",
+      width: 160,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
