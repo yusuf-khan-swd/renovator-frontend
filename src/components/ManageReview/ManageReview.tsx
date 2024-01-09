@@ -121,7 +121,6 @@ const ManageReview = () => {
     },
     {
       title: "User Email",
-      width: 160,
       dataIndex: "user",
       render: function (user: any) {
         const email = user?.email;
@@ -130,7 +129,6 @@ const ManageReview = () => {
     },
     {
       title: "CreatedAt",
-      width: 160,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
