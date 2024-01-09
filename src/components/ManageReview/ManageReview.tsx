@@ -120,12 +120,13 @@ const ManageReview = () => {
       },
     },
     {
-      title: "User",
+      title: "User Email",
+      width: 160,
       dataIndex: "user",
       render: function (user: any) {
-        return user?.email;
+        const email = user?.email;
+        return email?.length <= 22 ? email : email?.slice(0, 17) + "...";
       },
-      sorter: true,
     },
     {
       title: "CreatedAt",
