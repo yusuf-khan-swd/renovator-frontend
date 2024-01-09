@@ -48,7 +48,8 @@ const ManageReview = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useUserReviewsQuery(userId);
+  const { data: userReviews, isLoading: userReviewIsLoading } =
+    useUserReviewsQuery(userId);
 
   const deleteHandler = async (id: string) => {
     try {
@@ -193,9 +194,9 @@ const ManageReview = () => {
 
   useEffect(() => {
     if (role === "user") {
-      setRoleBaseReviews(data);
+      setRoleBaseReviews(userReviews);
     }
-  }, [data, isLoading, role]);
+  }, [userReviews, userReviewIsLoading, role]);
 
   console.log(roleBaseReviews);
 
@@ -234,7 +235,7 @@ const ManageReview = () => {
       </ActionBar>
 
       <CommonTable
-        loading={isLoading}
+        loading={userReviewIsLoading}
         columns={columns}
         dataSource={roleBaseReviews}
         pageSize={size}
