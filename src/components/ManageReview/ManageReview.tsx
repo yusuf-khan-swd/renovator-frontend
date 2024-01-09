@@ -5,6 +5,7 @@ import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import {
+  useAdminReviewsQuery,
   useDeleteReviewMutation,
   useUserReviewsQuery,
 } from "@/redux/api/reviewApi";
@@ -51,6 +52,9 @@ const ManageReview = () => {
   }
   const { data: userReviews, isLoading: userReviewIsLoading } =
     useUserReviewsQuery(userId);
+
+  const { data: adminReviewsData, isLoading: isLoadingAdminReviews } =
+    useAdminReviewsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     try {
@@ -198,8 +202,16 @@ const ManageReview = () => {
   useEffect(() => {
     if (role === "user") {
       setRoleBaseReviews(userReviews);
+    } else if (role === "admin") {
+      setRoleBaseReviews(adminReviewsData);
     }
-  }, [userReviews, userReviewIsLoading, role]);
+  }, [
+    userReviews,
+    userReviewIsLoading,
+    role,
+    adminReviewsData,
+    isLoadingAdminReviews,
+  ]);
 
   console.log(roleBaseReviews);
 
