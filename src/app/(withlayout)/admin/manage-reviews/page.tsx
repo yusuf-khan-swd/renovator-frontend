@@ -1,4 +1,10 @@
 import ManageReview from "@/components/ManageReview/ManageReview";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Manage Bookings - Renovator",
+  description: "A Home Renovation Service Provider",
+};
 
 const ManageReviewPage = () => {
   return (
