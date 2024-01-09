@@ -51,13 +51,17 @@ const ManageReview = () => {
   const { data, isLoading } = useUserReviewsQuery(userId);
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      await deleteReview(id);
-      message.success("Review Delete successfully");
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+      message.loading("Deleting.....");
+      const result: any = await deleteReview(id);
+      if (result?.data) {
+        message.success("Review Delete successfully");
+      } else {
+        message.error("Review Delete failed!");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
