@@ -55,6 +55,7 @@ const ManageReview = () => {
     try {
       message.loading("Deleting.....");
       const result: any = await deleteReview(id);
+
       if (result?.data) {
         message.success("Review Delete successfully");
       } else {
