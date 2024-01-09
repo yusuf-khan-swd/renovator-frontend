@@ -18,7 +18,7 @@ import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
@@ -198,9 +198,7 @@ const ManageBooking = () => {
         }`;
 
         return (
-          <p style={{ color: bookingStatusColor }}>
-            {bookingStatus.charAt(0).toUpperCase() + bookingStatus.slice(1)}
-          </p>
+          <Tag color={bookingStatusColor}>{bookingStatus.toUpperCase()}</Tag>
         );
       },
     },
