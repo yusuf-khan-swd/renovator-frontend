@@ -61,11 +61,12 @@ const ManageReview = () => {
   const columns = [
     {
       title: "Service Name",
+      width: 170,
       dataIndex: "service",
       render: function (service: IService) {
         return service?.title.length <= 25
           ? service?.title
-          : service?.title.slice(0, 25) + "...";
+          : service?.title.slice(0, 22) + "...";
       },
     },
     {
@@ -92,9 +93,10 @@ const ManageReview = () => {
     },
     {
       title: "Review",
+      width: 140,
       dataIndex: "review",
       render: function (data: string) {
-        return data.length <= 25 ? data : data.slice(0, 25) + "...";
+        return data.length <= 25 ? data : data.slice(0, 22) + "...";
       },
     },
     {
