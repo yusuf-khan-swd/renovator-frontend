@@ -84,7 +84,13 @@ const ManageReview = () => {
       width: 90,
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.status;
+        const status = service?.status;
+        const color = status === "available" ? "green" : "blue";
+        return (
+          <p style={{ color: color }}>
+            {status.charAt(0).toUpperCase() + status.slice(1)}
+          </p>
+        );
       },
     },
     {
