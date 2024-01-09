@@ -100,7 +100,7 @@ const ManageReview = () => {
     },
     {
       title: "Review",
-      width: 140,
+      width: 180,
       dataIndex: "review",
       render: function (data: string) {
         return data.length <= 25 ? data : data.slice(0, 22) + "...";
