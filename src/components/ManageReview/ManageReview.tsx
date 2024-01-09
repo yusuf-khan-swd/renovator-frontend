@@ -100,7 +100,7 @@ const ManageReview = () => {
         const color =
           status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
         return (
-          <Tag style={{ color: color }}>
+          <Tag color={color}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </Tag>
         );
