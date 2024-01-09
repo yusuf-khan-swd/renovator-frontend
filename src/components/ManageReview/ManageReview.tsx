@@ -139,7 +139,7 @@ const ManageReview = () => {
       title: "Action",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
               <Button
                 style={{
@@ -175,7 +175,7 @@ const ManageReview = () => {
               }
               content={<ConfirmModalReviewContent data={data} />}
             />
-          </>
+          </div>
         );
       },
     },
@@ -183,6 +183,8 @@ const ManageReview = () => {
 
   if (role === "user") {
     columns.splice(5, 1);
+  } else if (role === "admin") {
+    columns.splice(6, 1);
   }
 
   useEffect(() => {
