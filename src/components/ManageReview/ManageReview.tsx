@@ -93,17 +93,12 @@ const ManageReview = () => {
     },
     {
       title: "Status",
-      width: 90,
       dataIndex: "service",
       render: function (service: IService) {
         const status = service?.status;
         const color =
           status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
-        return (
-          <Tag color={color}>
-            {status.charAt(0).toUpperCase() + status.slice(1)}
-          </Tag>
-        );
+        return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
     },
     {
