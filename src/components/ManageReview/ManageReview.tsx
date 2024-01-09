@@ -206,12 +206,16 @@ const ManageReview = () => {
       setRoleBaseReviews(adminReviewsData);
     }
   }, [
+    role,
     userReviews,
     userReviewIsLoading,
-    role,
     adminReviewsData,
     isLoadingAdminReviews,
   ]);
+
+  if (role === "user") {
+    columns.splice(5, 1);
+  }
 
   console.log(roleBaseReviews);
 
