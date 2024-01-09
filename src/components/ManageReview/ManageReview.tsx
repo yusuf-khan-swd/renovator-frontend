@@ -15,6 +15,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
 
 // TODO: Create a component to show review information of both user and admin
 
@@ -154,8 +155,13 @@ const ManageReview = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this item from review?"
-              content={`Delete this item from review!`}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this review.
+                </p>
+              }
+              content={<ConfirmModalReviewContent data={data} />}
             />
           </>
         );
