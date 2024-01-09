@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import {
   useDeleteReviewMutation,
   useUserReviewsQuery,
@@ -92,7 +93,8 @@ const ManageReview = () => {
       dataIndex: "service",
       render: function (service: IService) {
         const status = service?.status;
-        const color = status === "available" ? "green" : "blue";
+        const color =
+          status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
         return (
           <p style={{ color: color }}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
