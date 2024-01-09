@@ -50,7 +50,7 @@ const ManageReview = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data: userReviews, isLoading: userReviewIsLoading } =
+  const { data: userReviewsData, isLoading: isLoadingUserReview } =
     useUserReviewsQuery(userId);
 
   const { data: adminReviewsData, isLoading: isLoadingAdminReviews } =
@@ -181,6 +181,24 @@ const ManageReview = () => {
     },
   ];
 
+  if (role === "user") {
+    columns.splice(5, 1);
+  }
+
+  useEffect(() => {
+    if (role === "user") {
+      setRoleBaseReviews(userReviewsData);
+    } else if (role === "admin") {
+      setRoleBaseReviews(adminReviewsData);
+    }
+  }, [
+    role,
+    userReviewsData,
+    isLoadingUserReview,
+    adminReviewsData,
+    isLoadingAdminReviews,
+  ]);
+
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
@@ -198,26 +216,6 @@ const ManageReview = () => {
     setSortOrder("");
     setSearchTerm("");
   };
-
-  useEffect(() => {
-    if (role === "user") {
-      setRoleBaseReviews(userReviews);
-    } else if (role === "admin") {
-      setRoleBaseReviews(adminReviewsData);
-    }
-  }, [
-    role,
-    userReviews,
-    userReviewIsLoading,
-    adminReviewsData,
-    isLoadingAdminReviews,
-  ]);
-
-  if (role === "user") {
-    columns.splice(5, 1);
-  }
-
-  console.log(roleBaseReviews);
 
   return (
     <div>
@@ -254,7 +252,7 @@ const ManageReview = () => {
       </ActionBar>
 
       <CommonTable
-        loading={userReviewIsLoading}
+        loading={isLoadingUserReview}
         columns={columns}
         dataSource={roleBaseReviews}
         pageSize={size}
