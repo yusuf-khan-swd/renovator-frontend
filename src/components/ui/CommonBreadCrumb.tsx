@@ -17,14 +17,14 @@ const CommonBreadCrumb = ({
 
   const breadCrumbItems = [
     {
-      title: <Link href={`/${role}`}>{role}</Link>,
-    },
-    {
       title: (
         <Link href="/">
           <HomeOutlined />
         </Link>
       ),
+    },
+    {
+      title: <Link href={`/${role}`}>{role}</Link>,
     },
     ...items.map((item) => {
       return {
