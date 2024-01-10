@@ -181,9 +181,9 @@ const ManageReview = () => {
   ];
 
   if (role === "user") {
-    columns.splice(5, 1);
+    columns.splice(5, 1); // if role is user remove User Email column
   } else if (role === "admin") {
-    columns.splice(6, 1);
+    columns.splice(6, 1); // if role is admin remove CreatedAt column
   }
 
   useEffect(() => {
