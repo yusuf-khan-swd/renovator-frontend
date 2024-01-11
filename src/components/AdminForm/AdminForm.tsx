@@ -27,8 +27,9 @@ const AdminForm = () => {
       } else {
         message.error("Admin create failed!");
       }
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
