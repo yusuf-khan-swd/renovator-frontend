@@ -53,10 +53,6 @@ const EditProfilePage = () => {
       <CommonBreadCrumb
         items={[
           {
-            label: `${role}`,
-            link: `/${role}`,
-          },
-          {
             label: "profile",
             link: `/profile`,
           },

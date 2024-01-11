@@ -47,10 +47,6 @@ const EditUserPage = ({ params }: any) => {
       <CommonBreadCrumb
         items={[
           {
-            label: `${role}`,
-            link: `/${role}`,
-          },
-          {
             label: `manage-users`,
             link: `/${role}/manage-users`,
           },

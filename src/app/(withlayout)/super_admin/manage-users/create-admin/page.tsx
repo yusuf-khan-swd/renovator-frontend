@@ -14,10 +14,6 @@ const CreateAdminPage = () => {
       <CommonBreadCrumb
         items={[
           {
-            label: `${role}`,
-            link: `/${role}`,
-          },
-          {
             label: routeName,
             link: `/${role}/${routeName}`,
           },
