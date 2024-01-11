@@ -78,7 +78,7 @@ const AdminPage = () => {
       dataIndex: "id",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <Link href={`/${role}/manage-users/details/${data}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
@@ -102,7 +102,7 @@ const AdminPage = () => {
               title="Do you want to remove this user?"
               content={`Remove this user id: ${data}`}
             />
-          </>
+          </div>
         );
       },
     },
