@@ -5,7 +5,6 @@ const UserPage = () => {
   return (
     <div>
       <CommonBreadCrumb />
-
       <UserProfile />
     </div>
   );
