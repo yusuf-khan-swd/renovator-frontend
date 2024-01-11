@@ -15,6 +15,10 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
 const EditUserPage = ({ params }: any) => {
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
+  const endRoute = "edit";
+
   const id = params?.id;
   const { data, isLoading } = useUserQuery(id);
   const [updateUser] = useUpdateUserMutation();
@@ -44,20 +48,12 @@ const EditUserPage = ({ params }: any) => {
     role: data?.role || "",
   };
 
-  const { role } = getUserInfo() as any;
-
   return (
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: `manage-users`,
-            link: `/${role}/manage-users`,
-          },
-          {
-            label: "edit",
-            link: `/${role}/manage-users/edit`,
-          },
+          { label: routeName, link: `/${role}/${routeName}` },
+          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
       />
 
