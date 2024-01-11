@@ -1,3 +1,5 @@
+"use client";
+
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
