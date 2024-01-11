@@ -33,7 +33,6 @@ const CreateServicePage = () => {
     <div>
       <CommonBreadCrumb
         items={[
-          { label: `${role}`, link: `/${role}` },
           { label: routeName, link: `/${role}/${routeName}` },
           { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
         ]}
