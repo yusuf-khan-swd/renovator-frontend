@@ -21,15 +21,15 @@ const UserForm = () => {
     try {
       message.loading("Creating...");
       const result: any = await userSignup({ ...data });
-      // console.log(result?.data);
 
       if (result?.data) {
         message.success("User created successfully!");
       } else {
         message.error("User create Failed!");
       }
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
