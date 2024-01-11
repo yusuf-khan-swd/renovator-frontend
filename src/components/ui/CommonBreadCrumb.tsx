@@ -1,3 +1,5 @@
+"use client";
+
 import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
