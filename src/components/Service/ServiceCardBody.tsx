@@ -33,7 +33,7 @@ const ServiceCardBody = ({
       </p>
       <p>
         Status:{" "}
-        <span style={{ color: serviceStatusColor }}>
+        <span style={{ color: serviceStatusColor, fontWeight: "bold" }}>
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </span>
       </p>
