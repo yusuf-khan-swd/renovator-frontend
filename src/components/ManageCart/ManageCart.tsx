@@ -15,7 +15,6 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
-// TODO: manage-cart is not checked yet
 const ManageCart = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-cart";
