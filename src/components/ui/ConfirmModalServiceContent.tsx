@@ -1,36 +1,38 @@
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 
 interface IServiceProps {
-  data: any;
+  service: any;
 }
 
-const ConfirmModalServiceContent = ({ data }: IServiceProps) => {
+const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
   const serviceStatusColor =
-    data?.status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
+    service?.status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
 
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        Service Name: <span style={{ fontWeight: "bold" }}>{data?.title}</span>
+        Service Name:{" "}
+        <span style={{ fontWeight: "bold" }}>{service?.title}</span>
       </p>
       <p>
-        Price: <span style={{ fontWeight: "bold" }}>${data?.price}</span>
+        Price: <span style={{ fontWeight: "bold" }}>${service?.price}</span>
       </p>
       <p>
         Location:{" "}
         <span style={{ fontWeight: "bold" }}>
-          {data?.location.charAt(0).toUpperCase() + data?.location.slice(1)}
+          {service?.location.charAt(0).toUpperCase() +
+            service?.location.slice(1)}
         </span>
       </p>
       <p>
         Status:{" "}
         <span style={{ fontWeight: "bold", color: serviceStatusColor }}>
-          {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
+          {service?.status.charAt(0).toUpperCase() + service?.status.slice(1)}
         </span>
       </p>
       <p>
         Category:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.category?.title}</span>
+        <span style={{ fontWeight: "bold" }}>{service?.category?.title}</span>
       </p>
     </div>
   );

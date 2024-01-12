@@ -142,7 +142,7 @@ const ManageCart = () => {
                   this item from cart?
                 </p>
               }
-              content={<ConfirmModalServiceContent data={data?.service} />}
+              content={<ConfirmModalServiceContent service={data?.service} />}
             />
           </div>
         );

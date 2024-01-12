@@ -126,7 +126,7 @@ const DetailsServicePage = ({ params }: any) => {
                     id={id}
                     handler={deleteHandler}
                     title="Do you want to delete this service?"
-                    content={<ConfirmModalServiceContent data={data} />}
+                    content={<ConfirmModalServiceContent service={data} />}
                   />
                 </Col>
               </Row>

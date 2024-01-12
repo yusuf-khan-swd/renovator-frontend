@@ -142,7 +142,7 @@ const ManageServicePage = () => {
               id={data?.id}
               handler={deleteHandler}
               title="Do you want to delete this service?"
-              content={<ConfirmModalServiceContent data={data} />}
+              content={<ConfirmModalServiceContent service={data} />}
             />
           </>
         );
