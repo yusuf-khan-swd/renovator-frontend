@@ -4,13 +4,14 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmBookingModal from "@/components/ui/ConfirmBookingModal";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
 import { useCartsQuery, useDeleteCartMutation } from "@/redux/api/cartApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
@@ -85,7 +86,8 @@ const ManageCartPage = () => {
       },
     },
     {
-      title: "Service Price",
+      title: "Price",
+      width: 80,
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
@@ -93,10 +95,14 @@ const ManageCartPage = () => {
       sorter: true,
     },
     {
-      title: "Service Status",
+      title: "Status",
+      width: 100,
       dataIndex: "service",
       render: function (service: IService) {
-        return service?.status;
+        const status = service?.status;
+        const color =
+          status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
+        return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
     },
     {
