@@ -106,6 +106,14 @@ const ManageCartPage = () => {
       },
     },
     {
+      title: "Location",
+      dataIndex: "service",
+      render: function (service: IService) {
+        const location = service?.location;
+        return location;
+      },
+    },
+    {
       title: "CreatedAt",
       width: 170,
       dataIndex: "createdAt",
