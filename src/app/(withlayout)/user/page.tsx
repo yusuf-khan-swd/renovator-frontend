@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-// TODO: manage-cart is not checked yet
 const UserPage = () => {
   return (
     <div>

@@ -14,6 +14,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
+// TODO: manage-cart is not checked yet
 const ManageCartPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-cart";
@@ -110,7 +111,7 @@ const ManageCartPage = () => {
       title: "Action",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <ConfirmBookingModal
               id={data?.service?.id}
               handleBooking={handleBooking}
@@ -121,7 +122,7 @@ const ManageCartPage = () => {
               title="Do you want to delete this item from cart?"
               content={`Delete this item from cart!`}
             />
-          </>
+          </div>
         );
       },
     },
