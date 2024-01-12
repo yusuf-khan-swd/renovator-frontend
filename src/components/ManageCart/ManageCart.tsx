@@ -14,6 +14,7 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
+import ConfirmModalServiceContent from "../ui/ConfirmModalServiceContent";
 
 const ManageCart = () => {
   const { role } = getUserInfo() as any;
@@ -135,8 +136,13 @@ const ManageCart = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this item from cart?"
-              content={`Delete this item from cart!`}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this item from cart?
+                </p>
+              }
+              content={<ConfirmModalServiceContent data={data?.service} />}
             />
           </div>
         );
