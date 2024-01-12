@@ -46,17 +46,19 @@ const ManageCartPage = () => {
     query["searchTerm"] = debouncedTerm;
   }
   const { data, isLoading } = useCartsQuery(undefined);
-  // console.log(data);
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      //   console.log(data);
-      await deleteCart(id);
-      message.success("Cart Delete successfully");
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+      message.loading("Deleting.....");
+      const result: any = await deleteCart(id);
+      if (result?.data) {
+        message.success("Cart Delete successfully");
+      } else {
+        message.error("Cart Delete failed!");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
