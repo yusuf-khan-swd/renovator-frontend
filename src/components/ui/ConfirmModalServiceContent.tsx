@@ -15,6 +15,10 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
   const serviceStatusColor =
     status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
 
+  const capitalizeStatus = status.charAt(0).toUpperCase() + status.slice(1);
+  const capitalizeLocation =
+    location.charAt(0).toUpperCase() + location.slice(1);
+
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
@@ -25,14 +29,12 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
       </p>
       <p>
         Location:{" "}
-        <span style={{ fontWeight: "bold" }}>
-          {location.charAt(0).toUpperCase() + location.slice(1)}
-        </span>
+        <span style={{ fontWeight: "bold" }}>{capitalizeLocation}</span>
       </p>
       <p>
         Status:{" "}
         <span style={{ fontWeight: "bold", color: serviceStatusColor }}>
-          {status.charAt(0).toUpperCase() + status.slice(1)}
+          {capitalizeStatus}
         </span>
       </p>
       <p>
