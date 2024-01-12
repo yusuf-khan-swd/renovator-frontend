@@ -1,8 +1,13 @@
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
+
 interface IServiceProps {
   data: any;
 }
 
 const ConfirmModalServiceContent = ({ data }: IServiceProps) => {
+  const serviceStatusColor =
+    data?.status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
+
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
@@ -19,7 +24,7 @@ const ConfirmModalServiceContent = ({ data }: IServiceProps) => {
       </p>
       <p>
         Status:{" "}
-        <span style={{ fontWeight: "bold" }}>
+        <span style={{ fontWeight: "bold", color: serviceStatusColor }}>
           {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
         </span>
       </p>
