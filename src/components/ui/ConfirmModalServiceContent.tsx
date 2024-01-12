@@ -1,7 +1,8 @@
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
+import { IService } from "@/types";
 
 interface IServiceProps {
-  service: any;
+  service: IService;
 }
 
 const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
