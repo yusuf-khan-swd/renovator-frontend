@@ -107,6 +107,7 @@ const ManageCartPage = () => {
     },
     {
       title: "Location",
+      width: 150,
       dataIndex: "service",
       render: function (service: IService) {
         const location = service?.location;
@@ -115,7 +116,6 @@ const ManageCartPage = () => {
     },
     {
       title: "CreatedAt",
-      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
