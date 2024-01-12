@@ -72,7 +72,7 @@ const ServicePage = () => {
     setMinPrice("");
     setMaxPrice("");
     setCategoryId(undefined);
-    setSorting("");
+    setSorting(undefined);
   };
 
   const { data: categories, isLoading: categoryIsLoading } =
