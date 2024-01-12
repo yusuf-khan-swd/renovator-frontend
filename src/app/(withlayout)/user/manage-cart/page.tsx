@@ -85,19 +85,19 @@ const ManageCartPage = () => {
       },
     },
     {
-      title: "Service Status",
-      dataIndex: "service",
-      render: function (service: IService) {
-        return service?.status;
-      },
-    },
-    {
       title: "Service Price",
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
       },
       sorter: true,
+    },
+    {
+      title: "Service Status",
+      dataIndex: "service",
+      render: function (service: IService) {
+        return service?.status;
+      },
     },
     {
       title: "CreatedAt",
