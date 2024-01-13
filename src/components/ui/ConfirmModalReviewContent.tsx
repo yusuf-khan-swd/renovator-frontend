@@ -5,6 +5,12 @@ interface IReviewProps {
 }
 
 const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
+  const name = data?.user?.name;
+  const email = data?.user?.email;
+  const title = data?.service?.title;
+  const rating = data?.rating;
+  const reviews = data?.rating;
+
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
