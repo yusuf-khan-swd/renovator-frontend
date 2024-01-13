@@ -21,6 +21,8 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
       : "red"
   }`;
 
+  const capitalizeStatus = status.charAt(0).toUpperCase() + status.slice(1);
+
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
@@ -35,7 +37,7 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
       <p>
         Current Status:{" "}
         <span style={{ fontWeight: "bold", color: statusColor }}>
-          {status.charAt(0).toUpperCase() + status.slice(1)}
+          {capitalizeStatus}
         </span>
       </p>
       <p>
