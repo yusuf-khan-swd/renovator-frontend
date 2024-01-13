@@ -1,5 +1,7 @@
+import { IReviewAndRating } from "@/types";
+
 interface IReviewProps {
-  data: any;
+  data: IReviewAndRating;
 }
 
 const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
