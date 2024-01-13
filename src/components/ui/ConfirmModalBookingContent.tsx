@@ -24,28 +24,25 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        User Email:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.user?.email}</span>
+        User Email: <span style={{ fontWeight: "bold" }}>{email}</span>
       </p>
       <p>
         Booking Date:{" "}
         <span style={{ fontWeight: "bold" }}>
-          {dayjs(data?.date).format("MMM D, YYYY")}
+          {dayjs(date).format("MMM D, YYYY")}
         </span>
       </p>
       <p>
         Current Status:{" "}
         <span style={{ fontWeight: "bold", color: statusColor }}>
-          {data?.status.charAt(0).toUpperCase() + data?.status.slice(1)}
+          {status.charAt(0).toUpperCase() + status.slice(1)}
         </span>
       </p>
       <p>
-        Service Name:{" "}
-        <span style={{ fontWeight: "bold" }}>{data?.service?.title}</span>
+        Service Name: <span style={{ fontWeight: "bold" }}>{title}</span>
       </p>
       <p>
-        Service Price:{" "}
-        <span style={{ fontWeight: "bold" }}>${data?.service?.price}</span>
+        Service Price: <span style={{ fontWeight: "bold" }}>${price}</span>
       </p>
     </div>
   );
