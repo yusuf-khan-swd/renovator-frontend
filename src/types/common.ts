@@ -52,8 +52,8 @@ export interface IBooking {
   id: string;
   date: string;
   status: string;
-  userId: string;
-  serviceId: string;
+  user: IUser;
+  service: IService;
   createdAt: string;
   updatedAt: string;
 }
