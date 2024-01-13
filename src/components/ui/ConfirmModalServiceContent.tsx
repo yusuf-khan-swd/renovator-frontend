@@ -12,6 +12,8 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
   const status = service?.status;
   const category = service?.category?.title;
 
+  const boldColor = { fontWeight: "bold" };
+
   const serviceStatusColor =
     status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
 
@@ -22,14 +24,13 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        Service Name: <span style={{ fontWeight: "bold" }}>{title}</span>
+        Service Name: <span style={boldColor}>{title}</span>
       </p>
       <p>
-        Price: <span style={{ fontWeight: "bold" }}>${price}</span>
+        Price: <span style={boldColor}>${price}</span>
       </p>
       <p>
-        Location:{" "}
-        <span style={{ fontWeight: "bold" }}>{capitalizeLocation}</span>
+        Location: <span style={boldColor}>{capitalizeLocation}</span>
       </p>
       <p>
         Status:{" "}
@@ -38,7 +39,7 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
         </span>
       </p>
       <p>
-        Category: <span style={{ fontWeight: "bold" }}>{category}</span>
+        Category: <span style={boldColor}>{category}</span>
       </p>
     </div>
   );
