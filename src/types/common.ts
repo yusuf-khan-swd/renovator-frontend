@@ -47,7 +47,6 @@ export interface IService {
   updatedAt: string;
 }
 
-// Todo:: Service and User interface for include
 export interface IBooking {
   id: string;
   date: string;
