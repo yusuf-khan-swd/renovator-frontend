@@ -51,6 +51,16 @@ export interface IBooking {
   updatedAt: string;
 }
 
+export interface IReviewAndRating {
+  id: string;
+  review: string;
+  rating: number;
+  user: string;
+  serviceId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface IBlog {
   id: string;
   title: string;
