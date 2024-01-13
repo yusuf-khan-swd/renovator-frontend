@@ -7,6 +7,12 @@ interface IBookingProps {
 }
 
 const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
+  const email = data?.user?.email;
+  const date = data?.date;
+  const status = data?.status;
+  const title = data?.service?.title;
+  const price = data?.service?.price;
+
   const statusColor = `${
     data?.status === ENUM_BOOKING_STATUS.ACCEPT
       ? "green"
