@@ -13,6 +13,8 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
   const title = data?.service?.title;
   const price = data?.service?.price;
 
+  const boldColor = { fontWeight: "bold" };
+
   const statusColor = `${
     data?.status === ENUM_BOOKING_STATUS.ACCEPT
       ? "green"
@@ -26,13 +28,11 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        User Email: <span style={{ fontWeight: "bold" }}>{email}</span>
+        User Email: <span style={boldColor}>{email}</span>
       </p>
       <p>
         Booking Date:{" "}
-        <span style={{ fontWeight: "bold" }}>
-          {dayjs(date).format("MMM D, YYYY")}
-        </span>
+        <span style={boldColor}>{dayjs(date).format("MMM D, YYYY")}</span>
       </p>
       <p>
         Current Status:{" "}
@@ -41,10 +41,10 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
         </span>
       </p>
       <p>
-        Service Name: <span style={{ fontWeight: "bold" }}>{title}</span>
+        Service Name: <span style={boldColor}>{title}</span>
       </p>
       <p>
-        Service Price: <span style={{ fontWeight: "bold" }}>${price}</span>
+        Service Price: <span style={boldColor}>${price}</span>
       </p>
     </div>
   );
