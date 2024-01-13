@@ -34,7 +34,7 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
       </p>
       <p>
         Status:{" "}
-        <span style={{ fontWeight: "bold", color: serviceStatusColor }}>
+        <span style={{ ...boldColor, color: serviceStatusColor }}>
           {capitalizeStatus}
         </span>
       </p>
