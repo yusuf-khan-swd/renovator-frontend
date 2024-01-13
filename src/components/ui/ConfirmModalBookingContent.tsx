@@ -36,7 +36,7 @@ const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
       </p>
       <p>
         Current Status:{" "}
-        <span style={{ fontWeight: "bold", color: statusColor }}>
+        <span style={{ ...boldColor, color: statusColor }}>
           {capitalizeStatus}
         </span>
       </p>
