@@ -1,8 +1,9 @@
 import { ENUM_BOOKING_STATUS } from "@/constants/bookingStatus";
+import { IBooking } from "@/types";
 import dayjs from "dayjs";
 
 interface IBookingProps {
-  data: any;
+  data: IBooking;
 }
 
 const ConfirmModalBookingContent = ({ data }: IBookingProps) => {
