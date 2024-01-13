@@ -62,8 +62,8 @@ export interface IReviewAndRating {
   id: string;
   review: string;
   rating: number;
-  user: string;
-  serviceId: string;
+  user: IUser;
+  service: IService;
   createdAt: string;
   updatedAt: string;
 }
