@@ -11,24 +11,24 @@ const ConfirmModalReviewContent = ({ data }: IReviewProps) => {
   const rating = data?.rating;
   const review = data?.review;
 
-  const boldColor = { fontWeight: "bold" };
+  const fontBold = { fontWeight: "bold" };
 
   return (
     <div style={{ display: "grid", gap: "2px" }}>
       <p>
-        Name: <span style={boldColor}>{name}</span>
+        Name: <span style={fontBold}>{name}</span>
       </p>
       <p>
-        Email: <span style={boldColor}>{email}</span>
+        Email: <span style={fontBold}>{email}</span>
       </p>
       <p>
-        Service Name: <span style={boldColor}>{title}</span>
+        Service Name: <span style={fontBold}>{title}</span>
       </p>
       <p>
-        Rating: <span style={boldColor}>{rating}</span>
+        Rating: <span style={fontBold}>{rating}</span>
       </p>
       <p>
-        Review: <span style={boldColor}>{review}</span>
+        Review: <span style={fontBold}>{review}</span>
       </p>
     </div>
   );
