@@ -114,31 +114,36 @@ const ServicePage = () => {
   const ASC = "asc";
   const DESC = "desc";
 
+  const PRICE = "price";
+  const TITLE = "title";
+  const LOCATION = "location";
+  const STATUS = "status";
+
   //TODO: service name ascending order is not working properly
   const handleSorting = (value: string) => {
     if (value === MIN_MAX_PRICE) {
-      setSortBy("price");
+      setSortBy(PRICE);
       setSortOrder(ASC);
     } else if (value === MAX_MIN_PRICE) {
-      setSortBy("price");
+      setSortBy(PRICE);
       setSortOrder(DESC);
     } else if (value === SERVICE_NAME_ASC) {
-      setSortBy("title");
+      setSortBy(TITLE);
       setSortOrder(ASC);
     } else if (value === SERVICE_NAME_DESC) {
-      setSortBy("title");
+      setSortBy(TITLE);
       setSortOrder(DESC);
     } else if (value === SERVICE_LOCATION_ASC) {
-      setSortBy("location");
+      setSortBy(LOCATION);
       setSortOrder(ASC);
     } else if (value === SERVICE_LOCATION_DESC) {
-      setSortBy("location");
+      setSortBy(LOCATION);
       setSortOrder(DESC);
     } else if (value === SERVICE_STATUS_ASC) {
-      setSortBy("status");
+      setSortBy(STATUS);
       setSortOrder(ASC);
     } else if (value === SERVICE_STATUS_DESC) {
-      setSortBy("status");
+      setSortBy(STATUS);
       setSortOrder(DESC);
     }
   };
