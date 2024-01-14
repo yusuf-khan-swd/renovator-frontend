@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <Row>
+    <Row justify="center">
       <Col
         order={2}
         md={{ span: 12, order: 1 }}
