@@ -101,14 +101,14 @@ const ServicePage = () => {
   const SERVICE_STATUS_DESC = "service_status_desc";
 
   const sortByOptions = [
-    { label: "Min - Max Price", value: MIN_MAX_PRICE },
-    { label: "Max - Min Price", value: MAX_MIN_PRICE },
-    { label: "Service Name Asc", value: SERVICE_NAME_ASC },
-    { label: "Service Name Desc", value: SERVICE_NAME_DESC },
-    { label: "Location Asc", value: SERVICE_LOCATION_ASC },
-    { label: "Location Desc", value: SERVICE_LOCATION_DESC },
-    { label: "Status Asc", value: SERVICE_STATUS_ASC },
-    { label: "Status Desc", value: SERVICE_STATUS_DESC },
+    { label: "Price - Asc", value: MIN_MAX_PRICE },
+    { label: "Price - Desc", value: MAX_MIN_PRICE },
+    { label: "Service Name  - Asc", value: SERVICE_NAME_ASC },
+    { label: "Service Name  - Desc", value: SERVICE_NAME_DESC },
+    { label: "Location  - Asc", value: SERVICE_LOCATION_ASC },
+    { label: "Location  - Desc", value: SERVICE_LOCATION_DESC },
+    { label: "Status  - Asc", value: SERVICE_STATUS_ASC },
+    { label: "Status  - Desc", value: SERVICE_STATUS_DESC },
   ];
 
   //TODO: service name ascending order is not working properly
