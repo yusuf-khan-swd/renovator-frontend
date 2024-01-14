@@ -1,3 +1,5 @@
+"use client";
+
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import Service from "@/components/ui/Service";
 import { useUpcomingServiceQuery } from "@/redux/api/serviceApi";

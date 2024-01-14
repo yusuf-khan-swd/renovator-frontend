@@ -1,5 +1,3 @@
-"use client";
-
 import HomePageCategories from "@/components/Category/HomePageCategories";
 import OngoingService from "@/components/Service/OngoingService";
 import UpcomingService from "@/components/Service/UpcomingService";

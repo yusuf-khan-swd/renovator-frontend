@@ -1,3 +1,5 @@
+"use client";
+
 import CenterLoading from "@/components/Loading/CenterLoading";
 import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { Button, Col, Row } from "antd";
