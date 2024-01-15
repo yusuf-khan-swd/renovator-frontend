@@ -56,6 +56,7 @@ const ManageUser = () => {
     },
     {
       title: "Email",
+      width: 180,
       dataIndex: "email",
       render: function (email: string) {
         const shortEmail =
@@ -74,6 +75,7 @@ const ManageUser = () => {
     },
     {
       title: "CreatedAt",
+      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -82,6 +84,7 @@ const ManageUser = () => {
     },
     {
       title: "UpdatedAt",
+      width: 170,
       dataIndex: "updatedAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
