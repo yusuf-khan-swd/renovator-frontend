@@ -75,7 +75,6 @@ const AdminPage = () => {
     },
     {
       title: "Action",
-      dataIndex: "id",
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
@@ -97,10 +96,21 @@ const AdminPage = () => {
             </Link>
 
             <ConfirmModal
-              id={data}
+              id={data?.id}
               handler={deleteUserHandler}
               title="Do you want to remove this user?"
-              content={`Remove this user id: ${data}`}
+              content={
+                <div>
+                  <p>
+                    Name:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.name}</span>
+                  </p>
+                  <p>
+                    Email:{" "}
+                    <span style={{ fontWeight: "bold" }}>{data?.email}</span>
+                  </p>
+                </div>
+              }
             />
           </div>
         );
