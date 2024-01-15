@@ -16,7 +16,7 @@ const ActionBar = ({ title, children, style }: ActionBarProps) => {
   const childrenStyle = { ...baseChildrenStyle, ...style };
 
   return (
-    <div>
+    <div style={{ marginBottom: "15px" }}>
       <h1 style={{ margin: "8px 0" }}>{title}</h1>
       <Row style={childrenStyle}>{children}</Row>
     </div>
