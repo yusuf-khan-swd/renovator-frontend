@@ -4,6 +4,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -160,6 +161,11 @@ const ManageUser = () => {
           }}
         />
         <div>
+          {role === ENUM_USER_ROLE.SUPER_ADMIN && (
+            <Link href={`/${role}/${routeName}/create-admin`}>
+              <Button type="primary">Create Admin</Button>
+            </Link>
+          )}
           <Link href={`/${role}/${routeName}/create-user`}>
             <Button type="primary">Create User</Button>
           </Link>
