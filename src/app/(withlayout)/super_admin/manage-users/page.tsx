@@ -169,7 +169,7 @@ const AdminPage = () => {
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
-              style={{ margin: "0px 5px" }}
+              style={{ margin: "2px" }}
               type="primary"
               onClick={resetFilters}
             >
