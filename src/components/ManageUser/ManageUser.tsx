@@ -8,7 +8,7 @@ import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
@@ -66,7 +66,11 @@ const ManageUser = () => {
 
     {
       title: "Role",
+      width: 80,
       dataIndex: "role",
+      render: function (role: string) {
+        return <Tag color="blue">{role}</Tag>;
+      },
     },
     {
       title: "CreatedAt",
