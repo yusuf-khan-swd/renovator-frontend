@@ -19,8 +19,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
 
-// TODO: Create a component to show review information of both user and admin
-
 const ManageReview = () => {
   const { role, userId } = getUserInfo() as any;
   const routeName = "manage-reviews";
