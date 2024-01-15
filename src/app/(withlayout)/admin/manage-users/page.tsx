@@ -75,7 +75,7 @@ const AdminPage = () => {
       title: "Action",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <Link href={`/${role}/manage-users/details/${data?.id}`}>
               <Button onClick={() => console.log(data)} type="primary">
                 <EyeOutlined />
@@ -110,7 +110,7 @@ const AdminPage = () => {
                 </div>
               }
             />
-          </>
+          </div>
         );
       },
     },
