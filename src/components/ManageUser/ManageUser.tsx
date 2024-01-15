@@ -50,7 +50,7 @@ const ManageUser = () => {
       title: "Name",
       dataIndex: "name",
       render: function (name: string) {
-        const shortName = name.length < 23 ? name : name.slice(0, 20) + "...";
+        const shortName = name.length <= 23 ? name : name.slice(0, 20) + "...";
         return shortName;
       },
     },
@@ -59,7 +59,7 @@ const ManageUser = () => {
       dataIndex: "email",
       render: function (email: string) {
         const shortEmail =
-          email.length < 23 ? email : email.slice(0, 20) + "...";
+          email.length <= 23 ? email : email.slice(0, 20) + "...";
         return shortEmail;
       },
     },
