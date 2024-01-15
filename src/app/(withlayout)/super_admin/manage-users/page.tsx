@@ -78,17 +78,17 @@ const AdminPage = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <Link href={`/${role}/manage-users/details/${data}`}>
-              <Button onClick={() => console.log(data)} type="primary">
+            <Link href={`/${role}/manage-users/details/${data?.id}`}>
+              <Button onClick={() => console.log(data?.id)} type="primary">
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${role}/manage-users/edit/${data}`}>
+            <Link href={`/${role}/manage-users/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "0px 5px",
                 }}
-                onClick={() => console.log(data)}
+                onClick={() => console.log(data?.id)}
                 type="primary"
               >
                 <EditOutlined />
