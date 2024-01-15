@@ -82,15 +82,17 @@ const ManageUser = () => {
         return (
           <div style={{ display: "flex" }}>
             <Link href={`/${role}/manage-users/details/${data?.id}`}>
-              <Button onClick={() => console.log(data)} type="primary">
+              <Button
+                onClick={() => console.log(data)}
+                type="primary"
+                style={{ margin: "2px" }}
+              >
                 <EyeOutlined />
               </Button>
             </Link>
             <Link href={`/${role}/manage-users/edit/${data?.id}`}>
               <Button
-                style={{
-                  margin: "0px 5px",
-                }}
+                style={{ margin: "2px" }}
                 onClick={() => console.log(data?.id)}
                 type="primary"
               >
