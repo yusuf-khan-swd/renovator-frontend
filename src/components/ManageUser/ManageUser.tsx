@@ -163,15 +163,19 @@ const ManageUser = () => {
         <div>
           {role === ENUM_USER_ROLE.SUPER_ADMIN && (
             <Link href={`/${role}/${routeName}/create-admin`}>
-              <Button type="primary">Create Admin</Button>
+              <Button type="primary" style={{ margin: "2px" }}>
+                Create Admin
+              </Button>
             </Link>
           )}
           <Link href={`/${role}/${routeName}/create-user`}>
-            <Button type="primary">Create User</Button>
+            <Button type="primary" style={{ margin: "2px" }}>
+              Create User
+            </Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
-              style={{ margin: "0px 5px" }}
+              style={{ margin: "2px" }}
               type="primary"
               onClick={resetFilters}
             >
