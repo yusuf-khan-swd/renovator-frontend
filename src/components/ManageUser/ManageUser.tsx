@@ -57,6 +57,11 @@ const ManageUser = () => {
     {
       title: "Email",
       dataIndex: "email",
+      render: function (email: string) {
+        const shortEmail =
+          email.length < 23 ? email : email.slice(0, 20) + "...";
+        return shortEmail;
+      },
     },
 
     {
