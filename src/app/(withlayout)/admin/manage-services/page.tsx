@@ -111,11 +111,7 @@ const ManageServicePage = () => {
       render: function (location: string) {
         const capitalizeLocation =
           location.charAt(0).toUpperCase() + location.slice(1);
-        const shortLocation =
-          capitalizeLocation?.length <= 22
-            ? capitalizeLocation
-            : capitalizeLocation.slice(0, 19) + "...";
-        return shortLocation;
+        return capitalizeLocation;
       },
       sorter: true,
     },
