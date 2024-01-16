@@ -112,9 +112,7 @@ const ManageCategory = () => {
           <div style={{ display: "flex" }}>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
-                style={{
-                  margin: "2px",
-                }}
+                style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
                 type="primary"
               >
