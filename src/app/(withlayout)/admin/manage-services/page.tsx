@@ -106,9 +106,16 @@ const ManageServicePage = () => {
     },
     {
       title: "Location",
+      width: 100,
       dataIndex: "location",
-      render: function (data: string) {
-        return data.charAt(0).toUpperCase() + data.slice(1);
+      render: function (location: string) {
+        const capitalizeLocation =
+          location.charAt(0).toUpperCase() + location.slice(1);
+        const shortLocation =
+          capitalizeLocation?.length <= 22
+            ? capitalizeLocation
+            : capitalizeLocation.slice(0, 19) + "...";
+        return shortLocation;
       },
       sorter: true,
     },
