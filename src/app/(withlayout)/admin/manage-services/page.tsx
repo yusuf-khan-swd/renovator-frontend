@@ -119,7 +119,7 @@ const ManageServicePage = () => {
       title: "Action",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <Link href={`/${role}/manage-services/details/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
@@ -144,7 +144,7 @@ const ManageServicePage = () => {
               title="Do you want to delete this service?"
               content={<ConfirmModalServiceContent service={data} />}
             />
-          </>
+          </div>
         );
       },
     },
