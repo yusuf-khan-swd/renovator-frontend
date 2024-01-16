@@ -88,6 +88,7 @@ const ManageCategoryPage = () => {
     },
     {
       title: "CreatedAt",
+      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -96,6 +97,7 @@ const ManageCategoryPage = () => {
     },
     {
       title: "UpdatedAt",
+      width: 170,
       dataIndex: "updatedAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -106,7 +108,7 @@ const ManageCategoryPage = () => {
       title: "Action",
       render: function (data: any) {
         return (
-          <>
+          <div style={{ display: "flex" }}>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
@@ -130,7 +132,7 @@ const ManageCategoryPage = () => {
                 </p>
               }
             />
-          </>
+          </div>
         );
       },
     },
