@@ -118,6 +118,7 @@ const ManageServicePage = () => {
     ,
     {
       title: "CreatedAt",
+      width: 120,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY");
