@@ -84,6 +84,7 @@ const ManageServicePage = () => {
     },
     {
       title: "Price",
+      width: 80,
       dataIndex: "price",
       render: function (data: number) {
         return "$" + data;
