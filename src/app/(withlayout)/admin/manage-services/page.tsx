@@ -4,6 +4,7 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalServiceContent from "@/components/ui/ConfirmModalServiceContent";
+import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import {
   useDeleteServiceMutation,
   useServicesQuery,
@@ -11,7 +12,7 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
@@ -93,9 +94,13 @@ const ManageServicePage = () => {
     },
     {
       title: "Status",
+      width: 100,
       dataIndex: "status",
-      render: function (data: string) {
-        return data.charAt(0).toUpperCase() + data.slice(1);
+      render: function (status: string) {
+        const color =
+          status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
+
+        return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
       sorter: true,
     },
