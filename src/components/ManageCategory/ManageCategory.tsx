@@ -74,7 +74,7 @@ const ManageCategory = () => {
       }
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
