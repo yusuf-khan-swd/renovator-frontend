@@ -221,8 +221,6 @@ const ManageBooking = () => {
   ];
 
   if (role === "user") {
-    // columns.splice(4, 1); // if role is user remove User Email column
-
     columns.push({
       title: "Action",
       dataIndex: "",
@@ -288,8 +286,6 @@ const ManageBooking = () => {
       },
     });
   } else if (role === "admin") {
-    // columns.splice(5, 1); // if role is admin remove CreatedAt column
-
     columns.push({
       title: "Action",
       dataIndex: "",
