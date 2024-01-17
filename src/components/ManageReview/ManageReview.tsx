@@ -73,6 +73,7 @@ const ManageReview = () => {
   const columns = [
     {
       title: "Review",
+      width: 175,
       dataIndex: "review",
       render: function (data: string) {
         return data.length <= 25 ? data : data.slice(0, 22) + "...";
@@ -80,12 +81,12 @@ const ManageReview = () => {
     },
     {
       title: "Rating",
-      width: 80,
+      width: 70,
       dataIndex: "rating",
     },
     {
       title: "Service Name",
-      width: 180,
+      width: 170,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
@@ -94,7 +95,7 @@ const ManageReview = () => {
     },
     {
       title: "Price",
-      width: 80,
+      width: 70,
       dataIndex: "service",
       render: function (service: IService) {
         return "$" + service?.price;
