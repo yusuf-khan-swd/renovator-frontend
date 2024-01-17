@@ -76,6 +76,7 @@ const ManageServicePage = () => {
     },
     {
       title: "Category",
+      width: 180,
       dataIndex: "category",
       render: function (data: any) {
         return data?.title.length <= 25
