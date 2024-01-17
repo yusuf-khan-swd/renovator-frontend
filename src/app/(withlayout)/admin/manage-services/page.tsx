@@ -107,7 +107,7 @@ const ManageServicePage = () => {
     },
     {
       title: "Location",
-      width: 100,
+      width: 110,
       dataIndex: "location",
       render: function (location: string) {
         const capitalizeLocation =
