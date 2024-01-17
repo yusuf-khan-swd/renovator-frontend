@@ -161,7 +161,6 @@ const ManageBooking = () => {
   const columns = [
     {
       title: "Service Name",
-      width: 140,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
@@ -204,7 +203,7 @@ const ManageBooking = () => {
     },
     {
       title: "User Email",
-      width: 160,
+      width: 140,
       dataIndex: "user",
       render: function (user: any) {
         const email = user?.email;
@@ -222,7 +221,7 @@ const ManageBooking = () => {
   ];
 
   if (role === "user") {
-    columns.splice(4, 1); // if role is user remove User Email column
+    // columns.splice(4, 1); // if role is user remove User Email column
 
     columns.push({
       title: "Action",
@@ -289,7 +288,7 @@ const ManageBooking = () => {
       },
     });
   } else if (role === "admin") {
-    columns.splice(5, 1); // if role is admin remove CreatedAt column
+    // columns.splice(5, 1); // if role is admin remove CreatedAt column
 
     columns.push({
       title: "Action",
