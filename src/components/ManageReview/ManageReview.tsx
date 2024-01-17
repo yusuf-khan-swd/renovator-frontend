@@ -132,7 +132,7 @@ const ManageReview = () => {
     },
     {
       title: "Action",
-      width: 200,
+      width: 180,
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
