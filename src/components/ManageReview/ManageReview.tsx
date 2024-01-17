@@ -73,7 +73,6 @@ const ManageReview = () => {
   const columns = [
     {
       title: "Service Name",
-      width: 170,
       dataIndex: "service",
       render: function (service: IService) {
         const title = service?.title;
@@ -115,7 +114,7 @@ const ManageReview = () => {
     },
     {
       title: "User Email",
-      width: 160,
+      width: 140,
       dataIndex: "user",
       render: function (user: any) {
         const email = user?.email;
@@ -124,16 +123,16 @@ const ManageReview = () => {
     },
     {
       title: "CreatedAt",
-      width: 170,
+      width: 120,
       dataIndex: "createdAt",
       render: function (data: any) {
-        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
+        return data && dayjs(data).format("MMM D, YYYY");
       },
       sorter: true,
     },
     {
       title: "Action",
-      width: 240,
+      width: 200,
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
@@ -177,12 +176,6 @@ const ManageReview = () => {
       },
     },
   ];
-
-  if (role === "user") {
-    columns.splice(5, 1); // if role is user remove User Email column
-  } else if (role === "admin") {
-    columns.splice(6, 1); // if role is admin remove CreatedAt column
-  }
 
   useEffect(() => {
     if (role === "user") {
