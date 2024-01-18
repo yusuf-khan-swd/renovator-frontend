@@ -47,7 +47,7 @@ const CreateServicePage = () => {
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col span={16} style={{ margin: "10px 0" }}>
                 <FormTextArea
                   name="description"
                   label="Description"
