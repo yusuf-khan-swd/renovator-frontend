@@ -39,7 +39,7 @@ const CreateServicePage = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add new faq</h1>
+          <h1>Add new blog</h1>
           <Form submitHandler={onSubmit} resolver={yupResolver(contentSchema)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
