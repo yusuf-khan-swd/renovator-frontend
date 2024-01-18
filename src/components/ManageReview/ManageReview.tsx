@@ -72,19 +72,6 @@ const ManageReview = () => {
 
   const columns = [
     {
-      title: "Review",
-      width: 175,
-      dataIndex: "review",
-      render: function (data: string) {
-        return data.length <= 25 ? data : data.slice(0, 22) + "...";
-      },
-    },
-    {
-      title: "Rating",
-      width: 70,
-      dataIndex: "rating",
-    },
-    {
       title: "Service Name",
       width: 170,
       dataIndex: "service",
@@ -112,6 +99,19 @@ const ManageReview = () => {
           status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
         return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
+    },
+    {
+      title: "Review",
+      width: 175,
+      dataIndex: "review",
+      render: function (data: string) {
+        return data.length <= 25 ? data : data.slice(0, 22) + "...";
+      },
+    },
+    {
+      title: "Rating",
+      width: 70,
+      dataIndex: "rating",
     },
     {
       title: "User Email",
