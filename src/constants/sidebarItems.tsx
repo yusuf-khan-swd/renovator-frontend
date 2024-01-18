@@ -78,6 +78,11 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-reviews`,
     },
     {
+      label: <Link href={`/${role}/manage-feedbacks`}>Manage Feedbacks</Link>,
+      icon: <FontSizeOutlined />,
+      key: `/${role}/manage-feedbacks`,
+    },
+    {
       label: "Manage Content",
       key: `/${role}/manage-contents`,
       icon: <UnorderedListOutlined />,
