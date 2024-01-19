@@ -65,11 +65,6 @@ const ACDepartmentPage = () => {
       title: "Title",
       width: 140,
       dataIndex: "title",
-      render: function (title: string) {
-        const shortTitle =
-          title?.length <= 60 ? title : title.slice(0, 57) + "...";
-        return shortTitle;
-      },
     },
     {
       title: "Description",
