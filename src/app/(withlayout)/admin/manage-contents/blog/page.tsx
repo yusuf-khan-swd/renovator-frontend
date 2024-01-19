@@ -71,6 +71,7 @@ const ACDepartmentPage = () => {
     },
     {
       title: "CreatedAt",
+      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
