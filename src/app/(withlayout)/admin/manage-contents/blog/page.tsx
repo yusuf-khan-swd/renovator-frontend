@@ -63,6 +63,7 @@ const ACDepartmentPage = () => {
   const columns = [
     {
       title: "Title",
+      width: 140,
       dataIndex: "title",
     },
     {
@@ -80,6 +81,7 @@ const ACDepartmentPage = () => {
     },
     {
       title: "Action",
+      width: 140,
       render: function (data: any) {
         return (
           <>
