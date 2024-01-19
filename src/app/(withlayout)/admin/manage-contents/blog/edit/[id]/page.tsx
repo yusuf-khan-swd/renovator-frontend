@@ -71,7 +71,7 @@ const EditServicePage = ({ params }: any) => {
                   <FormTextArea
                     name="description"
                     label="Description"
-                    rows={10}
+                    rows={9}
                     required
                   />
                 </Col>
