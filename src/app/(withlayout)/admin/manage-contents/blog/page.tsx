@@ -47,16 +47,18 @@ const ACDepartmentPage = () => {
   const { data, isLoading } = useBlogsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      //   console.log(data);
-      const res = await deleteBlog(id);
-      if (res) {
+      message.loading("Deleting.....");
+      const result: any = await deleteBlog(id);
+
+      if (result?.data) {
         message.success("Blog Deleted successfully");
+      } else {
+        message.error("Blog Delete failed!");
       }
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
