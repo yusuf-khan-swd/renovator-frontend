@@ -41,7 +41,7 @@ const SideBar = () => {
           padding: "10px 0px",
         }}
       >
-        <Link href="/home" style={{ color: "white" }}>
+        <Link href="/" style={{ color: "white" }}>
           Renovator
         </Link>
       </div>

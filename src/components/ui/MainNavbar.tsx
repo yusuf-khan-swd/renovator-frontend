@@ -12,7 +12,7 @@ const MainNavbar = () => {
 
   const navbarItems = (
     <>
-      <Link href="/home">
+      <Link href="/">
         <Button type="link">Home</Button>
       </Link>
       <Link href="/service">
