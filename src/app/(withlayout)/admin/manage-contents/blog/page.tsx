@@ -71,13 +71,14 @@ const ACDepartmentPage = () => {
         const uptoWordCount = 7;
 
         // Make array of string using empty string and take 7 word
-        const splitTitle = title.split(" ").slice(0, uptoWordCount);
+        const splitTitle = title.split(" ");
+        const sliceSplitTitle = splitTitle.slice(0, uptoWordCount);
 
         // And add ellipsis if word length is greater then uptoWordCount
         const shortTitle =
           splitTitle.length <= uptoWordCount
             ? splitTitle.join(" ")
-            : splitTitle.join(" ") + "...";
+            : sliceSplitTitle.join(" ") + "...";
 
         return shortTitle;
       },
@@ -86,16 +87,17 @@ const ACDepartmentPage = () => {
       title: "Description",
       dataIndex: "description",
       render: function (description: string) {
-        const uptoWordCount = 60;
+        const uptoWordCount = 80;
 
         // make array of string with empty string for word then take 60 words
-        const splitDescription = description.split(" ").slice(0, uptoWordCount);
+        const splitDescription = description.split(" ");
+        const sliceSplitDescription = splitDescription.slice(0, uptoWordCount);
 
         // Check array of words length is less then uptoWordCount if not then add ellipsis
         const shortDescription =
           splitDescription.length <= uptoWordCount
             ? splitDescription.join(" ")
-            : splitDescription.join(" ") + "...";
+            : sliceSplitDescription.join(" ") + "...";
 
         return shortDescription;
       },
