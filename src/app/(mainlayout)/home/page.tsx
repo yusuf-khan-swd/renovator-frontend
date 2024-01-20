@@ -1,9 +1,4 @@
-import HomePageCategories from "@/components/Category/HomePageCategories";
-import OngoingService from "@/components/Service/OngoingService";
-import UpcomingService from "@/components/Service/UpcomingService";
-import Banner from "@/components/ui/Banner";
-import Feedback from "@/components/ui/Feedback";
-
+import Home from "@/components/Home/Home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,14 +9,7 @@ export const metadata: Metadata = {
 const HomePage = () => {
   return (
     <div>
-      <Banner />
-      <HomePageCategories />
-
-      <div>
-        <OngoingService />
-        <UpcomingService />
-      </div>
-      <Feedback />
+      <Home />
     </div>
   );
 };
