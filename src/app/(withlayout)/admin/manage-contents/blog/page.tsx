@@ -71,7 +71,7 @@ const ACDepartmentPage = () => {
         // Make array of string using empty string and take 7 word
         const splitTitle = title.split(" ").slice(0, uptoWordCount);
 
-        // And add ellipsis if word length is greater then uptoWord
+        // And add ellipsis if word length is greater then uptoWordCount
         const shortTitle =
           splitTitle.length <= uptoWordCount
             ? splitTitle.join(" ")
@@ -89,7 +89,7 @@ const ACDepartmentPage = () => {
         // make array of string with empty string for word then take 60 words
         const splitDescription = description.split(" ").slice(0, uptoWordCount);
 
-        // Check array of words length is less then 60 if not then add ellipsis
+        // Check array of words length is less then uptoWordCount if not then add ellipsis
         const shortDescription =
           splitDescription.length <= uptoWordCount
             ? splitDescription.join(" ")
