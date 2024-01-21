@@ -18,7 +18,7 @@ import { useState } from "react";
 
 const ManageBlog = () => {
   const { role } = getUserInfo() as any;
-  const routeLabel = "blog";
+  const routeLabel = "manage-blog";
   const routeUrl = "manage-contents/blog";
 
   const query: Record<string, any> = {};
