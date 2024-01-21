@@ -18,7 +18,8 @@ import { useState } from "react";
 
 const ACDepartmentPage = () => {
   const { role } = getUserInfo() as any;
-  const routeName = "manage-contents/blog";
+  const routeLabel = "blog";
+  const routeUrl = "manage-contents/blog";
 
   const query: Record<string, any> = {};
 
@@ -117,7 +118,7 @@ const ACDepartmentPage = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeUrl}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
@@ -159,7 +160,7 @@ const ACDepartmentPage = () => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
+        items={[{ label: routeLabel, link: `/${role}/${routeUrl}` }]}
       />
 
       <ActionBar title="Blog List">
@@ -175,7 +176,7 @@ const ACDepartmentPage = () => {
           }}
         />
         <div>
-          <Link href={`/${role}/${routeName}/create`}>
+          <Link href={`/${role}/${routeUrl}/create`}>
             <Button type="primary">Create</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
