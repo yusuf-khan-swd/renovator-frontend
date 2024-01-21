@@ -1,4 +1,4 @@
-import ManageFaq from "@/components/ManageFaq/ManageFaq";
+import ManageFaq from "@/components/ManageContent/ManageFaq/ManageFaq";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
