@@ -45,16 +45,18 @@ const ACDepartmentPage = () => {
   const { data, isLoading } = useFaqsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      //   console.log(data);
-      const res = await deleteFaq(id);
-      if (res) {
+      message.loading("Deleting.....");
+      const result: any = await deleteFaq(id);
+
+      if (result?.data) {
         message.success("Faq Deleted successfully");
+      } else {
+        message.error("Faq Delete failed!");
       }
-    } catch (err: any) {
-      //   console.error(err.message);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
