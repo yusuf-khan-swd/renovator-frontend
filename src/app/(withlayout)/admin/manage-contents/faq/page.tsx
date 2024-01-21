@@ -187,7 +187,7 @@ const ACDepartmentPage = () => {
             <Button
               onClick={resetFilters}
               type="primary"
-              style={{ margin: "0px 5px" }}
+              style={{ margin: "2px" }}
             >
               <ReloadOutlined />
             </Button>
