@@ -16,7 +16,7 @@ import { useState } from "react";
 const ACDepartmentPage = () => {
   const { role } = getUserInfo() as any;
   const routeLabel = "manage-faq";
-  const routeName = "manage-contents/faq";
+  const routeUrl = "manage-contents/faq";
 
   const query: Record<string, any> = {};
 
@@ -68,14 +68,46 @@ const ACDepartmentPage = () => {
     },
     {
       title: "Title",
+      width: 140,
       dataIndex: "title",
+      render: function (title: string) {
+        const uptoWordCount = 7;
+
+        // Make array of string using empty string and take 7 word
+        const splitTitle = title.split(" ");
+        const sliceSplitTitle = splitTitle.slice(0, uptoWordCount);
+
+        // And add ellipsis if word length is greater then uptoWordCount
+        const shortTitle =
+          splitTitle.length <= uptoWordCount
+            ? splitTitle.join(" ")
+            : sliceSplitTitle.join(" ") + "...";
+
+        return shortTitle;
+      },
     },
     {
       title: "Description",
       dataIndex: "description",
+      render: function (description: string) {
+        const uptoWordCount = 80;
+
+        // make array of string with empty string for word then take 60 words
+        const splitDescription = description.split(" ");
+        const sliceSplitDescription = splitDescription.slice(0, uptoWordCount);
+
+        // Check array of words length is less then uptoWordCount if not then add ellipsis
+        const shortDescription =
+          splitDescription.length <= uptoWordCount
+            ? splitDescription.join(" ")
+            : sliceSplitDescription.join(" ") + "...";
+
+        return shortDescription;
+      },
     },
     {
       title: "CreatedAt",
+      width: 170,
       dataIndex: "createdAt",
       render: function (data: any) {
         return data && dayjs(data).format("MMM D, YYYY hh:mm A");
@@ -84,14 +116,13 @@ const ACDepartmentPage = () => {
     },
     {
       title: "Action",
+      width: 140,
       render: function (data: any) {
         return (
           <>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeUrl}/edit/${data?.id}`}>
               <Button
-                style={{
-                  margin: "0px 5px",
-                }}
+                style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
                 type="primary"
               >
@@ -101,8 +132,8 @@ const ACDepartmentPage = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this faq?"
-              content={`Delete the ${data?.title} faq!`}
+              title="Do you want to delete this blog?"
+              content={`Delete ${data?.title} blog!`}
             />
           </>
         );
@@ -131,7 +162,7 @@ const ACDepartmentPage = () => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[{ label: routeLabel, link: `/${role}/${routeName}` }]}
+        items={[{ label: routeLabel, link: `/${role}/${routeUrl}` }]}
       />
 
       <ActionBar title="Faq List">
@@ -147,7 +178,7 @@ const ACDepartmentPage = () => {
           }}
         />
         <div>
-          <Link href={`/${role}/${routeName}/create`}>
+          <Link href={`/${role}/${routeUrl}/create`}>
             <Button type="primary">Create</Button>
           </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
