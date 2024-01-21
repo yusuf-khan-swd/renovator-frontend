@@ -15,6 +15,7 @@ import { useState } from "react";
 
 const ACDepartmentPage = () => {
   const { role } = getUserInfo() as any;
+  const routeLabel = "faq";
   const routeName = "manage-contents/faq";
 
   const query: Record<string, any> = {};
@@ -123,7 +124,7 @@ const ACDepartmentPage = () => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
+        items={[{ label: routeLabel, link: `/${role}/${routeName}` }]}
       />
 
       <ActionBar title="Faq List">
