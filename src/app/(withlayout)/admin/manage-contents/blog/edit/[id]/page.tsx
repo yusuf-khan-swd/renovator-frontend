@@ -39,15 +39,16 @@ const EditServicePage = ({ params }: any) => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-contents/blog";
+  const routeLabel = "manage-blog";
+  const routeUrl = "manage-contents/blog";
   const endRoute = "edit";
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
-          { label: routeName, link: `/${role}/${routeName}` },
-          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
+          { label: routeLabel, link: `/${role}/${routeUrl}` },
+          { label: endRoute, link: `/${role}/${routeUrl}/${endRoute}` },
         ]}
       />
       {isLoading ? (
