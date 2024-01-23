@@ -16,9 +16,13 @@ const CreateServicePage = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      // console.log(data);
-      await createFaq(data);
-      message.success("Faq added successfully");
+      const result: any = await createFaq(data);
+
+      if (result?.data) {
+        message.success("Faq added successfully");
+      } else {
+        message.error("Faq added faield");
+      }
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);

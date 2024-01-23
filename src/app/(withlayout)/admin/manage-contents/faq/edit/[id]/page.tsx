@@ -20,12 +20,16 @@ const EditServicePage = ({ params }: any) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
-      console.log(data);
-      await updateFaq(data);
-      message.success("Faq updated successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      const result: any = await updateFaq(data);
+
+      if (result?.data) {
+        message.success("Faq updated successfully");
+      } else {
+        message.error("Faq updated failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
