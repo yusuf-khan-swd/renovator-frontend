@@ -23,12 +23,16 @@ const EditServicePage = ({ params }: any) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
-      console.log(data);
-      await updateBlog(data);
-      message.success("Blog updated successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      const result: any = await updateBlog(data);
+
+      if (result?.data) {
+        message.success("Blog updated successfully");
+      } else {
+        message.error("Blog updated failed");
+      }
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
