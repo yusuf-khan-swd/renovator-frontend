@@ -5,6 +5,7 @@ import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import {
   useBlogsQuery,
   useDeleteBlogMutation,
@@ -137,12 +138,7 @@ const ManageBlog = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title={
-                <p>
-                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
-                  this blog
-                </p>
-              }
+              title={<ConfirmModalTitle data="blog" />}
               content={
                 <div style={{ display: "grid", gap: "4px" }}>
                   <p style={{ fontSize: "15px" }}>
