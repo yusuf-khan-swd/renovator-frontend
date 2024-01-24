@@ -27,7 +27,6 @@ const ServiceCardBody = ({
         gap: "2px",
       }}
     >
-      <p>Category: {category}</p>
       <p>
         Price: <span style={{ fontWeight: "bold" }}>${price}</span>
       </p>
@@ -38,6 +37,7 @@ const ServiceCardBody = ({
         </span>
       </p>
       <p>Location: {location}</p>
+      <p>Category: {category}</p>
       <p style={{ padding: "5px 0" }}>
         <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
         {detailsPage ? (
