@@ -11,6 +11,7 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
   const location = service?.location;
   const status = service?.status;
   const category = service?.category?.title;
+  const description = service?.description;
 
   const fontBold = { fontWeight: "bold" };
 
@@ -40,6 +41,10 @@ const ConfirmModalServiceContent = ({ service }: IServiceProps) => {
       </p>
       <p>
         Category: <span style={fontBold}>{category}</span>
+      </p>
+      <p>
+        <span style={fontBold}>Description: </span>
+        {description}
       </p>
     </div>
   );
