@@ -11,7 +11,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditServicePage = ({ params }: any) => {
+const EditFaqPage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useFaqQuery(id);
 
@@ -89,4 +89,4 @@ const EditServicePage = ({ params }: any) => {
   );
 };
 
-export default EditServicePage;
+export default EditFaqPage;
