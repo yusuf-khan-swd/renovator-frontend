@@ -16,6 +16,7 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageService = () => {
   const { role } = getUserInfo() as any;
@@ -152,7 +153,7 @@ const ManageService = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this service?"
+              title={<ConfirmModalTitle data="service" />}
               content={<ConfirmModalServiceContent service={data} />}
             />
           </div>

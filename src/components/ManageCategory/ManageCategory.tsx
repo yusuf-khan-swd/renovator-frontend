@@ -15,6 +15,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageCategory = () => {
   const { role } = getUserInfo() as any;
@@ -122,7 +123,7 @@ const ManageCategory = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this category?"
+              title={<ConfirmModalTitle data="category" />}
               content={
                 <p>
                   Delete the{" "}

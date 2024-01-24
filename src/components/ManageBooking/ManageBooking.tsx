@@ -22,6 +22,7 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageBooking = () => {
   const { role } = getUserInfo() as any;
@@ -273,12 +274,7 @@ const ManageBooking = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title={
-                <p>
-                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
-                  this booking
-                </p>
-              }
+              title={<ConfirmModalTitle data="booking" />}
               content={<ConfirmModalBookingContent data={data} />}
             />
           </>

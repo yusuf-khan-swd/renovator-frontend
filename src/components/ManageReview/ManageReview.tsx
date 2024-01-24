@@ -18,6 +18,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
+import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageReview = () => {
   const { role, userId } = getUserInfo() as any;
@@ -164,12 +165,7 @@ const ManageReview = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title={
-                <p>
-                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
-                  this review.
-                </p>
-              }
+              title={<ConfirmModalTitle data="review" />}
               content={<ConfirmModalReviewContent data={data} />}
             />
           </div>
