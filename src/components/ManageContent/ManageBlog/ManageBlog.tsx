@@ -137,8 +137,24 @@ const ManageBlog = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title="Do you want to delete this blog?"
-              content={`Delete ${data?.title} blog!`}
+              title={
+                <p>
+                  Do you want to <span style={{ color: "red" }}>Delete</span>{" "}
+                  this blog
+                </p>
+              }
+              content={
+                <div style={{ display: "grid", gap: "4px" }}>
+                  <p style={{ fontSize: "15px" }}>
+                    <span style={{ fontWeight: "bold" }}>Title:</span>{" "}
+                    {data?.title}
+                  </p>
+                  <p>
+                    <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
+                    {data?.description}
+                  </p>
+                </div>
+              }
             />
           </>
         );
