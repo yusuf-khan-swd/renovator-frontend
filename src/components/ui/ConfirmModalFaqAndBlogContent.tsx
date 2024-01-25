@@ -3,14 +3,18 @@ interface IFaqAndBlogProps {
 }
 
 const ConfirmModalFaqAndBlogContent = ({ data }: IFaqAndBlogProps) => {
+  const title = data?.title;
+  const description = data?.description;
+
+  const fontBold = { fontWeight: "bold" };
+
   return (
     <div style={{ display: "grid", gap: "4px" }}>
       <p style={{ fontSize: "15px" }}>
-        <span style={{ fontWeight: "bold" }}>Title:</span> {data?.title}
+        <span style={fontBold}>Title:</span> {title}
       </p>
       <p>
-        <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-        {data?.description}
+        <span style={fontBold}>Description:</span> {description}
       </p>
     </div>
   );
