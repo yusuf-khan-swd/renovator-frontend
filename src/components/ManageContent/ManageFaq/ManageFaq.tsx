@@ -5,6 +5,7 @@ import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import { useDeleteFaqMutation, useFaqsQuery } from "@/redux/api/content/faqApi";
 import { useDebounced } from "@/redux/hooks";
@@ -136,18 +137,7 @@ const ManageFaq = () => {
               id={data?.id}
               handler={deleteHandler}
               title={<ConfirmModalTitle data="FAQ" />}
-              content={
-                <div style={{ display: "grid", gap: "4px" }}>
-                  <p style={{ fontSize: "15px" }}>
-                    <span style={{ fontWeight: "bold" }}>Title:</span>{" "}
-                    {data?.title}
-                  </p>
-                  <p>
-                    <span style={{ fontWeight: "bold" }}>Description:</span>{" "}
-                    {data?.description}
-                  </p>
-                </div>
-              }
+              content={<ConfirmModalFaqAndBlogContent data={data} />}
             />
           </>
         );
