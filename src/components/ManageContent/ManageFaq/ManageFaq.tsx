@@ -1,15 +1,15 @@
 "use client";
-import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import CommonTable from "@/components/ui/CommonTable";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
+import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import { useDeleteFaqMutation, useFaqsQuery } from "@/redux/api/content/faqApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
+import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
