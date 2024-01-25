@@ -11,8 +11,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditFaq = ({ params }: any) => {
-  const id = params?.id;
+const EditFaq = ({ id }: { id: string }) => {
   const { data, isLoading } = useFaqQuery(id);
 
   const [updateFaq] = useUpdateFaqMutation();
