@@ -25,6 +25,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   // TODO: Check Dashboard all of the input field responsive
+  // TODO: Separate all the view, create and edit page form and information from user, admin and super_admin dashboard
+  // TODO: Check is there going to be any problem with this separation like when deployed.
 
   return (
     <Layout
