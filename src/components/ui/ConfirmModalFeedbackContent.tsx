@@ -3,6 +3,8 @@ interface IFeedbackProps {
 }
 
 const ConfirmModalFeedbackContent = ({ data }: IFeedbackProps) => {
+  const name = data?.name;
+  const email = data?.email;
   const rating = data?.rating;
   const review = data?.review;
 
@@ -10,6 +12,12 @@ const ConfirmModalFeedbackContent = ({ data }: IFeedbackProps) => {
 
   return (
     <div style={{ display: "grid", gap: "4px" }}>
+      <p>
+        <span style={fontBold}>Name:</span> {name}
+      </p>
+      <p>
+        <span style={fontBold}>Email:</span> {email}
+      </p>
       <p>
         <span style={fontBold}>Rating:</span> {rating}
       </p>
