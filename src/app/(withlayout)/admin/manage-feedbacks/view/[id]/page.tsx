@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 
 const ViewFeedbackPage = ({ params }: any) => {
   const { role } = getUserInfo() as any;
-  const routeName = "manage-reviews";
+  const routeName = "manage-feedbacks";
   const endRoute = "view";
 
   const id = params?.id;

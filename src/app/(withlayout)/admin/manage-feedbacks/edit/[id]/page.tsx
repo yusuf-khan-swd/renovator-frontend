@@ -49,7 +49,7 @@ const EditFeedbackPage = ({ params }: any) => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-reviews";
+  const routeName = "manage-feedbacks";
   const endRoute = "edit";
 
   return (
