@@ -76,6 +76,21 @@ const ManageFeedback = () => {
     {
       title: "Review",
       dataIndex: "review",
+      render: function (review: string) {
+        const uptoWordCount = 40;
+
+        // make array of string with empty string for word then take 60 words
+        const splitReview = review.split(" ");
+        const sliceSplitReview = splitReview.slice(0, uptoWordCount);
+
+        // Check array of words length is less then uptoWordCount if not then add ellipsis
+        const shortDescription =
+          splitReview.length <= uptoWordCount
+            ? splitReview.join(" ")
+            : sliceSplitReview.join(" ") + "...";
+
+        return shortDescription;
+      },
     },
     {
       title: "Rating",
