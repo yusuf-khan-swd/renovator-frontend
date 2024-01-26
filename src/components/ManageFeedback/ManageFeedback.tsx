@@ -99,7 +99,7 @@ const ManageFeedback = () => {
     },
     {
       title: "User Name",
-      width: 170,
+      width: 140,
       dataIndex: "name",
       render: function (name: string) {
         const uptoWordCount = 3;
