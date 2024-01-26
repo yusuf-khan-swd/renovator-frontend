@@ -8,7 +8,8 @@ import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRating
 import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { useDeleteReviewMutation, useReviewQuery } from "@/redux/api/reviewApi";
+import { useFeedbackQuery } from "@/redux/api/feedbackApi";
+import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -22,7 +23,7 @@ const ViewFeedbackPage = ({ params }: any) => {
   const endRoute = "view";
 
   const id = params?.id;
-  const { data, isLoading } = useReviewQuery(id);
+  const { data, isLoading } = useFeedbackQuery(id);
   const service = data?.service;
 
   const router = useRouter();

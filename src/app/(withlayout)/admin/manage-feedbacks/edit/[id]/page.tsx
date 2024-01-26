@@ -10,7 +10,10 @@ import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRating
 import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { ratingOptions } from "@/constants/global";
-import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
+import {
+  useFeedbackQuery,
+  useUpdateFeedbackMutation,
+} from "@/redux/api/feedbackApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,17 +22,17 @@ import Link from "next/link";
 
 const EditFeedbackPage = ({ params }: any) => {
   const id = params?.id;
-  const { data, isLoading } = useReviewQuery(id);
+  const { data, isLoading } = useFeedbackQuery(id);
   const service = data?.service;
 
-  const [updateReview] = useUpdateReviewMutation();
+  const [updateFeedback] = useUpdateFeedbackMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
       data.rating = parseInt(data.rating);
 
-      const result: any = await updateReview(data);
+      const result: any = await updateFeedback(data);
       if (result?.data) {
         message.success("Review and Rating updated successfully");
       } else {
