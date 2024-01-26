@@ -3,8 +3,10 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { useFeedbacksQuery } from "@/redux/api/feedbackApi";
-import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
+import {
+  useDeleteFeedbackMutation,
+  useFeedbacksQuery,
+} from "@/redux/api/feedbackApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -27,7 +29,7 @@ const ManageFeedback = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteReview] = useDeleteReviewMutation();
+  const [deleteFeedback] = useDeleteFeedbackMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -50,12 +52,12 @@ const ManageFeedback = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
-      const result: any = await deleteReview(id);
+      const result: any = await deleteFeedback(id);
 
       if (result?.data) {
-        message.success("Review Delete successfully");
+        message.success("Feedback Delete successfully");
       } else {
-        message.error("Review Delete failed!");
+        message.error("Feedback Delete failed!");
       }
     } catch (error: any) {
       console.error(error);
