@@ -14,7 +14,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
+import ConfirmModalFeedbackContent from "../ui/ConfirmModalFeedbackContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageFeedback = () => {
@@ -167,8 +167,8 @@ const ManageFeedback = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title={<ConfirmModalTitle data="review" />}
-              content={<ConfirmModalReviewContent data={data} />}
+              title={<ConfirmModalTitle data="feedback" />}
+              content={<ConfirmModalFeedbackContent data={data} />}
             />
           </div>
         );
