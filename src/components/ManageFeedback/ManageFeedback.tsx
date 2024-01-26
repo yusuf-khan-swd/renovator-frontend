@@ -65,6 +65,13 @@ const ManageFeedback = () => {
 
   const columns = [
     {
+      title: "S/N",
+      width: 60,
+      render: function (text: any, record: any, index: number) {
+        return index + 1;
+      },
+    },
+    {
       title: "Review",
       dataIndex: "review",
     },
