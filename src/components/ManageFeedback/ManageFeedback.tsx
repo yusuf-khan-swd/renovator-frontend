@@ -3,6 +3,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import getWordFromString from "@/helpers/getWordFromString";
 import {
   useDeleteFeedbackMutation,
   useFeedbacksQuery,
@@ -79,16 +80,7 @@ const ManageFeedback = () => {
       render: function (review: string) {
         const uptoWordCount = 40;
 
-        // make array of string with empty string for word then take 60 words
-        const splitReview = review.split(" ");
-        const sliceSplitReview = splitReview.slice(0, uptoWordCount);
-
-        // Check array of words length is less then uptoWordCount if not then add ellipsis
-        const shortReview =
-          splitReview.length <= uptoWordCount
-            ? splitReview.join(" ")
-            : sliceSplitReview.join(" ") + "...";
-
+        const shortReview = getWordFromString(review, uptoWordCount);
         return shortReview;
       },
     },
