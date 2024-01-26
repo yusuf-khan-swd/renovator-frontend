@@ -4,11 +4,8 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
-import {
-  useAdminReviewsQuery,
-  useDeleteReviewMutation,
-  useUserReviewsQuery,
-} from "@/redux/api/reviewApi";
+import { useFeedbacksQuery } from "@/redux/api/feedbackApi";
+import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
@@ -16,15 +13,13 @@ import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageFeedback = () => {
-  const { role, userId } = getUserInfo() as any;
+  const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
-
-  const [roleBaseReviews, setRoleBaseReviews] = useState();
 
   const query: Record<string, any> = {};
 
@@ -49,11 +44,8 @@ const ManageFeedback = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data: userReviewsData, isLoading: isLoadingUserReview } =
-    useUserReviewsQuery(userId);
 
-  const { data: adminReviewsData, isLoading: isLoadingAdminReviews } =
-    useAdminReviewsQuery(undefined);
+  const { data, isLoading } = useFeedbacksQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     try {
@@ -174,20 +166,6 @@ const ManageFeedback = () => {
     },
   ];
 
-  useEffect(() => {
-    if (role === "user") {
-      setRoleBaseReviews(userReviewsData);
-    } else if (role === "admin") {
-      setRoleBaseReviews(adminReviewsData);
-    }
-  }, [
-    role,
-    userReviewsData,
-    isLoadingUserReview,
-    adminReviewsData,
-    isLoadingAdminReviews,
-  ]);
-
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
@@ -238,9 +216,9 @@ const ManageFeedback = () => {
       </ActionBar>
 
       <CommonTable
-        loading={isLoadingUserReview}
+        loading={isLoading}
         columns={columns}
-        dataSource={roleBaseReviews}
+        dataSource={data}
         pageSize={size}
         totalPages={0}
         showSizeChanger={true}
