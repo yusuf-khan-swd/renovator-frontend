@@ -3,14 +3,12 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useFeedbacksQuery } from "@/redux/api/feedbackApi";
 import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
-import { IService } from "@/types";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, Tag, message } from "antd";
+import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
@@ -47,6 +45,8 @@ const ManageFeedback = () => {
 
   const { data, isLoading } = useFeedbacksQuery(undefined);
 
+  console.log(data);
+
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
@@ -65,41 +65,8 @@ const ManageFeedback = () => {
 
   const columns = [
     {
-      title: "Service Name",
-      width: 170,
-      dataIndex: "service",
-      render: function (service: IService) {
-        const title = service?.title;
-        return title.length <= 25 ? title : title.slice(0, 22) + "...";
-      },
-    },
-    {
-      title: "Price",
-      width: 70,
-      dataIndex: "service",
-      render: function (service: IService) {
-        return "$" + service?.price;
-      },
-      sorter: true,
-    },
-    {
-      title: "Status",
-      width: 100,
-      dataIndex: "service",
-      render: function (service: IService) {
-        const status = service?.status;
-        const color =
-          status === ENUM_SERVICE_STATUS.AVAILABLE ? "green" : "blue";
-        return <Tag color={color}>{status.toUpperCase()}</Tag>;
-      },
-    },
-    {
       title: "Review",
-      width: 175,
       dataIndex: "review",
-      render: function (data: string) {
-        return data.length <= 25 ? data : data.slice(0, 22) + "...";
-      },
     },
     {
       title: "Rating",
@@ -107,20 +74,24 @@ const ManageFeedback = () => {
       dataIndex: "rating",
     },
     {
+      title: "User Name",
+      width: 170,
+      dataIndex: "name",
+    },
+    {
       title: "User Email",
       width: 140,
-      dataIndex: "user",
-      render: function (user: any) {
-        const email = user?.email;
+      dataIndex: "email",
+      render: function (email: any) {
         return email?.length <= 22 ? email : email?.slice(0, 17) + "...";
       },
     },
     {
       title: "CreatedAt",
-      width: 120,
+      width: 160,
       dataIndex: "createdAt",
       render: function (data: any) {
-        return data && dayjs(data).format("MMM D, YYYY");
+        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
       },
       sorter: true,
     },
