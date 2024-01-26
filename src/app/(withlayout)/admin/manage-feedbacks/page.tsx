@@ -2,7 +2,7 @@ import ManageFeedback from "@/components/ManageFeedback/ManageFeedback";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manage Reviews - Renovator",
+  title: "Manage Feedbacks - Renovator",
   description: "A Home Renovation Service Provider",
 };
 

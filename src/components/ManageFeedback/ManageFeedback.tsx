@@ -185,7 +185,7 @@ const ManageFeedback = () => {
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
 
-      <ActionBar title="Review List">
+      <ActionBar title="Feedback List">
         <Input
           type="text"
           size="large"
