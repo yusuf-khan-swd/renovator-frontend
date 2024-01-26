@@ -62,9 +62,7 @@ const UserProfile = () => {
           </Form>
           <Link href={`/profile/edit/${data?.id}`}>
             <Button
-              style={{
-                margin: "0px 5px",
-              }}
+              style={{ margin: "2px" }}
               onClick={() => console.log(data)}
               type="primary"
             >

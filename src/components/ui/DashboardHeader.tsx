@@ -37,13 +37,7 @@ const DashboardHeader = () => {
           height: "100%",
         }}
       >
-        <p
-          style={{
-            margin: "0px 5px",
-          }}
-        >
-          {role}
-        </p>
+        <p style={{ margin: "2px" }}>{role}</p>
         <Dropdown menu={{ items }}>
           <a>
             <Space wrap size={16}>
