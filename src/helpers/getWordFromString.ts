@@ -1,4 +1,5 @@
 const getWordFromString = (inputString: string, wordCount: number) => {
+  // Number of word to get
   const uptoWordCount = wordCount;
 
   // make array of string with empty string for word then take 60 words
