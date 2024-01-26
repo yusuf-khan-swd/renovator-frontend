@@ -101,6 +101,21 @@ const ManageFeedback = () => {
       title: "User Name",
       width: 170,
       dataIndex: "name",
+      render: function (name: string) {
+        const uptoWordCount = 3;
+
+        // make array of string with empty string for word then take 60 words
+        const splitName = name.split(" ");
+        const sliceSplitName = splitName.slice(0, uptoWordCount);
+
+        // Check array of words length is less then uptoWordCount if not then add ellipsis
+        const shortName =
+          splitName.length <= uptoWordCount
+            ? splitName.join(" ")
+            : sliceSplitName.join(" ") + "...";
+
+        return shortName;
+      },
     },
     {
       title: "User Email",
