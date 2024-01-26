@@ -84,12 +84,12 @@ const ManageFeedback = () => {
         const sliceSplitReview = splitReview.slice(0, uptoWordCount);
 
         // Check array of words length is less then uptoWordCount if not then add ellipsis
-        const shortDescription =
+        const shortReview =
           splitReview.length <= uptoWordCount
             ? splitReview.join(" ")
             : sliceSplitReview.join(" ") + "...";
 
-        return shortDescription;
+        return shortReview;
       },
     },
     {
