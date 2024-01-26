@@ -1,8 +1,8 @@
-const getWordFromString = (data: string, wordCount: number) => {
+const getWordFromString = (inputString: string, wordCount: number) => {
   const uptoWordCount = wordCount;
 
   // make array of string with empty string for word then take 60 words
-  const splitData = data.split(" ");
+  const splitData = inputString.split(" ");
   const sliceSplitData = splitData.slice(0, uptoWordCount);
 
   // Check array of words length is less then uptoWordCount if not then add ellipsis
