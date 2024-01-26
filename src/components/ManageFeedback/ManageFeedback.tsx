@@ -78,9 +78,7 @@ const ManageFeedback = () => {
       title: "Review",
       dataIndex: "review",
       render: function (review: string) {
-        const uptoWordCount = 40;
-
-        const shortReview = getWordFromString(review, uptoWordCount);
+        const shortReview = getWordFromString(review, 40);
         return shortReview;
       },
     },
