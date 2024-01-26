@@ -94,18 +94,7 @@ const ManageFeedback = () => {
       width: 140,
       dataIndex: "name",
       render: function (name: string) {
-        const uptoWordCount = 3;
-
-        // make array of string with empty string for word then take 60 words
-        const splitName = name.split(" ");
-        const sliceSplitName = splitName.slice(0, uptoWordCount);
-
-        // Check array of words length is less then uptoWordCount if not then add ellipsis
-        const shortName =
-          splitName.length <= uptoWordCount
-            ? splitName.join(" ")
-            : sliceSplitName.join(" ") + "...";
-
+        const shortName = getWordFromString(name, 3);
         return shortName;
       },
     },
