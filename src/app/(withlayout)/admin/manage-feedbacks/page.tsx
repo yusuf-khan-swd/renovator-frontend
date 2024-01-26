@@ -1,4 +1,4 @@
-import ManageReview from "@/components/ManageReview/ManageReview";
+import ManageFeedback from "@/components/ManageFeedback/ManageFeedback";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const ManageFeedbackPage = () => {
   return (
     <div>
-      <ManageReview />
+      <ManageFeedback />
     </div>
   );
 };
