@@ -1,29 +1,26 @@
 "use client";
 
 import Form from "@/components/Forms/Form";
+import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRatingHeading";
-import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { ratingOptions } from "@/constants/global";
 import {
   useFeedbackQuery,
   useUpdateFeedbackMutation,
 } from "@/redux/api/feedbackApi";
-import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
+import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 
 const EditFeedbackPage = ({ params }: any) => {
   const id = params?.id;
   const { data, isLoading } = useFeedbackQuery(id);
-  const service = data?.service;
 
   const [updateFeedback] = useUpdateFeedbackMutation();
 
@@ -34,19 +31,20 @@ const EditFeedbackPage = ({ params }: any) => {
 
       const result: any = await updateFeedback(data);
       if (result?.data) {
-        message.success("Review and Rating updated successfully");
+        message.success("Feedback updated successfully");
       } else {
-        message.error("Review and rating update failed!");
+        message.error("Feedback update failed!");
       }
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
   const defaultValues = {
-    id: data?.id || "",
-    serviceId: data?.serviceId,
+    id: data?.id,
+    name: data?.name || "",
+    email: data?.email || "",
     rating: data?.rating || "",
     review: data?.review || "",
   };
@@ -66,20 +64,26 @@ const EditFeedbackPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "24px 5px", display: "grid", gap: "24px" }}>
-          <div>
-            <ServiceDetailsCard service={service} />
-          </div>
-
+        <div style={{ margin: "24px 5px" }}>
           <Card>
-            <ReviewAndRatingHeading heading="Update Review" />
+            <h1>Update Feedback</h1>
             <Form
               submitHandler={onSubmit}
-              resolver={yupResolver(reviewAndRatingSchema)}
+              resolver={yupResolver(feedbackSchema)}
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col span={10} style={{ margin: "10px 0" }}>
+                  <FormInput name="name" label="User Name" required />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={10} style={{ margin: "10px 0" }}>
+                  <FormInput name="email" label="User Email" required />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={10} style={{ margin: "10px 0" }}>
                   <FormSelectField
                     name="rating"
                     label="Rating"
@@ -88,29 +92,19 @@ const EditFeedbackPage = ({ params }: any) => {
                   />
                 </Col>
               </Row>
-
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={16} style={{ margin: "10px 0" }}>
+                <Col span={18} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="review"
-                    label="Review Description"
-                    rows={5}
+                    label="Review"
+                    rows={9}
                     required
                   />
                 </Col>
               </Row>
-              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
-                  <Button type="primary" htmlType="submit">
-                    Update Review
-                  </Button>
-                  <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
-                    <Button type="default" style={{ margin: "0 5px" }}>
-                      View Review
-                    </Button>
-                  </Link>
-                </Col>
-              </Row>
+              <Button type="primary" htmlType="submit">
+                Update
+              </Button>
             </Form>
           </Card>
         </div>
