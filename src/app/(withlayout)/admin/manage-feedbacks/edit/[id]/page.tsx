@@ -74,12 +74,12 @@ const EditFeedbackPage = ({ params }: any) => {
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={10} style={{ margin: "10px 0" }}>
-                  <FormInput name="name" label="User Name" required />
+                  <FormInput name="name" label="User Name" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={10} style={{ margin: "10px 0" }}>
-                  <FormInput name="email" label="User Email" required />
+                  <FormInput name="email" label="User Email" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
