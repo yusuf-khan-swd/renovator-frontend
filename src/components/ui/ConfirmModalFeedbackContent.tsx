@@ -1,3 +1,5 @@
+import getWordFromString from "@/helpers/getWordFromString";
+
 interface IFeedbackProps {
   data: { name: string; email: string; rating: number; review: string };
 }
@@ -6,7 +8,7 @@ const ConfirmModalFeedbackContent = ({ data }: IFeedbackProps) => {
   const name = data?.name;
   const email = data?.email;
   const rating = data?.rating;
-  const review = data?.review;
+  const review = getWordFromString(data?.review, 80);
 
   const fontBold = { fontWeight: "bold" };
 
