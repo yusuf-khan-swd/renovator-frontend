@@ -7,6 +7,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
+import getWordFromString from "@/helpers/getWordFromString";
 import {
   useBlogsQuery,
   useDeleteBlogMutation,
@@ -78,18 +79,7 @@ const ManageBlog = () => {
       width: 140,
       dataIndex: "title",
       render: function (title: string) {
-        const uptoWordCount = 7;
-
-        // Make array of string using empty string and take 7 word
-        const splitTitle = title.split(" ");
-        const sliceSplitTitle = splitTitle.slice(0, uptoWordCount);
-
-        // And add ellipsis if word length is greater then uptoWordCount
-        const shortTitle =
-          splitTitle.length <= uptoWordCount
-            ? splitTitle.join(" ")
-            : sliceSplitTitle.join(" ") + "...";
-
+        const shortTitle = getWordFromString(title, 7);
         return shortTitle;
       },
     },
@@ -97,18 +87,7 @@ const ManageBlog = () => {
       title: "Description",
       dataIndex: "description",
       render: function (description: string) {
-        const uptoWordCount = 80;
-
-        // make array of string with empty string for word then take 60 words
-        const splitDescription = description.split(" ");
-        const sliceSplitDescription = splitDescription.slice(0, uptoWordCount);
-
-        // Check array of words length is less then uptoWordCount if not then add ellipsis
-        const shortDescription =
-          splitDescription.length <= uptoWordCount
-            ? splitDescription.join(" ")
-            : sliceSplitDescription.join(" ") + "...";
-
+        const shortDescription = getWordFromString(description, 80);
         return shortDescription;
       },
     },
