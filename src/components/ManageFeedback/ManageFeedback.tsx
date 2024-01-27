@@ -77,6 +77,7 @@ const ManageFeedback = () => {
     {
       title: "Review",
       dataIndex: "review",
+      height: 340,
       render: function (review: string) {
         const shortReview = getWordFromString(review, 40);
         return shortReview;
@@ -214,6 +215,7 @@ const ManageFeedback = () => {
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
         showPagination={true}
+        fixedHeightRow
       />
     </div>
   );

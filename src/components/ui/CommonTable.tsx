@@ -1,6 +1,7 @@
 "use client";
 
 import { Table } from "antd";
+import "./CommonTable.css";
 
 type UMTableProps = {
   loading?: boolean;
@@ -12,6 +13,7 @@ type UMTableProps = {
   onPaginationChange?: (page: number, pageSize: number) => void;
   onTableChange?: (pagination: any, filter: any, sorter: any) => void;
   showPagination?: boolean;
+  fixedHeightRow?: boolean;
 };
 
 const CommonTable = ({
@@ -24,6 +26,7 @@ const CommonTable = ({
   onPaginationChange,
   onTableChange,
   showPagination = true,
+  fixedHeightRow,
 }: UMTableProps) => {
   const paginationConfig = showPagination
     ? {
@@ -43,6 +46,7 @@ const CommonTable = ({
       pagination={paginationConfig}
       onChange={onTableChange}
       scroll={{ y: 350, x: 1000 }}
+      rowClassName={() => (fixedHeightRow ? "fixed-height-row" : "")}
     />
   );
 };
