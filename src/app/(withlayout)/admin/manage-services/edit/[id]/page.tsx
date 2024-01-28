@@ -120,7 +120,7 @@ const EditServicePage = ({ params }: any) => {
                   >
                     Update
                   </Button>
-                  <Link href={`/${role}/manage-services/details/${id}`}>
+                  <Link href={`/${role}/${routeName}/details/${id}`}>
                     <Button style={{ margin: "2px" }} type="default">
                       View Service Info
                     </Button>
