@@ -4,13 +4,11 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRatingHeading";
-import ServiceDetailsCard from "@/components/Service/ServiceDetailsCard";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { useFeedbackQuery } from "@/redux/api/feedbackApi";
 import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
-import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
+import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
@@ -24,7 +22,6 @@ const ViewFeedbackPage = ({ params }: any) => {
 
   const id = params?.id;
   const { data, isLoading } = useFeedbackQuery(id);
-  const service = data?.service;
 
   const router = useRouter();
 
@@ -53,8 +50,9 @@ const ViewFeedbackPage = ({ params }: any) => {
   };
 
   const defaultValues = {
-    id: data?.id || "",
-    serviceId: data?.serviceId,
+    id: data?.id,
+    name: data?.name || "",
+    email: data?.email || "",
     rating: data?.rating || "",
     review: data?.review || "",
   };
@@ -70,42 +68,48 @@ const ViewFeedbackPage = ({ params }: any) => {
       {isLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ padding: "24px 5px", display: "grid", gap: "24px" }}>
-          <div style={{ marginBottom: "10px" }}>
-            <ServiceDetailsCard service={service} />
-          </div>
-
+        <div style={{ padding: "24px 5px" }}>
           <Card>
-            <ReviewAndRatingHeading heading="Review Details" />
+            <h1>Update Feedback</h1>
             <Form
               submitHandler={onSubmit}
-              resolver={yupResolver(reviewAndRatingSchema)}
+              resolver={yupResolver(feedbackSchema)}
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
-                  <FormInput name="rating" label="Rating" readOnly />
+                <Col span={10} style={{ margin: "10px 0" }}>
+                  <FormInput name="name" label="User Name" />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={16} style={{ margin: "10px 0" }}>
+                <Col span={10} style={{ margin: "10px 0" }}>
+                  <FormInput name="email" label="User Email" />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={10} style={{ margin: "10px 0" }}>
+                  <FormInput name="rating" label="Rating" />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={18} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="review"
-                    label="Review Description"
-                    rows={5}
-                    readOnly
+                    label="Review"
+                    rows={9}
+                    required
                   />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col span={8} style={{ margin: "10px 0" }}>
-                  <Link href={`/${role}/manage-reviews/edit/${id}`}>
-                    <Button type="primary">Edit Review</Button>
+                  <Link href={`/${role}/${routeName}/edit/${id}`}>
+                    <Button type="primary">Edit Feedback</Button>
                   </Link>
                   <ConfirmModal
                     id={id}
                     handler={deleteHandler}
-                    title="Do you want to delete this review?"
+                    title="Do you want to delete this feedback?"
                     content={`Delete this review!`}
                   />
                 </Col>
