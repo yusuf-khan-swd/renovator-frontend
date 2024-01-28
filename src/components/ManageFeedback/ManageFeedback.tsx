@@ -48,8 +48,6 @@ const ManageFeedback = () => {
 
   const { data, isLoading } = useFeedbacksQuery(undefined);
 
-  console.log(data);
-
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
