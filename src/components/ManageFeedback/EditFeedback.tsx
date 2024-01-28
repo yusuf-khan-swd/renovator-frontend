@@ -19,8 +19,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-const EditFeedback = ({ params }: any) => {
-  const id = params?.id;
+const EditFeedback = ({ id }: { id: string }) => {
   const { data, isLoading } = useFeedbackQuery(id);
 
   const [updateFeedback] = useUpdateFeedbackMutation();
