@@ -6,8 +6,10 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { useFeedbackQuery } from "@/redux/api/feedbackApi";
-import { useDeleteReviewMutation } from "@/redux/api/reviewApi";
+import {
+  useDeleteFeedbackMutation,
+  useFeedbackQuery,
+} from "@/redux/api/feedbackApi";
 import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,27 +27,27 @@ const ViewFeedbackPage = ({ params }: any) => {
 
   const router = useRouter();
 
-  const [deleteReview] = useDeleteReviewMutation();
+  const [deleteFeedback] = useDeleteFeedbackMutation();
 
   const onSubmit = async (data: any) => {
     console.log(data);
   };
 
   const deleteHandler = async (id: string) => {
-    message.loading("Deleting.....");
     try {
-      const result: any = await deleteReview(id);
+      message.loading("Deleting.....");
+      const result: any = await deleteFeedback(id);
 
       router.push(`/${role}/${routeName}`);
 
       if (result?.data) {
-        message.success("Review Delete successfully");
+        message.success("Feedback Delete successfully");
       } else {
-        message.error("Review Delete failed!!");
+        message.error("Feedback Delete failed!!");
       }
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
