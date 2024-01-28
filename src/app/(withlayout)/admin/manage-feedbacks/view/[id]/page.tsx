@@ -1,9 +1,9 @@
-import FeedbackDetails from "@/components/ManageFeedback/FeedbackDetails";
+import DetailsFeedback from "@/components/ManageFeedback/DetailsFeedback";
 
 const FeedbackDetailsPage = () => {
   return (
     <div>
-      <FeedbackDetails />
+      <DetailsFeedback />
     </div>
   );
 };

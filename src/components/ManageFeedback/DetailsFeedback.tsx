@@ -17,7 +17,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const FeedbackDetails = ({ params }: any) => {
+const DetailsFeedback = ({ params }: any) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
   const endRoute = "view";
@@ -124,4 +124,4 @@ const FeedbackDetails = ({ params }: any) => {
   );
 };
 
-export default FeedbackDetails;
+export default DetailsFeedback;
