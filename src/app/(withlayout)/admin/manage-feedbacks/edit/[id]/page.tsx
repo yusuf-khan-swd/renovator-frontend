@@ -108,7 +108,7 @@ const EditFeedbackPage = ({ params }: any) => {
                   <Button type="primary" htmlType="submit">
                     Update
                   </Button>
-                  <Link href={`/${role}/${routeName}/details/${id}`}>
+                  <Link href={`/${role}/${routeName}/view/${id}`}>
                     <Button style={{ margin: "2px" }} type="default">
                       View Feedback Info
                     </Button>
