@@ -93,7 +93,7 @@ const ManageFeedback = () => {
       dataIndex: "name",
       render: function (name: string) {
         const shortName = getWordFromString(name, 3);
-        return shortName;
+        return name;
       },
     },
     {
@@ -101,7 +101,9 @@ const ManageFeedback = () => {
       width: 140,
       dataIndex: "email",
       render: function (email: any) {
-        return email?.length <= 22 ? email : email?.slice(0, 17) + "...";
+        const shortEmail =
+          email?.length <= 22 ? email : email?.slice(0, 17) + "...";
+        return email;
       },
     },
     {
