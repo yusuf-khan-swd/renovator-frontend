@@ -17,6 +17,7 @@ import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import Link from "next/link";
 
 const EditFeedbackPage = ({ params }: any) => {
   const id = params?.id;
@@ -102,9 +103,18 @@ const EditFeedbackPage = ({ params }: any) => {
                   />
                 </Col>
               </Row>
-              <Button type="primary" htmlType="submit">
-                Update
-              </Button>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <Button type="primary" htmlType="submit">
+                    Update
+                  </Button>
+                  <Link href={`/${role}/${routeName}/details/${id}`}>
+                    <Button style={{ margin: "2px" }} type="default">
+                      View Feedback Info
+                    </Button>
+                  </Link>
+                </Col>
+              </Row>
             </Form>
           </Card>
         </div>
