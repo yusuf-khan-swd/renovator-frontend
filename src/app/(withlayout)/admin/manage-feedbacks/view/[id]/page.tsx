@@ -112,7 +112,7 @@ const ViewFeedbackPage = ({ params }: any) => {
                     id={id}
                     handler={deleteHandler}
                     title="Do you want to delete this feedback?"
-                    content={`Delete this review!`}
+                    content={`Delete this feedback!`}
                   />
                 </Col>
               </Row>
