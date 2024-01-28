@@ -17,12 +17,11 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const DetailsFeedback = ({ params }: any) => {
+const DetailsFeedback = ({ id }: { id: string }) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
   const endRoute = "view";
 
-  const id = params?.id;
   const { data, isLoading } = useFeedbackQuery(id);
 
   const router = useRouter();
