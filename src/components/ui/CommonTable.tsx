@@ -40,6 +40,17 @@ const CommonTable = ({
       }
     : false;
 
+  const rowClassName =
+    fixedHeightRow && alignTopRow
+      ? "fixed-height-row align-top-row"
+      : "" || fixedHeightRow
+      ? "fixed-height-row"
+      : "" || alignTopRow
+      ? "align-top-row"
+      : "";
+
+  console.log(rowClassName);
+
   return (
     <Table
       loading={loading}
@@ -48,13 +59,7 @@ const CommonTable = ({
       pagination={paginationConfig}
       onChange={onTableChange}
       scroll={{ y: 350, x: 1000 }}
-      rowClassName={() =>
-        fixedHeightRow
-          ? "fixed-height-row"
-          : "" || alignTopRow
-          ? "align-top-row"
-          : ""
-      }
+      rowClassName={() => rowClassName}
     />
   );
 };
