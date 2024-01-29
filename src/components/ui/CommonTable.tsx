@@ -14,6 +14,7 @@ type UMTableProps = {
   onTableChange?: (pagination: any, filter: any, sorter: any) => void;
   showPagination?: boolean;
   fixedHeightRow?: boolean;
+  alignTopRow?: boolean;
 };
 
 const CommonTable = ({
@@ -27,6 +28,7 @@ const CommonTable = ({
   onTableChange,
   showPagination = true,
   fixedHeightRow,
+  alignTopRow,
 }: UMTableProps) => {
   const paginationConfig = showPagination
     ? {
@@ -46,7 +48,13 @@ const CommonTable = ({
       pagination={paginationConfig}
       onChange={onTableChange}
       scroll={{ y: 350, x: 1000 }}
-      rowClassName={() => (fixedHeightRow ? "fixed-height-row" : "")}
+      rowClassName={() =>
+        fixedHeightRow
+          ? "fixed-height-row"
+          : "" || alignTopRow
+          ? "align-top-row"
+          : ""
+      }
     />
   );
 };

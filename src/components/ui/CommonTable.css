@@ -1,3 +1,7 @@
 .fixed-height-row {
   height: 160px;
 }
+
+.align-top-row td {
+  vertical-align: top;
+}
