@@ -1,4 +1,4 @@
-import EditBlog from "@/components/ManageContent/ManageBlog/EditBlog";
+import EditBlog from "@/components/ManageContent/ManageAbout/EditBlog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
