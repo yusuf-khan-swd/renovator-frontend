@@ -9,10 +9,8 @@ import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
-import {
-  useBlogsQuery,
-  useDeleteBlogMutation,
-} from "@/redux/api/content/blogApi";
+import { useAllAboutQuery } from "@/redux/api/content/aboutUsApi";
+import { useDeleteBlogMutation } from "@/redux/api/content/blogApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
@@ -49,7 +47,7 @@ const ManageAboutUs = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useBlogsQuery(undefined);
+  const { data, isLoading } = useAllAboutQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     try {
