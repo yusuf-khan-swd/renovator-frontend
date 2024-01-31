@@ -1,4 +1,4 @@
-import EditBlog from "@/components/ManageContent/ManageAbout/EditBlog";
+import EditAboutUs from "@/components/ManageContent/ManageAboutUs/EditAboutUs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ const EditAboutUsPage = ({ params }: any) => {
 
   return (
     <div>
-      <EditBlog id={id} />
+      <EditAboutUs id={id} />
     </div>
   );
 };

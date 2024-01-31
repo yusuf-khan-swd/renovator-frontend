@@ -1,4 +1,4 @@
-import ManageBlog from "@/components/ManageContent/ManageAbout/ManageBlog";
+import ManageAboutUs from "@/components/ManageContent/ManageAboutUs/ManageAboutUs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const ManageAboutUsPage = () => {
   return (
     <div>
-      <ManageBlog />
+      <ManageAboutUs />
     </div>
   );
 };

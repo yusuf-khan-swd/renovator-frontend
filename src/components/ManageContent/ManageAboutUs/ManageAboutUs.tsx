@@ -20,7 +20,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageBlog = () => {
+const ManageAboutUs = () => {
   const { role } = getUserInfo() as any;
   const routeLabel = "manage-about";
   const routeUrl = "manage-contents/about";
@@ -195,4 +195,4 @@ const ManageBlog = () => {
   );
 };
 
-export default ManageBlog;
+export default ManageAboutUs;

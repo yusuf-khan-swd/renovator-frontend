@@ -14,7 +14,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditBlog = ({ id }: { id: string }) => {
+const EditAboutUs = ({ id }: { id: string }) => {
   const { data, isLoading } = useBlogQuery(id);
 
   const [updateBlog] = useUpdateBlogMutation();
@@ -91,4 +91,4 @@ const EditBlog = ({ id }: { id: string }) => {
   );
 };
 
-export default EditBlog;
+export default EditAboutUs;

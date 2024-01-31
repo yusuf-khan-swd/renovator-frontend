@@ -1,4 +1,4 @@
-import CreateBlog from "@/components/ManageContent/ManageAbout/CreateBlog";
+import CreateAboutUs from "@/components/ManageContent/ManageAboutUs/CreateAboutUs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const CreateAboutUsPage = () => {
   return (
     <div>
-      <CreateBlog />
+      <CreateAboutUs />
     </div>
   );
 };

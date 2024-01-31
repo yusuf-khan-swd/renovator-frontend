@@ -10,7 +10,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const CreateBlog = () => {
+const CreateAboutUs = () => {
   const [createBlog] = useCreateBlogMutation();
 
   const onSubmit = async (data: any) => {
@@ -71,4 +71,4 @@ const CreateBlog = () => {
   );
 };
 
-export default CreateBlog;
+export default CreateAboutUs;
