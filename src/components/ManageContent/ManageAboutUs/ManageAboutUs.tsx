@@ -117,7 +117,7 @@ const ManageAboutUs = () => {
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
-              title={<ConfirmModalTitle data="blog" />}
+              title={<ConfirmModalTitle data="about us" />}
               content={<ConfirmModalManageContentBody data={data} />}
             />
           </>
