@@ -6,28 +6,28 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import {
-  useBlogQuery,
-  useUpdateBlogMutation,
-} from "@/redux/api/content/blogApi";
+  useAboutQuery,
+  useUpdateAboutMutation,
+} from "@/redux/api/content/aboutUsApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
 const EditAboutUs = ({ id }: { id: string }) => {
-  const { data, isLoading } = useBlogQuery(id);
+  const { data, isLoading } = useAboutQuery(id);
 
-  const [updateBlog] = useUpdateBlogMutation();
+  const [updateAboutUs] = useUpdateAboutMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
-      const result: any = await updateBlog(data);
+      const result: any = await updateAboutUs(data);
 
       if (result?.data) {
-        message.success("Blog updated successfully");
+        message.success("AboutUs updated successfully");
       } else {
-        message.error("Blog updated failed");
+        message.error("AboutUs updated failed");
       }
     } catch (error: any) {
       console.error(error);
@@ -59,7 +59,7 @@ const EditAboutUs = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h1>Update Blog</h1>
+            <h1>Update AboutUs</h1>
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(contentSchema)}
