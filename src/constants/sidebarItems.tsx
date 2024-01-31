@@ -95,6 +95,10 @@ export const sidebarItems = (role: string) => {
           label: <Link href={`/${role}/manage-contents/faq`}>FAQ</Link>,
           key: `/${role}/faq`,
         },
+        {
+          label: <Link href={`/${role}/manage-contents/about`}>About Us</Link>,
+          key: `/${role}/about`,
+        },
       ],
     },
   ];
