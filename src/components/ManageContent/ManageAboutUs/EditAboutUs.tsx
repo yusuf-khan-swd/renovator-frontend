@@ -6,8 +6,8 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import {
-  useAboutQuery,
-  useUpdateAboutMutation,
+  useAboutUsQuery,
+  useUpdateAboutUsMutation,
 } from "@/redux/api/content/aboutUsApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
@@ -15,9 +15,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
 const EditAboutUs = ({ id }: { id: string }) => {
-  const { data, isLoading } = useAboutQuery(id);
+  const { data, isLoading } = useAboutUsQuery(id);
 
-  const [updateAboutUs] = useUpdateAboutMutation();
+  const [updateAboutUs] = useUpdateAboutUsMutation();
 
   const onSubmit = async (data: any) => {
     try {

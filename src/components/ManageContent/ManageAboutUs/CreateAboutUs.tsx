@@ -4,14 +4,14 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { useCreateAboutMutation } from "@/redux/api/content/aboutUsApi";
+import { useCreateAboutUsMutation } from "@/redux/api/content/aboutUsApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
 const CreateAboutUs = () => {
-  const [createAboutUs] = useCreateAboutMutation();
+  const [createAboutUs] = useCreateAboutUsMutation();
 
   const onSubmit = async (data: any) => {
     try {

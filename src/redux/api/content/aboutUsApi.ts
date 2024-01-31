@@ -5,7 +5,7 @@ const ABOUT_URL = "/about";
 
 export const aboutApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    createAbout: build.mutation({
+    createAboutUs: build.mutation({
       query: (data) => ({
         url: ABOUT_URL,
         method: "POST",
@@ -14,7 +14,7 @@ export const aboutApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.about],
     }),
 
-    allAbout: build.query({
+    allAboutUs: build.query({
       query: () => {
         return {
           url: ABOUT_URL,
@@ -24,7 +24,7 @@ export const aboutApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.about],
     }),
 
-    about: build.query({
+    aboutUs: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `${ABOUT_URL}/${id}`,
         method: "GET",
@@ -32,7 +32,7 @@ export const aboutApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.about],
     }),
 
-    updateAbout: build.mutation({
+    updateAboutUs: build.mutation({
       query: (data) => ({
         url: `${ABOUT_URL}/${data.id}`,
         method: "PATCH",
@@ -41,7 +41,7 @@ export const aboutApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.about],
     }),
 
-    deleteAbout: build.mutation({
+    deleteAboutUs: build.mutation({
       query: (id) => ({
         url: `${ABOUT_URL}/${id}`,
         method: "DELETE",
@@ -52,9 +52,9 @@ export const aboutApi = baseApi.injectEndpoints({
 });
 
 export const {
-  useAllAboutQuery,
-  useAboutQuery,
-  useCreateAboutMutation,
-  useUpdateAboutMutation,
-  useDeleteAboutMutation,
+  useAllAboutUsQuery,
+  useAboutUsQuery,
+  useCreateAboutUsMutation,
+  useUpdateAboutUsMutation,
+  useDeleteAboutUsMutation,
 } = aboutApi;
