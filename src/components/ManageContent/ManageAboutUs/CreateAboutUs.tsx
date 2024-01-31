@@ -4,24 +4,24 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { useCreateBlogMutation } from "@/redux/api/content/blogApi";
+import { useCreateAboutMutation } from "@/redux/api/content/aboutUsApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
 const CreateAboutUs = () => {
-  const [createBlog] = useCreateBlogMutation();
+  const [createAboutUs] = useCreateAboutMutation();
 
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      const result: any = await createBlog(data);
+      const result: any = await createAboutUs(data);
 
       if (result?.data) {
-        message.success("Blog added successfully");
+        message.success("AboutUs added successfully");
       } else {
-        message.error("Blog added failed");
+        message.error("AboutUs added failed");
       }
     } catch (error: any) {
       console.error(error);
@@ -44,7 +44,7 @@ const CreateAboutUs = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add new blog</h1>
+          <h1>Add new About Us</h1>
           <Form submitHandler={onSubmit} resolver={yupResolver(contentSchema)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={10} style={{ margin: "10px 0" }}>
