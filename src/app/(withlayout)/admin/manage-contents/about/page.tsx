@@ -2,7 +2,7 @@ import ManageBlog from "@/components/ManageContent/ManageAbout/ManageBlog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manage About - Renovator",
+  title: "Manage About Us Content - Renovator",
   description: "A Home Renovation Service Provider",
 };
 

@@ -2,7 +2,7 @@ import CreateBlog from "@/components/ManageContent/ManageAbout/CreateBlog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Create About - Renovator",
+  title: "Create About Us Content - Renovator",
   description: "A Home Renovation Service Provider",
 };
 
