@@ -9,8 +9,10 @@ import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalManageContentBody from "@/components/ui/ConfirmModalManageContentBody";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
-import { useAllAboutQuery } from "@/redux/api/content/aboutUsApi";
-import { useDeleteBlogMutation } from "@/redux/api/content/blogApi";
+import {
+  useAllAboutQuery,
+  useDeleteAboutMutation,
+} from "@/redux/api/content/aboutUsApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
@@ -31,7 +33,7 @@ const ManageAboutUs = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [deleteBlog] = useDeleteBlogMutation();
+  const [deleteAboutUs] = useDeleteAboutMutation();
 
   query["limit"] = size;
   query["page"] = page;
@@ -52,12 +54,12 @@ const ManageAboutUs = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
-      const result: any = await deleteBlog(id);
+      const result: any = await deleteAboutUs(id);
 
       if (result?.data) {
-        message.success("Blog Deleted successfully");
+        message.success("AboutUs Deleted successfully");
       } else {
-        message.error("Blog Delete failed!");
+        message.error("AboutUs Delete failed!");
       }
     } catch (error: any) {
       console.error(error);
@@ -150,7 +152,7 @@ const ManageAboutUs = () => {
         items={[{ label: routeLabel, link: `/${role}/${routeUrl}` }]}
       />
 
-      <ActionBar title="Blog List">
+      <ActionBar title="AboutUs List">
         <Input
           type="text"
           size="large"
