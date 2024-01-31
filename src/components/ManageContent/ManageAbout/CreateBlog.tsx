@@ -30,8 +30,8 @@ const CreateBlog = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeLabel = "manage-blog";
-  const routeUrl = "manage-contents/blog";
+  const routeLabel = "manage-about";
+  const routeUrl = "manage-contents/about";
   const endRoute = "create";
 
   return (

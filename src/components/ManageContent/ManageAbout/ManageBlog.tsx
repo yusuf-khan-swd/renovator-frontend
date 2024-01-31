@@ -1,4 +1,5 @@
 "use client";
+
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
@@ -21,8 +22,8 @@ import { useState } from "react";
 
 const ManageBlog = () => {
   const { role } = getUserInfo() as any;
-  const routeLabel = "manage-blog";
-  const routeUrl = "manage-contents/blog";
+  const routeLabel = "manage-about";
+  const routeUrl = "manage-contents/about";
 
   const query: Record<string, any> = {};
 
