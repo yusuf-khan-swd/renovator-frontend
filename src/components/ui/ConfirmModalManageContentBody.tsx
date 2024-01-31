@@ -1,8 +1,8 @@
-interface IFaqAndBlogProps {
+interface IManageContentProps {
   data: { title: string; description: string };
 }
 
-const ConfirmModalManageContentsBody = ({ data }: IFaqAndBlogProps) => {
+const ConfirmModalManageContentBody = ({ data }: IManageContentProps) => {
   const title = data?.title;
   const description = data?.description;
 
@@ -20,4 +20,4 @@ const ConfirmModalManageContentsBody = ({ data }: IFaqAndBlogProps) => {
   );
 };
 
-export default ConfirmModalManageContentsBody;
+export default ConfirmModalManageContentBody;
