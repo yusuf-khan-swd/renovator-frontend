@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateBlogPage = () => {
+const CreateAboutUsPage = () => {
   return (
     <div>
       <CreateBlog />
@@ -14,4 +14,4 @@ const CreateBlogPage = () => {
   );
 };
 
-export default CreateBlogPage;
+export default CreateAboutUsPage;

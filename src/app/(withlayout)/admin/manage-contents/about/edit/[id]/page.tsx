@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditBlogPage = ({ params }: any) => {
+const EditAboutUsPage = ({ params }: any) => {
   const id = params?.id;
 
   return (
@@ -16,4 +16,4 @@ const EditBlogPage = ({ params }: any) => {
   );
 };
 
-export default EditBlogPage;
+export default EditAboutUsPage;

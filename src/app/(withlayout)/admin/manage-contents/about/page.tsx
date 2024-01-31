@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageBlogPage = () => {
+const ManageAboutUsPage = () => {
   return (
     <div>
       <ManageBlog />
@@ -14,4 +14,4 @@ const ManageBlogPage = () => {
   );
 };
 
-export default ManageBlogPage;
+export default ManageAboutUsPage;
