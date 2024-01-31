@@ -5,7 +5,7 @@ import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
 import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
+import ConfirmModalManageContentsBody from "@/components/ui/ConfirmModalManageContentsBody";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
 import {
@@ -119,7 +119,7 @@ const ManageBlog = () => {
               id={data?.id}
               handler={deleteHandler}
               title={<ConfirmModalTitle data="blog" />}
-              content={<ConfirmModalFaqAndBlogContent data={data} />}
+              content={<ConfirmModalManageContentsBody data={data} />}
             />
           </>
         );

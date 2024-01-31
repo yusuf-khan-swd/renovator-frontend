@@ -2,7 +2,7 @@ interface IFaqAndBlogProps {
   data: { title: string; description: string };
 }
 
-const ConfirmModalFaqAndBlogContent = ({ data }: IFaqAndBlogProps) => {
+const ConfirmModalManageContentsBody = ({ data }: IFaqAndBlogProps) => {
   const title = data?.title;
   const description = data?.description;
 
@@ -20,4 +20,4 @@ const ConfirmModalFaqAndBlogContent = ({ data }: IFaqAndBlogProps) => {
   );
 };
 
-export default ConfirmModalFaqAndBlogContent;
+export default ConfirmModalManageContentsBody;

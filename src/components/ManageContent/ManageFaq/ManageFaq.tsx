@@ -4,7 +4,7 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import ConfirmModalFaqAndBlogContent from "@/components/ui/ConfirmModalFaqAndBlogContent";
+import ConfirmModalManageContentsBody from "@/components/ui/ConfirmModalManageContentsBody";
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
 import { useDeleteFaqMutation, useFaqsQuery } from "@/redux/api/content/faqApi";
@@ -116,7 +116,7 @@ const ManageFaq = () => {
               id={data?.id}
               handler={deleteHandler}
               title={<ConfirmModalTitle data="FAQ" />}
-              content={<ConfirmModalFaqAndBlogContent data={data} />}
+              content={<ConfirmModalManageContentsBody data={data} />}
             />
           </>
         );
