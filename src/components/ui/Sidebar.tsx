@@ -9,6 +9,8 @@ import Link from "next/link";
 
 const { Sider } = Layout;
 
+// TODO: Make automatically close sidebar for small device and open sidebar for bigger device
+
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
