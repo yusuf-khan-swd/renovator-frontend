@@ -47,12 +47,12 @@ const CreateAboutUs = () => {
           <h1>Add new About Us</h1>
           <Form submitHandler={onSubmit} resolver={yupResolver(contentSchema)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={10} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
                 <FormInput name="title" label="Title" required />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={18} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={18} style={{ margin: "10px 0" }}>
                 <FormTextArea
                   name="description"
                   label="Description"
