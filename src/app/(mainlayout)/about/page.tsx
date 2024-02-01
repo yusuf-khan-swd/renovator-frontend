@@ -1,3 +1,4 @@
+// TODO: Call the aboutUs api slice and show data from database
 const AboutUsPage = () => {
   return (
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
