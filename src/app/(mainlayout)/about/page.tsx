@@ -1,5 +1,13 @@
+"use client";
+
+import { useAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
+
 // TODO: Call the aboutUs api slice and show data from database
 const AboutUsPage = () => {
+  const { data, isLoading } = useAllAboutUsQuery(undefined);
+
+  console.log(data);
+
   return (
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
       <h1 style={{ margin: "20px 0" }}>Welcome to Renovator</h1>
