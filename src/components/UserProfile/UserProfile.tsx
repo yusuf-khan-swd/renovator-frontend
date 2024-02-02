@@ -6,6 +6,7 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useProfileQuery } from "@/redux/api/profileApi";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import FormHeading from "../ui/FormHeading";
 
 const UserProfile = () => {
   const { data, isLoading } = useProfileQuery(undefined);
@@ -32,7 +33,7 @@ const UserProfile = () => {
         <FullScreenLoading />
       ) : (
         <Card style={{ margin: "20px 8px" }}>
-          <h3 style={{ fontSize: "26px" }}>User Profile</h3>
+          <FormHeading title="User Profile" />
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
