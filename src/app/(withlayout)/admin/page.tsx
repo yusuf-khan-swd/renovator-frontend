@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-// TODO: Add manage-feedbacks from home page bottom comment form.
 const AdminPage = () => {
   return (
     <div>
