@@ -69,22 +69,22 @@ const EditProfilePage = () => {
 
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="name" label="Name" />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="email" label="Email" />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput type="password" name="password" label="Password" />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                   <FormSelectField
                     name="role"
                     label="User Role"
