@@ -5,6 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import {
   roleOptionsForAdmin,
@@ -58,51 +59,60 @@ const EditProfilePage = () => {
           },
         ]}
       />
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : (
+        <div style={{ margin: "24px 5px" }}>
+          <Card>
+            <h3 style={{ fontSize: "26px" }}>Update User Profile</h3>
 
-      <Card style={{ margin: "20px 8px" }}>
-        <h3 style={{ fontSize: "26px" }}>Update User Profile</h3>
-
-        <Form submitHandler={onSubmit} defaultValues={defaultValues}>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="name" label="Name" />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput name="email" label="Email" />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormInput type="password" name="password" label="Password" />
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
-                name="role"
-                label="User Role"
-                options={
-                  role === ENUM_USER_ROLE.SUPER_ADMIN
-                    ? roleOptionsForSuperAdmin
-                    : role === ENUM_USER_ROLE.ADMIN
-                    ? roleOptionsForAdmin
-                    : (roleOptionsForUser as SelectOptions[])
-                }
-              />
-            </Col>
-          </Row>
-          <Button htmlType="submit" style={{ margin: "2px" }} type="primary">
-            Update
-          </Button>
-          <Link href="/profile">
-            <Button style={{ margin: "2px" }} type="default">
-              View Profile
-            </Button>
-          </Link>
-        </Form>
-      </Card>
+            <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormInput name="name" label="Name" />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormInput name="email" label="Email" />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormInput type="password" name="password" label="Password" />
+                </Col>
+              </Row>
+              <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+                <Col span={8} style={{ margin: "10px 0" }}>
+                  <FormSelectField
+                    name="role"
+                    label="User Role"
+                    options={
+                      role === ENUM_USER_ROLE.SUPER_ADMIN
+                        ? roleOptionsForSuperAdmin
+                        : role === ENUM_USER_ROLE.ADMIN
+                        ? roleOptionsForAdmin
+                        : (roleOptionsForUser as SelectOptions[])
+                    }
+                  />
+                </Col>
+              </Row>
+              <Button
+                htmlType="submit"
+                style={{ margin: "2px" }}
+                type="primary"
+              >
+                Update
+              </Button>
+              <Link href="/profile">
+                <Button style={{ margin: "2px" }} type="default">
+                  View Profile
+                </Button>
+              </Link>
+            </Form>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };
