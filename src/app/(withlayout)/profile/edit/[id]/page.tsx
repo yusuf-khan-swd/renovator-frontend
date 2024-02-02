@@ -7,6 +7,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import FormHeading from "@/components/ui/FormHeading";
 import {
   roleOptionsForAdmin,
   roleOptionsForSuperAdmin,
@@ -64,7 +65,7 @@ const EditProfilePage = () => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h3 style={{ fontSize: "26px" }}>Update User Profile</h3>
+            <FormHeading title="Update User Profile" />
 
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
