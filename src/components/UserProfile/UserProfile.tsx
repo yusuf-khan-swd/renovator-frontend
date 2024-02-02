@@ -35,17 +35,17 @@ const UserProfile = () => {
           <h3 style={{ fontSize: "26px" }}>User Profile</h3>
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                 <FormInput name="name" label="Name" readOnly />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                 <FormInput name="email" label="Email" readOnly />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                 <FormInput
                   type="password"
                   name="password"
@@ -55,7 +55,7 @@ const UserProfile = () => {
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={12} xl={10} style={{ margin: "10px 0" }}>
                 <FormInput name="role" label="User Role" readOnly />
               </Col>
             </Row>
