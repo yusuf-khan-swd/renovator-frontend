@@ -10,7 +10,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-// TODO: Add some about us content for website
 const CreateAboutUs = () => {
   const [createAboutUs] = useCreateAboutUsMutation();
 
