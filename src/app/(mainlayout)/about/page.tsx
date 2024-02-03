@@ -1,15 +1,29 @@
 "use client";
 
+import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
 
-// TODO: Call the aboutUs api slice and show data from database
 const AboutUsPage = () => {
   const { data, isLoading } = useAllAboutUsQuery(undefined);
 
-  console.log(data);
-
   return (
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : (
+        <div>
+          {data?.map(
+            (about: { id: string; title: string; description: string }) => (
+              <div key={about?.id} style={{ marginBottom: "20px" }}>
+                <h3 style={{ fontSize: "26px", marginBottom: "10px" }}>
+                  {about?.title}
+                </h3>
+                <p> {about?.description}</p>
+              </div>
+            )
+          )}
+        </div>
+      )}
       <h1 style={{ margin: "20px 0" }}>Welcome to Renovator</h1>
       <p>
         We provide the best experience for home renovation and design,
