@@ -17,6 +17,8 @@ type FormValues = {
   password: string;
 };
 
+// TODO: Make signup form responsive
+
 const SignupPage = () => {
   const [userSignup] = useUserSignupMutation();
   const router = useRouter();
