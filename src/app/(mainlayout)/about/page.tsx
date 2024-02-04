@@ -18,10 +18,10 @@ const AboutUsPage = () => {
                 <h3 style={{ fontSize: "26px", marginBottom: "10px" }}>
                   {about?.title}
                 </h3>
-                <p style={{ lineHeight: "28px", fontSize: "16px" }}>
+                <div style={{ lineHeight: "28px", fontSize: "16px" }}>
                   {" "}
                   {about?.description}
-                </p>
+                </div>
               </div>
             )
           )}
