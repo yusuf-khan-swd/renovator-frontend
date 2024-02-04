@@ -11,11 +11,9 @@ interface IAboutUsContentProps {
 const AboutUsContent = ({ data }: IAboutUsContentProps) => {
   return (
     <div>
-      {data?.map(
-        (about: { id: string; title: string; description: string }) => (
-          <AboutUsContentBody key={about?.id} data={about} />
-        )
-      )}
+      {data?.map((about) => (
+        <AboutUsContentBody key={about?.id} data={about} />
+      ))}
     </div>
   );
 };
