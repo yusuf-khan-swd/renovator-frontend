@@ -14,7 +14,7 @@ export const aboutApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.about],
     }),
 
-    allAboutUs: build.query({
+    getAllAboutUs: build.query({
       query: () => {
         return {
           url: ABOUT_URL,
@@ -52,7 +52,7 @@ export const aboutApi = baseApi.injectEndpoints({
 });
 
 export const {
-  useAllAboutUsQuery,
+  useGetAllAboutUsQuery,
   useAboutUsQuery,
   useCreateAboutUsMutation,
   useUpdateAboutUsMutation,

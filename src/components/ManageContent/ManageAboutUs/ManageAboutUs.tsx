@@ -10,8 +10,8 @@ import ConfirmModalManageContentBody from "@/components/ui/ConfirmModalManageCon
 import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
 import {
-  useAllAboutUsQuery,
   useDeleteAboutUsMutation,
+  useGetAllAboutUsQuery,
 } from "@/redux/api/content/aboutUsApi";
 import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
@@ -49,7 +49,7 @@ const ManageAboutUs = () => {
   if (!!debouncedTerm) {
     query["searchTerm"] = debouncedTerm;
   }
-  const { data, isLoading } = useAllAboutUsQuery(undefined);
+  const { data, isLoading } = useGetAllAboutUsQuery(undefined);
 
   const deleteHandler = async (id: string) => {
     try {

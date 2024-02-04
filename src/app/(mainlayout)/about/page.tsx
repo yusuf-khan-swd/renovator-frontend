@@ -1,10 +1,10 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import { useAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
+import { useGetAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
 
 const AboutUsPage = () => {
-  const { data, isLoading } = useAllAboutUsQuery(undefined);
+  const { data, isLoading } = useGetAllAboutUsQuery(undefined);
 
   return (
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
