@@ -7,7 +7,7 @@ const AboutUsPage = () => {
   const { data, isLoading } = useAllAboutUsQuery(undefined);
 
   return (
-    <div style={{ maxWidth: "750px", margin: "0 auto" }}>
+    <div style={{ maxWidth: "750px", margin: "0 auto", lineHeight: "26px" }}>
       {isLoading ? (
         <FullScreenLoading />
       ) : (
@@ -44,6 +44,36 @@ const AboutUsPage = () => {
         pages, website, and videos. Just looking to daydream? Explore our home
         tours for enviable interiors in every style. Something you do not see
         and want to? Let us know.
+      </p>
+      <p>
+        Welcome to Renovator, where dreams meet reality through the artistry of
+        home renovation. Our team of skilled craftsmen is dedicated to
+        transforming your living spaces into captivating havens that reflect
+        your unique style and preferences. With a commitment to excellence, we
+        approach each project with passion, precision, and a keen eye for
+        detail.
+      </p>
+      <p>
+        At Renovator, we understand the importance of your home – it&apos;s not
+        just a structure; it&apos;s a sanctuary. Our mission is to breathe new
+        life into your spaces, creating environments that enhance your lifestyle
+        and elevate your well-being. From concept to completion, we work closely
+        with you to bring your vision to life, ensuring that every detail aligns
+        seamlessly with your taste and needs.
+      </p>
+
+      <p>
+        With years of experience in the industry, Renovator has earned a
+        reputation for delivering top-notch craftsmanship and unmatched customer
+        satisfaction. We take pride in our ability to turn renovation challenges
+        into creative solutions, delivering projects on time and within budget.
+        Your satisfaction is our ultimate goal, and we are committed to making
+        your renovation journey with Renovator a seamless and gratifying
+        experience.
+      </p>
+      <p>
+        Choose Renovator for a transformation that goes beyond bricks and mortar
+        – it&apos;s a journey of creating spaces that truly feel like home.
       </p>
     </div>
   );
