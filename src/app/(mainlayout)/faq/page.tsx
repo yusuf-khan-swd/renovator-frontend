@@ -1,13 +1,11 @@
-"use client";
+import FAQ from "@/components/FAQ/FAQ";
 
-import CenterLoading from "@/components/Loading/CenterLoading";
-import Accordion from "@/components/ui/Accordion";
-import { useFaqsQuery } from "@/redux/api/content/faqApi";
-
-const FaqPage = () => {
-  const { data, isLoading } = useFaqsQuery(undefined);
-
-  return isLoading ? <CenterLoading /> : <Accordion data={data} />;
+const FAQPage = () => {
+  return (
+    <div>
+      <FAQ />
+    </div>
+  );
 };
 
-export default FaqPage;
+export default FAQPage;
