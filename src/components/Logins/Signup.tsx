@@ -23,13 +23,10 @@ const SignupPage = () => {
   const [userSignup] = useUserSignupMutation();
   const router = useRouter();
 
-  // console.log(isLoggedIn());
-
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
       const result: any = await userSignup({ ...data });
-      // console.log(result?.data);
 
       if (result?.data) {
         message.success("User created successfully!");
@@ -37,8 +34,9 @@ const SignupPage = () => {
       } else {
         message.error("User create Failed!");
       }
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
