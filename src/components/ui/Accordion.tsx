@@ -10,7 +10,7 @@ const Accordion = ({ data }: IAccordion) => {
     return {
       key: item?.id,
       label: item?.title,
-      children: <p>{item?.description}</p>,
+      children: <p style={{ lineHeight: "24px" }}>{item?.description}</p>,
     };
   });
 
