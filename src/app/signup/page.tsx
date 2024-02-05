@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Renovator | Signup",
 };
 
-const Login = () => {
+const Signup = () => {
   return (
     <>
       <SignupPage />
@@ -13,4 +13,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
