@@ -1,4 +1,6 @@
 "use client";
+
+import loginImage from "@/assets/login-image.png";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { useUserLoginMutation } from "@/redux/api/authApi";
@@ -12,7 +14,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
-import loginImage from "../../assets/login-image.png";
 import "./login.css";
 
 type FormValues = {
