@@ -58,7 +58,7 @@ const SignupPage = () => {
       <Col className={styles["signup-image"]} xl={10}>
         <Image src={signupImage} width={500} alt="signup image" />
       </Col>
-      <Col sm={12} md={8} lg={8}>
+      <Col xs={22} sm={12} lg={10} xl={8}>
         <Link href="/home">
           <Button type="primary">
             <HomeOutlined />
