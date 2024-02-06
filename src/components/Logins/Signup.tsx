@@ -55,7 +55,7 @@ const SignupPage = () => {
         minHeight: "100vh",
       }}
     >
-      <Col className={styles["signup-image"]} sm={12} md={16} lg={10}>
+      <Col className={styles["signup-image"]} xl={10}>
         <Image src={signupImage} width={500} alt="signup image" />
       </Col>
       <Col sm={12} md={8} lg={8}>
