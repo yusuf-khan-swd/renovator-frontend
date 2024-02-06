@@ -48,83 +48,86 @@ const SignupPage = () => {
   };
 
   return (
-    <Row
-      justify="center"
-      align="middle"
+    <div
       style={{
         minHeight: "100vh",
+        margin: "8px",
+        display: "grid",
+        alignContent: "center",
       }}
     >
-      <Col className={styles["signup-image"]} xl={10}>
-        <Image src={signupImage} width={500} alt="signup image" />
-      </Col>
-      <Col xs={22} sm={12} lg={10} xl={8}>
-        <Link href="/home">
-          <Button type="primary">
-            <HomeOutlined />
-            Go Back
-          </Button>
-        </Link>
-        <h1
-          style={{
-            margin: "15px 0px",
-          }}
-        >
-          Create an account
-        </h1>
-        <div>
-          <Form
-            submitHandler={onSubmit}
-            resolver={yupResolver(userSchema)}
-            defaultValues={defaultValues}
-          >
-            <div>
-              <FormInput
-                name="name"
-                type="text"
-                size="large"
-                label="Name"
-                required
-              />
-            </div>
-            <div
-              style={{
-                margin: "15px 0px",
-              }}
-            >
-              <FormInput
-                name="email"
-                type="text"
-                size="large"
-                label="Email"
-                required
-              />
-            </div>
-            <div>
-              <FormInput
-                name="password"
-                type="password"
-                size="large"
-                label="Password"
-                required
-              />
-            </div>
-            <Button
-              type="primary"
-              htmlType="submit"
-              style={{
-                margin: "10px 0px",
-              }}
-            >
-              Signup
+      <Row justify="center" align="middle">
+        <Col className={styles["signup-image"]} xl={10}>
+          <Image src={signupImage} width={500} alt="signup image" />
+        </Col>
+        <Col xs={22} sm={12} lg={10} xl={8}>
+          <Link href="/home">
+            <Button type="primary">
+              <HomeOutlined />
+              Go Back
             </Button>
-          </Form>
-          <p style={{ margin: "8px 4px" }}>
-            Already have account? <Link href="/login">Login</Link>
-          </p>
-        </div>
-      </Col>
-    </Row>
+          </Link>
+          <h1
+            style={{
+              margin: "15px 0px",
+            }}
+          >
+            Create an account
+          </h1>
+          <div>
+            <Form
+              submitHandler={onSubmit}
+              resolver={yupResolver(userSchema)}
+              defaultValues={defaultValues}
+            >
+              <div>
+                <FormInput
+                  name="name"
+                  type="text"
+                  size="large"
+                  label="Name"
+                  required
+                />
+              </div>
+              <div
+                style={{
+                  margin: "15px 0px",
+                }}
+              >
+                <FormInput
+                  name="email"
+                  type="text"
+                  size="large"
+                  label="Email"
+                  required
+                />
+              </div>
+              <div>
+                <FormInput
+                  name="password"
+                  type="password"
+                  size="large"
+                  label="Password"
+                  required
+                />
+              </div>
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  margin: "10px 0px",
+                }}
+              >
+                Signup
+              </Button>
+            </Form>
+            <p style={{ margin: "8px 4px" }}>
+              Already have account? <Link href="/login">Login</Link>
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
