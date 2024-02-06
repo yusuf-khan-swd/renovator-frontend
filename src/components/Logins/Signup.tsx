@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler } from "react-hook-form";
-import loginImage from "../../assets/login-image.png";
+import signupImage from "../../assets/login-image.png";
 import "./signup.css";
 
 type FormValues = {
@@ -55,7 +55,7 @@ const SignupPage = () => {
       }}
     >
       <Col className="signup-image" sm={12} md={16} lg={10}>
-        <Image src={loginImage} width={500} alt="login image" />
+        <Image src={signupImage} width={500} alt="signup image" />
       </Col>
       <Col sm={12} md={8} lg={8}>
         <Link href="/home">
