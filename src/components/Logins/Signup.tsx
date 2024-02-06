@@ -51,7 +51,9 @@ const SignupPage = () => {
     <div
       style={{
         minHeight: "100vh",
-        margin: "8px",
+        maxWidth: "1580px",
+        margin: "0 auto",
+        padding: "8px",
         display: "grid",
         alignContent: "center",
       }}
