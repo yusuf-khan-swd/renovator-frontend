@@ -15,12 +15,12 @@ const CreateCategoryPage = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      // console.log(data);
-      await createCategory(data);
-      message.success("Category added successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      const result: any = await createCategory(data);
+      if (result?.data) message.success("Category added successfully");
+      else message.error("Category added failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error.message);
     }
   };
 
