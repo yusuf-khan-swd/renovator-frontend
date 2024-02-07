@@ -21,12 +21,12 @@ const EditCategory = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
-      console.log(data);
-      await updateCategory(data);
-      message.success("Category updated successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      const result: any = await updateCategory(data);
+      if (result?.data) message.success("Category updated successfully");
+      else message.error("Category updated failed");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
