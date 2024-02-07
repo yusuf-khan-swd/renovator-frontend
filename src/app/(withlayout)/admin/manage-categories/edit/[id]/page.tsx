@@ -60,7 +60,7 @@ const EditCategoryPage = ({ params }: any) => {
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
                   <FormInput name="title" label="Title" required />
                 </Col>
               </Row>
