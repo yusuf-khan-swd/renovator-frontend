@@ -4,6 +4,7 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import FormHeading from "@/components/ui/FormHeading";
 import { useCreateBlogMutation } from "@/redux/api/content/blogApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
@@ -44,7 +45,7 @@ const CreateBlog = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add new blog</h1>
+          <FormHeading title="Add new blog" />
           <Form submitHandler={onSubmit} resolver={yupResolver(contentSchema)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
