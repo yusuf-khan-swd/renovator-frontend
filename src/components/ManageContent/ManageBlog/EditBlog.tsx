@@ -5,6 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import FormHeading from "@/components/ui/FormHeading";
 import {
   useBlogQuery,
   useUpdateBlogMutation,
@@ -59,7 +60,7 @@ const EditBlog = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h1>Update Blog</h1>
+            <FormHeading title="Update Blog" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(contentSchema)}
