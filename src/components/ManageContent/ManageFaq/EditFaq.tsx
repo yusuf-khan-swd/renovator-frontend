@@ -5,6 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import FormHeading from "@/components/ui/FormHeading";
 import { useFaqQuery, useUpdateFaqMutation } from "@/redux/api/content/faqApi";
 import { contentSchema } from "@/schemas/content";
 import { getUserInfo } from "@/services/auth.service";
@@ -56,7 +57,7 @@ const EditFaq = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h1>Update FAQ</h1>
+            <FormHeading title="Update FAQ" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(contentSchema)}
