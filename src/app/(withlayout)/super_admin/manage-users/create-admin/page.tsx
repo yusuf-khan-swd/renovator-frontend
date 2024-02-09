@@ -4,8 +4,6 @@ import AdminForm from "@/components/AdminForm/AdminForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { getUserInfo } from "@/services/auth.service";
 
-// TODO: Make AdminForm responsive
-
 const CreateAdminPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-users";
