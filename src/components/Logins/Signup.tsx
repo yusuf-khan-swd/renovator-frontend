@@ -12,7 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler } from "react-hook-form";
-import styles from "./signup.module.css";
 
 type FormValues = {
   id: string;
@@ -59,7 +58,7 @@ const SignupPage = () => {
       }}
     >
       <Row justify="center" align="middle">
-        <Col className={styles["signup-image"]} xl={10}>
+        <Col className="login-image" xl={10}>
           <Image src={signupImage} width={500} alt="signup image" />
         </Col>
         <Col xs={22} sm={12} lg={10} xl={8}>
