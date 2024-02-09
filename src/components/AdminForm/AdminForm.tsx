@@ -39,13 +39,7 @@ const AdminForm = () => {
   };
 
   return (
-    <Row
-      justify="center"
-      align="middle"
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <Row>
       <Col className="login-image" lg={10}>
         <Image src={loginImage} width={400} alt="login image" />
       </Col>
