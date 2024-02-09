@@ -4,8 +4,6 @@ import UserForm from "@/components/UserForm/UserForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { getUserInfo } from "@/services/auth.service";
 
-// TODO: Make UserForm responsive
-
 const page = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-users";
