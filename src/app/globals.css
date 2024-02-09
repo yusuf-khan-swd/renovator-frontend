@@ -5,3 +5,10 @@
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
 }
+
+/* Remove login image for small device */
+@media screen and (max-width: 992px) {
+  .login-image {
+    display: none;
+  }
+}
