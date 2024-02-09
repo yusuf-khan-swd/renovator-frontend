@@ -46,10 +46,10 @@ const UserForm = () => {
         minHeight: "100vh",
       }}
     >
-      <Col className="login-image" xl={10}>
-        <Image src={loginImage} width={500} alt="login image" />
+      <Col className="login-image" lg={10}>
+        <Image src={loginImage} width={400} alt="login image" />
       </Col>
-      <Col sm={12} md={8} lg={8}>
+      <Col sm={22} md={14} lg={8}>
         <h1
           style={{
             margin: "15px 0px",
