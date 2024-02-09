@@ -1,6 +1,6 @@
 "use client";
 
-import signupImage from "@/assets/login-image.png";
+import loginImage from "@/assets/login-image.png";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { useUserSignupMutation } from "@/redux/api/authApi";
@@ -57,7 +57,7 @@ const SignupPage = () => {
     >
       <Row justify="center" align="middle">
         <Col className="login-image" xl={10}>
-          <Image src={signupImage} width={500} alt="signup image" />
+          <Image src={loginImage} width={500} alt="signup image" />
         </Col>
         <Col xs={22} sm={12} lg={10} xl={8}>
           <Link href="/home">
