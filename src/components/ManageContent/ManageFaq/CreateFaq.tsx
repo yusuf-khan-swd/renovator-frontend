@@ -18,12 +18,8 @@ const CreateFaq = () => {
     try {
       message.loading("Creating.....");
       const result: any = await createFaq(data);
-
-      if (result?.data) {
-        message.success("Faq added successfully");
-      } else {
-        message.error("Faq added failed");
-      }
+      if (result?.data) message.success("Faq added successfully");
+      else message.error("Faq added failed");
     } catch (err: any) {
       console.error(err.message);
       message.error(err.message);
