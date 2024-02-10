@@ -84,7 +84,7 @@ const LoginPage = () => {
               resolver={yupResolver(loginSchema)}
               defaultValues={defaultValues}
             >
-              <div>
+              <Col span={24} style={{ margin: "15px 0" }}>
                 <FormInput
                   name="email"
                   type="text"
@@ -92,12 +92,8 @@ const LoginPage = () => {
                   label="Email"
                   required
                 />
-              </div>
-              <div
-                style={{
-                  margin: "15px 0px",
-                }}
-              >
+              </Col>
+              <Col span={24} style={{ margin: "15px 0" }}>
                 <FormInput
                   name="password"
                   type="password"
@@ -105,7 +101,7 @@ const LoginPage = () => {
                   label="Password"
                   required
                 />
-              </div>
+              </Col>
               <Button type="primary" htmlType="submit">
                 Login
               </Button>
