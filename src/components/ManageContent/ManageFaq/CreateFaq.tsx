@@ -17,7 +17,9 @@ const CreateFaq = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await createFaq(data);
+
       if (result?.data) message.success("Faq added successfully");
       else message.error("Faq added failed");
     } catch (err: any) {
