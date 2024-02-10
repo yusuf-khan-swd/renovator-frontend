@@ -50,13 +50,11 @@ const ManageFaq = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteFaq(id);
 
-      if (result?.data) {
-        message.success("Faq Deleted successfully");
-      } else {
-        message.error("Faq Delete failed!");
-      }
+      if (result?.data) message.success("Faq Deleted successfully");
+      else message.error("Faq Delete failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
