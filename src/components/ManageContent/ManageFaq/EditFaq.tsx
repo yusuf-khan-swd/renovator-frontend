@@ -20,13 +20,11 @@ const EditFaq = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
+
       const result: any = await updateFaq(data);
 
-      if (result?.data) {
-        message.success("Faq updated successfully");
-      } else {
-        message.error("Faq updated failed");
-      }
+      if (result?.data) message.success("Faq updated successfully");
+      else message.error("Faq updated failed");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
