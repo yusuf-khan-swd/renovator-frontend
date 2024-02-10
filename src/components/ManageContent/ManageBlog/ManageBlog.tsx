@@ -53,13 +53,11 @@ const ManageBlog = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteBlog(id);
 
-      if (result?.data) {
-        message.success("Blog Deleted successfully");
-      } else {
-        message.error("Blog Delete failed!");
-      }
+      if (result?.data) message.success("Blog Deleted successfully");
+      else message.error("Blog Delete failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
