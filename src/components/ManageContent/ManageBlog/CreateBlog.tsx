@@ -17,13 +17,11 @@ const CreateBlog = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await createBlog(data);
 
-      if (result?.data) {
-        message.success("Blog added successfully");
-      } else {
-        message.error("Blog added failed");
-      }
+      if (result?.data) message.success("Blog added successfully");
+      else message.error("Blog added failed");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
