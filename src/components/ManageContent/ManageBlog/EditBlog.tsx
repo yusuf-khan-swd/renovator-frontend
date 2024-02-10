@@ -23,13 +23,11 @@ const EditBlog = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
+
       const result: any = await updateBlog(data);
 
-      if (result?.data) {
-        message.success("Blog updated successfully");
-      } else {
-        message.error("Blog updated failed");
-      }
+      if (result?.data) message.success("Blog updated successfully");
+      else message.error("Blog updated failed");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
