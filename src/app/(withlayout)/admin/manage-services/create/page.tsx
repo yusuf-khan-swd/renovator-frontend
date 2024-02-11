@@ -8,6 +8,7 @@ import FormSelectField, {
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
+import FormHeading from "@/components/ui/FormHeading";
 import { serviceCreateStatusOptions } from "@/constants/global";
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useCreateServiceMutation } from "@/redux/api/serviceApi";
@@ -53,7 +54,7 @@ const CreateServicePage = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add a New Service</h1>
+          <FormHeading title="Add a New Service" />
           <Form
             submitHandler={onSubmit}
             resolver={yupResolver(serviceSchema)}
