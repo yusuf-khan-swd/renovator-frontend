@@ -7,6 +7,7 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalServiceContent from "@/components/ui/ConfirmModalServiceContent";
+import FormHeading from "@/components/ui/FormHeading";
 import {
   useDeleteServiceMutation,
   useServiceQuery,
@@ -78,7 +79,7 @@ const DetailsServicePage = ({ params }: any) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h1>Service Details Information</h1>
+            <FormHeading title="Service Details Information" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(serviceSchema)}
