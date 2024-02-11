@@ -12,6 +12,7 @@ import { categorySchema } from "@/schemas/category";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import FormHeading from "../ui/FormHeading";
 
 const EditCategory = ({ id }: { id: string }) => {
   const { data, isLoading } = useCategoryQuery(id);
@@ -52,7 +53,7 @@ const EditCategory = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <h1>Update category</h1>
+            <FormHeading title="Update category" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(categorySchema)}
