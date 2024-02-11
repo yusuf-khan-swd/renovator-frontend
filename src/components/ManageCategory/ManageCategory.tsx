@@ -50,6 +50,7 @@ const ManageCategory = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteCategory(id);
 
       if (result?.data) {
