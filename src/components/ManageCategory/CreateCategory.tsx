@@ -16,12 +16,14 @@ const CreateCategory = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await createCategory(data);
+
       if (result?.data) message.success("Category added successfully");
       else message.error("Category added failed!");
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
