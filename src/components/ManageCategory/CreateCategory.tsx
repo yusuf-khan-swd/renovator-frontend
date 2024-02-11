@@ -8,6 +8,7 @@ import { categorySchema } from "@/schemas/category";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
+import FormHeading from "../ui/FormHeading";
 
 const CreateCategory = () => {
   const [createCategory] = useCreateCategoryMutation();
@@ -38,7 +39,7 @@ const CreateCategory = () => {
       />
       <div style={{ margin: "24px 5px" }}>
         <Card>
-          <h1>Add new category</h1>
+          <FormHeading title="Add new category" />
           <Form submitHandler={onSubmit} resolver={yupResolver(categorySchema)}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
