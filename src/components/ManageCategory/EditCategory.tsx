@@ -22,7 +22,9 @@ const EditCategory = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await updateCategory(data);
+
       if (result?.data) message.success("Category updated successfully");
       else message.error("Category updated failed");
     } catch (error: any) {
