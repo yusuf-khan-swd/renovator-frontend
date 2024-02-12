@@ -23,16 +23,14 @@ const CreateService = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await createService(data);
 
-      if (result?.data) {
-        message.success("Service created successfully!");
-      } else {
-        message.error("Service create failed!");
-      }
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+      if (result?.data) message.success("Service created successfully!");
+      else message.error("Service create failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
