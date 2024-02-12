@@ -54,15 +54,14 @@ const ManageService = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteService(id);
-      if (result?.data) {
-        message.success("Service Delete successfully");
-      } else {
-        message.error("Service Delete failed!");
-      }
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+
+      if (result?.data) message.success("Service Delete successfully");
+      else message.error("Service Delete failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
