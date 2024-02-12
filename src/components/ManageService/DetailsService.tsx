@@ -44,14 +44,11 @@ const DetailsService = ({ id }: { id: string }) => {
 
       router.push(`/${role}/${routeName}`);
 
-      if (result?.data) {
-        message.success("Service Delete successfully");
-      } else {
-        message.error("Service Delete failed!");
-      }
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+      if (result?.data) message.success("Service Delete successfully");
+      else message.error("Service Delete failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
