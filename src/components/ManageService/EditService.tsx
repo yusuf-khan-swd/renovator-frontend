@@ -29,16 +29,14 @@ const EditService = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await updateService(data);
 
-      if (result?.data) {
-        message.success("Service updated successfully!");
-      } else {
-        message.error("Service updated failed!");
-      }
-    } catch (err: any) {
-      console.error(err);
-      message.error(err.message);
+      if (result?.data) message.success("Service updated successfully!");
+      else message.error("Service updated failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
