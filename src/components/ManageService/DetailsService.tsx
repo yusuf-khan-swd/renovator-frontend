@@ -28,15 +28,6 @@ const DetailsService = ({ id }: { id: string }) => {
   const [deleteService] = useDeleteServiceMutation();
   const router = useRouter();
 
-  const onSubmit = async (data: any) => {
-    try {
-      console.log(data);
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
-    }
-  };
-
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
@@ -77,7 +68,6 @@ const DetailsService = ({ id }: { id: string }) => {
           <Card>
             <FormHeading title="Service Details Information" />
             <Form
-              submitHandler={onSubmit}
               resolver={yupResolver(serviceSchema)}
               defaultValues={defaultValues}
             >
