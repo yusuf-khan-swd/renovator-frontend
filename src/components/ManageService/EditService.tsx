@@ -21,8 +21,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-const EditService = ({ params }: any) => {
-  const id = params?.id;
+const EditService = ({ id }: { id: string }) => {
   const { data, isLoading } = useServiceQuery(id);
 
   const [updateService] = useUpdateServiceMutation();
