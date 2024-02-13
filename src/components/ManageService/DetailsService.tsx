@@ -72,28 +72,28 @@ const DetailsService = ({ id }: { id: string }) => {
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="title" label="Title" readOnly />
                 </Col>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="price" label="Price" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="categoryTitle" label="Category" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="location" label="Location" readOnly />
                 </Col>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="status" label="Status" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={16} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={16} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="description"
                     label="Description"
