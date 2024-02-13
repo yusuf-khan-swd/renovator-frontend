@@ -67,7 +67,7 @@ const EditService = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <FormHeading title="Update Service Information" />
+            <FormHeading title="Update Service" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(serviceSchema)}

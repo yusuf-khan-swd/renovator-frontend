@@ -66,7 +66,7 @@ const DetailsService = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "24px 5px" }}>
           <Card>
-            <FormHeading title="Service Details Information" />
+            <FormHeading title="Service Details" />
             <Form
               resolver={yupResolver(serviceSchema)}
               defaultValues={defaultValues}
