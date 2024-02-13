@@ -59,23 +59,23 @@ const CreateService = () => {
             defaultValues={defaultValues}
           >
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={12} lg={8} style={{ margin: "10px 0" }}>
                 <FormInput name="title" label="Title" required />
               </Col>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={12} lg={8} style={{ margin: "10px 0" }}>
                 <FormInput name="price" label="Price $" required />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={8} style={{ margin: "10px 0" }}>
                 <CategoryField name="categoryId" label="Category" required />
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={12} lg={8} style={{ margin: "10px 0" }}>
                 <FormInput name="location" label="Location" required />
               </Col>
-              <Col span={8} style={{ margin: "10px 0" }}>
+              <Col xs={12} lg={8} style={{ margin: "10px 0" }}>
                 <FormSelectField
                   name="status"
                   label="Status"
@@ -85,7 +85,7 @@ const CreateService = () => {
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={16} style={{ margin: "10px 0" }}>
+              <Col xs={24} lg={16} style={{ margin: "10px 0" }}>
                 <FormTextArea
                   name="description"
                   label="Description"
