@@ -103,7 +103,7 @@ const DetailsService = ({ id }: { id: string }) => {
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <Link href={`/${role}/manage-services/edit/${id}`}>
                     <Button style={{ margin: "2px" }} type="primary">
                       Edit Service Info
