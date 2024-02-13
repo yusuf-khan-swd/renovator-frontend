@@ -85,7 +85,7 @@ const CreateService = () => {
               </Col>
             </Row>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col xs={24} lg={16} style={{ margin: "10px 0" }}>
+              <Col xs={24} xl={16} style={{ margin: "10px 0" }}>
                 <FormTextArea
                   name="description"
                   label="Description"
