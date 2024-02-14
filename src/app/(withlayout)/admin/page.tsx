@@ -4,7 +4,7 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Admin - Renovator",
+  title: "Admin Profile - Renovator",
   description: "A Home Renovation Service Provider",
 };
 
