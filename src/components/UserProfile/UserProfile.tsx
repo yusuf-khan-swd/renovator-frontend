@@ -4,21 +4,12 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useProfileQuery } from "@/redux/api/profileApi";
-import { Button, Card, Col, Row, message } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import Link from "next/link";
 import FormHeading from "../ui/FormHeading";
 
 const UserProfile = () => {
   const { data, isLoading } = useProfileQuery(undefined);
-
-  const onSubmit = async (data: any) => {
-    try {
-      console.log(data);
-    } catch (error: any) {
-      console.error(error);
-      message.error(error.message);
-    }
-  };
 
   const defaultValues = {
     name: data?.name || "",
@@ -35,7 +26,7 @@ const UserProfile = () => {
         <div style={{ margin: "24px 5px" }}>
           <Card>
             <FormHeading title="User Profile" />
-            <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+            <Form defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="name" label="Name" readOnly />
