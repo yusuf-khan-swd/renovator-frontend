@@ -72,23 +72,23 @@ const EditBooking = ({ id }: { id: string }) => {
             <h2>Update Booking Information</h2>
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="userName" label="User Name" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="userEmail" label="User Email" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormDatePicker name="date" label="Booking Date" />
                 </Col>
               </Row>
 
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormSelectField
                     name="status"
                     label="Status"
