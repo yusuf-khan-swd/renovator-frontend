@@ -83,7 +83,7 @@ const EditBooking = ({ id }: { id: string }) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
-                  <FormDatePicker name="date" label="Booking Date" />
+                  <FormDatePicker name="date" label="Booking Date" required />
                 </Col>
               </Row>
 
@@ -93,6 +93,7 @@ const EditBooking = ({ id }: { id: string }) => {
                     name="status"
                     label="Status"
                     options={bookingStatusOptionsForAdmin as SelectOptions[]}
+                    required
                   />
                 </Col>
               </Row>
