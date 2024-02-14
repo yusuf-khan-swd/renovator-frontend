@@ -37,14 +37,11 @@ const EditBooking = ({ id }: { id: string }) => {
 
       const result: any = await updateBooking(data);
 
-      if (result?.data) {
-        message.success("Booking updated successfully");
-      } else {
-        message.error("Booking updated failed");
-      }
+      if (result?.data) message.success("Booking updated successfully");
+      else message.error("Booking updated failed");
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
