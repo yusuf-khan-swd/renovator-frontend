@@ -17,8 +17,7 @@ import {
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditBooking = ({ params }: any) => {
-  const id = params?.id;
+const EditBooking = ({ id }: { id: string }) => {
   const { data: booking, isLoading: isBookingDataLoading } =
     useBookingQuery(id);
 
