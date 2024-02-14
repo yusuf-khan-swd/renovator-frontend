@@ -17,7 +17,7 @@ import {
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditServicePage = ({ params }: any) => {
+const EditBookingPage = ({ params }: any) => {
   const id = params?.id;
   const { data: booking, isLoading: isBookingDataLoading } =
     useBookingQuery(id);
@@ -113,4 +113,4 @@ const EditServicePage = ({ params }: any) => {
   );
 };
 
-export default EditServicePage;
+export default EditBookingPage;
