@@ -66,7 +66,6 @@ const EditUserProfile = () => {
         <div style={{ margin: "24px 5px" }}>
           <Card>
             <FormHeading title="Update User Profile" />
-
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
