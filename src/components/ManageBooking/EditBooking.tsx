@@ -16,6 +16,7 @@ import {
 } from "@/redux/api/bookingApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
+import FormHeading from "../ui/FormHeading";
 
 const EditBooking = ({ id }: { id: string }) => {
   const { data: booking, isLoading: isBookingDataLoading } =
@@ -69,7 +70,7 @@ const EditBooking = ({ id }: { id: string }) => {
       ) : (
         <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
           <Card>
-            <h2>Update Booking Information</h2>
+            <FormHeading title="Update Booking Information" />
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
