@@ -68,7 +68,7 @@ const EditBooking = ({ id }: { id: string }) => {
       {isBookingDataLoading ? (
         <FullScreenLoading />
       ) : (
-        <div style={{ margin: "20px 8px", display: "grid", gap: "24px" }}>
+        <div style={{ margin: "24px 5px", display: "grid", gap: "24px" }}>
           <Card>
             <FormHeading title="Update Booking Information" />
             <Form submitHandler={onSubmit} defaultValues={defaultValues}>
