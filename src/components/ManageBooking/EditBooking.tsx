@@ -14,7 +14,9 @@ import {
   useBookingQuery,
   useUpdateBookingMutation,
 } from "@/redux/api/bookingApi";
+import { bookingSchema } from "@/schemas/booking";
 import { getUserInfo } from "@/services/auth.service";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import FormHeading from "../ui/FormHeading";
 
@@ -67,7 +69,11 @@ const EditBooking = ({ id }: { id: string }) => {
         <div style={{ margin: "24px 5px", display: "grid", gap: "24px" }}>
           <Card>
             <FormHeading title="Update Booking Information" />
-            <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+            <Form
+              submitHandler={onSubmit}
+              defaultValues={defaultValues}
+              resolver={yupResolver(bookingSchema)}
+            >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="userName" label="User Name" readOnly />
