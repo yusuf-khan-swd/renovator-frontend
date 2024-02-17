@@ -1,4 +1,10 @@
 import ViewReview from "@/components/ManageReview/ViewReview";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "View Reviews - Renovator",
+  description: "A Home Renovation Service Provider",
+};
 
 const ViewReviewPage = () => {
   return (
