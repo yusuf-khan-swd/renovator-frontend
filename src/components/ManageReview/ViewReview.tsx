@@ -24,10 +24,6 @@ const ViewReview = ({ id }: { id: string }) => {
 
   const [deleteReview] = useDeleteReviewMutation();
 
-  const onSubmit = async (data: any) => {
-    console.log(data);
-  };
-
   const deleteHandler = async (id: string) => {
     message.loading("Deleting.....");
     try {
@@ -73,7 +69,6 @@ const ViewReview = ({ id }: { id: string }) => {
           <Card>
             <ReviewAndRatingHeading heading="Review Details" />
             <Form
-              submitHandler={onSubmit}
               resolver={yupResolver(reviewAndRatingSchema)}
               defaultValues={defaultValues}
             >
