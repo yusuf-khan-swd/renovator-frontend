@@ -26,17 +26,17 @@ const EditReview = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
+
       data.rating = parseInt(data.rating);
 
       const result: any = await updateReview(data);
-      if (result?.data) {
+
+      if (result?.data)
         message.success("Review and Rating updated successfully");
-      } else {
-        message.error("Review and rating update failed!");
-      }
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+      else message.error("Review and rating update failed!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
