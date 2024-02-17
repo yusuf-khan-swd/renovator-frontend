@@ -71,7 +71,7 @@ const EditReview = ({ id }: { id: string }) => {
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={10} style={{ margin: "10px 0" }}>
                   <FormSelectField
                     name="rating"
                     label="Rating"
@@ -82,17 +82,17 @@ const EditReview = ({ id }: { id: string }) => {
               </Row>
 
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={16} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={18} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="review"
                     label="Review Description"
-                    rows={5}
+                    rows={9}
                     required
                   />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <Button type="primary" htmlType="submit">
                     Update Review
                   </Button>
