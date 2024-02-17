@@ -73,12 +73,12 @@ const ViewReview = ({ id }: { id: string }) => {
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <FormInput name="rating" label="Rating" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={16} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={16} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="review"
                     label="Review Description"
@@ -88,7 +88,7 @@ const ViewReview = ({ id }: { id: string }) => {
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col span={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <Link href={`/${role}/manage-reviews/edit/${id}`}>
                     <Button type="primary">Edit Review</Button>
                   </Link>
