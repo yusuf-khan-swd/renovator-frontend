@@ -17,10 +17,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const ViewReview = ({ id }: { id: string }) => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-reviews";
-  const endRoute = "view";
-
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
 
@@ -56,6 +52,10 @@ const ViewReview = ({ id }: { id: string }) => {
     rating: data?.rating || "",
     review: data?.review || "",
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-reviews";
+  const endRoute = "view";
 
   return (
     <div>
