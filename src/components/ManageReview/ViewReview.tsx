@@ -15,8 +15,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
-import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ViewReview = ({ id }: { id: string }) => {
   const { data, isLoading } = useReviewQuery(id);
@@ -93,8 +91,8 @@ const ViewReview = ({ id }: { id: string }) => {
                   <ConfirmModal
                     id={id}
                     handler={deleteHandler}
-                    title={<ConfirmModalTitle data="review" />}
-                    content={<ConfirmModalReviewContent data={data} />}
+                    title="Do you want to delete this review?"
+                    content={`Delete this review!`}
                   />
                 </Col>
               </Row>
