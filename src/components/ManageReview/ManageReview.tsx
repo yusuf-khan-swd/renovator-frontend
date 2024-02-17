@@ -239,7 +239,7 @@ const ManageReview = () => {
       </ActionBar>
 
       <CommonTable
-        loading={isLoadingUserReview}
+        loading={isLoadingUserReview || isLoadingAdminReviews}
         columns={columns}
         dataSource={roleBaseReviews}
         pageSize={size}
