@@ -16,12 +16,11 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const ViewReview = ({ params }: any) => {
+const ViewReview = ({ id }: { id: string }) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
   const endRoute = "view";
 
-  const id = params?.id;
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
 
