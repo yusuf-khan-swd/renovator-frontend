@@ -74,7 +74,7 @@ const ManageFeedback = () => {
       },
     },
     {
-      title: "Review",
+      title: "Feedback",
       dataIndex: "review",
       height: 340,
       render: function (review: string) {
