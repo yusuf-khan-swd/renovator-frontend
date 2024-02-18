@@ -30,11 +30,9 @@ const EditFeedback = ({ id }: { id: string }) => {
       data.rating = parseInt(data.rating);
 
       const result: any = await updateFeedback(data);
-      if (result?.data) {
-        message.success("Feedback updated successfully");
-      } else {
-        message.error("Feedback update failed!");
-      }
+
+      if (result?.data) message.success("Feedback updated successfully");
+      else message.error("Feedback update failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
