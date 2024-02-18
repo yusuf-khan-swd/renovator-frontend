@@ -35,15 +35,13 @@ const DetailsFeedback = ({ id }: { id: string }) => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteFeedback(id);
 
       router.push(`/${role}/${routeName}`);
 
-      if (result?.data) {
-        message.success("Feedback Delete successfully");
-      } else {
-        message.error("Feedback Delete failed!!");
-      }
+      if (result?.data) message.success("Feedback Delete successfully");
+      else message.error("Feedback Delete failed!!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
