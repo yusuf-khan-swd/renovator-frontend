@@ -18,10 +18,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const DetailsFeedback = ({ id }: { id: string }) => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-feedbacks";
-  const endRoute = "view";
-
   const { data, isLoading } = useFeedbackQuery(id);
 
   const router = useRouter();
@@ -55,6 +51,10 @@ const DetailsFeedback = ({ id }: { id: string }) => {
     rating: data?.rating || "",
     review: data?.review || "",
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-feedbacks";
+  const endRoute = "view";
 
   return (
     <div>
