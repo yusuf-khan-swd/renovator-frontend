@@ -20,9 +20,6 @@ import ConfirmModalFeedbackContent from "../ui/ConfirmModalFeedbackContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageFeedback = () => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-feedbacks";
-
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -171,6 +168,9 @@ const ManageFeedback = () => {
     setSortOrder("");
     setSearchTerm("");
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-feedbacks";
 
   return (
     <div>
