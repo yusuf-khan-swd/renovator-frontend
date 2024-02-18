@@ -73,17 +73,17 @@ const EditFeedback = ({ id }: { id: string }) => {
               defaultValues={defaultValues}
             >
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="name" label="User Name" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={10} style={{ margin: "10px 0" }}>
                   <FormInput name="email" label="User Email" readOnly />
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} lg={10} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={10} style={{ margin: "10px 0" }}>
                   <FormSelectField
                     name="rating"
                     label="Rating"
@@ -93,7 +93,7 @@ const EditFeedback = ({ id }: { id: string }) => {
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} lg={18} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={18} style={{ margin: "10px 0" }}>
                   <FormTextArea
                     name="review"
                     label="Review"
@@ -103,7 +103,7 @@ const EditFeedback = ({ id }: { id: string }) => {
                 </Col>
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-                <Col xs={24} lg={8} style={{ margin: "10px 0" }}>
+                <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
                   <Button type="primary" htmlType="submit">
                     Update
                   </Button>
