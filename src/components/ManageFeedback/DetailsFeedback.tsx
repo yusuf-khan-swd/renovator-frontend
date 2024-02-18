@@ -54,15 +54,11 @@ const DetailsFeedback = ({ id }: { id: string }) => {
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
-  const endRoute = "view";
 
   return (
     <div>
       <CommonBreadCrumb
-        items={[
-          { label: routeName, link: `/${role}/${routeName}` },
-          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
-        ]}
+        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       {isLoading ? (
         <FullScreenLoading />
