@@ -16,6 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import FormHeading from "../ui/FormHeading";
 
 const DetailsFeedback = ({ id }: { id: string }) => {
   const { data, isLoading } = useFeedbackQuery(id);
@@ -65,7 +66,7 @@ const DetailsFeedback = ({ id }: { id: string }) => {
       ) : (
         <div style={{ padding: "24px 5px" }}>
           <Card>
-            <h1>Update Feedback</h1>
+            <FormHeading title="Update Feedback" />
             <Form
               submitHandler={onSubmit}
               resolver={yupResolver(feedbackSchema)}
