@@ -46,16 +46,7 @@ const EditUser = ({ id }: { id: string }) => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-          {
-            label: "edit",
-            link: `/${role}/${routeName}/edit`,
-          },
-        ]}
+        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
 
       {isLoading ? (
