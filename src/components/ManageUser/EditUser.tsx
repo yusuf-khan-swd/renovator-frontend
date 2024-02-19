@@ -22,13 +22,14 @@ const EditUser = ({ id }: { id: string }) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
-      // console.log(data);
-      await updateUser(data);
 
-      message.success("User updated successfully");
+      const result: any = await updateUser(data);
+
+      if (result?.data) message.success("User updated successfully");
+      else message.error("User updated failed");
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
