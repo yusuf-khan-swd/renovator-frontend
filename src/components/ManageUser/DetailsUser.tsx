@@ -15,16 +15,8 @@ import FormHeading from "../ui/FormHeading";
 const DetailsUser = ({ id }: { id: string }) => {
   const { data, isLoading } = useUserQuery(id);
   const [deleteUser] = useDeleteUserMutation();
-  const router = useRouter();
 
-  const onSubmit = async (data: any) => {
-    try {
-      console.log(data);
-    } catch (error: any) {
-      console.error(error);
-      message.error(error.message);
-    }
-  };
+  const router = useRouter();
 
   const deleteHandler = async (id: string) => {
     try {
@@ -62,7 +54,7 @@ const DetailsUser = ({ id }: { id: string }) => {
       ) : (
         <Card style={{ margin: "20px 8px" }}>
           <FormHeading title="Details User Information" />
-          <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+          <Form defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
                 <FormInput name="name" label="Name" readOnly />
