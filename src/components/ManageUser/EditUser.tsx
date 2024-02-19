@@ -13,6 +13,7 @@ import { getUserInfo } from "@/services/auth.service";
 
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import FormHeading from "../ui/FormHeading";
 
 const EditUser = ({ id }: { id: string }) => {
   const { data, isLoading } = useUserQuery(id);
@@ -60,8 +61,7 @@ const EditUser = ({ id }: { id: string }) => {
         <FullScreenLoading />
       ) : (
         <Card style={{ margin: "20px 8px" }}>
-          <h1>Update User Information</h1>
-
+          <FormHeading title="Update User Information" />
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
