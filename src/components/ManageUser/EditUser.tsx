@@ -14,8 +14,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-const EditUser = ({ params }: any) => {
-  const id = params?.id;
+const EditUser = ({ id }: { id: string }) => {
   const { data, isLoading } = useUserQuery(id);
   const [updateUser] = useUpdateUserMutation();
 
