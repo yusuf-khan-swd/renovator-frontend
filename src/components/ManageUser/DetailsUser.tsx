@@ -65,7 +65,7 @@ const DetailsUser = ({ id }: { id: string }) => {
         <FullScreenLoading />
       ) : (
         <Card style={{ margin: "20px 8px" }}>
-          <FormHeading title="User Information" />
+          <FormHeading title="Details User Information" />
           <Form submitHandler={onSubmit} defaultValues={defaultValues}>
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col span={8} style={{ margin: "10px 0" }}>
