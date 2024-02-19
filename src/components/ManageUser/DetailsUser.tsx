@@ -13,10 +13,6 @@ import { useRouter } from "next/navigation";
 import FormHeading from "../ui/FormHeading";
 
 const DetailsUser = ({ id }: { id: string }) => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
-  const endRoute = "details";
-
   const { data, isLoading } = useUserQuery(id);
   const [deleteUser] = useDeleteUserMutation();
   const router = useRouter();
@@ -51,6 +47,10 @@ const DetailsUser = ({ id }: { id: string }) => {
     email: data?.email || "",
     role: data?.role || "",
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
+  const endRoute = "details";
 
   return (
     <div>
