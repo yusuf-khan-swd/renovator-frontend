@@ -41,18 +41,19 @@ const EditUser = ({ id }: { id: string }) => {
   };
 
   const { role } = getUserInfo() as any;
+  const routeName = "manage-users";
 
   return (
     <div>
       <CommonBreadCrumb
         items={[
           {
-            label: `manage-users`,
-            link: `/${role}/manage-users`,
+            label: routeName,
+            link: `/${role}/${routeName}`,
           },
           {
             label: "edit",
-            link: `/${role}/manage-users/edit`,
+            link: `/${role}/${routeName}/edit`,
           },
         ]}
       />
