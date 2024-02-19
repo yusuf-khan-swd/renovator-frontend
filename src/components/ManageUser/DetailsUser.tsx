@@ -11,12 +11,11 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const DetailsUser = ({ params }: any) => {
+const DetailsUser = ({ id }: { id: string }) => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-users";
   const endRoute = "details";
 
-  const id = params?.id;
   const { data, isLoading } = useUserQuery(id);
   const [deleteUser] = useDeleteUserMutation();
   const router = useRouter();

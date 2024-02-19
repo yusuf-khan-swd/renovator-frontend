@@ -1,9 +1,11 @@
 import DetailsUser from "@/components/ManageUser/DetailsUser";
 
-const DetailsUserPage = () => {
+const DetailsUserPage = ({ params }: { params: { id: string } }) => {
+  const id = params?.id;
+
   return (
     <div>
-      <DetailsUser />
+      <DetailsUser id={id} />
     </div>
   );
 };
