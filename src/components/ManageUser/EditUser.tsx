@@ -33,7 +33,6 @@ const EditUser = ({ id }: { id: string }) => {
     }
   };
 
-  // @ts-ignore
   const defaultValues = {
     id: data?.id,
     name: data?.name || "",
