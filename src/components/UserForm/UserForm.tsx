@@ -20,13 +20,11 @@ const UserForm = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
+
       const result: any = await userSignup({ ...data });
 
-      if (result?.data) {
-        message.success("User created successfully!");
-      } else {
-        message.error("User create Failed!");
-      }
+      if (result?.data) message.success("User created successfully!");
+      else message.error("User create Failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
