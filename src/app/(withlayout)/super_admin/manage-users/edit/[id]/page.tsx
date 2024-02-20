@@ -1,109 +1,17 @@
-"use client";
+import EditUser from "@/components/ManageUser/EditUser";
+import { Metadata } from "next";
 
-import Form from "@/components/Forms/Form";
-import FormInput from "@/components/Forms/FormInput";
-import FormSelectField, {
-  SelectOptions,
-} from "@/components/Forms/FormSelectField";
-import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { roleOptionsForSuperAdmin } from "@/constants/global";
-import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
-import { getUserInfo } from "@/services/auth.service";
+export const metadata: Metadata = {
+  title: "Edit User - Renovator",
+  description: "A Home Renovation Service Provider",
+};
 
-import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
-
-const EditUserPage = ({ params }: any) => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
-  const endRoute = "edit";
-
+const EditUserPage = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  const { data, isLoading } = useUserQuery(id);
-  const [updateUser] = useUpdateUserMutation();
-
-  const onSubmit = async (data: any) => {
-    try {
-      message.loading("Updating.....");
-
-      const result: any = await updateUser(data);
-
-      if (result?.data) {
-        message.success("User updated successfully");
-      } else {
-        message.error("User updated failed");
-      }
-    } catch (error: any) {
-      console.error(error);
-      message.error(error?.message);
-    }
-  };
-
-  // @ts-ignore
-  const defaultValues = {
-    id: data?.id,
-    name: data?.name || "",
-    email: data?.email || "",
-    role: data?.role || "",
-  };
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[
-          { label: routeName, link: `/${role}/${routeName}` },
-          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
-        ]}
-      />
-
-      {isLoading ? (
-        <FullScreenLoading />
-      ) : (
-        <Card style={{ margin: "20px 8px" }}>
-          <h1>Update User Information</h1>
-
-          <Form submitHandler={onSubmit} defaultValues={defaultValues}>
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="name" label="Name" />
-              </Col>
-            </Row>
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormInput name="email" label="Email" />
-              </Col>
-            </Row>
-
-            <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-              <Col span={8} style={{ margin: "10px 0" }}>
-                <FormSelectField
-                  name="role"
-                  label="User Role"
-                  options={roleOptionsForSuperAdmin as SelectOptions[]}
-                />
-              </Col>
-            </Row>
-
-            <Button
-              htmlType="submit"
-              style={{
-                margin: "2px",
-              }}
-              onClick={() => console.log(data)}
-              type="primary"
-            >
-              Update
-            </Button>
-
-            <Link href={`/${role}/manage-users/details/${id}`}>
-              <Button style={{ margin: "2px" }} type="default">
-                View User Info
-              </Button>
-            </Link>
-          </Form>
-        </Card>
-      )}
+      <EditUser id={id} />
     </div>
   );
 };
