@@ -4,7 +4,7 @@ import FormInput from "@/components/Forms/FormInput";
 import { useCreateAdminMutation } from "@/redux/api/authApi";
 import { userSchema } from "@/schemas/user";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { SubmitHandler } from "react-hook-form";
@@ -45,72 +45,76 @@ const AdminForm = () => {
         alignContent: "center",
       }}
     >
-      <Row justify="center" align="middle">
-        <Col className="login-image" lg={10}>
-          <Image src={loginImage} width={400} alt="login image" />
-        </Col>
-        <Col sm={22} md={14} lg={8}>
-          <h1
-            style={{
-              margin: "15px 0px",
-            }}
-          >
-            Create an admin account
-          </h1>
-          <div>
-            <Form
-              submitHandler={onSubmit}
-              resolver={yupResolver(userSchema)}
-              defaultValues={defaultValues}
+      <Card>
+        <Row justify="center" align="middle">
+          <Col className="login-image" lg={10}>
+            <Image src={loginImage} width={400} alt="login image" />
+          </Col>
+          <Col sm={22} md={14} lg={8}>
+            <h1
+              style={{
+                margin: "15px 0px",
+              }}
             >
-              <div>
-                <FormInput
-                  name="name"
-                  type="text"
-                  size="large"
-                  label="Name"
-                  required
-                />
-              </div>
-              <div
-                style={{
-                  margin: "15px 0px",
-                }}
+              Create an admin account
+            </h1>
+            <div>
+              <Form
+                submitHandler={onSubmit}
+                resolver={yupResolver(userSchema)}
+                defaultValues={defaultValues}
               >
-                <FormInput
-                  name="email"
-                  type="text"
-                  size="large"
-                  label="Email"
-                  required
-                />
-              </div>
-              <div>
-                <FormInput
-                  name="password"
-                  type="password"
-                  size="large"
-                  label="Password"
-                  required
-                />
-              </div>
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{
-                  margin: "10px 0px",
-                }}
-              >
-                Create Admin
-              </Button>
-            </Form>
-            <p style={{ margin: "8px 4px" }}>
-              Create user account?{" "}
-              <Link href={`/super_admin/manage-users/create-user`}>Link </Link>
-            </p>
-          </div>
-        </Col>
-      </Row>
+                <div>
+                  <FormInput
+                    name="name"
+                    type="text"
+                    size="large"
+                    label="Name"
+                    required
+                  />
+                </div>
+                <div
+                  style={{
+                    margin: "15px 0px",
+                  }}
+                >
+                  <FormInput
+                    name="email"
+                    type="text"
+                    size="large"
+                    label="Email"
+                    required
+                  />
+                </div>
+                <div>
+                  <FormInput
+                    name="password"
+                    type="password"
+                    size="large"
+                    label="Password"
+                    required
+                  />
+                </div>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{
+                    margin: "10px 0px",
+                  }}
+                >
+                  Create Admin
+                </Button>
+              </Form>
+              <p style={{ margin: "8px 4px" }}>
+                Create user account?{" "}
+                <Link href={`/super_admin/manage-users/create-user`}>
+                  Link{" "}
+                </Link>
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Card>
     </div>
   );
 };
