@@ -24,10 +24,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return <FullScreenLoading />;
   }
 
-  // TODO: Check Dashboard all of the input field responsive
-  // TODO: Separate all the view, create and edit page form and information from user, admin and super_admin dashboard
-  // TODO: Check is there going to be any problem with this separation like when deployed.
-
   return (
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
