@@ -63,7 +63,7 @@ const UserForm = () => {
                 resolver={yupResolver(userSchema)}
                 defaultValues={defaultValues}
               >
-                <Col>
+                <Col style={{ margin: "10px 0px" }}>
                   <FormInput
                     name="name"
                     type="text"
@@ -72,11 +72,7 @@ const UserForm = () => {
                     required
                   />
                 </Col>
-                <Col
-                  style={{
-                    margin: "15px 0px",
-                  }}
-                >
+                <Col style={{ margin: "10px 0px" }}>
                   <FormInput
                     name="email"
                     type="text"
@@ -85,7 +81,7 @@ const UserForm = () => {
                     required
                   />
                 </Col>
-                <Col>
+                <Col style={{ margin: "10px 0px" }}>
                   <FormInput
                     name="password"
                     type="password"
