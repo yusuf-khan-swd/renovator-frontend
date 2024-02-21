@@ -64,46 +64,25 @@ const AdminForm = () => {
                 resolver={yupResolver(userSchema)}
                 defaultValues={defaultValues}
               >
-                <div>
-                  <FormInput
-                    name="name"
-                    type="text"
-                    size="large"
-                    label="Name"
-                    required
-                  />
-                </div>
-                <div
-                  style={{
-                    margin: "15px 0px",
-                  }}
-                >
-                  <FormInput
-                    name="email"
-                    type="text"
-                    size="large"
-                    label="Email"
-                    required
-                  />
-                </div>
-                <div>
+                <Col style={{ margin: "10px 0px" }}>
+                  <FormInput name="name" label="Name" required />
+                </Col>
+                <Col style={{ margin: "10px 0px" }}>
+                  <FormInput name="email" type="text" label="Email" required />
+                </Col>
+                <Col style={{ margin: "10px 0px" }}>
                   <FormInput
                     name="password"
                     type="password"
-                    size="large"
                     label="Password"
                     required
                   />
-                </div>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  style={{
-                    margin: "10px 0px",
-                  }}
-                >
-                  Create Admin
-                </Button>
+                </Col>
+                <Col style={{ margin: "10px 0px" }}>
+                  <Button type="primary" htmlType="submit">
+                    Create Admin
+                  </Button>
+                </Col>
               </Form>
               <p style={{ margin: "8px 4px" }}>
                 Create user account?{" "}
