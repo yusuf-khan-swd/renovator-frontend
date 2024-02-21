@@ -64,41 +64,24 @@ const UserForm = () => {
                 defaultValues={defaultValues}
               >
                 <Col style={{ margin: "10px 0px" }}>
-                  <FormInput
-                    name="name"
-                    type="text"
-                    size="large"
-                    label="Name"
-                    required
-                  />
+                  <FormInput name="name" label="Name" required />
                 </Col>
                 <Col style={{ margin: "10px 0px" }}>
-                  <FormInput
-                    name="email"
-                    type="text"
-                    size="large"
-                    label="Email"
-                    required
-                  />
+                  <FormInput name="email" type="text" label="Email" required />
                 </Col>
                 <Col style={{ margin: "10px 0px" }}>
                   <FormInput
                     name="password"
                     type="password"
-                    size="large"
                     label="Password"
                     required
                   />
                 </Col>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  style={{
-                    margin: "10px 0px",
-                  }}
-                >
-                  Create User
-                </Button>
+                <Col style={{ margin: "10px 0px" }}>
+                  <Button type="primary" htmlType="submit">
+                    Create User
+                  </Button>
+                </Col>
               </Form>
             </div>
           </Col>
