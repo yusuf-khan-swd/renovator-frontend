@@ -10,8 +10,7 @@ import { Button, Col, DatePicker, Row, message } from "antd";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Booking = ({ params }: any) => {
-  const id = params?.id;
+const Booking = ({ id }: { id: string }) => {
   const { userId } = getUserInfo() as any;
   const { data: service, isLoading } = useServiceQuery(id);
 
