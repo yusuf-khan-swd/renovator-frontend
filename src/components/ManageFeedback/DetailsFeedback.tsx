@@ -25,10 +25,6 @@ const DetailsFeedback = ({ id }: { id: string }) => {
 
   const [deleteFeedback] = useDeleteFeedbackMutation();
 
-  const onSubmit = async (data: any) => {
-    console.log(data);
-  };
-
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
@@ -68,7 +64,6 @@ const DetailsFeedback = ({ id }: { id: string }) => {
           <Card>
             <FormHeading title="Update Feedback" />
             <Form
-              submitHandler={onSubmit}
               resolver={yupResolver(feedbackSchema)}
               defaultValues={defaultValues}
             >
