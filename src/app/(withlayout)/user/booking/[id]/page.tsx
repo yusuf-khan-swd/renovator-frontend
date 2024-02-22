@@ -41,19 +41,20 @@ const BookingPage = ({ params }: any) => {
 
     try {
       message.loading("Creating.....");
+
       data.serviceId = id;
       data.userId = userId;
+
       const result: any = await createBooking(data);
-      if (result?.data) {
-        message.success("Service booking successfully");
-      } else {
-        message.error("Service booking failed");
-      }
+
+      if (result?.data) message.success("Service booking successfully");
+      else message.error("Service booking failed");
+
       setDateSelected(false);
-    } catch (err: any) {
+    } catch (error: any) {
       setDateSelected(false);
-      console.error(err.message);
-      message.error(err.message);
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
