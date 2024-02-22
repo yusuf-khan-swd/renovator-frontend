@@ -28,7 +28,7 @@ const EditService = ({ id }: { id: string }) => {
 
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Creating.....");
+      message.loading("Updating.....");
 
       const result: any = await updateService(data);
 
