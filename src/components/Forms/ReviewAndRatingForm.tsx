@@ -20,18 +20,17 @@ const ReviewAndRatingForm = ({ serviceId }: IReviewAndRatingProps) => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       data.serviceId = serviceId;
       data.rating = parseInt(data.rating);
+
       const result: any = await createReview(data);
-      // console.log(result);
-      if (result?.data) {
-        message.success("Review and Rating added successfully");
-      } else {
-        message.error("Review and rating failed to add!");
-      }
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+
+      if (result?.data) message.success("Review and Rating added successfully");
+      else message.error("Review and rating failed to add!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
