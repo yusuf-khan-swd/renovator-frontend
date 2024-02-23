@@ -29,12 +29,11 @@ const EditUserProfile = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Updating.....");
+
       const result: any = await updateProfile(data);
-      if (result?.data) {
-        message.success("Profile updated successfully");
-      } else {
-        message.error("Profile update failed!");
-      }
+
+      if (result?.data) message.success("Profile updated successfully");
+      else message.error("Profile update failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error.message);
