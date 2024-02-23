@@ -17,13 +17,11 @@ const CreateAboutUs = () => {
   const onSubmit = async (data: any) => {
     try {
       message.loading("Creating.....");
+
       const result: any = await createAboutUs(data);
 
-      if (result?.data) {
-        message.success("AboutUs added successfully");
-      } else {
-        message.error("AboutUs added failed");
-      }
+      if (result?.data) message.success("AboutUs added successfully");
+      else message.error("AboutUs added failed");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
