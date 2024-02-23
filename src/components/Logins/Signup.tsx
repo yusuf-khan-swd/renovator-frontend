@@ -25,6 +25,7 @@ const SignupPage = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       message.loading("Creating...");
+
       const result: any = await userSignup({ ...data });
 
       if (result?.data) {
