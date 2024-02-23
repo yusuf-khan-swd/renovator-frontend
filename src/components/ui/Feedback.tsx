@@ -18,17 +18,17 @@ const Feedback = () => {
 
   const onSubmit = async (data: any) => {
     try {
-      message.loading("Adding.....");
+      message.loading("Creating.....");
+
       data.rating = parseInt(data.rating);
+
       const result: any = await createFeedback(data);
-      if (result?.data) {
-        message.success("Thank you for your feedback");
-      } else {
-        message.error("Feedback failed to add!");
-      }
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+
+      if (result?.data) message.success("Thank you for your feedback");
+      else message.error("Feedback failed to add!");
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
