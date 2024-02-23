@@ -110,11 +110,8 @@ const ManageBooking = () => {
 
       const result: any = await updateBooking(data);
 
-      if (result?.data) {
-        message.success("Booking Cancelled Successful!");
-      } else {
-        message.error("Booking Cancelled Failed!");
-      }
+      if (result?.data) message.success("Booking Cancelled Successful!");
+      else message.error("Booking Cancelled Failed!");
     } catch (err: any) {
       console.error(err);
       message.error(err?.message);
@@ -132,11 +129,8 @@ const ManageBooking = () => {
 
       const result: any = await updateBooking(data);
 
-      if (result?.data) {
-        message.success("Booking Requested Successful!");
-      } else {
-        message.error("Booking Requested Failed!");
-      }
+      if (result?.data) message.success("Booking Requested Successful!");
+      else message.error("Booking Requested Failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
@@ -149,11 +143,8 @@ const ManageBooking = () => {
 
       const result: any = await deleteBooking(id);
 
-      if (result?.data) {
-        message.success("Booking Delete successfully");
-      } else {
-        message.error("Booking Delete failed");
-      }
+      if (result?.data) message.success("Booking Delete successfully");
+      else message.error("Booking Delete failed");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
