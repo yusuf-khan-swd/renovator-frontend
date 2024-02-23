@@ -21,16 +21,15 @@ const ServiceCard = ({ service, detailsPage = false }: IServiceProps) => {
 
   const handleAddToCart = async (data: any) => {
     try {
-      message.loading("Adding to cart");
+      message.loading("Adding to cart.....");
+
       const result: any = await createCart(data);
-      if (result?.data) {
-        message.success("Service added to cart!");
-      } else {
-        message.error("Service adding to cart failed!");
-      }
+
+      if (result?.data) message.success("Service added to cart!");
+      else message.error("Service adding to cart failed!");
     } catch (error: any) {
       console.log(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
