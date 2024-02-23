@@ -33,15 +33,14 @@ const ManageUser = () => {
   const deleteUserHandler = async (id: string) => {
     try {
       message.loading("Deleting...");
+
       const result: any = await deleteUser(id);
-      if (result?.data) {
-        message.success("User Successfully Deleted!");
-      } else {
-        message.error("User Delete Failed!");
-      }
+
+      if (result?.data) message.success("User Successfully Deleted!");
+      else message.error("User Delete Failed!");
     } catch (error: any) {
       console.error(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
