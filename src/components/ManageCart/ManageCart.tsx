@@ -50,12 +50,11 @@ const ManageCart = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteCart(id);
-      if (result?.data) {
-        message.success("Cart Delete successfully");
-      } else {
-        message.error("Cart Delete failed!");
-      }
+
+      if (result?.data) message.success("Cart Delete successfully");
+      else message.error("Cart Delete failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
@@ -65,15 +64,14 @@ const ManageCart = () => {
   const handleBooking = async (data: any) => {
     try {
       message.loading("Service Booking...");
+
       const result: any = await createBooking(data);
-      if (result?.data) {
-        message.success("Service booked successfully!!");
-      } else {
-        message.error("Service booking failed!");
-      }
+
+      if (result?.data) message.success("Service booked successfully!!");
+      else message.error("Service booking failed!");
     } catch (error: any) {
       console.log(error);
-      message.error(error.message);
+      message.error(error?.message);
     }
   };
 
