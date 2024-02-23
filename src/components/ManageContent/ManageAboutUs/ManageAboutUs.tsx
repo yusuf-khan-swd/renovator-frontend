@@ -54,13 +54,11 @@ const ManageAboutUs = () => {
   const deleteHandler = async (id: string) => {
     try {
       message.loading("Deleting.....");
+
       const result: any = await deleteAboutUs(id);
 
-      if (result?.data) {
-        message.success("AboutUs Deleted successfully");
-      } else {
-        message.error("AboutUs Delete failed!");
-      }
+      if (result?.data) message.success("AboutUs Deleted successfully");
+      else message.error("AboutUs Delete failed!");
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
