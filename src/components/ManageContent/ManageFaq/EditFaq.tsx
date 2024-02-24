@@ -47,7 +47,7 @@ const EditFaq = ({ id }: { id: string }) => {
       <CommonBreadCrumb
         items={[
           { label: routeLabel, link: `/${role}/${routeUrl}` },
-          { label: endRoute, link: `/${role}/${routeUrl}/${endRoute}` },
+          { label: endRoute, link: `/${role}/${routeUrl}/${endRoute}/${id}` },
         ]}
       />
       {isLoading ? (
