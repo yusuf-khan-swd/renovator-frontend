@@ -18,7 +18,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import FormHeading from "../ui/FormHeading";
 
-const DetailsFeedback = ({ id }: { id: string }) => {
+const ViewFeedback = ({ id }: { id: string }) => {
   const { data, isLoading } = useFeedbackQuery(id);
 
   const router = useRouter();
@@ -51,7 +51,7 @@ const DetailsFeedback = ({ id }: { id: string }) => {
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
-  const endRoute = "details";
+  const endRoute = "view";
 
   return (
     <div>
@@ -117,4 +117,4 @@ const DetailsFeedback = ({ id }: { id: string }) => {
   );
 };
 
-export default DetailsFeedback;
+export default ViewFeedback;

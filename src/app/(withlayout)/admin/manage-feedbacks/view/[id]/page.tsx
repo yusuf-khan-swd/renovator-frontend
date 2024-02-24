@@ -1,4 +1,4 @@
-import DetailsFeedback from "@/components/ManageFeedback/DetailsFeedback";
+import ViewFeedback from "@/components/ManageFeedback/ViewFeedback";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ const FeedbackDetailsPage = ({ params }: any) => {
 
   return (
     <div>
-      <DetailsFeedback id={id} />
+      <ViewFeedback id={id} />
     </div>
   );
 };
