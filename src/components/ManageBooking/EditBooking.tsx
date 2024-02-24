@@ -57,11 +57,15 @@ const EditBooking = ({ id }: { id: string }) => {
 
   const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
+  const endRoute = "edit";
 
   return (
     <div>
       <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
+        items={[
+          { label: routeName, link: `/${role}/${routeName}` },
+          { label: endRoute, link: `/${role}/${routeName}/${endRoute}/${id}` },
+        ]}
       />
       {isBookingDataLoading ? (
         <FullScreenLoading />
