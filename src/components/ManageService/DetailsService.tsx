@@ -20,10 +20,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const DetailsService = ({ id }: { id: string }) => {
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-services";
-  const endRoute = "details";
-
   const { data, isLoading } = useServiceQuery(id);
   const [deleteService] = useDeleteServiceMutation();
   const router = useRouter();
@@ -52,6 +48,10 @@ const DetailsService = ({ id }: { id: string }) => {
     categoryTitle: data?.category?.title,
     location: data?.location || "",
   };
+
+  const { role } = getUserInfo() as any;
+  const routeName = "manage-services";
+  const endRoute = "details";
 
   return (
     <div>
