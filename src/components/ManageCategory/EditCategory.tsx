@@ -47,7 +47,7 @@ const EditCategory = ({ id }: { id: string }) => {
       <CommonBreadCrumb
         items={[
           { label: routeName, link: `/${role}/${routeName}` },
-          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
+          { label: endRoute, link: `/${role}/${routeName}/${endRoute}/${id}` },
         ]}
       />
       {isLoading ? (
