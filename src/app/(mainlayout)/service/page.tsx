@@ -4,7 +4,7 @@ import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
-import Service from "@/components/ui/Service";
+import Services from "@/components/ui/Services";
 import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
@@ -257,7 +257,7 @@ const ServicePage = () => {
             {isLoading ? (
               <FullScreenLoading />
             ) : (
-              <Service services={services} />
+              <Services services={services} />
             )}
           </>
         )}
@@ -266,7 +266,7 @@ const ServicePage = () => {
             {categoryServiceIsLoading ? (
               <FullScreenLoading />
             ) : (
-              <Service services={filterServices} />
+              <Services services={filterServices} />
             )}
           </>
         ) : (

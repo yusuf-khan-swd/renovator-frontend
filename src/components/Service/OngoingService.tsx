@@ -1,7 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Service from "@/components/ui/Service";
+import Services from "@/components/ui/Services";
 import { useOngoingServiceQuery } from "@/redux/api/serviceApi";
 
 const OngoingService = () => {
@@ -14,7 +14,7 @@ const OngoingService = () => {
       {isOngoingServicesLoading ? (
         <FullScreenLoading />
       ) : ongoingServices?.length > 0 ? (
-        <Service services={ongoingServices} />
+        <Services services={ongoingServices} />
       ) : (
         <h3>No ongoing service available</h3>
       )}

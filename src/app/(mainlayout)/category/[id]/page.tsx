@@ -3,7 +3,7 @@
 import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Service from "@/components/ui/Service";
+import Services from "@/components/ui/Services";
 import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { Card, Select } from "antd";
 import Link from "next/link";
@@ -57,7 +57,7 @@ const CategoryServicesPage = ({ params }: any) => {
           </h3>
 
           {services?.length > 0 ? (
-            <Service services={services} />
+            <Services services={services} />
           ) : (
             <h3 style={{ margin: "2px", textAlign: "center" }}>
               No Services available on this category

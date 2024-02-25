@@ -1,7 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Service from "@/components/ui/Service";
+import Services from "@/components/ui/Services";
 import { useUpcomingServiceQuery } from "@/redux/api/serviceApi";
 
 const UpcomingService = () => {
@@ -14,7 +14,7 @@ const UpcomingService = () => {
       {isUpcomingServicesLoading ? (
         <FullScreenLoading />
       ) : upcomingServices?.length > 0 ? (
-        <Service services={upcomingServices} />
+        <Services services={upcomingServices} />
       ) : (
         <h3>No upcoming service available</h3>
       )}
