@@ -2,8 +2,8 @@
 
 import ReviewAndRatingForm from "@/components/Forms/ReviewAndRatingForm";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import ServiceCard from "@/components/Service/ServiceCard";
 import Reviews from "@/components/ui/Reviews";
-import ServiceCard from "@/components/ui/ServiceCard";
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button } from "antd";

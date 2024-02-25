@@ -4,8 +4,8 @@ import { getUserInfo } from "@/services/auth.service";
 import { IService } from "@/types";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
-import ServiceCardBody from "../Service/ServiceCardBody";
-import ServiceCardTitle from "../Service/ServiceCardTitle";
+import ServiceCardBody from "./ServiceCardBody";
+import ServiceCardTitle from "./ServiceCardTitle";
 
 interface IServiceProps {
   service: IService;
