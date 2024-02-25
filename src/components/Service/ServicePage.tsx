@@ -28,6 +28,7 @@ const ServicePage = () => {
 
   const [categoryId, setCategoryId] = useState<string>();
   const [sorting, setSorting] = useState<string>();
+  const [status, setStatus] = useState<string>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -73,6 +74,7 @@ const ServicePage = () => {
     setMaxPrice("");
     setCategoryId(undefined);
     setSorting(undefined);
+    setStatus(undefined);
   };
 
   const { data: categories, isLoading: categoryIsLoading } =
@@ -268,12 +270,13 @@ const ServicePage = () => {
           <Select
             onChange={(value) => {
               handleStatus(value);
+              setStatus(value);
               setCategoryId("all");
               setSearchTerm("");
               setMinPrice("");
               setMaxPrice("");
             }}
-            value={sorting}
+            value={status}
             size={"large"}
             options={statusOptions as SelectOptions[]}
             style={{ width: "100%" }}
