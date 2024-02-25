@@ -156,7 +156,9 @@ const ServicePage = () => {
     { label: "Available", value: AVAILABLE },
   ];
 
-  const handleStatus = (value: string) => {};
+  const handleStatus = (value: string) => {
+    console.log(value);
+  };
 
   return (
     <div>
