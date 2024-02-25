@@ -3,8 +3,8 @@
 import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import Services from "@/components/Service/Services";
 import ActionBar from "@/components/ui/ActionBar";
-import Services from "@/components/ui/Services";
 import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";

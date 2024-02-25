@@ -1,6 +1,6 @@
 import { IService } from "@/types";
 import { Row } from "antd";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../ui/ServiceCard";
 
 interface IServiceProps {
   services: IService[] | undefined;

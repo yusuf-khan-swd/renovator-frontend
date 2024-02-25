@@ -1,7 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Services from "@/components/ui/Services";
+import Services from "@/components/Service/Services";
 import { useOngoingServiceQuery } from "@/redux/api/serviceApi";
 
 const OngoingService = () => {

@@ -3,7 +3,7 @@
 import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Services from "@/components/ui/Services";
+import Services from "@/components/Service/Services";
 import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
 import { Card, Select } from "antd";
 import Link from "next/link";

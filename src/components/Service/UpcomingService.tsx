@@ -1,7 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import Services from "@/components/ui/Services";
+import Services from "@/components/Service/Services";
 import { useUpcomingServiceQuery } from "@/redux/api/serviceApi";
 
 const UpcomingService = () => {
