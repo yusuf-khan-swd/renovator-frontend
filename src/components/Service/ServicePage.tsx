@@ -148,6 +148,16 @@ const ServicePage = () => {
     }
   };
 
+  const UPCOMING = "upcoming";
+  const AVAILABLE = "available";
+
+  const statusOptions = [
+    { label: "Upcoming", value: UPCOMING },
+    { label: "Available", value: AVAILABLE },
+  ];
+
+  const handleStatus = (value: string) => {};
+
   return (
     <div>
       <div>
@@ -250,6 +260,22 @@ const ServicePage = () => {
             options={sortByOptions as SelectOptions[]}
             style={{ width: "100%" }}
             placeholder={"Select Sorting Order"}
+          />
+        </div>
+        <div style={{ margin: "20px 0" }}>
+          <Select
+            onChange={(value) => {
+              handleStatus(value);
+              setCategoryId("all");
+              setSearchTerm("");
+              setMinPrice("");
+              setMaxPrice("");
+            }}
+            value={sorting}
+            size={"large"}
+            options={statusOptions as SelectOptions[]}
+            style={{ width: "100%" }}
+            placeholder={"Service Status"}
           />
         </div>
         {!categoryServices && (
