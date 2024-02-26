@@ -280,7 +280,7 @@ const ServicePage = () => {
             size={"large"}
             options={serviceStatusOptions as SelectOptions[]}
             style={{ width: "100%" }}
-            placeholder={"Service Status"}
+            placeholder={"Select Service Status"}
           />
         </div>
         {!categoryServices && (
