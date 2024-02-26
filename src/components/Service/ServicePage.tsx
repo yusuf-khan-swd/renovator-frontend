@@ -28,7 +28,7 @@ const ServicePage = () => {
 
   const [categoryId, setCategoryId] = useState<string>();
   const [sorting, setSorting] = useState<string>();
-  const [status, setStatus] = useState<string>();
+  const [serviceStatus, setServiceStatus] = useState<string>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -74,7 +74,7 @@ const ServicePage = () => {
     setMaxPrice("");
     setCategoryId(undefined);
     setSorting(undefined);
-    setStatus(undefined);
+    setServiceStatus(undefined);
   };
 
   const { data: categories, isLoading: categoryIsLoading } =
@@ -153,12 +153,12 @@ const ServicePage = () => {
   const UPCOMING = "upcoming";
   const AVAILABLE = "available";
 
-  const statusOptions = [
+  const serviceStatusOptions = [
     { label: "Upcoming", value: UPCOMING },
     { label: "Available", value: AVAILABLE },
   ];
 
-  const handleStatus = (value: string) => {
+  const handleServiceStatus = (value: string) => {
     console.log(value);
   };
 
@@ -269,16 +269,16 @@ const ServicePage = () => {
         <div style={{ margin: "20px 0" }}>
           <Select
             onChange={(value) => {
-              handleStatus(value);
-              setStatus(value);
+              handleServiceStatus(value);
+              setServiceStatus(value);
               setCategoryId("all");
               setSearchTerm("");
               setMinPrice("");
               setMaxPrice("");
             }}
-            value={status}
+            value={serviceStatus}
             size={"large"}
-            options={statusOptions as SelectOptions[]}
+            options={serviceStatusOptions as SelectOptions[]}
             style={{ width: "100%" }}
             placeholder={"Service Status"}
           />
