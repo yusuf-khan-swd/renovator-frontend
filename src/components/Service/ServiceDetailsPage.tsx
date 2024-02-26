@@ -9,10 +9,9 @@ import { getUserInfo } from "@/services/auth.service";
 import { Button } from "antd";
 import Link from "next/link";
 
-const ServiceDetailsPage = ({ params }: any) => {
+const ServiceDetailsPage = ({ id }: { id: string }) => {
   const { role } = getUserInfo() as any;
 
-  const id = params?.id;
   const { data: service, isLoading: isServiceLoading } = useServiceQuery(id);
 
   return (

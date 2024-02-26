@@ -6,10 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ServiceDetails = () => {
+const ServiceDetails = ({ params }: { params: { id: string } }) => {
+  const id = params?.id;
+
   return (
     <div>
-      <ServiceDetailsPage />
+      <ServiceDetailsPage id={id} />
     </div>
   );
 };
