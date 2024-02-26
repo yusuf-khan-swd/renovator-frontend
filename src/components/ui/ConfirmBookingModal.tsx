@@ -1,7 +1,7 @@
 import { useServiceQuery } from "@/redux/api/serviceApi";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import type { DatePickerProps } from "antd";
-import { Button, Col, DatePicker, Modal, Row, message } from "antd";
+import { Button, Col, DatePicker, Modal, Row } from "antd";
 import { Dayjs } from "dayjs";
 import { useEffect, useRef } from "react";
 import Form from "../Forms/Form";
@@ -28,18 +28,6 @@ const ConfirmBookingModal = ({
     dateRef.current = undefined;
   }, [data]);
 
-  const onSubmit = async (data: any) => {
-    try {
-      // message.loading("Creating.....");
-      console.log(data);
-      // await updateService(data);
-      // message.success("Service updated successfully");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
-    }
-  };
-
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
     dateRef.current = date;
@@ -61,7 +49,7 @@ const ConfirmBookingModal = ({
       title: title || "Do you Want to booked this item?",
       icon: <ExclamationCircleFilled />,
       content: (
-        <Form submitHandler={onSubmit} defaultValues={defaultValues}>
+        <Form defaultValues={defaultValues}>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
             <Col span={24} style={{ margin: "10px 0" }}>
               <FormInput name="title" label="Title" readOnly />
