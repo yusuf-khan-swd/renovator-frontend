@@ -3,12 +3,12 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
+import ReviewAndRatingHeading from "@/components/ReviewAndRating/ReviewAndRatingHeading";
 import { ratingOptions } from "@/constants/global";
 import { useCreateReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
 
 interface IReviewAndRatingProps {
   serviceId: string;
