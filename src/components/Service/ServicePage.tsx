@@ -104,6 +104,7 @@ const ServicePage = () => {
   const SERVICE_STATUS_DESC = "service_status_desc";
 
   const sortByOptions = [
+    { label: "Any", value: "" },
     { label: "Price - Asc", value: MIN_MAX_PRICE },
     { label: "Price - Desc", value: MAX_MIN_PRICE },
     { label: "Service Name  - Asc", value: SERVICE_NAME_ASC },
@@ -124,7 +125,10 @@ const ServicePage = () => {
 
   //TODO: service name ascending order is not working properly
   const handleSorting = (value: string) => {
-    if (value === MIN_MAX_PRICE) {
+    if (!value) {
+      setSortBy("");
+      setSortOrder("");
+    } else if (value === MIN_MAX_PRICE) {
       setSortBy(PRICE);
       setSortOrder(ASC);
     } else if (value === MAX_MIN_PRICE) {
@@ -148,6 +152,9 @@ const ServicePage = () => {
     } else if (value === SERVICE_STATUS_DESC) {
       setSortBy(STATUS);
       setSortOrder(DESC);
+    } else {
+      setSortBy("");
+      setSortOrder("");
     }
   };
 
