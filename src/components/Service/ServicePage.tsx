@@ -159,10 +159,6 @@ const ServicePage = () => {
     { label: "Available", value: AVAILABLE },
   ];
 
-  const handleServiceStatus = (value: string) => {
-    console.log(value);
-  };
-
   return (
     <div>
       <div>
@@ -253,7 +249,6 @@ const ServicePage = () => {
           <Col xs={24} md={8} style={{ margin: "10px 0" }}>
             <Select
               onChange={(value) => {
-                handleServiceStatus(value);
                 setServiceStatus(value);
                 setCategoryId("all");
                 setSearchTerm("");
