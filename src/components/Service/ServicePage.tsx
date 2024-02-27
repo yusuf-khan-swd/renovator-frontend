@@ -207,10 +207,10 @@ const ServicePage = () => {
               <Input
                 type="text"
                 size="large"
-                placeholder="Minimum Price"
-                value={minPrice}
+                placeholder="Maximum price"
+                value={maxPrice}
                 onChange={(e) => {
-                  setMinPrice(e.target.value);
+                  setMaxPrice(e.target.value);
                   setSearchTerm("");
                   setCategoryId("all");
                 }}
@@ -220,10 +220,10 @@ const ServicePage = () => {
               <Input
                 type="text"
                 size="large"
-                placeholder="Maximum price"
-                value={maxPrice}
+                placeholder="Minimum Price"
+                value={minPrice}
                 onChange={(e) => {
-                  setMaxPrice(e.target.value);
+                  setMinPrice(e.target.value);
                   setSearchTerm("");
                   setCategoryId("all");
                 }}
