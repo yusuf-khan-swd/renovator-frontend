@@ -155,6 +155,7 @@ const ServicePage = () => {
   const AVAILABLE = "available";
 
   const serviceStatusOptions = [
+    { label: "Any", value: "" },
     { label: "Upcoming", value: UPCOMING },
     { label: "Available", value: AVAILABLE },
   ];
