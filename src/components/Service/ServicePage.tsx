@@ -231,25 +231,7 @@ const ServicePage = () => {
             </Col>
           </Row>
         </div>
-        <div style={{ margin: "10px 0" }}>
-          {categoryIsLoading ? (
-            <CenterLoading />
-          ) : (
-            <Select
-              onChange={(value) => {
-                setCategoryId(value);
-                setSearchTerm("");
-                setMinPrice("");
-                setMaxPrice("");
-              }}
-              value={categoryId}
-              size={"large"}
-              options={categoryOptions as SelectOptions[]}
-              style={{ width: "100%" }}
-              placeholder={"Select category"}
-            />
-          )}
-        </div>
+
         <Row>
           <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
             <Select
@@ -286,6 +268,25 @@ const ServicePage = () => {
             />
           </Col>
         </Row>
+        <div style={{ margin: "10px 0" }}>
+          {categoryIsLoading ? (
+            <CenterLoading />
+          ) : (
+            <Select
+              onChange={(value) => {
+                setCategoryId(value);
+                setSearchTerm("");
+                setMinPrice("");
+                setMaxPrice("");
+              }}
+              value={categoryId}
+              size={"large"}
+              options={categoryOptions as SelectOptions[]}
+              style={{ width: "100%" }}
+              placeholder={"Select category"}
+            />
+          )}
+        </div>
         {!categoryServices && (
           <>
             {isLoading ? (
