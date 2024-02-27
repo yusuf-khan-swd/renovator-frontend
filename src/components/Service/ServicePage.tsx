@@ -250,40 +250,42 @@ const ServicePage = () => {
             />
           )}
         </div>
-        <div style={{ margin: "20px 0" }}>
-          <Select
-            onChange={(value) => {
-              handleSorting(value);
-              setSorting(value);
-              setCategoryId("all");
-              setSearchTerm("");
-              setMinPrice("");
-              setMaxPrice("");
-            }}
-            value={sorting}
-            size={"large"}
-            options={sortByOptions as SelectOptions[]}
-            style={{ width: "100%" }}
-            placeholder={"Select Sorting Order"}
-          />
-        </div>
-        <div style={{ margin: "20px 0" }}>
-          <Select
-            onChange={(value) => {
-              handleServiceStatus(value);
-              setServiceStatus(value);
-              setCategoryId("all");
-              setSearchTerm("");
-              setMinPrice("");
-              setMaxPrice("");
-            }}
-            value={serviceStatus}
-            size={"large"}
-            options={serviceStatusOptions as SelectOptions[]}
-            style={{ width: "100%" }}
-            placeholder={"Select Service Status"}
-          />
-        </div>
+        <Row>
+          <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
+            <Select
+              onChange={(value) => {
+                handleServiceStatus(value);
+                setServiceStatus(value);
+                setCategoryId("all");
+                setSearchTerm("");
+                setMinPrice("");
+                setMaxPrice("");
+              }}
+              value={serviceStatus}
+              size={"large"}
+              options={serviceStatusOptions as SelectOptions[]}
+              style={{ width: "100%" }}
+              placeholder={"Select Service Status"}
+            />
+          </Col>
+          <Col xs={24} md={8} style={{ margin: "10px 0" }}>
+            <Select
+              onChange={(value) => {
+                handleSorting(value);
+                setSorting(value);
+                setCategoryId("all");
+                setSearchTerm("");
+                setMinPrice("");
+                setMaxPrice("");
+              }}
+              value={sorting}
+              size={"large"}
+              options={sortByOptions as SelectOptions[]}
+              style={{ width: "100%" }}
+              placeholder={"Select Sorting Order"}
+            />
+          </Col>
+        </Row>
         {!categoryServices && (
           <>
             {isLoading ? (
