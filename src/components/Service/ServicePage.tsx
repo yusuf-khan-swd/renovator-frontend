@@ -170,6 +170,7 @@ const ServicePage = () => {
   return (
     <div>
       <div>
+        {/* Search input and Reload icon */}
         <ActionBar title="Service List">
           <Col xs={16} md={8}>
             <Input
@@ -205,6 +206,8 @@ const ServicePage = () => {
             )}
           </div>
         </ActionBar>
+
+        {/* Maximum and Minimum price Input field   */}
         <div style={{ margin: "10px 0" }}>
           <Row>
             <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
@@ -236,6 +239,7 @@ const ServicePage = () => {
           </Row>
         </div>
 
+        {/* Service Sorting and Service Status Select fields   */}
         <Row>
           <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
             <Select
@@ -271,6 +275,8 @@ const ServicePage = () => {
             />
           </Col>
         </Row>
+
+        {/* Category Select field */}
         <div style={{ margin: "10px 0" }}>
           {categoryIsLoading ? (
             <CenterLoading />
@@ -290,6 +296,7 @@ const ServicePage = () => {
             />
           )}
         </div>
+
         {!categoryServices && (
           <>
             {isLoading ? (
@@ -299,6 +306,7 @@ const ServicePage = () => {
             )}
           </>
         )}
+
         {filterServices?.length > 0 ? (
           <>
             {categoryServiceIsLoading ? (
