@@ -297,6 +297,7 @@ const ServicePage = () => {
           )}
         </div>
 
+        {/* Normal Services */}
         {!categoryServices && (
           <>
             {isLoading ? (
@@ -307,6 +308,7 @@ const ServicePage = () => {
           </>
         )}
 
+        {/* Filter service by category ID */}
         {filterServices?.length > 0 ? (
           <>
             {categoryServiceIsLoading ? (
