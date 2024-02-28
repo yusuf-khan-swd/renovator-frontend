@@ -1,7 +1,7 @@
 import { useServiceReviewsQuery } from "@/redux/api/reviewApi";
 import { Card, Row } from "antd";
 import FullScreenLoading from "../Loading/FullScreenLoading";
-import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
+import ReviewAndRatingHeading from "./ReviewAndRatingHeading";
 import ReviewCard from "./ReviewCard";
 
 interface IReviewsProps {
