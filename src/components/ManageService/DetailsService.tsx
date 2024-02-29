@@ -29,10 +29,12 @@ const DetailsService = ({ id }: { id: string }) => {
       message.loading("Deleting.....");
       const result: any = await deleteService(id);
 
-      router.push(`/${role}/${routeName}`);
-
-      if (result?.data) message.success("Service Delete successfully");
-      else message.error("Service Delete failed!");
+      if (result?.data) {
+        router.push(`/${role}/${routeName}`);
+        message.success("Service Delete successfully");
+      } else {
+        message.error("Service Delete failed!");
+      }
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
