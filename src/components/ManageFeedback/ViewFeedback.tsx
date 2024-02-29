@@ -31,10 +31,12 @@ const ViewFeedback = ({ id }: { id: string }) => {
 
       const result: any = await deleteFeedback(id);
 
-      router.push(`/${role}/${routeName}`);
-
-      if (result?.data) message.success("Feedback Delete successfully");
-      else message.error("Feedback Delete failed!!");
+      if (result?.data) {
+        router.push(`/${role}/${routeName}`);
+        message.success("Feedback Delete successfully");
+      } else {
+        message.error("Feedback Delete failed!!");
+      }
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
