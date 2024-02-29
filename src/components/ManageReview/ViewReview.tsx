@@ -29,10 +29,12 @@ const ViewReview = ({ id }: { id: string }) => {
     try {
       const result: any = await deleteReview(id);
 
-      router.push(`/${role}/${routeName}`);
-
-      if (result?.data) message.success("Review Delete successfully");
-      else message.error("Review Delete failed!!");
+      if (result?.data) {
+        router.push(`/${role}/${routeName}`);
+        message.success("Review Delete successfully");
+      } else {
+        message.error("Review Delete failed!!");
+      }
     } catch (error: any) {
       console.error(error);
       message.error(error?.message);
