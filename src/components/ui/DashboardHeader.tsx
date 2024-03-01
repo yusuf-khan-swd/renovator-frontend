@@ -2,6 +2,7 @@ import { authKey } from "@/constants/storageKey";
 import { getUserInfo, removeUserInfo } from "@/services/auth.service";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
 
@@ -23,7 +24,11 @@ const DashboardHeader = () => {
       ),
     },
   ];
+
   const { role } = getUserInfo() as any;
+
+  const websiteName = "Renovator";
+
   return (
     <AntHeader
       style={{
@@ -31,20 +36,36 @@ const DashboardHeader = () => {
       }}
     >
       <Row
-        justify="end"
+        justify="space-between"
         align="middle"
         style={{
           height: "100%",
+          width: "100%",
         }}
       >
-        <p style={{ margin: "2px" }}>{role}</p>
-        <Dropdown menu={{ items }}>
-          <a>
-            <Space wrap size={16}>
-              <Avatar size="large" icon={<UserOutlined />} />
-            </Space>
-          </a>
-        </Dropdown>
+        <div>
+          <Link href="/">
+            <Button
+              type="link"
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <span className="website-name">{websiteName.toUpperCase()}</span>
+            </Button>
+          </Link>
+        </div>
+        <Row justify="center" align="middle">
+          <p style={{ margin: "2px" }}>{role}</p>
+          <Dropdown menu={{ items }}>
+            <a>
+              <Space wrap size={16}>
+                <Avatar size="large" icon={<UserOutlined />} />
+              </Space>
+            </a>
+          </Dropdown>
+        </Row>
       </Row>
     </AntHeader>
   );
