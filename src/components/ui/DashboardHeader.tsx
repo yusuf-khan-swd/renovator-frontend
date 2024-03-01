@@ -45,7 +45,7 @@ const DashboardHeader = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <p>Hello</p>
+          <button>OpenDrawer</button>
           <Link href="/">
             <Button
               type="link"
