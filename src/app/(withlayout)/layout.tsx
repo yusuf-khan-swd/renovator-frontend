@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Contents from "../../components/ui/Contents";
 import SideBar from "../../components/ui/Sidebar";
+import "./layout.css";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const userLoggedIn = isLoggedIn();
@@ -28,7 +29,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
     >
-      <SideBar />
+      <div id="dashboard-sidebar">
+        <SideBar />
+      </div>
       <Contents>{children}</Contents>
     </Layout>
   );
