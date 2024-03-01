@@ -47,6 +47,7 @@ const SideBar = () => {
           Renovator
         </Link>
       </div>
+      <button onClick={() => setCollapsed(!collapsed)}>Close</button>
       <Menu
         theme="dark"
         defaultSelectedKeys={["1"]}
