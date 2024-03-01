@@ -44,7 +44,8 @@ const DashboardHeader = () => {
           width: "100%",
         }}
       >
-        <div>
+        <Row justify="center" align="middle">
+          <p>Hello</p>
           <Link href="/">
             <Button
               type="link"
@@ -56,7 +57,7 @@ const DashboardHeader = () => {
               <span className="website-name">{websiteName.toUpperCase()}</span>
             </Button>
           </Link>
-        </div>
+        </Row>
         <Row justify="center" align="middle">
           <p style={{ margin: "2px" }}>{role}</p>
           <Dropdown menu={{ items }}>
