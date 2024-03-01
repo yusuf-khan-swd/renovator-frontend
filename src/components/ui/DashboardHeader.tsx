@@ -4,6 +4,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import "./DashboardHeader.css";
 const { Header: AntHeader } = Layout;
 
 const DashboardHeader = () => {
