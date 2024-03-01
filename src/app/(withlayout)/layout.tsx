@@ -1,6 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
+import DashboardDrawer from "@/components/ui/DashboardDrawer";
 import { isLoggedIn } from "@/services/auth.service";
 import { Layout } from "antd";
 import { useRouter } from "next/navigation";
@@ -29,6 +30,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
     >
+      <div>
+        <DashboardDrawer />
+      </div>
       <div id="dashboard-sidebar">
         <SideBar />
       </div>
