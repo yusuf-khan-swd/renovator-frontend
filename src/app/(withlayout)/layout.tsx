@@ -30,7 +30,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
     >
-      <div>
+      <div id="dashboard-drawer">
         <DashboardDrawer />
       </div>
       <div id="dashboard-sidebar">
