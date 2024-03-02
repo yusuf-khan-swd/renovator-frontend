@@ -20,7 +20,7 @@ const DashboardDrawer = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showDrawer}>
+      <Button type="link" onClick={showDrawer}>
         <MenuUnfoldOutlined style={{ fontSize: "20px" }} />
       </Button>
       <Drawer
