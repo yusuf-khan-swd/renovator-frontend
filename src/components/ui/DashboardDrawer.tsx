@@ -22,9 +22,6 @@ const DashboardDrawer = () => {
         Open
       </Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
         <Menu
           theme="light"
           defaultSelectedKeys={["1"]}
