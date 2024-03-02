@@ -1,4 +1,6 @@
-import { Button, Drawer } from "antd";
+import { sidebarItems } from "@/constants/sidebarItems";
+import { getUserInfo } from "@/services/auth.service";
+import { Button, Drawer, Menu } from "antd";
 import { useState } from "react";
 
 const DashboardDrawer = () => {
@@ -12,6 +14,8 @@ const DashboardDrawer = () => {
     setOpen(false);
   };
 
+  const { role } = getUserInfo() as any;
+
   return (
     <>
       <Button type="primary" onClick={showDrawer}>
@@ -21,6 +25,12 @@ const DashboardDrawer = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>
+        <Menu
+          theme="dark"
+          defaultSelectedKeys={["1"]}
+          mode="inline"
+          items={sidebarItems(role)}
+        />
       </Drawer>
     </>
   );
