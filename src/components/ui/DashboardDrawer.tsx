@@ -26,6 +26,7 @@ const DashboardDrawer = () => {
         title={<Link href="/">Renovator</Link>}
         onClose={onClose}
         open={open}
+        placement="left"
       >
         <Menu
           theme="light"
