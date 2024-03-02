@@ -4,6 +4,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import DashboardDrawer from "./DashboardDrawer";
 import "./DashboardHeader.css";
 const { Header: AntHeader } = Layout;
 
@@ -46,7 +47,7 @@ const DashboardHeader = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <button>OpenDrawer</button>
+          <DashboardDrawer />
           <Link href="/">
             <Button
               type="link"
