@@ -57,9 +57,7 @@ const DashboardHeader = () => {
                   height: "100%",
                 }}
               >
-                <span className="website-name">
-                  {websiteName.toUpperCase()}
-                </span>
+                <span className="website-name">{websiteName}</span>
               </Button>
             </Link>
           </Row>
