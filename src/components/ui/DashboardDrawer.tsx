@@ -1,6 +1,5 @@
 import { Button, Drawer } from "antd";
 import { useState } from "react";
-import "./DashboardDrawer.css";
 
 const DashboardDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +13,7 @@ const DashboardDrawer = () => {
   };
 
   return (
-    <div id="dashboard-drawer">
+    <div>
       <Button type="primary" onClick={showDrawer}>
         Open
       </Button>
