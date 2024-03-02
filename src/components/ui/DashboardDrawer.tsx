@@ -21,7 +21,7 @@ const DashboardDrawer = () => {
   return (
     <>
       <Button type="link" onClick={showDrawer}>
-        <MenuUnfoldOutlined style={{ fontSize: "22px" }} />
+        <MenuUnfoldOutlined style={{ fontSize: "25px" }} />
       </Button>
       <Drawer
         title={<Link href="/">Renovator</Link>}
