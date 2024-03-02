@@ -47,18 +47,22 @@ const DashboardHeader = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <DashboardDrawer />
-          <Link href="/">
-            <Button
-              type="link"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <span className="website-name">{websiteName.toUpperCase()}</span>
-            </Button>
-          </Link>
+          <Row justify="center" align="middle">
+            <DashboardDrawer />
+            <Link href="/">
+              <Button
+                type="link"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span className="website-name">
+                  {websiteName.toUpperCase()}
+                </span>
+              </Button>
+            </Link>
+          </Row>
         </Row>
         <Row justify="center" align="middle">
           <p style={{ margin: "2px" }}>{role}</p>
