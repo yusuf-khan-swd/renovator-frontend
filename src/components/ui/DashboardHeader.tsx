@@ -48,18 +48,14 @@ const DashboardHeader = () => {
       >
         <Row justify="center" align="middle">
           <Row id="drawer-and-website-icon" justify="center" align="middle">
-            <DashboardDrawer />
-            <Link href="/">
-              <Button
-                type="link"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
+            <div style={{ marginRight: "8px" }}>
+              <DashboardDrawer />
+            </div>
+            <div>
+              <Link href="/">
                 <span className="website-name">{websiteName}</span>
-              </Button>
-            </Link>
+              </Link>
+            </div>
           </Row>
         </Row>
         <Row justify="center" align="middle">

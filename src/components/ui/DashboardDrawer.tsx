@@ -20,11 +20,18 @@ const DashboardDrawer = () => {
 
   return (
     <>
-      <Button type="link" onClick={showDrawer}>
-        <MenuUnfoldOutlined style={{ fontSize: "25px" }} />
+      <Button
+        style={{ padding: "4px 10px", display: "flex", alignItems: "center" }}
+        onClick={showDrawer}
+      >
+        <MenuUnfoldOutlined style={{ fontSize: "21px", color: "#1677ff" }} />
       </Button>
       <Drawer
-        title={<Link href="/">Renovator</Link>}
+        title={
+          <Link href="/" style={{ fontSize: "25px" }}>
+            Renovator
+          </Link>
+        }
         onClose={onClose}
         open={open}
         placement="left"
