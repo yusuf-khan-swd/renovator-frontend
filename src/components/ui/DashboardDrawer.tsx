@@ -26,7 +26,7 @@ const DashboardDrawer = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
         <Menu
-          theme="dark"
+          theme="light"
           defaultSelectedKeys={["1"]}
           mode="inline"
           items={sidebarItems(role)}
