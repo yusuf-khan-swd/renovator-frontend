@@ -1,6 +1,7 @@
 import { sidebarItems } from "@/constants/sidebarItems";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Drawer, Menu } from "antd";
+import Link from "next/link";
 import { useState } from "react";
 
 const DashboardDrawer = () => {
@@ -21,7 +22,11 @@ const DashboardDrawer = () => {
       <Button type="primary" onClick={showDrawer}>
         Open
       </Button>
-      <Drawer title="Basic Drawer" onClose={onClose} open={open}>
+      <Drawer
+        title={<Link href="/">Renovator</Link>}
+        onClose={onClose}
+        open={open}
+      >
         <Menu
           theme="light"
           defaultSelectedKeys={["1"]}
