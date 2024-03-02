@@ -1,5 +1,6 @@
 import { sidebarItems } from "@/constants/sidebarItems";
 import { getUserInfo } from "@/services/auth.service";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Drawer, Menu } from "antd";
 import Link from "next/link";
 import { useState } from "react";
@@ -20,7 +21,7 @@ const DashboardDrawer = () => {
   return (
     <>
       <Button type="primary" onClick={showDrawer}>
-        Open
+        <MenuUnfoldOutlined style={{ fontSize: "20px" }} />
       </Button>
       <Drawer
         title={<Link href="/">Renovator</Link>}
