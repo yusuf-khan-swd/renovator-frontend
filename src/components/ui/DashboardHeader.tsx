@@ -47,7 +47,7 @@ const DashboardHeader = () => {
         }}
       >
         <Row justify="center" align="middle">
-          <Row justify="center" align="middle">
+          <Row id="drawer-and-website-icon" justify="center" align="middle">
             <DashboardDrawer />
             <Link href="/">
               <Button

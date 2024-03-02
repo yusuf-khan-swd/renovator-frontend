@@ -13,7 +13,7 @@ const DashboardDrawer = () => {
   };
 
   return (
-    <div>
+    <>
       <Button type="primary" onClick={showDrawer}>
         Open
       </Button>
@@ -22,7 +22,7 @@ const DashboardDrawer = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Drawer>
-    </div>
+    </>
   );
 };
 
