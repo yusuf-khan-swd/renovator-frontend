@@ -25,8 +25,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return <FullScreenLoading />;
   }
 
-  // TODO: Hide sidebar for smaller device and Show drawer
-
   return (
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
