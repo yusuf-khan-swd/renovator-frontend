@@ -17,7 +17,9 @@ const DashboardDrawer = () => {
   };
 
   const closeDrawer = () => {
-    setOpen(false);
+    setTimeout(() => {
+      setOpen(false);
+    }, 600);
   };
 
   const { role } = getUserInfo() as any;
