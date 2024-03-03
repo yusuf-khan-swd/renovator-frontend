@@ -29,7 +29,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <Layout
       style={{ minHeight: "115vh", maxWidth: "1600px", margin: "0 auto" }}
     >
-      <div id="dashboard-sidebar">
+      <div>
         <SideBar />
       </div>
       <Contents>{children}</Contents>
