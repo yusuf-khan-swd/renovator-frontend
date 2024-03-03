@@ -56,7 +56,7 @@ const SideBar = () => {
         <Button
           type="link"
           onClick={() => setCollapsed(!collapsed)}
-          title={collapsed ? "Open" : "close"}
+          title={collapsed ? "Open" : "Close"}
         >
           {collapsed ? (
             <FullscreenOutlined
