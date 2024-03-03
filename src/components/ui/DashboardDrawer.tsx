@@ -16,6 +16,10 @@ const DashboardDrawer = () => {
     setOpen(false);
   };
 
+  const closeDrawer = () => {
+    setOpen(false);
+  };
+
   const { role } = getUserInfo() as any;
 
   return (
@@ -36,7 +40,7 @@ const DashboardDrawer = () => {
         open={open}
         placement="left"
       >
-        <div onClick={() => setOpen(false)}>
+        <div onClick={closeDrawer}>
           <Menu
             theme="light"
             defaultSelectedKeys={["1"]}
