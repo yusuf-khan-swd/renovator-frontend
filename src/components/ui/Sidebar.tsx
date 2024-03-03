@@ -1,10 +1,11 @@
 "use client";
 
-import { Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
 import { useState } from "react";
 
 import { sidebarItems } from "@/constants/sidebarItems";
 import { getUserInfo } from "@/services/auth.service";
+import { FullscreenExitOutlined, FullscreenOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 const { Sider } = Layout;
@@ -45,7 +46,29 @@ const SideBar = () => {
           Renovator
         </Link>
       </div>
-      <button onClick={() => setCollapsed(!collapsed)}>Close</button>
+      <div
+        style={
+          collapsed
+            ? { display: "flex", justifyContent: "center" }
+            : { marginLeft: "10px" }
+        }
+      >
+        <Button
+          type="link"
+          onClick={() => setCollapsed(!collapsed)}
+          title={collapsed ? "Open" : "close"}
+        >
+          {collapsed ? (
+            <FullscreenOutlined
+              style={{ fontSize: "21px", color: "#1677ff" }}
+            />
+          ) : (
+            <FullscreenExitOutlined
+              style={{ fontSize: "21px", color: "#1677ff" }}
+            />
+          )}
+        </Button>
+      </div>
       <Menu
         theme="dark"
         defaultSelectedKeys={["1"]}
