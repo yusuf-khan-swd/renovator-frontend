@@ -36,12 +36,14 @@ const DashboardDrawer = () => {
         open={open}
         placement="left"
       >
-        <Menu
-          theme="light"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={sidebarItems(role)}
-        />
+        <div onClick={() => setOpen(false)}>
+          <Menu
+            theme="light"
+            defaultSelectedKeys={["1"]}
+            mode="inline"
+            items={sidebarItems(role)}
+          />
+        </div>
       </Drawer>
     </>
   );
