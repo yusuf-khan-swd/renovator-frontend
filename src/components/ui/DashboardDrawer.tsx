@@ -16,12 +16,6 @@ const DashboardDrawer = () => {
     setOpen(false);
   };
 
-  const closeDrawer = () => {
-    setTimeout(() => {
-      setOpen(false);
-    }, 600);
-  };
-
   const { role } = getUserInfo() as any;
 
   return (
@@ -42,14 +36,12 @@ const DashboardDrawer = () => {
         open={open}
         placement="left"
       >
-        <div onClick={closeDrawer}>
-          <Menu
-            theme="light"
-            defaultSelectedKeys={["1"]}
-            mode="inline"
-            items={sidebarItems(role)}
-          />
-        </div>
+        <Menu
+          theme="light"
+          defaultSelectedKeys={["1"]}
+          mode="inline"
+          items={sidebarItems(role)}
+        />
       </Drawer>
     </>
   );
