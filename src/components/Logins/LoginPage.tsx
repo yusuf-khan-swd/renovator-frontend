@@ -161,7 +161,7 @@ const LoginPage = () => {
             <div>
               <p>
                 Super Admin Email:{" "}
-                <span style={{ fontWeight: "bold" }}>yusuf@gmail.com </span>
+                <span style={{ fontWeight: "bold" }}>super@admin.com </span>
               </p>
               <p>
                 Password: <span style={{ fontWeight: "bold" }}>123456</span>
@@ -169,7 +169,7 @@ const LoginPage = () => {
               <Button
                 size="small"
                 onClick={() => {
-                  setUserEmail("yusuf@gmail.com");
+                  setUserEmail("super@admin.com");
                   setUserPassword("123456");
                 }}
               >
