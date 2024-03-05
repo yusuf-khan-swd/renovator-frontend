@@ -6,9 +6,9 @@ const PROFILE_URL = "/profile";
 export const profileApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     profile: build.query({
-      query: () => {
+      query: (id: string) => {
         return {
-          url: PROFILE_URL,
+          url: `${PROFILE_URL}/${id}`,
           method: "GET",
         };
       },
