@@ -4,12 +4,15 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useProfileQuery } from "@/redux/api/profileApi";
+import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row } from "antd";
 import Link from "next/link";
 import FormHeading from "../ui/FormHeading";
 
 const UserProfile = () => {
-  const { data, isLoading } = useProfileQuery(undefined);
+  const { userId } = getUserInfo() as any;
+
+  const { data, isLoading } = useProfileQuery(userId);
 
   const defaultValues = {
     name: data?.name || "",
