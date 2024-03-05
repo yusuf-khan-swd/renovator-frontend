@@ -22,8 +22,8 @@ import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 
-const EditUserProfile = ({ id }: { id: string }) => {
-  const { data, isLoading } = useProfileQuery(id);
+const EditUserProfile = () => {
+  const { data, isLoading } = useProfileQuery(undefined);
   const [updateProfile] = useUpdateProfileMutation();
 
   const onSubmit = async (data: any) => {
