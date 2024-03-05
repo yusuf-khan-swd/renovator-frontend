@@ -6,10 +6,11 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditUserProfilePage = () => {
+const EditUserProfilePage = ({ params }: { params: { id: string } }) => {
+  const id = params?.id;
   return (
     <div>
-      <EditUserProfile />
+      <EditUserProfile id={id} />
     </div>
   );
 };
