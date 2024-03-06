@@ -3,6 +3,7 @@ import { Row } from "antd";
 type ActionBarProps = {
   title?: string;
   containerStyle?: React.CSSProperties;
+  titleStyle?: React.CSSProperties;
   children?: React.ReactElement | React.ReactNode;
   childStyle?: React.CSSProperties;
 };
@@ -10,6 +11,7 @@ type ActionBarProps = {
 const ActionBar = ({
   title,
   containerStyle,
+  titleStyle,
   children,
   childStyle,
 }: ActionBarProps) => {
@@ -23,7 +25,7 @@ const ActionBar = ({
 
   return (
     <div style={containerStyle ? containerStyle : { marginBottom: "15px" }}>
-      <h1 style={{ margin: "8px 0" }}>{title}</h1>
+      <h1 style={titleStyle ? titleStyle : { margin: "8px 0" }}>{title}</h1>
       <Row style={childrenStyle}>{children}</Row>
     </div>
   );
