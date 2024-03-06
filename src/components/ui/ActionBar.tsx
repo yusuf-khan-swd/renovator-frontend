@@ -9,8 +9,8 @@ type ActionBarProps = {
 
 const ActionBar = ({
   title,
-  children,
   containerStyle,
+  children,
   childStyle,
 }: ActionBarProps) => {
   const baseChildrenStyle = {
