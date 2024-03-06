@@ -171,7 +171,10 @@ const ServicePage = () => {
     <div>
       <div>
         {/* Search input and Reload icon */}
-        <ActionBar title="Service List">
+        <ActionBar
+          title="Service List"
+          containerStyle={{ marginBottom: "10px" }}
+        >
           <Col xs={16} md={8}>
             <Input
               type="text"
