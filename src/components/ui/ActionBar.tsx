@@ -3,17 +3,17 @@ import { Row } from "antd";
 type ActionBarProps = {
   title?: string;
   children?: React.ReactElement | React.ReactNode;
-  style?: React.CSSProperties;
+  childStyle?: React.CSSProperties;
 };
 
-const ActionBar = ({ title, children, style }: ActionBarProps) => {
+const ActionBar = ({ title, children, childStyle }: ActionBarProps) => {
   const baseChildrenStyle = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
   };
 
-  const childrenStyle = { ...baseChildrenStyle, ...style };
+  const childrenStyle = { ...baseChildrenStyle, ...childStyle };
 
   return (
     <div style={{ marginBottom: "15px" }}>
