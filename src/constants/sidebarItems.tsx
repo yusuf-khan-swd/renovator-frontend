@@ -17,15 +17,9 @@ import { ENUM_USER_ROLE } from "./role";
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
     {
-      label: "Profile",
+      label: <Link href={`/${role}`}>Profile</Link>,
       key: "profile",
       icon: <UserOutlined />,
-      children: [
-        {
-          label: <Link href={`/${role}`}>Account Profile</Link>,
-          key: `/${role}`,
-        },
-      ],
     },
   ];
 
