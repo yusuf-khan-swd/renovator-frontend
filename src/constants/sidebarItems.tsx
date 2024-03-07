@@ -2,6 +2,7 @@ import {
   CheckSquareOutlined,
   ControlOutlined,
   FontSizeOutlined,
+  MailOutlined,
   ShoppingCartOutlined,
   UnorderedListOutlined,
   UserOutlined,
@@ -79,7 +80,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-feedbacks`}>Manage Feedbacks</Link>,
-      icon: <FontSizeOutlined />,
+      icon: <MailOutlined />,
       key: `/${role}/manage-feedbacks`,
     },
     {
