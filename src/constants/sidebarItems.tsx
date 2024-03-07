@@ -1,5 +1,6 @@
 import {
   CheckSquareOutlined,
+  ContainerOutlined,
   ControlOutlined,
   FontSizeOutlined,
   MailOutlined,
@@ -65,7 +66,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: <Link href={`/${role}/manage-services`}>Manage Services</Link>,
-      icon: <ControlOutlined />,
+      icon: <ContainerOutlined />,
       key: `/${role}/manage-services`,
     },
     {
