@@ -80,7 +80,7 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: "Manage Content",
-      key: `/${role}/manage-contents`,
+      key: `manage-contents`,
       icon: <UnorderedListOutlined />,
       children: [
         {
