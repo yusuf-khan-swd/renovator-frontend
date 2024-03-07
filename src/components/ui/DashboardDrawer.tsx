@@ -120,7 +120,7 @@ const DashboardDrawer = () => {
           onClick={onClick}
           style={{ width: 256 }}
           defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub2", "sub3"]}
+          defaultOpenKeys={["sub1"]}
           mode="inline"
           items={items}
         />
