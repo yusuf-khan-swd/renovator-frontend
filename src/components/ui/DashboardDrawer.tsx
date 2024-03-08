@@ -46,7 +46,6 @@ const DashboardDrawer = () => {
           onClick={closeDrawer}
           theme="light"
           defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["manage-contents"]}
           mode="inline"
           items={sidebarItems(role)}
         />
