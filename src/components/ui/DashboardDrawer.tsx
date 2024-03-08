@@ -125,15 +125,14 @@ const DashboardDrawer = () => {
           items={items}
         />
 
-        <div onClick={closeDrawer}>
-          <Menu
-            theme="light"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["manage-contents"]}
-            mode="inline"
-            items={sidebarItems(role)}
-          />
-        </div>
+        <Menu
+          onClick={closeDrawer}
+          theme="light"
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["manage-contents"]}
+          mode="inline"
+          items={sidebarItems(role)}
+        />
       </Drawer>
     </>
   );
