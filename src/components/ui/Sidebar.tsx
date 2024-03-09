@@ -8,7 +8,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { FullscreenExitOutlined, FullscreenOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
-const { Sider } = Layout;
+const { Sider: AntSidebar } = Layout;
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -16,7 +16,7 @@ const SideBar = () => {
   const { role } = getUserInfo() as any;
 
   return (
-    <Sider
+    <AntSidebar
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
@@ -74,7 +74,7 @@ const SideBar = () => {
         mode="inline"
         items={sidebarItems(role)}
       />
-    </Sider>
+    </AntSidebar>
   );
 };
 
