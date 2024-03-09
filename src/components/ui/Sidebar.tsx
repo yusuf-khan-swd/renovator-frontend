@@ -70,6 +70,7 @@ const SideBar = () => {
         </Button>
       </div>
       <Menu
+        style={{ minHeight: "130%" }}
         theme="dark"
         defaultSelectedKeys={["1"]}
         mode="inline"
