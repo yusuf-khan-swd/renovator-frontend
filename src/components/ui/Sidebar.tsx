@@ -35,9 +35,9 @@ const SideBar = () => {
       <div
         style={{
           color: "white",
-          fontSize: `${collapsed ? "16px" : "25px"}`,
+          fontSize: `${collapsed ? "14px" : "25px"}`,
           textAlign: "center",
-          fontWeight: "bold",
+          fontWeight: `${collapsed ? "normal" : "bold"}`,
           marginBottom: ".5rem",
           padding: "10px 0px",
         }}
