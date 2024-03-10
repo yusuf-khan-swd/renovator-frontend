@@ -42,9 +42,7 @@ const SideBar = () => {
           padding: "10px 0px",
         }}
       >
-        <Link href="/" style={{ color: "white" }}>
-          Renovator
-        </Link>
+        <Link href="/">Renovator</Link>
       </div>
       <div
         style={
@@ -60,11 +58,11 @@ const SideBar = () => {
         >
           {collapsed ? (
             <FullscreenOutlined
-              style={{ fontSize: "21px", color: "#1677ff" }}
+              style={{ fontSize: "21px", color: "#a6adb4" }}
             />
           ) : (
             <FullscreenExitOutlined
-              style={{ fontSize: "21px", color: "#1677ff" }}
+              style={{ fontSize: "21px", color: "#a6adb4" }}
             />
           )}
         </Button>
