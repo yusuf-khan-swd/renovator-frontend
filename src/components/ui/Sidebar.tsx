@@ -17,6 +17,7 @@ const SideBar = () => {
 
   return (
     <AntSidebar
+      trigger={null}
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
@@ -69,7 +70,6 @@ const SideBar = () => {
         </Button>
       </div>
       <Menu
-        style={{ minHeight: "130%" }}
         theme="dark"
         defaultSelectedKeys={["1"]}
         mode="inline"
