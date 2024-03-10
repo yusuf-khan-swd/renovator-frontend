@@ -35,22 +35,15 @@ const SideBar = () => {
       <div
         style={{
           color: "white",
-          fontSize: `${collapsed ? "14px" : "25px"}`,
+          fontSize: `${collapsed ? "15px" : "25px"}`,
           textAlign: "center",
           fontWeight: `${collapsed ? "normal" : "bold"}`,
-          marginBottom: ".5rem",
-          padding: "10px 0px",
+          margin: "12px 2px",
         }}
       >
         <Link href="/">Renovator</Link>
       </div>
-      <div
-        style={
-          collapsed
-            ? { display: "flex", justifyContent: "center" }
-            : { marginLeft: "10px" }
-        }
-      >
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Button
           type="link"
           onClick={() => setCollapsed(!collapsed)}
