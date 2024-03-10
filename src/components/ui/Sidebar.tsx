@@ -20,6 +20,7 @@ const SideBar = () => {
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
+      breakpoint="xl"
       width={280}
       style={{
         overflow: "auto",
