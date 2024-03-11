@@ -16,11 +16,11 @@ xxl: '1600px',
 **2. [Github Server Side Repository](https://github.com/yusuf-khan-swd/renovator-backend)** \
 **3. [Live Website](https://renovator-frontend.vercel.app)**
 
-Admin Email: yusuf2@gmail.com \
-Admin Password: 123456
+User Email: user@renovator.com \
+Password: 123456
 
-User Email: yusuf3@gmail.com \
-User Password: 123456
+Admin Email: admin@renovator.com \
+Password: 123456
 
-Super Admin Email: yusuf@gmail.com \
-Super Admin Password: 123456
+Super Admin Email: super@admin.com \
+Password: 123456
