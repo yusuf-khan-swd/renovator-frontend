@@ -107,6 +107,13 @@ export const sidebarItems = (role: string) => {
       icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-admins`,
     },
+    {
+      label: (
+        <Link href={`/${role}/manage-normal-users`}>Manage Normal Users</Link>
+      ),
+      icon: <UsergroupAddOutlined />,
+      key: `/${role}/manage-normal-users`,
+    },
   ];
 
   if (role === ENUM_USER_ROLE.SUPER_ADMIN) return superAdminSidebarItems;
