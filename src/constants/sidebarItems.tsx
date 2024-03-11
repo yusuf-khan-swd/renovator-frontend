@@ -102,6 +102,11 @@ export const sidebarItems = (role: string) => {
   const superAdminSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
+    {
+      label: <Link href={`/${role}/manage-admins`}>Manage Admins</Link>,
+      icon: <UsergroupAddOutlined />,
+      key: `/${role}/manage-admins`,
+    },
   ];
 
   if (role === ENUM_USER_ROLE.SUPER_ADMIN) return superAdminSidebarItems;
