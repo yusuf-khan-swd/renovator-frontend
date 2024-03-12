@@ -9,6 +9,7 @@ import { ENUM_USER_ROLE } from "@/constants/role";
 import {
   useAdminUsersQuery,
   useDeleteUserMutation,
+  useNormalUsersQuery,
   useUsersQuery,
 } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -39,6 +40,10 @@ const ManageUser = () => {
   const { data: adminUsers } = useAdminUsersQuery(undefined);
 
   console.log(adminUsers);
+
+  const { data: normalUsers } = useNormalUsersQuery(undefined);
+
+  console.log(normalUsers);
 
   const deleteUserHandler = async (id: string) => {
     try {
