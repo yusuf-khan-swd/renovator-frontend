@@ -4,14 +4,17 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
+import { roleOptionsForAdmin } from "@/constants/global";
 import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, Tag, message } from "antd";
+import { Button, Col, Input, Row, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import Form from "../Forms/Form";
+import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
 
 const ManageUser = () => {
   const query: Record<string, any> = {};
@@ -201,6 +204,18 @@ const ManageUser = () => {
           )}
         </div>
       </ActionBar>
+
+      <Form>
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
+            <FormSelectField
+              name="role"
+              label="User Role"
+              options={roleOptionsForAdmin as SelectOptions[]}
+            />
+          </Col>
+        </Row>
+      </Form>
 
       <CommonTable
         loading={isLoading}
