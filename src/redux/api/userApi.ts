@@ -15,6 +15,14 @@ export const userApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.user],
     }),
 
+    adminUsers: build.query({
+      query: (id: string | string[] | undefined) => ({
+        url: `${USERS_URL}/admins`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.user],
+    }),
+
     user: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `${USERS_URL}/${id}`,
@@ -44,6 +52,7 @@ export const userApi = baseApi.injectEndpoints({
 
 export const {
   useUsersQuery,
+  useAdminUsersQuery,
   useUserQuery,
   useUpdateUserMutation,
   useDeleteUserMutation,
