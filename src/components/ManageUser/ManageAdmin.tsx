@@ -159,7 +159,7 @@ const ManageAdmin = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
+  const routeName = "manage-admins";
 
   return (
     <div>
