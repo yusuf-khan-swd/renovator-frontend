@@ -6,7 +6,7 @@ import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { roleOptionsForAdmin } from "@/constants/global";
 import { ENUM_USER_ROLE } from "@/constants/role";
-import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
+import { useAdminUsersQuery, useDeleteUserMutation } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Tag, message } from "antd";
@@ -31,7 +31,7 @@ const ManageAdmin = () => {
   query["sortBy"] = sortBy;
   query["sortOrder"] = sortOrder;
 
-  const { data, isLoading } = useUsersQuery(undefined);
+  const { data, isLoading } = useAdminUsersQuery(undefined);
 
   const deleteUserHandler = async (id: string) => {
     try {
