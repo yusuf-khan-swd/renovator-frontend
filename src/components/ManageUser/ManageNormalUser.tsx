@@ -162,7 +162,7 @@ const ManageNormalUser = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
+  const routeName = "manage-normal-users";
 
   return (
     <div>
