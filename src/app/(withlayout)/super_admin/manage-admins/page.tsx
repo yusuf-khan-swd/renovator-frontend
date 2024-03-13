@@ -2,7 +2,7 @@ import ManageAdmin from "@/components/ManageUser/ManageAdmin";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manage Users - Renovator",
+  title: "Manage Admins - Renovator",
   description: "A Home Renovation Service Provider",
 };
 
