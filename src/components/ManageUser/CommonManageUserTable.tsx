@@ -1,20 +1,14 @@
 "use client";
 
-import ActionBar from "@/components/ui/ActionBar";
-import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { roleOptionsForAdmin } from "@/constants/global";
-import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
-import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Row, Tag, message } from "antd";
+import { EditOutlined, EyeOutlined } from "@ant-design/icons";
+import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import Form from "../Forms/Form";
-import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
 
 const CommonManageUserTable = ({
   data,
@@ -50,6 +44,8 @@ const CommonManageUserTable = ({
       message.error(error?.message);
     }
   };
+
+  const { role } = getUserInfo() as any;
 
   const columns = [
     {
@@ -144,11 +140,13 @@ const CommonManageUserTable = ({
       },
     },
   ];
+
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
     setSize(pageSize);
   };
+
   const onTableChange = (pagination: any, filter: any, sorter: any) => {
     const { order, field } = sorter;
     // console.log(order, field);
@@ -162,65 +160,8 @@ const CommonManageUserTable = ({
     setSearchTerm("");
   };
 
-  const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
-
   return (
     <div>
-      <CommonBreadCrumb
-        items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-        ]}
-      />
-      <ActionBar title="User List">
-        <Input
-          size="large"
-          placeholder="Search"
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            width: "20%",
-          }}
-        />
-        <div>
-          {role === ENUM_USER_ROLE.SUPER_ADMIN && (
-            <Link href={`/${role}/${routeName}/create-admin`}>
-              <Button type="primary" style={{ margin: "2px" }}>
-                Create Admin
-              </Button>
-            </Link>
-          )}
-          <Link href={`/${role}/${routeName}/create-user`}>
-            <Button type="primary" style={{ margin: "2px" }}>
-              Create User
-            </Button>
-          </Link>
-          {(!!sortBy || !!sortOrder || !!searchTerm) && (
-            <Button
-              style={{ margin: "2px" }}
-              type="primary"
-              onClick={resetFilters}
-            >
-              <ReloadOutlined />
-            </Button>
-          )}
-        </div>
-      </ActionBar>
-
-      <Form>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="role"
-              label="User Role"
-              options={roleOptionsForAdmin as SelectOptions[]}
-            />
-          </Col>
-        </Row>
-      </Form>
-
       <CommonTable
         loading={isLoading}
         columns={columns}
