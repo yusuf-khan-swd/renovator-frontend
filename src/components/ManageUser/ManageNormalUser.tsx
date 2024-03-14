@@ -140,11 +140,13 @@ const ManageNormalUser = () => {
       },
     },
   ];
+
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
     setSize(pageSize);
   };
+
   const onTableChange = (pagination: any, filter: any, sorter: any) => {
     const { order, field } = sorter;
     // console.log(order, field);
@@ -164,12 +166,7 @@ const ManageNormalUser = () => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-        ]}
+        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
         <Input
