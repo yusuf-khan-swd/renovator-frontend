@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const CreateAdminPage = () => {
   return (
     <div>
-      <CreateAdmin routeName="manage-normal-users" />
+      <CreateAdmin pageRoute="manage-normal-users" />
     </div>
   );
 };
