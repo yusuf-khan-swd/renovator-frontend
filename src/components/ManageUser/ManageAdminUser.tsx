@@ -13,7 +13,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageAdmin = () => {
+const ManageAdminUser = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
 
@@ -217,4 +217,4 @@ const ManageAdmin = () => {
   );
 };
 
-export default ManageAdmin;
+export default ManageAdminUser;
