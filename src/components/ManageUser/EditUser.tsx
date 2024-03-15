@@ -15,7 +15,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import FormHeading from "../ui/FormHeading";
 
-const EditUser = ({ id }: { id: string }) => {
+const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
   const { data, isLoading } = useUserQuery(id);
   const [updateUser] = useUpdateUserMutation();
 
@@ -41,7 +41,7 @@ const EditUser = ({ id }: { id: string }) => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-users";
+  const routeName = pageRoute || "manage-users";
   const endRoute = "edit";
 
   return (
