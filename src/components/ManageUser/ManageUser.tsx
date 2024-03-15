@@ -99,7 +99,7 @@ const ManageUser = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <Link href={`/${role}/manage-users/details/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/details/${data?.id}`}>
               <Button
                 onClick={() => console.log(data)}
                 type="primary"
@@ -108,7 +108,7 @@ const ManageUser = () => {
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${role}/manage-users/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data?.id)}
