@@ -78,7 +78,7 @@ const DetailsUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
               </Col>
             </Row>
 
-            <Link href={`/${role}/manage-users/edit/${id}`}>
+            <Link href={`/${role}/${routeName}/edit/${id}`}>
               <Button style={{ margin: "2px" }} type="primary">
                 Edit User Info
               </Button>
