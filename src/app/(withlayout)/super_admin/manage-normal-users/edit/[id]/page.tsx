@@ -11,7 +11,7 @@ const EditUserPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <EditUser id={id} />
+      <EditUser id={id} pageRoute="manage-normal-users" />
     </div>
   );
 };
