@@ -91,7 +91,7 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
               Update
             </Button>
 
-            <Link href={`/${role}/manage-users/details/${id}`}>
+            <Link href={`/${role}/${routeName}/details/${id}`}>
               <Button style={{ margin: "2px" }} type="default">
                 View User Info
               </Button>
