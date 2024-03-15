@@ -11,7 +11,7 @@ const DetailsUserPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <DetailsUser id={id} />
+      <DetailsUser id={id} pageRoute="manage-normal-users" />
     </div>
   );
 };
