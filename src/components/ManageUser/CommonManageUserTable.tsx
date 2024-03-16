@@ -154,12 +154,6 @@ const CommonManageUserTable = ({
     setSortOrder(order === "ascend" ? "asc" : "desc");
   };
 
-  const resetFilters = () => {
-    setSortBy("");
-    setSortOrder("");
-    setSearchTerm("");
-  };
-
   return (
     <div>
       <CommonTable
