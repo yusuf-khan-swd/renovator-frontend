@@ -18,6 +18,8 @@ const CommonManageUserTable = ({
   isLoading: boolean;
 }) => {
   const query: Record<string, any> = {};
+  const routeName = "manage-users";
+
   const [deleteUser] = useDeleteUserMutation();
 
   const [page, setPage] = useState<number>(1);
@@ -99,7 +101,7 @@ const CommonManageUserTable = ({
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <Link href={`/${role}/manage-users/details/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/details/${data?.id}`}>
               <Button
                 onClick={() => console.log(data)}
                 type="primary"
@@ -108,7 +110,7 @@ const CommonManageUserTable = ({
                 <EyeOutlined />
               </Button>
             </Link>
-            <Link href={`/${role}/manage-users/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data?.id)}
