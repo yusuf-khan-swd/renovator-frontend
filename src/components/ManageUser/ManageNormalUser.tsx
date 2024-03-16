@@ -166,7 +166,11 @@ const ManageNormalUser = () => {
 
   return (
     <div>
-      <CommonManageUserTable data={data} isLoading={isLoading} />
+      <CommonManageUserTable
+        data={data}
+        isLoading={isLoading}
+        pageRoute={routeName}
+      />
 
       <CommonBreadCrumb
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
