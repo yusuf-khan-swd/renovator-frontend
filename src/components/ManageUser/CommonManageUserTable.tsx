@@ -13,12 +13,14 @@ import { useState } from "react";
 const CommonManageUserTable = ({
   data,
   isLoading,
+  pageRoute,
 }: {
   data: any;
   isLoading: boolean;
+  pageRoute: string;
 }) => {
   const query: Record<string, any> = {};
-  const routeName = "manage-users";
+  const routeName = pageRoute || "manage-users";
 
   const [deleteUser] = useDeleteUserMutation();
 
