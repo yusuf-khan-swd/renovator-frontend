@@ -4,7 +4,6 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { roleOptionsForAdmin } from "@/constants/global";
 import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -15,6 +14,12 @@ import Link from "next/link";
 import { useState } from "react";
 import Form from "../Forms/Form";
 import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
+
+const roleOptionsFilter = [
+  { label: "All", value: "" },
+  { label: "ADMIN", value: "admin" },
+  { label: "USER", value: "user" },
+];
 
 const ManageUser = () => {
   const query: Record<string, any> = {};
@@ -206,7 +211,7 @@ const ManageUser = () => {
             <FormSelectField
               name="role"
               label="User Role"
-              options={roleOptionsForAdmin as SelectOptions[]}
+              options={roleOptionsFilter as SelectOptions[]}
             />
           </Col>
         </Row>
