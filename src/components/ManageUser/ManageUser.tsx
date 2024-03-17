@@ -164,12 +164,7 @@ const ManageUser = () => {
   return (
     <div>
       <CommonBreadCrumb
-        items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-        ]}
+        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
         <Input
