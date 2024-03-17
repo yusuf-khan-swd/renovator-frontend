@@ -52,6 +52,10 @@ const ManageUser = () => {
     }
   };
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   const columns = [
     {
       title: "Name",
@@ -205,7 +209,7 @@ const ManageUser = () => {
         </div>
       </ActionBar>
 
-      <Form>
+      <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
             <FormSelectField
