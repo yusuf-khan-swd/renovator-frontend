@@ -167,6 +167,7 @@ const ManageUser = () => {
     setSortBy("");
     setSortOrder("");
     setSearchTerm("");
+    setSelectRole("");
   };
 
   const { role } = getUserInfo() as any;
