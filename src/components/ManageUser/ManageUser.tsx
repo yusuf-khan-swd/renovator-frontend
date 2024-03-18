@@ -8,11 +8,11 @@ import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Row, Tag, message } from "antd";
+import { Button, Col, Input, Row, Select, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
+import { SelectOptions } from "../Forms/FormSelectField";
 
 const roleOptionsFilter = [
   { label: "All", value: "all" },
@@ -29,6 +29,8 @@ const ManageUser = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const [selectRole, setSelectRole] = useState("");
 
   query["limit"] = size;
   query["page"] = page;
@@ -49,6 +51,11 @@ const ManageUser = () => {
       console.error(error);
       message.error(error?.message);
     }
+  };
+
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+    setSelectRole(value);
   };
 
   const columns = [
@@ -206,10 +213,14 @@ const ManageUser = () => {
 
       <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
         <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
-          <FormSelectField
-            name="role"
-            label="User Role"
+          <label>User Role</label>
+          <Select
+            onChange={handleChange}
+            size={"large"}
             options={roleOptionsFilter as SelectOptions[]}
+            // value={value}
+            style={{ width: "100%" }}
+            placeholder={"Select"}
           />
         </Col>
       </Row>
