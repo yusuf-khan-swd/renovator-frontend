@@ -12,7 +12,6 @@ import { Button, Col, Input, Row, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import Form from "../Forms/Form";
 import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
 
 const roleOptionsFilter = [
@@ -50,10 +49,6 @@ const ManageUser = () => {
       console.error(error);
       message.error(error?.message);
     }
-  };
-
-  const onSubmit = (data: any) => {
-    console.log(data);
   };
 
   const columns = [
@@ -209,17 +204,15 @@ const ManageUser = () => {
         </div>
       </ActionBar>
 
-      <Form submitHandler={onSubmit}>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
-            <FormSelectField
-              name="role"
-              label="User Role"
-              options={roleOptionsFilter as SelectOptions[]}
-            />
-          </Col>
-        </Row>
-      </Form>
+      <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+        <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
+          <FormSelectField
+            name="role"
+            label="User Role"
+            options={roleOptionsFilter as SelectOptions[]}
+          />
+        </Col>
+      </Row>
 
       <CommonTable
         loading={isLoading}
