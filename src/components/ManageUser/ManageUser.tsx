@@ -199,7 +199,7 @@ const ManageUser = () => {
               Create User
             </Button>
           </Link>
-          {(!!sortBy || !!sortOrder || !!searchTerm) && (
+          {(!!sortBy || !!sortOrder || !!searchTerm || !!selectRole) && (
             <Button
               style={{ margin: "2px" }}
               type="primary"
