@@ -30,7 +30,7 @@ const ManageUser = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [selectRole, setSelectRole] = useState("");
+  const [selectRole, setSelectRole] = useState<string>();
 
   query["limit"] = size;
   query["page"] = page;
@@ -167,7 +167,7 @@ const ManageUser = () => {
     setSortBy("");
     setSortOrder("");
     setSearchTerm("");
-    setSelectRole("");
+    setSelectRole(undefined);
   };
 
   const { role } = getUserInfo() as any;
@@ -219,7 +219,7 @@ const ManageUser = () => {
             onChange={handleChange}
             size={"large"}
             options={roleOptionsFilter as SelectOptions[]}
-            // value={value}
+            value={selectRole}
             style={{ width: "100%" }}
             placeholder={"Select"}
           />
