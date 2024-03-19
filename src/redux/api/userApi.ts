@@ -6,10 +6,11 @@ const USERS_URL = "/users";
 export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     users: build.query({
-      query: () => {
+      query: (arg: Record<string, any>) => {
         return {
           url: USERS_URL,
           method: "GET",
+          params: arg,
         };
       },
       providesTags: [tagTypes.user],
