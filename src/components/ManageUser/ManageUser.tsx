@@ -53,7 +53,7 @@ const ManageUser = () => {
     }
   };
 
-  const handleChange = (value: string) => {
+  const handleRoleChange = (value: string) => {
     console.log(`selected ${value}`);
     setSelectRole(value);
   };
@@ -216,7 +216,7 @@ const ManageUser = () => {
         <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
           <label>User Role</label>
           <Select
-            onChange={handleChange}
+            onChange={handleRoleChange}
             size={"large"}
             options={roleOptionsFilter as SelectOptions[]}
             value={selectRole}
