@@ -37,7 +37,7 @@ const ManageUser = () => {
   query["sortBy"] = sortBy;
   query["sortOrder"] = sortOrder;
 
-  const { data, isLoading } = useUsersQuery({ role: "" });
+  const { data, isLoading } = useUsersQuery({ role: selectRole });
 
   const deleteUserHandler = async (id: string) => {
     try {
