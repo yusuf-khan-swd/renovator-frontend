@@ -81,7 +81,7 @@ const ManageUser = () => {
 
     {
       title: "Role",
-      width: 80,
+      width: 100,
       dataIndex: "role",
       render: function (role: string) {
         return <Tag color="blue">{role}</Tag>;
