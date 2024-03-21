@@ -213,19 +213,21 @@ const ManageUser = () => {
         </div>
       </ActionBar>
 
-      <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-        <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
-          <label>User Role</label>
-          <Select
-            onChange={handleRoleChange}
-            size={"large"}
-            options={roleOptionsFilter as SelectOptions[]}
-            value={selectRole}
-            style={{ width: "100%" }}
-            placeholder={"Select"}
-          />
-        </Col>
-      </Row>
+      {role === ENUM_USER_ROLE.SUPER_ADMIN && (
+        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
+          <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
+            <label>User Role</label>
+            <Select
+              onChange={handleRoleChange}
+              size={"large"}
+              options={roleOptionsFilter as SelectOptions[]}
+              value={selectRole}
+              style={{ width: "100%" }}
+              placeholder={"Select"}
+            />
+          </Col>
+        </Row>
+      )}
 
       <CommonTable
         loading={isLoading}
