@@ -213,8 +213,11 @@ const ManageUser = () => {
       </ActionBar>
 
       {role === ENUM_USER_ROLE.SUPER_ADMIN && (
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
+        <Row
+          gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
+          style={{ marginBottom: "20px" }}
+        >
+          <Col xs={24} lg={14} xl={10}>
             <label>Filter by User Role</label>
             <Select
               onChange={handleRoleChange}
