@@ -180,14 +180,13 @@ const ManageUser = () => {
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
-        <Input
-          size="large"
-          placeholder="Search"
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            width: "20%",
-          }}
-        />
+        <Col span={8}>
+          <Input
+            size="large"
+            placeholder="Search"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Col>
         <div>
           {role === ENUM_USER_ROLE.SUPER_ADMIN && (
             <Link href={`/${role}/${routeName}/create-admin`}>
