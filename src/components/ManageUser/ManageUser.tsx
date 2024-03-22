@@ -182,6 +182,7 @@ const ManageUser = () => {
         <Col span={8}>
           <Input
             size="large"
+            value={searchTerm}
             placeholder="Search"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
