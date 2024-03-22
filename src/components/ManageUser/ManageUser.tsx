@@ -18,7 +18,6 @@ const roleOptionsFilter = [
   { label: "All", value: "all" },
   { label: "ADMIN", value: "admin" },
   { label: "USER", value: "user" },
-  { label: "SUPER_ADMIN", value: "super_admin" },
 ];
 
 const ManageUser = () => {
