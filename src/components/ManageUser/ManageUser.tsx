@@ -16,8 +16,8 @@ import { SelectOptions } from "../Forms/FormSelectField";
 
 const roleOptionsFilter = [
   { label: "All", value: "all" },
-  { label: "ADMIN", value: "admin" },
   { label: "USER", value: "user" },
+  { label: "ADMIN", value: "admin" },
 ];
 
 const ManageUser = () => {
