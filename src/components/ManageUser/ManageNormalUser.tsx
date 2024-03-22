@@ -179,6 +179,7 @@ const ManageNormalUser = () => {
         <Input
           size="large"
           placeholder="Search"
+          value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
             width: "20%",
