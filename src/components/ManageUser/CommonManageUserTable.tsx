@@ -20,7 +20,7 @@ const CommonManageUserTable = ({
   pageRoute: string;
 }) => {
   const query: Record<string, any> = {};
-  const routeName = pageRoute || "manage-users";
+  const routeName = pageRoute;
 
   const [deleteUser] = useDeleteUserMutation();
 
