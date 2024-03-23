@@ -20,7 +20,6 @@ const CommonManageUserTable = ({
   pageRoute: string;
 }) => {
   const query: Record<string, any> = {};
-  const routeName = pageRoute;
 
   const [deleteUser] = useDeleteUserMutation();
 
@@ -156,6 +155,8 @@ const CommonManageUserTable = ({
     setSortBy(field as string);
     setSortOrder(order === "ascend" ? "asc" : "desc");
   };
+
+  const routeName = pageRoute;
 
   return (
     <div>
