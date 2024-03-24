@@ -11,6 +11,7 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import CommonManageUserTable from "./CommonManageUserTable";
 
 const ManageAdminUser = () => {
   const query: Record<string, any> = {};
@@ -159,6 +160,12 @@ const ManageAdminUser = () => {
 
   return (
     <div>
+      <CommonManageUserTable
+        data={data}
+        isLoading={isLoading}
+        pageRoute={routeName}
+      />
+
       <CommonBreadCrumb
         items={[
           {
