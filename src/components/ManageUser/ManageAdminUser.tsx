@@ -160,12 +160,15 @@ const ManageAdminUser = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
+  console.log({ adminUser: page });
+
   return (
     <div>
       <CommonManageUserTable
         data={data}
         isLoading={isLoading}
         pageRoute={routeName}
+        setPage={setPage}
       />
 
       <CommonBreadCrumb
