@@ -10,6 +10,21 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
+// setPage,
+// setSize,
+// setSortBy,
+// setSortOrder,
+
+// setPage: (value: SetStateAction<number>) => void;
+// setSize: (value: SetStateAction<number>) => void;
+// setSortBy: (value: SetStateAction<string>) => void;
+// setSortOrder: (value: SetStateAction<string>) => void;
+
+// setPage: Dispatch<SetStateAction<number>>
+// setSize: Dispatch<SetStateAction<number>>
+// setSortBy: Dispatch<SetStateAction<string>>
+// setSortOrder: Dispatch<SetStateAction<string>>
+
 const CommonManageUserTable = ({
   data,
   isLoading,
