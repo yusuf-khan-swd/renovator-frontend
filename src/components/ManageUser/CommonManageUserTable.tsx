@@ -34,7 +34,7 @@ const CommonManageUserTable = ({
   data: any;
   isLoading: boolean;
   pageRoute: string;
-  setPage: (value: number) => void;
+  setPage: any;
 }) => {
   const query: Record<string, any> = {};
 
