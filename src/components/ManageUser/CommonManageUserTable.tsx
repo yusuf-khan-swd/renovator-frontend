@@ -29,24 +29,26 @@ const CommonManageUserTable = ({
   data,
   isLoading,
   pageRoute,
+  setPage,
 }: {
   data: any;
   isLoading: boolean;
   pageRoute: string;
+  setPage: (value: number) => void;
 }) => {
   const query: Record<string, any> = {};
 
   const [deleteUser] = useDeleteUserMutation();
 
-  const [page, setPage] = useState<number>(1);
+  // const [page, setPage] = useState<number>(1);
   const [size, setSize] = useState<number>(5);
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
 
-  query["limit"] = size;
-  query["page"] = page;
-  query["sortBy"] = sortBy;
-  query["sortOrder"] = sortOrder;
+  // query["limit"] = size;
+  // query["page"] = page;
+  // query["sortBy"] = sortBy;
+  // query["sortOrder"] = sortOrder;
 
   const deleteUserHandler = async (id: string) => {
     try {
