@@ -160,7 +160,7 @@ const ManageAdminUser = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
-  console.log("adminUserPage: ", { page, size, sortBy });
+  console.log("adminUserPage: ", { page, size, sortBy, sortOrder });
 
   return (
     <div>
@@ -172,6 +172,7 @@ const ManageAdminUser = () => {
         setSize={setSize}
         size={size}
         setSortBy={setSortBy}
+        setSortOrder={setSortOrder}
       />
 
       <CommonBreadCrumb

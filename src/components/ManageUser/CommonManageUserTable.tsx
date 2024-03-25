@@ -8,7 +8,6 @@ import { EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { useState } from "react";
 
 // setPage,
 // setSize,
@@ -35,6 +34,7 @@ const CommonManageUserTable = ({
   setSize,
   size,
   setSortBy,
+  setSortOrder,
 }: {
   data: any;
   isLoading: boolean;
@@ -43,13 +43,14 @@ const CommonManageUserTable = ({
   setSize: any;
   size: any;
   setSortBy: any;
+  setSortOrder: any;
 }) => {
   const [deleteUser] = useDeleteUserMutation();
 
   // const [page, setPage] = useState<number>(1);
   // const [size, setSize] = useState<number>(5);
   // const [sortBy, setSortBy] = useState<string>("");
-  const [sortOrder, setSortOrder] = useState<string>("");
+  // const [sortOrder, setSortOrder] = useState<string>("");
 
   const deleteUserHandler = async (id: string) => {
     try {
