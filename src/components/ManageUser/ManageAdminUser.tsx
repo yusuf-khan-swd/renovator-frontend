@@ -160,7 +160,7 @@ const ManageAdminUser = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
-  console.log({ adminUser: page });
+  console.log({ adminUser: page, size });
 
   return (
     <div>
@@ -169,6 +169,8 @@ const ManageAdminUser = () => {
         isLoading={isLoading}
         pageRoute={routeName}
         setPage={setPage}
+        setSize={setSize}
+        size={size}
       />
 
       <CommonBreadCrumb

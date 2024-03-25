@@ -32,16 +32,20 @@ const CommonManageUserTable = ({
   isLoading,
   pageRoute,
   setPage,
+  setSize,
+  size,
 }: {
   data: any;
   isLoading: boolean;
   pageRoute: string;
   setPage: any;
+  setSize: any;
+  size: any;
 }) => {
   const [deleteUser] = useDeleteUserMutation();
 
   // const [page, setPage] = useState<number>(1);
-  const [size, setSize] = useState<number>(5);
+  // const [size, setSize] = useState<number>(5);
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
 
