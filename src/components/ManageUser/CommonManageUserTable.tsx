@@ -34,21 +34,21 @@ const CommonManageUserTable = ({
   setPage,
   setSize,
   size,
-}: // setSortBy,
-{
+  setSortBy,
+}: {
   data: any;
   isLoading: boolean;
   pageRoute: string;
   setPage: any;
   setSize: any;
   size: any;
-  // setSortBy: any;
+  setSortBy: any;
 }) => {
   const [deleteUser] = useDeleteUserMutation();
 
   // const [page, setPage] = useState<number>(1);
   // const [size, setSize] = useState<number>(5);
-  const [sortBy, setSortBy] = useState<string>("");
+  // const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
 
   const deleteUserHandler = async (id: string) => {
