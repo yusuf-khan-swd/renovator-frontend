@@ -22,10 +22,10 @@ import { useState } from "react";
 // setSortOrder: (value: SetStateAction<string>) => void;
 
 // or this is useStates Types of setPage, setSize, setSortBy, setSortOrder
-// setPage: Dispatch<SetStateAction<number>>
-// setSize: Dispatch<SetStateAction<number>>
-// setSortBy: Dispatch<SetStateAction<string>>
-// setSortOrder: Dispatch<SetStateAction<string>>
+// setPage: Dispatch<SetStateAction<number>>;
+// setSize: Dispatch<SetStateAction<number>;>;
+// setSortBy: Dispatch<SetStateAction<string>;>;
+// setSortOrder: Dispatch<SetStateAction<string>;>
 
 const CommonManageUserTable = ({
   data,
