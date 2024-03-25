@@ -160,7 +160,7 @@ const ManageAdminUser = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
-  console.log({ adminUser: page, size });
+  console.log("adminUserPage: ", page, size);
 
   return (
     <div>
