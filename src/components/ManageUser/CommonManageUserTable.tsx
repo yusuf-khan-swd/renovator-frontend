@@ -62,6 +62,7 @@ const CommonManageUserTable = ({
   };
 
   const { role } = getUserInfo() as any;
+  const routeName = pageRoute;
 
   const columns = [
     {
@@ -169,8 +170,6 @@ const CommonManageUserTable = ({
     setSortBy(field as string);
     setSortOrder(order === "ascend" ? "asc" : "desc");
   };
-
-  const routeName = pageRoute;
 
   return (
     <div>
