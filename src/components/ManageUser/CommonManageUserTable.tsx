@@ -1,6 +1,5 @@
 "use client";
 
-import CommonTable from "@/components/ui/CommonTable";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { useDeleteUserMutation } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
@@ -173,7 +172,7 @@ const CommonManageUserTable = ({
 
   return (
     <div>
-      <CommonTable
+      {/* <CommonTable
         loading={isLoading}
         columns={columns}
         dataSource={data}
@@ -183,7 +182,7 @@ const CommonManageUserTable = ({
         onPaginationChange={onPaginationChange}
         onTableChange={onTableChange}
         showPagination={true}
-      />
+      /> */}
     </div>
   );
 };
