@@ -164,16 +164,7 @@ const ManageAdminUser = () => {
 
   return (
     <div>
-      <CommonManageUserTable
-        data={data}
-        isLoading={isLoading}
-        pageRoute={routeName}
-        setPage={setPage}
-        setSize={setSize}
-        size={size}
-        setSortBy={setSortBy}
-        setSortOrder={setSortOrder}
-      />
+      <CommonManageUserTable pageRoute={routeName} />
 
       <CommonBreadCrumb
         items={[
