@@ -164,7 +164,17 @@ const ManageAdminUser = () => {
 
   return (
     <div>
-      <CommonManageUserTable pageRoute={routeName} />
+      <CommonTable
+        loading={isLoading}
+        columns={CommonManageUserTable(routeName)}
+        dataSource={data}
+        pageSize={size}
+        totalPages={0}
+        showSizeChanger={true}
+        onPaginationChange={onPaginationChange}
+        onTableChange={onTableChange}
+        showPagination={true}
+      />
 
       <CommonBreadCrumb
         items={[
