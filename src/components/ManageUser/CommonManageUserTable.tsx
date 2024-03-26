@@ -25,7 +25,7 @@ import Link from "next/link";
 // setSortBy: Dispatch<SetStateAction<string>;>;
 // setSortOrder: Dispatch<SetStateAction<string>;>
 
-const CommonManageUserTable = ({ pageRoute }: { pageRoute: string }) => {
+const CommonManageUserTable = (pageRoute: string) => {
   const [deleteUser] = useDeleteUserMutation();
 
   const deleteUserHandler = async (id: string) => {
@@ -138,6 +138,8 @@ const CommonManageUserTable = ({ pageRoute }: { pageRoute: string }) => {
       },
     },
   ];
+
+  return columns;
 
   // const onPaginationChange = (page: number, pageSize: number) => {
   //   console.log("Page:", page, "PageSize:", pageSize);
