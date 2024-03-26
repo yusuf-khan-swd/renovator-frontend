@@ -25,25 +25,7 @@ import Link from "next/link";
 // setSortBy: Dispatch<SetStateAction<string>;>;
 // setSortOrder: Dispatch<SetStateAction<string>;>
 
-const CommonManageUserTable = ({
-  data,
-  isLoading,
-  pageRoute,
-  setPage,
-  setSize,
-  size,
-  setSortBy,
-  setSortOrder,
-}: {
-  data: any;
-  isLoading: boolean;
-  pageRoute: string;
-  setPage: any;
-  setSize: any;
-  size: any;
-  setSortBy: any;
-  setSortOrder: any;
-}) => {
+const CommonManageUserTable = ({ pageRoute }: { pageRoute: string }) => {
   const [deleteUser] = useDeleteUserMutation();
 
   const deleteUserHandler = async (id: string) => {
