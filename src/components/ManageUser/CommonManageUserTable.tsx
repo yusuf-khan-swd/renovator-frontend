@@ -47,11 +47,6 @@ const CommonManageUserTable = ({
 }) => {
   const [deleteUser] = useDeleteUserMutation();
 
-  // const [page, setPage] = useState<number>(1);
-  // const [size, setSize] = useState<number>(5);
-  // const [sortBy, setSortBy] = useState<string>("");
-  // const [sortOrder, setSortOrder] = useState<string>("");
-
   const deleteUserHandler = async (id: string) => {
     try {
       message.loading("Deleting...");
