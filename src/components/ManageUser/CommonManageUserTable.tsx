@@ -123,22 +123,6 @@ const CommonManageUserTable = (pageRoute: string) => {
   ];
 
   return columns;
-
-  return (
-    <div>
-      {/* <CommonTable
-        loading={isLoading}
-        columns={columns}
-        dataSource={data}
-        pageSize={size}
-        totalPages={0}
-        showSizeChanger={true}
-        onPaginationChange={onPaginationChange}
-        onTableChange={onTableChange}
-        showPagination={true}
-      /> */}
-    </div>
-  );
 };
 
 export default CommonManageUserTable;
