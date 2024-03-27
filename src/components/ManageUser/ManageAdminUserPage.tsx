@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 import CommonManageUserTable from "./CommonManageUserTable";
 
-const ManageAdminUser = () => {
+const ManageAdminUserPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
 
@@ -232,4 +232,4 @@ const ManageAdminUser = () => {
   );
 };
 
-export default ManageAdminUser;
+export default ManageAdminUserPage;

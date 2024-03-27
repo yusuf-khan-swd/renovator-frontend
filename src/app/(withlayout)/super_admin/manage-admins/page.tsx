@@ -1,4 +1,4 @@
-import ManageAdminUser from "@/components/ManageUser/ManageAdminUser";
+import ManageAdminUserPage from "@/components/ManageUser/ManageAdminUserPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageAdminUserPage = () => {
+const ManageAdminUser = () => {
   return (
     <div>
-      <ManageAdminUser />
+      <ManageAdminUserPage />
     </div>
   );
 };
 
-export default ManageAdminUserPage;
+export default ManageAdminUser;
