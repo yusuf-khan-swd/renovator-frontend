@@ -16,7 +16,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 
-const ManageNormalUser = () => {
+const ManageNormalUserPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
 
@@ -218,4 +218,4 @@ const ManageNormalUser = () => {
   );
 };
 
-export default ManageNormalUser;
+export default ManageNormalUserPage;
