@@ -11,7 +11,7 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
-import CommonManageUserTable from "./CommonManageUserTable";
+import CommonUserColumn from "./CommonUserColumn";
 
 const ManageAdminUserPage = () => {
   const query: Record<string, any> = {};
@@ -166,7 +166,7 @@ const ManageAdminUserPage = () => {
     <div>
       <CommonTable
         loading={isLoading}
-        columns={CommonManageUserTable(routeName)}
+        columns={CommonUserColumn(routeName)}
         dataSource={data}
         pageSize={size}
         totalPages={0}

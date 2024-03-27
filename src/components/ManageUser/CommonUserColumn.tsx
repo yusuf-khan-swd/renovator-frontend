@@ -8,7 +8,7 @@ import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 
-const CommonManageUserTable = (pageRoute: string) => {
+const CommonUserColumn = (pageRoute: string) => {
   const [deleteUser] = useDeleteUserMutation();
 
   const deleteUserHandler = async (id: string) => {
@@ -125,4 +125,4 @@ const CommonManageUserTable = (pageRoute: string) => {
   return columns;
 };
 
-export default CommonManageUserTable;
+export default CommonUserColumn;
