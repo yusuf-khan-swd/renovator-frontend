@@ -20,7 +20,7 @@ const roleOptionsFilter = [
   { label: "ADMIN", value: "admin" },
 ];
 
-const ManageUser = () => {
+const ManageUserPage = () => {
   const query: Record<string, any> = {};
   const [deleteUser] = useDeleteUserMutation();
 
@@ -246,4 +246,4 @@ const ManageUser = () => {
   );
 };
 
-export default ManageUser;
+export default ManageUserPage;
