@@ -8,23 +8,6 @@ import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 
-// setPage,
-// setSize,
-// setSortBy,
-// setSortOrder,
-
-// this is useStates Types of setPage, setSize, setSortBy, setSortOrder
-// setPage: (value: SetStateAction<number>) => void;
-// setSize: (value: SetStateAction<number>) => void;
-// setSortBy: (value: SetStateAction<string>) => void;
-// setSortOrder: (value: SetStateAction<string>) => void;
-
-// or this is useStates Types of setPage, setSize, setSortBy, setSortOrder
-// setPage: Dispatch<SetStateAction<number>>;
-// setSize: Dispatch<SetStateAction<number>;>;
-// setSortBy: Dispatch<SetStateAction<string>;>;
-// setSortOrder: Dispatch<SetStateAction<string>;>
-
 const CommonManageUserTable = (pageRoute: string) => {
   const [deleteUser] = useDeleteUserMutation();
 
