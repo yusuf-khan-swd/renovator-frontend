@@ -13,6 +13,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
 import { SelectOptions } from "../Forms/FormSelectField";
+import CommonUserColumn from "./CommonUserColumn";
 
 const roleOptionsFilter = [
   { label: "All", value: "all" },
@@ -233,7 +234,7 @@ const ManageUserPage = () => {
 
       <CommonTable
         loading={isLoading}
-        columns={columns}
+        columns={CommonUserColumn(routeName)}
         dataSource={data}
         pageSize={size}
         totalPages={0}
