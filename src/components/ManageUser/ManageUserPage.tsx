@@ -7,7 +7,7 @@ import { ENUM_USER_ROLE } from "@/constants/role";
 import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Row, Select, message } from "antd";
+import { Button, Col, Input, Row, Select } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import { SelectOptions } from "../Forms/FormSelectField";
@@ -37,20 +37,6 @@ const ManageUserPage = () => {
   query["sortOrder"] = sortOrder;
 
   const { data, isLoading } = useUsersQuery({ role: selectRole });
-
-  const deleteUserHandler = async (id: string) => {
-    try {
-      message.loading("Deleting...");
-
-      const result: any = await deleteUser(id);
-
-      if (result?.data) message.success("User Successfully Deleted!");
-      else message.error("User Delete Failed!");
-    } catch (error: any) {
-      console.error(error);
-      message.error(error?.message);
-    }
-  };
 
   const handleRoleChange = (value: string) => {
     console.log(`selected ${value}`);
