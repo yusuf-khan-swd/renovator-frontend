@@ -164,18 +164,6 @@ const ManageAdminUserPage = () => {
 
   return (
     <div>
-      <CommonTable
-        loading={isLoading}
-        columns={CommonUserColumn(routeName)}
-        dataSource={data}
-        pageSize={size}
-        totalPages={0}
-        showSizeChanger={true}
-        onPaginationChange={onPaginationChange}
-        onTableChange={onTableChange}
-        showPagination={true}
-      />
-
       <CommonBreadCrumb
         items={[
           {
@@ -219,7 +207,7 @@ const ManageAdminUserPage = () => {
 
       <CommonTable
         loading={isLoading}
-        columns={columns}
+        columns={CommonUserColumn(routeName)}
         dataSource={data}
         pageSize={size}
         totalPages={0}
