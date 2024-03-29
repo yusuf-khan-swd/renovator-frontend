@@ -10,7 +10,7 @@ import {
 } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import CommonUserColumn from "./CommonUserColumn";
@@ -31,20 +31,6 @@ const ManageNormalUserPage = () => {
   query["sortOrder"] = sortOrder;
 
   const { data, isLoading } = useNormalUsersQuery(undefined);
-
-  const deleteUserHandler = async (id: string) => {
-    try {
-      message.loading("Deleting...");
-
-      const result: any = await deleteUser(id);
-
-      if (result?.data) message.success("User Successfully Deleted!");
-      else message.error("User Delete Failed!");
-    } catch (error: any) {
-      console.error(error);
-      message.error(error?.message);
-    }
-  };
 
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
