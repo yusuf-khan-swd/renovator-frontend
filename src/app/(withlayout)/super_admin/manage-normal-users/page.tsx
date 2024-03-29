@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ManageNormalUser = () => {
-  return (
-    <div>
-      <ManageNormalUserPage />
-    </div>
-  );
+  return <ManageNormalUserPage />;
 };
 
 export default ManageNormalUser;
