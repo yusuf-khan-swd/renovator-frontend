@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
+// TODO: Call ManageNormalUser component for showing admin manage-users table information
+// TODO: Remove else if role === admin block of from getAllUsers service and make this route super_admin route
+
 const ManageUser = () => {
   return <ManageUserPage />;
 };
