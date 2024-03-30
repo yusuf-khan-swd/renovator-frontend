@@ -12,7 +12,7 @@ import Link from "next/link";
 import { useState } from "react";
 import CommonUserColumn from "./CommonUserColumn";
 
-const ManageNormalUserPage = () => {
+const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -48,7 +48,7 @@ const ManageNormalUserPage = () => {
   };
 
   const { role } = getUserInfo() as any;
-  const routeName = "manage-normal-users";
+  const routeName = pageRoute || "manage-normal-users";
 
   return (
     <div>
