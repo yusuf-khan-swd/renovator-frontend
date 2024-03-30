@@ -3,7 +3,7 @@
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
-import { useAdminUsersQuery, useDeleteUserMutation } from "@/redux/api/userApi";
+import { useAdminUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
@@ -13,7 +13,6 @@ import CommonUserColumn from "./CommonUserColumn";
 
 const ManageAdminUserPage = () => {
   const query: Record<string, any> = {};
-  const [deleteUser] = useDeleteUserMutation();
 
   const [page, setPage] = useState<number>(1);
   const [size, setSize] = useState<number>(5);
