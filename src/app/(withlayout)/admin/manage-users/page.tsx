@@ -1,4 +1,4 @@
-import ManageUserPage from "@/components/ManageUser/ManageUserPage";
+import ManageNormalUserPage from "@/components/ManageUser/ManageNormalUserPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 // TODO: Remove else if role === admin block of from getAllUsers service and make this route super_admin route
 
 const ManageUser = () => {
-  return <ManageUserPage />;
+  return <ManageNormalUserPage pageRoute="manage-users" />;
 };
 
 export default ManageUser;
