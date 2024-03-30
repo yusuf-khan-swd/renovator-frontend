@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-// TODO: Remove else if role === admin block of from getAllUsers service and make this route super_admin route
-
 const ManageUser = () => {
   return <ManageNormalUserPage pageRoute="manage-users" />;
 };
