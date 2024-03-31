@@ -80,13 +80,11 @@ const ManageUserPage = () => {
           />
         </Col>
         <div>
-          {role === ENUM_USER_ROLE.SUPER_ADMIN && (
-            <Link href={`/${role}/${routeName}/create-admin`}>
-              <Button type="primary" style={{ margin: "2px" }}>
-                Create Admin
-              </Button>
-            </Link>
-          )}
+          <Link href={`/${role}/${routeName}/create-admin`}>
+            <Button type="primary" style={{ margin: "2px" }}>
+              Create Admin
+            </Button>
+          </Link>
           <Link href={`/${role}/${routeName}/create-user`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create User
