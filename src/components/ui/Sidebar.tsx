@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { sidebarItems } from "@/constants/sidebarItems";
 import { getUserInfo } from "@/services/auth.service";
-import { FullscreenExitOutlined, FullscreenOutlined } from "@ant-design/icons";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 const { Sider: AntSidebar } = Layout;
@@ -50,13 +50,9 @@ const SideBar = () => {
           title={collapsed ? "Open" : "Close"}
         >
           {collapsed ? (
-            <FullscreenOutlined
-              style={{ fontSize: "21px", color: "#a6adb4" }}
-            />
+            <RightOutlined style={{ fontSize: "21px", color: "#a6adb4" }} />
           ) : (
-            <FullscreenExitOutlined
-              style={{ fontSize: "21px", color: "#a6adb4" }}
-            />
+            <LeftOutlined style={{ fontSize: "21px", color: "#a6adb4" }} />
           )}
         </Button>
       </div>
