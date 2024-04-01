@@ -46,6 +46,7 @@ const SideBar = () => {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Button
           type="link"
+          style={{ border: "0.2px solid grey" }}
           onClick={() => setCollapsed(!collapsed)}
           title={collapsed ? "Open" : "Close"}
         >
