@@ -49,8 +49,6 @@ const ManageAdminUserPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
-  console.log("adminUserPage: ", { page, size, sortBy, sortOrder });
-
   return (
     <div>
       <CommonBreadCrumb
