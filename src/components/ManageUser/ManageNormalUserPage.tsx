@@ -62,9 +62,6 @@ const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
             placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{
-              width: "20%",
-            }}
           />
         </Col>
         <div>
