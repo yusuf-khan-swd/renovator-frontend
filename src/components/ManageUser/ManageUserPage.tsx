@@ -71,7 +71,7 @@ const ManageUserPage = () => {
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
-        <Col span={8}>
+        <Col xs={24} sm={12} lg={8}>
           <Input
             size="large"
             value={searchTerm}
@@ -107,7 +107,7 @@ const ManageUserPage = () => {
           gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
           style={{ marginBottom: "20px" }}
         >
-          <Col xs={24} lg={14} xl={10}>
+          <Col xs={24} sm={12} lg={10}>
             <label>Filter by User Role</label>
             <Select
               onChange={handleRoleChange}
