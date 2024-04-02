@@ -6,7 +6,7 @@ import CommonTable from "@/components/ui/CommonTable";
 import { useAdminUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Col, Input } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import CommonUserColumn from "./CommonUserColumn";
@@ -60,15 +60,14 @@ const ManageAdminUserPage = () => {
         ]}
       />
       <ActionBar title="User List">
-        <Input
-          size="large"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            width: "20%",
-          }}
-        />
+        <Col xs={24} sm={12} lg={8}>
+          <Input
+            size="large"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Col>
         <div>
           <Link href={`/${role}/${routeName}/create-admin`}>
             <Button type="primary" style={{ margin: "2px" }}>
