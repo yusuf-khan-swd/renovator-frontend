@@ -3,7 +3,6 @@
 import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
-import { ENUM_USER_ROLE } from "@/constants/role";
 import { useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
@@ -102,24 +101,22 @@ const ManageUserPage = () => {
         </div>
       </ActionBar>
 
-      {role === ENUM_USER_ROLE.SUPER_ADMIN && (
-        <Row
-          gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
-          style={{ marginBottom: "20px" }}
-        >
-          <Col xs={24} sm={12} lg={10}>
-            <label>Filter by User Role</label>
-            <Select
-              onChange={handleRoleChange}
-              size={"large"}
-              options={roleOptionsFilter as SelectOptions[]}
-              value={selectRole}
-              style={{ width: "100%" }}
-              placeholder={"Select role"}
-            />
-          </Col>
-        </Row>
-      )}
+      <Row
+        gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
+        style={{ marginBottom: "20px" }}
+      >
+        <Col xs={24} sm={12} lg={10}>
+          <label>Filter by User Role</label>
+          <Select
+            onChange={handleRoleChange}
+            size={"large"}
+            options={roleOptionsFilter as SelectOptions[]}
+            value={selectRole}
+            style={{ width: "100%" }}
+            placeholder={"Select role"}
+          />
+        </Col>
+      </Row>
 
       <CommonTable
         loading={isLoading}
