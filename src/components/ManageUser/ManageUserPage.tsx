@@ -99,24 +99,25 @@ const ManageUserPage = () => {
             </Button>
           )}
         </div>
-      </ActionBar>
-
-      <Row
-        gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
-        style={{ marginBottom: "20px" }}
-      >
-        <Col xs={24} sm={12} lg={10}>
-          <label>Filter by User Role</label>
-          <Select
-            onChange={handleRoleChange}
-            size={"large"}
-            options={roleOptionsFilter as SelectOptions[]}
-            value={selectRole}
-            style={{ width: "100%" }}
-            placeholder={"Select role"}
-          />
+        <Col span={24}>
+          <Row
+            gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}
+            style={{ marginBottom: "20px" }}
+          >
+            <Col xs={24} sm={12} lg={10}>
+              <label>Filter by User Role</label>
+              <Select
+                onChange={handleRoleChange}
+                size={"large"}
+                options={roleOptionsFilter as SelectOptions[]}
+                value={selectRole}
+                style={{ width: "100%" }}
+                placeholder={"Select role"}
+              />
+            </Col>
+          </Row>
         </Col>
-      </Row>
+      </ActionBar>
 
       <CommonTable
         loading={isLoading}
