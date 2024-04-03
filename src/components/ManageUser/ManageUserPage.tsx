@@ -71,7 +71,7 @@ const ManageUserPage = () => {
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
-        <Col xs={24} sm={12} lg={8}>
+        <Col xs={24} sm={12} lg={8} style={{ margin: "10px 0" }}>
           <Input
             size="large"
             value={searchTerm}
