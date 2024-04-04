@@ -78,7 +78,7 @@ const ManageUserPage = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Col>
-        <div>
+        <div style={{marginBottom: "10px"}}>
           <Link href={`/${role}/${routeName}/create-admin`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create Admin
