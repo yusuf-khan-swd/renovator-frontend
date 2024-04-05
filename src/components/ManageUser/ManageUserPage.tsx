@@ -73,28 +73,24 @@ const ManageUserPage = () => {
       />
       <ActionBar title="User List">
         <Col span={12} style={{ border: "1px solid blue" }}>
-          <Col span={24}>
-            <Col xs={24} sm={12} lg={8} style={{ margin: "10px 0" }}>
-              <Input
-                size="large"
-                value={searchTerm}
-                placeholder="Search"
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </Col>
+          <Col xs={24} sm={12} lg={8} style={{ margin: "10px 0" }}>
+            <Input
+              size="large"
+              value={searchTerm}
+              placeholder="Search"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </Col>
-          <Col span={24}>
-            <Col xs={24} sm={12} lg={10}>
-              <label>Filter by User Role</label>
-              <Select
-                onChange={handleRoleChange}
-                size={"large"}
-                options={roleOptionsFilter as SelectOptions[]}
-                value={selectRole}
-                style={{ width: "100%" }}
-                placeholder={"Select role"}
-              />
-            </Col>
+          <Col xs={24} sm={12} lg={10}>
+            <label>Filter by User Role</label>
+            <Select
+              onChange={handleRoleChange}
+              size={"large"}
+              options={roleOptionsFilter as SelectOptions[]}
+              value={selectRole}
+              style={{ width: "100%" }}
+              placeholder={"Select role"}
+            />
           </Col>
         </Col>
         <div style={{ marginBottom: "10px", border: "1px solid red" }}>
