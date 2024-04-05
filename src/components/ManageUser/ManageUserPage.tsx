@@ -73,7 +73,7 @@ const ManageUserPage = () => {
       />
       <ActionBar title="User List">
         <Col xs={24} sm={12} style={{ border: "1px solid blue" }}>
-          <Col xs={24} sm={22} style={{ margin: "10px 0" }}>
+          <Col xs={24} lg={20} style={{ margin: "10px 0" }}>
             <Input
               size="large"
               value={searchTerm}
@@ -81,7 +81,7 @@ const ManageUserPage = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </Col>
-          <Col xs={24} sm={22}>
+          <Col xs={24} lg={20}>
             <label>Filter by User Role</label>
             <Select
               onChange={handleRoleChange}
