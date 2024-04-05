@@ -72,11 +72,7 @@ const ManageUserPage = () => {
         items={[{ label: routeName, link: `/${role}/${routeName}` }]}
       />
       <ActionBar title="User List">
-        <Col
-          xs={24}
-          sm={12}
-          style={{ border: "1px solid blue", marginBottom: "10px" }}
-        >
+        <Col xs={24} sm={12} style={{ marginBottom: "10px" }}>
           <Col xs={24} lg={20} style={{ margin: "10px 0" }}>
             <Input
               size="large"
@@ -97,7 +93,7 @@ const ManageUserPage = () => {
             />
           </Col>
         </Col>
-        <div style={{ marginBottom: "10px", border: "1px solid red" }}>
+        <div style={{ marginBottom: "10px" }}>
           <Link href={`/${role}/${routeName}/create-admin`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create Admin
