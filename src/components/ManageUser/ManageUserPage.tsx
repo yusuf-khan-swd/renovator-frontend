@@ -73,7 +73,7 @@ const ManageUserPage = () => {
       />
       <ActionBar title="User List">
         <Col xs={24} sm={12} style={{ marginBottom: "10px" }}>
-          <Col xs={24} lg={20} style={{ margin: "10px 0" }}>
+          <Col xs={24} lg={20} style={{ marginBottom: "10px" }}>
             <Input
               size="large"
               value={searchTerm}
