@@ -1,4 +1,3 @@
-import ProfileBreadCrumb from "@/components/UserProfile/ProfileBreadCrumb";
 import UserProfile from "@/components/UserProfile/UserProfile";
 
 import { Metadata } from "next";
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 const ProfilePage = () => {
   return (
     <div>
-      <ProfileBreadCrumb />
       <UserProfile />
     </div>
   );
