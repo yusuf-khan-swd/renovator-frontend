@@ -51,7 +51,12 @@ const EditUserProfile = ({ id }: { id: string }) => {
 
   return (
     <div>
-      <CommonBreadCrumb items={[{ label: "profile", link: `/profile` }]} />
+      <CommonBreadCrumb
+        items={[
+          { label: "profile", link: `/profile` },
+          { label: "edit", link: `/profile/${id}` },
+        ]}
+      />
       {isLoading ? (
         <FullScreenLoading />
       ) : (
