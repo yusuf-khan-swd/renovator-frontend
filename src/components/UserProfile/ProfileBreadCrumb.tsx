@@ -19,6 +19,7 @@ const ProfileBreadCrumb = () => {
     {
       title: <Link href={`/${role}`}>{role}</Link>,
     },
+    { title: <Link href="/profile">profile</Link> },
   ];
 
   return <Breadcrumb items={breadCrumbItems} />;
