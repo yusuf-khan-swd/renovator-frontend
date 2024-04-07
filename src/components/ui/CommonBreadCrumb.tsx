@@ -42,7 +42,7 @@ const CommonBreadCrumb = ({
     );
   }
 
-  return <Breadcrumb items={breadCrumbItems}></Breadcrumb>;
+  return <Breadcrumb items={breadCrumbItems} />;
 };
 
 export default CommonBreadCrumb;
