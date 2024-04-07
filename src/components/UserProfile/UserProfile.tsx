@@ -8,6 +8,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row } from "antd";
 import Link from "next/link";
 import FormHeading from "../ui/FormHeading";
+import ProfileBreadCrumb from "./ProfileBreadCrumb";
 
 const UserProfile = () => {
   const { userId } = getUserInfo() as any;
@@ -23,6 +24,8 @@ const UserProfile = () => {
 
   return (
     <>
+      <ProfileBreadCrumb />
+
       {isLoading ? (
         <FullScreenLoading />
       ) : (
