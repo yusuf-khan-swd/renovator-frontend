@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 
 const ProfilePage = () => {
-  return (
-    <div>
-      <UserProfile />
-    </div>
-  );
+  return <UserProfile />;
 };
 
 export default ProfilePage;
