@@ -50,7 +50,7 @@ const EditUserProfile = ({ id }: { id: string }) => {
   const { role }: { role: string } = getUserInfo() as any;
 
   return (
-    <div>
+    <>
       <ProfileBreadCrumb userId={id} />
 
       {isLoading ? (
@@ -106,7 +106,7 @@ const EditUserProfile = ({ id }: { id: string }) => {
           </Card>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
