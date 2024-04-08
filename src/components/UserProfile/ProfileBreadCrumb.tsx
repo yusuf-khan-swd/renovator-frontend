@@ -5,7 +5,7 @@ import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
 
-const ProfileBreadCrumb = () => {
+const ProfileBreadCrumb = ({ userId }: { userId?: string }) => {
   const { role }: { role: string } = getUserInfo() as any;
 
   const breadCrumbItems = [
@@ -21,6 +21,11 @@ const ProfileBreadCrumb = () => {
     },
     { title: <Link href="/profile">profile</Link> },
   ];
+
+  if (userId)
+    breadCrumbItems.push({
+      title: <Link href={`/profile/${userId}`}>edit</Link>,
+    });
 
   return <Breadcrumb items={breadCrumbItems} />;
 };
