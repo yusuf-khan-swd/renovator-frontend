@@ -59,7 +59,7 @@ const EditUserProfile = ({ id }: { id: string }) => {
         ]}
       />
 
-      <ProfileBreadCrumb />
+      <ProfileBreadCrumb userId={id} />
 
       {isLoading ? (
         <FullScreenLoading />
