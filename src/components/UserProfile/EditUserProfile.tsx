@@ -6,7 +6,6 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
-import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import FormHeading from "@/components/ui/FormHeading";
 import {
   roleOptionsForAdmin,
@@ -52,13 +51,6 @@ const EditUserProfile = ({ id }: { id: string }) => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[
-          { label: "profile", link: `/profile` },
-          { label: "edit", link: `/profile/${id}` },
-        ]}
-      />
-
       <ProfileBreadCrumb userId={id} />
 
       {isLoading ? (
