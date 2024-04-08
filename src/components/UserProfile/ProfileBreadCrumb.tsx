@@ -24,7 +24,7 @@ const ProfileBreadCrumb = ({ userId }: { userId?: string }) => {
 
   if (userId)
     breadCrumbItems.push({
-      title: <Link href={`/profile/${userId}`}>edit</Link>,
+      title: <Link href={`/profile/edit/${userId}`}>edit</Link>,
     });
 
   return <Breadcrumb items={breadCrumbItems} />;
