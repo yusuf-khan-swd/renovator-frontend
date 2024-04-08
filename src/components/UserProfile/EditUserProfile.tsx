@@ -21,6 +21,7 @@ import {
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import ProfileBreadCrumb from "./ProfileBreadCrumb";
 
 const EditUserProfile = ({ id }: { id: string }) => {
   const { data, isLoading } = useProfileQuery(id);
@@ -57,6 +58,9 @@ const EditUserProfile = ({ id }: { id: string }) => {
           { label: "edit", link: `/profile/${id}` },
         ]}
       />
+
+      <ProfileBreadCrumb />
+
       {isLoading ? (
         <FullScreenLoading />
       ) : (
