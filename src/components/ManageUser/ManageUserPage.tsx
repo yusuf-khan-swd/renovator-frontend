@@ -66,9 +66,7 @@ const ManageUserPage = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: `/${routeName}` }]} />
       <ActionBar title="User List">
         <Col xs={24} sm={12} style={{ marginBottom: "10px" }}>
           <Col xs={24} lg={20} style={{ marginBottom: "10px" }}>
