@@ -33,7 +33,6 @@ const CommonBreadCrumb = ({
       ...items.map((item) => {
         return {
           title: item.link ? (
-            // TODO: concat role before item.link in link
             <Link href={`/${role}${item.link}`}>{item.label}</Link>
           ) : (
             <span>{item.label}</span>
