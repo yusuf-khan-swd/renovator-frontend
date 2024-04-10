@@ -168,9 +168,7 @@ const ManageCart = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: routeName }]} />
 
       <ActionBar title="Cart List">
         <Input
