@@ -63,8 +63,8 @@ const EditBooking = ({ id }: { id: string }) => {
     <div>
       <CommonBreadCrumb
         items={[
-          { label: routeName, link: `/${routeName}` },
-          { label: endRoute, link: `/${routeName}/${endRoute}/${id}` },
+          { label: routeName, link: `${routeName}` },
+          { label: endRoute, link: `${routeName}/${endRoute}/${id}` },
         ]}
       />
       {isBookingDataLoading ? (
