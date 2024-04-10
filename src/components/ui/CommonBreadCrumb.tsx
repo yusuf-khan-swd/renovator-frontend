@@ -35,7 +35,7 @@ const CommonBreadCrumb = ({
       ...items.map((item) => {
         return {
           title: item.link ? (
-            <Link href={`/${role}${item.link}`}>{item.label}</Link>
+            <Link href={`/${role}/${item.link}`}>{item.label}</Link>
           ) : (
             <span>{item.label}</span>
           ),
