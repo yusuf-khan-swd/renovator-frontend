@@ -371,9 +371,7 @@ const ManageBooking = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: routeName }]} />
 
       <ActionBar title="Booking List">
         <Input
