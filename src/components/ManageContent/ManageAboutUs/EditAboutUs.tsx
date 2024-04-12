@@ -11,7 +11,6 @@ import {
   useUpdateAboutUsMutation,
 } from "@/redux/api/content/aboutUsApi";
 import { contentSchema } from "@/schemas/content";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -40,7 +39,6 @@ const EditAboutUs = ({ id }: { id: string }) => {
     description: data?.description || "",
   };
 
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-about";
   const routeUrl = "manage-contents/about";
   const endRoute = "edit";
