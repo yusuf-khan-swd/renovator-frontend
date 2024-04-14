@@ -21,9 +21,9 @@ const CreateFaq = () => {
 
       if (result?.data) message.success("Faq added successfully");
       else message.error("Faq added failed");
-    } catch (err: any) {
-      console.error(err.message);
-      message.error(err.message);
+    } catch (error: any) {
+      console.error(error);
+      message.error(error?.message);
     }
   };
 
