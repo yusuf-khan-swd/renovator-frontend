@@ -49,8 +49,8 @@ const EditBlog = ({ id }: { id: string }) => {
     <div>
       <CommonBreadCrumb
         items={[
-          { label: routeLabel, link: `/${role}/${routeUrl}` },
-          { label: endRoute, link: `/${role}/${routeUrl}/${endRoute}/${id}` },
+          { label: routeLabel, link: routeUrl },
+          { label: endRoute, link: `${routeUrl}/${endRoute}/${id}` },
         ]}
       />
       {isLoading ? (
