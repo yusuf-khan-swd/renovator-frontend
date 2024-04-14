@@ -11,7 +11,6 @@ import {
   useUpdateBlogMutation,
 } from "@/redux/api/content/blogApi";
 import { contentSchema } from "@/schemas/content";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -40,7 +39,6 @@ const EditBlog = ({ id }: { id: string }) => {
     description: data?.description || "",
   };
 
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-blog";
   const routeUrl = "manage-contents/blog";
   const endRoute = "edit";
