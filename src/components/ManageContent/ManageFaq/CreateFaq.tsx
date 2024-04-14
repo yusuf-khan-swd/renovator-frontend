@@ -7,7 +7,6 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import FormHeading from "@/components/ui/FormHeading";
 import { useCreateFaqMutation } from "@/redux/api/content/faqApi";
 import { contentSchema } from "@/schemas/content";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -28,7 +27,6 @@ const CreateFaq = () => {
     }
   };
 
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-faq";
   const routeUrl = "manage-contents/faq";
   const endRoute = "create";
