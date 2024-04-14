@@ -37,8 +37,8 @@ const CreateFaq = () => {
     <div>
       <CommonBreadCrumb
         items={[
-          { label: routeLabel, link: `/${role}/${routeUrl}` },
-          { label: endRoute, link: `/${role}/${routeUrl}/${endRoute}` },
+          { label: routeLabel, link: routeUrl },
+          { label: endRoute, link: `${routeUrl}/${endRoute}` },
         ]}
       />
       <div style={{ margin: "24px 5px" }}>
