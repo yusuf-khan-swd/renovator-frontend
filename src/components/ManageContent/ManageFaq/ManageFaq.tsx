@@ -142,9 +142,7 @@ const ManageFaq = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeLabel, link: `/${role}/${routeUrl}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeLabel, link: routeUrl }]} />
 
       <ActionBar title="Faq List">
         <Input
