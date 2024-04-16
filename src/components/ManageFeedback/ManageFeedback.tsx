@@ -172,9 +172,7 @@ const ManageFeedback = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: routeName }]} />
 
       <ActionBar title="Feedback List">
         <Input
