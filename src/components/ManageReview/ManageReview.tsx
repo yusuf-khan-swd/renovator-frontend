@@ -209,9 +209,7 @@ const ManageReview = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[{ label: routeName, link: `/${role}/${routeName}` }]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: routeName }]} />
 
       <ActionBar title="Review List">
         <Input
