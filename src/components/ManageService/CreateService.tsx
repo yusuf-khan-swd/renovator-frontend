@@ -13,7 +13,6 @@ import { serviceCreateStatusOptions } from "@/constants/global";
 import { ENUM_SERVICE_STATUS } from "@/constants/serviceStatus";
 import { useCreateServiceMutation } from "@/redux/api/serviceApi";
 import { serviceSchema } from "@/schemas/service";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
@@ -38,7 +37,6 @@ const CreateService = () => {
     status: ENUM_SERVICE_STATUS.AVAILABLE,
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-services";
   const endRoute = "create";
 
