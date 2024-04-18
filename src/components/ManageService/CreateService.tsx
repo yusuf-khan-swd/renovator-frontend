@@ -46,8 +46,8 @@ const CreateService = () => {
     <div>
       <CommonBreadCrumb
         items={[
-          { label: routeName, link: `/${role}/${routeName}` },
-          { label: endRoute, link: `/${role}/${routeName}/${endRoute}` },
+          { label: routeName, link: routeName },
+          { label: endRoute, link: `${routeName}/${endRoute}` },
         ]}
       />
       <div style={{ margin: "24px 5px" }}>
