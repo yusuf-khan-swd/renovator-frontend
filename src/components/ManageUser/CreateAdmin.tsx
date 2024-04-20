@@ -2,10 +2,8 @@
 
 import AdminForm from "@/components/AdminForm/AdminForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
-import { getUserInfo } from "@/services/auth.service";
 
 const CreateAdmin = ({ pageRoute }: { pageRoute?: string }) => {
-  const { role } = getUserInfo() as any;
   const routeName = pageRoute || "manage-users";
   const endName = "create-admin";
 
