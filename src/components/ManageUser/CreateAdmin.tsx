@@ -13,14 +13,8 @@ const CreateAdmin = ({ pageRoute }: { pageRoute?: string }) => {
     <div>
       <CommonBreadCrumb
         items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-          {
-            label: endName,
-            link: `/${role}/${routeName}/${endName}`,
-          },
+          { label: routeName, link: routeName },
+          { label: endName, link: `${routeName}/${endName}` },
         ]}
       />
 
