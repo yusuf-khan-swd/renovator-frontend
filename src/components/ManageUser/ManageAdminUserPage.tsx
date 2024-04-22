@@ -51,14 +51,7 @@ const ManageAdminUserPage = () => {
 
   return (
     <div>
-      <CommonBreadCrumb
-        items={[
-          {
-            label: routeName,
-            link: `/${role}/${routeName}`,
-          },
-        ]}
-      />
+      <CommonBreadCrumb items={[{ label: routeName, link: routeName }]} />
       <ActionBar title="User List">
         <Col xs={24} sm={12} lg={8} style={{ margin: "10px 0" }}>
           <Input
