@@ -3,6 +3,8 @@
 import { getUserInfo } from "@/services/auth.service";
 import Link from "next/link";
 
+// TODO: Update every Dashboard next link with this DashboardLink component
+
 const DashboardLink = ({
   pageRoute,
   children,
