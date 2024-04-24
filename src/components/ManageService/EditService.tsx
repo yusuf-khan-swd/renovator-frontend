@@ -19,7 +19,6 @@ import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import DashboardLink from "../DashboardLink";
 
 const EditService = ({ id }: { id: string }) => {
@@ -124,11 +123,6 @@ const EditService = ({ id }: { id: string }) => {
                       View Service Info
                     </Button>
                   </DashboardLink>
-                  <Link href={`/${role}/${routeName}/details/${id}`}>
-                    <Button style={{ margin: "2px" }} type="default">
-                      View Service Info
-                    </Button>
-                  </Link>
                 </Col>
               </Row>
             </Form>
