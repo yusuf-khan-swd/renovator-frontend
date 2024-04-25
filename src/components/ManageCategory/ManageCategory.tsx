@@ -113,6 +113,15 @@ const ManageCategory = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
+            <DashboardLink pageRoute={`${routeName}/edit/${data?.id}`}>
+              <Button
+                style={{ margin: "2px" }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
