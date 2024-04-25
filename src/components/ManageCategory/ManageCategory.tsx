@@ -13,7 +13,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
@@ -122,15 +121,6 @@ const ManageCategory = () => {
                 <EditOutlined />
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{ margin: "2px" }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
