@@ -15,6 +15,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageCategory = () => {
@@ -174,6 +175,9 @@ const ManageCategory = () => {
           }}
         />
         <div>
+          <DashboardLink pageRoute={`${routeName}/create`}>
+            <Button type="primary">Create</Button>
+          </DashboardLink>
           <Link href={`/${role}/${routeName}/create`}>
             <Button type="primary">Create</Button>
           </Link>
