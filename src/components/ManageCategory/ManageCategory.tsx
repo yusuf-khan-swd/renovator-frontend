@@ -9,7 +9,6 @@ import {
   useDeleteCategoryMutation,
 } from "@/redux/api/categoryApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
@@ -18,7 +17,6 @@ import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageCategory = () => {
-  const { role } = getUserInfo() as any;
   const routeName = "manage-categories";
 
   const query: Record<string, any> = {};
