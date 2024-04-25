@@ -178,9 +178,6 @@ const ManageCategory = () => {
           <DashboardLink pageRoute={`${routeName}/create`}>
             <Button type="primary">Create</Button>
           </DashboardLink>
-          <Link href={`/${role}/${routeName}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
