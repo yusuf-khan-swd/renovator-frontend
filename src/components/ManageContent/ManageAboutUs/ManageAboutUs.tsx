@@ -18,7 +18,6 @@ import { useDebounced } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 
 const ManageAboutUs = () => {
@@ -167,9 +166,6 @@ const ManageAboutUs = () => {
             <Button type="primary">Create</Button>
           </DashboardLink>
 
-          <Link href={`/${role}/${routeUrl}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
