@@ -115,15 +115,7 @@ const ManageAboutUs = () => {
                 <EditOutlined />
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeUrl}/edit/${data?.id}`}>
-              <Button
-                style={{ margin: "2px" }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
+
             <ConfirmModal
               id={data?.id}
               handler={deleteHandler}
