@@ -21,7 +21,6 @@ import { IService } from "@/types";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
@@ -334,18 +333,6 @@ const ManageBooking = () => {
                 <EditOutlined />
               </Button>
             </DashboardLink>
-
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "2px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
 
             <ConfirmModal
               id={data?.id}
