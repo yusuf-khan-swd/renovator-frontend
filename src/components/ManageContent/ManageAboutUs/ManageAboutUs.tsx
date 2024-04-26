@@ -15,13 +15,11 @@ import {
   useGetAllAboutUsQuery,
 } from "@/redux/api/content/aboutUsApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
 const ManageAboutUs = () => {
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-about";
   const routeUrl = "manage-contents/about";
 
