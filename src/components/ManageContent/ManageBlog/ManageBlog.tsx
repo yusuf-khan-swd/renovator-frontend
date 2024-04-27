@@ -14,13 +14,11 @@ import {
   useDeleteBlogMutation,
 } from "@/redux/api/content/blogApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
 const ManageBlog = () => {
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-blog";
   const routeUrl = "manage-contents/blog";
 
