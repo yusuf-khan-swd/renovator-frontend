@@ -158,6 +158,9 @@ const ManageFaq = () => {
           }}
         />
         <div>
+          <DashboardLink pageRoute={`${routeUrl}/create`}>
+            <Button type="primary">Create</Button>
+          </DashboardLink>
           <Link href={`/${role}/${routeUrl}/create`}>
             <Button type="primary">Create</Button>
           </Link>
