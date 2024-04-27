@@ -10,14 +10,12 @@ import ConfirmModalTitle from "@/components/ui/ConfirmModalTitle";
 import getWordFromString from "@/helpers/getWordFromString";
 import { useDeleteFaqMutation, useFaqsQuery } from "@/redux/api/content/faqApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
 const ManageFaq = () => {
-  const { role } = getUserInfo() as any;
   const routeLabel = "manage-faq";
   const routeUrl = "manage-contents/faq";
 
