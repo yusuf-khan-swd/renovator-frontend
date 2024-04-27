@@ -3,6 +3,7 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 
+import DashboardLink from "@/components/DashboardLink";
 import ActionBar from "@/components/ui/ActionBar";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import ConfirmModalManageContentBody from "@/components/ui/ConfirmModalManageContentBody";
@@ -104,6 +105,15 @@ const ManageBlog = () => {
       render: function (data: any) {
         return (
           <>
+            <DashboardLink pageRoute={`${routeUrl}/edit/${data?.id}`}>
+              <Button
+                style={{ margin: "2px" }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EditOutlined />
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeUrl}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
