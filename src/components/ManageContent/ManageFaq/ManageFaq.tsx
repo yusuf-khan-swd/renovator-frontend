@@ -14,7 +14,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 
 const ManageFaq = () => {
@@ -161,9 +160,6 @@ const ManageFaq = () => {
           <DashboardLink pageRoute={`${routeUrl}/create`}>
             <Button type="primary">Create</Button>
           </DashboardLink>
-          <Link href={`/${role}/${routeUrl}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
