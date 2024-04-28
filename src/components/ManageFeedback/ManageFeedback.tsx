@@ -10,7 +10,6 @@ import {
   useFeedbacksQuery,
 } from "@/redux/api/feedbackApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
@@ -162,7 +161,6 @@ const ManageFeedback = () => {
     setSearchTerm("");
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
 
   return (
