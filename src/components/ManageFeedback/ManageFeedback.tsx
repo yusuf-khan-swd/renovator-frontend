@@ -94,7 +94,7 @@ const ManageFeedback = () => {
       width: 140,
       dataIndex: "email",
       render: function (email: any) {
-        return email;
+        return email?.length <= 17 ? email : email?.slice(0, 15) + "...";
       },
     },
     {
