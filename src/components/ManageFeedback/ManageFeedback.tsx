@@ -11,7 +11,7 @@ import {
 } from "@/redux/api/feedbackApi";
 import { useDebounced } from "@/redux/hooks";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input, message } from "antd";
+import { Button, Input, Tooltip, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
@@ -94,7 +94,13 @@ const ManageFeedback = () => {
       width: 140,
       dataIndex: "email",
       render: function (email: any) {
-        return email?.length <= 17 ? email : email?.slice(0, 15) + "...";
+        const ellipsisEmail =
+          email?.length <= 17 ? email : email?.slice(0, 15) + "...";
+        return (
+          <Tooltip title={email}>
+            <span>{ellipsisEmail}</span>
+          </Tooltip>
+        );
       },
     },
     {
