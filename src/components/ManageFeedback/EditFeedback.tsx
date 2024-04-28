@@ -17,7 +17,6 @@ import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
@@ -112,11 +111,6 @@ const EditFeedback = ({ id }: { id: string }) => {
                       View Feedback Info
                     </Button>
                   </DashboardLink>
-                  <Link href={`/${role}/${routeName}/view/${id}`}>
-                    <Button style={{ margin: "2px" }} type="default">
-                      View Feedback Info
-                    </Button>
-                  </Link>
                 </Col>
               </Row>
             </Form>
