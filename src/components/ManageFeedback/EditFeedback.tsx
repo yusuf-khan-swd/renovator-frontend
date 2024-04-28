@@ -14,7 +14,6 @@ import {
   useUpdateFeedbackMutation,
 } from "@/redux/api/feedbackApi";
 import { feedbackSchema } from "@/schemas/feedback";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
@@ -48,7 +47,6 @@ const EditFeedback = ({ id }: { id: string }) => {
     review: data?.review || "",
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-feedbacks";
   const endRoute = "edit";
 
