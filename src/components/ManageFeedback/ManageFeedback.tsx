@@ -16,6 +16,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useState } from "react";
+import DashboardLink from "../DashboardLink";
 import ConfirmModalFeedbackContent from "../ui/ConfirmModalFeedbackContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
@@ -113,6 +114,15 @@ const ManageFeedback = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
+            <DashboardLink pageRoute={`${routeName}/view/${data?.id}`}>
+              <Button
+                style={{ margin: "2px" }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EyeOutlined />
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeName}/view/${data?.id}`}>
               <Button
                 style={{
