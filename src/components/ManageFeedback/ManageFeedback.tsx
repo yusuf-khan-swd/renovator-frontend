@@ -97,7 +97,7 @@ const ManageFeedback = () => {
         const ellipsisEmail =
           email?.length <= 17 ? email : email?.slice(0, 15) + "...";
         return (
-          <Tooltip title={email}>
+          <Tooltip title={email.length > 17 ? email : ""}>
             <span>{ellipsisEmail}</span>
           </Tooltip>
         );
