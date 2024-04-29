@@ -12,7 +12,6 @@ import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { ratingOptions } from "@/constants/global";
 import { useReviewQuery, useUpdateReviewMutation } from "@/redux/api/reviewApi";
 import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
-import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
@@ -47,7 +46,6 @@ const EditReview = ({ id }: { id: string }) => {
     review: data?.review || "",
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-reviews";
   const endRoute = "edit";
 
