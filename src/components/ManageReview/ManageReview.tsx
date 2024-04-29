@@ -139,7 +139,7 @@ const ManageReview = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/view/${data?.id}`}>
               <Button
                 style={{
                   margin: "2px",
@@ -151,7 +151,7 @@ const ManageReview = () => {
               </Button>
             </Link>
 
-            <Link href={`/${role}/manage-reviews/edit/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "2px",
