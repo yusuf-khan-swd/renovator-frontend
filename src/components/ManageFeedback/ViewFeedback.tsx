@@ -14,7 +14,6 @@ import { feedbackSchema } from "@/schemas/feedback";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
@@ -104,9 +103,6 @@ const ViewFeedback = ({ id }: { id: string }) => {
                   <DashboardLink pageRoute={`${routeName}/edit/${id}`}>
                     <Button type="primary">Edit Feedback</Button>
                   </DashboardLink>
-                  <Link href={`/${role}/${routeName}/edit/${id}`}>
-                    <Button type="primary">Edit Feedback</Button>
-                  </Link>
                   <ConfirmModal
                     id={id}
                     handler={deleteHandler}
