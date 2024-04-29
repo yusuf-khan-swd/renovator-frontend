@@ -15,7 +15,6 @@ import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import DashboardLink from "../DashboardLink";
 
 const EditReview = ({ id }: { id: string }) => {
@@ -106,11 +105,6 @@ const EditReview = ({ id }: { id: string }) => {
                       View Review
                     </Button>
                   </DashboardLink>
-                  <Link href={`/${role}/manage-reviews/view/${data?.id}`}>
-                    <Button type="default" style={{ margin: "0 5px" }}>
-                      View Review
-                    </Button>
-                  </Link>
                 </Col>
               </Row>
             </Form>
