@@ -18,6 +18,7 @@ import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import DashboardLink from "../DashboardLink";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
@@ -139,6 +140,17 @@ const ManageReview = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
+            <DashboardLink pageRoute={`${routeName}/view/${data?.id}`}>
+              <Button
+                style={{
+                  margin: "2px",
+                }}
+                onClick={() => console.log(data)}
+                type="primary"
+              >
+                <EyeOutlined />
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeName}/view/${data?.id}`}>
               <Button
                 style={{
