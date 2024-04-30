@@ -13,7 +13,6 @@ import { reviewAndRatingSchema } from "@/schemas/reviewAndRating";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 
@@ -95,9 +94,7 @@ const ViewReview = ({ id }: { id: string }) => {
                   <DashboardLink pageRoute={`${routeName}/edit/${id}`}>
                     <Button type="primary">Edit Review</Button>
                   </DashboardLink>
-                  <Link href={`/${role}/${routeName}/edit/${id}`}>
-                    <Button type="primary">Edit Review</Button>
-                  </Link>
+
                   <ConfirmModal
                     id={id}
                     handler={deleteHandler}
