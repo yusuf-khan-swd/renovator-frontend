@@ -16,7 +16,6 @@ import { IService } from "@/types";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
@@ -163,18 +162,6 @@ const ManageReview = () => {
                 <EditOutlined />
               </Button>
             </DashboardLink>
-
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{
-                  margin: "2px",
-                }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
 
             <ConfirmModal
               id={data?.id}
