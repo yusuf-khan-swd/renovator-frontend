@@ -15,6 +15,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import DashboardLink from "../DashboardLink";
 
 const ViewReview = ({ id }: { id: string }) => {
   const { data, isLoading } = useReviewQuery(id);
@@ -91,6 +92,9 @@ const ViewReview = ({ id }: { id: string }) => {
               </Row>
               <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
                 <Col xs={24} xl={8} style={{ margin: "10px 0" }}>
+                  <DashboardLink pageRoute={`${routeName}/edit/${id}`}>
+                    <Button type="primary">Edit Review</Button>
+                  </DashboardLink>
                   <Link href={`/${role}/${routeName}/edit/${id}`}>
                     <Button type="primary">Edit Review</Button>
                   </Link>
