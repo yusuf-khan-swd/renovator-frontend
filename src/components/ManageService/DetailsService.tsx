@@ -16,7 +16,6 @@ import { serviceSchema } from "@/schemas/service";
 import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 
@@ -112,11 +111,6 @@ const DetailsService = ({ id }: { id: string }) => {
                       Edit Service Info
                     </Button>
                   </DashboardLink>
-                  <Link href={`/${role}/${routeName}/edit/${id}`}>
-                    <Button style={{ margin: "2px" }} type="primary">
-                      Edit Service Info
-                    </Button>
-                  </Link>
                   <ConfirmModal
                     id={id}
                     handler={deleteHandler}
