@@ -132,7 +132,7 @@ const ManageService = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <Link href={`/${role}/manage-services/details/${data?.id}`}>
+            <Link href={`/${role}/${routeName}/details/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
