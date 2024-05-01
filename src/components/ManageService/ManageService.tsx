@@ -142,15 +142,6 @@ const ManageService = () => {
                 <EyeOutlined />
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeName}/details/${data?.id}`}>
-              <Button
-                style={{ margin: "2px" }}
-                onClick={() => console.log(data)}
-                type="primary"
-              >
-                <EyeOutlined />
-              </Button>
-            </Link>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
