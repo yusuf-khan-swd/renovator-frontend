@@ -124,6 +124,7 @@ const ManageService = () => {
       width: 120,
       dataIndex: "createdAt",
       render: function (data: any) {
+        // TODO: can use Tooltip for showing full date or not
         return data && dayjs(data).format("MMM D, YYYY");
       },
       sorter: true,
