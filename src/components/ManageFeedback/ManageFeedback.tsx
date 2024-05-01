@@ -107,8 +107,8 @@ const ManageFeedback = () => {
       title: "CreatedAt",
       width: 170,
       dataIndex: "createdAt",
-      render: function (data: any) {
-        return data && dayjs(data).format("MMM D, YYYY hh:mm A");
+      render: function (date: any) {
+        return date && dayjs(date).format("MMM D, YYYY hh:mm A");
       },
       sorter: true,
     },
