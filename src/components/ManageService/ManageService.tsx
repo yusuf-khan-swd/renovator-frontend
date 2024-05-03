@@ -11,7 +11,6 @@ import {
   useServicesQuery,
 } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
-import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
@@ -20,7 +19,6 @@ import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
 const ManageService = () => {
-  const { role } = getUserInfo() as any;
   const routeName = "manage-services";
 
   const query: Record<string, any> = {};
