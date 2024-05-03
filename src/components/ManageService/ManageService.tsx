@@ -200,6 +200,9 @@ const ManageService = () => {
           }}
         />
         <div>
+          <DashboardLink pageRoute={`${routeName}/create`}>
+            <Button type="primary">Create</Button>
+          </DashboardLink>
           <Link href={`/${role}/${routeName}/create`}>
             <Button type="primary">Create</Button>
           </Link>
