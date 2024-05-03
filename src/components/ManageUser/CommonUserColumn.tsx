@@ -7,6 +7,7 @@ import { EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
 import Link from "next/link";
+import DashboardLink from "../DashboardLink";
 
 const CommonUserColumn = (pageRoute: string) => {
   const [deleteUser] = useDeleteUserMutation();
@@ -80,6 +81,15 @@ const CommonUserColumn = (pageRoute: string) => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
+            <DashboardLink pageRoute={`${routeName}/details/${data?.id}`}>
+              <Button
+                onClick={() => console.log(data)}
+                type="primary"
+                style={{ margin: "2px" }}
+              >
+                <EyeOutlined />
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeName}/details/${data?.id}`}>
               <Button
                 onClick={() => console.log(data)}
