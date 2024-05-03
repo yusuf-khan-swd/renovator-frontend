@@ -90,15 +90,6 @@ const CommonUserColumn = (pageRoute: string) => {
                 <EyeOutlined />
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeName}/details/${data?.id}`}>
-              <Button
-                onClick={() => console.log(data)}
-                type="primary"
-                style={{ margin: "2px" }}
-              >
-                <EyeOutlined />
-              </Button>
-            </Link>
             <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
