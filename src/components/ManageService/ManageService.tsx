@@ -15,7 +15,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, Tag, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
@@ -203,9 +202,6 @@ const ManageService = () => {
           <DashboardLink pageRoute={`${routeName}/create`}>
             <Button type="primary">Create</Button>
           </DashboardLink>
-          <Link href={`/${role}/${routeName}/create`}>
-            <Button type="primary">Create</Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               onClick={resetFilters}
