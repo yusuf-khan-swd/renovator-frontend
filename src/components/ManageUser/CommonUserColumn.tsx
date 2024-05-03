@@ -6,7 +6,6 @@ import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
-import Link from "next/link";
 import DashboardLink from "../DashboardLink";
 
 const CommonUserColumn = (pageRoute: string) => {
@@ -99,15 +98,6 @@ const CommonUserColumn = (pageRoute: string) => {
                 <EditOutlined />
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeName}/edit/${data?.id}`}>
-              <Button
-                style={{ margin: "2px" }}
-                onClick={() => console.log(data?.id)}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
 
             <ConfirmModal
               id={data?.id}
