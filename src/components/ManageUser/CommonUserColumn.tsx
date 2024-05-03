@@ -2,7 +2,6 @@
 
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import { useDeleteUserMutation } from "@/redux/api/userApi";
-import { getUserInfo } from "@/services/auth.service";
 import { EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, Tag, message } from "antd";
 import dayjs from "dayjs";
@@ -25,7 +24,6 @@ const CommonUserColumn = (pageRoute: string) => {
     }
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = pageRoute;
 
   const columns = [
