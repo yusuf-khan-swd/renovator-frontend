@@ -8,7 +8,6 @@ import ConfirmModal from "@/components/ui/ConfirmModal";
 import { useDeleteUserMutation, useUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { Button, Card, Col, Row, message } from "antd";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
@@ -72,23 +71,16 @@ const DetailsUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
                 <FormInput name="email" label="Email" readOnly />
               </Col>
             </Row>
-
             <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
               <Col xs={24} lg={14} xl={10} style={{ margin: "10px 0" }}>
                 <FormInput name="role" label="User Role" readOnly />
               </Col>
             </Row>
-
             <DashboardLink pageRoute={`${routeName}/edit/${id}`}>
               <Button style={{ margin: "2px" }} type="primary">
                 Edit User Info
               </Button>
             </DashboardLink>
-            <Link href={`/${role}/${routeName}/edit/${id}`}>
-              <Button style={{ margin: "2px" }} type="primary">
-                Edit User Info
-              </Button>
-            </Link>
             <ConfirmModal
               id={id}
               handler={deleteHandler}
