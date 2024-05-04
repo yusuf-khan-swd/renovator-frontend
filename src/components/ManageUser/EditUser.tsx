@@ -13,6 +13,7 @@ import { getUserInfo } from "@/services/auth.service";
 
 import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
+import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
 const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
@@ -89,6 +90,11 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
               Update
             </Button>
 
+            <DashboardLink pageRoute={`${routeName}/details/${id}`}>
+              <Button style={{ margin: "2px" }} type="default">
+                View User Info
+              </Button>
+            </DashboardLink>
             <Link href={`/${role}/${routeName}/details/${id}`}>
               <Button style={{ margin: "2px" }} type="default">
                 View User Info
