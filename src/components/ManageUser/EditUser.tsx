@@ -9,7 +9,6 @@ import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import { roleOptionsForAdmin } from "@/constants/global";
 import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
-import { getUserInfo } from "@/services/auth.service";
 
 import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
@@ -40,7 +39,6 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
     role: data?.role || "",
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = pageRoute || "manage-users";
   const endRoute = "edit";
 
