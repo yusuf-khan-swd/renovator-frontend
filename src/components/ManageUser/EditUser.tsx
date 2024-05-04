@@ -82,9 +82,7 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
 
             <Button
               htmlType="submit"
-              style={{
-                margin: "2px",
-              }}
+              style={{ margin: "2px" }}
               onClick={() => console.log(data)}
               type="primary"
             >
