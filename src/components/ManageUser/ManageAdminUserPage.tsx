@@ -7,7 +7,6 @@ import { useAdminUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input } from "antd";
-import Link from "next/link";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import CommonUserColumn from "./CommonUserColumn";
@@ -73,11 +72,6 @@ const ManageAdminUserPage = () => {
               Create User
             </Button>
           </DashboardLink>
-          <Link href={`/${role}/${routeName}/create-user`}>
-            <Button type="primary" style={{ margin: "2px" }}>
-              Create User
-            </Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               style={{ margin: "2px" }}
