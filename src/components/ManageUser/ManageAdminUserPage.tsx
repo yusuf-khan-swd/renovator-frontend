@@ -68,6 +68,11 @@ const ManageAdminUserPage = () => {
               Create Admin
             </Button>
           </DashboardLink>
+          <DashboardLink pageRoute={`${routeName}/create-user`}>
+            <Button type="primary" style={{ margin: "2px" }}>
+              Create User
+            </Button>
+          </DashboardLink>
           <Link href={`/${role}/${routeName}/create-user`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create User
