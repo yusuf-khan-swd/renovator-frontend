@@ -4,7 +4,6 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import { useAdminUsersQuery } from "@/redux/api/userApi";
-import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input } from "antd";
 import { useState } from "react";
@@ -46,7 +45,6 @@ const ManageAdminUserPage = () => {
     setSearchTerm("");
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-admins";
 
   return (
