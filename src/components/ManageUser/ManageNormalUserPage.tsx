@@ -63,6 +63,7 @@ const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
           />
         </Col>
         <div>
+          {/* TODO: Remove this role check create admin button show */}
           {role === ENUM_USER_ROLE.SUPER_ADMIN && (
             <DashboardLink pageRoute={`${routeName}/create-admin`}>
               <Button type="primary" style={{ margin: "2px" }}>
