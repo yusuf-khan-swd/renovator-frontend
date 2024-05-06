@@ -10,6 +10,7 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input } from "antd";
 import Link from "next/link";
 import { useState } from "react";
+import DashboardLink from "../DashboardLink";
 import CommonUserColumn from "./CommonUserColumn";
 
 const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
@@ -65,6 +66,11 @@ const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
         <div>
           {role === ENUM_USER_ROLE.SUPER_ADMIN && (
             <>
+              <DashboardLink pageRoute={`${routeName}/create-admin`}>
+                <Button type="primary" style={{ margin: "2px" }}>
+                  Create Admin
+                </Button>
+              </DashboardLink>
               <Link href={`/${role}/${routeName}/create-admin`}>
                 <Button type="primary" style={{ margin: "2px" }}>
                   Create Admin
