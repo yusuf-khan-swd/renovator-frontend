@@ -65,13 +65,11 @@ const ManageNormalUserPage = ({ pageRoute }: { pageRoute?: string }) => {
         </Col>
         <div>
           {role === ENUM_USER_ROLE.SUPER_ADMIN && (
-            <>
-              <DashboardLink pageRoute={`${routeName}/create-admin`}>
-                <Button type="primary" style={{ margin: "2px" }}>
-                  Create Admin
-                </Button>
-              </DashboardLink>
-            </>
+            <DashboardLink pageRoute={`${routeName}/create-admin`}>
+              <Button type="primary" style={{ margin: "2px" }}>
+                Create Admin
+              </Button>
+            </DashboardLink>
           )}
           <Link href={`/${role}/${routeName}/create-user`}>
             <Button type="primary" style={{ margin: "2px" }}>
