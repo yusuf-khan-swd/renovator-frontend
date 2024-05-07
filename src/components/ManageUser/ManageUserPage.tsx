@@ -4,7 +4,6 @@ import ActionBar from "@/components/ui/ActionBar";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 import CommonTable from "@/components/ui/CommonTable";
 import { useUsersQuery } from "@/redux/api/userApi";
-import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Select } from "antd";
 import { useState } from "react";
@@ -63,7 +62,6 @@ const ManageUserPage = () => {
     setSelectRole(undefined);
   };
 
-  const { role } = getUserInfo() as any;
   const routeName = "manage-users";
 
   return (
