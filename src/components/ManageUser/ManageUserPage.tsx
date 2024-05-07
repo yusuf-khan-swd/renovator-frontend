@@ -7,7 +7,6 @@ import { useUsersQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/services/auth.service";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Select } from "antd";
-import Link from "next/link";
 import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import { SelectOptions } from "../Forms/FormSelectField";
@@ -103,11 +102,6 @@ const ManageUserPage = () => {
               Create User
             </Button>
           </DashboardLink>
-          <Link href={`/${role}/${routeName}/create-user`}>
-            <Button type="primary" style={{ margin: "2px" }}>
-              Create User
-            </Button>
-          </Link>
           {(!!sortBy || !!sortOrder || !!searchTerm || !!selectRole) && (
             <Button
               style={{ margin: "2px" }}
