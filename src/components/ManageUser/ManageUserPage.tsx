@@ -18,6 +18,8 @@ const roleOptionsFilter = [
   { label: "ADMIN", value: "admin" },
 ];
 
+// ManageUserPage Component is for super_admin
+
 const ManageUserPage = () => {
   const query: Record<string, any> = {};
 
