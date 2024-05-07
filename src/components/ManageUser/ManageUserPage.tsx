@@ -9,6 +9,7 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Select } from "antd";
 import Link from "next/link";
 import { useState } from "react";
+import DashboardLink from "../DashboardLink";
 import { SelectOptions } from "../Forms/FormSelectField";
 import CommonUserColumn from "./CommonUserColumn";
 
@@ -92,6 +93,11 @@ const ManageUserPage = () => {
           </Col>
         </Col>
         <div style={{ marginBottom: "10px" }}>
+          <DashboardLink pageRoute={`${routeName}/create-admin`}>
+            <Button type="primary" style={{ margin: "2px" }}>
+              Create Admin
+            </Button>
+          </DashboardLink>
           <Link href={`/${role}/${routeName}/create-admin`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create Admin
