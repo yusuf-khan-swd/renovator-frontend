@@ -2,14 +2,14 @@ import { Breadcrumb } from "antd";
 import { BreadCrumbHomeLink, BreadCrumbRoleLink } from "../BreadCrumbLinks";
 import DashboardLink from "../DashboardLink";
 
-const CommonBreadCrumb = ({
-  items,
-}: {
+interface CommonBreadCrumbProps {
   items?: {
     label: string;
     link: string;
   }[];
-}) => {
+}
+
+const CommonBreadCrumb = ({ items }: CommonBreadCrumbProps) => {
   const breadCrumbItems = [
     {
       title: <BreadCrumbHomeLink />,
