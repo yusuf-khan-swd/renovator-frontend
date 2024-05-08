@@ -1,6 +1,3 @@
-"use client";
-
-import { getUserInfo } from "@/services/auth.service";
 import { Breadcrumb } from "antd";
 import { BreadCrumbHomeLink, BreadCrumbRoleLink } from "../BreadCrumbLinks";
 import DashboardLink from "../DashboardLink";
@@ -13,8 +10,6 @@ const CommonBreadCrumb = ({
     link: string;
   }[];
 }) => {
-  const { role }: { role: string } = getUserInfo() as any;
-
   const breadCrumbItems = [
     {
       title: <BreadCrumbHomeLink />,
