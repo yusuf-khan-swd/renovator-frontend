@@ -26,10 +26,7 @@ const CommonBreadCrumb = ({
       ),
     },
     {
-      title: <Link href={`/${role}`}>{role}</Link>,
-    },
-    {
-      title: <BreadCrumbLink></BreadCrumbLink>,
+      title: <BreadCrumbLink />,
     },
   ];
 
