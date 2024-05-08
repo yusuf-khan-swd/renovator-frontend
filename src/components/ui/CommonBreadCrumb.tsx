@@ -4,6 +4,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
+import DashboardLink from "../DashboardLink";
 
 const CommonBreadCrumb = ({
   items,
@@ -33,7 +34,9 @@ const CommonBreadCrumb = ({
       ...items.map((item) => {
         return {
           title: item.link ? (
-            <Link href={`/${role}/${item.link}`}>{item.label}</Link>
+            <DashboardLink pageRoute={`${item.link}`}>
+              {item.label}
+            </DashboardLink>
           ) : (
             <span>{item.label}</span>
           ),
