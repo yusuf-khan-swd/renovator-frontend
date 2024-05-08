@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 
 const SuperAdminPage = () => {
-  return (
-    <div>
-      <UserProfile />
-    </div>
-  );
+  return <UserProfile />;
 };
 
 export default SuperAdminPage;
