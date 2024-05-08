@@ -2,7 +2,7 @@
 
 import { getUserInfo } from "@/services/auth.service";
 import { Breadcrumb } from "antd";
-import { BreadCrumbHomeLink, BreadCrumbLink } from "../BreadCrumbLinks";
+import { BreadCrumbHomeLink, BreadCrumbRoleLink } from "../BreadCrumbLinks";
 import DashboardLink from "../DashboardLink";
 
 const CommonBreadCrumb = ({
@@ -20,7 +20,7 @@ const CommonBreadCrumb = ({
       title: <BreadCrumbHomeLink />,
     },
     {
-      title: <BreadCrumbLink />,
+      title: <BreadCrumbRoleLink />,
     },
   ];
 
