@@ -4,6 +4,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
+import BreadCrumbLink from "../BreadcrumbLink";
 import DashboardLink from "../DashboardLink";
 
 const CommonBreadCrumb = ({
@@ -26,6 +27,9 @@ const CommonBreadCrumb = ({
     },
     {
       title: <Link href={`/${role}`}>{role}</Link>,
+    },
+    {
+      title: <BreadCrumbLink></BreadCrumbLink>,
     },
   ];
 
