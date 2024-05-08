@@ -4,11 +4,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
-export const BreadCrumbLink = ({
-  children,
-}: {
-  children?: React.ReactNode;
-}) => {
+export const BreadCrumbLink = () => {
   const { role } = getUserInfo() as any;
 
   return <Link href={`/${role}`}>{role}</Link>;
