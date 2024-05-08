@@ -1,10 +1,8 @@
 "use client";
 
 import { getUserInfo } from "@/services/auth.service";
-import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
-import Link from "next/link";
-import { BreadCrumbLink } from "../BreadCrumbLinks";
+import { BreadCrumbHomeLink, BreadCrumbLink } from "../BreadCrumbLinks";
 import DashboardLink from "../DashboardLink";
 
 const CommonBreadCrumb = ({
@@ -19,11 +17,7 @@ const CommonBreadCrumb = ({
 
   const breadCrumbItems = [
     {
-      title: (
-        <Link href="/">
-          <HomeOutlined />
-        </Link>
-      ),
+      title: <BreadCrumbHomeLink />,
     },
     {
       title: <BreadCrumbLink />,
