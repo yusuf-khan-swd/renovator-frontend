@@ -4,7 +4,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
-import BreadCrumbLink from "../BreadcrumbLink";
+import BreadCrumbLink from "../BreadCrumbLink";
 import DashboardLink from "../DashboardLink";
 
 const CommonBreadCrumb = ({
