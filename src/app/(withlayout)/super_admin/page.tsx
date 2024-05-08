@@ -1,5 +1,4 @@
 import UserProfile from "@/components/UserProfile/UserProfile";
-import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 import { Metadata } from "next";
 
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 const SuperAdminPage = () => {
   return (
     <div>
-      <CommonBreadCrumb />
       <UserProfile />
     </div>
   );
