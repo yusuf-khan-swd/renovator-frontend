@@ -1,13 +1,9 @@
-"use client";
-
-import { getUserInfo } from "@/services/auth.service";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
+import { ProfileBreadCrumbRoleLink } from "./ProfileBreadCrumbLinks";
 
 const ProfileBreadCrumb = ({ userId }: { userId?: string }) => {
-  const { role }: { role: string } = getUserInfo() as any;
-
   const breadCrumbItems = [
     {
       title: (
@@ -17,7 +13,7 @@ const ProfileBreadCrumb = ({ userId }: { userId?: string }) => {
       ),
     },
     {
-      title: <Link href={`/${role}`}>{role}</Link>,
+      title: <ProfileBreadCrumbRoleLink />,
     },
     { title: <Link href="/profile">profile</Link> },
   ];
