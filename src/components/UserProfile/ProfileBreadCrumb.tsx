@@ -1,21 +1,20 @@
-import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import Link from "next/link";
-import { ProfileBreadCrumbRoleLink } from "./ProfileBreadCrumbLinks";
+import {
+  ProfileBreadCrumbHomeLink,
+  ProfileBreadCrumbProfileLink,
+  ProfileBreadCrumbRoleLink,
+} from "./ProfileBreadCrumbLinks";
 
 const ProfileBreadCrumb = ({ userId }: { userId?: string }) => {
   const breadCrumbItems = [
     {
-      title: (
-        <Link href="/">
-          <HomeOutlined />
-        </Link>
-      ),
+      title: <ProfileBreadCrumbHomeLink />,
     },
     {
       title: <ProfileBreadCrumbRoleLink />,
     },
-    { title: <Link href="/profile">profile</Link> },
+    { title: <ProfileBreadCrumbProfileLink /> },
   ];
 
   if (userId)
