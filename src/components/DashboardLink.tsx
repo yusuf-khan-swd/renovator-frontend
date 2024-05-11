@@ -14,9 +14,11 @@ const DashboardLink = ({
 }) => {
   const { role } = getUserInfo() as any;
   const otherRoute = pageRoute ? `/${pageRoute}` : "";
-  const otherRoute2 = pageRoute && `/${pageRoute}`;
+  const otherRoute2 = "";
 
-  return <Link href={`/${role}${otherRoute2}`}>{children}</Link>;
+  return (
+    <Link href={`/${role}${pageRoute && `/${pageRoute}`}`}>{children}</Link>
+  );
 };
 
 export default DashboardLink;
