@@ -1,5 +1,8 @@
 import { Breadcrumb } from "antd";
-import { BreadCrumbHomeLink, BreadCrumbRoleLink } from "../BreadCrumbLinks";
+import {
+  BreadCrumbHomeLink,
+  BreadCrumbRoleLink,
+} from "../CommonBreadCrumbLinks";
 import DashboardLink from "../DashboardLink";
 
 interface CommonBreadCrumbProps {
