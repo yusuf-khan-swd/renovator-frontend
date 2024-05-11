@@ -16,7 +16,7 @@ const DashboardLink = ({
   const otherRoute = pageRoute ? `/${pageRoute}` : "";
   const otherRoute2 = pageRoute && `/${pageRoute}`;
 
-  return <Link href={`/${role}${otherRoute}`}>{children}</Link>;
+  return <Link href={`/${role}${otherRoute2}`}>{children}</Link>;
 };
 
 export default DashboardLink;
