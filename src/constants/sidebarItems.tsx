@@ -10,6 +10,7 @@ import {
   UsergroupAddOutlined,
 } from "@ant-design/icons";
 
+import DashboardLink from "@/components/DashboardLink";
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import { ENUM_USER_ROLE } from "./role";
@@ -17,7 +18,7 @@ import { ENUM_USER_ROLE } from "./role";
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
     {
-      label: <Link href={`/${role}`}>Profile</Link>,
+      label: <DashboardLink>Profile</DashboardLink>,
       key: "profile",
       icon: <UserOutlined />,
     },
