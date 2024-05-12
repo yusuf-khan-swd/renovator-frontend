@@ -27,7 +27,7 @@ export const sidebarItems = (role: string) => {
   const userSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
     {
-      label: <Link href={`/${role}/manage-cart`}>Manage Cart</Link>,
+      label: <DashboardLink pageRoute="manage-cart">Manage Cart</DashboardLink>,
       icon: <ShoppingCartOutlined />,
       key: `/${role}/manage-cart`,
     },
