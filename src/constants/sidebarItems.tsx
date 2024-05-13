@@ -63,7 +63,11 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
     {
-      label: <Link href={`/${role}/manage-categories`}>Manage Categories</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-categories">
+          Manage Categories
+        </DashboardLink>
+      ),
       icon: <ControlOutlined />,
       key: `/${role}/manage-categories`,
     },
