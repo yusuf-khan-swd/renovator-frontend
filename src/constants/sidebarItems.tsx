@@ -72,7 +72,11 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-categories`,
     },
     {
-      label: <Link href={`/${role}/manage-services`}>Manage Services</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-services">
+          Manage Services
+        </DashboardLink>
+      ),
       icon: <ContainerOutlined />,
       key: `/${role}/manage-services`,
     },
