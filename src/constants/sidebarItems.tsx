@@ -81,7 +81,11 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-services`,
     },
     {
-      label: <Link href={`/${role}/manage-bookings`}>Manage Bookings</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-bookings">
+          Manage Bookings
+        </DashboardLink>
+      ),
       icon: <CheckSquareOutlined />,
       key: `/${role}/manage-bookings`,
     },
