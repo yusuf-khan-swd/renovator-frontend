@@ -138,7 +138,9 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
     {
-      label: <Link href={`/${role}/manage-admins`}>Manage Admins</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-admins">Manage Admins</DashboardLink>
+      ),
       icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-admins`,
     },
