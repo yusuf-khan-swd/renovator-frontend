@@ -97,7 +97,11 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-reviews`,
     },
     {
-      label: <Link href={`/${role}/manage-feedbacks`}>Manage Feedbacks</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-feedbacks">
+          Manage Feedbacks
+        </DashboardLink>
+      ),
       icon: <MailOutlined />,
       key: `/${role}/manage-feedbacks`,
     },
