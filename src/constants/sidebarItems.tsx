@@ -90,7 +90,9 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/manage-bookings`,
     },
     {
-      label: <Link href={`/${role}/manage-reviews`}>Manage Reviews</Link>,
+      label: (
+        <DashboardLink pageRoute="manage-reviews">Manage Reviews</DashboardLink>
+      ),
       icon: <FontSizeOutlined />,
       key: `/${role}/manage-reviews`,
     },
