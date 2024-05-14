@@ -123,7 +123,11 @@ export const sidebarItems = (role: string) => {
           key: `/${role}/faq`,
         },
         {
-          label: <Link href={`/${role}/manage-contents/about`}>About Us</Link>,
+          label: (
+            <DashboardLink pageRoute="manage-contents/about">
+              About Us
+            </DashboardLink>
+          ),
           key: `/${role}/about`,
         },
       ],
