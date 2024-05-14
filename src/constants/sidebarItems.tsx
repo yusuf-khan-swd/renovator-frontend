@@ -117,7 +117,9 @@ export const sidebarItems = (role: string) => {
           key: `/${role}/blog`,
         },
         {
-          label: <Link href={`/${role}/manage-contents/faq`}>FAQ</Link>,
+          label: (
+            <DashboardLink pageRoute="manage-contents/faq">FAQ</DashboardLink>
+          ),
           key: `/${role}/faq`,
         },
         {
