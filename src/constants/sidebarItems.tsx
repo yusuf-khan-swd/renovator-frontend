@@ -12,7 +12,6 @@ import {
 
 import DashboardLink from "@/components/DashboardLink";
 import type { MenuProps } from "antd";
-import Link from "next/link";
 import { ENUM_USER_ROLE } from "./role";
 
 export const sidebarItems = (role: string) => {
@@ -146,7 +145,9 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: (
-        <Link href={`/${role}/manage-normal-users`}>Manage Normal Users</Link>
+        <DashboardLink pageRoute="manage-normal-users">
+          Manage Normal Users
+        </DashboardLink>
       ),
       icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-normal-users`,
