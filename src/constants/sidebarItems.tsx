@@ -111,7 +111,9 @@ export const sidebarItems = (role: string) => {
       icon: <UnorderedListOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/manage-contents/blog`}>Blog</Link>,
+          label: (
+            <DashboardLink pageRoute="manage-contents/blog">Blog</DashboardLink>
+          ),
           key: `/${role}/blog`,
         },
         {
