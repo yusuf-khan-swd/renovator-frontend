@@ -99,7 +99,7 @@ const ManageFaq = () => {
       render: function (data: any) {
         return (
           <>
-            <DashboardLink pageRoute={`${routeUrl}/edit/${data?.id}`}>
+            <DashboardLink route={`${routeUrl}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
@@ -155,7 +155,7 @@ const ManageFaq = () => {
           }}
         />
         <div>
-          <DashboardLink pageRoute={`${routeUrl}/create`}>
+          <DashboardLink route={`${routeUrl}/create`}>
             <Button type="primary">Create</Button>
           </DashboardLink>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (

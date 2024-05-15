@@ -322,7 +322,7 @@ const ManageBooking = () => {
               }
             />
 
-            <DashboardLink pageRoute={`${routeName}/edit/${data?.id}`}>
+            <DashboardLink route={`${routeName}/edit/${data?.id}`}>
               <Button
                 style={{
                   margin: "2px",

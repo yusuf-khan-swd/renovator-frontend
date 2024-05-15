@@ -76,7 +76,7 @@ const DetailsUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
                 <FormInput name="role" label="User Role" readOnly />
               </Col>
             </Row>
-            <DashboardLink pageRoute={`${routeName}/edit/${id}`}>
+            <DashboardLink route={`${routeName}/edit/${id}`}>
               <Button style={{ margin: "2px" }} type="primary">
                 Edit User Info
               </Button>

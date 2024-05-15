@@ -90,12 +90,12 @@ const ManageUserPage = () => {
           </Col>
         </Col>
         <div style={{ marginBottom: "10px" }}>
-          <DashboardLink pageRoute={`${routeName}/create-admin`}>
+          <DashboardLink route={`${routeName}/create-admin`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create Admin
             </Button>
           </DashboardLink>
-          <DashboardLink pageRoute={`${routeName}/create-user`}>
+          <DashboardLink route={`${routeName}/create-user`}>
             <Button type="primary" style={{ margin: "2px" }}>
               Create User
             </Button>

@@ -27,9 +27,7 @@ const CommonBreadCrumb = ({ items }: CommonBreadCrumbProps) => {
       ...items.map((item) => {
         return {
           title: item.link ? (
-            <DashboardLink pageRoute={`${item.link}`}>
-              {item.label}
-            </DashboardLink>
+            <DashboardLink route={`${item.link}`}>{item.label}</DashboardLink>
           ) : (
             <span>{item.label}</span>
           ),

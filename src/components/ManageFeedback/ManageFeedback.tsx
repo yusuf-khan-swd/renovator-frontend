@@ -118,7 +118,7 @@ const ManageFeedback = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <DashboardLink pageRoute={`${routeName}/view/${data?.id}`}>
+            <DashboardLink route={`${routeName}/view/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
@@ -127,7 +127,7 @@ const ManageFeedback = () => {
                 <EyeOutlined />
               </Button>
             </DashboardLink>
-            <DashboardLink pageRoute={`${routeName}/edit/${data?.id}`}>
+            <DashboardLink route={`${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}

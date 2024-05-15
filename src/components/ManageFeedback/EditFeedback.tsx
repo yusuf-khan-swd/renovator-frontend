@@ -104,7 +104,7 @@ const EditFeedback = ({ id }: { id: string }) => {
                   <Button type="primary" htmlType="submit">
                     Update
                   </Button>
-                  <DashboardLink pageRoute={`${routeName}/view/${id}`}>
+                  <DashboardLink route={`${routeName}/view/${id}`}>
                     <Button style={{ margin: "2px" }} type="default">
                       View Feedback Info
                     </Button>

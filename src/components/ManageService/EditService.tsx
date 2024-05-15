@@ -118,7 +118,7 @@ const EditService = ({ id }: { id: string }) => {
                   >
                     Update
                   </Button>
-                  <DashboardLink pageRoute={`${routeName}/details/${id}`}>
+                  <DashboardLink route={`${routeName}/details/${id}`}>
                     <Button style={{ margin: "2px" }} type="default">
                       View Service Info
                     </Button>

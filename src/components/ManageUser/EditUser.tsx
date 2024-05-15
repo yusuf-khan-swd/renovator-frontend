@@ -87,7 +87,7 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
               Update
             </Button>
 
-            <DashboardLink pageRoute={`${routeName}/details/${id}`}>
+            <DashboardLink route={`${routeName}/details/${id}`}>
               <Button style={{ margin: "2px" }} type="default">
                 View User Info
               </Button>

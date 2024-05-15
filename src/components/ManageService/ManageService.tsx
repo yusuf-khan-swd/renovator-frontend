@@ -131,7 +131,7 @@ const ManageService = () => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <DashboardLink pageRoute={`${routeName}/details/${data?.id}`}>
+            <DashboardLink route={`${routeName}/details/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
@@ -140,7 +140,7 @@ const ManageService = () => {
                 <EyeOutlined />
               </Button>
             </DashboardLink>
-            <DashboardLink pageRoute={`${routeName}/edit/${data?.id}`}>
+            <DashboardLink route={`${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data)}
@@ -197,7 +197,7 @@ const ManageService = () => {
           }}
         />
         <div>
-          <DashboardLink pageRoute={`${routeName}/create`}>
+          <DashboardLink route={`${routeName}/create`}>
             <Button type="primary">Create</Button>
           </DashboardLink>
           {(!!sortBy || !!sortOrder || !!searchTerm) && (

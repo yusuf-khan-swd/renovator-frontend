@@ -98,7 +98,7 @@ const EditReview = ({ id }: { id: string }) => {
                   <Button type="primary" htmlType="submit">
                     Update Review
                   </Button>
-                  <DashboardLink pageRoute={`${routeName}/view/${data?.id}`}>
+                  <DashboardLink route={`${routeName}/view/${data?.id}`}>
                     <Button type="default" style={{ margin: "0 5px" }}>
                       View Review
                     </Button>

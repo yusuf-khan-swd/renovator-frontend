@@ -26,22 +26,20 @@ export const sidebarItems = (role: string) => {
   const userSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
     {
-      label: <DashboardLink pageRoute="manage-cart">Manage Cart</DashboardLink>,
+      label: <DashboardLink route="manage-cart">Manage Cart</DashboardLink>,
       icon: <ShoppingCartOutlined />,
       key: `/${role}/manage-cart`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-bookings">
-          Manage Bookings
-        </DashboardLink>
+        <DashboardLink route="manage-bookings">Manage Bookings</DashboardLink>
       ),
       icon: <CheckSquareOutlined />,
       key: `/${role}/manage-bookings`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-reviews">Manage Reviews</DashboardLink>
+        <DashboardLink route="manage-reviews">Manage Reviews</DashboardLink>
       ),
       icon: <FontSizeOutlined />,
       key: `/${role}/manage-reviews`,
@@ -50,9 +48,7 @@ export const sidebarItems = (role: string) => {
 
   const commonAdminSidebarItems: MenuProps["items"] = [
     {
-      label: (
-        <DashboardLink pageRoute="manage-users">Manage Users</DashboardLink>
-      ),
+      label: <DashboardLink route="manage-users">Manage Users</DashboardLink>,
       icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-users`,
     },
@@ -63,7 +59,7 @@ export const sidebarItems = (role: string) => {
     ...commonAdminSidebarItems,
     {
       label: (
-        <DashboardLink pageRoute="manage-categories">
+        <DashboardLink route="manage-categories">
           Manage Categories
         </DashboardLink>
       ),
@@ -72,34 +68,28 @@ export const sidebarItems = (role: string) => {
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-services">
-          Manage Services
-        </DashboardLink>
+        <DashboardLink route="manage-services">Manage Services</DashboardLink>
       ),
       icon: <ContainerOutlined />,
       key: `/${role}/manage-services`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-bookings">
-          Manage Bookings
-        </DashboardLink>
+        <DashboardLink route="manage-bookings">Manage Bookings</DashboardLink>
       ),
       icon: <CheckSquareOutlined />,
       key: `/${role}/manage-bookings`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-reviews">Manage Reviews</DashboardLink>
+        <DashboardLink route="manage-reviews">Manage Reviews</DashboardLink>
       ),
       icon: <FontSizeOutlined />,
       key: `/${role}/manage-reviews`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-feedbacks">
-          Manage Feedbacks
-        </DashboardLink>
+        <DashboardLink route="manage-feedbacks">Manage Feedbacks</DashboardLink>
       ),
       icon: <MailOutlined />,
       key: `/${role}/manage-feedbacks`,
@@ -111,19 +101,17 @@ export const sidebarItems = (role: string) => {
       children: [
         {
           label: (
-            <DashboardLink pageRoute="manage-contents/blog">Blog</DashboardLink>
+            <DashboardLink route="manage-contents/blog">Blog</DashboardLink>
           ),
           key: `/${role}/blog`,
         },
         {
-          label: (
-            <DashboardLink pageRoute="manage-contents/faq">FAQ</DashboardLink>
-          ),
+          label: <DashboardLink route="manage-contents/faq">FAQ</DashboardLink>,
           key: `/${role}/faq`,
         },
         {
           label: (
-            <DashboardLink pageRoute="manage-contents/about">
+            <DashboardLink route="manage-contents/about">
               About Us
             </DashboardLink>
           ),
@@ -137,15 +125,13 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
     {
-      label: (
-        <DashboardLink pageRoute="manage-admins">Manage Admins</DashboardLink>
-      ),
+      label: <DashboardLink route="manage-admins">Manage Admins</DashboardLink>,
       icon: <UsergroupAddOutlined />,
       key: `/${role}/manage-admins`,
     },
     {
       label: (
-        <DashboardLink pageRoute="manage-normal-users">
+        <DashboardLink route="manage-normal-users">
           Manage Normal Users
         </DashboardLink>
       ),

@@ -78,7 +78,7 @@ const CommonUserColumn = (pageRoute: string) => {
       render: function (data: any) {
         return (
           <div style={{ display: "flex" }}>
-            <DashboardLink pageRoute={`${routeName}/details/${data?.id}`}>
+            <DashboardLink route={`${routeName}/details/${data?.id}`}>
               <Button
                 onClick={() => console.log(data)}
                 type="primary"
@@ -87,7 +87,7 @@ const CommonUserColumn = (pageRoute: string) => {
                 <EyeOutlined />
               </Button>
             </DashboardLink>
-            <DashboardLink pageRoute={`${routeName}/edit/${data?.id}`}>
+            <DashboardLink route={`${routeName}/edit/${data?.id}`}>
               <Button
                 style={{ margin: "2px" }}
                 onClick={() => console.log(data?.id)}
