@@ -4,14 +4,14 @@ import { getUserInfo } from "@/services/auth.service";
 import Link from "next/link";
 
 const DashboardLink = ({
-  pageRoute,
+  route,
   children,
 }: {
-  pageRoute?: string;
+  route?: string;
   children: React.ReactNode;
 }) => {
   const { role } = getUserInfo() as any;
-  const otherRoute = pageRoute ? `/${pageRoute}` : "";
+  const otherRoute = route ? `/${route}` : "";
 
   return <Link href={`/${role}${otherRoute}`}>{children}</Link>;
 };
