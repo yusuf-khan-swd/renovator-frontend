@@ -11,9 +11,9 @@ const DashboardLink = ({
   children: React.ReactNode;
 }) => {
   const { role } = getUserInfo() as any;
-  const otherRoute = route ? `/${route}` : "";
+  const pageRoute = route ? `/${route}` : "";
 
-  return <Link href={`/${role}${otherRoute}`}>{children}</Link>;
+  return <Link href={`/${role}${pageRoute}`}>{children}</Link>;
 };
 
 export default DashboardLink;
