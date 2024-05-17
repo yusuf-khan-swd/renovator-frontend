@@ -215,7 +215,7 @@ const ServicePage = () => {
           <Row>
             <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
               <Input
-                type="text"
+                type="number"
                 size="large"
                 placeholder="Maximum price"
                 value={maxPrice}
@@ -228,7 +228,7 @@ const ServicePage = () => {
             </Col>
             <Col xs={24} md={8} style={{ margin: "10px 0" }}>
               <Input
-                type="text"
+                type="number"
                 size="large"
                 placeholder="Minimum Price"
                 value={minPrice}
