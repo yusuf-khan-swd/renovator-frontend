@@ -213,19 +213,6 @@ const ServicePage = () => {
         {/* Maximum and Minimum price Input field   */}
         <div>
           <Row>
-            <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
-              <Input
-                type="number"
-                size="large"
-                placeholder="Maximum price"
-                value={maxPrice}
-                onChange={(e) => {
-                  setMaxPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
             <Col xs={24} md={8} style={{ margin: "10px 0" }}>
               <Input
                 type="number"
@@ -234,6 +221,19 @@ const ServicePage = () => {
                 value={minPrice}
                 onChange={(e) => {
                   setMinPrice(e.target.value);
+                  setSearchTerm("");
+                  setCategoryId("all");
+                }}
+              />
+            </Col>
+            <Col xs={24} md={8} style={{ margin: "10px 10px 10px 0" }}>
+              <Input
+                type="number"
+                size="large"
+                placeholder="Maximum price"
+                value={maxPrice}
+                onChange={(e) => {
+                  setMaxPrice(e.target.value);
                   setSearchTerm("");
                   setCategoryId("all");
                 }}
