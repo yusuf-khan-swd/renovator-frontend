@@ -1,0 +1,160 @@
+
+
+in service page for make min and max input field to number input field 
+
+fix what should use Details User or View User for route name and file name
+
+continues - In Table Column Use Tooltip for ellipsis email or other things. From ManageFeedback User Email
+search by: email?.length or .slice(0 or ...
+Code->
+        const ellipsisEmail =
+          email?.length <= 17 ? email : email?.slice(0, 15) + "...";
+        return (
+          <Tooltip title={email.length > 17 ? email : ""}>
+            <span>{ellipsisEmail}</span>
+          </Tooltip>
+
+
+Done - continues - Update every Dashboard component next link that have /role in it with the DashboardLink component. 
+Create a separate DashbaordLink component for dashboard next Link. Set default route /role
+Search by: href={`/${role}
+
+Update every search input field style in manage section. update style like in ManageUser
+
+continues - Rename every component and suffix with Page, in the component folder and in page section remove Page suffix
+in components folder for all of the manage section rename component with Page.
+Like from Service to ServicePage and in page layout rename to ServicePage to Service
+
+Create separate column components for every table section in dashboard.
+
+create a CommonColumn component for ManageAboutUs, ManageFaq, ManageBlog
+
+In createUser and createAdmin before creating check is the email already register. If email is register then don't create entry in database send error message. If not then create new user and admin database. Use loginUser function's isUserExist functionality
+
+Done - continues - In CommonBreadCrumb component Concat role in link and when CommonBreadCrumb component use pass the route name only in link and update every component.
+Conflict with /profile route it did not have /role in link. to solve it need to create separate breadcrumb component for profile 
+Search by: link: `/${role}
+
+Make password hash
+
+---------------------
+28 Mar 2024 create Renovator Project in TopTracker. Now Renovator have dedicate TopTracker Project to handle it's log. Separate it log from PH Level 2 TopTracker Project
+
+Done - Create a CommonUserColumn name component to handle reusable user table columns. 
+For CommonManageUserTable only return columns not with CommonTable component. Because there is manay useState that needed to pass to CommonManageUserTable if want to make it reusable but we can skip that and only pass data for columns. Only need reusable column for all the manage user pages
+We call CommonTable component to page component but get columns from CommonManageUserTable as CommonManageUserColumn 
+
+Done - in admin dashboard and super_admin dashboard if use ManageNormalUsers component then in the server side user service in getAllUsers function remove the checking of role admin and and only allow super_admin to access the getAllUsers route
+
+Done - fix in manage-users component search input field, action button and role filter select field styles and responsive
+
+Done - Add filter by role in super_admin manage-users. User Role select filter functionality in ManageUsers for super_admin
+We can also show super_admin user info
+
+Done - add a CommonManageUserTable component to show all the user table data. instead we create CommonUserColumn component for only columns
+
+Done - Add manage-admins and manage-normal-users section in super_admin like manage-users section
+
+Done - Maybe call the getAllNormalUsers route to manage-users of admin dashboard.
+And change getAllUsers route to handle show all the users with select role field or all the user for super_admin
+
+Done - Fix sidebar scroll issue and collapsed arrow icon in dashboard
+[solved] to remove collapsed arrow icon pass trigger value null 
+
+Done - Profile page problem. When logout from super_admin profile page and login as user to profile after redirect from login page the super_admin info is showing in /user /profile and /prifle/edit routes. After reloads then it is not showing super_admin info showing user info.
+Solve it by
+1. not redirect at all
+2. redirect to home page not profile page
+3. Problem is after redirect to profile page api slice for profile is not call so api is not called after redirected. If we use getSingleUser route with id from getUserInfo() then it perfectly work
+4. in server for route add dynmaic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
+5. For EditProfilePage pass id from id route params to EditProfilePage as props
+[Solved] - in server for route add dynmaic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
+
+
+Done - After user click a menu item close the drawer. 
+[Not Work] By clicking menu item close the drawer after 600 millisecond. And it not working because of nested item in dashboard like Manage Contents, and Profile. If we remove the nested item instead use border to determine section of the content like youtube it might work.
+[Solved] - Add onClick event listner to ant Menu component. 
+
+Done - change user, admin and super_admin email.
+
+In Feedback in home page add a image or text to side of the form for large device and remove it for small device
+
+Add Most booked services functionality
+
+Done - in details or view page of deleteHandler, move route push inside if block.
+if result?.data then push the route
+router.push(`/${role}/${routeName}`);
+
+Use async modal for confirm delete.
+
+Show all service in service page
+There is less then 10 service in the project need more service
+
+Add backend for searching and filtering in every DashBoard table section Search
+
+Done - In dashboard Hide sidebar for smaller device and Show drawer for smaller device.
+
+Add service for all the category 
+Add more service for all of the categories
+Add more review to service from ChatGPT or Gemini
+
+
+
+Done - Build and Deployed to vercel
+
+Done - CreateUser and CreateAdmin - use Col instead of div 
+
+Done - Manage Users - Create separate DetailsUser or viewUser and Edituser componentss. Use DetailsUser and EditUser component in admin and super_admin.
+Update EditUser and ViewUser form inputs in admin and super_admin.
+
+Done - Manage Feedback - Update ManageFeedback, EditFeedback and DetailsFeedback 
+
+Done - Manage Reviews - create separate EditReview and ViewReview components. Update EditReview and ViewReview form inputs in user and admin.
+
+Done - continues - Breadcrumb needs to be updated. In the edit, and view components of all pages. Because there is no specific edit or view page, there is only a manage page or specific id with the edit page. 
+There are two solutions to that
+ 1. Add id after endRoute - it is more work or not needed because is user is on that page
+ 2. Remove the endRoute breadcrumb - less code
+[[ label: endRoute ]]
+[Solved] - Add id after endRoute
+
+Done - continues - Remove the onSubmit function and submitHandler function from all the view and details pages in the dashboard. Because now the submitHandler function is optional in the Form component. Now we can use the Form component without providing the submitHandler function to it.
+
+Done - continues - Update try catch block of onSubmit functions in if else block by remove parentheses [[use ctrl+shift+f5 with      try {
+      message. ]]
+
+Done - continues - Use FormHeading component for all the manage section in admin, super_admin, and user. [[use ctrl+shift+f5 with <h1  ]]
+But there is login, signup, AdminForm, and UserForm heading <h1 with padding and margin.
+
+Done - Manage Booking - Create a separate EditBooking component and make form input fields responsive to EditBooking.
+
+Done - manage-services, create, details, and edit page need update with separate components of their own. And make all the form input field in this pages responsive. 
+
+Done - In UserForm, AdminForm, Login and Signup for input field use Row, Col and for Form use Card
+
+
+
+
+Add hamburger menu for medium device
+Smaller text for heading in banner for mobile device.
+
+Make form input field single column for mobile device.
+Add some content in feedback form, right side of the form in desktop device
+
+Add more section - remove callOut add other
+Change footer add some content to footer
+Change about Us page
+
+Update About Us page in mainLayout
+Update Faq Page in mainLayout
+Update Blog Page in mainLayout
+
+
+
+
+
+
+
+
+
+
