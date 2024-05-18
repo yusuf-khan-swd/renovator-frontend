@@ -176,6 +176,7 @@ const ServicePage = () => {
           containerStyle={{ marginBottom: "10px" }}
         >
           <Col xs={16} md={8}>
+            <label>Search Service</label>
             <Input
               type="text"
               size="large"
