@@ -219,7 +219,7 @@ const ServicePage = () => {
               <Input
                 type="number"
                 size="large"
-                placeholder="Minimum Price"
+                placeholder="ex: 200"
                 value={minPrice}
                 onChange={(e) => {
                   setMinPrice(e.target.value);
@@ -233,7 +233,7 @@ const ServicePage = () => {
               <Input
                 type="number"
                 size="large"
-                placeholder="Maximum price"
+                placeholder="ex: 400"
                 value={maxPrice}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
