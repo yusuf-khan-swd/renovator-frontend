@@ -180,7 +180,7 @@ const ServicePage = () => {
             <Input
               type="text"
               size="large"
-              placeholder="Search..."
+              placeholder="ex: Repair, Restoration"
               value={searchTerm}
               style={{
                 width: "100%",
