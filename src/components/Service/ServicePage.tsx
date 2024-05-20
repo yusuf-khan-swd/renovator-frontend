@@ -311,7 +311,7 @@ const ServicePage = () => {
               </Row>
             </div>
           )}
-          <div style={{}}>
+          <div style={{ marginTop: "10px" }}>
             <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
               More Filter
             </Button>
