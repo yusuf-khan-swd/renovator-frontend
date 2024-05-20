@@ -289,19 +289,22 @@ const ServicePage = () => {
           {categoryIsLoading ? (
             <CenterLoading />
           ) : (
-            <Select
-              onChange={(value) => {
-                setCategoryId(value);
-                setSearchTerm("");
-                setMinPrice("");
-                setMaxPrice("");
-              }}
-              value={categoryId}
-              size={"large"}
-              options={categoryOptions as SelectOptions[]}
-              style={{ width: "100%" }}
-              placeholder={"Select category"}
-            />
+            <>
+              <label>Filter by Category</label>
+              <Select
+                onChange={(value) => {
+                  setCategoryId(value);
+                  setSearchTerm("");
+                  setMinPrice("");
+                  setMaxPrice("");
+                }}
+                value={categoryId}
+                size={"large"}
+                options={categoryOptions as SelectOptions[]}
+                style={{ width: "100%" }}
+                placeholder={"Select category"}
+              />
+            </>
           )}
         </div>
 
