@@ -212,38 +212,36 @@ const ServicePage = () => {
         </ActionBar>
 
         {/* Maximum and Minimum price Input field   */}
-        <div>
-          <Row>
-            <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
-              <label>Min Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 200"
-                value={minPrice}
-                onChange={(e) => {
-                  setMinPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-            <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-              <label>Max Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 400"
-                value={maxPrice}
-                onChange={(e) => {
-                  setMaxPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-          </Row>
-        </div>
+        <Row>
+          <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
+            <label>Min Price</label>
+            <Input
+              type="number"
+              size="large"
+              placeholder="ex: 200"
+              value={minPrice}
+              onChange={(e) => {
+                setMinPrice(e.target.value);
+                setSearchTerm("");
+                setCategoryId("all");
+              }}
+            />
+          </Col>
+          <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
+            <label>Max Price</label>
+            <Input
+              type="number"
+              size="large"
+              placeholder="ex: 400"
+              value={maxPrice}
+              onChange={(e) => {
+                setMaxPrice(e.target.value);
+                setSearchTerm("");
+                setCategoryId("all");
+              }}
+            />
+          </Col>
+        </Row>
 
         {/* Service Sorting and Service Status Select fields   */}
         <Row>
