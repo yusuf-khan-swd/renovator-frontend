@@ -246,10 +246,6 @@ const ServicePage = () => {
             </Col>
           </Row>
 
-          <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
-            More Filter
-          </Button>
-
           {showMoreFilter && (
             <div>
               {/* Service Sorting and Service Status Select fields   */}
@@ -315,6 +311,11 @@ const ServicePage = () => {
               </Row>
             </div>
           )}
+          <div style={{}}>
+            <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
+              More Filter
+            </Button>
+          </div>
         </div>
 
         {/* Normal Services */}
