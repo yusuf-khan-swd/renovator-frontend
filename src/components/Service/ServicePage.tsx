@@ -268,7 +268,7 @@ const ServicePage = () => {
                     placeholder={"Select Sorting Order"}
                   />
                 </Col>
-                <Col xs={24} md={8}>
+                <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
                   <label>Service Status</label>
                   <Select
                     onChange={(value) => {
@@ -286,6 +286,7 @@ const ServicePage = () => {
                   />
                 </Col>
               </Row>
+
               {/* Category Select field */}
               <Row>
                 {categoryIsLoading ? (
