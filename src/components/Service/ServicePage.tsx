@@ -283,7 +283,7 @@ const ServicePage = () => {
         </Row>
 
         {/* Category Select field */}
-        <Row style={{ margin: "10px 0" }}>
+        <Row>
           {categoryIsLoading ? (
             <CenterLoading />
           ) : (
