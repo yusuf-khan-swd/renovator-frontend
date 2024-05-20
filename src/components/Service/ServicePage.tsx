@@ -217,102 +217,104 @@ const ServicePage = () => {
         <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
           More Filter
         </Button>
-        <div style={{ marginBottom: "20px" }}>
-          {/* Maximum and Minimum price Input field   */}
-          <Row>
-            <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
-              <label>Min Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 200"
-                value={minPrice}
-                onChange={(e) => {
-                  setMinPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-            <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-              <label>Max Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 400"
-                value={maxPrice}
-                onChange={(e) => {
-                  setMaxPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-          </Row>
+        {showMoreFilter && (
+          <div style={{ marginBottom: "20px" }}>
+            {/* Maximum and Minimum price Input field   */}
+            <Row>
+              <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
+                <label>Min Price</label>
+                <Input
+                  type="number"
+                  size="large"
+                  placeholder="ex: 200"
+                  value={minPrice}
+                  onChange={(e) => {
+                    setMinPrice(e.target.value);
+                    setSearchTerm("");
+                    setCategoryId("all");
+                  }}
+                />
+              </Col>
+              <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
+                <label>Max Price</label>
+                <Input
+                  type="number"
+                  size="large"
+                  placeholder="ex: 400"
+                  value={maxPrice}
+                  onChange={(e) => {
+                    setMaxPrice(e.target.value);
+                    setSearchTerm("");
+                    setCategoryId("all");
+                  }}
+                />
+              </Col>
+            </Row>
 
-          {/* Service Sorting and Service Status Select fields   */}
-          <Row>
-            <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
-              <label>Sort Order</label>
-              <Select
-                onChange={(value) => {
-                  handleSorting(value);
-                  setSorting(value);
-                  setCategoryId("all");
-                  setSearchTerm("");
-                  setMinPrice("");
-                  setMaxPrice("");
-                }}
-                value={sorting}
-                size={"large"}
-                options={sortByOptions as SelectOptions[]}
-                style={{ width: "100%" }}
-                placeholder={"Select Sorting Order"}
-              />
-            </Col>
-            <Col xs={24} md={8}>
-              <label>Service Status</label>
-              <Select
-                onChange={(value) => {
-                  setServiceStatus(value);
-                  setCategoryId("all");
-                  setSearchTerm("");
-                  setMinPrice("");
-                  setMaxPrice("");
-                }}
-                value={serviceStatus}
-                size={"large"}
-                options={serviceStatusOptions as SelectOptions[]}
-                style={{ width: "100%" }}
-                placeholder={"Select Service Status"}
-              />
-            </Col>
-          </Row>
-
-          {/* Category Select field */}
-          <Row>
-            {categoryIsLoading ? (
-              <CenterLoading />
-            ) : (
-              <Col xs={24}>
-                <label>Filter by Category</label>
+            {/* Service Sorting and Service Status Select fields   */}
+            <Row>
+              <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
+                <label>Sort Order</label>
                 <Select
                   onChange={(value) => {
-                    setCategoryId(value);
+                    handleSorting(value);
+                    setSorting(value);
+                    setCategoryId("all");
                     setSearchTerm("");
                     setMinPrice("");
                     setMaxPrice("");
                   }}
-                  value={categoryId}
+                  value={sorting}
                   size={"large"}
-                  options={categoryOptions as SelectOptions[]}
+                  options={sortByOptions as SelectOptions[]}
                   style={{ width: "100%" }}
-                  placeholder={"Select category"}
+                  placeholder={"Select Sorting Order"}
                 />
               </Col>
-            )}
-          </Row>
-        </div>
+              <Col xs={24} md={8}>
+                <label>Service Status</label>
+                <Select
+                  onChange={(value) => {
+                    setServiceStatus(value);
+                    setCategoryId("all");
+                    setSearchTerm("");
+                    setMinPrice("");
+                    setMaxPrice("");
+                  }}
+                  value={serviceStatus}
+                  size={"large"}
+                  options={serviceStatusOptions as SelectOptions[]}
+                  style={{ width: "100%" }}
+                  placeholder={"Select Service Status"}
+                />
+              </Col>
+            </Row>
+
+            {/* Category Select field */}
+            <Row>
+              {categoryIsLoading ? (
+                <CenterLoading />
+              ) : (
+                <Col xs={24}>
+                  <label>Filter by Category</label>
+                  <Select
+                    onChange={(value) => {
+                      setCategoryId(value);
+                      setSearchTerm("");
+                      setMinPrice("");
+                      setMaxPrice("");
+                    }}
+                    value={categoryId}
+                    size={"large"}
+                    options={categoryOptions as SelectOptions[]}
+                    style={{ width: "100%" }}
+                    placeholder={"Select category"}
+                  />
+                </Col>
+              )}
+            </Row>
+          </div>
+        )}
 
         {/* Normal Services */}
         {!categoryServices && (
