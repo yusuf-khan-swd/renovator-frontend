@@ -16,6 +16,8 @@ import { useState } from "react";
 // TODO: Implement search by price, location, status and category name
 
 const ServicePage = () => {
+  const [showMoreFilter, setShowMoreFilter] = useState(false);
+
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -167,6 +169,8 @@ const ServicePage = () => {
     { label: "Available", value: AVAILABLE },
   ];
 
+  console.log(showMoreFilter);
+
   return (
     <div>
       <div>
@@ -210,6 +214,9 @@ const ServicePage = () => {
             )}
           </div>
         </ActionBar>
+        <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
+          More Filter
+        </Button>
         <div style={{ marginBottom: "20px" }}>
           {/* Maximum and Minimum price Input field   */}
           <Row>
