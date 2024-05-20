@@ -283,11 +283,11 @@ const ServicePage = () => {
         </Row>
 
         {/* Category Select field */}
-        <div style={{ margin: "10px 0" }}>
+        <Row style={{ margin: "10px 0" }}>
           {categoryIsLoading ? (
             <CenterLoading />
           ) : (
-            <>
+            <Col xs={24}>
               <label>Filter by Category</label>
               <Select
                 onChange={(value) => {
@@ -302,9 +302,9 @@ const ServicePage = () => {
                 style={{ width: "100%" }}
                 placeholder={"Select category"}
               />
-            </>
+            </Col>
           )}
-        </div>
+        </Row>
 
         {/* Normal Services */}
         {!categoryServices && (
