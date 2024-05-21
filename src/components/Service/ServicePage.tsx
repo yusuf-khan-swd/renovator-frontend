@@ -292,7 +292,7 @@ const ServicePage = () => {
                 {categoryIsLoading ? (
                   <CenterLoading />
                 ) : (
-                  <Col xs={24}>
+                  <Col span={24}>
                     <label>Filter by Category</label>
                     <Select
                       onChange={(value) => {
