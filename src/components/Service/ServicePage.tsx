@@ -174,7 +174,7 @@ const ServicePage = () => {
       <div>
         {/* Search input and Reload icon */}
         <ActionBar
-          title="Service List"
+          title="Our Services"
           containerStyle={{ marginBottom: "10px" }}
         >
           <Col xs={16} md={8}>
