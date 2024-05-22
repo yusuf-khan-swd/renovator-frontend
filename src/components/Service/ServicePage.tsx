@@ -176,6 +176,7 @@ const ServicePage = () => {
         <ActionBar
           title="Our Services"
           containerStyle={{ marginBottom: "10px" }}
+          titleStyle={{ textAlign: "center" }}
         >
           <Col xs={16} md={8}>
             <label>Search Service</label>
