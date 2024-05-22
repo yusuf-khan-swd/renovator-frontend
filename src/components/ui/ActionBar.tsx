@@ -23,9 +23,12 @@ const ActionBar = ({
 
   const childrenStyle = { ...baseChildrenStyle, ...childStyle };
 
+  const baseTitleStyle = { margin: "8px 0" };
+  const headingStyle = { ...baseTitleStyle, ...titleStyle };
+
   return (
     <div style={containerStyle ? containerStyle : { marginBottom: "15px" }}>
-      <h1 style={titleStyle ? titleStyle : { margin: "8px 0" }}>{title}</h1>
+      <h1 style={titleStyle ? headingStyle : baseTitleStyle}>{title}</h1>
       <Row style={childrenStyle}>{children}</Row>
     </div>
   );
