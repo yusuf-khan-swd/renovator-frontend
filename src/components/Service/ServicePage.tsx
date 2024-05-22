@@ -174,7 +174,7 @@ const ServicePage = () => {
       <div>
         {/* Search input and Reload icon */}
         <ActionBar
-          title="Our Services"
+          title="Our Services List"
           containerStyle={{ marginBottom: "10px" }}
           titleStyle={{ textAlign: "center" }}
         >
