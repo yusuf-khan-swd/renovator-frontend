@@ -248,7 +248,7 @@ const ServicePage = () => {
           </Row>
 
           {showMoreFilter && (
-            <div>
+            <>
               {/* Service Sorting and Service Status Select fields   */}
               <Row>
                 <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
@@ -311,7 +311,7 @@ const ServicePage = () => {
                   </Col>
                 )}
               </Row>
-            </div>
+            </>
           )}
           <div style={{ marginTop: "10px" }}>
             <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
