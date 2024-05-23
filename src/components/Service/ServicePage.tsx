@@ -171,183 +171,177 @@ const ServicePage = () => {
 
   return (
     <div>
-      <div>
-        {/* Search input and Reload icon */}
-        <ActionBar
-          title="Our Services List"
-          containerStyle={{ marginBottom: "10px" }}
-          titleStyle={{ textAlign: "center" }}
-        >
-          <Col xs={16} md={8}>
-            <label>Search Service</label>
+      {/* Search input and Reload icon */}
+      <ActionBar
+        title="Our Services List"
+        containerStyle={{ marginBottom: "10px" }}
+        titleStyle={{ textAlign: "center" }}
+      >
+        <Col xs={16} md={8}>
+          <label>Search Service</label>
+          <Input
+            type="text"
+            size="large"
+            placeholder="ex: Repair, Restoration"
+            value={searchTerm}
+            style={{
+              width: "100%",
+            }}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setCategoryId("all");
+              setMinPrice("");
+              setMaxPrice("");
+            }}
+          />
+        </Col>
+        <div>
+          {(!!sortBy ||
+            !!sortOrder ||
+            !!categoryId ||
+            !!searchTerm ||
+            !!minPrice ||
+            !!maxPrice) && (
+            <Button
+              onClick={resetFilters}
+              type="primary"
+              style={{ margin: "0", maxWidth: "100%" }}
+            >
+              <ReloadOutlined />
+            </Button>
+          )}
+        </div>
+      </ActionBar>
+
+      <div style={{ marginBottom: "20px" }}>
+        {/* Maximum and Minimum price Input field   */}
+        <Row>
+          <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
+            <label>Min Price</label>
             <Input
-              type="text"
+              type="number"
               size="large"
-              placeholder="ex: Repair, Restoration"
-              value={searchTerm}
-              style={{
-                width: "100%",
-              }}
+              placeholder="ex: 200"
+              value={minPrice}
               onChange={(e) => {
-                setSearchTerm(e.target.value);
+                setMinPrice(e.target.value);
+                setSearchTerm("");
                 setCategoryId("all");
-                setMinPrice("");
-                setMaxPrice("");
               }}
             />
           </Col>
-          <div>
-            {(!!sortBy ||
-              !!sortOrder ||
-              !!categoryId ||
-              !!searchTerm ||
-              !!minPrice ||
-              !!maxPrice) && (
-              <Button
-                onClick={resetFilters}
-                type="primary"
-                style={{ margin: "0", maxWidth: "100%" }}
-              >
-                <ReloadOutlined />
-              </Button>
-            )}
-          </div>
-        </ActionBar>
+          <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
+            <label>Max Price</label>
+            <Input
+              type="number"
+              size="large"
+              placeholder="ex: 400"
+              value={maxPrice}
+              onChange={(e) => {
+                setMaxPrice(e.target.value);
+                setSearchTerm("");
+                setCategoryId("all");
+              }}
+            />
+          </Col>
+        </Row>
 
-        <div style={{ marginBottom: "20px" }}>
-          {/* Maximum and Minimum price Input field   */}
-          <Row>
-            <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
-              <label>Min Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 200"
-                value={minPrice}
-                onChange={(e) => {
-                  setMinPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-            <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-              <label>Max Price</label>
-              <Input
-                type="number"
-                size="large"
-                placeholder="ex: 400"
-                value={maxPrice}
-                onChange={(e) => {
-                  setMaxPrice(e.target.value);
-                  setSearchTerm("");
-                  setCategoryId("all");
-                }}
-              />
-            </Col>
-          </Row>
+        {showMoreFilter && (
+          <>
+            {/* Service Sorting and Service Status Select fields   */}
+            <Row>
+              <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
+                <label>Sort Order</label>
+                <Select
+                  onChange={(value) => {
+                    handleSorting(value);
+                    setSorting(value);
+                    setCategoryId("all");
+                    setSearchTerm("");
+                    setMinPrice("");
+                    setMaxPrice("");
+                  }}
+                  value={sorting}
+                  size={"large"}
+                  options={sortByOptions as SelectOptions[]}
+                  style={{ width: "100%" }}
+                  placeholder={"Select Sorting Order"}
+                />
+              </Col>
+              <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
+                <label>Service Status</label>
+                <Select
+                  onChange={(value) => {
+                    setServiceStatus(value);
+                    setCategoryId("all");
+                    setSearchTerm("");
+                    setMinPrice("");
+                    setMaxPrice("");
+                  }}
+                  value={serviceStatus}
+                  size={"large"}
+                  options={serviceStatusOptions as SelectOptions[]}
+                  style={{ width: "100%" }}
+                  placeholder={"Select Service Status"}
+                />
+              </Col>
+            </Row>
 
-          {showMoreFilter && (
-            <>
-              {/* Service Sorting and Service Status Select fields   */}
-              <Row>
-                <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
-                  <label>Sort Order</label>
+            {/* Category Select field */}
+            <Row>
+              {categoryIsLoading ? (
+                <CenterLoading />
+              ) : (
+                <Col span={24}>
+                  <label>Filter by Category</label>
                   <Select
                     onChange={(value) => {
-                      handleSorting(value);
-                      setSorting(value);
-                      setCategoryId("all");
+                      setCategoryId(value);
                       setSearchTerm("");
                       setMinPrice("");
                       setMaxPrice("");
                     }}
-                    value={sorting}
+                    value={categoryId}
                     size={"large"}
-                    options={sortByOptions as SelectOptions[]}
+                    options={categoryOptions as SelectOptions[]}
                     style={{ width: "100%" }}
-                    placeholder={"Select Sorting Order"}
+                    placeholder={"Select category"}
                   />
                 </Col>
-                <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-                  <label>Service Status</label>
-                  <Select
-                    onChange={(value) => {
-                      setServiceStatus(value);
-                      setCategoryId("all");
-                      setSearchTerm("");
-                      setMinPrice("");
-                      setMaxPrice("");
-                    }}
-                    value={serviceStatus}
-                    size={"large"}
-                    options={serviceStatusOptions as SelectOptions[]}
-                    style={{ width: "100%" }}
-                    placeholder={"Select Service Status"}
-                  />
-                </Col>
-              </Row>
-
-              {/* Category Select field */}
-              <Row>
-                {categoryIsLoading ? (
-                  <CenterLoading />
-                ) : (
-                  <Col span={24}>
-                    <label>Filter by Category</label>
-                    <Select
-                      onChange={(value) => {
-                        setCategoryId(value);
-                        setSearchTerm("");
-                        setMinPrice("");
-                        setMaxPrice("");
-                      }}
-                      value={categoryId}
-                      size={"large"}
-                      options={categoryOptions as SelectOptions[]}
-                      style={{ width: "100%" }}
-                      placeholder={"Select category"}
-                    />
-                  </Col>
-                )}
-              </Row>
-            </>
-          )}
-          <div style={{ marginTop: "10px" }}>
-            <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
-              {showMoreFilter ? "Close More Filters" : "More Filters"}
-            </Button>
-          </div>
+              )}
+            </Row>
+          </>
+        )}
+        <div style={{ marginTop: "10px" }}>
+          <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
+            {showMoreFilter ? "Close More Filters" : "More Filters"}
+          </Button>
         </div>
-
-        {/* Normal Services */}
-        {!categoryServices && (
-          <>
-            {isLoading ? (
-              <FullScreenLoading />
-            ) : (
-              <Services services={services} />
-            )}
-          </>
-        )}
-
-        {/* Filter service by category ID */}
-        {filterServices?.length > 0 ? (
-          <>
-            {categoryServiceIsLoading ? (
-              <FullScreenLoading />
-            ) : (
-              <Services services={filterServices} />
-            )}
-          </>
-        ) : (
-          filterServices?.length <= 0 && (
-            <h3 style={{ margin: "2px", textAlign: "center" }}>
-              No Services available on this category
-            </h3>
-          )
-        )}
       </div>
+
+      {/* Normal Services */}
+      {!categoryServices && (
+        <>
+          {isLoading ? <FullScreenLoading /> : <Services services={services} />}
+        </>
+      )}
+
+      {/* Filter service by category ID */}
+      {filterServices?.length > 0 ? (
+        <>
+          {categoryServiceIsLoading ? (
+            <FullScreenLoading />
+          ) : (
+            <Services services={filterServices} />
+          )}
+        </>
+      ) : (
+        filterServices?.length <= 0 && (
+          <h3 style={{ margin: "2px", textAlign: "center" }}>
+            No Services available on this category
+          </h3>
+        )
+      )}
     </div>
   );
 };
