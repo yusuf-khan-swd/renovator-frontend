@@ -220,7 +220,9 @@ const ServicePage = () => {
         {/* Maximum and Minimum price Input field   */}
         <Row>
           <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
-            <label>Min Price</label>
+            <p style={{ marginBottom: "4px" }}>
+              <label>Min Price</label>
+            </p>
             <Input
               type="number"
               size="large"
