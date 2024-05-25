@@ -258,7 +258,9 @@ const ServicePage = () => {
             {/* Service Sorting and Service Status Select fields   */}
             <Row>
               <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
-                <label>Sort Order</label>
+                <p style={{ marginBottom: "4px" }}>
+                  <label>Sort Order</label>
+                </p>
                 <Select
                   onChange={(value) => {
                     handleSorting(value);
