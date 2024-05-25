@@ -179,7 +179,9 @@ const ServicePage = () => {
           titleStyle={{ textAlign: "center" }}
         >
           <Col xs={16} md={8}>
-            <label>Search Service</label>
+            <p style={{ marginBottom: "4px" }}>
+              <label>Search Service</label>
+            </p>
             <Input
               type="text"
               size="large"
