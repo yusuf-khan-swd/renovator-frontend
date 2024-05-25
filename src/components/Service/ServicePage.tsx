@@ -236,7 +236,9 @@ const ServicePage = () => {
             />
           </Col>
           <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-            <label>Max Price</label>
+            <p style={{ marginBottom: "4px" }}>
+              <label>Max Price</label>
+            </p>
             <Input
               type="number"
               size="large"
