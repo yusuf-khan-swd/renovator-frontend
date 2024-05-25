@@ -196,6 +196,7 @@ const ServicePage = () => {
               }}
             />
           </Col>
+
           <div>
             {(!!sortBy ||
               !!sortOrder ||
@@ -213,6 +214,7 @@ const ServicePage = () => {
             )}
           </div>
         </ActionBar>
+
         {/* Maximum and Minimum price Input field   */}
         <Row>
           <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
@@ -244,6 +246,7 @@ const ServicePage = () => {
             />
           </Col>
         </Row>
+
         {showMoreFilter && (
           <>
             {/* Service Sorting and Service Status Select fields   */}
@@ -284,6 +287,7 @@ const ServicePage = () => {
                 />
               </Col>
             </Row>
+
             {/* Category Select field */}
             <Row>
               {categoryIsLoading ? (
@@ -309,6 +313,7 @@ const ServicePage = () => {
             </Row>
           </>
         )}
+
         <div style={{ marginTop: "10px" }}>
           <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
             {showMoreFilter ? "Close More Filters" : "More Filters"}
