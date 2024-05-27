@@ -304,7 +304,9 @@ const ServicePage = () => {
                 <CenterLoading />
               ) : (
                 <Col span={24}>
-                  <label>Filter by Category</label>
+                  <p style={{ marginBottom: "4px" }}>
+                    <label>Filter by Category</label>
+                  </p>
                   <Select
                     onChange={(value) => {
                       setCategoryId(value);
