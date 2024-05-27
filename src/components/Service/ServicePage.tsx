@@ -278,7 +278,9 @@ const ServicePage = () => {
                 />
               </Col>
               <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
-                <label>Service Status</label>
+                <p style={{ marginBottom: "4px" }}>
+                  <label>Service Status</label>
+                </p>
                 <Select
                   onChange={(value) => {
                     setServiceStatus(value);
