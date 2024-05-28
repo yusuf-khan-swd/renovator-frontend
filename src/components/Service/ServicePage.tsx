@@ -201,7 +201,7 @@ const ServicePage = () => {
           </Col>
 
           {/* Reload Icon */}
-          <div>
+          <div style={{ marginTop: "17px" }}>
             {(!!sortBy ||
               !!sortOrder ||
               !!categoryId ||
