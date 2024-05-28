@@ -178,6 +178,7 @@ const ServicePage = () => {
           containerStyle={{ marginBottom: "10px" }}
           titleStyle={{ textAlign: "center" }}
         >
+          {/* Search Input Field */}
           <Col xs={16} md={8}>
             <p style={{ marginBottom: "4px" }}>
               <label>Search Service</label>
@@ -199,6 +200,7 @@ const ServicePage = () => {
             />
           </Col>
 
+          {/* Reload Icon */}
           <div>
             {(!!sortBy ||
               !!sortOrder ||
