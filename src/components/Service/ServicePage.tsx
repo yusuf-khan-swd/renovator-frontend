@@ -220,7 +220,7 @@ const ServicePage = () => {
         </ActionBar>
 
         {/* Maximum and Minimum price Input field   */}
-        <Row>
+        <Row style={{ marginBottom: "10px" }}>
           <Col xs={24} md={8} style={{ margin: "0 10px 10px 0" }}>
             <p style={{ marginBottom: "4px" }}>
               <label>Min Price</label>
@@ -237,7 +237,7 @@ const ServicePage = () => {
               }}
             />
           </Col>
-          <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
+          <Col xs={24} md={8}>
             <p style={{ marginBottom: "4px" }}>
               <label>Max Price</label>
             </p>
