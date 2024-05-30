@@ -1,6 +1,6 @@
 
 
-in service page for make min and max input field to number input field 
+Done - in service page for make min and max input field to number input field. Also in service page add more filter button to show and hide sort order, service status, and filter by category select field 
 
 fix what should use Details User or View User for route name and file name
 
