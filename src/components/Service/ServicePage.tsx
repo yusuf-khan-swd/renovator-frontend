@@ -12,7 +12,6 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
 
-// TODO: Add sorting by price, name, location, status, use new state or use previous state
 // TODO: Implement search by price, location, status and category name
 
 const ServicePage = () => {
