@@ -247,6 +247,7 @@ const ServicePage = () => {
           <>
             {/* Service Sorting and Service Status Select fields   */}
             <Row>
+              {/* Service Sorting Select Field*/}
               <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
                 <p style={{ marginBottom: "4px" }}>
                   <label>Sort Order</label>
@@ -267,6 +268,7 @@ const ServicePage = () => {
                   placeholder={"Select Sorting Order"}
                 />
               </Col>
+              {/* Service Status Select fields */}
               <Col xs={24} md={8} style={{ marginBottom: "10px" }}>
                 <p style={{ marginBottom: "4px" }}>
                   <label>Service Status</label>
