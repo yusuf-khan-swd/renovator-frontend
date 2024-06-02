@@ -96,23 +96,6 @@ const ServicePage = () => {
 
   const filterServices = categoryServices?.services;
 
-  const MIN_MAX_PRICE = "min_max";
-  const MAX_MIN_PRICE = "max_min";
-  const SERVICE_NAME_ASC = "service_name_asc";
-  const SERVICE_NAME_DESC = "service_name_desc";
-  const SERVICE_LOCATION_ASC = "service_location_asc";
-  const SERVICE_LOCATION_DESC = "service_location_desc";
-  const SERVICE_STATUS_ASC = "service_status_asc";
-  const SERVICE_STATUS_DESC = "service_status_desc";
-
-  const ASC = "asc";
-  const DESC = "desc";
-
-  const PRICE = "price";
-  const TITLE = "title";
-  const LOCATION = "location";
-  const STATUS = "status";
-
   //TODO: service name ascending order is not working properly
   const handleSorting = (value: string) => {
     handleSetSorting(value, setSortBy, setSortOrder);
