@@ -11,7 +11,7 @@ import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
-import { ServiceSortBySelectOptions } from "./ServiceUtils";
+import { ServiceSortBySelectOptions, handleSetSorting } from "./ServiceUtils";
 
 // TODO: Implement search by price, location, status and category name
 
@@ -115,37 +115,7 @@ const ServicePage = () => {
 
   //TODO: service name ascending order is not working properly
   const handleSorting = (value: string) => {
-    if (!value) {
-      setSortBy("");
-      setSortOrder("");
-    } else if (value === MIN_MAX_PRICE) {
-      setSortBy(PRICE);
-      setSortOrder(ASC);
-    } else if (value === MAX_MIN_PRICE) {
-      setSortBy(PRICE);
-      setSortOrder(DESC);
-    } else if (value === SERVICE_NAME_ASC) {
-      setSortBy(TITLE);
-      setSortOrder(ASC);
-    } else if (value === SERVICE_NAME_DESC) {
-      setSortBy(TITLE);
-      setSortOrder(DESC);
-    } else if (value === SERVICE_LOCATION_ASC) {
-      setSortBy(LOCATION);
-      setSortOrder(ASC);
-    } else if (value === SERVICE_LOCATION_DESC) {
-      setSortBy(LOCATION);
-      setSortOrder(DESC);
-    } else if (value === SERVICE_STATUS_ASC) {
-      setSortBy(STATUS);
-      setSortOrder(ASC);
-    } else if (value === SERVICE_STATUS_DESC) {
-      setSortBy(STATUS);
-      setSortOrder(DESC);
-    } else {
-      setSortBy("");
-      setSortOrder("");
-    }
+    handleSetSorting(value, setSortBy, setSortOrder);
   };
 
   const UPCOMING = "upcoming";
