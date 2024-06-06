@@ -11,7 +11,11 @@ import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
-import { ServiceSortBySelectOptions, handleSetSorting } from "./ServiceUtils";
+import {
+  ServiceSortBySelectOptions,
+  handleSetSorting,
+  serviceStatusOptions,
+} from "./ServiceUtils";
 
 // TODO: Implement search by price, location, status and category name
 
@@ -100,15 +104,6 @@ const ServicePage = () => {
   const handleSorting = (value: string) => {
     handleSetSorting(value, setSortBy, setSortOrder);
   };
-
-  const UPCOMING = "upcoming";
-  const AVAILABLE = "available";
-
-  const serviceStatusOptions = [
-    { label: "Any", value: "" },
-    { label: "Upcoming", value: UPCOMING },
-    { label: "Available", value: AVAILABLE },
-  ];
 
   return (
     <div>
@@ -236,7 +231,7 @@ const ServicePage = () => {
                   }}
                   value={serviceStatus}
                   size={"large"}
-                  options={serviceStatusOptions as SelectOptions[]}
+                  options={serviceStatusOptions()}
                   style={{ width: "100%" }}
                   placeholder={"Select Service Status"}
                 />
