@@ -68,3 +68,14 @@ export const handleSetSorting = (
     setSortOrder("");
   }
 };
+
+export const serviceStatusOptions = () => {
+  const UPCOMING = "upcoming";
+  const AVAILABLE = "available";
+
+  return [
+    { label: "Any", value: "" },
+    { label: "Upcoming", value: UPCOMING },
+    { label: "Available", value: AVAILABLE },
+  ];
+};
