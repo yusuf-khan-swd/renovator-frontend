@@ -42,6 +42,7 @@ const ServicePage = () => {
   query["sortOrder"] = sortOrder;
 
   query["serviceStatus"] = serviceStatus;
+  query["categoryId"] = categoryId;
 
   const debouncedTerm = useDebounced({
     query: searchTerm,
