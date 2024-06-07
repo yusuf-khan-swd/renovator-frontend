@@ -75,6 +75,9 @@ const ServicePage = () => {
   const services = data?.services;
   const meta = data?.meta;
 
+  console.log(data);
+  console.log({ query });
+
   const resetFilters = () => {
     setSortBy("");
     setSortOrder("");
@@ -276,14 +279,14 @@ const ServicePage = () => {
       </div>
 
       {/* Normal Services */}
-      {!categoryServices && (
-        <>
-          {isLoading ? <FullScreenLoading /> : <Services services={services} />}
-        </>
-      )}
+      {/* {!categoryServices && ( */}
+      <>
+        {isLoading ? <FullScreenLoading /> : <Services services={services} />}
+      </>
+      {/* )} */}
 
       {/* Filter service by category ID */}
-      {filterServices?.length > 0 ? (
+      {/* {filterServices?.length > 0 ? (
         <>
           {categoryServiceIsLoading ? (
             <FullScreenLoading />
@@ -297,7 +300,7 @@ const ServicePage = () => {
             No Services available on this category
           </h3>
         )
-      )}
+      )} */}
     </div>
   );
 };
