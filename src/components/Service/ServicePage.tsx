@@ -255,6 +255,7 @@ const ServicePage = () => {
                   <Select
                     onChange={(value) => {
                       setCategoryId(value);
+                      // TODO: Remove other state change
                       setSearchTerm("");
                       setMinPrice("");
                       setMaxPrice("");
