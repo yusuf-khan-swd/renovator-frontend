@@ -15,6 +15,7 @@ import {
   handleSetSorting,
   serviceStatusOptions,
 } from "./ServiceUtils";
+import Services from "./Services";
 
 // TODO: Implement search by price, location, status and category name
 
@@ -283,12 +284,12 @@ const ServicePage = () => {
       <>
         {isLoading ? (
           <FullScreenLoading />
+        ) : !services || services?.length <= 0 ? (
+          <h3 style={{ margin: "2px", textAlign: "center" }}>
+            No Services available
+          </h3>
         ) : (
-          (!services || services?.length <= 0) && (
-            <h3 style={{ margin: "2px", textAlign: "center" }}>
-              No Services available
-            </h3>
-          )
+          <Services services={services} />
         )}
       </>
       {/* )} */}
