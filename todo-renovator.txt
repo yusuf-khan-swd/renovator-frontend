@@ -1,6 +1,6 @@
 
 
-Separate some ServicePage functionality like sortOptions, handleSorting, serviceStatusOptions to a separte component ServiceUtils
+Done - Separate some ServicePage functionality like sortOptions, handleSorting, serviceStatusOptions to a separte component ServiceUtils
 
 Done - in service page for make min and max input field to number input field. Also in service page add more filter button to show and hide sort order, service status, and filter by category select field 
 
