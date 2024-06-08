@@ -256,9 +256,9 @@ const ServicePage = () => {
                     onChange={(value) => {
                       setCategoryId(value);
                       // TODO: Remove other state change
-                      setSearchTerm("");
-                      setMinPrice("");
-                      setMaxPrice("");
+                      // setSearchTerm("");
+                      // setMinPrice("");
+                      // setMaxPrice("");
                     }}
                     value={categoryId}
                     size={"large"}
