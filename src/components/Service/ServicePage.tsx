@@ -98,7 +98,7 @@ const ServicePage = () => {
     };
   });
 
-  categoryOptions?.unshift({ label: "All", value: "all" });
+  categoryOptions?.unshift({ label: "All", value: "" });
 
   const { data: categoryServices, isLoading: categoryServiceIsLoading } =
     useCategoryQuery(categoryId);
