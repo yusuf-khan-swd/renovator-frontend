@@ -1,5 +1,5 @@
 
-Remove category services of category api in ServicePage. Only use getAllServices route to get category data or others data
+When selecting a category field Remove category services of by calling category api instead use services api for filter by categroy 
 
 Done - Separate some ServicePage functionality like sortOptions, handleSorting, serviceStatusOptions to a separte component ServiceUtils
 
