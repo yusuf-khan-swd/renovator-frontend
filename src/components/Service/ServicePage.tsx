@@ -4,7 +4,7 @@ import { SelectOptions } from "@/components/Forms/FormSelectField";
 import CenterLoading from "@/components/Loading/CenterLoading";
 import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import ActionBar from "@/components/ui/ActionBar";
-import { useCategoriesQuery, useCategoryQuery } from "@/redux/api/categoryApi";
+import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
@@ -99,11 +99,6 @@ const ServicePage = () => {
   });
 
   categoryOptions?.unshift({ label: "All", value: "" });
-
-  const { data: categoryServices, isLoading: categoryServiceIsLoading } =
-    useCategoryQuery(categoryId);
-
-  const filterServices = categoryServices?.services;
 
   //TODO: service name ascending order is not working properly
   const handleSorting = (value: string) => {
