@@ -1,5 +1,6 @@
 
-When selecting a category field Remove category services by calling category API instead use services API for filter by category 
+
+Done - When selecting a category field Remove category services by calling category API instead use services API for filter by category 
 
 Done - Separate some ServicePage functionality like sortOptions, handleSorting, serviceStatusOptions to a separte component ServiceUtils
 
