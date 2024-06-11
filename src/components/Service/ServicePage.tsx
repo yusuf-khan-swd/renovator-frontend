@@ -209,10 +209,10 @@ const ServicePage = () => {
                   onChange={(value) => {
                     handleSorting(value);
                     setSorting(value);
-                    setCategoryId("all");
-                    setSearchTerm("");
-                    setMinPrice("");
-                    setMaxPrice("");
+                    // setCategoryId("all");
+                    // setSearchTerm("");
+                    // setMinPrice("");
+                    // setMaxPrice("");
                   }}
                   value={sorting}
                   size={"large"}
