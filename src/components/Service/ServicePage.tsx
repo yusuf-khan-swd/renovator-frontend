@@ -224,10 +224,6 @@ const ServicePage = () => {
                 <Select
                   onChange={(value) => {
                     setServiceStatus(value);
-                    // setCategoryId("all");
-                    // setSearchTerm("");
-                    // setMinPrice("");
-                    // setMaxPrice("");
                   }}
                   value={serviceStatus}
                   size={"large"}
