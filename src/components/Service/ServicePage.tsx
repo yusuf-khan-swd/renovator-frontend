@@ -181,8 +181,6 @@ const ServicePage = () => {
               value={maxPrice}
               onChange={(e) => {
                 setMaxPrice(e.target.value);
-                // setSearchTerm("");
-                // setCategoryId("all");
               }}
             />
           </Col>
