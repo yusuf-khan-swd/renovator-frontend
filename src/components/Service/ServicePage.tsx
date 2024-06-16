@@ -271,23 +271,6 @@ const ServicePage = () => {
         )}
       </>
       {/* )} */}
-
-      {/* Filter service by category ID */}
-      {/* {filterServices?.length > 0 ? (
-        <>
-          {categoryServiceIsLoading ? (
-            <FullScreenLoading />
-          ) : (
-            <Services services={filterServices} />
-          )}
-        </>
-      ) : (
-        filterServices?.length <= 0 && (
-          <h3 style={{ margin: "2px", textAlign: "center" }}>
-            No Services available on this category
-          </h3>
-        )
-      )} */}
     </div>
   );
 };
