@@ -1,5 +1,5 @@
 
-In ServicePage Make result of Service api call effected by every input and select field query.
+Done - In ServicePage Make result of Service api call effected by every input and select field query.
 
 Done - When selecting a category field Remove category services by calling category API instead use services API for filter by category 
 
