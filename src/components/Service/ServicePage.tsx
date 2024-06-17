@@ -105,8 +105,6 @@ const ServicePage = () => {
     handleSetSorting(value, setSortBy, setSortOrder);
   };
 
-  // TODO: Remove comment out other state from input or select onChange
-
   return (
     <div>
       <div style={{ marginBottom: "20px" }}>
