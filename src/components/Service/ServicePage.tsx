@@ -258,7 +258,6 @@ const ServicePage = () => {
       </div>
 
       {/* Normal Services */}
-      {/* {!categoryServices && ( */}
       <>
         {isLoading ? (
           <FullScreenLoading />
@@ -270,7 +269,6 @@ const ServicePage = () => {
           <Services services={services} />
         )}
       </>
-      {/* )} */}
     </div>
   );
 };
