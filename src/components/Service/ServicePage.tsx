@@ -75,9 +75,6 @@ const ServicePage = () => {
   const services = data?.services;
   const meta = data?.meta;
 
-  console.log(data);
-  console.log({ query });
-
   const resetFilters = () => {
     setSortBy("");
     setSortOrder("");
