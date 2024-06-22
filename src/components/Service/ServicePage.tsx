@@ -263,6 +263,8 @@ const ServicePage = () => {
       ) : (
         <Services services={services} />
       )}
+
+      {/* Pagination Section */}
     </div>
   );
 };
