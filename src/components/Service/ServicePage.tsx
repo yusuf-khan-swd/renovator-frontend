@@ -252,7 +252,7 @@ const ServicePage = () => {
         </div>
       </div>
 
-      {/* Normal Services */}
+      {/* All Services */}
       <>
         {isLoading ? (
           <FullScreenLoading />
