@@ -264,6 +264,7 @@ const ServicePage = () => {
         <Services services={services} />
       )}
 
+      {/* TODO: Add a pagination section Here */}
       {/* Pagination Section */}
     </div>
   );
