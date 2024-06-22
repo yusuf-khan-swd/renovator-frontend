@@ -254,17 +254,15 @@ const ServicePage = () => {
       </div>
 
       {/* All Services */}
-      <>
-        {isLoading ? (
-          <FullScreenLoading />
-        ) : !services || services?.length <= 0 ? (
-          <h3 style={{ margin: "2px", textAlign: "center" }}>
-            No Services available
-          </h3>
-        ) : (
-          <Services services={services} />
-        )}
-      </>
+      {isLoading ? (
+        <FullScreenLoading />
+      ) : !services || services?.length <= 0 ? (
+        <h3 style={{ margin: "2px", textAlign: "center" }}>
+          No Services available
+        </h3>
+      ) : (
+        <Services services={services} />
+      )}
     </div>
   );
 };
