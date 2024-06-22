@@ -181,9 +181,9 @@ const ServicePage = () => {
           </Col>
         </Row>
 
+        {/* Filter by Category, Service Sorting and Service Status Select fields   */}
         {showMoreFilter && (
           <>
-            {/* Service Sorting and Service Status Select fields   */}
             <Row>
               {/* Service Sorting Select Field*/}
               <Col xs={24} md={8} style={{ margin: "0px 10px 10px 0" }}>
