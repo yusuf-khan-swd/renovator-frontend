@@ -245,6 +245,7 @@ const ServicePage = () => {
           </>
         )}
 
+        {/* More Filter Button */}
         <div style={{ marginTop: "10px" }}>
           <Button onClick={() => setShowMoreFilter(!showMoreFilter)}>
             {showMoreFilter ? "Close More Filters" : "More Filters"}
