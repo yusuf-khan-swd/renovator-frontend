@@ -8,7 +8,7 @@ import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Row, Select } from "antd";
+import { Button, Col, Input, Pagination, Row, Select } from "antd";
 import { useState } from "react";
 import {
   ServiceSortBySelectOptions,
@@ -266,6 +266,7 @@ const ServicePage = () => {
 
       {/* TODO: Add a pagination section Here */}
       {/* Pagination Section */}
+      <Pagination defaultCurrent={1} total={500} />
     </div>
   );
 };
