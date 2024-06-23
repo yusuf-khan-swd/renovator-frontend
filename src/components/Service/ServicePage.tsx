@@ -272,7 +272,7 @@ const ServicePage = () => {
       {/* TODO: Add a pagination section Here */}
       {/* Pagination Section */}
       <Pagination
-        total={500}
+        total={meta?.total}
         defaultPageSize={5}
         onChange={onPaginationChange}
       />
