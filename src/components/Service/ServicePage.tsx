@@ -266,7 +266,7 @@ const ServicePage = () => {
 
       {/* TODO: Add a pagination section Here */}
       {/* Pagination Section */}
-      <Pagination total={500} />
+      <Pagination total={500} defaultPageSize={5} />
     </div>
   );
 };
