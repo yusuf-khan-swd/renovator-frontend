@@ -102,6 +102,11 @@ const ServicePage = () => {
     handleSetSorting(value, setSortBy, setSortOrder);
   };
 
+  const onPaginationChange = (page: number, pageSize: number) => {
+    console.log("Page: ", page);
+    console.log("PageSize: ", pageSize);
+  };
+
   return (
     <div>
       <div style={{ marginBottom: "20px" }}>
@@ -266,7 +271,11 @@ const ServicePage = () => {
 
       {/* TODO: Add a pagination section Here */}
       {/* Pagination Section */}
-      <Pagination total={500} defaultPageSize={5} />
+      <Pagination
+        total={500}
+        defaultPageSize={5}
+        onChange={onPaginationChange}
+      />
     </div>
   );
 };
