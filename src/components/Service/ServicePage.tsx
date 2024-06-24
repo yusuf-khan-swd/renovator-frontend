@@ -105,6 +105,8 @@ const ServicePage = () => {
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page: ", page);
     console.log("PageSize: ", pageSize);
+    setPage(page);
+    setSize(pageSize);
   };
 
   return (
