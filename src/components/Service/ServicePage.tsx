@@ -270,11 +270,13 @@ const ServicePage = () => {
       )}
 
       {/* Pagination Section */}
-      <Pagination
-        total={meta?.total}
-        defaultPageSize={5}
-        onChange={onPaginationChange}
-      />
+      <div>
+        <Pagination
+          total={meta?.total}
+          defaultPageSize={5}
+          onChange={onPaginationChange}
+        />
+      </div>
     </div>
   );
 };
