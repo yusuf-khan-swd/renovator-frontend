@@ -266,17 +266,18 @@ const ServicePage = () => {
           No Services available
         </h3>
       ) : (
-        <Services services={services} />
+        <>
+          <Services services={services} />
+          {/* Pagination Section */}
+          <div>
+            <Pagination
+              total={meta?.total}
+              defaultPageSize={5}
+              onChange={onPaginationChange}
+            />
+          </div>
+        </>
       )}
-
-      {/* Pagination Section */}
-      <div>
-        <Pagination
-          total={meta?.total}
-          defaultPageSize={5}
-          onChange={onPaginationChange}
-        />
-      </div>
     </div>
   );
 };
