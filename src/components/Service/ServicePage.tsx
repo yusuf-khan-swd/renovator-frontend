@@ -269,7 +269,7 @@ const ServicePage = () => {
         <>
           <Services services={services} />
           {/* Pagination Section */}
-          <div>
+          <div style={{ textAlign: "center", margin: "10px 0" }}>
             <Pagination
               total={meta?.total}
               defaultPageSize={5}
