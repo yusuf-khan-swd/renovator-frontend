@@ -272,7 +272,7 @@ const ServicePage = () => {
           <div style={{ textAlign: "center", margin: "10px 0" }}>
             <Pagination
               total={meta?.total}
-              defaultPageSize={5}
+              defaultPageSize={size}
               onChange={onPaginationChange}
             />
           </div>
