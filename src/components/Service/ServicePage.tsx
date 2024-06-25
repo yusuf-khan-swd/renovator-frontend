@@ -17,8 +17,6 @@ import {
 } from "./ServiceUtils";
 import Services from "./Services";
 
-// TODO: Implement search by status and category name
-
 const ServicePage = () => {
   const [showMoreFilter, setShowMoreFilter] = useState(false);
 
