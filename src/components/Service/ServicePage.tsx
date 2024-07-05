@@ -265,6 +265,13 @@ const ServicePage = () => {
         </h3>
       ) : (
         <>
+          <div style={{ textAlign: "center", margin: "10px 0" }}>
+            <Pagination
+              total={meta?.total}
+              defaultPageSize={size}
+              onChange={onPaginationChange}
+            />
+          </div>
           <Services services={services} />
           {/* Pagination Section */}
           <div style={{ textAlign: "center", margin: "10px 0" }}>
