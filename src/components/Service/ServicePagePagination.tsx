@@ -1,5 +1,17 @@
+import { Pagination } from "antd";
+
 const ServicePagePagination = () => {
-  return <div></div>;
+  const meta = { total: 10 };
+  const size = 5;
+  const onPaginationChange = () => {};
+
+  return (
+    <Pagination
+      total={meta?.total}
+      defaultPageSize={size}
+      onChange={onPaginationChange}
+    />
+  );
 };
 
 export default ServicePagePagination;
