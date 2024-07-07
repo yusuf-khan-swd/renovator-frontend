@@ -10,6 +10,7 @@ import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Pagination, Row, Select } from "antd";
 import { useState } from "react";
+import ServicePagePagination from "./ServicePagePagination";
 import {
   ServiceSortBySelectOptions,
   handleSetSorting,
@@ -265,6 +266,7 @@ const ServicePage = () => {
         </h3>
       ) : (
         <>
+          <ServicePagePagination />
           <div style={{ textAlign: "center", margin: "10px 0" }}>
             <Pagination
               total={meta?.total}
@@ -281,6 +283,7 @@ const ServicePage = () => {
               onChange={onPaginationChange}
             />
           </div>
+          <ServicePagePagination />
         </>
       )}
     </div>
