@@ -1,4 +1,6 @@
 
+[fix] Update Database Url. Error: Can't reach Database server at Supabase. 
+
 [solved] The server was paused in SupaBase. Problem with server solved by going to SupaBase dashboard and unpaused the server. 
 
 Add Pagination to ServicePage
