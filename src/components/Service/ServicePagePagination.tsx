@@ -6,11 +6,13 @@ const ServicePagePagination = () => {
   const onPaginationChange = () => {};
 
   return (
-    <Pagination
-      total={meta?.total}
-      defaultPageSize={size}
-      onChange={onPaginationChange}
-    />
+    <div style={{ textAlign: "center", margin: "10px 0" }}>
+      <Pagination
+        total={meta?.total}
+        defaultPageSize={size}
+        onChange={onPaginationChange}
+      />
+    </div>
   );
 };
 
