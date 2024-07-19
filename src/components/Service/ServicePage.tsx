@@ -263,6 +263,8 @@ const ServicePage = () => {
           total={meta?.total || 20}
           defaultPageSize={size}
           onChange={onPaginationChange}
+          pageSize={page}
+          current={size}
         />
       </div>
       {/* All Services */}
@@ -283,6 +285,8 @@ const ServicePage = () => {
           total={meta?.total || 20}
           defaultPageSize={size}
           onChange={onPaginationChange}
+          pageSize={page}
+          current={size}
         />
       </div>
       <ServicePagePagination />
