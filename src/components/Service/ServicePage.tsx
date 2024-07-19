@@ -257,6 +257,14 @@ const ServicePage = () => {
         </div>
       </div>
 
+      <ServicePagePagination />
+      <div style={{ textAlign: "center", margin: "10px 0" }}>
+        <Pagination
+          total={meta?.total || 20}
+          defaultPageSize={size}
+          onChange={onPaginationChange}
+        />
+      </div>
       {/* All Services */}
       {isLoading ? (
         <FullScreenLoading />
@@ -266,26 +274,18 @@ const ServicePage = () => {
         </h3>
       ) : (
         <>
-          <ServicePagePagination />
-          <div style={{ textAlign: "center", margin: "10px 0" }}>
-            <Pagination
-              total={meta?.total}
-              defaultPageSize={size}
-              onChange={onPaginationChange}
-            />
-          </div>
           <Services services={services} />
-          {/* Pagination Section */}
-          <div style={{ textAlign: "center", margin: "10px 0" }}>
-            <Pagination
-              total={meta?.total}
-              defaultPageSize={size}
-              onChange={onPaginationChange}
-            />
-          </div>
-          <ServicePagePagination />
         </>
       )}
+      {/* Pagination Section */}
+      <div style={{ textAlign: "center", margin: "10px 0" }}>
+        <Pagination
+          total={meta?.total || 20}
+          defaultPageSize={size}
+          onChange={onPaginationChange}
+        />
+      </div>
+      <ServicePagePagination />
     </div>
   );
 };
