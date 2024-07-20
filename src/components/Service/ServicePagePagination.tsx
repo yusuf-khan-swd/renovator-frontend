@@ -10,9 +10,9 @@ interface IServicePagePaginationProps {
 }
 
 const ServicePagePagination = ({
-  total = 20,
-  size = 5,
-  page = 1,
+  total,
+  size,
+  page,
   setPage,
   setSize,
 }: IServicePagePaginationProps) => {
