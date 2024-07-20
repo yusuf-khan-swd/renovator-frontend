@@ -1,17 +1,35 @@
 import { Pagination } from "antd";
+import { SetStateAction } from "react";
 
-const ServicePagePagination = () => {
-  const meta = { total: 20 };
-  const size = 5;
-  const onPaginationChange = () => {};
+interface IServicePagePaginationProps {
+  total: number;
+  size: number;
+  page: number;
+  setPage: (value: SetStateAction<number>) => void;
+  setSize: (value: SetStateAction<number>) => void;
+}
+
+const ServicePagePagination = ({
+  total = 20,
+  size = 5,
+  page = 1,
+  setPage,
+  setSize,
+}: IServicePagePaginationProps) => {
+  const onPaginationChange = (page: number, pageSize: number) => {
+    setPage(page);
+    setSize(pageSize);
+  };
 
   return (
     <div style={{ textAlign: "center", margin: "10px 0" }}>
       ServicePagePagination
       <Pagination
-        total={meta?.total}
+        total={total || 20}
         defaultPageSize={size}
         onChange={onPaginationChange}
+        current={page}
+        pageSize={size}
       />
     </div>
   );
