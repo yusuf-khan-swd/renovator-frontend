@@ -25,7 +25,7 @@ const ServicePagePagination = ({
     <div style={{ textAlign: "center", margin: "10px 0" }}>
       ServicePagePagination
       <Pagination
-        total={total || 20}
+        total={total}
         defaultPageSize={size}
         onChange={onPaginationChange}
         current={page}
