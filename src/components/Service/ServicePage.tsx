@@ -257,7 +257,13 @@ const ServicePage = () => {
         </div>
       </div>
 
-      <ServicePagePagination />
+      <ServicePagePagination
+        total={meta?.total as number}
+        size={size}
+        page={page}
+        setPage={setPage}
+        setSize={setSize}
+      />
       <div style={{ textAlign: "center", margin: "10px 0" }}>
         <Pagination
           total={meta?.total || 20}
@@ -289,7 +295,13 @@ const ServicePage = () => {
           pageSize={size}
         />
       </div>
-      <ServicePagePagination />
+      <ServicePagePagination
+        total={meta?.total as number}
+        size={size}
+        page={page}
+        setPage={setPage}
+        setSize={setSize}
+      />
     </div>
   );
 };
