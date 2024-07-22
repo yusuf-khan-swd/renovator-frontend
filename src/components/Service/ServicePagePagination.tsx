@@ -23,7 +23,6 @@ const ServicePagePagination = ({
 
   return (
     <div style={{ textAlign: "center", margin: "10px 0" }}>
-      ServicePagePagination
       <Pagination
         total={total}
         defaultPageSize={size}
