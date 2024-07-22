@@ -8,7 +8,7 @@ import { useCategoriesQuery } from "@/redux/api/categoryApi";
 import { useServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { ReloadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Pagination, Row, Select } from "antd";
+import { Button, Col, Input, Row, Select } from "antd";
 import { useState } from "react";
 import ServicePagePagination from "./ServicePagePagination";
 import {
@@ -277,15 +277,6 @@ const ServicePage = () => {
         </>
       )}
       {/* Pagination Section */}
-      <div style={{ textAlign: "center", margin: "10px 0" }}>
-        <Pagination
-          total={meta?.total || 20}
-          defaultPageSize={size}
-          onChange={onPaginationChange}
-          current={page}
-          pageSize={size}
-        />
-      </div>
       <ServicePagePagination
         total={meta?.total as number}
         size={size}
