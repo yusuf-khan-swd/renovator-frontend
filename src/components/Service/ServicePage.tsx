@@ -264,15 +264,6 @@ const ServicePage = () => {
         setPage={setPage}
         setSize={setSize}
       />
-      <div style={{ textAlign: "center", margin: "10px 0" }}>
-        <Pagination
-          total={meta?.total || 20}
-          defaultPageSize={size}
-          onChange={onPaginationChange}
-          current={page}
-          pageSize={size}
-        />
-      </div>
       {/* All Services */}
       {isLoading ? (
         <FullScreenLoading />
