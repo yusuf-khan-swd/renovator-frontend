@@ -73,6 +73,7 @@ const ServicePage = () => {
   const { data, isLoading } = useServicesQuery({ ...query });
   const services = data?.services;
   const meta = data?.meta;
+  const total = data?.meta?.total;
 
   const resetFilters = () => {
     setSortBy("");
@@ -253,7 +254,7 @@ const ServicePage = () => {
       </div>
 
       <ServicePagePagination
-        total={meta?.total as number}
+        total={total as number}
         size={size}
         page={page}
         setPage={setPage}
@@ -273,7 +274,7 @@ const ServicePage = () => {
       )}
       {/* Pagination Section */}
       <ServicePagePagination
-        total={meta?.total as number}
+        total={total as number}
         size={size}
         page={page}
         setPage={setPage}
