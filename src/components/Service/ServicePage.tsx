@@ -101,11 +101,6 @@ const ServicePage = () => {
     handleSetSorting(value, setSortBy, setSortOrder);
   };
 
-  const onPaginationChange = (page: number, pageSize: number) => {
-    setPage(page);
-    setSize(pageSize);
-  };
-
   return (
     <div>
       <div style={{ marginBottom: "20px" }}>
