@@ -1,5 +1,7 @@
 
-[fix] Update Database Url. Error: Can't reach Database server at Supabase. 
+
+
+[fixed] Update Database Url. There has been port change in supabase. Error: Can't reach Database server at Supabase. 
 
 [solved] The server was paused in SupaBase. Problem with server solved by going to SupaBase dashboard and unpaused the server. 
 
