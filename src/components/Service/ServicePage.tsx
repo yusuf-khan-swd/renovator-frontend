@@ -73,7 +73,7 @@ const ServicePage = () => {
   const { data, isLoading } = useServicesQuery({ ...query });
   const services = data?.services;
   const meta = data?.meta;
-  const total = meta?.total;
+  const total = data?.meta?.total;
 
   const resetFilters = () => {
     setSortBy("");
