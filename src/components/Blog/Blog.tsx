@@ -9,7 +9,7 @@ const Blog = () => {
 
   return isLoading ? (
     <CenterLoading />
-  ) : !data || data.length <= 0 ? (
+  ) : !data || data.length === 0 ? (
     <h3 style={{ margin: "2px", textAlign: "center" }}>No Blogs available</h3>
   ) : (
     <Accordion data={data} />
