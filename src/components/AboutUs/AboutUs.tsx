@@ -1,7 +1,7 @@
 "use client";
 
-import FullScreenLoading from "@/components/Loading/FullScreenLoading";
 import { useGetAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
+import CenterLoading from "../Loading/CenterLoading";
 import AboutUsContent from "./AboutUsContent";
 
 const AboutUs = () => {
@@ -10,7 +10,7 @@ const AboutUs = () => {
   return (
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
       {isLoading ? (
-        <FullScreenLoading />
+        <CenterLoading />
       ) : !data || data?.length === 0 ? (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
           No Content Available
