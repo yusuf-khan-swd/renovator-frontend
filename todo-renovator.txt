@@ -1,5 +1,5 @@
 
-Add no content available to About Us, Faq, and Blog
+Done - Add no content available to About Us, Faq, and Blog
 
 [fixed] Update Database Url. There has been port change in supabase. Error: Can't reach Database server at Supabase. 
 
