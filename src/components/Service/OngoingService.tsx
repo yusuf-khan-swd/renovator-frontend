@@ -16,7 +16,9 @@ const OngoingService = () => {
       ) : ongoingServices?.length > 0 ? (
         <Services services={ongoingServices} />
       ) : (
-        <h3>No ongoing service available</h3>
+        <h3 style={{ margin: "2px", textAlign: "center" }}>
+          No ongoing service available
+        </h3>
       )}
     </div>
   );
