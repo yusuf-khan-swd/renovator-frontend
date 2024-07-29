@@ -262,14 +262,12 @@ const ServicePage = () => {
       {/* All Services */}
       {isLoading ? (
         <FullScreenLoading />
-      ) : !services || services?.length <= 0 ? (
+      ) : services && services?.length > 0 ? (
+        <Services services={services} />
+      ) : (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
           No Services available
         </h3>
-      ) : (
-        <>
-          <Services services={services} />
-        </>
       )}
       {/* Pagination Section */}
       <ServicePagePagination
