@@ -16,7 +16,9 @@ const UpcomingService = () => {
       ) : upcomingServices?.length > 0 ? (
         <Services services={upcomingServices} />
       ) : (
-        <h3>No upcoming service available</h3>
+        <h3 style={{ margin: "2px", textAlign: "center" }}>
+          No upcoming service available
+        </h3>
       )}
     </div>
   );
