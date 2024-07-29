@@ -10,7 +10,9 @@ const UpcomingService = () => {
 
   return (
     <div>
-      <h2 style={{ margin: "15px 0" }}>Upcoming Services</h2>
+      <h2 style={{ margin: "15px 0", textAlign: "center" }}>
+        Upcoming Services
+      </h2>
       {isUpcomingServicesLoading ? (
         <FullScreenLoading />
       ) : upcomingServices?.length > 0 ? (

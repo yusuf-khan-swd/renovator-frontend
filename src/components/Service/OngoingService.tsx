@@ -10,7 +10,9 @@ const OngoingService = () => {
 
   return (
     <div style={{ margin: "40px 0" }}>
-      <h2 style={{ margin: "15px 0" }}>Ongoing Services</h2>
+      <h2 style={{ margin: "15px 0", textAlign: "center" }}>
+        Ongoing Services
+      </h2>
       {isOngoingServicesLoading ? (
         <FullScreenLoading />
       ) : ongoingServices?.length > 0 ? (
