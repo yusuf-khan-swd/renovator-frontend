@@ -56,7 +56,7 @@ const CategoryServicesPage = ({ params }: any) => {
             Category: {data?.title}
           </h3>
 
-          {services?.length > 0 ? (
+          {services && services?.length > 0 ? (
             <Services services={services} />
           ) : (
             <h3 style={{ margin: "2px", textAlign: "center" }}>
