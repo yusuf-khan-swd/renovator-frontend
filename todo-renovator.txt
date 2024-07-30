@@ -1,4 +1,6 @@
 
+[fixed] - Supabase connection string type wrong. Spelling mistake the database name. The database name was "postgres" but I have use "postgresv" type one character extra v 
+
 Done - Add no content available to About Us, Faq, and Blog
 
 [fixed] Update Database Url. There has been port change in supabase. Error: Can't reach Database server at Supabase. 
