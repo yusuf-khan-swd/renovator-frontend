@@ -11,14 +11,12 @@ const AboutUs = () => {
     <div style={{ maxWidth: "750px", margin: "0 auto" }}>
       {isLoading ? (
         <CenterLoading />
-      ) : !data || data?.length === 0 ? (
+      ) : data && data?.length > 0 ? (
+        <AboutUsContent data={data} />
+      ) : (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
           No Content Available
         </h3>
-      ) : (
-        <div>
-          <AboutUsContent data={data} />
-        </div>
       )}
     </div>
   );
