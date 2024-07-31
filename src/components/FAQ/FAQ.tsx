@@ -9,10 +9,10 @@ const FAQ = () => {
 
   return isLoading ? (
     <CenterLoading />
-  ) : !data || data?.length === 0 ? (
-    <h3 style={{ margin: "2px", textAlign: "center" }}>No FAQs available</h3>
-  ) : (
+  ) : data && data?.length > 0 ? (
     <Accordion data={data} />
+  ) : (
+    <h3 style={{ margin: "2px", textAlign: "center" }}>No FAQs available</h3>
   );
 };
 
