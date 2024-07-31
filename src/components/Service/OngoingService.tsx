@@ -15,7 +15,7 @@ const OngoingService = () => {
       </h2>
       {isOngoingServicesLoading ? (
         <FullScreenLoading />
-      ) : ongoingServices?.length > 0 ? (
+      ) : ongoingServices && ongoingServices?.length > 0 ? (
         <Services services={ongoingServices} />
       ) : (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
