@@ -15,9 +15,7 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
     <div>
       {isReviewLoading ? (
         <FullScreenLoading />
-      ) : reviews?.length < 1 ? (
-        <p>No review available</p>
-      ) : (
+      ) : reviews && reviews?.length > 1 ? (
         <Card>
           <ReviewAndRatingHeading heading="Users reviews and ratings" />
 
@@ -27,6 +25,8 @@ const Reviews = ({ serviceId }: IReviewsProps) => {
             ))}
           </Row>
         </Card>
+      ) : (
+        <p>No review available</p>
       )}
     </div>
   );
