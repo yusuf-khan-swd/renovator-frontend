@@ -257,6 +257,7 @@ const ServicePage = () => {
         <FullScreenLoading />
       ) : services && services?.length > 0 ? (
         <>
+          {/* Top Pagination Section */}
           <ServicePagePagination
             total={total as number}
             size={size}
@@ -265,7 +266,7 @@ const ServicePage = () => {
             setSize={setSize}
           />
           <Services services={services} />
-          {/* Pagination Section */}
+          {/* Bottom Pagination Section */}
           <ServicePagePagination
             total={total as number}
             size={size}
