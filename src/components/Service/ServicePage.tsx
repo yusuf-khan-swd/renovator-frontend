@@ -252,18 +252,20 @@ const ServicePage = () => {
         </div>
       </div>
 
-      <ServicePagePagination
-        total={total as number}
-        size={size}
-        page={page}
-        setPage={setPage}
-        setSize={setSize}
-      />
       {/* All Services */}
       {isLoading ? (
         <FullScreenLoading />
       ) : services && services?.length > 0 ? (
-        <Services services={services} />
+        <>
+          <ServicePagePagination
+            total={total as number}
+            size={size}
+            page={page}
+            setPage={setPage}
+            setSize={setSize}
+          />
+          <Services services={services} />
+        </>
       ) : (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
           No Services available
