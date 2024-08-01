@@ -265,20 +265,20 @@ const ServicePage = () => {
             setSize={setSize}
           />
           <Services services={services} />
+          {/* Pagination Section */}
+          <ServicePagePagination
+            total={total as number}
+            size={size}
+            page={page}
+            setPage={setPage}
+            setSize={setSize}
+          />
         </>
       ) : (
         <h3 style={{ margin: "2px", textAlign: "center" }}>
           No Services available
         </h3>
       )}
-      {/* Pagination Section */}
-      <ServicePagePagination
-        total={total as number}
-        size={size}
-        page={page}
-        setPage={setPage}
-        setSize={setSize}
-      />
     </div>
   );
 };
