@@ -4,7 +4,7 @@ import CenterLoading from "@/components/Loading/CenterLoading";
 import Accordion from "@/components/ui/Accordion";
 import { useBlogsQuery } from "@/redux/api/content/blogApi";
 
-const Blog = () => {
+const BlogPage = () => {
   const { data, isLoading } = useBlogsQuery(undefined);
 
   return isLoading ? (
@@ -16,4 +16,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;

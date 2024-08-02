@@ -1,4 +1,4 @@
-import Blog from "@/components/Blog/Blog";
+import BlogPage from "@/components/Blog/BlogPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const BlogPage = () => {
+const Blog = () => {
   return (
     <div>
-      <Blog />
+      <BlogPage />
     </div>
   );
 };
 
-export default BlogPage;
+export default Blog;
