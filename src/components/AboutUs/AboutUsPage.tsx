@@ -4,7 +4,7 @@ import { useGetAllAboutUsQuery } from "@/redux/api/content/aboutUsApi";
 import CenterLoading from "../Loading/CenterLoading";
 import AboutUsContent from "./AboutUsContent";
 
-const AboutUs = () => {
+const AboutUsPage = () => {
   const { data, isLoading } = useGetAllAboutUsQuery(undefined);
 
   return (
@@ -22,4 +22,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutUsPage;

@@ -1,4 +1,4 @@
-import AboutUs from "@/components/AboutUs/AboutUs";
+import AboutUsPage from "@/components/AboutUs/AboutUsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const AboutUsPage = () => {
+const AboutUs = () => {
   return (
     <div>
-      <AboutUs />
+      <AboutUsPage />
     </div>
   );
 };
 
-export default AboutUsPage;
+export default AboutUs;
