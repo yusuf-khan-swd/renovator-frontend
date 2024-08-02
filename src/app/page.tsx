@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div style={{ maxWidth: "1580px", margin: "0 auto" }}>
       <MainNavbar />
@@ -23,4 +23,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;
