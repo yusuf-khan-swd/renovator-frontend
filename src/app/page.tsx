@@ -1,4 +1,4 @@
-import Home from "@/components/Home/Home";
+import HomePage from "@/components/Home/HomePage";
 import CallOut from "@/components/ui/CallOut";
 import FooterUI from "@/components/ui/FooterUI";
 import MainNavbar from "@/components/ui/MainNavbar";
@@ -15,7 +15,7 @@ const HomePage = () => {
     <div style={{ maxWidth: "1580px", margin: "0 auto" }}>
       <MainNavbar />
       <div className={styles["main-layout"]}>
-        <Home />
+        <HomePage />
       </div>
       <CallOut />
       <FooterUI />

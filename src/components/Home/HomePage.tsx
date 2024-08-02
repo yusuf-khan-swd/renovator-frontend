@@ -4,7 +4,7 @@ import UpcomingService from "@/components/Service/UpcomingService";
 import Banner from "@/components/ui/Banner";
 import Feedback from "@/components/ui/Feedback";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <Banner />
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

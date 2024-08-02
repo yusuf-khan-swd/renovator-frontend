@@ -1,4 +1,4 @@
-import Home from "@/components/Home/Home";
+import HomePage from "@/components/Home/HomePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
-      <Home />
+      <HomePage />
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
