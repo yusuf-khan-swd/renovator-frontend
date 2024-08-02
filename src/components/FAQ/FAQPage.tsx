@@ -4,7 +4,7 @@ import CenterLoading from "@/components/Loading/CenterLoading";
 import Accordion from "@/components/ui/Accordion";
 import { useFaqsQuery } from "@/redux/api/content/faqApi";
 
-const FAQ = () => {
+const FAQPage = () => {
   const { data, isLoading } = useFaqsQuery(undefined);
 
   return isLoading ? (
@@ -16,4 +16,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FAQPage;

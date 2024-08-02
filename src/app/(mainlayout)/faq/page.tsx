@@ -1,4 +1,4 @@
-import FAQ from "@/components/FAQ/FAQ";
+import FAQPage from "@/components/FAQ/FAQPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const FAQPage = () => {
+const FAQ = () => {
   return (
     <div>
-      <FAQ />
+      <FAQPage />
     </div>
   );
 };
 
-export default FAQPage;
+export default FAQ;
