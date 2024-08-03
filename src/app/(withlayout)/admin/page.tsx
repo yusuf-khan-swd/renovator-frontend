@@ -1,4 +1,4 @@
-import UserProfile from "@/components/UserProfile/UserProfile";
+import UserProfilePage from "@/components/UserProfile/UserProfilePage";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
 import { Metadata } from "next";
@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const AdminPage = () => {
+const Admin = () => {
   return (
     <div>
       <CommonBreadCrumb />
-      <UserProfile />
+      <UserProfilePage />
     </div>
   );
 };
 
-export default AdminPage;
+export default Admin;
