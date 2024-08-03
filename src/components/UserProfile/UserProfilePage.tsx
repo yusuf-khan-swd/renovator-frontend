@@ -10,7 +10,7 @@ import Link from "next/link";
 import FormHeading from "../ui/FormHeading";
 import ProfileBreadCrumb from "./ProfileBreadCrumb";
 
-const UserProfile = () => {
+const UserProfilePage = () => {
   const { userId } = getUserInfo() as any;
 
   const { data, isLoading } = useProfileQuery(userId);
@@ -75,4 +75,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default UserProfilePage;
