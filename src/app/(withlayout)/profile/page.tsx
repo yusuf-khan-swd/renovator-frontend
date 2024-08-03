@@ -1,4 +1,4 @@
-import UserProfile from "@/components/UserProfile/UserProfile";
+import UserProfilePage from "@/components/UserProfile/UserProfilePage";
 
 import { Metadata } from "next";
 
@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ProfilePage = () => {
-  return <UserProfile />;
+const Profile = () => {
+  return <UserProfilePage />;
 };
 
-export default ProfilePage;
+export default Profile;
