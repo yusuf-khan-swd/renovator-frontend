@@ -1,4 +1,4 @@
-import UserProfile from "@/components/UserProfile/UserProfile";
+import UserProfilePage from "@/components/UserProfile/UserProfilePage";
 
 import { Metadata } from "next";
 
@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const SuperAdminPage = () => {
-  return <UserProfile />;
+const SuperAdmin = () => {
+  return <UserProfilePage />;
 };
 
-export default SuperAdminPage;
+export default SuperAdmin;
