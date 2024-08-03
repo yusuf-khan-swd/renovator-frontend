@@ -22,7 +22,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import Link from "next/link";
 import ProfileBreadCrumb from "./ProfileBreadCrumb";
 
-const EditUserProfile = ({ id }: { id: string }) => {
+const EditUserProfilePage = ({ id }: { id: string }) => {
   const { data, isLoading } = useProfileQuery(id);
   const [updateProfile] = useUpdateProfileMutation();
 
@@ -110,4 +110,4 @@ const EditUserProfile = ({ id }: { id: string }) => {
   );
 };
 
-export default EditUserProfile;
+export default EditUserProfilePage;

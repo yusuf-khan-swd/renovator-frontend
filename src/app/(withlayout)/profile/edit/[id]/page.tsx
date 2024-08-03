@@ -1,4 +1,4 @@
-import EditUserProfile from "@/components/UserProfile/EditUserProfile";
+import EditUserProfilePage from "@/components/UserProfile/EditUserProfilePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditUserProfilePage = ({ params }: { params: { id: string } }) => {
+const EditUserProfile = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   return (
     <div>
-      <EditUserProfile id={id} />
+      <EditUserProfilePage id={id} />
     </div>
   );
 };
 
-export default EditUserProfilePage;
+export default EditUserProfile;
