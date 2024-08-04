@@ -14,7 +14,13 @@ import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
-const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
+const EditUserPage = ({
+  id,
+  pageRoute,
+}: {
+  id: string;
+  pageRoute?: string;
+}) => {
   const { data, isLoading } = useUserQuery(id);
   const [updateUser] = useUpdateUserMutation();
 
@@ -99,4 +105,4 @@ const EditUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
   );
 };
 
-export default EditUser;
+export default EditUserPage;
