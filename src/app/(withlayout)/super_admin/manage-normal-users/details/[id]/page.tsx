@@ -1,4 +1,4 @@
-import DetailsUser from "@/components/ManageUser/DetailsUser";
+import DetailsUserPage from "@/components/ManageUser/DetailsUserPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const DetailsUserPage = ({ params }: { params: { id: string } }) => {
+const DetailsUser = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <DetailsUser id={id} pageRoute="manage-normal-users" />
+      <DetailsUserPage id={id} pageRoute="manage-normal-users" />
     </div>
   );
 };
 
-export default DetailsUserPage;
+export default DetailsUser;
