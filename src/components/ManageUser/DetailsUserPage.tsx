@@ -12,7 +12,13 @@ import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
-const DetailsUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
+const DetailsUserPage = ({
+  id,
+  pageRoute,
+}: {
+  id: string;
+  pageRoute?: string;
+}) => {
   const { data, isLoading } = useUserQuery(id);
   const [deleteUser] = useDeleteUserMutation();
 
@@ -105,4 +111,4 @@ const DetailsUser = ({ id, pageRoute }: { id: string; pageRoute?: string }) => {
   );
 };
 
-export default DetailsUser;
+export default DetailsUserPage;
