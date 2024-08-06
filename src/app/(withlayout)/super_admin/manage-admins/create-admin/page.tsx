@@ -1,4 +1,4 @@
-import CreateAdmin from "@/components/ManageUser/CreateAdmin";
+import CreateAdminPage from "@/components/ManageUser/CreateAdminPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateAdminPage = () => {
+const CreateAdmin = () => {
   return (
     <div>
-      <CreateAdmin pageRoute="manage-admins" />
+      <CreateAdminPage pageRoute="manage-admins" />
     </div>
   );
 };
 
-export default CreateAdminPage;
+export default CreateAdmin;
