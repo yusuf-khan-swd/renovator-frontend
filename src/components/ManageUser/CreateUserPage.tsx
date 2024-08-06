@@ -3,7 +3,7 @@
 import UserForm from "@/components/UserForm/UserForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
-const CreateUser = ({ pageRoute }: { pageRoute?: string }) => {
+const CreateUserPage = ({ pageRoute }: { pageRoute?: string }) => {
   const routeName = pageRoute || "manage-users";
   const endName = "create-user";
 
@@ -22,4 +22,4 @@ const CreateUser = ({ pageRoute }: { pageRoute?: string }) => {
   );
 };
 
-export default CreateUser;
+export default CreateUserPage;
