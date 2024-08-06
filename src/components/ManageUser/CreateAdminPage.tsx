@@ -3,7 +3,7 @@
 import AdminForm from "@/components/AdminForm/AdminForm";
 import CommonBreadCrumb from "@/components/ui/CommonBreadCrumb";
 
-const CreateAdmin = ({ pageRoute }: { pageRoute?: string }) => {
+const CreateAdminPage = ({ pageRoute }: { pageRoute?: string }) => {
   const routeName = pageRoute || "manage-users";
   const endName = "create-admin";
 
@@ -23,4 +23,4 @@ const CreateAdmin = ({ pageRoute }: { pageRoute?: string }) => {
   );
 };
 
-export default CreateAdmin;
+export default CreateAdminPage;
