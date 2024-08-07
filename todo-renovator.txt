@@ -13,7 +13,7 @@ Add Pagination to ServicePage
 
 Done - In ServicePage Make result of Service api call effected by every input and select field query.
 
-Done - When selecting a category field Remove category services by calling category API instead use services API for filter by category 
+Done - When selecting a category field, Remove category services by calling category API, instead use services API for filter by category 
 
 Done - Separate some ServicePage functionality like sortOptions, handleSorting, serviceStatusOptions to a separte component ServiceUtils
 
@@ -111,7 +111,7 @@ Add backend for searching and filtering in every DashBoard table section Search
 
 Done - In dashboard Hide sidebar for smaller device and Show drawer for smaller device.
 
-Add service for all the category 
+Add more services for all the available category 
 Add more service for all of the categories
 Add more review to service from ChatGPT or Gemini
 
