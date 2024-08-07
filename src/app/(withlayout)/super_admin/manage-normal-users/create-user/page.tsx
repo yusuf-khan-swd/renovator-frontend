@@ -1,4 +1,4 @@
-import CreateUser from "@/components/ManageUser/CreateUser";
+import CreateUserPage from "@/components/ManageUser/CreateUserPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateUserPage = () => {
+const CreateUser = () => {
   return (
     <div>
-      <CreateUser pageRoute="manage-normal-users" />
+      <CreateUserPage pageRoute="manage-normal-users" />
     </div>
   );
 };
 
-export default CreateUserPage;
+export default CreateUser;
