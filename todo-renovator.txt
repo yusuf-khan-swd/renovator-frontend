@@ -1,4 +1,6 @@
 
+In home page Category try to redirect category to in services page or add searching and filtering functionality or do nothing
+
 [fixed] - Get supabase connection string from ORMs Tab and select Tool Prisma 
 
 [fixed] - Supabase connection string type wrong. Spelling mistake the database name. The database name was "postgres" but I have use "postgresv" type one character extra v 
