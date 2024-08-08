@@ -1,4 +1,4 @@
-import ManageService from "@/components/ManageService/ManageService";
+import ManageServicePage from "@/components/ManageService/ManageServicePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageServicePage = () => {
+const ManageService = () => {
   return (
     <div>
-      <ManageService />
+      <ManageServicePage />
     </div>
   );
 };
 
-export default ManageServicePage;
+export default ManageService;
