@@ -21,7 +21,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
 
-const EditService = ({ id }: { id: string }) => {
+const EditServicePage = ({ id }: { id: string }) => {
   const { data, isLoading } = useServiceQuery(id);
 
   const [updateService] = useUpdateServiceMutation();
@@ -133,4 +133,4 @@ const EditService = ({ id }: { id: string }) => {
   );
 };
 
-export default EditService;
+export default EditServicePage;

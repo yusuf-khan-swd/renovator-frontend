@@ -1,4 +1,4 @@
-import EditService from "@/components/ManageService/EditService";
+import EditServicePage from "@/components/ManageService/EditServicePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditServicePage = ({ params }: { params: { id: string } }) => {
+const EditService = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditService id={id} />
+      <EditServicePage id={id} />
     </div>
   );
 };
 
-export default EditServicePage;
+export default EditService;
