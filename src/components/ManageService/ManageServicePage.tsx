@@ -18,7 +18,7 @@ import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
-const ManageService = () => {
+const ManageServicePage = () => {
   const routeName = "manage-services";
 
   const query: Record<string, any> = {};
@@ -227,4 +227,4 @@ const ManageService = () => {
   );
 };
 
-export default ManageService;
+export default ManageServicePage;
