@@ -19,7 +19,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 
-const DetailsService = ({ id }: { id: string }) => {
+const DetailsServicePage = ({ id }: { id: string }) => {
   const { data, isLoading } = useServiceQuery(id);
   const [deleteService] = useDeleteServiceMutation();
   const router = useRouter();
@@ -127,4 +127,4 @@ const DetailsService = ({ id }: { id: string }) => {
   );
 };
 
-export default DetailsService;
+export default DetailsServicePage;
