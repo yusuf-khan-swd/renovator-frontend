@@ -1,4 +1,6 @@
 
+[fixed] - Both supabase url working one from ORMs tab another from NodeJs connection string. I think issue with my network.
+
 Update Feedback form in home page input fields by using full length input field with side labels for big screen instead top. Top label for smaller device
 
 In home page Category try to redirect category to in services page or add searching and filtering functionality or do nothing
