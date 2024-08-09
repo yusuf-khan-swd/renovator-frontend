@@ -21,7 +21,7 @@ import DashboardLink from "../DashboardLink";
 import ConfirmModalReviewContent from "../ui/ConfirmModalReviewContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
-const ManageReview = () => {
+const ManageReviewPage = () => {
   const { role, userId } = getUserInfo() as any;
   const routeName = "manage-reviews";
 
@@ -251,4 +251,4 @@ const ManageReview = () => {
   );
 };
 
-export default ManageReview;
+export default ManageReviewPage;
