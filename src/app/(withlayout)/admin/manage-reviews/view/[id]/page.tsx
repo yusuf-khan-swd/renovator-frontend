@@ -1,4 +1,4 @@
-import ViewReview from "@/components/ManageReview/ViewReview";
+import ViewReviewPage from "@/components/ManageReview/ViewReview";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ViewReviewPage = ({ params }: { params: { id: string } }) => {
+const ViewReview = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <ViewReview id={id} />
+      <ViewReviewPage id={id} />
     </div>
   );
 };
 
-export default ViewReviewPage;
+export default ViewReview;

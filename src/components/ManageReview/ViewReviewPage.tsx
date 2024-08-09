@@ -16,7 +16,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 
-const ViewReview = ({ id }: { id: string }) => {
+const ViewReviewPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
 
@@ -111,4 +111,4 @@ const ViewReview = ({ id }: { id: string }) => {
   );
 };
 
-export default ViewReview;
+export default ViewReviewPage;

@@ -1,4 +1,4 @@
-import ViewReview from "@/components/ManageReview/ViewReview";
+import ViewReviewPage from "@/components/ManageReview/ViewReview";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ const ViewReviewPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <ViewReview id={id} />
+      <ViewReviewPage id={id} />
     </div>
   );
 };
