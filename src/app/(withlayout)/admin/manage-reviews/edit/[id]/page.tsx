@@ -1,4 +1,4 @@
-import EditReview from "@/components/ManageReview/EditReview";
+import EditReviewPage from "@/components/ManageReview/EditReviewPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditReviewPage = ({ params }: { params: { id: string } }) => {
+const EditReview = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditReview id={id} />
+      <EditReviewPage id={id} />
     </div>
   );
 };
 
-export default EditReviewPage;
+export default EditReview;
