@@ -1,4 +1,4 @@
-import ManageReview from "@/components/ManageReview/ManageReview";
+import ManageReviewPage from "@/components/ManageReview/ManageReviewPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageReviewPage = () => {
+const ManageReview = () => {
   return (
     <div>
-      <ManageReview />
+      <ManageReviewPage />
     </div>
   );
 };
 
-export default ManageReviewPage;
+export default ManageReview;
