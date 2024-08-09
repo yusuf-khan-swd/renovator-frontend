@@ -16,7 +16,7 @@ import { serviceSchema } from "@/schemas/service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const CreateService = () => {
+const CreateServicePage = () => {
   const [createService] = useCreateServiceMutation();
 
   const onSubmit = async (data: any) => {
@@ -102,4 +102,4 @@ const CreateService = () => {
   );
 };
 
-export default CreateService;
+export default CreateServicePage;

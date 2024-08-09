@@ -1,4 +1,4 @@
-import CreateService from "@/components/ManageService/CreateService";
+import CreateServicePage from "@/components/ManageService/CreateServicePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateServicePage = () => {
+const CreateService = () => {
   return (
     <div>
-      <CreateService />
+      <CreateServicePage />
     </div>
   );
 };
 
-export default CreateServicePage;
+export default CreateService;
