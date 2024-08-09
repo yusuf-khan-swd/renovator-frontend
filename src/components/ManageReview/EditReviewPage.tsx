@@ -16,7 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
 
-const EditReview = ({ id }: { id: string }) => {
+const EditReviewPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useReviewQuery(id);
   const service = data?.service;
 
@@ -113,4 +113,4 @@ const EditReview = ({ id }: { id: string }) => {
   );
 };
 
-export default EditReview;
+export default EditReviewPage;
