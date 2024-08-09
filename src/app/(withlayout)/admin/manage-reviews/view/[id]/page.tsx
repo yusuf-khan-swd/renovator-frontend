@@ -1,4 +1,4 @@
-import ViewReviewPage from "@/components/ManageReview/ViewReview";
+import ViewReviewPage from "@/components/ManageReview/ViewReviewPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
