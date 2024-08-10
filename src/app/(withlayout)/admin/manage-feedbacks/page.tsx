@@ -1,4 +1,4 @@
-import ManageFeedback from "@/components/ManageFeedback/ManageFeedback";
+import ManageFeedbackPage from "@/components/ManageFeedback/ManageFeedbackPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageFeedbackPage = () => {
+const ManageFeedback = () => {
   return (
     <div>
-      <ManageFeedback />
+      <ManageFeedbackPage />
     </div>
   );
 };
 
-export default ManageFeedbackPage;
+export default ManageFeedback;
