@@ -18,7 +18,7 @@ import DashboardLink from "../DashboardLink";
 import ConfirmModalFeedbackContent from "../ui/ConfirmModalFeedbackContent";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
-const ManageFeedback = () => {
+const ManageFeedbackPage = () => {
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
@@ -214,4 +214,4 @@ const ManageFeedback = () => {
   );
 };
 
-export default ManageFeedback;
+export default ManageFeedbackPage;
