@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
-const ViewFeedback = ({ id }: { id: string }) => {
+const ViewFeedbackPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useFeedbackQuery(id);
 
   const router = useRouter();
@@ -119,4 +119,4 @@ const ViewFeedback = ({ id }: { id: string }) => {
   );
 };
 
-export default ViewFeedback;
+export default ViewFeedbackPage;
