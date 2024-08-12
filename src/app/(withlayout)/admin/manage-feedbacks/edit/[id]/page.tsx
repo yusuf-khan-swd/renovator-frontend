@@ -1,4 +1,4 @@
-import EditFeedback from "@/components/ManageFeedback/EditFeedback";
+import EditFeedbackPage from "@/components/ManageFeedback/EditFeedbackPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditFeedbackPage = ({ params }: any) => {
+const EditFeedback = ({ params }: any) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditFeedback id={id} />
+      <EditFeedbackPage id={id} />
     </div>
   );
 };
 
-export default EditFeedbackPage;
+export default EditFeedback;
