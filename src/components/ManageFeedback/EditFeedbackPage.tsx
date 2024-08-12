@@ -19,7 +19,7 @@ import { Button, Card, Col, Row, message } from "antd";
 import DashboardLink from "../DashboardLink";
 import FormHeading from "../ui/FormHeading";
 
-const EditFeedback = ({ id }: { id: string }) => {
+const EditFeedbackPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useFeedbackQuery(id);
 
   const [updateFeedback] = useUpdateFeedbackMutation();
@@ -119,4 +119,4 @@ const EditFeedback = ({ id }: { id: string }) => {
   );
 };
 
-export default EditFeedback;
+export default EditFeedbackPage;
