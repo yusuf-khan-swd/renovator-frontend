@@ -1,4 +1,4 @@
-import ViewFeedback from "@/components/ManageFeedback/ViewFeedback";
+import ViewFeedbackPage from "@/components/ManageFeedback/ViewFeedbackPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const FeedbackDetailsPage = ({ params }: any) => {
+const ViewFeedback = ({ params }: any) => {
   const id = params?.id;
 
   return (
     <div>
-      <ViewFeedback id={id} />
+      <ViewFeedbackPage id={id} />
     </div>
   );
 };
 
-export default FeedbackDetailsPage;
+export default ViewFeedback;
