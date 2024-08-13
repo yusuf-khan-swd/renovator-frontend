@@ -1,4 +1,4 @@
-import EditFaq from "@/components/ManageContent/ManageFaq/EditFaq";
+import EditFaqPage from "@/components/ManageContent/ManageFaq/EditFaqPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditFaqPage = ({ params }: any) => {
+const EditFaq = ({ params }: any) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditFaq id={id} />
+      <EditFaqPage id={id} />
     </div>
   );
 };
 
-export default EditFaqPage;
+export default EditFaq;
