@@ -10,7 +10,7 @@ import { contentSchema } from "@/schemas/content";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const CreateFaq = () => {
+const CreateFaqPage = () => {
   const [createFaq] = useCreateFaqMutation();
 
   const onSubmit = async (data: any) => {
@@ -68,4 +68,4 @@ const CreateFaq = () => {
   );
 };
 
-export default CreateFaq;
+export default CreateFaqPage;
