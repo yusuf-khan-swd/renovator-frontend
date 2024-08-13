@@ -15,7 +15,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
-const ManageFaq = () => {
+const ManageFaqPage = () => {
   const routeLabel = "manage-faq";
   const routeUrl = "manage-contents/faq";
 
@@ -185,4 +185,4 @@ const ManageFaq = () => {
   );
 };
 
-export default ManageFaq;
+export default ManageFaqPage;
