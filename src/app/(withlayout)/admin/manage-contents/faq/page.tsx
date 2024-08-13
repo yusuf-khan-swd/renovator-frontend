@@ -1,4 +1,4 @@
-import ManageFaq from "@/components/ManageContent/ManageFaq/ManageFaq";
+import ManageFaqPage from "@/components/ManageContent/ManageFaq/ManageFaqPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageFaqPage = () => {
+const ManageFaq = () => {
   return (
     <div>
-      <ManageFaq />
+      <ManageFaqPage />
     </div>
   );
 };
 
-export default ManageFaqPage;
+export default ManageFaq;
