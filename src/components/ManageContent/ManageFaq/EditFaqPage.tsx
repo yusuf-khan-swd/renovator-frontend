@@ -11,7 +11,7 @@ import { contentSchema } from "@/schemas/content";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditFaq = ({ id }: { id: string }) => {
+const EditFaqPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useFaqQuery(id);
 
   const [updateFaq] = useUpdateFaqMutation();
@@ -85,4 +85,4 @@ const EditFaq = ({ id }: { id: string }) => {
   );
 };
 
-export default EditFaq;
+export default EditFaqPage;
