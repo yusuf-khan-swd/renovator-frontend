@@ -1,4 +1,4 @@
-import EditBlog from "@/components/ManageContent/ManageBlog/EditBlog";
+import EditBlogPage from "@/components/ManageContent/ManageBlog/EditBlogPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditBlogPage = ({ params }: any) => {
+const EditBlog = ({ params }: any) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditBlog id={id} />
+      <EditBlogPage id={id} />
     </div>
   );
 };
 
-export default EditBlogPage;
+export default EditBlog;
