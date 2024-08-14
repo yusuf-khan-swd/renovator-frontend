@@ -18,7 +18,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
-const ManageBlog = () => {
+const ManageBlogPage = () => {
   const routeLabel = "manage-blog";
   const routeUrl = "manage-contents/blog";
 
@@ -188,4 +188,4 @@ const ManageBlog = () => {
   );
 };
 
-export default ManageBlog;
+export default ManageBlogPage;
