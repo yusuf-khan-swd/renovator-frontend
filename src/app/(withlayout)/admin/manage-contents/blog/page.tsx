@@ -1,4 +1,4 @@
-import ManageBlog from "@/components/ManageContent/ManageBlog/ManageBlog";
+import ManageBlogPage from "@/components/ManageContent/ManageBlog/ManageBlogPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageBlogPage = () => {
+const ManageBlog = () => {
   return (
     <div>
-      <ManageBlog />
+      <ManageBlogPage />
     </div>
   );
 };
 
-export default ManageBlogPage;
+export default ManageBlog;
