@@ -1,4 +1,4 @@
-import CreateBlog from "@/components/ManageContent/ManageBlog/CreateBlog";
+import CreateBlogPage from "@/components/ManageContent/ManageBlog/CreateBlogPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateBlogPage = () => {
+const CreateBlog = () => {
   return (
     <div>
-      <CreateBlog />
+      <CreateBlogPage />
     </div>
   );
 };
 
-export default CreateBlogPage;
+export default CreateBlog;
