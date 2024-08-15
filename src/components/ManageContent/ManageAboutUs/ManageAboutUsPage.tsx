@@ -19,7 +19,7 @@ import { Button, Input, message } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 
-const ManageAboutUs = () => {
+const ManageAboutUsPage = () => {
   const routeLabel = "manage-about";
   const routeUrl = "manage-contents/about";
 
@@ -191,4 +191,4 @@ const ManageAboutUs = () => {
   );
 };
 
-export default ManageAboutUs;
+export default ManageAboutUsPage;
