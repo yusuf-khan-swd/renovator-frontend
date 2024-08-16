@@ -11,7 +11,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const CreateAboutUs = () => {
+const CreateAboutUsPage = () => {
   const [createAboutUs] = useCreateAboutUsMutation();
 
   const onSubmit = async (data: any) => {
@@ -70,4 +70,4 @@ const CreateAboutUs = () => {
   );
 };
 
-export default CreateAboutUs;
+export default CreateAboutUsPage;
