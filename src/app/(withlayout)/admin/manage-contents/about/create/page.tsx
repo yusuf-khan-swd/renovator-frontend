@@ -1,4 +1,4 @@
-import CreateAboutUs from "@/components/ManageContent/ManageAboutUs/CreateAboutUs";
+import CreateAboutUsPage from "@/components/ManageContent/ManageAboutUs/CreateAboutUsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateAboutUsPage = () => {
+const CreateAboutUs = () => {
   return (
     <div>
-      <CreateAboutUs />
+      <CreateAboutUsPage />
     </div>
   );
 };
 
-export default CreateAboutUsPage;
+export default CreateAboutUs;
