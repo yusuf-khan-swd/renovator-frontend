@@ -1,4 +1,4 @@
-import EditAboutUs from "@/components/ManageContent/ManageAboutUs/EditAboutUs";
+import EditAboutUsPage from "@/components/ManageContent/ManageAboutUs/EditAboutUsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditAboutUsPage = ({ params }: any) => {
+const EditAboutUs = ({ params }: any) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditAboutUs id={id} />
+      <EditAboutUsPage id={id} />
     </div>
   );
 };
 
-export default EditAboutUsPage;
+export default EditAboutUs;
