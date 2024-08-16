@@ -14,7 +14,7 @@ import { contentSchema } from "@/schemas/content";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 
-const EditAboutUs = ({ id }: { id: string }) => {
+const EditAboutUsPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useAboutUsQuery(id);
 
   const [updateAboutUs] = useUpdateAboutUsMutation();
@@ -88,4 +88,4 @@ const EditAboutUs = ({ id }: { id: string }) => {
   );
 };
 
-export default EditAboutUs;
+export default EditAboutUsPage;
