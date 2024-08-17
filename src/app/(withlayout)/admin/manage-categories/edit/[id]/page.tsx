@@ -1,4 +1,4 @@
-import EditCategory from "@/components/ManageCategory/EditCategory";
+import EditCategoryPage from "@/components/ManageCategory/EditCategoryPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditCategoryPage = ({ params }: { params: { id: string } }) => {
+const EditCategory = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditCategory id={id} />
+      <EditCategoryPage id={id} />
     </div>
   );
 };
 
-export default EditCategoryPage;
+export default EditCategory;
