@@ -14,7 +14,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import FormHeading from "../ui/FormHeading";
 
-const EditCategory = ({ id }: { id: string }) => {
+const EditCategoryPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useCategoryQuery(id);
 
   const [updateCategory] = useUpdateCategoryMutation();
@@ -77,4 +77,4 @@ const EditCategory = ({ id }: { id: string }) => {
   );
 };
 
-export default EditCategory;
+export default EditCategoryPage;
