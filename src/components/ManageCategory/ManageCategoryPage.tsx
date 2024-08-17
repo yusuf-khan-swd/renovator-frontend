@@ -16,7 +16,7 @@ import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
-const ManageCategory = () => {
+const ManageCategoryPage = () => {
   const routeName = "manage-categories";
 
   const query: Record<string, any> = {};
@@ -202,4 +202,4 @@ const ManageCategory = () => {
   );
 };
 
-export default ManageCategory;
+export default ManageCategoryPage;
