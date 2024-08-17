@@ -1,4 +1,4 @@
-import ManageCategory from "@/components/ManageCategory/ManageCategory";
+import ManageCategoryPage from "@/components/ManageCategory/ManageCategoryPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageCategoryPage = () => {
+const ManageCategory = () => {
   return (
     <div>
-      <ManageCategory />
+      <ManageCategoryPage />
     </div>
   );
 };
 
-export default ManageCategoryPage;
+export default ManageCategory;
