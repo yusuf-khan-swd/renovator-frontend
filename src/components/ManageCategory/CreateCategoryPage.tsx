@@ -10,7 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import FormHeading from "../ui/FormHeading";
 
-const CreateCategory = () => {
+const CreateCategoryPage = () => {
   const [createCategory] = useCreateCategoryMutation();
 
   const onSubmit = async (data: any) => {
@@ -58,4 +58,4 @@ const CreateCategory = () => {
   );
 };
 
-export default CreateCategory;
+export default CreateCategoryPage;
