@@ -1,4 +1,4 @@
-import CreateCategory from "@/components/ManageCategory/CreateCategory";
+import CreateCategoryPage from "@/components/ManageCategory/CreateCategoryPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const CreateCategoryPage = () => {
+const CreateCategory = () => {
   return (
     <div>
-      <CreateCategory />
+      <CreateCategoryPage />
     </div>
   );
 };
 
-export default CreateCategoryPage;
+export default CreateCategory;
