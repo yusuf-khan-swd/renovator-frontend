@@ -1,4 +1,6 @@
 
+continues - Remove unnecessary div wrapper from next page components mainly in admin, super_admin and user section
+
 [fixed] - Both supabase url working one from ORMs tab another from NodeJs connection string. I think issue with my network.
 
 Update Feedback form in home page input fields by using full length input field with side labels for big screen instead top. Top label for smaller device
