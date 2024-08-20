@@ -14,6 +14,7 @@ interface IInput {
   label?: string;
   required?: boolean;
   readOnly?: boolean;
+  labelFlex?: boolean;
 }
 
 const FormInput = ({
@@ -27,6 +28,7 @@ const FormInput = ({
   label,
   required,
   readOnly = false,
+  labelFlex = false,
 }: IInput) => {
   const {
     control,
@@ -36,7 +38,7 @@ const FormInput = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <>
+    <div style={{ display: `${labelFlex ? "flex" : null}` }}>
       <p style={{ marginBottom: "4px" }}>
         {required ? (
           <span
@@ -75,7 +77,7 @@ const FormInput = ({
         }
       />
       <small style={{ color: "red" }}>{errorMessage}</small>
-    </>
+    </div>
   );
 };
 
