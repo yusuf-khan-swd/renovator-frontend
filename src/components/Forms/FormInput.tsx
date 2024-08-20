@@ -38,46 +38,48 @@ const FormInput = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div style={{ display: `${labelFlex ? "flex" : null}` }}>
-      <p style={{ marginBottom: "4px" }}>
-        {required ? (
-          <span
-            style={{
-              color: "red",
-              paddingRight: "2px",
-            }}
-          >
-            *
-          </span>
-        ) : null}
-        {label ? label : null}
-      </p>
-      <Controller
-        control={control}
-        name={name}
-        render={({ field }) =>
-          type === "password" ? (
-            <Input.Password
-              type={type}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          ) : (
-            <Input
-              type={type}
-              readOnly={readOnly}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          )
-        }
-      />
+    <>
+      <div style={{ display: `${labelFlex ? "flex" : null}` }}>
+        <p style={{ marginBottom: "4px" }}>
+          {required ? (
+            <span
+              style={{
+                color: "red",
+                paddingRight: "2px",
+              }}
+            >
+              *
+            </span>
+          ) : null}
+          {label ? label : null}
+        </p>
+        <Controller
+          control={control}
+          name={name}
+          render={({ field }) =>
+            type === "password" ? (
+              <Input.Password
+                type={type}
+                size={size}
+                placeholder={placeholder}
+                {...field}
+                value={value ? value : field.value}
+              />
+            ) : (
+              <Input
+                type={type}
+                readOnly={readOnly}
+                size={size}
+                placeholder={placeholder}
+                {...field}
+                value={value ? value : field.value}
+              />
+            )
+          }
+        />
+      </div>
       <small style={{ color: "red" }}>{errorMessage}</small>
-    </div>
+    </>
   );
 };
 
