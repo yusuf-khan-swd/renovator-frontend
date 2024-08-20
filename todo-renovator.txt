@@ -1,4 +1,6 @@
 
+fix the issue with service page filtering conflict with pagination
+
 continues - Remove unnecessary div wrapper from next page components mainly in admin, super_admin and user section
 
 [fixed] - Both supabase url working one from ORMs tab another from NodeJs connection string. I think issue with my network.
