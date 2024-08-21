@@ -25,7 +25,7 @@ import { useState } from "react";
 import DashboardLink from "../DashboardLink";
 import ConfirmModalTitle from "../ui/ConfirmModalTitle";
 
-const ManageBooking = () => {
+const ManageBookingPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-bookings";
 
@@ -413,4 +413,4 @@ const ManageBooking = () => {
   );
 };
 
-export default ManageBooking;
+export default ManageBookingPage;
