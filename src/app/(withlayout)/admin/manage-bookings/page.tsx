@@ -1,4 +1,4 @@
-import ManageBooking from "@/components/ManageBooking/ManageBooking";
+import ManageBookingPage from "@/components/ManageBooking/ManageBookingPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageBookingPage = () => {
+const ManageBooking = () => {
   return (
     <div>
-      <ManageBooking />
+      <ManageBookingPage />
     </div>
   );
 };
 
-export default ManageBookingPage;
+export default ManageBooking;
