@@ -1,4 +1,4 @@
-import ManageCart from "@/components/ManageCart/ManageCart";
+import ManageCartPage from "@/components/ManageCart/ManageCartPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const ManageCartPage = () => {
+const ManageCart = () => {
   return (
     <div>
-      <ManageCart />
+      <ManageCartPage />
     </div>
   );
 };
 
-export default ManageCartPage;
+export default ManageCart;
