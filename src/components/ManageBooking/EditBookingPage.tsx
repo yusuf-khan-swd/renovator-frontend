@@ -20,7 +20,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import FormHeading from "../ui/FormHeading";
 
-const EditBooking = ({ id }: { id: string }) => {
+const EditBookingPage = ({ id }: { id: string }) => {
   const { data: booking, isLoading: isBookingDataLoading } =
     useBookingQuery(id);
 
@@ -117,4 +117,4 @@ const EditBooking = ({ id }: { id: string }) => {
   );
 };
 
-export default EditBooking;
+export default EditBookingPage;
