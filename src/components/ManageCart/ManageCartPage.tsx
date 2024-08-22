@@ -16,7 +16,7 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import ConfirmModalServiceContent from "../ui/ConfirmModalServiceContent";
 
-const ManageCart = () => {
+const ManageCartPage = () => {
   const { role } = getUserInfo() as any;
   const routeName = "manage-cart";
 
@@ -210,4 +210,4 @@ const ManageCart = () => {
   );
 };
 
-export default ManageCart;
+export default ManageCartPage;
