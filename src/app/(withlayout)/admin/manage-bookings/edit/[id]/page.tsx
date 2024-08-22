@@ -1,4 +1,4 @@
-import EditBooking from "@/components/ManageBooking/EditBooking";
+import EditBookingPage from "@/components/ManageBooking/EditBookingPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: "A Home Renovation Service Provider",
 };
 
-const EditBookingPage = ({ params }: { params: { id: string } }) => {
+const EditBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return (
     <div>
-      <EditBooking id={id} />
+      <EditBookingPage id={id} />
     </div>
   );
 };
 
-export default EditBookingPage;
+export default EditBooking;
