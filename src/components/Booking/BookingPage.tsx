@@ -10,7 +10,7 @@ import { Button, Col, DatePicker, Row, message } from "antd";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Booking = ({ id }: { id: string }) => {
+const BookingPage = ({ id }: { id: string }) => {
   const { userId } = getUserInfo() as any;
   const { data: service, isLoading } = useServiceQuery(id);
 
@@ -96,4 +96,4 @@ const Booking = ({ id }: { id: string }) => {
   );
 };
 
-export default Booking;
+export default BookingPage;
