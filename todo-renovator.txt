@@ -48,7 +48,7 @@ Search by: href={`/${role}
 
 Update every search input field style in manage section. update style like in ManageUser
 
-continues - In the component folder Rename every page component and suffix with Page, and in page section remove Page suffix from component name
+Done - continues - In the component folder Rename every page component and suffix with Page, and in page section remove Page suffix from component name
 in components folder for all of the manage section rename component with Page.
 Like from Service to ServicePage and in page layout rename to ServicePage to Service
 
