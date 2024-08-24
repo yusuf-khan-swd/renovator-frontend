@@ -19,7 +19,7 @@ Done - Add no content available to About Us, Faq, and Blog
 
 [solved] The server was paused in SupaBase. Problem with server solved by going to SupaBase dashboard and unpaused the server. 
 
-Add Pagination to ServicePage
+Done - Add Pagination to ServicePage
 
 Done - In ServicePage Make result of Service api call effected by every input and select field query.
 
