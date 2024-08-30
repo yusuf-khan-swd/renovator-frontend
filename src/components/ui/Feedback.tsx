@@ -10,7 +10,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card, Col, Row, message } from "antd";
 import { useForm } from "react-hook-form";
 import FormSelectField, { SelectOptions } from "../Forms/FormSelectField";
-import ReviewAndRatingHeading from "../ReviewAndRating/ReviewAndRatingHeading";
 
 const Feedback = () => {
   const [createFeedback] = useCreateFeedbackMutation();
@@ -50,7 +49,16 @@ const Feedback = () => {
       }}
     >
       <Card>
-        <ReviewAndRatingHeading heading="Please leave a comment" />
+        <h2
+          style={{
+            fontSize: "28px",
+            fontWeight: "bold",
+            margin: "8px 0",
+            textAlign: "center",
+          }}
+        >
+          Please leave a comment
+        </h2>
         <Form
           submitHandler={onSubmit}
           resolver={yupResolver(feedbackSchema)}
