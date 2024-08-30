@@ -43,7 +43,8 @@ Code->
 
 
 Done - continues - Update every Dashboard component next link that have /role in it with the DashboardLink component. 
-Create a separate DashbaordLink component for dashboard next Link. Set default route /role
+
+Done - Create a separate DashboardLink component for dashboard next Link. Set default route /role
 Search by: href={`/${role}
 
 Update every search input field style in manage section. update style like in ManageUser
