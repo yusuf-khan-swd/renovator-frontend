@@ -57,17 +57,17 @@ const Feedback = () => {
           defaultValues={defaultValues}
         >
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col xs={24} md={16} lg={8} style={{ margin: "10px 0" }}>
+            <Col xs={24} md={24} lg={24} style={{ margin: "10px 0" }}>
               <FormInput name="name" label="Your Name" required />
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col xs={24} md={16} lg={8} style={{ margin: "10px 0" }}>
+            <Col xs={24} md={24} lg={24} style={{ margin: "10px 0" }}>
               <FormInput name="email" type="email" label="Email" required />
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col xs={24} md={16} lg={8} style={{ margin: "10px 0" }}>
+            <Col xs={24} md={24} lg={24} style={{ margin: "10px 0" }}>
               <FormSelectField
                 name="rating"
                 label="Rating"
@@ -77,7 +77,7 @@ const Feedback = () => {
             </Col>
           </Row>
           <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-            <Col xs={24} md={16} lg={16} style={{ margin: "10px 0" }}>
+            <Col xs={24} md={24} lg={246} style={{ margin: "10px 0" }}>
               <FormTextArea name="review" label="Comment" rows={5} required />
             </Col>
           </Row>
