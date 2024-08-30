@@ -94,14 +94,14 @@ Solve it by
 1. not redirect at all
 2. redirect to home page not profile page
 3. Problem is after redirect to profile page api slice for profile is not call so api is not called after redirected. If we use getSingleUser route with id from getUserInfo() then it perfectly work
-4. in server for route add dynmaic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
+4. in server for route add dynamic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
 5. For EditProfilePage pass id from id route params to EditProfilePage as props
-[Solved] - in server for route add dynmaic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
+[Solved] - in server for route add dynamic route for userProfile /profile/:id to get user profile info. And in ProfilePage component call getUserInfo() function to get userId then pass this userId to useProfileQuery hook from redux api slice.
 
 
 Done - After user click a menu item close the drawer. 
 [Not Work] By clicking menu item close the drawer after 600 millisecond. And it not working because of nested item in dashboard like Manage Contents, and Profile. If we remove the nested item instead use border to determine section of the content like youtube it might work.
-[Solved] - Add onClick event listner to ant Menu component. 
+[Solved] - Add onClick event listener to ant Menu component. 
 
 Done - change user, admin and super_admin email.
 
