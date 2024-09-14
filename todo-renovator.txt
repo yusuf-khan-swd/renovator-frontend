@@ -1,4 +1,6 @@
 
+Deploy to Vercel - 9:45 PM 9/14/2024
+
 fix the issue with service page filtering conflict with pagination
 
 continues - Remove unnecessary div wrapper from next page components mainly in admin, super_admin and user section
