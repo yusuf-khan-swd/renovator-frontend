@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ManageBooking = () => {
-  return (
-    <div>
-      <ManageBookingPage />
-    </div>
-  );
+  return <ManageBookingPage />;
 };
 
 export default ManageBooking;
