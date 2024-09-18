@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 
 const ManageReview = () => {
-  return (
-    <div>
-      <ManageReviewPage />
-    </div>
-  );
+  return <ManageReviewPage />;
 };
 
 export default ManageReview;
