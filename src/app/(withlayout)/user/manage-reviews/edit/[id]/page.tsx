@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditReview = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditReviewPage id={id} />
-    </div>
-  );
+  return <EditReviewPage id={id} />;
 };
 
 export default EditReview;
