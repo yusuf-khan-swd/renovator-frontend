@@ -6,11 +6,7 @@ export const metadata: Metadata = {
 };
 
 const Signup = () => {
-  return (
-    <>
-      <SignupPage />
-    </>
-  );
+  return <SignupPage />;
 };
 
 export default Signup;
