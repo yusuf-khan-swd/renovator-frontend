@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 
 const User = () => {
-  return (
-    <div>
-      <UserProfilePage />
-    </div>
-  );
+  return <UserProfilePage />;
 };
 
 export default User;
