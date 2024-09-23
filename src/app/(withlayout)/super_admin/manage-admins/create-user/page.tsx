@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const CreateUser = () => {
-  return (
-    <div>
-      <CreateUserPage pageRoute="manage-admins" />
-    </div>
-  );
+  return <CreateUserPage pageRoute="manage-admins" />;
 };
 
 export default CreateUser;
