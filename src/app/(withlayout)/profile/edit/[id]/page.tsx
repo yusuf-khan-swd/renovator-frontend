@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 
 const EditUserProfile = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  return (
-    <div>
-      <EditUserProfilePage id={id} />
-    </div>
-  );
+  return <EditUserProfilePage id={id} />;
 };
 
 export default EditUserProfile;
