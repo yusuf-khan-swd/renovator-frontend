@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const DetailsUser = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <DetailsUserPage id={id} />
-    </div>
-  );
+  return <DetailsUserPage id={id} />;
 };
 
 export default DetailsUser;
