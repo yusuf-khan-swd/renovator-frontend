@@ -1,4 +1,8 @@
 
+
+
+Change ManageService to ManageHouseService so add House before Service Word for backend and frontend - 11:37 AM 9/25/2024
+
 Deploy to Vercel - 9:45 PM 9/14/2024
 
 fix the issue with service page filtering conflict with pagination
