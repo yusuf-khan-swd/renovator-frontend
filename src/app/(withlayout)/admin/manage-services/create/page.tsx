@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const CreateService = () => {
-  return (
-    <div>
-      <CreateServicePage />
-    </div>
-  );
+  return <CreateServicePage />;
 };
 
 export default CreateService;
