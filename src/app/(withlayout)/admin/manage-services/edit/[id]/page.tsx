@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditService = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditServicePage id={id} />
-    </div>
-  );
+  return <EditServicePage id={id} />;
 };
 
 export default EditService;
