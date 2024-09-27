@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const ViewReview = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <ViewReviewPage id={id} />
-    </div>
-  );
+  return <ViewReviewPage id={id} />;
 };
 
 export default ViewReview;
