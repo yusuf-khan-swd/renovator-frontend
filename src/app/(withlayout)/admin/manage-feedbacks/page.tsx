@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ManageFeedback = () => {
-  return (
-    <div>
-      <ManageFeedbackPage />
-    </div>
-  );
+  return <ManageFeedbackPage />;
 };
 
 export default ManageFeedback;
