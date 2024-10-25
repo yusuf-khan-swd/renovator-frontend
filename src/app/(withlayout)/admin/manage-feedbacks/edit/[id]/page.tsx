@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditFeedback = ({ params }: any) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditFeedbackPage id={id} />
-    </div>
-  );
+  return <EditFeedbackPage id={id} />;
 };
 
 export default EditFeedback;
