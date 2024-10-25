@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ManageFaq = () => {
-  return (
-    <div>
-      <ManageFaqPage />
-    </div>
-  );
+  return <ManageFaqPage />;
 };
 
 export default ManageFaq;
