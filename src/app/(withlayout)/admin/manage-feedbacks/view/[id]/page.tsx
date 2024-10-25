@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const ViewFeedback = ({ params }: any) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <ViewFeedbackPage id={id} />
-    </div>
-  );
+  return <ViewFeedbackPage id={id} />;
 };
 
 export default ViewFeedback;
