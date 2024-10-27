@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditFaq = ({ params }: any) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditFaqPage id={id} />
-    </div>
-  );
+  return <EditFaqPage id={id} />;
 };
 
 export default EditFaq;
