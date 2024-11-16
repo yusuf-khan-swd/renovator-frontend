@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const CreateAboutUs = () => {
-  return (
-    <div>
-      <CreateAboutUsPage />
-    </div>
-  );
+  return <CreateAboutUsPage />;
 };
 
 export default CreateAboutUs;
