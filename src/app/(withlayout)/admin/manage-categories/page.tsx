@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ManageCategory = () => {
-  return (
-    <div>
-      <ManageCategoryPage />
-    </div>
-  );
+  return <ManageCategoryPage />;
 };
 
 export default ManageCategory;
