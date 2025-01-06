@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditCategory = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditCategoryPage id={id} />
-    </div>
-  );
+  return <EditCategoryPage id={id} />;
 };
 
 export default EditCategory;
