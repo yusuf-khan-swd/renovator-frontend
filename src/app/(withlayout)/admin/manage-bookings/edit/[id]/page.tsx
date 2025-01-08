@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const EditBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <EditBookingPage id={id} />
-    </div>
-  );
+  return <EditBookingPage id={id} />;
 };
 
 export default EditBooking;
