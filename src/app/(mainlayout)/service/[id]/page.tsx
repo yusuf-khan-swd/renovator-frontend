@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 const ServiceDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <ServiceDetailsPage id={id} />
-    </div>
-  );
+  return <ServiceDetailsPage id={id} />;
 };
 
 export default ServiceDetails;
