@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Blog = () => {
-  return (
-    <div>
-      <BlogPage />
-    </div>
-  );
+  return <BlogPage />;
 };
 
 export default Blog;
